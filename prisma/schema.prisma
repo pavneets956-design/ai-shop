@@ -1,0 +1,164 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  products      Product[]
+  purchases     Purchase[]
+  reviews       Review[]
+}
+
+model Product {
+  id          String    @id @default(cuid())
+  title       String
+  description String    @db.Text
+  price       Float
+  category    String
+  imageUrl    String?
+  demoUrl     String?
+  status      String    @default("active") // active, draft, sold_out
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  creatorId   String
+  creator     User      @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  purchases   Purchase[]
+  reviews     Review[]
+  
+  @@index([category])
+  @@index([status])
+}
+
+model Purchase {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  amount      Float
+  status      String   @default("completed") // completed, pending, refunded
+  createdAt   DateTime @default(now())
+  
+  @@index([userId])
+  @@index([productId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  rating    Int      // 1-5
+  comment   String?  @db.Text
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, productId])
+  @@index([productId])
+}
+
+// Cold Calling Agent Models
+model Contact {
+  id          String   @id @default(cuid())
+  company     String
+  contactName String?
+  phone       String
+  email       String?
+  address     String?
+  city        String?
+  state       String?
+  zipCode     String?
+  industry    String?
+  businessType String?
+  website     String?
+  status      String   @default("new") // new, contacted, interested, scheduled, not-interested
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  calls       Call[]
+  leads       Lead[]
+  campaignId  String?
+  campaign    Campaign? @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  
+  @@index([status])
+  @@index([industry])
+  @@index([campaignId])
+}
+
+model Campaign {
+  id              String   @id @default(cuid())
+  name            String
+  status          String   @default("draft") // draft, active, paused, completed
+  maxCallsPerDay  Int      @default(50)
+  callHoursStart  String   @default("09:00")
+  callHoursEnd    String   @default("17:00")
+  timezone        String   @default("America/New_York")
+  agentName       String   @default("Sarah")
+  agentVoice      String   @default("professional-female")
+  pitchStyle      String   @default("conversational")
+  filters         Json?    // Store filter preferences as JSON
+  stats           Json?    // Store campaign statistics as JSON
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  contacts        Contact[]
+  calls           Call[]
+  
+  @@index([status])
+}
+
+model Call {
+  id                String   @id @default(cuid())
+  contactId         String
+  contact           Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  campaignId        String?
+  campaign          Campaign? @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  callId            String?   // External call ID (e.g., Twilio)
+  status            String   // pending, calling, completed, failed, no-answer, busy
+  duration          Int?     // Duration in seconds
+  transcript        String?  @db.Text
+  outcome           String?  // interested, not-interested, scheduled, follow-up
+  notes             String?  @db.Text
+  conversationHistory Json? // Store conversation history
+  callTime          DateTime?
+  scheduledTime     DateTime?
+  retryCount        Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  @@index([contactId])
+  @@index([campaignId])
+  @@index([status])
+  @@index([callTime])
+}
+
+model Lead {
+  id            String   @id @default(cuid())
+  contactId     String
+  contact       Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  status        String   @default("new") // new, qualified, demo-scheduled, follow-up, converted, not-interested
+  score         Int      @default(50) // Lead score 0-100
+  source        String   @default("AI Agent Call")
+  nextFollowUp  DateTime?
+  revenue       Float?
+  notes         String?  @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@index([contactId])
+  @@index([status])
+  @@index([score])
+}
+
