@@ -88,7 +88,7 @@ After adding env vars, Vercel will auto-redeploy. Then:
 Your AI Shop is now live in production!
 
 **Your URLs:**
-- Homepage: `https://your-domain.vercel.app`
+- Homepage: ` https://your-domain.vercel.app`
 - Agent: `https://your-domain.vercel.app/agent`
 - Contacts: `https://your-domain.vercel.app/agent/contacts`
 
