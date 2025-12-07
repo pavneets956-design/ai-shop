@@ -1,50 +1,37 @@
 // app/api/agent/call/webhook/route.ts
-// Ultra-minimal webhook - no dependencies, just raw TwiML XML
-
 import { NextRequest, NextResponse } from "next/server";
+import twilio from "twilio";
 
-// Force Node.js runtime (not Edge) to avoid compatibility issues
-export const runtime = "nodejs";
+export const runtime = "nodejs"; // be sure this runs on the Node runtime
 
-// For manual browser test (GET)
-export async function GET(req: NextRequest) {
-  const twiml = `<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Say>AI Tech Shop webhook is alive. This is a GET test.</Say>
-</Response>`;
+const VoiceResponse = twilio.twiml.VoiceResponse;
 
-  return new NextResponse(twiml, {
+function xmlResponse(vr: twilio.twiml.VoiceResponse) {
+  return new NextResponse(vr.toString(), {
     status: 200,
     headers: { "Content-Type": "text/xml" },
   });
 }
 
+// For quick browser test (GET)
+export async function GET(_req: NextRequest) {
+  const vr = new VoiceResponse();
+  vr.say("AI Tech Shop webhook GET is alive.");
+  return xmlResponse(vr);
+}
+
 // For Twilio calls (POST)
-export async function POST(req: NextRequest) {
+export async function POST(_req: NextRequest) {
   try {
-    const twiml = `<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Say>Hello from AI Tech Shop. Your Twilio webhook is working.</Say>
-  <Pause length="2"/>
-  <Say>Goodbye.</Say>
-</Response>`;
-
-    return new NextResponse(twiml, {
-      status: 200,
-      headers: { "Content-Type": "text/xml" },
-    });
-  } catch (err: any) {
+    const vr = new VoiceResponse();
+    vr.say("Hello from AI Tech Shop. Your Twilio webhook POST is working.");
+    vr.pause({ length: 2 });
+    vr.say("Goodbye.");
+    return xmlResponse(vr);
+  } catch (err) {
     console.error("Webhook fatal error:", err);
-    
-    // Even on error, return valid TwiML
-    const errorTwiml = `<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Say>We are experiencing an internal error. Goodbye.</Say>
-</Response>`;
-
-    return new NextResponse(errorTwiml, {
-      status: 200,
-      headers: { "Content-Type": "text/xml" },
-    });
+    const vr = new VoiceResponse();
+    vr.say("We are experiencing an internal error. Goodbye.");
+    return xmlResponse(vr);
   }
 }
