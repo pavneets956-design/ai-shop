@@ -1,37 +1,40 @@
 // app/api/agent/call/webhook/route.ts
+// Ultra-simple webhook - GET returns plain text, POST returns minimal TwiML
+// NO database, NO OpenAI, NO complex logic - just prove the route works
+
 import { NextRequest, NextResponse } from "next/server";
 import twilio from "twilio";
 
-export const runtime = "nodejs"; // be sure this runs on the Node runtime
+// Force Node.js runtime (required for Twilio SDK)
+export const runtime = "nodejs";
 
 const VoiceResponse = twilio.twiml.VoiceResponse;
 
-function xmlResponse(vr: twilio.twiml.VoiceResponse) {
-  return new NextResponse(vr.toString(), {
+// GET handler - returns plain text for easy browser testing
+export async function GET(_req: NextRequest) {
+  return new NextResponse("Webhook GET ok", {
     status: 200,
-    headers: { "Content-Type": "text/xml" },
+    headers: { "Content-Type": "text/plain" },
   });
 }
 
-// For quick browser test (GET)
-export async function GET(_req: NextRequest) {
-  const vr = new VoiceResponse();
-  vr.say("AI Tech Shop webhook GET is alive.");
-  return xmlResponse(vr);
-}
-
-// For Twilio calls (POST)
+// POST handler - returns minimal TwiML for Twilio
 export async function POST(_req: NextRequest) {
   try {
     const vr = new VoiceResponse();
-    vr.say("Hello from AI Tech Shop. Your Twilio webhook POST is working.");
-    vr.pause({ length: 2 });
-    vr.say("Goodbye.");
-    return xmlResponse(vr);
+    vr.say("Test");
+    return new NextResponse(vr.toString(), {
+      status: 200,
+      headers: { "Content-Type": "text/xml" },
+    });
   } catch (err) {
-    console.error("Webhook fatal error:", err);
+    console.error("Webhook POST error:", err);
+    // Even on error, return valid TwiML
     const vr = new VoiceResponse();
-    vr.say("We are experiencing an internal error. Goodbye.");
-    return xmlResponse(vr);
+    vr.say("Error");
+    return new NextResponse(vr.toString(), {
+      status: 200,
+      headers: { "Content-Type": "text/xml" },
+    });
   }
 }
