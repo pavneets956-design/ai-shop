@@ -1,37 +1,50 @@
 // app/api/agent/call/webhook/route.ts
-// Minimal webhook for debugging - proves Twilio can reach the route
+// Ultra-minimal webhook - no dependencies, just raw TwiML XML
 
 import { NextRequest, NextResponse } from "next/server";
-import twilio from "twilio";
 
-const VoiceResponse = twilio.twiml.VoiceResponse;
+// Force Node.js runtime (not Edge) to avoid compatibility issues
+export const runtime = "nodejs";
 
-function xmlResponse(twiml: string) {
+// For manual browser test (GET)
+export async function GET(req: NextRequest) {
+  const twiml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>AI Tech Shop webhook is alive. This is a GET test.</Say>
+</Response>`;
+
   return new NextResponse(twiml, {
     status: 200,
     headers: { "Content-Type": "text/xml" },
   });
 }
 
-// For manual browser test (GET)
-export async function GET(req: NextRequest) {
-  const vr = new VoiceResponse();
-  vr.say("AI Tech Shop webhook is alive. This is a GET test.");
-  return xmlResponse(vr.toString());
-}
-
 // For Twilio calls (POST)
 export async function POST(req: NextRequest) {
   try {
-    const vr = new VoiceResponse();
-    vr.say("Hello from AI Tech Shop. Your Twilio webhook is working.");
-    vr.pause({ length: 2 });
-    vr.say("Goodbye.");
-    return xmlResponse(vr.toString());
-  } catch (err) {
+    const twiml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Hello from AI Tech Shop. Your Twilio webhook is working.</Say>
+  <Pause length="2"/>
+  <Say>Goodbye.</Say>
+</Response>`;
+
+    return new NextResponse(twiml, {
+      status: 200,
+      headers: { "Content-Type": "text/xml" },
+    });
+  } catch (err: any) {
     console.error("Webhook fatal error:", err);
-    const vr = new VoiceResponse();
-    vr.say("We are experiencing an internal error. Goodbye.");
-    return xmlResponse(vr.toString());
+    
+    // Even on error, return valid TwiML
+    const errorTwiml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>We are experiencing an internal error. Goodbye.</Say>
+</Response>`;
+
+    return new NextResponse(errorTwiml, {
+      status: 200,
+      headers: { "Content-Type": "text/xml" },
+    });
   }
 }
