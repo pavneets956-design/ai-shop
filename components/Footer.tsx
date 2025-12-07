@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
@@ -66,7 +67,15 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <h3 className="text-sm font-light text-white mb-4">AI SHOP</h3>
+            <Link href="/" className="block mb-4">
+              <Image
+                src="/logo.png"
+                alt="AI Tech Shop"
+                width={100}
+                height={40}
+                className="h-auto w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </Link>
             <p className="text-sm text-gray-500 font-light leading-relaxed">
               A marketplace for AI automated systems
             </p>
