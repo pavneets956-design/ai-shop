@@ -30,12 +30,13 @@ export default withAuth(
 );
 
 // Protect all routes under /agent/* and /api/agent/*
-// Exclude webhook route from matcher entirely (Twilio needs public access)
+// Note: /api/agent/call/* is NOT in the matcher
+// - /api/agent/call (PUT) has auth check in the route itself
+// - /api/agent/call/webhook (GET/POST) must be public for Twilio
 export const config = {
   matcher: [
     "/agent/:path*",
     "/api/agent/contacts/:path*",
-    "/api/agent/call(?!.*webhook)",
     "/api/agent/calls/:path*",
     "/api/agent/campaigns/:path*",
     "/api/agent/businesses/:path*",
