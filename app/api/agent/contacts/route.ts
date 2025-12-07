@@ -1,14 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-// Use singleton pattern for Prisma Client in serverless environments
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
-
-const prisma = globalForPrisma.prisma ?? new PrismaClient();
-
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+import { prisma } from "@/lib/prisma";
 
 // GET - Fetch all contacts
 export async function GET() {
@@ -55,12 +46,19 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(contact, { status: 201 });
   } catch (error: any) {
     console.error("Error creating contact:", error);
-    // Return more detailed error in development
-    const errorMessage = process.env.NODE_ENV === "development" 
-      ? error.message || "Failed to create contact"
-      : "Failed to create contact";
+    console.error("Error details:", {
+      message: error?.message,
+      code: error?.code,
+      meta: error?.meta,
+    });
+    
+    // Return more detailed error
+    const errorMessage = error?.message || "Failed to create contact";
     return NextResponse.json(
-      { error: errorMessage },
+      { 
+        error: errorMessage,
+        details: process.env.NODE_ENV === "development" ? error : undefined
+      },
       { status: 500 }
     );
   }
