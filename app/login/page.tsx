@@ -2,19 +2,28 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { signIn } from "next-auth/react";
+import { Chrome } from "lucide-react";
 
 export default function LoginPage() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false); // Start with signup
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-12">
           <Link href="/" className="inline-block mb-6">
-            <span className="text-2xl font-light text-white">AI SHOP</span>
+            <Image
+              src="/logo.png"
+              alt="AI Tech Shop"
+              width={120}
+              height={40}
+              className="h-10 w-auto mx-auto"
+            />
           </Link>
           <h1 className="text-4xl font-light text-white mb-3">
-            {isLogin ? "Welcome back" : "Create an account"}
+            {isLogin ? "Welcome back" : "Get started"}
           </h1>
           <p className="text-gray-400 font-light">
             {isLogin
@@ -24,6 +33,24 @@ export default function LoginPage() {
         </div>
 
         <div className="border border-white/10 rounded-lg p-8">
+          {/* Google Sign In Button */}
+          <button
+            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-medium mb-6"
+          >
+            <Chrome className="w-5 h-5" />
+            {isLogin ? "Sign in with Google" : "Sign up with Google"}
+          </button>
+
+          <div className="relative mb-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-white/10"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-4 bg-[#0a0a0a] text-gray-400 font-light">Or continue with email</span>
+            </div>
+          </div>
+
           <form className="space-y-6">
             {!isLogin && (
               <div>
