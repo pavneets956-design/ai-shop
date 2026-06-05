@@ -1,84 +1,112 @@
-import Link from "next/link";
-import { Bot, Target, Users, Zap } from "lucide-react";
+import type { Metadata } from "next";
+import GlowBackground from "@/components/GlowBackground";
+import WhyAIShop from "@/components/WhyAIShop";
+import HowItWorks from "@/components/HowItWorks";
+import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
+import MagneticButton from "@/components/MagneticButton";
+import { site } from "@/lib/data/site";
+
+export const metadata: Metadata = {
+  title: "About AI Shop — Your Personal AI Studio",
+  description:
+    "AI Shop is a personal AI studio in Surrey, BC, building custom AI apps, agents and automations for businesses and individuals worldwide. One builder, your whole AI department.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] py-12 pt-32">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-light text-white mb-4">About AI Shop</h1>
-          <p className="text-xl text-gray-400 font-light">
-            Empowering creators to build and monetize AI automation systems
-          </p>
+    <>
+      <section className="relative overflow-hidden pb-16 pt-32">
+        <GlowBackground variant="hero" />
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <Reveal>
+            <span className="eyebrow">About</span>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
+              A personal AI studio, not a{" "}
+              <span className="text-gradient-brand">software factory</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
+              AI Shop exists for one reason: most people know AI could help their business or life,
+              but have no idea what to actually build — and the agencies that do cost a fortune and
+              move slowly. So we made it simple. You describe the outcome you want. We design, build
+              and ship the AI system that delivers it.
+            </p>
+          </Reveal>
         </div>
+      </section>
 
-        <div className="border border-white/10 rounded-lg p-8 mb-12">
-          <h2 className="text-2xl font-light text-white mb-6">Our Mission</h2>
-          <p className="text-gray-400 mb-4 font-light leading-relaxed">
-            AI Shop was created to democratize access to AI automation technology. We believe that 
-            anyone with a great idea should be able to create, share, and monetize AI systems without 
-            needing extensive technical knowledge or huge upfront investments.
-          </p>
-          <p className="text-gray-400 font-light leading-relaxed">
-            Whether you're building an AI receptionist, content creator, customer support bot, or 
-            any other automated system, AI Shop provides the platform, tools, and community you need 
-            to turn your ideas into profitable businesses.
-          </p>
+      {/* Story */}
+      <section className="relative py-16">
+        <div className="mx-auto max-w-3xl space-y-6 px-4 text-lg leading-relaxed text-white/70">
+          <Reveal>
+            <p>
+              Based in Surrey, BC and working with clients worldwide, AI Shop is built around a
+              simple belief: AI should be practical, not hype. The best AI system isn&apos;t the
+              flashiest one — it&apos;s the one that quietly answers your phone, follows up on your
+              leads, or runs the admin you hate, every single day.
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p>
+              Because it&apos;s one builder — not a chain of account managers and offshore teams —
+              what you ask for is what gets built. Fast. Tuned to how you actually work. And yours to
+              own.
+            </p>
+          </Reveal>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <div className="border border-white/10 rounded-lg p-6">
-            <Bot className="w-8 h-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-light text-white mb-2">Easy to Use</h3>
-            <p className="text-gray-400 font-light leading-relaxed">
-              Our platform makes it simple to create, customize, and deploy AI systems with 
-              intuitive tools and comprehensive documentation.
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-lg p-6">
-            <Target className="w-8 h-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-light text-white mb-2">Focused on Success</h3>
-            <p className="text-gray-400 font-light leading-relaxed">
-              We provide everything you need to monetize your creations, from payment processing 
-              to marketing tools and analytics.
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-lg p-6">
-            <Users className="w-8 h-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-light text-white mb-2">Growing Community</h3>
-            <p className="text-gray-400 font-light leading-relaxed">
-              Join thousands of creators who are already building profitable AI automation 
-              businesses and sharing their knowledge.
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-lg p-6">
-            <Zap className="w-8 h-8 text-gray-400 mb-4" />
-            <h3 className="text-xl font-light text-white mb-2">Fast Deployment</h3>
-            <p className="text-gray-400 font-light leading-relaxed">
-              Get your AI systems up and running quickly with our pre-built templates and 
-              one-click deployment options.
-            </p>
+      {/* Principles */}
+      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+        <GlowBackground variant="subtle" />
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading eyebrow="How we work" title="What you can count on" />
+          <div className="mt-12">
+            <WhyAIShop />
           </div>
         </div>
+      </section>
 
-        <div className="border border-white/10 rounded-lg p-8">
-          <h2 className="text-2xl font-light text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-400 mb-6 font-light leading-relaxed">
-            Join us today and start building the AI automation systems that will transform your business.
-          </p>
-          <div className="flex gap-4">
-            <Link href="/create" className="btn-primary">
-              Create Your First System
-            </Link>
-            <Link href="/products" className="btn-secondary">
-              Browse Systems
-            </Link>
+      {/* Process */}
+      <section className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-4">
+          <SectionHeading eyebrow="The process" title="Idea to live system, in four steps" />
+          <div className="mt-16">
+            <HowItWorks />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden py-20 text-center sm:py-24">
+        <GlowBackground />
+        <div className="mx-auto max-w-2xl px-4">
+          <Reveal>
+            <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
+              Let&apos;s build something that works
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mx-auto mt-4 text-white/60">
+              Tell us your goal, or just reach out at{" "}
+              <a href={`mailto:${site.email}`} className="underline hover:text-white">
+                {site.email}
+              </a>
+              .
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-8 flex justify-center">
+              <MagneticButton href="/create">Start a build</MagneticButton>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }

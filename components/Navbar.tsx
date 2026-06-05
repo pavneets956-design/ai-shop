@@ -1,123 +1,74 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles, ArrowRight } from "lucide-react";
+import { navLinks } from "@/lib/data/site";
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center h-full">
-            <Image
-              src="/logo.png"
-              alt="AI Tech Shop"
-              width={100}
-              height={32}
-              className="h-7 md:h-8 w-auto object-contain"
-              priority
-            />
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-obsidian/70 backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gradient shadow-glow">
+              <Sparkles className="h-4 w-4 text-white" />
+            </span>
+            <span className="font-display text-lg font-semibold tracking-tight text-white">
+              AI Shop
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/products" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              Browse
-            </Link>
-            <Link href="/create" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              Create
-            </Link>
-            <Link href="/dashboard" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              Dashboard
-            </Link>
-            <Link href="/agent" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              Agent
-            </Link>
-            <Link href="/about" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              About
+          {/* Desktop links */}
+          <div className="hidden items-center gap-7 md:flex">
+            {navLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="hidden items-center gap-3 md:flex">
+            <Link href="/create" className="btn-primary text-sm">
+              Start a build <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* Right side */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/login" className="text-gray-400 hover:text-white transition-colors font-light text-sm">
-              Log In
-            </Link>
-            <Link href="/login" className="btn-secondary text-sm">
-              Sign up
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
+          {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-white md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0a0a] border-t border-white/10">
-          <div className="px-4 pt-4 pb-6 space-y-3">
-            <Link
-              href="/products"
-              className="block py-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Browse
-            </Link>
-            <Link
-              href="/create"
-              className="block py-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Create
-            </Link>
-            <Link
-              href="/dashboard"
-              className="block py-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/agent"
-              className="block py-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Agent
-            </Link>
-            <Link
-              href="/about"
-              className="block py-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <div className="border-t border-white/10 pt-4 space-y-3">
+      {open && (
+        <div className="border-t border-white/10 bg-obsidian/95 backdrop-blur-xl md:hidden">
+          <div className="space-y-1 px-4 pb-6 pt-4">
+            {navLinks.map((l) => (
               <Link
-                href="/login"
-                className="block py-2 text-gray-400 hover:text-white transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-lg px-3 py-3 text-base text-white/75 transition hover:bg-white/5 hover:text-white"
               >
-                Log In
+                {l.label}
               </Link>
-              <Link
-                href="/login"
-                className="block btn-secondary text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sign up
-              </Link>
-            </div>
+            ))}
+            <Link href="/create" onClick={() => setOpen(false)} className="btn-primary mt-3 w-full">
+              Start a build <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       )}

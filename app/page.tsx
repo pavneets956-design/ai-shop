@@ -1,142 +1,172 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import CategoryGrid from "@/components/CategoryGrid";
+import HeroCommandCenter from "@/components/HeroCommandCenter";
+import GlowBackground from "@/components/GlowBackground";
+import IndustryStrip from "@/components/IndustryStrip";
+import SolutionFinder from "@/components/SolutionFinder";
+import UseCaseBentoGrid from "@/components/UseCaseBentoGrid";
+import HowItWorks from "@/components/HowItWorks";
+import ServicePackages from "@/components/ServicePackages";
+import FeaturedBuilds from "@/components/FeaturedBuilds";
+import WhyAIShop from "@/components/WhyAIShop";
+import FAQSection from "@/components/FAQSection";
+import SectionHeading from "@/components/SectionHeading";
+import Reveal from "@/components/Reveal";
+import MagneticButton from "@/components/MagneticButton";
+import JsonLd from "@/components/JsonLd";
+import { faqs } from "@/lib/data/faqs";
+import { serviceSchema, faqSchema } from "@/lib/seo";
 
 export default function Home() {
+  const homeFaqs = faqs.slice(0, 7);
+
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
-      {/* Hero Section - Cosmos.so Style */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Floating Background Images - Cosmos.so style */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-[8%] left-[3%] w-48 h-64 opacity-20 rotate-12 animate-float">
-            <img
-              src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute top-[25%] right-[8%] w-56 h-72 opacity-15 -rotate-6 animate-float" style={{ animationDelay: '1s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute bottom-[18%] left-[12%] w-52 h-[272px] opacity-18 rotate-[-12deg] animate-float" style={{ animationDelay: '2s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute top-[55%] right-[18%] w-44 h-[240px] opacity-12 rotate-12 animate-float" style={{ animationDelay: '0.5s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute bottom-[30%] right-[5%] w-[200px] h-[260px] opacity-16 -rotate-6 animate-float" style={{ animationDelay: '1.5s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute top-[35%] left-[25%] w-40 h-[220px] opacity-14 rotate-8 animate-float" style={{ animationDelay: '0.8s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="absolute bottom-[40%] left-[35%] w-36 h-[200px] opacity-10 -rotate-10 animate-float" style={{ animationDelay: '2.5s' }}>
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=500&fit=crop&auto=format"
-              alt=""
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-            />
-          </div>
-        </div>
+    <>
+      <JsonLd data={[...serviceSchema(), faqSchema(homeFaqs)]} />
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-8xl md:text-[120px] font-light tracking-tight text-white mb-4">
-            AI SHOP
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto font-light">
-            A marketplace for AI automated systems
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <GlowBackground variant="hero" />
+        <HeroCommandCenter />
+        {/* industry strip */}
+        <div className="mx-auto max-w-7xl px-4 pb-10">
+          <p className="mb-4 text-center text-xs uppercase tracking-[0.2em] text-white/35">
+            Built for businesses like yours
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/products" className="btn-primary text-base flex items-center gap-2">
-              Browse
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link href="/create" className="btn-secondary text-base">
-              Create System
+          <IndustryStrip />
+        </div>
+      </section>
+
+      {/* SOLUTION FINDER */}
+      <section id="finder" className="relative scroll-mt-20 py-20 sm:py-28">
+        <GlowBackground variant="subtle" />
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading
+            eyebrow="AI Solution Finder"
+            title="What do you want AI to do for you?"
+            subtitle="Pick your goal, answer two quick questions, and get a recommended build and price in seconds. No guessing which tool to use."
+          />
+          <div className="mt-12">
+            <SolutionFinder />
+          </div>
+        </div>
+      </section>
+
+      {/* BUSINESS USE CASES (bento) */}
+      <section className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading
+            eyebrow="What we build"
+            title="AI systems for real businesses"
+            subtitle="From answering your phone to running a full custom app — here's the range of what AI Shop can build around your workflow."
+          />
+          <div className="mt-12">
+            <UseCaseBentoGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="relative border-y border-white/[0.06] py-20 sm:py-28">
+        <GlowBackground variant="subtle" />
+        <div className="mx-auto max-w-6xl px-4">
+          <SectionHeading
+            eyebrow="How it works"
+            title="From idea to working AI — in four steps"
+            subtitle="No tech knowledge required. You tell us the outcome; we handle everything else."
+          />
+          <div className="mt-16">
+            <HowItWorks />
+          </div>
+        </div>
+      </section>
+
+      {/* PACKAGES */}
+      <section className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading
+            eyebrow="Packages"
+            title="Pricing that's easy to say yes to"
+            subtitle="Clear, fair pricing in CAD. Start small with one tool, or go all the way to a custom app you own."
+          />
+          <div className="mt-12">
+            <ServicePackages />
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED BUILDS */}
+      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+        <GlowBackground variant="subtle" />
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading
+            eyebrow="Featured builds"
+            title="AI systems we can build for you"
+            subtitle="Proven, ready-to-build systems — each one customized to your business. Tap any to request it."
+          />
+          <div className="mt-12">
+            <FeaturedBuilds />
+          </div>
+        </div>
+      </section>
+
+      {/* WHY AI SHOP */}
+      <section className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading
+            eyebrow="Why AI Shop"
+            title="One builder. Your whole AI department."
+            subtitle="No agency overhead, no offshore handoffs, no hype. Just systems that work, built around what you actually do."
+          />
+          <div className="mt-12">
+            <WhyAIShop />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionHeading eyebrow="FAQ" title="Questions, answered" />
+          <div className="mt-12">
+            <FAQSection items={homeFaqs} />
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/faq" className="btn-ghost mx-auto">
+              See all FAQs <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gray-500 text-sm">
-          <div className="flex flex-col items-center gap-2">
-            <span>Scroll to explore</span>
-            <div className="w-4 h-8 border border-gray-600 rounded-full flex justify-center p-1">
-              <div className="w-1 h-2 bg-gray-500 rounded-full animate-bounce"></div>
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        <GlowBackground />
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <Reveal>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              Have an idea? Let&apos;s turn it into an{" "}
+              <span className="text-gradient-brand">AI system</span>.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-white/60">
+              Tell us the outcome. We&apos;ll design the system, build it, and get it live — usually
+              in days.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <MagneticButton href="/create">
+                Start my AI build <ArrowRight className="h-4 w-4" />
+              </MagneticButton>
+              <MagneticButton href="#finder" variant="secondary">
+                Find my solution first
+              </MagneticButton>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
-
-      {/* Featured Collections Section - Cosmos.so style */}
-      <section className="relative py-32 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-              Featured Collections
-            </h2>
-            <p className="text-gray-400 text-lg">
-              Curated AI systems ready to transform your business
-            </p>
-          </div>
-          <FeaturedProducts />
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="relative py-32 px-4 border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-              Explore by Category
-            </h2>
-            <p className="text-gray-400 text-lg">
-              Find the perfect AI solution for your needs
-            </p>
-          </div>
-          <CategoryGrid />
-        </div>
-      </section>
-
-      {/* CTA Section - Cosmos.so style */}
-      <section className="relative py-32 px-4 border-t border-white/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            Start your journey
-          </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            We welcome you to join us.
-          </p>
-          <Link href="/create" className="btn-primary inline-flex items-center gap-2">
-            Get Started
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }
