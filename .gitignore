@@ -31,6 +31,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# playwright / browser-automation session artifacts
+/.playwright-mcp/
+/gsc-state.png
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

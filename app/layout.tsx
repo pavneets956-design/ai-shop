@@ -53,6 +53,13 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: { icon: "/logo.png", apple: "/logo.png" },
+  // Google Search Console ownership (meta-tag method). Public token, safe to commit.
+  // Env var overrides the default if you ever re-verify with a new token.
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      "Oc2rS-DlviaxlNpDZwyghH4WxXsUrT7UAytuJRRjaxA",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
