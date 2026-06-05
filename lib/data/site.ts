@@ -5,7 +5,7 @@ export const site = {
   tagline: "AI that works for your business — built by hand, not bought off a shelf.",
   subTagline:
     "Your personal AI studio. Custom apps, agents, and automations — built for what you actually do.",
-  url: "https://ai-shop.vercel.app", // TODO: swap to final production domain
+  url: "https://ai-shop-mocha.vercel.app", // TODO: swap to final custom domain when set
   // Owner / local SEO (GEO). Update with real public business details before launch.
   owner: "Pavneet",
   email: "pavneets956@gmail.com",
