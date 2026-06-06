@@ -43,6 +43,8 @@ export default function BuildRequestForm() {
     industry: "",
     tasks: "",
     existing: "none",
+    website: "",
+    tools: "",
     budget: packages.some((p) => p.id === presetPackage) ? presetPackage : "",
     timeline: "",
     name: "",
@@ -124,6 +126,26 @@ export default function BuildRequestForm() {
       <Group label="Do you already have a website or app?">
         <ChipRow options={hasSite} value={form.existing} onPick={(v) => set("existing", v)} />
       </Group>
+
+      <div className="grid gap-8 sm:grid-cols-2">
+        <Group label="Your website (if you have one)">
+          <input
+            type="url"
+            value={form.website}
+            onChange={(e) => set("website", e.target.value)}
+            placeholder="https://yourbusiness.com"
+            className="field"
+          />
+        </Group>
+        <Group label="Tools you use today">
+          <input
+            value={form.tools}
+            onChange={(e) => set("tools", e.target.value)}
+            placeholder="e.g. Jobber, Google Calendar, Shopify"
+            className="field"
+          />
+        </Group>
+      </div>
 
       <div className="grid gap-8 sm:grid-cols-2">
         <Group label="Budget range">

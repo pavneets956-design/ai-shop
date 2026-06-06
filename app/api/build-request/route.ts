@@ -59,7 +59,30 @@ export async function POST(req: Request) {
 }
 
 function formatLead(lead: Record<string, unknown>): string {
-  return Object.entries(lead)
-    .map(([k, v]) => `${k}: ${typeof v === "object" ? JSON.stringify(v) : String(v)}`)
-    .join("\n");
+  const g = (k: string) => {
+    const v = lead[k];
+    if (v === undefined || v === null || v === "") return "—";
+    return typeof v === "object" ? JSON.stringify(v) : String(v);
+  };
+  return [
+    "NEW BUILD REQUEST — AI Shop",
+    "",
+    "— Contact —",
+    `Name:      ${g("name")}`,
+    `Email:     ${g("email")}`,
+    `Phone:     ${g("phone")}`,
+    `Website:   ${g("website")}`,
+    "",
+    "— Project —",
+    `Goal:      ${g("goal")}`,
+    `AI should: ${g("tasks")}`,
+    `Use for:   ${g("useType")}`,
+    `Industry:  ${g("industry")}`,
+    `Has now:   ${g("existing")}`,
+    `Tools:     ${g("tools")}`,
+    `Budget:    ${g("budget")}`,
+    `Timeline:  ${g("timeline")}`,
+    "",
+    `Received:  ${g("receivedAt")}`,
+  ].join("\n");
 }
