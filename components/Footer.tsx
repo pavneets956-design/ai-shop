@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { LogoMark } from "@/components/Logo";
 import { site } from "@/lib/data/site";
 import { solutionCategories } from "@/lib/data/solutions";
 import { useCases } from "@/lib/data/useCases";
@@ -11,10 +12,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gradient">
-                <Sparkles className="h-4 w-4 text-white" />
-              </span>
+            <Link href="/" className="flex items-center gap-2.5">
+              <LogoMark className="h-8 w-8 [filter:drop-shadow(0_0_14px_rgba(79,140,255,0.4))]" />
               <span className="font-display text-lg font-semibold text-white">AI Shop</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">{site.tagline}</p>

@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Sparkles, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/data/site";
+import { LogoMark } from "@/components/Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,10 +14,12 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-gradient shadow-glow">
-              <Sparkles className="h-4 w-4 text-white" />
-            </span>
+          <Link
+            href="/"
+            className="group flex items-center gap-2.5"
+            onClick={() => setOpen(false)}
+          >
+            <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(79,140,255,0.45))]" />
             <span className="font-display text-lg font-semibold tracking-tight text-white">
               AI Shop
             </span>

@@ -52,7 +52,14 @@ export const metadata: Metadata = {
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
+  icons: {
+    icon: [
+      { url: "/logo-mark.svg", type: "image/svg+xml" },
+      { url: "/logo.png" },
+    ],
+    apple: "/logo.png",
+    shortcut: "/logo-mark.svg",
+  },
   // Google Search Console ownership (meta-tag method). Public token, safe to commit.
   // Env var overrides the default if you ever re-verify with a new token.
   verification: {
