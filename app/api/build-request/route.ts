@@ -39,7 +39,10 @@ export async function POST(req: Request) {
       const { Resend } = await import("resend");
       const resend = new Resend(key);
       const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
-      const from = process.env.LEAD_FROM_EMAIL || "AI Shop <onboarding@resend.dev>";
+      // From-address must be on a Resend-verified domain matching the API key's scope.
+      // Key is scoped to coitracker.co. Swap to an AI Shop / handbuilt.ai address once
+      // that domain is bought + verified in Resend.
+      const from = process.env.LEAD_FROM_EMAIL || "AI Shop <leads@coitracker.co>";
       const kind = payload.type === "plan" ? "Plan request" : "Build request";
 
       await resend.emails.send({
