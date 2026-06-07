@@ -42,3 +42,6 @@ next-env.d.ts
 # prisma
 /prisma/migrations
 
+
+# Root QA / design screenshots (local only)
+/*.png

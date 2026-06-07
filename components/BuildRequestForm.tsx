@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Check, Loader2, Send } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, Check, Loader2, Send } from "lucide-react";
 import { packages } from "@/lib/data/packages";
 import { industries } from "@/lib/data/finder";
 import { site } from "@/lib/data/site";
@@ -33,10 +34,14 @@ const hasSite = [
   { id: "both", label: "Both" },
 ];
 
+const STEPS = ["The build", "Your setup", "You"] as const;
+
 export default function BuildRequestForm() {
   const params = useSearchParams();
   const presetPackage = params.get("package") ?? "";
 
+  const [step, setStep] = useState(0);
+  const [dir, setDir] = useState(1);
   const [form, setForm] = useState({
     goal: "",
     useType: "business",
@@ -55,8 +60,31 @@ export default function BuildRequestForm() {
 
   const set = (k: string, v: string) => setForm((s) => ({ ...s, [k]: v }));
 
+  const go = (next: number) => {
+    setDir(next > step ? 1 : -1);
+    setStep(next);
+  };
+
+  const canAdvance = step === 0 ? form.goal.trim().length > 0 : true;
+  const isLast = step === STEPS.length - 1;
+
+  const next = () => {
+    if (!canAdvance) return;
+    if (!isLast) go(step + 1);
+  };
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Only submit from the final step; earlier "Enter" presses advance instead.
+    if (!isLast) {
+      next();
+      return;
+    }
+    // Guard against an accidental submit with missing contact info.
+    if (!form.name.trim() || !form.email.trim() || !form.email.includes("@")) {
+      go(STEPS.length - 1);
+      return;
+    }
     setStatus("sending");
     try {
       const res = await fetch("/api/build-request", {
@@ -93,104 +121,190 @@ export default function BuildRequestForm() {
   }
 
   return (
-    <form onSubmit={submit} className="border-glow glass mx-auto max-w-2xl space-y-8 rounded-3xl p-6 sm:p-9">
-      <Group label="What are you trying to build?" required>
-        <textarea
-          required
-          rows={3}
-          value={form.goal}
-          onChange={(e) => set("goal", e.target.value)}
-          placeholder="e.g. Something that answers my phone and books jobs while I'm on site"
-          className="field resize-none"
-        />
-      </Group>
-
-      <Group label="Is this for business or personal use?">
-        <ChipRow options={useTypes} value={form.useType} onPick={(v) => set("useType", v)} />
-      </Group>
-
-      <Group label="What industry / area?">
-        <ChipRow options={industries} value={form.industry} onPick={(v) => set("industry", v)} />
-      </Group>
-
-      <Group label="What should the AI actually do?">
-        <textarea
-          rows={2}
-          value={form.tasks}
-          onChange={(e) => set("tasks", e.target.value)}
-          placeholder="e.g. answer calls, qualify leads, send follow-up texts, sync to my calendar"
-          className="field resize-none"
-        />
-      </Group>
-
-      <Group label="Do you already have a website or app?">
-        <ChipRow options={hasSite} value={form.existing} onPick={(v) => set("existing", v)} />
-      </Group>
-
-      <div className="grid gap-8 sm:grid-cols-2">
-        <Group label="Your website (if you have one)">
-          <input
-            type="url"
-            value={form.website}
-            onChange={(e) => set("website", e.target.value)}
-            placeholder="https://yourbusiness.com"
-            className="field"
-          />
-        </Group>
-        <Group label="Tools you use today">
-          <input
-            value={form.tools}
-            onChange={(e) => set("tools", e.target.value)}
-            placeholder="e.g. Jobber, Google Calendar, Shopify"
-            className="field"
-          />
-        </Group>
+    <form
+      onSubmit={submit}
+      className="border-glow glass mx-auto max-w-2xl rounded-3xl p-6 sm:p-9"
+    >
+      {/* Progress */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between">
+          {STEPS.map((label, i) => {
+            const state = i < step ? "done" : i === step ? "active" : "todo";
+            return (
+              <div key={label} className="flex flex-1 items-center last:flex-none">
+                <button
+                  type="button"
+                  onClick={() => i < step && go(i)}
+                  disabled={i > step}
+                  className={`flex items-center gap-2 text-sm transition ${
+                    i <= step ? "cursor-pointer" : "cursor-default"
+                  }`}
+                >
+                  <span
+                    className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-semibold transition ${
+                      state === "done"
+                        ? "border-electric/60 bg-electric/20 text-white"
+                        : state === "active"
+                          ? "border-electric/60 bg-electric/15 text-white"
+                          : "border-white/15 bg-white/[0.03] text-white/40"
+                    }`}
+                  >
+                    {state === "done" ? <Check className="h-3.5 w-3.5" /> : i + 1}
+                  </span>
+                  <span className={`hidden sm:inline ${i <= step ? "text-white/80" : "text-white/40"}`}>
+                    {label}
+                  </span>
+                </button>
+                {i < STEPS.length - 1 && (
+                  <span
+                    className={`mx-3 h-px flex-1 transition ${
+                      i < step ? "bg-electric/50" : "bg-white/10"
+                    }`}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2">
-        <Group label="Budget range">
-          <ChipRow options={budgets} value={form.budget} onPick={(v) => set("budget", v)} wrap />
-        </Group>
-        <Group label="Timeline">
-          <ChipRow options={timelines} value={form.timeline} onPick={(v) => set("timeline", v)} wrap />
-        </Group>
-      </div>
+      <div className="relative overflow-hidden">
+        <AnimatePresence mode="wait" initial={false} custom={dir}>
+          <motion.div
+            key={step}
+            custom={dir}
+            initial={{ opacity: 0, x: dir * 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: dir * -24 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="space-y-8"
+          >
+            {step === 0 && (
+              <>
+                <Group label="What are you trying to build?" required>
+                  <textarea
+                    autoFocus
+                    rows={3}
+                    value={form.goal}
+                    onChange={(e) => set("goal", e.target.value)}
+                    placeholder="e.g. Something that answers my phone and books jobs while I'm on site"
+                    className="field resize-none"
+                  />
+                </Group>
+                <Group label="Is this for business or personal use?">
+                  <ChipRow options={useTypes} value={form.useType} onPick={(v) => set("useType", v)} />
+                </Group>
+                <Group label="What industry / area?">
+                  <ChipRow options={industries} value={form.industry} onPick={(v) => set("industry", v)} />
+                </Group>
+              </>
+            )}
 
-      <div className="grid gap-4 sm:grid-cols-3">
-        <div>
-          <label className="field-label">Name *</label>
-          <input required value={form.name} onChange={(e) => set("name", e.target.value)} className="field" placeholder="Your name" />
-        </div>
-        <div>
-          <label className="field-label">Email *</label>
-          <input required type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className="field" placeholder="you@business.com" />
-        </div>
-        <div>
-          <label className="field-label">Phone</label>
-          <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} className="field" placeholder="Optional" />
-        </div>
+            {step === 1 && (
+              <>
+                <Group label="What should the AI actually do?">
+                  <textarea
+                    rows={2}
+                    value={form.tasks}
+                    onChange={(e) => set("tasks", e.target.value)}
+                    placeholder="e.g. answer calls, qualify leads, send follow-up texts, sync to my calendar"
+                    className="field resize-none"
+                  />
+                </Group>
+                <Group label="Do you already have a website or app?">
+                  <ChipRow options={hasSite} value={form.existing} onPick={(v) => set("existing", v)} />
+                </Group>
+                <div className="grid gap-8 sm:grid-cols-2">
+                  <Group label="Your website (if you have one)">
+                    <input
+                      type="url"
+                      value={form.website}
+                      onChange={(e) => set("website", e.target.value)}
+                      placeholder="https://yourbusiness.com"
+                      className="field"
+                    />
+                  </Group>
+                  <Group label="Tools you use today">
+                    <input
+                      value={form.tools}
+                      onChange={(e) => set("tools", e.target.value)}
+                      placeholder="e.g. Jobber, Google Calendar, Shopify"
+                      className="field"
+                    />
+                  </Group>
+                </div>
+                <div className="grid gap-8 sm:grid-cols-2">
+                  <Group label="Budget range">
+                    <ChipRow options={budgets} value={form.budget} onPick={(v) => set("budget", v)} wrap />
+                  </Group>
+                  <Group label="Timeline">
+                    <ChipRow options={timelines} value={form.timeline} onPick={(v) => set("timeline", v)} wrap />
+                  </Group>
+                </div>
+              </>
+            )}
+
+            {step === 2 && (
+              <>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div>
+                    <label className="field-label">Name *</label>
+                    <input required value={form.name} onChange={(e) => set("name", e.target.value)} className="field" placeholder="Your name" />
+                  </div>
+                  <div>
+                    <label className="field-label">Email *</label>
+                    <input required type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className="field" placeholder="you@business.com" />
+                  </div>
+                  <div>
+                    <label className="field-label">Phone</label>
+                    <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} className="field" placeholder="Optional" />
+                  </div>
+                </div>
+                <p className="text-center text-xs text-white/35">
+                  No spam, no obligation. You&apos;ll get a real reply from a real person within one business day.
+                </p>
+              </>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {status === "error" && (
-        <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+        <p className="mt-6 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           Something went wrong sending that. Email {site.email} and I&apos;ll sort it out.
         </p>
       )}
 
-      <button type="submit" disabled={status === "sending"} className="btn-primary w-full">
-        {status === "sending" ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Sending…
-          </>
-        ) : (
-          <>
-            <Send className="h-4 w-4" /> Send my build request
-          </>
+      {/* Nav */}
+      <div className="mt-8 flex items-center gap-3">
+        {step > 0 && (
+          <button type="button" onClick={() => go(step - 1)} className="btn-ghost">
+            <ArrowLeft className="h-4 w-4" /> Back
+          </button>
         )}
-      </button>
-      <p className="text-center text-xs text-white/35">
-        No spam, no obligation. You&apos;ll get a real reply from a real person within one business day.
-      </p>
+        {!isLast ? (
+          <button
+            type="button"
+            onClick={next}
+            disabled={!canAdvance}
+            className="btn-primary ml-auto disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Next <ArrowRight className="h-4 w-4" />
+          </button>
+        ) : (
+          <button type="submit" disabled={status === "sending"} className="btn-primary ml-auto">
+            {status === "sending" ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" /> Sending…
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4" /> Send my build request
+              </>
+            )}
+          </button>
+        )}
+      </div>
     </form>
   );
 }
@@ -210,7 +324,6 @@ function ChipRow({
   options,
   value,
   onPick,
-  wrap,
 }: {
   options: { id: string; label: string }[];
   value: string;
@@ -218,7 +331,7 @@ function ChipRow({
   wrap?: boolean;
 }) {
   return (
-    <div className={`flex gap-2 ${wrap ? "flex-wrap" : "flex-wrap"}`}>
+    <div className="flex flex-wrap gap-2">
       {options.map((o) => (
         <button
           key={o.id}
