@@ -24,6 +24,7 @@ export const site = {
 };
 
 export const navLinks = [
+  { label: "Live Demo", href: "/demo" },
   { label: "Solutions", href: "/solutions" },
   { label: "Use Cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
