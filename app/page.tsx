@@ -14,6 +14,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
+import ConsultationCall from "@/components/ConsultationCall";
 import { faqs } from "@/lib/data/faqs";
 import { serviceSchema, faqSchema } from "@/lib/seo";
 
@@ -23,6 +24,12 @@ export default function Home() {
   return (
     <>
       <JsonLd data={[...serviceSchema(), faqSchema(homeFaqs)]} />
+
+      {/* Voice-led AI call layered OVER the full homepage. All marketing
+          content + JSON-LD below stays server-rendered for SEO/GEO; the
+          overlay is dismissible ("Skip") to reveal the site beneath. */}
+      <ConsultationCall onHomepage />
+
 
       {/* HERO */}
       <section className="relative overflow-hidden">

@@ -58,7 +58,8 @@ function recommendBuild(want: string): string {
   return "Custom website build";
 }
 
-export default function ConsultationCall() {
+export default function ConsultationCall({ onHomepage = false }: { onHomepage?: boolean }) {
+  const [dismissed, setDismissed] = useState(false);
   const [started, setStarted] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [shown, setShown] = useState(""); // text currently revealed
@@ -94,6 +95,32 @@ export default function ConsultationCall() {
       window.speechSynthesis.onvoiceschanged = null;
     };
   }, []);
+
+  // On the homepage, don't re-nag a visitor who already skipped this session.
+  useEffect(() => {
+    if (onHomepage && typeof window !== "undefined" && sessionStorage.getItem("hb_call_skipped")) {
+      setDismissed(true);
+    }
+  }, [onHomepage]);
+
+  // Lock background scroll while the overlay is open (mobile bleed-through).
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const open = !dismissed;
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [dismissed]);
+
+  const dismiss = useCallback(() => {
+    if (typeof window !== "undefined" && window.speechSynthesis) window.speechSynthesis.cancel();
+    if (onHomepage && typeof window !== "undefined") sessionStorage.setItem("hb_call_skipped", "1");
+    setDismissed(true);
+  }, [onHomepage]);
 
   // Speak + type a line. Resolves when the voice finishes (voice drives pacing).
   const speak = useCallback((text: string) => {
@@ -243,21 +270,36 @@ export default function ConsultationCall() {
     runFlow();
   }, [runFlow]);
 
+  if (dismissed) return null;
+
   return (
     <div className="hbc-root">
       <style>{HBC_CSS}</style>
 
-      <Link href="/" className="hbc-exit" aria-label="Back to Handbuilt">
-        ← Handbuilt
-      </Link>
+      {onHomepage ? (
+        <button className="hbc-exit" onClick={dismiss} aria-label="Skip and explore the site">
+          ✕ Skip
+        </button>
+      ) : (
+        <Link href="/" className="hbc-exit" aria-label="Back to Handbuilt">
+          ← Handbuilt
+        </Link>
+      )}
       {voiceName && <span className="hbc-voice">voice: {voiceName}</span>}
 
       {!started && (
-        <button className="hbc-gate" onClick={start}>
-          <span className="hbc-dot" />
-          <span className="hbc-gate-title">Tap to take the call</span>
-          <span className="hbc-gate-sub">turn your sound on · built-in voice</span>
-        </button>
+        <div className="hbc-gate">
+          <button className="hbc-gate-tap" onClick={start} aria-label="Take the call">
+            <span className="hbc-dot" />
+            <span className="hbc-gate-title">Tap to take the call</span>
+            <span className="hbc-gate-sub">turn your sound on · built-in voice</span>
+          </button>
+          {onHomepage && (
+            <button className="hbc-gate-skip" onClick={dismiss}>
+              skip — just explore the site →
+            </button>
+          )}
+        </div>
       )}
 
       <div className="hbc-stage">
@@ -323,9 +365,15 @@ export default function ConsultationCall() {
               <Link className="ghost" href="/demo">
                 Watch a live demo
               </Link>
-              <Link className="ghost" href="/">
-                Back to site
-              </Link>
+              {onHomepage ? (
+                <button className="ghost hbc-linkbtn" onClick={dismiss}>
+                  Back to site
+                </button>
+              ) : (
+                <Link className="ghost" href="/">
+                  Back to site
+                </Link>
+              )}
             </div>
             <p className="hbc-note">Your plan has been sent. I&apos;ll follow up by email shortly.</p>
           </div>
@@ -342,8 +390,11 @@ const HBC_CSS = `
 .hbc-exit{position:fixed;top:18px;left:20px;font-size:13px;color:#a1a1a6;text-decoration:none;z-index:120}
 .hbc-exit:hover{color:#1d1d1f}
 .hbc-voice{position:fixed;top:20px;right:20px;font-size:11px;color:#d2d2d7;z-index:120}
-.hbc-gate{position:fixed;inset:0;z-index:110;background:#fff;border:none;cursor:pointer;
+.hbc-gate{position:fixed;inset:0;z-index:110;background:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.hbc-gate-tap{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:24px}
+.hbc-gate-skip{border:none;background:none;cursor:pointer;color:#a1a1a6;font-size:13px;position:absolute;bottom:36px}
+.hbc-gate-skip:hover{color:#1d1d1f}
 .hbc-dot{width:14px;height:14px;border-radius:50%;background:#1d1d1f;animation:hbc-pulse 1.8s ease-in-out infinite}
 @keyframes hbc-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.4}}
 .hbc-gate-title{font-size:17px;color:#1d1d1f}
@@ -381,7 +432,7 @@ const HBC_CSS = `
 .hbc-row span:first-child{color:#86868b}
 .hbc-row span:last-child{font-weight:500;text-align:right;max-width:60%}
 .hbc-cta{display:flex;flex-direction:column;gap:1px;margin-top:28px}
-.hbc-cta a{text-align:center;text-decoration:none;font-size:16px;padding:15px;border-radius:12px}
+.hbc-cta a,.hbc-cta button{text-align:center;text-decoration:none;font-size:16px;padding:15px;border-radius:12px;border:none;background:none;cursor:pointer;width:100%;font-family:inherit}
 .hbc-cta .primary{background:#1d1d1f;color:#fff;font-weight:500}
 .hbc-cta .ghost{color:#1d1d1f}
 .hbc-cta .ghost:hover{color:#86868b}
