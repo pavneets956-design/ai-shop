@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# superpowers brainstorming mockups (local only)
+/.superpowers/
+
 # playwright / browser-automation session artifacts
 /.playwright-mcp/
 /gsc-state.png

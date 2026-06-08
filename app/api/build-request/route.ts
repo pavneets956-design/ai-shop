@@ -43,14 +43,19 @@ export async function POST(req: Request) {
       // Key is scoped to coitracker.co. Swap to an AI Shop / handbuilt.ai address once
       // that domain is bought + verified in Resend.
       const from = process.env.LEAD_FROM_EMAIL || "AI Shop <leads@coitracker.co>";
-      const kind = payload.type === "plan" ? "Plan request" : "Build request";
+      const isConsultation = payload.source === "consultation";
+      const kind = isConsultation
+        ? "AI consultation"
+        : payload.type === "plan"
+        ? "Plan request"
+        : "Build request";
 
       await resend.emails.send({
         from,
         to,
         replyTo: email,
-        subject: `New AI Shop ${kind}: ${email}`,
-        text: formatLead(lead),
+        subject: `New AI Shop ${kind}: ${payload.name || email}`,
+        text: isConsultation ? formatConsultation(lead) : formatLead(lead),
       });
     } catch (err) {
       // Don't fail the user's submission if email delivery hiccups.
@@ -59,6 +64,30 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+function formatConsultation(lead: Record<string, unknown>): string {
+  const g = (k: string) => {
+    const v = lead[k];
+    if (v === undefined || v === null || v === "") return "—";
+    return typeof v === "object" ? JSON.stringify(v) : String(v);
+  };
+  return [
+    "NEW AI CONSULTATION — Handbuilt (/start)",
+    "",
+    "— Lead —",
+    `Business:  ${g("name")}`,
+    `Email:     ${g("email")}`,
+    `Type:      ${g("kind")}`,
+    `AI should: ${g("want")}`,
+    `City:      ${g("city")}`,
+    `Suggested: ${g("recommendedBuild")}`,
+    "",
+    "— Transcript —",
+    g("transcript"),
+    "",
+    `Received:  ${g("receivedAt")}`,
+  ].join("\n");
 }
 
 function formatLead(lead: Record<string, unknown>): string {
