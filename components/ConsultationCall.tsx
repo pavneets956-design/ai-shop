@@ -35,6 +35,11 @@ const REQUIRED_FIELDS = ["name", "kind", "want", "city", "email"] as const;
 
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 const validEmail = (s?: string) => !!s && /\S+@\S+\.\S+/.test(s);
+
+// 1-sample silent WAV — played inside the tap gesture to "bless" the reused
+// <audio> element so later programmatic play() works (esp. iOS Safari).
+const SILENT_WAV =
+  "data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAAAAA==";
 const hasAll = (b: Answers) =>
   REQUIRED_FIELDS.every((k) => (k === "email" ? validEmail(b[k]) : !!b[k]?.trim()));
 
@@ -105,6 +110,8 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   const resolverRef = useRef<((v: string) => void) | null>(null);
   const voiceRef = useRef<SpeechSynthesisVoice | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const ttsAvailableRef = useRef<boolean | null>(null); // null=unknown, false=browser TTS only
 
   // Pick a reasonable English voice once available.
   useEffect(() => {
@@ -148,11 +155,20 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
 
   const dismiss = useCallback(() => {
     if (typeof window !== "undefined" && window.speechSynthesis) window.speechSynthesis.cancel();
+    if (audioRef.current) {
+      try {
+        audioRef.current.pause();
+      } catch {
+        /* ignore */
+      }
+    }
     if (onHomepage && typeof window !== "undefined") sessionStorage.setItem("hb_call_skipped", "1");
     setDismissed(true);
   }, [onHomepage]);
 
   // Speak + type a line. Resolves when the voice finishes (voice drives pacing).
+  // Tries premium TTS (/api/tts) first, overlapped with the typewriter; falls
+  // back to free browser SpeechSynthesis on no-key / error / blocked playback.
   const speak = useCallback((text: string) => {
     return new Promise<void>((resolve) => {
       setThinking(false);
@@ -160,6 +176,9 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       setMode("idle");
       setChips([]);
       setShown("");
+
+      // Typewriter starts immediately — text is free, so the screen is alive
+      // while premium audio is fetched (overlap = near-zero perceived latency).
       let i = 0;
       const typeDelay = 42;
       const typer = setInterval(() => {
@@ -172,28 +191,92 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       const done = () => {
         if (finished) return;
         finished = true;
+        clearTimeout(net);
         clearInterval(typer);
-        setShown(text);
+        setShown(text); // force-complete text on audio end — kills dub desync
         setSpeaking(false);
         setTimeout(resolve, 480);
       };
 
-      const synth = typeof window !== "undefined" ? window.speechSynthesis : null;
-      if (synth && voiceRef.current) {
-        const u = new SpeechSynthesisUtterance(text);
-        u.voice = voiceRef.current;
-        u.rate = 0.96;
-        u.pitch = 1;
-        u.volume = 1;
-        u.onend = done;
-        u.onerror = done;
-        synth.cancel();
-        synth.speak(u);
-        // Safety net if the browser never fires onend.
-        setTimeout(done, text.length * 70 + 2500);
-      } else {
-        setTimeout(done, text.length * typeDelay + 600);
-      }
+      // Ultimate net so a stuck line can never hang the await-chain.
+      const net = setTimeout(done, text.length * 90 + 9000);
+
+      let usedBrowser = false;
+      const browserSpeak = () => {
+        if (usedBrowser || finished) return;
+        usedBrowser = true;
+        const synth = typeof window !== "undefined" ? window.speechSynthesis : null;
+        if (synth && voiceRef.current) {
+          const u = new SpeechSynthesisUtterance(text);
+          u.voice = voiceRef.current;
+          u.rate = 0.96;
+          u.pitch = 1;
+          u.volume = 1;
+          u.onend = done;
+          u.onerror = done;
+          synth.cancel();
+          synth.speak(u);
+          setTimeout(done, text.length * 70 + 2500);
+        } else {
+          setTimeout(done, text.length * typeDelay + 600);
+        }
+      };
+
+      // Premium TTS first (when available).
+      (async () => {
+        if (ttsAvailableRef.current === false || !audioRef.current) {
+          browserSpeak();
+          return;
+        }
+        let url: string | null = null;
+        try {
+          const res = await fetch("/api/tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text }),
+          });
+          const ct = res.headers.get("content-type") || "";
+          if (!res.ok || ct.includes("application/json")) {
+            // {fallback:true} or error → no premium voice this session (429 is
+            // transient, so don't disable on rate-limit).
+            if (res.status !== 429) ttsAvailableRef.current = false;
+            browserSpeak();
+            return;
+          }
+          const blob = await res.blob();
+          url = URL.createObjectURL(blob);
+          ttsAvailableRef.current = true;
+          const a = audioRef.current;
+          const cleanup = () => {
+            if (url) {
+              try {
+                URL.revokeObjectURL(url);
+              } catch {
+                /* ignore */
+              }
+            }
+          };
+          a.onended = () => {
+            cleanup();
+            done();
+          };
+          a.onerror = () => {
+            cleanup();
+            browserSpeak();
+          };
+          a.src = url;
+          await a.play(); // rejects if not unlocked → caught below
+        } catch {
+          if (url) {
+            try {
+              URL.revokeObjectURL(url);
+            } catch {
+              /* ignore */
+            }
+          }
+          browserSpeak();
+        }
+      })();
     });
   }, []);
 
@@ -409,10 +492,23 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
 
   const start = useCallback(() => {
     setStarted(true);
-    // Unlock audio within the user gesture.
-    if (typeof window !== "undefined" && window.speechSynthesis) {
+    // Unlock audio within the user gesture (both engines need their own unlock).
+    if (typeof window !== "undefined") {
+      if (window.speechSynthesis) {
+        try {
+          window.speechSynthesis.speak(new SpeechSynthesisUtterance(" "));
+        } catch {
+          /* ignore */
+        }
+      }
       try {
-        window.speechSynthesis.speak(new SpeechSynthesisUtterance(" "));
+        const a = audioRef.current ?? new Audio();
+        a.setAttribute("playsinline", "");
+        a.preload = "auto";
+        a.src = SILENT_WAV;
+        const p = a.play();
+        if (p && typeof p.then === "function") p.then(() => a.pause()).catch(() => {});
+        audioRef.current = a;
       } catch {
         /* ignore */
       }
