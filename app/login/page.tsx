@@ -22,7 +22,7 @@ export default function LoginPage() {
               className="h-10 w-auto mx-auto"
             />
           </Link>
-          <h1 className="text-4xl font-light text-white mb-3">
+          <h1 className="text-4xl font-light text-ink mb-3">
             {isLogin ? "Welcome back" : "Get started"}
           </h1>
           <p className="text-gray-400 font-light">
@@ -32,7 +32,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <div className="border border-white/10 rounded-lg p-8">
+        <div className="border border-ink/10 rounded-lg p-8">
           {/* Google Sign In Button */}
           <button
             onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
@@ -44,7 +44,7 @@ export default function LoginPage() {
 
           <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10"></div>
+              <div className="w-full border-t border-ink/10"></div>
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-[#0a0a0a] text-gray-400 font-light">Or continue with email</span>
@@ -59,7 +59,7 @@ export default function LoginPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-lg focus:ring-1 focus:ring-white/20 focus:border-white/20 text-white placeholder-gray-500 font-light"
+                  className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
                   placeholder="John Doe"
                 />
               </div>
@@ -71,7 +71,7 @@ export default function LoginPage() {
               <input
                 type="email"
                 required
-                className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-lg focus:ring-1 focus:ring-white/20 focus:border-white/20 text-white placeholder-gray-500 font-light"
+                className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
                 placeholder="you@example.com"
               />
             </div>
@@ -82,17 +82,17 @@ export default function LoginPage() {
               <input
                 type="password"
                 required
-                className="w-full px-4 py-3 bg-transparent border border-white/10 rounded-lg focus:ring-1 focus:ring-white/20 focus:border-white/20 text-white placeholder-gray-500 font-light"
+                className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
                 placeholder="••••••••"
               />
             </div>
             {isLogin && (
               <div className="flex items-center justify-between">
                 <label className="flex items-center">
-                  <input type="checkbox" className="rounded border-white/10 bg-transparent text-white focus:ring-white/20" />
+                  <input type="checkbox" className="rounded border-ink/10 bg-transparent text-ink focus:ring-ink/20" />
                   <span className="ml-2 text-sm text-gray-400 font-light">Remember me</span>
                 </label>
-                <Link href="/forgot-password" className="text-sm text-gray-400 hover:text-white transition-colors font-light">
+                <Link href="/forgot-password" className="text-sm text-gray-400 hover:text-ink transition-colors font-light">
                   Forgot password?
                 </Link>
               </div>
@@ -105,7 +105,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-sm text-gray-400 hover:text-white transition-colors font-light"
+              className="text-sm text-gray-400 hover:text-ink transition-colors font-light"
             >
               {isLogin
                 ? "Don't have an account? Sign up"
@@ -117,11 +117,11 @@ export default function LoginPage() {
         <div className="mt-6 text-center text-sm text-gray-500 font-light">
           <p>
             By continuing, you agree to our{" "}
-            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="/terms" className="text-gray-400 hover:text-ink transition-colors">
               Terms of Service
             </Link>{" "}
             and{" "}
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+            <Link href="/privacy" className="text-gray-400 hover:text-ink transition-colors">
               Privacy Policy
             </Link>
           </p>

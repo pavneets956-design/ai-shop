@@ -9,8 +9,8 @@ import { industries } from "@/lib/data/finder";
 import { site } from "@/lib/data/site";
 
 const budgets = [
-  { id: "starter", label: "~$750 (one tool)" },
-  { id: "business", label: "$2,500–$7,500 (a system)" },
+  { id: "starter", label: "~$1,000 (one tool)" },
+  { id: "business", label: "$2,500–$5,000 (a system)" },
   { id: "custom", label: "$7,500+ (custom app)" },
   { id: "unsure", label: "Not sure yet" },
 ];
@@ -105,14 +105,14 @@ export default function BuildRequestForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
           <Check className="h-7 w-7" />
         </div>
-        <h2 className="mt-5 font-display text-2xl font-semibold text-white">Request received.</h2>
-        <p className="mx-auto mt-3 max-w-md text-white/60">
+        <h2 className="mt-5 font-display text-2xl font-semibold text-ink">Request received.</h2>
+        <p className="mx-auto mt-3 max-w-md text-ink/60">
           Thanks{form.name ? `, ${form.name.split(" ")[0]}` : ""} — I&apos;ll review what you want to
           build and reply within one business day with a plan and a quote.
         </p>
-        <p className="mt-4 text-sm text-white/40">
+        <p className="mt-4 text-sm text-ink/40">
           Need it sooner? Email{" "}
-          <a href={`mailto:${site.email}`} className="underline hover:text-white/70">
+          <a href={`mailto:${site.email}`} className="underline hover:text-ink/70">
             {site.email}
           </a>
         </p>
@@ -143,22 +143,22 @@ export default function BuildRequestForm() {
                   <span
                     className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-semibold transition ${
                       state === "done"
-                        ? "border-electric/60 bg-electric/20 text-white"
+                        ? "border-clay/60 bg-clay/20 text-ink"
                         : state === "active"
-                          ? "border-electric/60 bg-electric/15 text-white"
-                          : "border-white/15 bg-white/[0.03] text-white/40"
+                          ? "border-clay/60 bg-clay/15 text-ink"
+                          : "border-ink/15 bg-ink/[0.03] text-ink/40"
                     }`}
                   >
                     {state === "done" ? <Check className="h-3.5 w-3.5" /> : i + 1}
                   </span>
-                  <span className={`hidden sm:inline ${i <= step ? "text-white/80" : "text-white/40"}`}>
+                  <span className={`hidden sm:inline ${i <= step ? "text-ink/80" : "text-ink/40"}`}>
                     {label}
                   </span>
                 </button>
                 {i < STEPS.length - 1 && (
                   <span
                     className={`mx-3 h-px flex-1 transition ${
-                      i < step ? "bg-electric/50" : "bg-white/10"
+                      i < step ? "bg-clay/50" : "bg-ink/10"
                     }`}
                   />
                 )}
@@ -260,7 +260,7 @@ export default function BuildRequestForm() {
                     <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} className="field" placeholder="Optional" />
                   </div>
                 </div>
-                <p className="text-center text-xs text-white/35">
+                <p className="text-center text-xs text-ink/35">
                   No spam, no obligation. You&apos;ll get a real reply from a real person within one business day.
                 </p>
               </>
@@ -313,7 +313,7 @@ function Group({ label, required, children }: { label: string; required?: boolea
   return (
     <div>
       <p className="field-label">
-        {label} {required && <span className="text-electric">*</span>}
+        {label} {required && <span className="text-clay">*</span>}
       </p>
       {children}
     </div>
@@ -337,10 +337,10 @@ function ChipRow({
           key={o.id}
           type="button"
           onClick={() => onPick(o.id)}
-          className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 ${
+          className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
             value === o.id
-              ? "border-electric/60 bg-electric/15 text-white"
-              : "border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white"
+              ? "border-clay/60 bg-clay/15 text-ink"
+              : "border-ink/10 bg-ink/[0.03] text-ink/60 hover:border-ink/25 hover:text-ink"
           }`}
         >
           {o.label}

@@ -24,13 +24,13 @@ export default function AboutPage() {
             <span className="eyebrow">About</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-6xl">
               A personal AI studio, not a{" "}
               <span className="text-gradient-brand">software factory</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/65">
               AI Shop exists for one reason: most people know AI could help their business or life,
               but have no idea what to actually build — and the agencies that do cost a fortune and
               move slowly. So we made it simple. You describe the outcome you want. We design, build
@@ -42,7 +42,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="relative py-16">
-        <div className="mx-auto max-w-3xl space-y-6 px-4 text-lg leading-relaxed text-white/70">
+        <div className="mx-auto max-w-3xl space-y-6 px-4 text-lg leading-relaxed text-ink/70">
           <Reveal>
             <p>
               Based in Surrey, BC and working with clients worldwide, AI Shop is built around a
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* Principles */}
-      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading eyebrow="How we work" title="What you can count on" />
@@ -87,14 +87,14 @@ export default function AboutPage() {
         <GlowBackground />
         <div className="mx-auto max-w-2xl px-4">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
               Let&apos;s build something that works
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 text-white/60">
+            <p className="mx-auto mt-4 text-ink/60">
               Tell us your goal, or just reach out at{" "}
-              <a href={`mailto:${site.email}`} className="underline hover:text-white">
+              <a href={`mailto:${site.email}`} className="underline hover:text-ink">
                 {site.email}
               </a>
               .

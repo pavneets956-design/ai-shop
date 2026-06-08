@@ -63,8 +63,8 @@ export function Logo({
 }) {
   return (
     <Link href={href} onClick={onClick} className={`group flex items-center gap-2.5 ${className}`}>
-      <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(79,140,255,0.45))]" />
-      <span className="font-display text-lg font-semibold tracking-tight text-white">AI Shop</span>
+      <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(199,93,67,0.32))]" />
+      <span className="font-display text-lg font-semibold tracking-tight text-ink">AI Shop</span>
     </Link>
   );
 }

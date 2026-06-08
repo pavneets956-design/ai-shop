@@ -19,14 +19,14 @@ export default function HowItWorks() {
           return (
             <Reveal key={s.title} delay={idx * 0.08}>
               <div className="relative text-center lg:text-left">
-                <div className="mx-auto flex h-[68px] w-[68px] items-center justify-center rounded-2xl border border-white/10 bg-obsidian-100 lg:mx-0">
-                  <Icon className="h-6 w-6 text-electric" />
+                <div className="mx-auto flex h-[68px] w-[68px] items-center justify-center rounded-2xl border border-ink/10 bg-paper-100 lg:mx-0">
+                  <Icon className="h-6 w-6 text-clay" />
                   <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brand-gradient text-xs font-bold text-white lg:left-[52px] lg:right-auto">
                     {idx + 1}
                   </span>
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">{s.body}</p>
+                <h3 className="mt-5 text-lg font-semibold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/55">{s.body}</p>
               </div>
             </Reveal>
           );

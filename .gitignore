@@ -45,3 +45,4 @@ next-env.d.ts
 
 # Root QA / design screenshots (local only)
 /*.png
+/*.jpeg

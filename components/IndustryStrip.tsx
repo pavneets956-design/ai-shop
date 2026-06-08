@@ -25,7 +25,7 @@ export default function IndustryStrip() {
         {[...industries, ...industries].map((name, i) => (
           <span
             key={`${name}-${i}`}
-            className="whitespace-nowrap rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-sm text-white/55"
+            className="whitespace-nowrap rounded-full border border-ink/10 bg-ink/[0.03] px-5 py-2 text-sm text-ink/55"
           >
             {name}
           </span>

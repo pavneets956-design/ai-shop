@@ -21,19 +21,19 @@ export default function CreatePage() {
             <span className="eyebrow">Start a build</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               Tell us what you want to build
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">
               Answer a few quick questions. You&apos;ll get a real reply with a plan and a quote
               within one business day — no obligation.
             </p>
           </Reveal>
         </div>
 
-        <Suspense fallback={<div className="h-96 animate-pulse rounded-3xl border border-white/10 bg-white/[0.02]" />}>
+        <Suspense fallback={<div className="h-96 animate-pulse rounded-3xl border border-ink/10 bg-ink/[0.02]" />}>
           <BuildRequestForm />
         </Suspense>
       </div>

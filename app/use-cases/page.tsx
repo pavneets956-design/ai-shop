@@ -32,12 +32,12 @@ export default function UseCasesIndex() {
             <span className="eyebrow">Use cases</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               How AI fits <span className="text-gradient-brand">your industry</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/60">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/60">
               Practical guides on exactly what we&apos;d build for your kind of business — what it
               does, how it works, and what it costs.
             </p>
@@ -51,13 +51,13 @@ export default function UseCasesIndex() {
             {useCases.map((u, idx) => (
               <Reveal key={u.slug} delay={(idx % 2) * 0.06}>
                 <Link href={`/use-cases/${u.slug}`} className="border-glow glass-card group flex h-full flex-col">
-                  <p className="text-xs uppercase tracking-wide text-electric">{u.industry}</p>
-                  <h2 className="mt-2 flex items-center gap-1 font-display text-xl font-semibold text-white">
+                  <p className="text-xs uppercase tracking-wide text-clay">{u.industry}</p>
+                  <h2 className="mt-2 flex items-center gap-1 font-display text-xl font-semibold text-ink">
                     {u.solution}
-                    <ArrowUpRight className="h-4 w-4 text-white/20 transition group-hover:text-white" />
+                    <ArrowUpRight className="h-4 w-4 text-ink/20 transition group-hover:text-ink" />
                   </h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-white/55">{u.answer.split(". ")[0]}.</p>
-                  <span className="mt-4 text-sm font-medium text-white/70 group-hover:text-electric">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/55">{u.answer.split(". ")[0]}.</p>
+                  <span className="mt-4 text-sm font-medium text-ink/70 group-hover:text-clay">
                     Read the guide →
                   </span>
                 </Link>

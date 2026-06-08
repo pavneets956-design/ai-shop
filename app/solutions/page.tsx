@@ -29,13 +29,13 @@ export default function SolutionsPage() {
             <span className="eyebrow">Solutions</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-6xl">
               Every kind of AI system,{" "}
               <span className="text-gradient-brand">built around you</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-white/60">
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink/60">
               Stop guessing which AI tool to use. Pick the outcome you want and we&apos;ll build the
               exact system for it — from a single automation to a full custom app.
             </p>
@@ -56,7 +56,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading
@@ -73,12 +73,12 @@ export default function SolutionsPage() {
       <section className="relative py-20 text-center sm:py-28">
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
               Not sure which one fits?
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 max-w-xl text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-ink/60">
               Use the AI Solution Finder or just tell us your goal — we&apos;ll map it to the right
               build and give you a price.
             </p>

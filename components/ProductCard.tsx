@@ -51,7 +51,7 @@ export default function ProductCard({
             </div>
           </div>
           
-          <h3 className="text-lg font-light text-white mb-2 group-hover:text-gray-300 transition-colors line-clamp-1">
+          <h3 className="text-lg font-light text-ink mb-2 group-hover:text-gray-300 transition-colors line-clamp-1">
             {title}
           </h3>
           
@@ -59,13 +59,13 @@ export default function ProductCard({
             {description}
           </p>
 
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <div className="flex items-center justify-between pt-4 border-t border-ink/10">
             <div className="flex items-center text-xs text-gray-500">
               <User className="w-3 h-3 mr-1" />
               <span>{creator}</span>
             </div>
             <div className="text-right">
-              <div className="flex items-center text-white font-light">
+              <div className="flex items-center text-ink font-light">
                 <span className="text-lg">${price}</span>
                 <span className="text-xs text-gray-500 ml-1">
                   {pricingType === "monthly" && "/mo"}

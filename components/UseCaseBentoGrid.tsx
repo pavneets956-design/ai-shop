@@ -28,18 +28,18 @@ export default function UseCaseBentoGrid() {
               href={`/create?category=${c.slug}`}
               className="border-glow glass-card group flex h-full flex-col"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-electric/20 to-violet-glow/20 text-electric">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-clay/20 to-clay/20 text-clay">
                 <Icon className="h-5 w-5" />
               </span>
-              <h3 className={`mt-4 font-semibold text-white ${feature ? "text-2xl" : "text-lg"}`}>
+              <h3 className={`mt-4 font-semibold text-ink ${feature ? "text-2xl" : "text-lg"}`}>
                 {c.name}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-white/55">{c.blurb}</p>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/55">{c.blurb}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {c.examples.slice(0, feature ? 4 : 2).map((ex) => (
                   <span
                     key={ex}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-white/55"
+                    className="rounded-full border border-ink/10 bg-ink/[0.03] px-2.5 py-1 text-xs text-ink/55"
                   >
                     {ex}
                   </span>

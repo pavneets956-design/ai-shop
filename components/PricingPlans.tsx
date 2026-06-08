@@ -20,16 +20,16 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
             key={plan.id}
             className={`border rounded-2xl p-6 shadow-sm transition-all ${
               isPopular
-                ? "border-white/30 bg-white/5"
-                : "border-white/10 hover:border-white/20 bg-transparent"
+                ? "border-ink/30 bg-ink/5"
+                : "border-ink/10 hover:border-ink/20 bg-transparent"
             }`}
           >
             {/* Plan Header */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-2xl font-light text-white">{plan.name}</h3>
+                <h3 className="text-2xl font-light text-ink">{plan.name}</h3>
                 {isPopular && (
-                  <span className="px-2 py-1 text-xs font-light bg-white/10 text-white border border-white/20 rounded">
+                  <span className="px-2 py-1 text-xs font-light bg-ink/10 text-ink border border-ink/20 rounded">
                     Most popular
                   </span>
                 )}
@@ -39,12 +39,12 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
               <div className="mb-2">
                 {plan.monthlyPrice ? (
                   <>
-                    <span className="text-4xl font-light text-white">{formatPrice(plan.monthlyPrice)}</span>
+                    <span className="text-4xl font-light text-ink">{formatPrice(plan.monthlyPrice)}</span>
                     <span className="text-gray-400 font-light text-sm ml-2">/month</span>
                   </>
                 ) : plan.perCallPrice ? (
                   <>
-                    <span className="text-4xl font-light text-white">{formatPrice(plan.perCallPrice)}</span>
+                    <span className="text-4xl font-light text-ink">{formatPrice(plan.perCallPrice)}</span>
                     <span className="text-gray-400 font-light text-sm ml-2">/call</span>
                     <p className="text-xs text-gray-500 font-light mt-1">No monthly fee</p>
                   </>
@@ -57,16 +57,16 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
             </div>
 
             {/* Limits */}
-            <div className="mb-4 pb-4 border-b border-white/10">
+            <div className="mb-4 pb-4 border-b border-ink/10">
               <div className="flex items-center justify-between text-sm mb-2">
                 <span className="text-gray-400 font-light">Calls:</span>
-                <span className="text-white font-light">
+                <span className="text-ink font-light">
                   {plan.includedCalls === "usage" ? "Unlimited" : `${plan.includedCalls.toLocaleString()}/month`}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-gray-400 font-light">Numbers:</span>
-                <span className="text-white font-light">
+                <span className="text-ink font-light">
                   {plan.maxNumbers === "usage" ? "Unlimited" : plan.maxNumbers}
                 </span>
               </div>
@@ -97,7 +97,7 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
                 className={`w-full py-3 rounded-lg font-light transition-all ${
                   isPopular
                     ? "bg-white text-black hover:bg-gray-200"
-                    : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5"
+                    : "border border-ink/20 text-ink hover:border-ink/40 hover:bg-ink/5"
                 }`}
               >
                 Select {plan.name}

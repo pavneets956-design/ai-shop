@@ -24,7 +24,7 @@ export const useCases: UseCase[] = [
     industry: "Contractors & Trades",
     question: "How do I get an AI receptionist for my contracting business?",
     answer:
-      "An AI receptionist for contractors answers every call and text 24/7 — even while you're on a roof or under a sink — books the job, captures the details and texts them to you instantly. AI Shop builds and trains one on your services, pricing and service area, live in about 5 business days, starting at $750 CAD.",
+      "An AI receptionist for contractors answers every call and text 24/7 — even while you're on a roof or under a sink — books the job, captures the details and texts them to you instantly. AI Shop builds and trains one on your services, pricing and service area, live in about 5 business days, starting at $1,000 CAD.",
     pain: "Trades lose thousands in jobs every month to missed calls and voicemails customers never leave. The first contractor to pick up usually wins the job.",
     steps: [
       "We learn your services, pricing, hours and service area",
@@ -98,7 +98,7 @@ export const useCases: UseCase[] = [
     industry: "Restaurants",
     question: "How do I add an AI chatbot to my restaurant website?",
     answer:
-      "An AI chatbot for restaurants answers questions about hours, menu, reservations, allergens and location instantly — and takes booking or catering requests. AI Shop trains one on your menu and details and adds it to your site, starting at $750 CAD.",
+      "An AI chatbot for restaurants answers questions about hours, menu, reservations, allergens and location instantly — and takes booking or catering requests. AI Shop trains one on your menu and details and adds it to your site, starting at $1,000 CAD.",
     pain: "Restaurants get the same handful of questions all day — hours, do you take reservations, is there parking — pulling staff off the floor to answer DMs and calls.",
     steps: [
       "We train the bot on your menu, hours, location and policies",
@@ -133,7 +133,7 @@ export const useCases: UseCase[] = [
     industry: "Clinics & Health",
     question: "How can a clinic use an AI receptionist to handle calls and bookings?",
     answer:
-      "An AI receptionist for clinics answers patient calls and messages, books and reschedules appointments, sends reminders to cut no-shows, and answers routine questions about hours and services. AI Shop builds it from $750 CAD, or as a connected system from $2,500 CAD.",
+      "An AI receptionist for clinics answers patient calls and messages, books and reschedules appointments, sends reminders to cut no-shows, and answers routine questions about hours and services. AI Shop builds it from $1,000 CAD, or as a connected system from $2,500 CAD.",
     pain: "Front desks are overwhelmed — phones ringing while patients wait, no-shows eating the schedule, and after-hours calls going unanswered.",
     steps: [
       "We train it on your services, providers and policies",
@@ -168,7 +168,7 @@ export const useCases: UseCase[] = [
     industry: "Small Business",
     question: "How do I automate invoice reminders and get paid faster?",
     answer:
-      "An AI invoice reminder system tracks your unpaid invoices and automatically nudges clients — politely, on a schedule — until they pay, then stops. AI Shop sets this up from $750 CAD, connected to your invoicing tool.",
+      "An AI invoice reminder system tracks your unpaid invoices and automatically nudges clients — politely, on a schedule — until they pay, then stops. AI Shop sets this up from $1,000 CAD, connected to your invoicing tool.",
     pain: "Chasing late payments is awkward, time-consuming, and easy to forget — so invoices sit unpaid for weeks longer than they should.",
     steps: [
       "We connect it to your invoicing or accounting tool",
@@ -238,7 +238,7 @@ export const useCases: UseCase[] = [
     industry: "Dental Practices",
     question: "How can a dental practice use an AI receptionist to book patients and cut no-shows?",
     answer:
-      "An AI receptionist for dental practices answers patient calls and texts, books and reschedules cleanings and checkups, and sends automatic reminders that cut no-shows. AI Shop trains it on your services, providers and hours, starting at $750 CAD, or as a connected system from $2,500 CAD.",
+      "An AI receptionist for dental practices answers patient calls and texts, books and reschedules cleanings and checkups, and sends automatic reminders that cut no-shows. AI Shop trains it on your services, providers and hours, starting at $1,000 CAD, or as a connected system from $2,500 CAD.",
     pain: "Dental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back.",
     steps: [
       "We train it on your treatments, providers, hours and policies",
@@ -273,7 +273,7 @@ export const useCases: UseCase[] = [
     industry: "Salons & Beauty",
     question: "How do I get an AI booking assistant for my salon or spa?",
     answer:
-      "An AI booking assistant for salons answers DMs, calls and texts, books appointments into your calendar, and sends reminders so clients actually show up. AI Shop sets one up trained on your services and stylists, starting at $750 CAD.",
+      "An AI booking assistant for salons answers DMs, calls and texts, books appointments into your calendar, and sends reminders so clients actually show up. AI Shop sets one up trained on your services and stylists, starting at $1,000 CAD.",
     pain: "Salons lose bookings to missed DMs and after-hours messages, and no-shows quietly eat the schedule every week.",
     steps: [
       "We train it on your services, stylists, prices and hours",
@@ -308,7 +308,7 @@ export const useCases: UseCase[] = [
     industry: "E-commerce",
     question: "How do I add an AI chatbot to my e-commerce store?",
     answer:
-      "An AI chatbot for e-commerce answers product, sizing, shipping and returns questions instantly, recommends products, and recovers carts — trained on your catalog and policies. AI Shop adds one to your store starting at $750 CAD.",
+      "An AI chatbot for e-commerce answers product, sizing, shipping and returns questions instantly, recommends products, and recovers carts — trained on your catalog and policies. AI Shop adds one to your store starting at $1,000 CAD.",
     pain: "Online shoppers bounce when they can't get a quick answer about sizing, stock or shipping — and every unanswered question is a lost sale.",
     steps: [
       "We train it on your catalog, shipping and returns policies",
@@ -448,7 +448,7 @@ export const useCases: UseCase[] = [
     industry: "Real Estate",
     question: "Can a real estate agent get an AI receptionist to answer buyer and seller calls?",
     answer:
-      "An AI receptionist for real estate answers buyer and seller calls and texts 24/7, qualifies them, books showings and valuations, and texts you the hot ones. AI Shop builds it from $750 CAD, or as a full lead system from $2,500 CAD.",
+      "An AI receptionist for real estate answers buyer and seller calls and texts 24/7, qualifies them, books showings and valuations, and texts you the hot ones. AI Shop builds it from $1,000 CAD, or as a full lead system from $2,500 CAD.",
     pain: "Agents are in showings and meetings all day — and a missed call is often a buyer or listing that goes to the next agent.",
     steps: [
       "We train it on your listings, areas and process",

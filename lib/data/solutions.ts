@@ -94,7 +94,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Answers calls & messages 24/7, books appointments, and texts you the details.",
     icon: "PhoneCall",
     accent: "electric",
-    startsAt: 750,
+    startsAt: 1000,
     packageId: "starter",
   },
   {
@@ -114,7 +114,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Automatically nudges clients on overdue invoices — politely, on schedule, until paid.",
     icon: "Receipt",
     accent: "cyan",
-    startsAt: 750,
+    startsAt: 1000,
     packageId: "starter",
   },
   {
@@ -134,7 +134,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Resolves common questions instantly and hands the hard ones to a human.",
     icon: "Headphones",
     accent: "electric",
-    startsAt: 750,
+    startsAt: 1000,
     packageId: "starter",
   },
   {
@@ -164,7 +164,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "A chatbot trained on your site that answers visitors and captures leads.",
     icon: "MessagesSquare",
     accent: "gold",
-    startsAt: 750,
+    startsAt: 1000,
     packageId: "starter",
   },
 ];

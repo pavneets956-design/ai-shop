@@ -1,10 +1,12 @@
-export type PriceFormat = "flat" | "from" | "quote";
+export type PriceFormat = "flat" | "from" | "band" | "quote";
 
 export interface ServicePackage {
   id: "starter" | "business" | "custom";
   name: string;
   tagline: string;
-  price: number; // CAD
+  price: number; // CAD (the floor)
+  priceHigh?: number; // upper bound for "band" format
+  priceTypical?: number; // "most land around" figure
   priceFormat: PriceFormat;
   timeline: string;
   forWho: string;
@@ -21,7 +23,7 @@ export const packages: ServicePackage[] = [
     id: "starter",
     name: "Starter AI Setup",
     tagline: "One AI win, live in days.",
-    price: 750,
+    price: 1000,
     priceFormat: "flat",
     timeline: "Live in ~5 business days",
     forWho: "Solo operators & small local businesses who want one specific win.",
@@ -39,7 +41,9 @@ export const packages: ServicePackage[] = [
     name: "Business AI System",
     tagline: "A connected system that runs the boring parts.",
     price: 2500,
-    priceFormat: "from",
+    priceHigh: 5000,
+    priceTypical: 3500,
+    priceFormat: "band",
     timeline: "Live in 2–3 weeks",
     forWho: "Established businesses losing money to slow replies and manual admin.",
     highlight: true,
@@ -96,10 +100,14 @@ export const carePlan: CarePlan = {
 
 const nf = new Intl.NumberFormat("en-CA");
 
-export function formatPackagePrice(p: Pick<ServicePackage, "price" | "priceFormat">): string {
+export function formatPackagePrice(
+  p: Pick<ServicePackage, "price" | "priceHigh" | "priceFormat">
+): string {
   const amount = `$${nf.format(p.price)}`;
   if (p.priceFormat === "flat") return amount;
   if (p.priceFormat === "from") return `From ${amount}`;
+  if (p.priceFormat === "band")
+    return p.priceHigh ? `${amount}–$${nf.format(p.priceHigh)}` : `From ${amount}`;
   return "Request quote";
 }
 

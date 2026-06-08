@@ -51,12 +51,12 @@ export default function CategoryGrid() {
             href={`/products?category=${category.name.toLowerCase()}`}
             className="group"
           >
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors">
+            <div className="border border-ink/10 rounded-lg p-6 hover:border-ink/20 transition-colors">
               <div className="flex items-start justify-between mb-4">
-                <Icon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+                <Icon className="w-6 h-6 text-gray-400 group-hover:text-ink transition-colors" />
                 <span className="text-xs text-gray-500">{category.count}</span>
               </div>
-              <h3 className="text-xl font-light text-white mb-2 group-hover:text-gray-300 transition-colors">
+              <h3 className="text-xl font-light text-ink mb-2 group-hover:text-gray-300 transition-colors">
                 {category.name}
               </h3>
               <p className="text-sm text-gray-500 leading-relaxed">

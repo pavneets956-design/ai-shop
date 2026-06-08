@@ -42,12 +42,12 @@ export default function FAQPage() {
             <span className="eyebrow">FAQ</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               Everything you might ask
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">
               Straight answers about what we build, what it costs, and how it works.
             </p>
           </Reveal>
@@ -74,10 +74,10 @@ export default function FAQPage() {
       <section className="relative py-20 text-center">
         <div className="mx-auto max-w-2xl px-4">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold text-white">Still have a question?</h2>
+            <h2 className="font-display text-3xl font-semibold text-ink">Still have a question?</h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 text-white/60">
+            <p className="mx-auto mt-4 text-ink/60">
               Ask it directly — start a build request and tell us what you&apos;re thinking.
             </p>
           </Reveal>

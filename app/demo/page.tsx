@@ -20,12 +20,12 @@ export default function DemoPage() {
             <span className="eyebrow">Live demo</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               Talk to an AI receptionist
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">
               No sign-up, no script. Pick a business, then message it like a customer would —
               this is the exact experience your callers would get.
             </p>

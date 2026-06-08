@@ -10,28 +10,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — obsidian base with electric accents
-        obsidian: {
-          DEFAULT: "#05060A",
-          50: "#0a0c14",
-          100: "#0d1018",
-          200: "#11151f",
+        // Warm editorial palette — ivory paper, warm ink, single clay accent.
+        paper: {
+          DEFAULT: "#FAF7F2", // base background (warm ivory)
+          2: "#F2ECE2", // deeper alternating section
+          card: "#FFFFFF",
         },
-        ink: "#070810",
-        electric: "#4F8CFF",
-        violet: {
-          glow: "#8B5CF6",
+        ink: {
+          DEFAULT: "#1F1B16", // warm near-black text
+          soft: "#6F665C", // warm muted text
         },
-        cyan: {
-          glow: "#22D3EE",
+        clay: {
+          DEFAULT: "#C75D43", // primary accent (terracotta/clay)
+          dark: "#A8482F",
+          soft: "#E8A38C",
         },
-        gold: {
-          soft: "#F5C16C",
-        },
+        // Legacy tokens kept as warm fallbacks so any unswept refs still compile.
+        obsidian: { DEFAULT: "#FAF7F2", 50: "#F2ECE2", 100: "#F2ECE2", 200: "#EAE3D8" },
+        electric: "#C75D43",
+        violet: { glow: "#C75D43" },
+        cyan: { glow: "#D97757" },
+        gold: { soft: "#C28A3A" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-space)", "var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-serif)", "Georgia", "Cambria", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out both",
@@ -89,13 +92,14 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "brand-gradient": "linear-gradient(120deg, #4F8CFF 0%, #8B5CF6 45%, #22D3EE 100%)",
+        "brand-gradient": "linear-gradient(120deg, #C75D43 0%, #D97757 100%)",
       },
       boxShadow: {
-        glow: "0 0 40px -8px rgba(79,140,255,0.45)",
-        "glow-violet": "0 0 50px -10px rgba(139,92,246,0.5)",
-        "glow-cyan": "0 0 50px -10px rgba(34,211,238,0.5)",
-        card: "0 20px 60px -20px rgba(0,0,0,0.7)",
+        // Warm, soft, restrained shadows (no neon glow).
+        glow: "0 12px 40px -16px rgba(199,93,67,0.30)",
+        "glow-violet": "0 14px 44px -16px rgba(199,93,67,0.32)",
+        "glow-cyan": "0 14px 44px -16px rgba(217,119,87,0.30)",
+        card: "0 1px 2px rgba(31,27,22,0.04), 0 14px 34px -16px rgba(31,27,22,0.14)",
       },
     },
   },

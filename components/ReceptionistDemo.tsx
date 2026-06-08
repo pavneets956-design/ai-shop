@@ -79,10 +79,10 @@ export default function ReceptionistDemo() {
               key={b.id}
               type="button"
               onClick={() => pickBusiness(b)}
-              className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 ${
+              className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
                 biz.id === b.id
-                  ? "border-electric/60 bg-electric/15 text-white"
-                  : "border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white"
+                  ? "border-clay/60 bg-clay/15 text-ink"
+                  : "border-ink/10 bg-ink/[0.03] text-ink/60 hover:border-ink/25 hover:text-ink"
               }`}
             >
               {b.chip}
@@ -93,18 +93,18 @@ export default function ReceptionistDemo() {
 
       {/* Chat window */}
       <div className="border-glow glass overflow-hidden rounded-3xl">
-        <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-3">
+        <div className="flex items-center justify-between border-b border-ink/[0.06] px-5 py-3">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
             </span>
-            <span className="text-sm font-medium text-white/80">AI Receptionist — live</span>
+            <span className="text-sm font-medium text-ink/80">AI Receptionist — live</span>
           </div>
           <button
             type="button"
             onClick={reset}
-            className="flex items-center gap-1.5 text-xs text-white/40 transition hover:text-white/70"
+            className="flex items-center gap-1.5 text-xs text-ink/40 transition hover:text-ink/70"
           >
             <RotateCcw className="h-3.5 w-3.5" /> Restart
           </button>
@@ -116,8 +116,8 @@ export default function ReceptionistDemo() {
               <div
                 className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                   m.role === "user"
-                    ? "bg-electric/20 text-white"
-                    : "bg-white/[0.05] text-white/85"
+                    ? "bg-clay/20 text-ink"
+                    : "bg-ink/[0.05] text-ink/85"
                 }`}
               >
                 {m.content}
@@ -126,18 +126,18 @@ export default function ReceptionistDemo() {
           ))}
           {sending && (
             <div className="flex justify-start">
-              <div className="rounded-2xl bg-white/[0.05] px-4 py-3 text-white/60">
+              <div className="rounded-2xl bg-ink/[0.05] px-4 py-3 text-ink/60">
                 <span className="flex gap-1">
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:-0.3s]" />
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:-0.15s]" />
-                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/50" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-ink/50 [animation-delay:-0.3s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-ink/50 [animation-delay:-0.15s]" />
+                  <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-ink/50" />
                 </span>
               </div>
             </div>
           )}
         </div>
 
-        <form onSubmit={send} className="flex items-center gap-2 border-t border-white/[0.06] px-3 py-3">
+        <form onSubmit={send} className="flex items-center gap-2 border-t border-ink/[0.06] px-3 py-3">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -158,14 +158,14 @@ export default function ReceptionistDemo() {
       </div>
 
       {/* Honest framing + CTA */}
-      <p className="mt-3 text-center text-xs text-white/35">
+      <p className="mt-3 text-center text-xs text-ink/35">
         This is a real, live AI receptionist — you&apos;re playing the customer. Pick a business above,
         then ask for a quote, book a job, or describe an emergency.
       </p>
 
-      <div className="mt-6 flex flex-col items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 text-center">
-        <p className="text-white/80">
-          Want one of these answering <span className="text-white">your</span> calls — trained on your
+      <div className="mt-6 flex flex-col items-center gap-3 rounded-2xl border border-ink/[0.07] bg-ink/[0.02] p-6 text-center">
+        <p className="text-ink/80">
+          Want one of these answering <span className="text-ink">your</span> calls — trained on your
           business, booking into your calendar?
         </p>
         <Link href="/create" className="btn-primary">

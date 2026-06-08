@@ -30,7 +30,7 @@ export default function Home() {
         <HeroCommandCenter />
         {/* industry strip */}
         <div className="mx-auto max-w-7xl px-4 pb-10">
-          <p className="mb-4 text-center text-xs uppercase tracking-[0.2em] text-white/35">
+          <p className="mb-4 text-center text-xs uppercase tracking-[0.2em] text-ink/35">
             Built for businesses like yours
           </p>
           <IndustryStrip />
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="relative border-y border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-y border-ink/[0.06] py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED BUILDS */}
-      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading eyebrow="FAQ" title="Questions, answered" />
           <div className="mt-12">
@@ -144,13 +144,13 @@ export default function Home() {
         <GlowBackground />
         <div className="mx-auto max-w-3xl px-4 text-center">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
               Have an idea? Let&apos;s turn it into an{" "}
               <span className="text-gradient-brand">AI system</span>.
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-white/60">
+            <p className="mx-auto mt-5 max-w-xl text-lg text-ink/60">
               Tell us the outcome. We&apos;ll design the system, build it, and get it live — usually
               in days.
             </p>

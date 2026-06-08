@@ -81,14 +81,14 @@ export default function SolutionFinder() {
     <div className="border-glow glass relative mx-auto max-w-4xl overflow-hidden rounded-3xl p-6 shadow-card sm:p-10">
       <div
         className="absolute inset-x-0 top-0 -z-10 h-40 opacity-60 blur-3xl"
-        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(79,140,255,0.3), transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(199,93,67,0.22), transparent 70%)" }}
       />
 
       <AnimatePresence mode="wait">
         {/* ---------- Outcomes ---------- */}
         {step === "outcome" && (
           <motion.div key="outcome" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35 }}>
-            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-white/40">
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink/40">
               Step 1 — Pick your goal
             </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -98,16 +98,16 @@ export default function SolutionFinder() {
                   <button
                     key={o.id}
                     onClick={() => pickOutcome(o.id)}
-                    className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-left transition-all hover:border-electric/40 hover:bg-white/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-electric/50"
+                    className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-ink/[0.03] p-4 text-left transition-all hover:border-clay/40 hover:bg-ink/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-electric/20 to-violet-glow/20 text-electric transition group-hover:scale-110">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-clay/20 to-clay/20 text-clay transition group-hover:scale-110">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-medium text-white">{o.label}</span>
-                      <span className="block truncate text-sm text-white/45">{o.blurb}</span>
+                      <span className="block font-medium text-ink">{o.label}</span>
+                      <span className="block truncate text-sm text-ink/45">{o.blurb}</span>
                     </span>
-                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white/20 transition group-hover:translate-x-1 group-hover:text-electric" />
+                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-ink/20 transition group-hover:translate-x-1 group-hover:text-clay" />
                   </button>
                 );
               })}
@@ -118,7 +118,7 @@ export default function SolutionFinder() {
         {/* ---------- Questions ---------- */}
         {step === "questions" && (
           <motion.div key="questions" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35 }}>
-            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-white/40">
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink/40">
               Step 2 — Two quick questions
             </p>
 
@@ -171,26 +171,26 @@ export default function SolutionFinder() {
         {/* ---------- Loading ---------- */}
         {step === "loading" && (
           <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col items-center justify-center py-20 text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-electric" />
-            <p className="mt-4 text-white/70">Designing your AI system…</p>
-            <p className="mt-1 text-sm text-white/40">Matching your goal to the right build</p>
+            <Loader2 className="h-8 w-8 animate-spin text-clay" />
+            <p className="mt-4 text-ink/70">Designing your AI system…</p>
+            <p className="mt-1 text-sm text-ink/40">Matching your goal to the right build</p>
           </motion.div>
         )}
 
         {/* ---------- Result ---------- */}
         {step === "result" && rec && (
           <motion.div key="result" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
-            <div className="mb-1 flex items-center gap-2 text-sm text-electric">
+            <div className="mb-1 flex items-center gap-2 text-sm text-clay">
               <Sparkles className="h-4 w-4" />
               {rec.source === "ai" ? "Personalized for you" : "Recommended for you"}
             </div>
-            <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">{rec.packageName}</h3>
-            <p className="mt-3 text-white/65">{rec.intro}</p>
+            <h3 className="font-display text-2xl font-semibold text-ink sm:text-3xl">{rec.packageName}</h3>
+            <p className="mt-3 text-ink/65">{rec.intro}</p>
 
             <ul className="mt-5 space-y-3">
               {rec.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-white/85">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-electric/20 text-electric">
+                <li key={b} className="flex items-start gap-3 text-ink/85">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-clay/20 text-clay">
                     <Check className="h-3 w-3" />
                   </span>
                   <span className="text-sm">{b}</span>
@@ -204,7 +204,7 @@ export default function SolutionFinder() {
               <Stat icon={<Clock3 className="h-4 w-4" />} label="Time saved" value={rec.timeSaved} />
             </div>
 
-            <p className="mt-3 text-xs text-white/35">Final scope and price confirmed on a quick call.</p>
+            <p className="mt-3 text-xs text-ink/35">Final scope and price confirmed on a quick call.</p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link href={`/create?package=${rec.packageId}&outcome=${input.outcome}`} className="btn-primary flex-1">
@@ -213,7 +213,7 @@ export default function SolutionFinder() {
             </div>
 
             {/* email capture */}
-            <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="mt-4 rounded-2xl border border-ink/10 bg-ink/[0.02] p-4">
               {saved ? (
                 <p className="flex items-center justify-center gap-2 py-2 text-sm text-emerald-400">
                   <Check className="h-4 w-4" /> Sent — check your inbox. We&apos;ll be in touch.
@@ -239,9 +239,9 @@ export default function SolutionFinder() {
             <button onClick={reset} className="btn-ghost mx-auto mt-5 flex">
               <ArrowLeft className="h-4 w-4" /> Start over
             </button>
-            <p className="mt-2 text-center text-xs text-white/30">
+            <p className="mt-2 text-center text-xs text-ink/30">
               Prefer to talk? Email{" "}
-              <a href={`mailto:${site.email}`} className="underline hover:text-white/60">
+              <a href={`mailto:${site.email}`} className="underline hover:text-ink/60">
                 {site.email}
               </a>
             </p>
@@ -257,10 +257,10 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full border px-4 py-2 text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-electric/50 ${
+      className={`rounded-full border px-4 py-2 text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
         active
-          ? "border-electric/60 bg-electric/15 text-white"
-          : "border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white"
+          ? "border-clay/60 bg-clay/15 text-ink"
+          : "border-ink/10 bg-ink/[0.03] text-ink/60 hover:border-ink/25 hover:text-ink"
       }`}
     >
       {children}
@@ -270,12 +270,12 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
 
 function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-      <div className="flex items-center gap-2 text-white/40">
+    <div className="rounded-2xl border border-ink/10 bg-ink/[0.03] p-4">
+      <div className="flex items-center gap-2 text-ink/40">
         {icon}
         <span className="text-xs uppercase tracking-wide">{label}</span>
       </div>
-      <p className="mt-1 font-medium text-white">{value}</p>
+      <p className="mt-1 font-medium text-ink">{value}</p>
     </div>
   );
 }

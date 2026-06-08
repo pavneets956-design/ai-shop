@@ -17,7 +17,7 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
           <Reveal key={p.id} delay={idx * 0.08}>
             <div
               className={`border-glow glass-card flex h-full flex-col ${
-                p.highlight ? `border-violet-glow/40 ${accentRing[p.accent]}` : ""
+                p.highlight ? `border-clay/40 ${accentRing[p.accent]}` : ""
               }`}
             >
               {p.badge && (
@@ -25,25 +25,28 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
                   {p.badge}
                 </span>
               )}
-              <h3 className="text-xl font-semibold text-white">{p.name}</h3>
-              <p className="mt-1 text-sm text-white/50">{p.tagline}</p>
+              <h3 className="text-xl font-semibold text-ink">{p.name}</h3>
+              <p className="mt-1 text-sm text-ink/50">{p.tagline}</p>
 
               <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-4xl font-semibold text-white">
+                <span className="font-display text-4xl font-semibold text-ink">
                   {formatPackagePrice(p)}
                 </span>
-                {p.priceFormat !== "quote" && <span className="text-sm text-white/40">CAD</span>}
+                {p.priceFormat !== "quote" && <span className="text-sm text-ink/40">CAD</span>}
               </div>
-              <p className="mt-1 text-xs text-white/40">{p.timeline}</p>
+              <p className="mt-1 text-xs text-ink/40">
+                {p.timeline}
+                {p.priceTypical ? ` · most land around $${p.priceTypical.toLocaleString()}` : ""}
+              </p>
 
-              <p className="mt-4 text-sm text-white/60">
-                <span className="text-white/40">For:</span> {p.forWho}
+              <p className="mt-4 text-sm text-ink/60">
+                <span className="text-ink/40">For:</span> {p.forWho}
               </p>
 
               <ul className="mt-5 flex-1 space-y-3">
                 {p.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-white/75">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-electric" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-ink/75">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -65,16 +68,16 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
           <div className="border-glow glass mt-6 flex flex-col items-start justify-between gap-5 rounded-2xl p-6 sm:flex-row sm:items-center">
             <div>
               <div className="flex flex-wrap items-baseline gap-2">
-                <h3 className="text-lg font-semibold text-white">{carePlan.name}</h3>
+                <h3 className="text-lg font-semibold text-ink">{carePlan.name}</h3>
                 <span className="font-display text-2xl font-semibold text-gradient-brand">
                   ${carePlan.monthly}
-                  <span className="text-sm font-normal text-white/40">/mo</span>
+                  <span className="text-sm font-normal text-ink/40">/mo</span>
                 </span>
-                <span className="text-xs text-white/40">
+                <span className="text-xs text-ink/40">
                   (or ${carePlan.annualMonthly}/mo billed annually)
                 </span>
               </div>
-              <p className="mt-2 max-w-2xl text-sm text-white/55">
+              <p className="mt-2 max-w-2xl text-sm text-ink/55">
                 {carePlan.covers.join(" · ")}
               </p>
             </div>

@@ -14,12 +14,12 @@ export default function PrivacyPage() {
     <section className="relative pb-24 pt-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <span className="eyebrow">Legal</span>
-        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-white/40">Last updated: {updated}</p>
+        <p className="mt-4 text-sm text-ink/40">Last updated: {updated}</p>
 
-        <div className="legal-prose mt-10 space-y-8 text-white/70">
+        <div className="legal-prose mt-10 space-y-8 text-ink/70">
           <p>
             {site.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;) builds custom AI software for businesses
             and individuals. This policy explains what information we collect through this website and
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <p>
               You can request a copy of the information we hold about you, ask us to correct it, or ask
               us to delete it. Email{" "}
-              <a href={`mailto:${site.email}`} className="text-electric hover:underline">
+              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
                 {site.email}
               </a>{" "}
               and we&apos;ll handle it.
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
           <Section title="Contact">
             <p>
               Questions about this policy? Email{" "}
-              <a href={`mailto:${site.email}`} className="text-electric hover:underline">
+              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
                 {site.email}
               </a>
               . {site.name} is based in {site.region}, Canada.
@@ -107,8 +107,8 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-semibold text-white">{title}</h2>
-      <div className="mt-3 space-y-3 leading-relaxed [&_a]:font-medium [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-white/90 [&_ul]:space-y-2">
+      <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
+      <div className="mt-3 space-y-3 leading-relaxed [&_a]:font-medium [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink/90 [&_ul]:space-y-2">
         {children}
       </div>
     </div>

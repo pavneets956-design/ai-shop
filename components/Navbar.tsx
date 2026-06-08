@@ -10,7 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-obsidian/70 backdrop-blur-xl">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-ink/[0.06] bg-paper/70 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
@@ -19,8 +19,8 @@ export default function Navbar() {
             className="group flex items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(79,140,255,0.45))]" />
-            <span className="font-display text-lg font-semibold tracking-tight text-white">
+            <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(199,93,67,0.32))]" />
+            <span className="font-display text-lg font-semibold tracking-tight text-ink">
               AI Shop
             </span>
           </Link>
@@ -31,7 +31,7 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+                className="text-sm font-medium text-ink/60 transition-colors hover:text-ink"
               >
                 {l.label}
               </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="p-2 text-white md:hidden"
+            className="p-2 text-ink md:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -57,14 +57,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-obsidian/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-ink/10 bg-paper/95 backdrop-blur-xl md:hidden">
           <div className="space-y-1 px-4 pb-6 pt-4">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-3 text-base text-white/75 transition hover:bg-white/5 hover:text-white"
+                className="block rounded-lg px-3 py-3 text-base text-ink/75 transition hover:bg-ink/5 hover:text-ink"
               >
                 {l.label}
               </Link>

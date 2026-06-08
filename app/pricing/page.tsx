@@ -10,9 +10,9 @@ import { faqsByCategory } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Pricing — Custom AI Builds from $750 CAD",
+  title: "Pricing — Custom AI Builds from $1,000 CAD",
   description:
-    "Clear, fair pricing for custom AI. Starter AI Setup from $750 CAD, Business AI System from $2,500, Custom AI App from $7,500, plus an optional $250/mo AI Care Plan.",
+    "Clear, fair pricing for custom AI. Starter AI Setup from $1,000 CAD, Business AI System from $2,500, Custom AI App from $7,500, plus an optional $250/mo AI Care Plan.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -30,12 +30,12 @@ export default function PricingPage() {
             <span className="eyebrow">Pricing</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
               Pricing that&apos;s easy to <span className="text-gradient-brand">say yes</span> to
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-white/60">
+            <p className="mx-auto mt-5 max-w-xl text-lg text-ink/60">
               Real prices in CAD — no &ldquo;contact us for everything.&rdquo; Start with one tool or
               go all the way to a custom app you own. A part-time admin costs more every month than a
               whole system costs once.
@@ -50,7 +50,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="relative border-t border-white/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading eyebrow="FAQ" title="Pricing & process questions" />
@@ -63,12 +63,12 @@ export default function PricingPage() {
       <section className="relative py-20 text-center sm:py-24">
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
               Get a fixed quote, free
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 max-w-xl text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-ink/60">
               Tell us what you want built and we&apos;ll send a clear plan and price within one
               business day.
             </p>

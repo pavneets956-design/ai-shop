@@ -25,7 +25,7 @@ export const faqs: FAQ[] = [
   {
     category: "technical",
     q: "Can you connect AI to my existing website?",
-    a: "Yes. AI Shop can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $750 CAD.",
+    a: "Yes. AI Shop can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $1,000 CAD.",
   },
   {
     category: "general",
@@ -40,12 +40,12 @@ export const faqs: FAQ[] = [
   {
     category: "pricing",
     q: "How much does it cost to build an AI tool or app?",
-    a: "AI Shop has three clear tiers: Starter AI Setup at $750 CAD flat for one tool, Business AI System from $2,500 CAD for a connected system, and Custom AI App from $7,500 CAD for a full build. There's also an optional AI Care Plan at $250/month for hosting, monitoring and ongoing tweaks.",
+    a: "AI Shop has three clear tiers: Starter AI Setup at $1,000 CAD flat for one tool, Business AI System from $2,500 CAD for a connected system, and Custom AI App from $7,500 CAD for a full build. There's also an optional AI Care Plan at $250/month for hosting, monitoring and ongoing tweaks.",
   },
   {
     category: "pricing",
     q: "How much does an AI receptionist cost for a small business?",
-    a: "An AI receptionist starts at $750 CAD as a Starter AI Setup — it answers calls and messages 24/7, books appointments and texts you the details. If you want it connected to your CRM, calendar and follow-up workflows, that's the Business AI System from $2,500 CAD.",
+    a: "An AI receptionist starts at $1,000 CAD as a Starter AI Setup — it answers calls and messages 24/7, books appointments and texts you the details. If you want it connected to your CRM, calendar and follow-up workflows, that's the Business AI System from $2,500 CAD.",
   },
   {
     category: "process",

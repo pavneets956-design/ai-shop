@@ -14,12 +14,12 @@ export default function TermsPage() {
     <section className="relative pb-24 pt-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <span className="eyebrow">Legal</span>
-        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           Terms of Service
         </h1>
-        <p className="mt-4 text-sm text-white/40">Last updated: {updated}</p>
+        <p className="mt-4 text-sm text-ink/40">Last updated: {updated}</p>
 
-        <div className="legal-prose mt-10 space-y-8 text-white/70">
+        <div className="legal-prose mt-10 space-y-8 text-ink/70">
           <p>
             These terms cover your use of the {site.name} website. Work we deliver is governed by a
             separate written proposal or agreement for that specific project; where the two differ, the
@@ -78,7 +78,7 @@ export default function TermsPage() {
           <Section title="Contact">
             <p>
               Questions about these terms? Email{" "}
-              <a href={`mailto:${site.email}`} className="text-electric hover:underline">
+              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
                 {site.email}
               </a>
               .
@@ -93,8 +93,8 @@ export default function TermsPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-semibold text-white">{title}</h2>
-      <div className="mt-3 space-y-3 leading-relaxed [&_a]:font-medium [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-white/90 [&_ul]:space-y-2">
+      <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
+      <div className="mt-3 space-y-3 leading-relaxed [&_a]:font-medium [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink/90 [&_ul]:space-y-2">
         {children}
       </div>
     </div>
