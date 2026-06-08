@@ -552,3 +552,70 @@ export const useCases: UseCase[] = [
 export function getUseCase(slug: string): UseCase | undefined {
   return useCases.find((u) => u.slug === slug);
 }
+
+// ---------- Live demo config ----------
+// Conversational use cases get an embedded, working AI-receptionist demo.
+// Derived from solution + industry so we don't hand-author every entry.
+export interface UseCaseDemo {
+  business: string; // persona string passed to /api/demo
+  greeting: string; // first assistant line
+  suggestions: string[]; // quick-prompt chips
+}
+
+const CONVERSATIONAL: Record<string, "receptionist" | "booking" | "chatbot" | "lead" | "support"> = {
+  "AI Receptionist": "receptionist",
+  "AI Booking Assistant": "booking",
+  "AI Website Chatbot": "chatbot",
+  "AI Lead Follow-Up Agent": "lead",
+  "AI Customer Support Bot": "support",
+};
+
+const SAMPLE_BUSINESS: Record<string, string> = {
+  "Contractors & Trades": "Summit Plumbing & Heating, a contracting & trades business",
+  "Real Estate": "Westside Realty, a real estate agency",
+  Restaurants: "The Corner Table, a restaurant",
+  "Clinics & Health": "Brightside Family Clinic, a health clinic",
+  "Dental Practices": "Brightsmile Dental, a dental practice",
+  "Salons & Beauty": "Luxe Hair & Spa, a salon and spa",
+  "E-commerce": "Northgoods, an online store",
+  "SaaS & Startups": "Flowdesk, a SaaS product",
+};
+
+export function getUseCaseDemo(uc: UseCase): UseCaseDemo | null {
+  const kind = CONVERSATIONAL[uc.solution];
+  if (!kind) return null;
+
+  const business = SAMPLE_BUSINESS[uc.industry] ?? `a ${uc.industry.toLowerCase()} business`;
+  const name = business.split(",")[0];
+  const ecommerce = uc.industry === "E-commerce";
+
+  const presets = {
+    receptionist: {
+      greeting: `Thanks for calling ${name}! This is the AI receptionist — how can I help you today?`,
+      suggestions: ["Ask for a quote", "Book an appointment", "It's urgent", "What are your hours?"],
+    },
+    booking: {
+      greeting: `Hi, you've reached ${name}! I can get you booked in — what are you after?`,
+      suggestions: ["Book an appointment", "What are your prices?", "Any openings today?", "Reschedule"],
+    },
+    chatbot: ecommerce
+      ? {
+          greeting: `Hi! 👋 You're chatting with ${name} — happy to help with your order or our products.`,
+          suggestions: ["Where's my order?", "What's your return policy?", "Help me pick a size", "Is this in stock?"],
+        }
+      : {
+          greeting: `Hi! 👋 You're chatting with ${name}'s assistant — how can I help?`,
+          suggestions: ["Do you take reservations?", "What are your hours?", "Where are you located?", "Book a table"],
+        },
+    lead: {
+      greeting: `Hi, thanks for reaching out to ${name}! Are you looking to buy, sell, or book a viewing?`,
+      suggestions: ["Book a viewing", "Is it still available?", "What's the price?", "I'm selling my home"],
+    },
+    support: {
+      greeting: `Hi! You're chatting with ${name}'s support assistant — what can I help with?`,
+      suggestions: ["How do I reset my password?", "I have a billing question", "Something's not working", "Talk to a human"],
+    },
+  };
+
+  return { business, ...presets[kind] };
+}

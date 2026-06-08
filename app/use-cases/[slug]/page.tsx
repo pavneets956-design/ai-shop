@@ -8,7 +8,8 @@ import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
 import { getIcon } from "@/lib/icons";
-import { useCases, getUseCase } from "@/lib/data/useCases";
+import ReceptionistChat from "@/components/ReceptionistChat";
+import { useCases, getUseCase, getUseCaseDemo } from "@/lib/data/useCases";
 import { getPackage, formatPackagePrice } from "@/lib/data/packages";
 import { getBuild } from "@/lib/data/solutions";
 import { site } from "@/lib/data/site";
@@ -40,6 +41,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
 
   const pkg = getPackage(uc.packageId)!;
   const builds = uc.relatedBuilds.map(getBuild).filter(Boolean);
+  const demo = getUseCaseDemo(uc);
 
   const serviceLd = {
     "@context": "https://schema.org",
@@ -125,6 +127,34 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
           </Reveal>
         </div>
       </section>
+
+      {/* TRY IT LIVE — embedded working demo (conversational use cases only) */}
+      {demo && (
+        <section className="relative py-14">
+          <div className="mx-auto max-w-3xl px-4">
+            <Reveal>
+              <div className="mb-6 text-center">
+                <span className="eyebrow">Try it live</span>
+                <h2 className="mt-4 font-display text-2xl font-semibold text-ink sm:text-3xl">
+                  See it work — you&apos;re the customer
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-ink/60">
+                  This is a real, working AI for a sample {uc.industry.toLowerCase()} business. Ask it
+                  what your own customers would — it&apos;s the exact experience they&apos;d get.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <ReceptionistChat
+                business={demo.business}
+                greeting={demo.greeting}
+                suggestions={demo.suggestions}
+                sub={demo.business.split(",")[0]}
+              />
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* HOW IT WORKS */}
       <section className="relative py-14">
