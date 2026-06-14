@@ -24,7 +24,7 @@ const mockLead = {
       date: "2024-01-15 14:30",
       duration: "4:32",
       outcome: "Demo Scheduled",
-      transcript: `Agent: Hi John, this is Sarah from AI Shop. I'm calling because I believe your business could benefit from our AI Receptionist solution. Do you have a moment?
+      transcript: `Agent: Hi John, this is Sarah from Handbuilt. I'm calling because I believe your business could benefit from our AI Receptionist solution. Do you have a moment?
 
 John: Sure, what is this about?
 

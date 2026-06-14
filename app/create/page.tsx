@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Start a Build — Request Your Custom AI System",
   description:
-    "Tell us what you want to build and get a plan and quote within one business day. Custom AI apps, agents, automations and business tools from AI Shop.",
+    "Tell us what you want to build and get a plan and quote within one business day. Custom AI apps, agents, automations and business tools from Handbuilt.",
   alternates: { canonical: "/create" },
 };
 

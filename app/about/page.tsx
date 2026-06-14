@@ -8,9 +8,9 @@ import MagneticButton from "@/components/MagneticButton";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "About AI Shop — Your Personal AI Studio",
+  title: "About Handbuilt — Your Personal AI Studio",
   description:
-    "AI Shop is a personal AI studio in Surrey, BC, building custom AI apps, agents and automations for businesses and individuals worldwide. One builder, your whole AI department.",
+    "Handbuilt is a personal AI studio in Surrey, BC, building custom AI apps, agents and automations for businesses and individuals worldwide. One builder, your whole AI department.",
   alternates: { canonical: "/about" },
 };
 
@@ -31,7 +31,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/65">
-              AI Shop exists for one reason: most people know AI could help their business or life,
+              Handbuilt exists for one reason: most people know AI could help their business or life,
               but have no idea what to actually build — and the agencies that do cost a fortune and
               move slowly. So we made it simple. You describe the outcome you want. We design, build
               and ship the AI system that delivers it.
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl space-y-6 px-4 text-lg leading-relaxed text-ink/70">
           <Reveal>
             <p>
-              Based in Surrey, BC and working with clients worldwide, AI Shop is built around a
+              Based in Surrey, BC and working with clients worldwide, Handbuilt is built around a
               simple belief: AI should be practical, not hype. The best AI system isn&apos;t the
               flashiest one — it&apos;s the one that quietly answers your phone, follows up on your
               leads, or runs the admin you hate, every single day.

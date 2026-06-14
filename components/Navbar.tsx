@@ -19,9 +19,9 @@ export default function Navbar() {
             className="group flex items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_0_14px_rgba(199,93,67,0.32))]" />
+            <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105" />
             <span className="font-display text-lg font-semibold tracking-tight text-ink">
-              AI Shop
+              Handbuilt
             </span>
           </Link>
 

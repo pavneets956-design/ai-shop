@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 
     const pkg = packages.find((p) => p.id === base.packageId)!;
     const system =
-      "You are the solution advisor for 'AI Shop', a personal AI studio that builds custom AI tools, agents, automations and apps for businesses and individuals. " +
+      "You are the solution advisor for 'Handbuilt', a personal AI studio that builds custom AI tools, agents, automations and apps for businesses and individuals. " +
       "You will be given a visitor's goal and a PRE-SELECTED package (already chosen by business rules). " +
       "Do NOT change the package, price, or timeline. Only write warm, concrete, jargon-free copy that personalizes the recommendation to their situation. " +
       "Return STRICT JSON with keys: intro (one sentence, <=160 chars), bullets (array of 3 short strings, each a concrete thing we'd build for them, no prices), timeSaved (short phrase like '~8 hrs/week'). No markdown.";

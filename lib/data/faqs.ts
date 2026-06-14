@@ -9,8 +9,8 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     category: "general",
-    q: "What can AI Shop build for my business?",
-    a: "AI Shop builds custom AI tools, agents, automations, chatbots, dashboards and full apps. Common builds include an AI receptionist that answers calls 24/7, a lead follow-up agent, an invoice reminder system, a website chatbot, and custom business dashboards. If a task is repetitive or you're losing leads to slow replies, it can probably be automated.",
+    q: "What can Handbuilt build for my business?",
+    a: "Handbuilt builds custom AI tools, agents, automations, chatbots, dashboards and full apps. Common builds include an AI receptionist that answers calls 24/7, a lead follow-up agent, an invoice reminder system, a website chatbot, and custom business dashboards. If a task is repetitive or you're losing leads to slow replies, it can probably be automated.",
   },
   {
     category: "general",
@@ -19,13 +19,13 @@ export const faqs: FAQ[] = [
   },
   {
     category: "general",
-    q: "Do I need technical knowledge to work with AI Shop?",
-    a: "No. You describe the outcome you want in plain language — \"answer my phone\", \"stop chasing invoices\", \"get more leads\" — and AI Shop designs and builds the system. There's nothing to install or configure on your end.",
+    q: "Do I need technical knowledge to work with Handbuilt?",
+    a: "No. You describe the outcome you want in plain language — \"answer my phone\", \"stop chasing invoices\", \"get more leads\" — and Handbuilt designs and builds the system. There's nothing to install or configure on your end.",
   },
   {
     category: "technical",
     q: "Can you connect AI to my existing website?",
-    a: "Yes. AI Shop can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $1,000 CAD.",
+    a: "Yes. Handbuilt can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $1,000 CAD.",
   },
   {
     category: "general",
@@ -35,12 +35,12 @@ export const faqs: FAQ[] = [
   {
     category: "general",
     q: "Do you build personal AI apps, not just business tools?",
-    a: "Yes. AI Shop builds private personal apps too — planners, finance trackers, study and coaching assistants, and habit tools — built around how you actually live, not a generic template.",
+    a: "Yes. Handbuilt builds private personal apps too — planners, finance trackers, study and coaching assistants, and habit tools — built around how you actually live, not a generic template.",
   },
   {
     category: "pricing",
     q: "How much does it cost to build an AI tool or app?",
-    a: "AI Shop has three clear tiers: Starter AI Setup at $1,000 CAD flat for one tool, Business AI System from $2,500 CAD for a connected system, and Custom AI App from $7,500 CAD for a full build. There's also an optional AI Care Plan at $250/month for hosting, monitoring and ongoing tweaks.",
+    a: "Handbuilt has three clear tiers: Starter AI Setup at $1,000 CAD flat for one tool, Business AI System from $2,500 CAD for a connected system, and Custom AI App from $7,500 CAD for a full build. There's also an optional AI Care Plan at $250/month for hosting, monitoring and ongoing tweaks.",
   },
   {
     category: "pricing",

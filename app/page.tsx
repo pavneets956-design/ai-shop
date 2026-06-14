@@ -65,7 +65,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What we build"
             title="AI systems for real businesses"
-            subtitle="From answering your phone to running a full custom app — here's the range of what AI Shop can build around your workflow."
+            subtitle="From answering your phone to running a full custom app — here's the range of what Handbuilt can build around your workflow."
           />
           <div className="mt-12">
             <UseCaseBentoGrid />
@@ -121,7 +121,7 @@ export default function Home() {
       <section className="relative py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading
-            eyebrow="Why AI Shop"
+            eyebrow="Why Handbuilt"
             title="One builder. Your whole AI department."
             subtitle="No agency overhead, no offshore handoffs, no hype. Just systems that work, built around what you actually do."
           />

@@ -1,4 +1,4 @@
-// Solution categories (what AI Shop builds) + featured builds.
+// Solution categories (what Handbuilt builds) + featured builds.
 // `icon` is a lucide-react icon name, mapped to a component in lib/icons.ts.
 
 export interface SolutionCategory {

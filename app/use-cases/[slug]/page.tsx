@@ -28,7 +28,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     keywords: uc.keywords,
     alternates: { canonical: `/use-cases/${uc.slug}` },
     openGraph: {
-      title: `${uc.solution} for ${uc.industry} | AI Shop`,
+      title: `${uc.solution} for ${uc.industry} | Handbuilt`,
       description: uc.answer,
       url: `${site.url}/use-cases/${uc.slug}`,
     },

@@ -11,7 +11,7 @@ import { faqSchema, breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "FAQ — Custom AI Apps, Agents & Automation",
   description:
-    "Answers to common questions about building custom AI tools: what AI Shop can build, how much it costs, how long it takes, whether you own the code, and how to start.",
+    "Answers to common questions about building custom AI tools: what Handbuilt can build, how much it costs, how long it takes, whether you own the code, and how to start.",
   alternates: { canonical: "/faq" },
 };
 

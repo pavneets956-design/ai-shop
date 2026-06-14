@@ -1,11 +1,11 @@
 // Central site config — single source of truth for brand, contact, SEO.
 export const site = {
-  name: "AI Shop",
-  legalName: "AI Shop",
+  name: "Handbuilt",
+  legalName: "Handbuilt AI Studio",
   tagline: "AI that works for your business — built by hand, not bought off a shelf.",
   subTagline:
     "Your personal AI studio. Custom apps, agents, and automations — built for what you actually do.",
-  url: "https://ai-shop-mocha.vercel.app", // TODO: swap to final custom domain when set
+  url: "https://aibuiltbyhand.com", // custom domain — bought 2026-06-14
   // Owner / local SEO (GEO). Update with real public business details before launch.
   owner: "Pavneet",
   email: "pavneets956@gmail.com",
@@ -24,6 +24,7 @@ export const site = {
 };
 
 export const navLinks = [
+  { label: "Shop", href: "/shop" },
   { label: "Live Demo", href: "/demo" },
   { label: "Solutions", href: "/solutions" },
   { label: "Use Cases", href: "/use-cases" },

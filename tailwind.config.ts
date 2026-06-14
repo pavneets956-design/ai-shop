@@ -10,31 +10,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm editorial palette — ivory paper, warm ink, single clay accent.
+        // "Blueprint" palette — cool drafting paper, slate-navy ink, teal accent, amber CTA.
         paper: {
-          DEFAULT: "#FAF7F2", // base background (warm ivory)
-          2: "#F2ECE2", // deeper alternating section
+          DEFAULT: "#F4F5F7", // base background (cool drafting white)
+          2: "#E9ECF1", // deeper alternating section
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#1F1B16", // warm near-black text
-          soft: "#6F665C", // warm muted text
+          DEFAULT: "#1C2B3A", // slate navy text
+          soft: "#5B6B7A", // muted slate
         },
+        // "clay" token name kept (used site-wide) but now holds the TEAL accent.
         clay: {
-          DEFAULT: "#C75D43", // primary accent (terracotta/clay)
-          dark: "#A8482F",
-          soft: "#E8A38C",
+          DEFAULT: "#2F6F6A", // primary accent (deep teal)
+          dark: "#255A55",
+          soft: "#9FC7C2",
         },
-        // Legacy tokens kept as warm fallbacks so any unswept refs still compile.
-        obsidian: { DEFAULT: "#FAF7F2", 50: "#F2ECE2", 100: "#F2ECE2", 200: "#EAE3D8" },
-        electric: "#C75D43",
-        violet: { glow: "#C75D43" },
-        cyan: { glow: "#D97757" },
-        gold: { soft: "#C28A3A" },
+        // Amber — reserved for CTAs only (the single "spark").
+        amber: {
+          DEFAULT: "#E8A13C",
+          dark: "#CE8B2B",
+          soft: "#F4CF94",
+        },
+        // Legacy tokens remapped to the Blueprint palette so any unswept refs stay coherent.
+        obsidian: { DEFAULT: "#F4F5F7", 50: "#E9ECF1", 100: "#E9ECF1", 200: "#DDE2E9" },
+        electric: "#2F6F6A",
+        violet: { glow: "#2F6F6A" },
+        cyan: { glow: "#3E8C85" },
+        gold: { soft: "#E8A13C" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-serif)", "Georgia", "Cambria", "serif"],
+        display: ["var(--font-display)", "Archivo", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out both",
@@ -92,14 +100,14 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "brand-gradient": "linear-gradient(120deg, #C75D43 0%, #D97757 100%)",
+        "brand-gradient": "linear-gradient(120deg, #2F6F6A 0%, #3E8C85 100%)",
       },
       boxShadow: {
-        // Warm, soft, restrained shadows (no neon glow).
-        glow: "0 12px 40px -16px rgba(199,93,67,0.30)",
-        "glow-violet": "0 14px 44px -16px rgba(199,93,67,0.32)",
-        "glow-cyan": "0 14px 44px -16px rgba(217,119,87,0.30)",
-        card: "0 1px 2px rgba(31,27,22,0.04), 0 14px 34px -16px rgba(31,27,22,0.14)",
+        // Blueprint — crisp, structural, low-blur shadows (no soft warm halo).
+        glow: "0 10px 30px -18px rgba(28,43,58,0.28)",
+        "glow-violet": "0 12px 34px -18px rgba(47,111,106,0.28)",
+        "glow-cyan": "0 12px 34px -18px rgba(47,111,106,0.24)",
+        card: "0 1px 0 rgba(28,43,58,0.06), 0 10px 26px -18px rgba(28,43,58,0.22)",
       },
     },
   },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,21 +8,28 @@ import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const fraunces = Fraunces({
+// "Blueprint" type system: Archivo (engineered display) + IBM Plex Mono (spec labels).
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap",
-  axes: ["opsz"],
+  weight: ["500", "600", "700", "800"],
+});
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "AI Shop | Custom AI Apps, Agents & Business Automation",
-    template: "%s | AI Shop",
+    default: "Handbuilt | Custom AI Apps, Agents & Business Automation",
+    template: "%s | Handbuilt",
   },
   description:
-    "AI Shop builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
+    "Handbuilt builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
   keywords: [
     "custom AI app development",
     "AI automation services",
@@ -45,13 +52,13 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: site.url,
     siteName: site.name,
-    title: "AI Shop | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt | Custom AI Apps, Agents & Business Automation",
     description:
       "Tell us what you want AI to do. We design and build the system — apps, agents, automations and dashboards, around your exact workflow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Shop | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt | Custom AI Apps, Agents & Business Automation",
     description:
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
   },
@@ -75,7 +82,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable}`}>
       <body className="font-sans antialiased">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Navbar />

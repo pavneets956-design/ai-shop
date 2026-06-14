@@ -4,12 +4,14 @@
 
 @layer base {
   :root {
-    --bg: #faf7f2;
+    --bg: #f4f5f7;
     --surface: #ffffff;
-    --border: rgba(31, 27, 22, 0.1);
-    --clay: #c75d43;
-    --clay-dark: #a8482f;
-    --ink: #1f1b16;
+    --border: rgba(28, 43, 58, 0.14);
+    --clay: #2f6f6a; /* teal accent (token name kept site-wide) */
+    --clay-dark: #255a55;
+    --amber: #e8a13c; /* CTA spark */
+    --amber-dark: #ce8b2b;
+    --ink: #1c2b3a;
   }
 
   * {
@@ -23,17 +25,17 @@
 
   body {
     @apply bg-paper text-ink antialiased;
-    background-color: #faf7f2;
-    color: #1f1b16;
-    font-feature-settings: "kern" 1, "ss01" 1;
+    background-color: #f4f5f7;
+    color: #1c2b3a;
+    font-feature-settings: "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(199, 93, 67, 0.18);
-    color: #1f1b16;
+    background: rgba(47, 111, 106, 0.18);
+    color: #1c2b3a;
   }
 
   /* Custom scrollbar */
@@ -42,66 +44,92 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #f2ece2;
+    background: #e9ecf1;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(31, 27, 22, 0.18);
-    border-radius: 999px;
+    background: rgba(28, 43, 58, 0.2);
+    border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(31, 27, 22, 0.3);
+    background: rgba(28, 43, 58, 0.32);
   }
 }
 
 @layer components {
   /* ---------- Buttons ---------- */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full
-           px-6 py-3 text-sm font-semibold text-white
-           bg-clay transition-all duration-200
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+    @apply relative inline-flex items-center justify-center gap-2 rounded-md
+           px-6 py-3 text-sm font-bold text-ink
+           bg-amber transition-all duration-150
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 2px rgba(31, 27, 22, 0.08), 0 10px 28px -12px rgba(199, 93, 67, 0.55);
+    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.12), 0 8px 20px -12px rgba(206, 139, 43, 0.7);
   }
   .btn-primary:hover {
-    @apply bg-clay-dark;
-    box-shadow: 0 2px 4px rgba(31, 27, 22, 0.1), 0 14px 34px -12px rgba(199, 93, 67, 0.6);
+    @apply bg-amber-dark;
+    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.16), 0 10px 24px -12px rgba(206, 139, 43, 0.8);
     transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full
+    @apply relative inline-flex items-center justify-center gap-2 rounded-md
            px-6 py-3 text-sm font-semibold text-ink
-           border border-ink/15 bg-white
-           transition-all duration-200 hover:border-ink/30 hover:bg-paper-2
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/20 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+           border border-ink/20 bg-white
+           transition-all duration-150 hover:border-clay/50 hover:bg-paper-2
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 2px rgba(31, 27, 22, 0.04);
+    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.04);
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium
-           text-ink/70 transition-colors hover:text-ink
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/20;
+    @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium
+           text-ink/70 transition-colors hover:text-clay-dark
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30;
   }
 
-  /* ---------- Surfaces ---------- */
+  /* ---------- Surfaces (spec-sheet cards: squared, structural) ---------- */
   .glass {
-    @apply rounded-2xl border border-ink/10 bg-white;
+    @apply rounded-lg border border-ink/[0.12] bg-white;
   }
 
   .glass-card {
-    @apply relative rounded-2xl border border-ink/10 bg-white p-6
-           transition-all duration-300;
-    box-shadow: 0 1px 2px rgba(31, 27, 22, 0.04), 0 16px 38px -22px rgba(31, 27, 22, 0.18);
+    @apply relative rounded-lg border border-ink/[0.12] bg-white p-6
+           transition-all duration-200;
+    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.05), 0 12px 30px -22px rgba(28, 43, 58, 0.2);
   }
   .glass-card:hover {
-    @apply border-ink/15;
-    box-shadow: 0 2px 4px rgba(31, 27, 22, 0.05), 0 22px 48px -24px rgba(31, 27, 22, 0.22);
+    @apply border-clay/35;
+    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.06), 0 16px 36px -24px rgba(28, 43, 58, 0.26);
     transform: translateY(-2px);
   }
 
-  /* subtle clay hairline accent on hover */
+  /* Blueprint corner brackets — the signature device. Add to a relative element. */
+  .spec-frame {
+    position: relative;
+  }
+  .spec-frame::before,
+  .spec-frame::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--clay);
+    border-style: solid;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .spec-frame::before {
+    top: 10px;
+    left: 10px;
+    border-width: 1.5px 0 0 1.5px;
+  }
+  .spec-frame::after {
+    bottom: 10px;
+    right: 10px;
+    border-width: 0 1.5px 1.5px 0;
+  }
+
+  /* teal hairline accent on hover */
   .border-glow {
     position: relative;
   }
@@ -111,7 +139,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(130deg, rgba(199, 93, 67, 0.5), rgba(217, 119, 87, 0.15));
+    background: linear-gradient(130deg, rgba(47, 111, 106, 0.55), rgba(47, 111, 106, 0.12));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -128,20 +156,20 @@
     @apply text-ink;
   }
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(120deg, #c75d43, #d97757);
+    @apply text-clay;
   }
 
+  /* Spec-label "eyebrow": squared, monospace, structural — the Blueprint tell. */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-clay/20
-           bg-clay/[0.07] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-clay-dark;
+    @apply inline-flex items-center gap-2 rounded-[3px] border border-clay/30
+           bg-clay/[0.06] px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-clay-dark;
   }
 
   /* ---------- Inputs ---------- */
   .field {
-    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm
+    @apply w-full rounded-md border border-ink/20 bg-white px-4 py-3 text-sm
            text-ink placeholder-ink/35 transition-all
-           focus:border-clay/50 focus:outline-none
+           focus:border-clay/60 focus:outline-none
            focus:ring-2 focus:ring-clay/25;
   }
   .field-label {
@@ -150,11 +178,11 @@
 }
 
 @layer utilities {
-  /* Faint warm grid backdrop */
+  /* Blueprint structural grid backdrop — the brand's signature texture. */
   .bg-grid {
-    background-image: linear-gradient(rgba(31, 27, 22, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(31, 27, 22, 0.035) 1px, transparent 1px);
-    background-size: 64px 64px;
+    background-image: linear-gradient(rgba(28, 43, 58, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(28, 43, 58, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
   .bg-grid-fade {
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);

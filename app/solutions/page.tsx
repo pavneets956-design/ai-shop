@@ -13,7 +13,7 @@ import { serviceSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "AI Solutions — Apps, Agents, Automations & Custom Tools",
   description:
-    "Explore what AI Shop can build: business automation, AI agents, customer communication, local service tools, personal AI apps, content engines, website AI, document analysis and custom SaaS.",
+    "Explore what Handbuilt can build: business automation, AI agents, customer communication, local service tools, personal AI apps, content engines, website AI, document analysis and custom SaaS.",
   alternates: { canonical: "/solutions" },
 };
 

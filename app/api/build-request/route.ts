@@ -12,7 +12,7 @@ export const runtime = "nodejs";
  * Env:
  *   RESEND_API_KEY     enable email delivery
  *   LEAD_NOTIFY_EMAIL  where to send notifications (default: pavneets956@gmail.com)
- *   LEAD_FROM_EMAIL    verified from address (default: AI Shop <onboarding@resend.dev>)
+ *   LEAD_FROM_EMAIL    verified from address (default: Handbuilt <onboarding@resend.dev>)
  */
 export async function POST(req: Request) {
   let payload: Record<string, unknown>;
@@ -40,9 +40,9 @@ export async function POST(req: Request) {
       const resend = new Resend(key);
       const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
       // From-address must be on a Resend-verified domain matching the API key's scope.
-      // Key is scoped to coitracker.co. Swap to an AI Shop / handbuilt.ai address once
+      // Key is scoped to coitracker.co. Swap to an Handbuilt / handbuilt.ai address once
       // that domain is bought + verified in Resend.
-      const from = process.env.LEAD_FROM_EMAIL || "AI Shop <leads@coitracker.co>";
+      const from = process.env.LEAD_FROM_EMAIL || "Handbuilt <leads@coitracker.co>";
       const isConsultation = payload.source === "consultation";
       const kind = isConsultation
         ? "AI consultation"
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
         from,
         to,
         replyTo: email,
-        subject: `New AI Shop ${kind}: ${payload.name || email}`,
+        subject: `New Handbuilt ${kind}: ${payload.name || email}`,
         text: isConsultation ? formatConsultation(lead) : formatLead(lead),
       });
     } catch (err) {
@@ -97,7 +97,7 @@ function formatLead(lead: Record<string, unknown>): string {
     return typeof v === "object" ? JSON.stringify(v) : String(v);
   };
   return [
-    "NEW BUILD REQUEST — AI Shop",
+    "NEW BUILD REQUEST — Handbuilt",
     "",
     "— Contact —",
     `Name:      ${g("name")}`,

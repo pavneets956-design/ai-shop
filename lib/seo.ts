@@ -9,7 +9,7 @@ export function organizationSchema() {
     "@id": `${site.url}/#organization`,
     name: site.name,
     description:
-      "AI Shop builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
+      "Handbuilt builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
     url: site.url,
     email: site.email,
     image: `${site.url}/logo.png`,

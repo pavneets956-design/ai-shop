@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Live Demo — Talk to an AI Receptionist",
   description:
-    "Try a real, live AI receptionist built by AI Shop. Play the customer — ask for a quote, book a job, or describe an emergency — and see exactly what your callers would experience.",
+    "Try a real, live AI receptionist built by Handbuilt. Play the customer — ask for a quote, book a job, or describe an emergency — and see exactly what your callers would experience.",
   alternates: { canonical: "/demo" },
 };
 
