@@ -112,7 +112,10 @@ export function getRecommendedPlan(): PricePlan {
  * Format price for display
  */
 export function formatPrice(price: number): string {
-  return `$${price.toLocaleString()}`;
+  // Deterministic (locale-free) formatting to avoid SSR/client hydration mismatch.
+  return `$${Math.round(price)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 }
 
 /**

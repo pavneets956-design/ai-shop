@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
 import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
+import { formatNum } from "@/lib/format";
 
 const accentRing: Record<string, string> = {
   electric: "shadow-glow",
@@ -36,7 +37,7 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
               </div>
               <p className="mt-1 text-xs text-ink/40">
                 {p.timeline}
-                {p.priceTypical ? ` · most land around $${p.priceTypical.toLocaleString()}` : ""}
+                {p.priceTypical ? ` · most land around $${formatNum(p.priceTypical)}` : ""}
               </p>
 
               <p className="mt-4 text-sm text-ink/60">

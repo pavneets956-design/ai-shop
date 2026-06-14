@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus, DollarSign, Eye, Edit, Trash2, TrendingUp, Package } from "lucide-react";
 import Link from "next/link";
+import { formatNum } from "@/lib/format";
 
 const myProducts = [
   {
@@ -53,7 +54,7 @@ export default function DashboardPage() {
               <span className="text-sm text-gray-400 font-light">Total Revenue</span>
               <DollarSign className="w-5 h-5 text-gray-400" />
             </div>
-            <div className="text-4xl font-light text-ink mb-2">${totalRevenue.toLocaleString()}</div>
+            <div className="text-4xl font-light text-ink mb-2">${formatNum(totalRevenue)}</div>
             <div className="text-sm text-gray-500 flex items-center font-light">
               <TrendingUp className="w-3 h-3 mr-1" />
               +12% from last month
@@ -77,7 +78,7 @@ export default function DashboardPage() {
               <span className="text-sm text-gray-400 font-light">Total Views</span>
               <Eye className="w-5 h-5 text-gray-400" />
             </div>
-            <div className="text-4xl font-light text-ink mb-2">{totalViews.toLocaleString()}</div>
+            <div className="text-4xl font-light text-ink mb-2">{formatNum(totalViews)}</div>
             <div className="text-sm text-gray-500 flex items-center font-light">
               <TrendingUp className="w-3 h-3 mr-1" />
               +15% from last month
@@ -175,7 +176,7 @@ export default function DashboardPage() {
                       <td className="py-4 px-4 text-gray-400 font-light">${product.price}</td>
                       <td className="py-4 px-4 text-gray-400 font-light">{product.sales}</td>
                       <td className="py-4 px-4 font-light text-ink">
-                        ${product.revenue.toLocaleString()}
+                        ${formatNum(product.revenue)}
                       </td>
                       <td className="py-4 px-4">
                         <span className="px-2 py-1 rounded-full text-xs font-light bg-ink/10 text-ink border border-ink/10">

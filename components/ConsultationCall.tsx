@@ -520,7 +520,10 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
 
   return (
     <div className="hbc-root">
-      <style>{HBC_CSS}</style>
+      {/* inject as raw HTML so the quotes in font-family don't get escaped to
+          &quot; on the server but left raw on the client (that mismatch tripped
+          React hydration errors #418/#423/#425). */}
+      <style dangerouslySetInnerHTML={{ __html: HBC_CSS }} />
 
       {onHomepage ? (
         <button className="hbc-exit" onClick={dismiss} aria-label="Skip and explore the site">

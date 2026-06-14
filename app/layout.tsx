@@ -3,7 +3,6 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Providers from "@/components/Providers";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -79,11 +78,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
-        <Providers>
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </Providers>
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

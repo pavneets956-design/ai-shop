@@ -1,6 +1,7 @@
 "use client";
 
 import { AI_AGENT_PLANS, formatPrice, type PricePlan } from "@/lib/agent/pricebook";
+import { formatNum } from "@/lib/format";
 import { Check } from "lucide-react";
 
 interface PricingPlansProps {
@@ -61,7 +62,7 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
               <div className="flex items-center justify-between text-sm mb-2">
                 <span className="text-gray-400 font-light">Calls:</span>
                 <span className="text-ink font-light">
-                  {plan.includedCalls === "usage" ? "Unlimited" : `${plan.includedCalls.toLocaleString()}/month`}
+                  {plan.includedCalls === "usage" ? "Unlimited" : `${formatNum(plan.includedCalls)}/month`}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm">
