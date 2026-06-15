@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import Providers from "@/components/Providers";
 import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
@@ -90,10 +91,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable}`}>
       <body className="font-sans antialiased">
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Providers>
+          <JsonLd data={[organizationSchema(), websiteSchema()]} />
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

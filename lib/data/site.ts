@@ -31,6 +31,7 @@ export const navLinks = [
   { label: "Industries", href: "/industries" },
   { label: "Use Cases", href: "/use-cases" },
   { label: "Resources", href: "/resources" },
+  { label: "AI Tools", href: "/tools" },
   { label: "Pricing", href: "/pricing" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },

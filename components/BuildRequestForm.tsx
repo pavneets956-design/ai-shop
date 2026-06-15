@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from "lucide-react";
 import { packages } from "@/lib/data/packages";
+import { shopProducts } from "@/lib/data/shopProducts";
 import { industries } from "@/lib/data/finder";
 import { site } from "@/lib/data/site";
 
@@ -39,18 +40,21 @@ const STEPS = ["The build", "Your setup", "You"] as const;
 export default function BuildRequestForm() {
   const params = useSearchParams();
   const presetPackage = params.get("package") ?? "";
+  const presetBuild = shopProducts.find((p) => p.slug === params.get("build"));
 
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState(1);
   const [form, setForm] = useState({
-    goal: "",
+    goal: presetBuild ? `${presetBuild.name} — ${presetBuild.outcome}` : "",
     useType: "business",
     industry: "",
     tasks: "",
     existing: "none",
     website: "",
     tools: "",
-    budget: packages.some((p) => p.id === presetPackage) ? presetPackage : "",
+    budget: packages.some((p) => p.id === presetPackage)
+      ? presetPackage
+      : presetBuild?.packageId ?? "",
     timeline: "",
     name: "",
     email: "",

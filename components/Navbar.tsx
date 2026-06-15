@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { Menu, X, ArrowRight, UserRound } from "lucide-react";
 import { navLinks } from "@/lib/data/site";
 import { LogoMark } from "@/components/Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { status } = useSession();
+  const authed = status === "authenticated";
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-ink/[0.06] bg-paper/70 backdrop-blur-xl">
@@ -39,7 +42,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-4 md:flex">
+            {authed && (
+              <Link
+                href="/account"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/60 transition-colors hover:text-ink"
+              >
+                <UserRound className="h-4 w-4" /> Account
+              </Link>
+            )}
             <Link href="/create" className="btn-primary text-sm">
               Start a build <ArrowRight className="h-4 w-4" />
             </Link>
@@ -69,6 +80,15 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            {authed && (
+              <Link
+                href="/account"
+                onClick={() => setOpen(false)}
+                className="block rounded-lg px-3 py-3 text-base text-ink/75 transition hover:bg-ink/5 hover:text-ink"
+              >
+                Account
+              </Link>
+            )}
             <Link href="/create" onClick={() => setOpen(false)} className="btn-primary mt-3 w-full">
               Start a build <ArrowRight className="h-4 w-4" />
             </Link>
