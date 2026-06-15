@@ -6,8 +6,11 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  // Vercel<>Supabase integration auto-syncs these. url = pooled (pgbouncer, :6543)
+  // for runtime; directUrl = direct (:5432) so `prisma migrate deploy` skips the pooler.
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {
