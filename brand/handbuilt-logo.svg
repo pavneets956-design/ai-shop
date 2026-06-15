@@ -1,0 +1,26 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16161B"/>
+      <stop offset="1" stop-color="#0A0A0D"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4BC60"/>
+      <stop offset="1" stop-color="#DE8E2C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge -->
+  <rect width="1080" height="1080" rx="232" fill="url(#bg)"/>
+  <rect x="44" y="44" width="992" height="992" rx="196" fill="none" stroke="#2B2B33" stroke-width="4"/>
+
+  <!-- "H" monogram, built from beams (handbuilt / construction motif) -->
+  <g fill="url(#mark)">
+    <rect x="392" y="322" width="88" height="436" rx="16"/>
+    <rect x="600" y="322" width="88" height="436" rx="16"/>
+    <rect x="392" y="496" width="296" height="88" rx="16"/>
+  </g>
+
+  <!-- Foundation bar (the "built on something solid" cue) -->
+  <rect x="430" y="802" width="220" height="22" rx="11" fill="#F4BC60" opacity="0.9"/>
+</svg>
