@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   verification: {
     google:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
-      "Oc2rS-DlviaxlNpDZwyghH4WxXsUrT7UAytuJRRjaxA",
+      "TVFAeGkq2XrUDgo5XdPiS8b4vmnkrZjvhDJ8J9CJTiA",
     // Bing Webmaster Tools (meta-tag method). Set NEXT_PUBLIC_BING_SITE_VERIFICATION
     // in Vercel to the value Bing gives you, then "Verify". Tip: in Bing you can
     // also "Import from Google Search Console" instead of verifying from scratch.
