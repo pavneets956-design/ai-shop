@@ -65,7 +65,7 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret-here
 
 # NextAuth (already have these)
 NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET=REDACTED
+NEXTAUTH_SECRET=REDACTED openssl rand -base64 32>
 ```
 
 ### 5. Add to Vercel Environment Variables

@@ -22,7 +22,7 @@
 4. Click **URI** tab
 5. Copy the connection string (looks like):
    ```
-   postgresql://REDACTED]@aws-0-us-east-1.pooler.supabase.com:6543/postgres
+   postgresql://REDACTED
    ```
 6. **Replace `[YOUR-PASSWORD]`** with the password you created in Step 1
 

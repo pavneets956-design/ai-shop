@@ -43,7 +43,7 @@ TWILIO_WEBHOOK_URL=https://your-domain.vercel.app/api/agent/call/webhook
 
 # NextAuth
 NEXTAUTH_URL=https://your-domain.vercel.app
-NEXTAUTH_SECRET=REDACTED
+NEXTAUTH_SECRET=REDACTED openssl rand -base64 32>
 
 # OpenAI
 OPENAI_API_KEY=YOUR_OPENAI_API_KEY

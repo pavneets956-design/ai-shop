@@ -49,3 +49,9 @@ next-env.d.ts
 # Root QA / design screenshots (local only)
 /*.png
 /*.jpeg
+
+# graphify knowledge graph artifacts (regenerated locally)
+graphify-out/
+
+# local agent config / transcripts (never commit — may contain secrets)
+.claude/

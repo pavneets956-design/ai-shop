@@ -26,7 +26,7 @@ You have several options:
 3. **Get Connection String**:
    - Go to Project Settings → Database
    - Scroll to "Connection string"
-   - Copy the "URI" (it looks like: `postgresql://REDACTED]@db.xxxxx.supabase.co:5432/postgres`)
+   - Copy the "URI" (it looks like: `postgresql://REDACTED`)
    - Replace `[YOUR-PASSWORD]` with your actual database password
 
 ### If using Railway:
