@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { site } from "./data/site";
-import { packages, carePlan, formatPackagePrice } from "./data/packages";
+import { packages, carePlan, formatPackagePrice, getPackage } from "./data/packages";
+import type { LandingContent, PageType } from "./data/landing";
+import { landingPath, landingBreadcrumb } from "./data/landing";
 
 // Sitewide structured data (GEO/SEO). Rendered once in the root layout.
 export function organizationSchema() {
@@ -115,5 +118,92 @@ export function breadcrumbSchema(crumbs: { name: string; path: string }[]) {
       name: c.name,
       item: `${site.url}${c.path}`,
     })),
+  };
+}
+
+// Assemble the full JSON-LD array for any programmatic landing page.
+// Picks the primary entity type from content.schema, then always appends
+// FAQPage (if FAQs) + BreadcrumbList. Keeps every page rich for AEO/GEO.
+export function landingSchema(
+  type: PageType,
+  content: LandingContent,
+  shortName?: string
+): Record<string, unknown>[] {
+  const url = `${site.url}${landingPath(type, content.slug)}`;
+  const pkg = content.packageId ? getPackage(content.packageId) : undefined;
+  const out: Record<string, unknown>[] = [];
+
+  if (content.schema === "Service") {
+    out.push({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: content.h1,
+      serviceType: shortName ?? content.h1,
+      description: content.answer,
+      provider: { "@id": `${site.url}/#organization` },
+      areaServed: "Worldwide",
+      url,
+      ...(pkg && {
+        offers: {
+          "@type": "Offer",
+          price: pkg.price,
+          priceCurrency: site.currency,
+          description: formatPackagePrice(pkg),
+          url: `${site.url}${pkg.cta.href}`,
+        },
+      }),
+    });
+  } else if (content.schema === "HowTo") {
+    out.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: content.h1,
+      description: content.answer,
+      step: (content.steps ?? []).map((s, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        text: s,
+      })),
+    });
+  } else {
+    // Article — for resource / comparison answer pages.
+    out.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: content.h1,
+      description: content.answer,
+      author: { "@id": `${site.url}/#organization` },
+      publisher: { "@id": `${site.url}/#organization` },
+      mainEntityOfPage: url,
+    });
+  }
+
+  if (content.faqs.length) out.push(faqSchema(content.faqs));
+  out.push(breadcrumbSchema(landingBreadcrumb(type, content, shortName)));
+  return out;
+}
+
+// Next.js Metadata for any landing page. Title goes through the root layout
+// template ("%s | Handbuilt"), so we pass the bare H1 and use the full
+// content.title for OpenGraph (which isn't templated).
+export function landingMetadata(type: PageType, content: LandingContent): Metadata {
+  const path = landingPath(type, content.slug);
+  const url = `${site.url}${path}`;
+  return {
+    title: content.h1,
+    description: content.description,
+    keywords: content.keywords,
+    alternates: { canonical: path },
+    openGraph: {
+      title: content.title,
+      description: content.description,
+      url,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.title,
+      description: content.description,
+    },
   };
 }

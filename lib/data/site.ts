@@ -13,6 +13,9 @@ export const site = {
   country: "CA",
   serviceArea: ["Surrey", "Vancouver", "Greater Vancouver", "British Columbia", "Canada", "Remote / Worldwide"],
   currency: "CAD",
+  // IndexNow key (Bing/Yandex instant indexing). Public by design — the key
+  // file lives at /<key>.txt. Ping via GET /api/indexnow?secret=...
+  indexNowKey: "ac88d1565466f5394f041d46f2546ce7",
   social: {
     twitter: "#",
     instagram: "#",
@@ -24,11 +27,11 @@ export const site = {
 };
 
 export const navLinks = [
-  { label: "Shop", href: "/shop" },
-  { label: "Live Demo", href: "/demo" },
-  { label: "Solutions", href: "/solutions" },
+  { label: "Services", href: "/services" },
+  { label: "Industries", href: "/industries" },
   { label: "Use Cases", href: "/use-cases" },
+  { label: "Resources", href: "/resources" },
   { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
 ] as const;

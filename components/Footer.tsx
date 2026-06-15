@@ -2,14 +2,16 @@ import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { LogoMark } from "@/components/Logo";
 import { site } from "@/lib/data/site";
-import { solutionCategories } from "@/lib/data/solutions";
-import { useCases } from "@/lib/data/useCases";
+import { services } from "@/lib/data/services";
+import { industries } from "@/lib/data/industries";
+import { resources } from "@/lib/data/resources";
+import { howtos } from "@/lib/data/howto";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-ink/10 bg-paper">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
@@ -37,33 +39,51 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-ink">Explore</h3>
             <ul className="mt-4 space-y-3 text-sm">
-              <FooterLink href="/solutions">Solutions</FooterLink>
-              <FooterLink href="/use-cases">Use Cases</FooterLink>
+              <FooterLink href="/services">All services</FooterLink>
+              <FooterLink href="/industries">By industry</FooterLink>
+              <FooterLink href="/use-cases">Use cases</FooterLink>
+              <FooterLink href="/compare">Compare</FooterLink>
               <FooterLink href="/pricing">Pricing</FooterLink>
-              <FooterLink href="/faq">FAQ</FooterLink>
               <FooterLink href="/about">About</FooterLink>
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Popular services */}
           <div>
-            <h3 className="text-sm font-semibold text-ink">Solutions</h3>
+            <h3 className="text-sm font-semibold text-ink">Services</h3>
             <ul className="mt-4 space-y-3 text-sm">
-              {solutionCategories.slice(0, 5).map((c) => (
-                <FooterLink key={c.slug} href={`/create?category=${c.slug}`}>
-                  {c.name}
+              {services.slice(0, 6).map((s) => (
+                <FooterLink key={s.slug} href={`/services/${s.slug}`}>
+                  {s.h1}
                 </FooterLink>
               ))}
             </ul>
           </div>
 
-          {/* Popular builds (use-case GEO links) */}
+          {/* Industries */}
           <div>
-            <h3 className="text-sm font-semibold text-ink">Popular</h3>
+            <h3 className="text-sm font-semibold text-ink">Industries</h3>
             <ul className="mt-4 space-y-3 text-sm">
-              {useCases.slice(0, 5).map((u) => (
-                <FooterLink key={u.slug} href={`/use-cases/${u.slug}`}>
-                  {u.solution} for {u.industry.split(" ")[0]}
+              {industries.slice(0, 6).map((i) => (
+                <FooterLink key={i.slug} href={`/industries/${i.slug}`}>
+                  {i.h1.replace(/^AI Automation for /, "")}
+                </FooterLink>
+              ))}
+            </ul>
+          </div>
+
+          {/* Learn */}
+          <div>
+            <h3 className="text-sm font-semibold text-ink">Learn</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {resources.slice(0, 4).map((r) => (
+                <FooterLink key={r.slug} href={`/resources/${r.slug}`}>
+                  {r.h1}
+                </FooterLink>
+              ))}
+              {howtos.slice(0, 2).map((h) => (
+                <FooterLink key={h.slug} href={`/how-to/${h.slug}`}>
+                  {h.h1}
                 </FooterLink>
               ))}
             </ul>
