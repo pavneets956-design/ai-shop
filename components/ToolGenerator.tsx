@@ -1,0 +1,222 @@
+"use client";
+
+import { useState } from "react";
+import { Check, Copy, Loader2, Printer, Sparkles } from "lucide-react";
+
+export type GenField = {
+  key: string;
+  label: string;
+  type: "text" | "textarea" | "select" | "number";
+  placeholder?: string;
+  options?: string[];
+  required?: boolean;
+};
+
+export type GenBusiness = { id: string; chip: string; desc: string };
+
+/**
+ * Generic input → AI output tool. Posts {kind, business?, fields} to the
+ * given endpoint and renders the single AI reply with ALLCAPS labels as
+ * headed sections. Powers both the shop product demos (/api/tools-demo,
+ * with a business picker) and the self-serve tools (/api/tools, no picker).
+ *
+ * `copyable` adds a copy button; `printable` adds a Print / Save-as-PDF
+ * button (the result is wrapped in .print-area — see globals.css @media print).
+ */
+export default function ToolGenerator({
+  kind,
+  businesses,
+  fields,
+  submitLabel,
+  resultTitle,
+  copyable = false,
+  printable = false,
+  endpoint = "/api/tools-demo",
+}: {
+  kind: string;
+  businesses?: GenBusiness[];
+  fields: GenField[];
+  submitLabel: string;
+  resultTitle: string;
+  copyable?: boolean;
+  printable?: boolean;
+  endpoint?: string;
+}) {
+  const [biz, setBiz] = useState<GenBusiness | undefined>(businesses?.[0]);
+  const [values, setValues] = useState<Record<string, string>>({});
+  const [result, setResult] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const set = (k: string, v: string) => setValues((s) => ({ ...s, [k]: v }));
+
+  const canSubmit = fields.every((f) => !f.required || (values[f.key] ?? "").trim().length > 0);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!canSubmit || loading) return;
+    setLoading(true);
+    setResult(null);
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind, business: biz?.desc, fields: values }),
+      });
+      if (res.status === 402) {
+        // Subscription lapsed/expired mid-session — send them to upgrade.
+        window.location.href = "/tools/pro";
+        return;
+      }
+      const data = await res.json();
+      setResult(data.reply || "Sorry — couldn't generate that. Try again?");
+    } catch {
+      setResult("Sorry — something dropped. Mind trying that again?");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const copy = async () => {
+    if (!result) return;
+    try {
+      await navigator.clipboard.writeText(result);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      /* clipboard blocked — no-op */
+    }
+  };
+
+  return (
+    <div className="mx-auto max-w-2xl">
+      {/* Business picker (demo mode only) */}
+      {businesses && businesses.length > 0 && (
+        <div className="mb-4">
+          <p className="field-label mb-2">Try it as:</p>
+          <div className="flex flex-wrap gap-2">
+            {businesses.map((b) => (
+              <button
+                key={b.id}
+                type="button"
+                onClick={() => {
+                  setBiz(b);
+                  setResult(null);
+                }}
+                className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
+                  biz?.id === b.id
+                    ? "border-clay/60 bg-clay/15 text-ink"
+                    : "border-ink/10 bg-white text-ink/60 hover:border-ink/25 hover:text-ink"
+                }`}
+              >
+                {b.chip}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <form onSubmit={submit} className="border-glow glass space-y-4 rounded-3xl p-5 sm:p-6">
+        {fields.map((f) => (
+          <div key={f.key}>
+            <label className="field-label mb-1.5 block">{f.label}</label>
+            {f.type === "textarea" ? (
+              <textarea
+                value={values[f.key] ?? ""}
+                onChange={(e) => set(f.key, e.target.value)}
+                placeholder={f.placeholder}
+                className="field min-h-[88px] w-full"
+                maxLength={600}
+              />
+            ) : f.type === "select" ? (
+              <select
+                value={values[f.key] ?? ""}
+                onChange={(e) => set(f.key, e.target.value)}
+                className="field w-full"
+              >
+                <option value="">Select…</option>
+                {f.options?.map((o) => (
+                  <option key={o} value={o}>
+                    {o}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                value={values[f.key] ?? ""}
+                onChange={(e) => set(f.key, e.target.value)}
+                placeholder={f.placeholder}
+                type={f.type}
+                className="field w-full"
+                maxLength={600}
+              />
+            )}
+          </div>
+        ))}
+
+        <button
+          type="submit"
+          disabled={!canSubmit || loading}
+          className="btn-primary w-full justify-center disabled:opacity-40"
+        >
+          {loading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" /> Working…
+            </>
+          ) : (
+            <>
+              <Sparkles className="h-4 w-4" /> {submitLabel}
+            </>
+          )}
+        </button>
+      </form>
+
+      {/* Result */}
+      {result && (
+        <div className="print-area mt-5 rounded-3xl border border-ink/[0.08] bg-white p-6 shadow-card">
+          <div className="mb-3 flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/40">
+              {resultTitle}
+            </span>
+            <div className="flex items-center gap-4 print:hidden">
+              {printable && (
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
+                >
+                  <Printer className="h-3.5 w-3.5" /> Print / PDF
+                </button>
+              )}
+              {copyable && (
+                <button
+                  type="button"
+                  onClick={copy}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
+                >
+                  {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copied ? "Copied" : "Copy"}
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="space-y-1.5 text-[15px] leading-relaxed text-ink/80">
+            {result.split("\n").map((line, i) => {
+              const trimmed = line.trim();
+              if (!trimmed) return null;
+              const m = trimmed.match(/^([A-Z][A-Z ]{2,}):\s*(.*)$/);
+              if (m) {
+                return (
+                  <p key={i}>
+                    <span className="font-semibold text-ink">{m[1]}:</span> {m[2]}
+                  </p>
+                );
+              }
+              return <p key={i}>{trimmed}</p>;
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

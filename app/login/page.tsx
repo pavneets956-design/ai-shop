@@ -1,132 +1,66 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
-import { Chrome } from "lucide-react";
+import { ArrowLeft, Chrome } from "lucide-react";
+import GlowBackground from "@/components/GlowBackground";
+import { LogoMark } from "@/components/Logo";
 
-export default function LoginPage() {
-  const [isLogin, setIsLogin] = useState(false); // Start with signup
+function LoginInner() {
+  const params = useSearchParams();
+  const callbackUrl = params.get("callbackUrl") || "/account";
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center py-12 px-4">
-      <div className="max-w-md w-full">
-        <div className="text-center mb-12">
-          <Link href="/" className="inline-block mb-6">
-            <Image
-              src="/logo.png"
-              alt="AI Tech Shop"
-              width={120}
-              height={40}
-              className="h-10 w-auto mx-auto"
-            />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-24">
+      <GlowBackground variant="subtle" />
+      <div className="relative w-full max-w-md">
+        <div className="mb-8 text-center">
+          <Link href="/" className="inline-flex items-center gap-2.5">
+            <LogoMark className="h-9 w-9" />
+            <span className="font-display text-xl font-semibold tracking-tight text-ink">
+              Handbuilt
+            </span>
           </Link>
-          <h1 className="text-4xl font-light text-ink mb-3">
-            {isLogin ? "Welcome back" : "Get started"}
+          <h1 className="mt-6 font-display text-3xl font-semibold tracking-tight text-ink">
+            Sign in to Tools Pro
           </h1>
-          <p className="text-gray-400 font-light">
-            {isLogin
-              ? "Sign in to manage your AI systems"
-              : "Start building and selling AI automation systems"}
+          <p className="mt-2 text-ink/55">
+            Access every AI tool, your saved brand profile, and your generation history.
           </p>
         </div>
 
-        <div className="border border-ink/10 rounded-lg p-8">
-          {/* Google Sign In Button */}
+        <div className="glass-card spec-frame p-8">
           <button
-            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-medium mb-6"
+            onClick={() => signIn("google", { callbackUrl })}
+            className="flex w-full items-center justify-center gap-3 rounded-md border border-ink/15 bg-white px-4 py-3 font-semibold text-ink transition hover:border-clay/40 hover:bg-paper-2"
           >
-            <Chrome className="w-5 h-5" />
-            {isLogin ? "Sign in with Google" : "Sign up with Google"}
+            <Chrome className="h-5 w-5 text-clay-dark" />
+            Continue with Google
           </button>
-
-          <div className="relative mb-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-ink/10"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-[#0a0a0a] text-gray-400 font-light">Or continue with email</span>
-            </div>
-          </div>
-
-          <form className="space-y-6">
-            {!isLogin && (
-              <div>
-                <label className="block text-sm font-light text-gray-400 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
-                  placeholder="John Doe"
-                />
-              </div>
-            )}
-            <div>
-              <label className="block text-sm font-light text-gray-400 mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                required
-                className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
-                placeholder="you@example.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-light text-gray-400 mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                required
-                className="w-full px-4 py-3 bg-transparent border border-ink/10 rounded-lg focus:ring-1 focus:ring-ink/20 focus:border-ink/20 text-ink placeholder-gray-500 font-light"
-                placeholder="••••••••"
-              />
-            </div>
-            {isLogin && (
-              <div className="flex items-center justify-between">
-                <label className="flex items-center">
-                  <input type="checkbox" className="rounded border-ink/10 bg-transparent text-ink focus:ring-ink/20" />
-                  <span className="ml-2 text-sm text-gray-400 font-light">Remember me</span>
-                </label>
-                <Link href="/forgot-password" className="text-sm text-gray-400 hover:text-ink transition-colors font-light">
-                  Forgot password?
-                </Link>
-              </div>
-            )}
-            <button type="submit" className="w-full btn-primary py-3">
-              {isLogin ? "Sign In" : "Create Account"}
-            </button>
-          </form>
-
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-sm text-gray-400 hover:text-ink transition-colors font-light"
-            >
-              {isLogin
-                ? "Don't have an account? Sign up"
-                : "Already have an account? Sign in"}
-            </button>
-          </div>
+          <p className="mt-5 text-center text-xs text-ink/40">
+            Secure sign-in. We only use your email to manage your account and subscription.
+          </p>
         </div>
 
-        <div className="mt-6 text-center text-sm text-gray-500 font-light">
-          <p>
-            By continuing, you agree to our{" "}
-            <Link href="/terms" className="text-gray-400 hover:text-ink transition-colors">
-              Terms of Service
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy" className="text-gray-400 hover:text-ink transition-colors">
-              Privacy Policy
-            </Link>
-          </p>
+        <div className="mt-6 text-center">
+          <Link
+            href="/tools/pro"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/50 transition hover:text-ink"
+          >
+            <ArrowLeft className="h-4 w-4" /> Back to Tools Pro
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={null}>
+      <LoginInner />
+    </Suspense>
   );
 }

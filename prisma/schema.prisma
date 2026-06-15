@@ -23,6 +23,30 @@ model User {
   // NextAuth relations
   accounts      Account[]
   sessions      Session[]
+
+  // Stripe subscription (Tools Pro) — the source of truth for paid access.
+  stripeCustomerId       String?   @unique
+  stripeSubscriptionId   String?   @unique
+  stripePriceId          String?
+  stripeCurrentPeriodEnd DateTime?
+  // Saved across tools for a premium, prefilled experience.
+  brandProfile           Json?
+  toolRuns               ToolRun[]
+}
+
+// History of generations, per user — a premium "your saved work" feature.
+model ToolRun {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tool      String   // tool slug/kind
+  title     String?  // short label for the run
+  input     Json
+  output    String   @db.Text
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([tool])
 }
 
 model Product {
