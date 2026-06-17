@@ -121,6 +121,50 @@ export function breadcrumbSchema(crumbs: { name: string; path: string }[]) {
   };
 }
 
+// Shop storefront schema: a breadcrumb + an ItemList of the products as
+// self-contained Service offers (priced via their package). Self-contained so
+// it never 404s on a cross-page URL.
+export function shopSchema(
+  products: { name: string; outcome: string; packageId: "starter" | "business" | "custom" }[]
+): Record<string, unknown>[] {
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Ready-to-install AI systems",
+    itemListElement: products.map((p, i) => {
+      const pkg = getPackage(p.packageId);
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Service",
+          name: p.name,
+          serviceType: "AI development & automation",
+          description: p.outcome,
+          provider: { "@id": `${site.url}/#organization` },
+          areaServed: "Worldwide",
+          ...(pkg && {
+            offers: {
+              "@type": "Offer",
+              price: pkg.price,
+              priceCurrency: site.currency,
+              description: formatPackagePrice(pkg),
+              url: `${site.url}/create`,
+            },
+          }),
+        },
+      };
+    }),
+  };
+  return [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Shop", path: "/shop" },
+    ]),
+    itemList,
+  ];
+}
+
 // Assemble the full JSON-LD array for any programmatic landing page.
 // Picks the primary entity type from content.schema, then always appends
 // FAQPage (if FAQs) + BreadcrumbList. Keeps every page rich for AEO/GEO.

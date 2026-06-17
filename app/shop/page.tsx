@@ -4,6 +4,8 @@ import { ArrowRight, ArrowUpRight, Check, Sparkles, Plug, Clock } from "lucide-r
 import GlowBackground from "@/components/GlowBackground";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
+import JsonLd from "@/components/JsonLd";
+import { shopSchema } from "@/lib/seo";
 import { getIcon } from "@/lib/icons";
 import { liveSaas, utmHref } from "@/lib/data/shop";
 import { shopProducts, shopIndustries } from "@/lib/data/shopProducts";
@@ -18,6 +20,7 @@ export const metadata: Metadata = {
 export default function ShopPage() {
   return (
     <>
+      <JsonLd data={shopSchema(shopProducts)} />
       {/* ---------- Header ---------- */}
       <section className="relative overflow-hidden pb-12 pt-32">
         <GlowBackground variant="hero" />
