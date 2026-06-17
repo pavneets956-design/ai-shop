@@ -123,7 +123,39 @@ export const outcomes: { v: string; l: string }[] = [
 ];
 
 export const pricingTiers: { tag: string; price: string; small?: string; desc: string; feat?: boolean }[] = [
-  { tag: "One AI tool", price: "$1,000", small: " CAD", desc: "Pick a single tool — receptionist, quotes, follow-up — built around your business. Live in ~5 days." },
-  { tag: "Business AI system · most popular", price: "$2,500–$5,000", desc: "Multiple tools working together as one connected system across calls, quotes, reviews and follow-up.", feat: true },
-  { tag: "Tools Pro · self-serve", price: "$19", small: "/mo", desc: "DIY access to the writing tools — proposals, quotes, review replies — in your browser." },
+  { tag: "AI Starter System", price: "From $1,000", small: " CAD", desc: "One AI worker live in days — receptionist, chatbot, quote intake, or review replies." },
+  { tag: "AI Business System · most popular", price: "$2,500–$5,000", desc: "2–4 connected AI workers — receptionist + quote + follow-up + dashboard, wired to your tools.", feat: true },
+  { tag: "Custom AI App", price: "From $7,500", desc: "A full app or internal platform you own — SaaS MVP, client portal, custom workflows." },
+];
+
+// Ready-to-install AI systems — homepage "Start with one AI worker" section.
+// icon `key` reuses the ICONS map in LiveAIHome.tsx.
+export type System = {
+  key: string; name: string; problem: string; outcome: string;
+  connects: string; price: string; time: string; cta: string; href: string;
+};
+export const systems: System[] = [
+  { key: "receptionist", name: "AI Receptionist", problem: "Missed calls, repeated questions, slow replies.", outcome: "Customers get answers and you get clean lead details.", connects: "Website · SMS · WhatsApp · Instagram DM · email", price: "From $1,000 CAD", time: "Live in ~5 business days", cta: "Get this built", href: "/create" },
+  { key: "quote", name: "AI Quote Agent", problem: "Customers send vague requests and you waste time chasing details.", outcome: "The AI collects job type, photos, size, location, timing, and budget.", connects: "Website form · email · CRM · Google Sheets", price: "From $1,000 CAD", time: "Live in ~5 business days", cta: "Get this built", href: "/create" },
+  { key: "followup", name: "AI Lead Follow-Up Agent", problem: "Leads go cold because nobody follows up fast enough.", outcome: "The AI follows up, answers questions, and pushes them toward booking.", connects: "Email · SMS · CRM · calendar", price: "From $1,500 CAD", time: "Live in 1–2 weeks", cta: "Get this built", href: "/create" },
+  { key: "invoice", name: "AI Invoice Reminder Agent", problem: "Unpaid invoices waste your time and cash flow.", outcome: "Polite reminders go out automatically until the invoice is paid.", connects: "QuickBooks · Stripe · Square · email · SMS", price: "From $1,500 CAD", time: "Live in 1–2 weeks", cta: "Get this built", href: "/create" },
+  { key: "proposal", name: "AI Admin System", problem: "Your business runs through scattered texts, emails, forms, and spreadsheets.", outcome: "One connected workflow for intake, follow-up, reminders, and reporting.", connects: "CRM · calendar · email · forms · payments", price: "From $2,500 CAD", time: "Live in 2–3 weeks", cta: "Plan my system", href: "/create" },
+];
+
+// "Who it's for" tiles — one concrete use case each. Linked to the industries hub.
+export const industries: { name: string; use: string }[] = [
+  { name: "Landscaping", use: "Quote requests, photos, measurements, follow-ups." },
+  { name: "Lawn care", use: "Recurring bookings, seasonal reminders, fast quotes." },
+  { name: "Plumbing", use: "Emergency triage, after-hours calls, job booking." },
+  { name: "Electrical", use: "Priority call triage, quotes, scheduling." },
+  { name: "HVAC", use: "Seasonal demand, maintenance reminders, quick quotes." },
+  { name: "Roofing", use: "Inspection requests, photo intake, estimate follow-ups." },
+  { name: "Cleaning", use: "Recurring bookings, quote intake, reminders." },
+  { name: "Moving", use: "Size/date/location intake, instant quotes, follow-ups." },
+  { name: "Pest control", use: "Service requests, recurring plans, callbacks." },
+  { name: "Dental clinics", use: "Appointment questions, intake, missed-call capture." },
+  { name: "Salons", use: "Bookings, no-show reminders, service questions." },
+  { name: "Restaurants", use: "Catering inquiries, FAQs, group bookings." },
+  { name: "Auto detailing", use: "Package quotes, bookings, reminders." },
+  { name: "Real estate", use: "Lead capture, showing requests, fast follow-up." },
 ];

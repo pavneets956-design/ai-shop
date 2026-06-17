@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { liveTools, outcomes, pricingTiers, type LiveTool } from "@/lib/data/liveTools";
+import { liveTools, outcomes, pricingTiers, systems, industries, type LiveTool } from "@/lib/data/liveTools";
 import styles from "./LiveAIHome.module.css";
 
 const byKey: Record<string, LiveTool> = Object.fromEntries(liveTools.map((t) => [t.key, t]));
@@ -144,16 +144,16 @@ export default function LiveAIHome() {
         <div className={styles.wrap}>
           <section className={styles.hero}>
             <div>
-              <div className={styles.eyebrow}><i />Live AI tools for local business · Surrey BC → worldwide</div>
-              <h1 className={styles.headline}>AI tools that answer calls, send quotes, reply to reviews, follow up &amp; <span className={styles.hl}>get work booked</span>.</h1>
-              <p className={styles.lead}>Pick a tool. Watch it handle real business work in seconds — trained on your services, pricing, and brand.</p>
+              <div className={styles.eyebrow}><i />Ready-to-install AI workers · built in Canada</div>
+              <h1 className={styles.headline}>AI workers for small businesses — built, customized &amp; <span className={styles.hl}>live in days</span>.</h1>
+              <p className={styles.lead}>Pick a ready-to-install AI receptionist, quote agent, follow-up agent, or admin system. We customize it to your business, connect it to your workflow, and launch it — without months of meetings.</p>
               <div className={styles.ctas}>
-                <Link className={`${styles.btn} ${styles.btnGreen}`} href="/create">Get my AI system <span className={styles.arrow}>→</span></Link>
-                <a className={`${styles.btn} ${styles.btnGhost}`} href="#lab">See the tools live</a>
+                <a className={`${styles.btn} ${styles.btnGreen}`} href="#lab">Try a live demo <span className={styles.arrow}>→</span></a>
+                <Link className={`${styles.btn} ${styles.btnGhost}`} href="/shop">Shop AI systems</Link>
               </div>
               <div className={styles.trustline}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                <b>No fake demos</b> — these are the real tools, running live.
+                Built in Canada · Fixed CAD pricing · <b>real demos, not mockups</b>
               </div>
             </div>
 
@@ -196,9 +196,9 @@ export default function LiveAIHome() {
         <section className={styles.sec} id="lab">
           <div className={styles.wrap}>
             <div className={styles.labhead}>
-              <div className={styles.kicker}>Live AI Tools Lab</div>
-              <h2 className={styles.h2grad}>See every AI tool working — live, on a phone</h2>
-              <p className={styles.labsub}>Tap a tool. Watch it do the actual job inside the phone, and land the real business result.</p>
+              <div className={styles.kicker}>Live demo</div>
+              <h2 className={styles.h2grad}>Try the AI before you buy it.</h2>
+              <p className={styles.labsub}>Pretend you’re a customer — ask for a quote, request an appointment, or ask a business question. Tap a tool and watch it work inside the phone.</p>
             </div>
 
             <div className={styles.tabs}>
@@ -322,15 +322,64 @@ export default function LiveAIHome() {
           </div>
         </section>
 
+        {/* READY-TO-INSTALL SYSTEMS */}
+        <section className={styles.sec} id="systems">
+          <div className={styles.wrap}>
+            <div className={styles.labhead}>
+              <div className={styles.kicker}>Ready-to-install AI systems</div>
+              <h2 className={styles.h2grad}>Start with one AI worker.</h2>
+              <p className={styles.labsub}>Fixed-scope systems we customize for your business — faster than building from scratch.</p>
+            </div>
+            <div className={styles.systems}>
+              {systems.map((s) => (
+                <div key={s.name} className={styles.syscard}>
+                  <div className={styles.sysIcon}>{ICONS[s.key]}</div>
+                  <div className={styles.sysName}>{s.name}</div>
+                  <div className={styles.sysLine}><b>Problem.</b> {s.problem}</div>
+                  <div className={styles.sysLine}><b>Outcome.</b> {s.outcome}</div>
+                  <div className={styles.sysConnect}>Connects with {s.connects}</div>
+                  <div className={styles.sysFoot}>
+                    <div className={styles.sysMeta}><span className={styles.sysPrice}>{s.price}</span><span className={styles.sysTime}>{s.time}</span></div>
+                    <Link className={styles.sysCta} href={s.href}>{s.cta} <span className={styles.arrow}>→</span></Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHO IT'S FOR */}
+        <section className={styles.sec}>
+          <div className={styles.wrap}>
+            <div className={styles.labhead}>
+              <div className={styles.kicker}>Who it’s for</div>
+              <h2 className={styles.h2grad}>Built for businesses that lose money when replies are slow.</h2>
+            </div>
+            <div className={styles.industries}>
+              {industries.map((ind) => (
+                <Link key={ind.name} className={styles.indtile} href="/industries">
+                  <div className={styles.indName}>{ind.name}</div>
+                  <div className={styles.indUse}>{ind.use}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* PROOF */}
         <section className={`${styles.sec} ${styles.proof}`}>
           <div className={styles.wrap}>
-            <div className={styles.kicker}>Real builders, real software</div>
-            <h2 className={styles.h2grad}>Built by the same studio behind live production tools</h2>
-            <p className={styles.labsub} style={{ maxWidth: 560, margin: "10px auto 0" }}>Not mockups — real deployed software running payments, auth, email and monitoring in production today.</p>
+            <div className={styles.kicker}>Proof</div>
+            <h2 className={styles.h2grad}>Real systems, not slide decks.</h2>
+            <p className={styles.labsub} style={{ maxWidth: 600, margin: "10px auto 0" }}>Run by a real builder. The demos above are live, and the products below are systems already shipped to production.</p>
             <div className={styles.plogos}>
               <a className={styles.plogo} href="https://coitracker.co" target="_blank" rel="noopener noreferrer"><i />COITracker<small>Live B2B SaaS · insurance compliance</small></a>
               <a className={styles.plogo} href="https://www.paynudge.xyz" target="_blank" rel="noopener noreferrer"><i />PayNudge<small>Live SaaS · payment recovery</small></a>
+              <Link className={styles.plogo} href="/tools/pro"><i />Tools Pro<small>Self-serve AI tool suite</small></Link>
+            </div>
+            <div className={styles.founder}>
+              <div className={styles.founderTxt}>Built by <b>Pavneet</b> in Surrey/Delta, BC. One builder, direct communication, no agency handoff.</div>
+              <div className={styles.founderLine}>You’re not buying a PDF strategy. You’re buying a working system.</div>
             </div>
           </div>
         </section>
@@ -338,7 +387,7 @@ export default function LiveAIHome() {
         {/* PRICING */}
         <section className={styles.sec}>
           <div className={styles.wrap}>
-            <div className={styles.labhead}><div className={styles.kicker}>Simple, transparent pricing</div><h2 className={styles.h2grad}>Start with one tool, or a full system</h2></div>
+            <div className={styles.labhead}><div className={styles.kicker}>Pricing</div><h2 className={styles.h2grad}>Simple CAD pricing.</h2></div>
             <div className={styles.pricing}>
               {pricingTiers.map((p, i) => (
                 <div key={i} className={`${styles.pcardz} ${p.feat ? styles.pcardzFeat : ""}`}>
@@ -348,6 +397,18 @@ export default function LiveAIHome() {
                 </div>
               ))}
             </div>
+            <p className={styles.careplan}>Optional care plan from <b>$250/mo</b> for updates, monitoring, and improvements.</p>
+          </div>
+        </section>
+
+        {/* TOOLS PRO SEPARATION */}
+        <section className={styles.sec}>
+          <div className={styles.wrap}>
+            <div className={styles.toolspro}>
+              <div className={styles.tpTitle}>Want the self-serve tools instead?</div>
+              <p className={styles.tpCopy}>Tools Pro is for owners who want to use AI tools themselves — proposals, quotes, review replies, reminders, and business copy. Done-for-you AI systems are for owners who want us to install the automation.</p>
+              <Link className={`${styles.btn} ${styles.btnGhost}`} href="/tools/pro">Explore Tools Pro</Link>
+            </div>
           </div>
         </section>
 
@@ -355,9 +416,12 @@ export default function LiveAIHome() {
         <section className={styles.sec}>
           <div className={styles.wrap}>
             <div className={styles.finalcta}>
-              <h2 className={styles.finalTitle}>Tell us what you want AI to handle.</h2>
-              <p className={styles.finalP}>Describe the work that eats your day. We map the tool, build it around your business, and get it live in days.</p>
-              <Link className={`${styles.btn} ${styles.btnGreen}`} href="/create">Get my AI system <span className={styles.arrow}>→</span></Link>
+              <h2 className={styles.finalTitle}>Tell us what you want off your plate.</h2>
+              <p className={styles.finalP}>Describe the calls, messages, quotes, follow-ups, or admin work you want automated. We’ll turn it into a clear build plan.</p>
+              <div className={styles.ctas} style={{ justifyContent: "center" }}>
+                <Link className={`${styles.btn} ${styles.btnGreen}`} href="/create">Start a build <span className={styles.arrow}>→</span></Link>
+                <a className={`${styles.btn} ${styles.btnGhost}`} href="#lab">Try a demo first</a>
+              </div>
             </div>
           </div>
         </section>

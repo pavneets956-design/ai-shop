@@ -211,6 +211,49 @@
 .finalcta .btnGhost{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.22)}
 .finalcta .btnGhost:hover{border-color:rgba(217,119,6,.6);color:#fff}
 
+/* ready-to-install systems */
+.systems{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+@media(max-width:900px){.systems{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.systems{grid-template-columns:1fr}}
+.syscard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadowSm);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.syscard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sysIcon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accentSoft);color:var(--accentText);margin-bottom:14px}
+.sysIcon svg{width:20px;height:20px}
+.sysName{font-size:17px;font-weight:800;letter-spacing:-.015em;margin-bottom:11px}
+.sysLine{font-size:13px;line-height:1.5;margin-bottom:7px;color:var(--ink2)}
+.sysLine b{color:var(--ink);font-weight:700}
+.sysConnect{font-size:11.5px;color:var(--muted);line-height:1.5;margin:9px 0 0}
+.sysFoot{margin-top:auto;padding-top:2px}
+.sysMeta{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 13px;padding-top:14px;border-top:1px solid var(--line)}
+.sysPrice{font-weight:800;color:var(--ink);font-size:14px}
+.sysTime{color:var(--muted);font-size:12px}
+.sysCta{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;font-weight:700;font-size:14px;padding:11px 16px;border-radius:12px;background:var(--accentSoft);color:var(--accentText);text-decoration:none;transition:all .2s var(--ease)}
+.sysCta:hover{background:var(--accent);color:#fff}
+
+/* who it's for */
+.industries{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+@media(max-width:900px){.industries{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.industries{grid-template-columns:1fr}}
+.indtile{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadowSm);text-decoration:none;color:inherit;transition:transform .2s var(--ease),border-color .2s var(--ease)}
+.indtile:hover{transform:translateY(-2px);border-color:rgba(217,119,6,.4)}
+.indName{font-size:14px;font-weight:800;margin-bottom:4px}
+.indUse{font-size:12px;color:var(--muted);line-height:1.45}
+
+/* founder block */
+.founder{max-width:640px;margin:28px auto 0;background:#FAF6F0;border:1px solid var(--line);border-radius:18px;padding:22px 26px}
+.founderTxt{font-size:14px;color:var(--ink2);line-height:1.55}
+.founderTxt b{color:var(--ink);font-weight:700}
+.founderLine{margin-top:10px;font-size:15.5px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+
+/* pricing care plan */
+.careplan{text-align:center;font-size:13px;color:var(--muted);margin-top:18px}
+.careplan b{color:var(--ink);font-weight:700}
+
+/* tools pro separation */
+.toolspro{max-width:780px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px;text-align:center;box-shadow:var(--shadowSm)}
+.tpTitle{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:11px;color:var(--ink)}
+.tpCopy{font-size:14px;color:var(--muted);max-width:580px;margin:0 auto 20px;line-height:1.55}
+
 @media(prefers-reduced-motion:reduce){
   .root *{animation-duration:.001s!important;transition-duration:.06s!important}
 }
