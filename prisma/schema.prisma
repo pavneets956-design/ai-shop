@@ -17,6 +17,9 @@ model User {
   id            String    @id @default(cuid())
   email         String    @unique
   name          String?
+  // NextAuth/OAuth profile fields — the adapter writes these on Google sign-in.
+  emailVerified DateTime?
+  image         String?
   password      String?   // Optional for OAuth users
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
