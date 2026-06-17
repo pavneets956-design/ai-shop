@@ -474,15 +474,14 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     // visitor opts in. null => no key (or error) => scripted flow.
     const firstTurn = callConsultRetry();
 
-    // 1) Orient: where they are + what we do (short, snappy).
-    await wait(180);
-    await speak("Hi — you've reached Handbuilt.");
-    await wait(140);
-    await speak("We build AI workers for small businesses — receptionists, quote agents, and follow-up systems that answer your calls, send quotes, and chase leads for you.");
-    await wait(140);
+    // 1) Orient + offer in one tight pass (kept short — the old 3-line intro
+    //    felt slow). Voice still drives pacing, but there's less of it.
+    await wait(120);
+    await speak("Hi — you've reached Handbuilt. We build AI workers that answer calls, send quotes, and chase leads for small businesses.");
+    await wait(120);
 
     // 2) Offer the choice: plan + quote here, or skip to the site.
-    await speak("I can build you a custom plan and a ballpark quote in about a minute. Want to do that now, or skip and explore the site?");
+    await speak("I can build you a custom plan and a ballpark quote in under a minute. Want to do that now, or skip and explore the site?");
     const choice = await waitForAnswer({
       type: "chips",
       opts: ["Yes — build my plan", "Skip — explore the site"],

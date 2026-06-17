@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { liveTools, outcomes, pricingTiers, systems, industries, type LiveTool } from "@/lib/data/liveTools";
+import HeroBuilder from "./HeroBuilder";
 import styles from "./LiveAIHome.module.css";
 
 const byKey: Record<string, LiveTool> = Object.fromEntries(liveTools.map((t) => [t.key, t]));
@@ -157,38 +158,7 @@ export default function LiveAIHome() {
               </div>
             </div>
 
-            <div className={styles.consoleHost}>
-              <div className={styles.console}>
-                <div className={styles.consoleHead}>
-                  <div className={styles.ttl}><i />AI Command Center</div>
-                  <div className={styles.cmeta}>7 tools · always on</div>
-                </div>
-                <div className={styles.tiles}>
-                  <div className={styles.tile}>
-                    <div className={styles.th}>{ICONS.receptionist}Calls answered</div>
-                    <div className={styles.wave}><i /><i /><i /><i /><i /><i /><i /><i /></div>
-                    <div className={styles.tsub}>triaging live · 24/7</div>
-                  </div>
-                  <div className={styles.tile}>
-                    <div className={styles.th}>{ICONS.quote}Quotes sent</div>
-                    <div className={`${styles.big} ${styles.shine}`}>$1,250</div>
-                    <div className={styles.tsub}>generated in 6s</div>
-                  </div>
-                  <div className={styles.tile}>
-                    <div className={styles.th}>{ICONS.review}Reviews handled</div>
-                    <div className={styles.stars}><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
-                    <div className={styles.tsub}>on-brand replies</div>
-                  </div>
-                  <div className={styles.tile}>
-                    <div className={styles.th}>{ICONS.followup}Follow-ups</div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-                      <span className={styles.sendring}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19V5M5 12l7-7 7 7" /></svg></span>
-                      <div><div className={styles.big} style={{ fontSize: 19 }}>0 missed</div><div className={styles.tsub}>every lead chased</div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroBuilder />
           </section>
         </div>
 

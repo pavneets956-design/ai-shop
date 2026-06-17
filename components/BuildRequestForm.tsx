@@ -41,11 +41,13 @@ export default function BuildRequestForm() {
   const params = useSearchParams();
   const presetPackage = params.get("package") ?? "";
   const presetBuild = shopProducts.find((p) => p.slug === params.get("build"));
+  // ?goal= lets the homepage hero builder carry its designed system in as the goal.
+  const presetGoal = params.get("goal") ?? "";
 
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState(1);
   const [form, setForm] = useState({
-    goal: presetBuild ? `${presetBuild.name} — ${presetBuild.outcome}` : "",
+    goal: presetBuild ? `${presetBuild.name} — ${presetBuild.outcome}` : presetGoal,
     useType: "business",
     industry: "",
     tasks: "",
