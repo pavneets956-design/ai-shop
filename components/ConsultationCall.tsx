@@ -180,7 +180,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       // Typewriter starts immediately — text is free, so the screen is alive
       // while premium audio is fetched (overlap = near-zero perceived latency).
       let i = 0;
-      const typeDelay = 42;
+      const typeDelay = 20;
       const typer = setInterval(() => {
         i = Math.min(i + 1, text.length);
         setShown(text.slice(0, i));
@@ -195,7 +195,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         clearInterval(typer);
         setShown(text); // force-complete text on audio end — kills dub desync
         setSpeaking(false);
-        setTimeout(resolve, 480);
+        setTimeout(resolve, 200);
       };
 
       // Ultimate net so a stuck line can never hang the await-chain.
@@ -209,14 +209,14 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         if (synth && voiceRef.current) {
           const u = new SpeechSynthesisUtterance(text);
           u.voice = voiceRef.current;
-          u.rate = 0.96;
+          u.rate = 1.12;
           u.pitch = 1;
           u.volume = 1;
           u.onend = done;
           u.onerror = done;
           synth.cancel();
           synth.speak(u);
-          setTimeout(done, text.length * 70 + 2500);
+          setTimeout(done, text.length * 48 + 1500);
         } else {
           setTimeout(done, text.length * typeDelay + 600);
         }
@@ -470,25 +470,36 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   }, [speak, waitForAnswer, finish]);
 
   const runFlow = useCallback(async () => {
-    // Kick off the first live turn NOW — it resolves while the fixed greeting
-    // plays, so the live path adds no perceptible wait. This also probes for
-    // the key: null => no key (or error) => scripted flow.
+    // Prefetch the first live turn so the interview starts instantly if the
+    // visitor opts in. null => no key (or error) => scripted flow.
     const firstTurn = callConsultRetry();
 
-    await wait(500);
-    await speak("Hello.");
-    await wait(450);
-    await speak("You've reached Handbuilt.");
-    await wait(350);
-    await speak("I build AI agents and AI-powered websites for businesses.");
-    await wait(350);
-    await speak("Think of this as a quick call. I'll ask a few things, then hand you a plan.");
-    await wait(300);
+    // 1) Orient: where they are + what we do (short, snappy).
+    await wait(180);
+    await speak("Hi — you've reached Handbuilt.");
+    await wait(140);
+    await speak("We build AI workers for small businesses — receptionists, quote agents, and follow-up systems that answer your calls, send quotes, and chase leads for you.");
+    await wait(140);
 
+    // 2) Offer the choice: plan + quote here, or skip to the site.
+    await speak("I can build you a custom plan and a ballpark quote in about a minute. Want to do that now, or skip and explore the site?");
+    const choice = await waitForAnswer({
+      type: "chips",
+      opts: ["Yes — build my plan", "Skip — explore the site"],
+    });
+    if (/skip/i.test(choice)) {
+      dismiss();
+      return;
+    }
+
+    // 3) Run the interview (live LLM if a key is set, else scripted).
+    await wait(120);
+    await speak("Perfect — let's do it.");
+    await wait(120);
     const first = await firstTurn;
     if (first) await runLive(first);
     else await runScripted();
-  }, [callConsultRetry, speak, runLive, runScripted]);
+  }, [callConsultRetry, speak, waitForAnswer, dismiss, runLive, runScripted]);
 
   const start = useCallback(() => {
     setStarted(true);

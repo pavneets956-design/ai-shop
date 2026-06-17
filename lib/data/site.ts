@@ -27,12 +27,9 @@ export const site = {
 };
 
 export const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Industries", href: "/industries" },
-  { label: "Use Cases", href: "/use-cases" },
-  { label: "Resources", href: "/resources" },
-  { label: "AI Tools", href: "/tools" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Demos", href: "/demo" },
   { label: "Shop", href: "/shop" },
-  { label: "About", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Industries", href: "/industries" },
+  { label: "Tools Pro", href: "/tools/pro" },
 ] as const;

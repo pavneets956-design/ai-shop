@@ -1,9 +1,16 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="#1C2B3A"/>
-  <path d="M9 14 V9 H14" stroke="#2F6F6A" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M39 34 V39 H34" stroke="#2F6F6A" stroke-width="1.6" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="hbBar" x1="16" y1="22" x2="32" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="#1C2B3A"/>
+  <path d="M9 14 V9 H14" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M39 34 V39 H34" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
   <path d="M16 14 V34" stroke="#F4F5F7" stroke-width="4.4" stroke-linecap="round"/>
   <path d="M32 14 V34" stroke="#F4F5F7" stroke-width="4.4" stroke-linecap="round"/>
-  <path d="M16 24 H32" stroke="#2F6F6A" stroke-width="4.4" stroke-linecap="round"/>
-  <circle cx="32" cy="14" r="2.7" fill="#E8A13C"/>
+  <path d="M16 24 H32" stroke="url(#hbBar)" stroke-width="4.4" stroke-linecap="round"/>
+  <circle cx="32" cy="14" r="5" fill="#F59E0B" opacity="0.22"/>
+  <circle cx="32" cy="14" r="2.8" fill="#F59E0B"/>
 </svg>

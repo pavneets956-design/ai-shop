@@ -6,7 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
-import { faqsByCategory } from "@/lib/data/faqs";
+import { pricingPageFaqs } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  const pricingFaqs = faqsByCategory("pricing").concat(faqsByCategory("process"));
+  const pricingFaqs = pricingPageFaqs();
 
   return (
     <>

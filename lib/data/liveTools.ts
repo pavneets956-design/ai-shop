@@ -142,20 +142,20 @@ export const systems: System[] = [
   { key: "proposal", name: "AI Admin System", problem: "Your business runs through scattered texts, emails, forms, and spreadsheets.", outcome: "One connected workflow for intake, follow-up, reminders, and reporting.", connects: "CRM · calendar · email · forms · payments", price: "From $2,500 CAD", time: "Live in 2–3 weeks", cta: "Plan my system", href: "/create" },
 ];
 
-// "Who it's for" tiles — one concrete use case each. Linked to the industries hub.
-export const industries: { name: string; use: string }[] = [
-  { name: "Landscaping", use: "Quote requests, photos, measurements, follow-ups." },
-  { name: "Lawn care", use: "Recurring bookings, seasonal reminders, fast quotes." },
-  { name: "Plumbing", use: "Emergency triage, after-hours calls, job booking." },
-  { name: "Electrical", use: "Priority call triage, quotes, scheduling." },
-  { name: "HVAC", use: "Seasonal demand, maintenance reminders, quick quotes." },
-  { name: "Roofing", use: "Inspection requests, photo intake, estimate follow-ups." },
-  { name: "Cleaning", use: "Recurring bookings, quote intake, reminders." },
-  { name: "Moving", use: "Size/date/location intake, instant quotes, follow-ups." },
-  { name: "Pest control", use: "Service requests, recurring plans, callbacks." },
-  { name: "Dental clinics", use: "Appointment questions, intake, missed-call capture." },
-  { name: "Salons", use: "Bookings, no-show reminders, service questions." },
-  { name: "Restaurants", use: "Catering inquiries, FAQs, group bookings." },
-  { name: "Auto detailing", use: "Package quotes, bookings, reminders." },
-  { name: "Real estate", use: "Lead capture, showing requests, fast follow-up." },
+// "Who it's for" tiles — one concrete use case each, deep-linked to its industry page.
+export const industries: { name: string; use: string; href: string }[] = [
+  { name: "Landscaping", use: "Quote requests, photos, measurements, follow-ups.", href: "/industries/landscaping-ai-automation" },
+  { name: "Lawn care", use: "Recurring bookings, seasonal reminders, fast quotes.", href: "/industries/lawn-care-ai-automation" },
+  { name: "Plumbing", use: "Emergency triage, after-hours calls, job booking.", href: "/industries/plumber-ai-automation" },
+  { name: "Electrical", use: "Priority call triage, quotes, scheduling.", href: "/industries/electrician-ai-automation" },
+  { name: "HVAC", use: "Seasonal demand, maintenance reminders, quick quotes.", href: "/industries/hvac-ai-automation" },
+  { name: "Roofing", use: "Inspection requests, photo intake, estimate follow-ups.", href: "/industries/roofing-ai-automation" },
+  { name: "Cleaning", use: "Recurring bookings, quote intake, reminders.", href: "/industries/cleaning-business-ai-automation" },
+  { name: "Moving", use: "Size/date/location intake, instant quotes, follow-ups.", href: "/industries/moving-company-ai-automation" },
+  { name: "Pest control", use: "Service requests, recurring plans, callbacks.", href: "/industries/pest-control-ai-automation" },
+  { name: "Dental clinics", use: "Appointment questions, intake, missed-call capture.", href: "/industries/dental-clinic-ai-automation" },
+  { name: "Salons", use: "Bookings, no-show reminders, service questions.", href: "/industries/salon-ai-automation" },
+  { name: "Restaurants", use: "Catering inquiries, FAQs, group bookings.", href: "/industries/restaurant-ai-automation" },
+  { name: "Auto detailing", use: "Package quotes, bookings, reminders.", href: "/industries/auto-detailing-ai-automation" },
+  { name: "Real estate", use: "Lead capture, showing requests, fast follow-up.", href: "/industries/real-estate-agent-ai-automation" },
 ];

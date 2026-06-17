@@ -45,6 +45,7 @@ export default function Footer() {
               <FooterLink href="/compare">Compare</FooterLink>
               <FooterLink href="/pricing">Pricing</FooterLink>
               <FooterLink href="/about">About</FooterLink>
+              <FooterLink href="/faq">FAQ</FooterLink>
             </ul>
           </div>
 

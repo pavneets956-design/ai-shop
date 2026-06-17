@@ -357,7 +357,7 @@ export default function LiveAIHome() {
             </div>
             <div className={styles.industries}>
               {industries.map((ind) => (
-                <Link key={ind.name} className={styles.indtile} href="/industries">
+                <Link key={ind.name} className={styles.indtile} href={ind.href}>
                   <div className={styles.indName}>{ind.name}</div>
                   <div className={styles.indUse}>{ind.use}</div>
                 </Link>

@@ -71,6 +71,26 @@ export default function ShopPage() {
         </div>
       </section>
 
+      {/* ---------- Top advisory: help picking ---------- */}
+      <section className="relative pb-4 pt-4">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal>
+            <div className="glass-card flex flex-col items-start justify-between gap-5 p-6 sm:flex-row sm:items-center">
+              <div>
+                <span className="eyebrow">Need help picking?</span>
+                <p className="mt-3 max-w-2xl text-[15px] text-ink/75">
+                  Not sure which system fits? Start with the AI Receptionist or Quote Agent — they
+                  solve the most common missed-revenue problems.
+                </p>
+              </div>
+              <Link href="/create" className="btn-secondary flex-none text-sm">
+                Get a recommendation <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ---------- Band 1: Ready-to-install AI tools ---------- */}
       <section className="relative pb-8 pt-4">
         <div className="mx-auto max-w-6xl px-4">
@@ -262,6 +282,122 @@ export default function ShopPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ---------- Band 4: Tools Pro vs done-for-you AI System ---------- */}
+      <section className="relative py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4">
+          <Reveal>
+            <span className="eyebrow">Two ways to work with us</span>
+            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+              Self-serve Tools Pro vs done-for-you AI System
+            </h2>
+            <p className="mt-2 max-w-xl text-ink/55">
+              Move fast on your own, or have the whole system built and connected for you.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.06}>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {/* Tools Pro column */}
+              <div className="glass-card flex h-full flex-col p-7">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/40">
+                  Self-serve
+                </span>
+                <h3 className="mt-2 font-display text-xl font-semibold text-ink">Tools Pro</h3>
+                <dl className="mt-6 space-y-4">
+                  <div className="border-t border-ink/[0.06] pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      Price
+                    </dt>
+                    <dd className="mt-1 text-sm text-ink/80">$19/mo, unlimited</dd>
+                  </div>
+                  <div className="border-t border-ink/[0.06] pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      Setup
+                    </dt>
+                    <dd className="mt-1 text-sm text-ink/80">Use it today, no setup</dd>
+                  </div>
+                  <div className="border-t border-ink/[0.06] pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      Integrations
+                    </dt>
+                    <dd className="mt-1 text-sm text-ink/80">You configure</dd>
+                  </div>
+                  <div className="border-t border-ink/[0.06] pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      Support
+                    </dt>
+                    <dd className="mt-1 text-sm text-ink/80">Docs &amp; updates</dd>
+                  </div>
+                  <div className="border-t border-ink/[0.06] pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      Best for
+                    </dt>
+                    <dd className="mt-1 text-sm text-ink/80">Daily business writing &amp; quick tools</dd>
+                  </div>
+                </dl>
+              </div>
+
+              {/* AI System column — amber accent */}
+              <div className="glass-card flex h-full flex-col border-amber/45 p-7">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-clay-dark">
+                  Done for you
+                </span>
+                <h3 className="mt-2 font-display text-xl font-semibold text-ink">AI System</h3>
+                <dl className="mt-6 space-y-4">
+                  <div className="border-t border-amber/25 pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                      Price
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium text-ink">from $1,000, one-time</dd>
+                  </div>
+                  <div className="border-t border-amber/25 pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                      Setup
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium text-ink">
+                      Installed for you in ~5 days–3 weeks
+                    </dd>
+                  </div>
+                  <div className="border-t border-amber/25 pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                      Integrations
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium text-ink">Built &amp; connected by Handbuilt</dd>
+                  </div>
+                  <div className="border-t border-amber/25 pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                      Support
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium text-ink">
+                      Dedicated setup + optional Care Plan ($250/mo)
+                    </dd>
+                  </div>
+                  <div className="border-t border-amber/25 pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                      Best for
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium text-ink">
+                      Automating calls, quotes &amp; follow-ups
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link href="/tools/pro" className="btn-secondary text-sm">
+                Explore Tools Pro <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/create" className="btn-primary text-sm">
+                Start a build <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -72,3 +72,45 @@ export const faqs: FAQ[] = [
 export function faqsByCategory(category: FAQ["category"]): FAQ[] {
   return faqs.filter((f) => f.category === category);
 }
+
+// Pricing-page FAQ set — ownership, integrations, timelines, positioning.
+// Rendered as FAQPage schema + on /pricing. Order is intentional.
+export function pricingPageFaqs(): FAQ[] {
+  return [
+    {
+      category: "process",
+      q: "Will I own the system you build?",
+      a: "Yes. For a Custom AI App you own the code, on a modern stack with no lock-in. For Starter/Business systems you own your data and accounts and can migrate anytime. You're never trapped.",
+    },
+    {
+      category: "process",
+      q: "Can you connect it to my existing tools?",
+      a: "Yes. We integrate with CRMs, calendars (Google/Outlook), email, SMS, WhatsApp, Stripe, QuickBooks, Shopify, Zapier and more. If it has an API, we can connect it.",
+    },
+    {
+      category: "process",
+      q: "How long does it take to go live?",
+      a: "AI Starter System: about 5 business days. AI Business System: 2–3 weeks. Custom AI App: 4–8 weeks depending on scope. You get a clear timeline before we start.",
+    },
+    {
+      category: "process",
+      q: "Is this just ChatGPT?",
+      a: "No. A chatbot only answers questions. We build systems that collect structured details, send notifications, update your sheets/CRM, trigger reminders and run your workflow — trained on your business and connected to your tools.",
+    },
+    {
+      category: "process",
+      q: "What do you need from me?",
+      a: "Just clarity on the outcome you want (e.g. 'answer my phone 24/7', 'stop chasing invoices'). No coding or setup from you — a 15-minute call is enough to scope and price it.",
+    },
+    {
+      category: "pricing",
+      q: "Can I start with one AI worker?",
+      a: "Yes — most businesses should. Start with one clear problem (missed calls, slow quotes, or lead follow-up) and add more workers as you see results. Zero rework, just expansion.",
+    },
+    {
+      category: "pricing",
+      q: "What's the difference between Tools Pro and done-for-you?",
+      a: "Tools Pro is a $19/mo self-serve suite you use yourself for writing tasks. Done-for-you AI systems are installed and connected to your workflow by us, starting at $1,000 — automation that runs without you.",
+    },
+  ];
+}

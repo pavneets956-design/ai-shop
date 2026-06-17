@@ -149,7 +149,7 @@
     border-width: 0 1.5px 1.5px 0;
   }
 
-  /* teal hairline accent on hover */
+  /* amber hairline accent on hover */
   .border-glow {
     position: relative;
   }
@@ -159,7 +159,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(130deg, rgba(47, 111, 106, 0.55), rgba(47, 111, 106, 0.12));
+    background: linear-gradient(130deg, rgba(217, 119, 6, 0.55), rgba(217, 119, 6, 0.12));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
