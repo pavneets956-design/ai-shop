@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // "Blueprint" palette — cool drafting paper, slate-navy ink, teal accent, amber CTA.
+        // "Handbuilt" palette — calm premium, neutrals + a single warm amber accent (no teal/green).
         paper: {
           DEFAULT: "#F4F5F7", // base background (cool drafting white)
           2: "#E9ECF1", // deeper alternating section
@@ -20,11 +20,11 @@ const config: Config = {
           DEFAULT: "#1C2B3A", // slate navy text
           soft: "#5B6B7A", // muted slate
         },
-        // "clay" token name kept (used site-wide) but now holds the TEAL accent.
+        // "clay" token name kept (used site-wide) but now holds the AMBER accent.
         clay: {
-          DEFAULT: "#2F6F6A", // primary accent (deep teal)
-          dark: "#255A55",
-          soft: "#9FC7C2",
+          DEFAULT: "#B45309", // primary accent (amber-700, AA-safe as text on white)
+          dark: "#92400E",
+          soft: "#F6DCB0",
         },
         // Amber — reserved for CTAs only (the single "spark").
         amber: {
@@ -32,11 +32,11 @@ const config: Config = {
           dark: "#CE8B2B",
           soft: "#F4CF94",
         },
-        // Legacy tokens remapped to the Blueprint palette so any unswept refs stay coherent.
+        // Legacy tokens remapped to the Handbuilt amber palette so any unswept refs stay coherent.
         obsidian: { DEFAULT: "#F4F5F7", 50: "#E9ECF1", 100: "#E9ECF1", 200: "#DDE2E9" },
-        electric: "#2F6F6A",
-        violet: { glow: "#2F6F6A" },
-        cyan: { glow: "#3E8C85" },
+        electric: "#D97706",
+        violet: { glow: "#D97706" },
+        cyan: { glow: "#F59E0B" },
         gold: { soft: "#E8A13C" },
       },
       fontFamily: {
@@ -100,7 +100,7 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "brand-gradient": "linear-gradient(120deg, #2F6F6A 0%, #3E8C85 100%)",
+        "brand-gradient": "linear-gradient(120deg, #F59E0B 0%, #D97706 100%)",
       },
       boxShadow: {
         // Blueprint — crisp, structural, low-blur shadows (no soft warm halo).

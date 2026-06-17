@@ -215,7 +215,7 @@ export default function SolutionFinder() {
             {/* email capture */}
             <div className="mt-4 rounded-2xl border border-ink/10 bg-ink/[0.02] p-4">
               {saved ? (
-                <p className="flex items-center justify-center gap-2 py-2 text-sm text-emerald-400">
+                <p className="flex items-center justify-center gap-2 py-2 text-sm text-[#B45309]">
                   <Check className="h-4 w-4" /> Sent — check your inbox. We&apos;ll be in touch.
                 </p>
               ) : (

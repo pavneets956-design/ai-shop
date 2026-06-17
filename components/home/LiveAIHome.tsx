@@ -145,11 +145,11 @@ export default function LiveAIHome() {
           <section className={styles.hero}>
             <div>
               <div className={styles.eyebrow}><i />Live AI tools for local business · Surrey BC → worldwide</div>
-              <h1 className={styles.headline}>AI tools that answer calls, send quotes, reply to reviews, follow up &amp; get work booked.</h1>
+              <h1 className={styles.headline}>AI tools that answer calls, send quotes, reply to reviews, follow up &amp; <span className={styles.hl}>get work booked</span>.</h1>
               <p className={styles.lead}>Pick a tool. Watch it handle real business work in seconds — trained on your services, pricing, and brand.</p>
               <div className={styles.ctas}>
-                <a className={`${styles.btn} ${styles.btnGreen}`} href="#lab">See the tools live <span className={styles.arrow}>→</span></a>
-                <Link className={`${styles.btn} ${styles.btnGhost}`} href="/create">Get my AI system</Link>
+                <Link className={`${styles.btn} ${styles.btnGreen}`} href="/create">Get my AI system <span className={styles.arrow}>→</span></Link>
+                <a className={`${styles.btn} ${styles.btnGhost}`} href="#lab">See the tools live</a>
               </div>
               <div className={styles.trustline}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
