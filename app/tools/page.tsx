@@ -41,7 +41,7 @@ export default function ToolsHubPage() {
               <Link href="/tools/pro" className="btn-primary">
                 Get Tools Pro <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/account" className="btn-ghost">
+              <Link href="/login" className="btn-ghost">
                 Already a member? Sign in
               </Link>
             </div>

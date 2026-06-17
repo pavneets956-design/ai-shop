@@ -21,6 +21,13 @@ export function isActive(currentPeriodEnd?: Date | null): boolean {
  * (page + API). Fails safe to "not subscribed" if anything is misconfigured.
  */
 export async function getSubStatus(): Promise<SubStatus> {
+  // Local dev/test escape hatch: unlock every tool without Stripe so the suite
+  // can be exercised and verified locally. HARD-gated to non-production — it can
+  // never unlock the live site no matter how the env is set.
+  if (process.env.NODE_ENV !== "production" && process.env.TOOLS_DEV_UNLOCK === "1") {
+    return { authed: true, subscribed: true, email: "dev@local" };
+  }
+
   const sessionUser = await getCurrentUser().catch(() => null);
   const id = (sessionUser as { id?: string } | null)?.id;
   if (!id) return { authed: false, subscribed: false };

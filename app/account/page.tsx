@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import AccountActions from "@/components/AccountActions";
+import CheckoutFinalizing from "@/components/CheckoutFinalizing";
 import { getSubStatus } from "@/lib/subscription";
 import { prisma } from "@/lib/prisma";
 
@@ -14,9 +15,17 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function AccountPage() {
+export default async function AccountPage({
+  searchParams,
+}: {
+  searchParams: { checkout?: string };
+}) {
   const sub = await getSubStatus();
   if (!sub.authed) redirect("/login");
+
+  // Just paid but the subscription record hasn't synced yet — show a finalizing
+  // state that auto-refreshes until the webhook lands.
+  const finalizing = searchParams.checkout === "success" && !sub.subscribed;
 
   const runs = sub.userId
     ? await prisma.toolRun
@@ -42,6 +51,14 @@ export default async function AccountPage() {
             {sub.email}
           </h1>
         </Reveal>
+
+        {finalizing && (
+          <Reveal delay={0.03}>
+            <div className="mt-8">
+              <CheckoutFinalizing />
+            </div>
+          </Reveal>
+        )}
 
         {/* Subscription status */}
         <Reveal delay={0.05}>

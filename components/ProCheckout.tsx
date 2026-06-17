@@ -12,12 +12,14 @@ import { toolsPlan } from "@/lib/data/toolsPlan";
  */
 export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
   const { status } = useSession();
-  const [interval, setInterval] = useState<"monthly" | "annual">("monthly");
+  const [billingInterval, setBillingInterval] = useState<"monthly" | "annual">("monthly");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const plan = toolsPlan.intervals.find((i) => i.id === interval)!;
+  const plan = toolsPlan.intervals.find((i) => i.id === billingInterval)!;
   const authed = status === "authenticated";
+  // True once at least one Stripe Price ID is configured in env.
+  const billingConfigured = toolsPlan.intervals.some((i) => i.priceId);
 
   const go = async () => {
     setError(null);
@@ -49,6 +51,10 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
     }
   };
 
+  // Block the CTA only once we KNOW the user is signed in but billing is
+  // unconfigured — a logged-out user should still get the sign-in step.
+  const billingBlocked = authed && !billingConfigured;
+
   return (
     <div className="glass-card spec-frame p-7 sm:p-8">
       <div className="flex items-baseline justify-between gap-4">
@@ -59,14 +65,20 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
       </div>
 
       {/* Interval toggle */}
-      <div className="mt-5 inline-flex rounded-lg border border-ink/10 bg-paper-2/60 p-1">
+      <div
+        role="radiogroup"
+        aria-label="Billing interval"
+        className="mt-5 inline-flex rounded-lg border border-ink/10 bg-paper-2/60 p-1"
+      >
         {toolsPlan.intervals.map((i) => (
           <button
             key={i.id}
             type="button"
-            onClick={() => setInterval(i.id)}
+            role="radio"
+            aria-checked={billingInterval === i.id}
+            onClick={() => setBillingInterval(i.id)}
             className={`rounded-md px-4 py-1.5 text-sm font-semibold transition ${
-              interval === i.id ? "bg-white text-ink shadow-sm" : "text-ink/55 hover:text-ink"
+              billingInterval === i.id ? "bg-white text-ink shadow-sm" : "text-ink/55 hover:text-ink"
             }`}
           >
             {i.label}
@@ -76,14 +88,24 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
 
       <div className="mt-5 flex items-end gap-2">
         <span className="font-display text-4xl font-bold text-ink">{plan.priceLabel}</span>
+        {plan.anchorLabel && (
+          <span className="pb-1 text-lg text-ink/35 line-through" aria-label={`regular price ${plan.anchorLabel}`}>
+            {plan.anchorLabel}
+          </span>
+        )}
         <span className="pb-1 text-sm text-ink/50">{plan.sublabel}</span>
       </div>
+      {toolsPlan.founding && (
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-clay-dark">
+          {toolsPlan.founding}
+        </p>
+      )}
 
       <ul className="mt-6 space-y-3">
         {toolsPlan.features.map((f) => (
           <li key={f} className="flex items-start gap-3 text-[15px] text-ink/80">
             <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-clay/[0.12] text-clay-dark">
-              <Check className="h-3 w-3" strokeWidth={3} />
+              <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
             </span>
             {f}
           </li>
@@ -92,24 +114,30 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
 
       <button
         onClick={go}
-        disabled={loading}
+        disabled={loading || billingBlocked}
         className="btn-primary mt-7 w-full justify-center disabled:opacity-50"
       >
         {loading ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" /> Starting…
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> Starting…
           </>
         ) : authed ? (
           <>
-            Get {toolsPlan.name} <ArrowRight className="h-4 w-4" />
+            Get {toolsPlan.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </>
         ) : (
           <>
-            Sign in to subscribe <ArrowRight className="h-4 w-4" />
+            Sign in to subscribe <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </>
         )}
       </button>
 
+      {billingBlocked && (
+        <p className="mt-3 text-center text-sm text-ink/55">
+          Checkout is opening soon — Tools Pro billing is being finalized. Sign-in works now;
+          you&apos;ll be able to subscribe here shortly.
+        </p>
+      )}
       {error && <p className="mt-3 text-center text-sm text-red-600">{error}</p>}
       <p className="mt-3 text-center text-xs text-ink/40">
         Cancel anytime. Secure checkout by Stripe.

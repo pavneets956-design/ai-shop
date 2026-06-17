@@ -1,5 +1,6 @@
-// Self-serve AI tools — "build once, use instantly, no setup call."
-// Free, no-login lead-magnet tools that funnel into the done-for-you systems.
+// Self-serve AI tools — the paid "Tools Pro" suite. A single subscription
+// (NextAuth sign-in + Stripe, gated via getSubStatus) unlocks all of them;
+// they also funnel into the done-for-you systems in the shop.
 // UI config + SEO live here; the prompts live server-side in app/api/tools/route.ts
 // (keyed by `kind`). Add a tool by adding an entry + a prompt case — no new route.
 

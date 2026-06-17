@@ -60,14 +60,34 @@ export async function POST(req: Request) {
 }
 
 async function syncSubscription(sub: Stripe.Subscription, customerId: string) {
-  const active = sub.status === "active" || sub.status === "trialing";
-  await prisma.user.updateMany({
+  // Keep access during a brief failed-renewal retry (past_due); only truly drop
+  // it once Stripe reports the sub canceled/unpaid/expired (or fires .deleted).
+  const active =
+    sub.status === "active" || sub.status === "trialing" || sub.status === "past_due";
+  const data = {
+    stripeCustomerId: customerId,
+    stripeSubscriptionId: sub.id,
+    stripePriceId: sub.items.data[0]?.price.id ?? null,
+    // Null out the period when lapsed so access ends.
+    stripeCurrentPeriodEnd: active ? new Date(sub.current_period_end * 1000) : null,
+  };
+
+  const res = await prisma.user.updateMany({
     where: { stripeCustomerId: customerId },
-    data: {
-      stripeSubscriptionId: sub.id,
-      stripePriceId: sub.items.data[0]?.price.id ?? null,
-      // Null out the period when cancelled so access lapses.
-      stripeCurrentPeriodEnd: active ? new Date(sub.current_period_end * 1000) : null,
-    },
+    data,
   });
+
+  // If no row matched the customer (e.g. the webhook beat the customer-link
+  // write, or the customer was created out-of-band), fall back to the userId we
+  // stamped on the subscription metadata at checkout. Never silently drop a sub.
+  if (res.count === 0) {
+    const userId = sub.metadata?.userId;
+    if (userId) {
+      await prisma.user
+        .update({ where: { id: userId }, data })
+        .catch((e) => console.error("[STRIPE] metadata-userId sync failed", e));
+    } else {
+      console.error("[STRIPE] no user matched customer", customerId, "and no metadata.userId");
+    }
+  }
 }

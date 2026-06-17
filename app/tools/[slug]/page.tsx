@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import GlowBackground from "@/components/GlowBackground";
@@ -38,6 +39,11 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   if (!tool) notFound();
 
   const sub = await getSubStatus();
+  // Free-taste funnel: a first-time visitor gets one free run of this tool before
+  // the subscription gate. The API enforces it; here we just decide what to show.
+  const usedFree = (cookies().get("tp_free")?.value || "").split(",").filter(Boolean);
+  const freeAvailable = !sub.subscribed && !usedFree.includes(tool.kind);
+  const showGenerator = sub.subscribed || freeAvailable;
   const others = selfServeTools.filter((t) => t.slug !== tool.slug).slice(0, 4);
 
   const appSchema = {
@@ -79,10 +85,19 @@ export default async function ToolPage({ params }: { params: { slug: string } })
             </Reveal>
           </div>
 
-          {/* The tool — or the paywall */}
+          {/* The tool — or the paywall once the free run is spent */}
           <Reveal delay={0.16}>
-            {sub.subscribed ? (
+            {showGenerator ? (
               <>
+                {!sub.subscribed && (
+                  <div className="mb-4 flex items-center gap-3 rounded-xl border border-clay/20 bg-clay/[0.06] px-4 py-3 text-sm text-ink/75">
+                    <Sparkles className="h-4 w-4 flex-none text-clay-dark" aria-hidden="true" />
+                    <span>
+                      <span className="font-semibold text-ink">Your first one&apos;s on us.</span>{" "}
+                      Try it free — Tools Pro unlocks unlimited use of every tool.
+                    </span>
+                  </div>
+                )}
                 <ToolGenerator
                   kind={tool.kind}
                   endpoint="/api/tools"
@@ -91,14 +106,21 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                   resultTitle={tool.resultTitle}
                   copyable={tool.copyable}
                   printable={tool.printable}
+                  upgradeHref="/tools/pro"
                 />
                 <p className="mt-3 text-center text-xs text-ink/35">
                   Output is a starting draft — review it before you send. We never invent prices,
-                  facts or guarantees you didn&apos;t provide. Saved to your{" "}
-                  <Link href="/account" className="font-semibold text-clay-dark hover:text-clay">
-                    history
-                  </Link>
-                  .
+                  facts or guarantees you didn&apos;t provide.
+                  {sub.subscribed ? (
+                    <>
+                      {" "}
+                      Saved to your{" "}
+                      <Link href="/account" className="font-semibold text-clay-dark hover:text-clay">
+                        history
+                      </Link>
+                      .
+                    </>
+                  ) : null}
                 </p>
               </>
             ) : (

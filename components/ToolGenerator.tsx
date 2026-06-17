@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Loader2, Printer, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Check, Copy, Loader2, Lock, Printer, Sparkles } from "lucide-react";
 
 export type GenField = {
   key: string;
@@ -22,6 +23,8 @@ export type GenBusiness = { id: string; chip: string; desc: string };
  *
  * `copyable` adds a copy button; `printable` adds a Print / Save-as-PDF
  * button (the result is wrapped in .print-area — see globals.css @media print).
+ * `upgradeHref` (self-serve only): where the inline upgrade prompt links when
+ * the API returns 402 (free run spent / subscription required).
  */
 export default function ToolGenerator({
   kind,
@@ -32,6 +35,7 @@ export default function ToolGenerator({
   copyable = false,
   printable = false,
   endpoint = "/api/tools-demo",
+  upgradeHref = "/tools/pro",
 }: {
   kind: string;
   businesses?: GenBusiness[];
@@ -41,10 +45,13 @@ export default function ToolGenerator({
   copyable?: boolean;
   printable?: boolean;
   endpoint?: string;
+  upgradeHref?: string;
 }) {
   const [biz, setBiz] = useState<GenBusiness | undefined>(businesses?.[0]);
   const [values, setValues] = useState<Record<string, string>>({});
   const [result, setResult] = useState<string | null>(null);
+  const [upgrade, setUpgrade] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -57,21 +64,31 @@ export default function ToolGenerator({
     if (!canSubmit || loading) return;
     setLoading(true);
     setResult(null);
+    setUpgrade(null);
+    setNotice(null);
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ kind, business: biz?.desc, fields: values }),
       });
+      const data = await res.json().catch(() => ({}));
       if (res.status === 402) {
-        // Subscription lapsed/expired mid-session — send them to upgrade.
-        window.location.href = "/tools/pro";
+        // Free run spent / subscription required — prompt to upgrade inline.
+        setUpgrade(data.error || "Subscribe to Tools Pro to keep using this tool.");
         return;
       }
-      const data = await res.json();
-      setResult(data.reply || "Sorry — couldn't generate that. Try again?");
+      if (res.status === 429) {
+        setNotice(data.error || "That's a lot of requests — give it a moment and try again.");
+        return;
+      }
+      if (!res.ok || !data.reply) {
+        setNotice(data.error || "Sorry — couldn't generate that. Mind trying again?");
+        return;
+      }
+      setResult(data.reply);
     } catch {
-      setResult("Sorry — something dropped. Mind trying that again?");
+      setNotice("Sorry — something dropped. Mind trying that again?");
     } finally {
       setLoading(false);
     }
@@ -161,15 +178,30 @@ export default function ToolGenerator({
         >
           {loading ? (
             <>
-              <Loader2 className="h-4 w-4 animate-spin" /> Working…
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> Working…
             </>
           ) : (
             <>
-              <Sparkles className="h-4 w-4" /> {submitLabel}
+              <Sparkles className="h-4 w-4" aria-hidden="true" /> {submitLabel}
             </>
           )}
         </button>
+
+        {notice && <p className="text-center text-sm text-ink/60">{notice}</p>}
       </form>
+
+      {/* Upgrade prompt (free run spent) */}
+      {upgrade && (
+        <div className="mt-5 rounded-3xl border border-clay/25 bg-clay/[0.06] p-6 text-center shadow-card">
+          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-clay/15 text-clay-dark">
+            <Lock className="h-5 w-5" aria-hidden="true" />
+          </span>
+          <p className="mt-4 text-[15px] text-ink/80">{upgrade}</p>
+          <Link href={upgradeHref} className="btn-primary mt-5 inline-flex justify-center">
+            See Tools Pro <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+      )}
 
       {/* Result */}
       {result && (
@@ -185,7 +217,7 @@ export default function ToolGenerator({
                   onClick={() => window.print()}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
                 >
-                  <Printer className="h-3.5 w-3.5" /> Print / PDF
+                  <Printer className="h-3.5 w-3.5" aria-hidden="true" /> Print / PDF
                 </button>
               )}
               {copyable && (
@@ -194,7 +226,7 @@ export default function ToolGenerator({
                   onClick={copy}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
                 >
-                  {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                  {copied ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : <Copy className="h-3.5 w-3.5" aria-hidden="true" />}
                   {copied ? "Copied" : "Copy"}
                 </button>
               )}

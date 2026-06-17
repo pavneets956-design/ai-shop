@@ -32,6 +32,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing plan." }, { status: 400 });
   }
 
+  // Only allow the two configured Tools Pro prices — never trust a client-sent
+  // Price ID (a user could otherwise POST a cheaper Price from the account).
+  const allowed = [
+    process.env.NEXT_PUBLIC_STRIPE_PRICE_MONTHLY,
+    process.env.NEXT_PUBLIC_STRIPE_PRICE_ANNUAL,
+  ].filter(Boolean);
+  if (!allowed.includes(priceId)) {
+    return NextResponse.json({ error: "Invalid plan." }, { status: 400 });
+  }
+
   const user = await prisma.user.findUnique({ where: { id: userId } });
   if (!user) return NextResponse.json({ error: "User not found." }, { status: 404 });
 

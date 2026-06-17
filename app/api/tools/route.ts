@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getSubStatus } from "@/lib/subscription";
+import {
+  checkIpRate,
+  checkUserDaily,
+  checkGlobalDaily,
+  clientIp,
+  DAILY_LIMIT,
+} from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 
@@ -14,11 +21,18 @@ export const runtime = "nodejs";
  *   - honesty rules in every prompt (no fabricated prices/specifics)
  *   - length/field caps so a public endpoint can't run up an unbounded bill
  *
+ * Access model:
+ *   - Tools Pro subscribers: unlimited (bounded by a generous daily cap).
+ *   - Everyone else: ONE free generation per tool (taste-it funnel), tracked by
+ *     an httpOnly cookie. After that, a subscription is required.
+ *   - An IP throttle guards the OpenAI key from scripted abuse.
+ *
  * Outputs use ALLCAPS labels ("SCOPE:", "PRICING:") so the client renders
  * them as headed sections.
  */
 
 const MAX_FIELD = 600;
+const FREE_COOKIE = "tp_free";
 
 type Kind = "proposal" | "estimate" | "review" | "brief" | "reminder";
 const KINDS: Kind[] = ["proposal", "estimate", "review", "brief", "reminder"];
@@ -29,21 +43,23 @@ const HONESTY =
 function systemPrompt(kind: Kind): string {
   switch (kind) {
     case "proposal":
-      return `You are an expert proposal writer for service businesses. From the details provided, write a polished, persuasive, client-ready proposal the user can send as-is. Use this exact structure with ALLCAPS section labels on their own lines:
+      return `You are a top-tier proposal writer for a hands-on service business. Write a proposal so specific and well-judged that the client feels understood and says yes. Open on THEIR situation and outcome, not on your company. Use the actual project details concretely — never generic filler. Sound like a sharp, warm professional, never like a template or an AI.
 
-OVERVIEW: 2-3 sentences restating the client's need and the outcome they'll get.
-SCOPE OF WORK: a clear bulleted list of everything included.
-APPROACH: 2-3 short bullets on how the work will be done, phase by phase.
-TIMELINE: the timeline given (or a sensible phrasing if none), broken into milestones if useful.
-INVESTMENT: the price, framed with confidence; if helpful, break it into a couple of line items. Note it's an estimate only if appropriate.
-WHY US: 1-2 short, credible lines on why this business is a strong choice (use only details given — no invented credentials).
-TERMS: 2-3 fair, standard terms (deposit, validity, change requests). Generic — not legal advice.
-NEXT STEPS: how the client accepts and what happens first.
+Use this exact structure with ALLCAPS section labels on their own lines:
+
+OVERVIEW: 2-3 sentences naming the client's situation and the specific outcome they'll get. Lead with them, not you.
+SCOPE OF WORK: a concrete bulleted list of exactly what's included, drawn from the project details — specific, not vague.
+APPROACH: 2-3 short bullets on how the work gets done, phase by phase, so they feel the process is under control.
+TIMELINE: the timeline given (or a sensible one), as clear milestones.
+INVESTMENT: the price, stated with confidence and framed against the value/outcome; break it into a couple of line items if that helps. Note it's an estimate only if appropriate.
+WHY US: 1-2 credible lines on why this business is the right choice — using ONLY details given, with no invented credentials, awards or numbers.
+TERMS: 2-3 fair, standard terms (deposit, validity, change requests). Generic, not legal advice.
+NEXT STEPS: exactly how the client says yes and what happens first.
 
 Then add:
-COVER EMAIL: a short, warm email the user can paste to send the proposal, with a subject line.
+COVER EMAIL: a short, warm email (with a subject line) the client would actually want to open — specific to them, not boilerplate.
 
-Make it specific to the project and address the client by name. Confident, professional, not generic.${HONESTY}`;
+Tone rules (hard): no clichés ("in today's fast-paced world", "we are thrilled/excited to", "leverage", "seamless", "elevate", "unlock", "robust"). No empty superlatives. Short, direct sentences. Address the client by name. Make every line earn its place.${HONESTY}`;
 
     case "estimate":
       return `You are an experienced estimator for service businesses. From the job details, produce a helpful ballpark estimate. Use this exact structure with ALLCAPS labels:
@@ -107,7 +123,26 @@ function fallback(kind: Kind, f: Record<string, string>): string {
   }
 }
 
+/** Tool kinds this browser has already spent its one free generation on. */
+function usedFreeKinds(req: Request): string[] {
+  const cookie = req.headers.get("cookie") || "";
+  const entry = cookie.split(/;\s*/).find((c) => c.startsWith(`${FREE_COOKIE}=`));
+  if (!entry) return [];
+  return decodeURIComponent(entry.slice(FREE_COOKIE.length + 1))
+    .split(",")
+    .filter(Boolean);
+}
+
 export async function POST(req: Request) {
+  // Throttle by IP first — the cheapest guard against scripted abuse of the key.
+  const ipRate = checkIpRate(clientIp(req));
+  if (!ipRate.ok) {
+    return NextResponse.json(
+      { error: "You're going a little fast — give it a moment and try again." },
+      { status: 429, headers: { "Retry-After": String(ipRate.retryAfter) } }
+    );
+  }
+
   let body: { kind?: string; fields?: Record<string, string> };
   try {
     body = await req.json();
@@ -120,18 +155,38 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unknown tool" }, { status: 400 });
   }
 
-  // Paid gate — Tools Pro subscription required. (Defense in depth: the page
-  // also gates, but the endpoint must never generate for a non-subscriber.)
   const sub = await getSubStatus();
-  if (!sub.subscribed) {
+
+  // Free-taste funnel: anyone gets ONE free generation per tool, no login. After
+  // that (or for any repeat use) a Tools Pro subscription is required.
+  const used = usedFreeKinds(req);
+  const freeAvailable = !sub.subscribed && !used.includes(kind);
+  if (!sub.subscribed && !freeAvailable) {
     return NextResponse.json(
       {
-        error: sub.authed ? "A Tools Pro subscription is required." : "Please sign in to continue.",
+        error: sub.authed
+          ? "You've used your free generation for this tool. Subscribe to Tools Pro for unlimited use."
+          : "You've used your free generation for this tool. Sign in and subscribe for unlimited use.",
         upgrade: true,
         authed: sub.authed,
+        freeUsed: true,
       },
       { status: 402 }
     );
+  }
+
+  // Per-subscriber daily cap (anti-abuse / sharing). Free users are bounded by
+  // the one-per-tool rule + the IP throttle instead.
+  if (sub.subscribed && sub.userId) {
+    const daily = checkUserDaily(sub.userId);
+    if (!daily.ok) {
+      return NextResponse.json(
+        {
+          error: `You've hit today's limit of ${DAILY_LIMIT} generations. It resets in a few hours.`,
+        },
+        { status: 429, headers: { "Retry-After": String(daily.retryAfter) } }
+      );
+    }
   }
 
   const rawFields = body.fields && typeof body.fields === "object" ? body.fields : {};
@@ -149,9 +204,53 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "No details provided" }, { status: 400 });
   }
 
+  // Global daily backstop on TOTAL generations — guards the OpenAI key against
+  // distributed abuse / runaway agents beyond the per-user + per-IP caps.
+  const globalCap = checkGlobalDaily();
+  if (!globalCap.ok) {
+    return NextResponse.json(
+      { error: "The tools are at capacity for today — please try again tomorrow." },
+      { status: 429, headers: { "Retry-After": String(globalCap.retryAfter) } }
+    );
+  }
+
+  // Save every generation to the subscriber's history — best-effort, never
+  // blocks the response, and runs for live AI and canned-fallback output alike.
+  const persist = (reply: string) => {
+    if (!sub.userId) return;
+    prisma.toolRun
+      .create({
+        data: {
+          userId: sub.userId,
+          tool: kind,
+          title: (fields.clientName || fields.client || fields.job || fields.idea || kind).slice(0, 80),
+          input: fields,
+          output: reply,
+        },
+      })
+      .catch((e) => console.error("[AI-SHOP TOOLS] history save failed", e));
+  };
+
+  // Build the response, persisting and (for a free generation) marking this
+  // tool's free credit as spent for ~6 months on this browser.
+  const finish = (reply: string, extra: Record<string, unknown> = {}) => {
+    persist(reply);
+    const res = NextResponse.json({ reply, free: freeAvailable, ...extra });
+    if (freeAvailable) {
+      const next = Array.from(new Set([...used, kind])).join(",");
+      res.cookies.set(FREE_COOKIE, next, {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        maxAge: 60 * 60 * 24 * 180,
+      });
+    }
+    return res;
+  };
+
   const key = process.env.OPENAI_API_KEY;
   if (!key) {
-    return NextResponse.json({ reply: fallback(kind, fields), fallback: true });
+    return finish(fallback(kind, fields), { fallback: true });
   }
 
   try {
@@ -167,23 +266,9 @@ export async function POST(req: Request) {
       max_tokens: 1000,
     });
     const reply = completion.choices[0]?.message?.content?.trim() || fallback(kind, fields);
-    // Save to the subscriber's history (best-effort — never blocks the response).
-    if (sub.userId) {
-      prisma.toolRun
-        .create({
-          data: {
-            userId: sub.userId,
-            tool: kind,
-            title: (fields.clientName || fields.client || fields.job || fields.idea || kind).slice(0, 80),
-            input: fields,
-            output: reply,
-          },
-        })
-        .catch((e) => console.error("[AI-SHOP TOOLS] history save failed", e));
-    }
-    return NextResponse.json({ reply });
+    return finish(reply);
   } catch (err) {
     console.error("[AI-SHOP TOOLS] openai error", err);
-    return NextResponse.json({ reply: fallback(kind, fields), fallback: true });
+    return finish(fallback(kind, fields), { fallback: true });
   }
 }
