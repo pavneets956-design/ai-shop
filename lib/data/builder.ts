@@ -157,3 +157,72 @@ export function buildPlan(businessKey: string, text: string): BuildPlan {
   const intent = detectIntent(text);
   return { intent, ...TEMPLATES[intent](biz) };
 }
+
+// ---- "Talk to them, then take them to the right page" routing -------------
+// Maps a detected intent to the best REAL destination on the site: a primary
+// page (the thing that fits what they asked for) plus a matching live demo /
+// build path. The talking AI call (ConsultationCall) uses this to END by
+// sending the visitor to the exact page they want — instead of dead-ending on
+// a generic plan card. Every href below is a route that actually exists.
+
+export type IntentRoute = {
+  system: string; // recommended build, human-readable (also the plan label)
+  primaryLabel: string; // dominant CTA label
+  primaryHref: string; // the right page for this intent
+  demoLabel: string; // secondary CTA label
+  demoHref: string; // matching live demo / build path
+};
+
+const INTENT_ROUTES: Record<IntentKey, IntentRoute> = {
+  calls: {
+    system: "AI Receptionist",
+    primaryLabel: "See your AI Receptionist",
+    primaryHref: "/ai-receptionist",
+    demoLabel: "Try the live demo",
+    demoHref: "/demo",
+  },
+  quotes: {
+    system: "AI Quote Agent",
+    primaryLabel: "Try your Quote Agent live",
+    primaryHref: "/demo/quote",
+    demoLabel: "Get this built",
+    demoHref: "/create",
+  },
+  leads: {
+    system: "Lead & Chat Agent",
+    primaryLabel: "See your Lead & Chat Agent",
+    primaryHref: "/ai-chatbot-development",
+    demoLabel: "Try the live demo",
+    demoHref: "/demo/lead",
+  },
+  reviews: {
+    system: "AI Review Manager",
+    primaryLabel: "See how this fits your business",
+    primaryHref: "/ai-business-system",
+    demoLabel: "Get this built",
+    demoHref: "/create",
+  },
+  invoices: {
+    system: "AI Invoice Reminder",
+    primaryLabel: "Try the Invoice Nudge live",
+    primaryHref: "/demo/nudge",
+    demoLabel: "Get this built",
+    demoHref: "/create",
+  },
+  admin: {
+    system: "AI Business System",
+    primaryLabel: "See the AI Business System",
+    primaryHref: "/ai-business-system",
+    demoLabel: "Try a live demo",
+    demoHref: "/demo",
+  },
+};
+
+export function routeForIntent(intent: IntentKey): IntentRoute {
+  return INTENT_ROUTES[intent];
+}
+
+// Map a free-text "what they want" answer straight to its destination.
+export function routeForWant(text: string): IntentRoute {
+  return INTENT_ROUTES[detectIntent(text)];
+}

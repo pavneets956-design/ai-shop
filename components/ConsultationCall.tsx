@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { routeForWant, type IntentRoute } from "@/lib/data/builder";
 
 /**
  * Handbuilt "AI call" — a cinematic, voice-led intake experience.
@@ -84,12 +85,9 @@ const FINISH_STEPS: Step[] = [
   { key: "email", type: "text", q: "Last thing — what's the best email for your plan?", ph: "you@business.com" },
 ];
 
-function recommendBuild(want: string): string {
-  if (/calls|book/i.test(want)) return "AI Receptionist";
-  if (/leads|capture/i.test(want)) return "Lead Engine";
-  if (/chat/i.test(want)) return "Website + AI chat";
-  return "Custom website build";
-}
+// The single source of truth for "what fits you + where to send you" now lives
+// in lib/data/builder.ts (shared with the homepage HeroBuilder), so the call
+// and the hero recommend the same system and route to the same real pages.
 
 export default function ConsultationCall({ onHomepage = false }: { onHomepage?: boolean }) {
   const [dismissed, setDismissed] = useState(false);
@@ -102,7 +100,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   const [inputPh, setInputPh] = useState("");
   const [inputVal, setInputVal] = useState("");
   const [voiceName, setVoiceName] = useState<string | null>(null);
-  const [plan, setPlan] = useState<{ rows: [string, string][]; build: string } | null>(null);
+  const [plan, setPlan] = useState<{ rows: [string, string][]; build: string; route: IntentRoute } | null>(null);
 
   const briefRef = useRef<Answers>({});
   const messagesRef = useRef<ChatMessage[]>([]);
@@ -332,7 +330,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         kind: a.kind || "",
         want: a.want || "",
         city: a.city || "",
-        recommendedBuild: recommendBuild(a.want || ""),
+        recommendedBuild: routeForWant(a.want || "").system,
         transcript: buildTranscript(),
       }),
     }).catch(() => {});
@@ -340,15 +338,17 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
 
   const showPlan = useCallback(() => {
     const a = briefRef.current;
+    const route = routeForWant(a.want || "");
     setMode("done");
     setPlan({
-      build: recommendBuild(a.want || ""),
+      build: route.system,
+      route,
       rows: [
         ["Business", a.name || "—"],
         ["Type", a.kind || "—"],
         ["AI should", a.want || "—"],
         ["Location", a.city || "—"],
-        ["Recommended build", recommendBuild(a.want || "")],
+        ["Recommended build", route.system],
       ],
     });
   }, []);
@@ -359,7 +359,10 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       if (validEmail(briefRef.current.email)) sendLead();
       if (speakClosing) {
         const n = briefRef.current.name;
-        await speak(`Perfect. Your plan is on its way${n ? ", " + n : ""} — I'll be in touch shortly.`);
+        const route = routeForWant(briefRef.current.want || "");
+        await speak(
+          `Perfect${n ? ", " + n : ""}. Based on that, the best fit is your ${route.system}. I'll put it on screen with your plan, and the full version is on its way to your email.`
+        );
       }
       showPlan();
     },
@@ -623,11 +626,11 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
               </div>
             ))}
             <div className="hbc-cta">
-              <Link className="primary" href="/pricing">
-                See your recommended build →
+              <Link className="primary" href={plan.route.primaryHref}>
+                {plan.route.primaryLabel} →
               </Link>
-              <Link className="ghost" href="/demo">
-                Watch a live demo
+              <Link className="ghost" href={plan.route.demoHref}>
+                {plan.route.demoLabel}
               </Link>
               {onHomepage ? (
                 <button className="ghost hbc-linkbtn" onClick={dismiss}>

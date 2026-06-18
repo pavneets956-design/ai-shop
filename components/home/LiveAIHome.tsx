@@ -150,6 +150,7 @@ export default function LiveAIHome() {
               <p className={styles.lead}>Pick a ready-to-install AI receptionist, quote agent, follow-up agent, or admin system. We customize it to your business, connect it to your workflow, and launch it — without months of meetings.</p>
               <div className={styles.ctas}>
                 <a className={`${styles.btn} ${styles.btnGreen}`} href="#lab">Try a live demo <span className={styles.arrow}>→</span></a>
+                <Link className={`${styles.btn} ${styles.btnTalk}`} href="/start"><span className={styles.liveDot} aria-hidden="true" />Talk to the AI <span className={styles.arrow}>→</span></Link>
                 <Link className={`${styles.btn} ${styles.btnGhost}`} href="/shop">Shop AI systems</Link>
               </div>
               <div className={styles.trustline}>

@@ -94,8 +94,16 @@
 .disclaimer{font-size:11px;color:var(--muted);margin-top:11px;line-height:1.45}
 .disclaimer b{color:var(--ink);font-weight:700}
 
-.talk{display:block;text-align:center;margin-top:14px;font-size:12.5px;font-weight:600;color:var(--accentText);text-decoration:none}
-.talk:hover{text-decoration:underline}
+.talk{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:14px;
+  padding:12px 16px;border:1.5px solid rgba(217,119,6,.4);border-radius:14px;
+  background:var(--accentSoft,rgba(217,119,6,.06));
+  font-size:13px;font-weight:700;line-height:1.3;color:var(--accentText);text-decoration:none;
+  transition:border-color .18s var(--ease),background .18s var(--ease),transform .18s var(--ease)}
+.talk:hover{border-color:rgba(217,119,6,.75);background:rgba(217,119,6,.1);transform:translateY(-1px);text-decoration:none}
+.talkTxt{flex:0 1 auto;text-align:center}
+.talkDot{flex:none;width:9px;height:9px;border-radius:50%;background:#D97706;
+  box-shadow:0 0 0 0 rgba(217,119,6,.5);animation:hbTalkPulse 1.8s ease-in-out infinite}
+@keyframes hbTalkPulse{0%{box-shadow:0 0 0 0 rgba(217,119,6,.5)}70%{box-shadow:0 0 0 7px rgba(217,119,6,0)}100%{box-shadow:0 0 0 0 rgba(217,119,6,0)}}
 
 /* keyboard focus — the whole hero IS this form, so every control needs a visible ring
    (Tailwind preflight strips default outlines and the global ring doesn't reach CSS modules) */
@@ -110,5 +118,5 @@
 @media(max-width:940px){.console{max-width:520px;margin:0 auto}}
 @media(prefers-reduced-motion:reduce){
   .node,.estimate{transition:none}
-  .ttl i,.spinner{animation:none}
+  .ttl i,.spinner,.talkDot{animation:none}
 }

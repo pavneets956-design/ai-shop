@@ -194,7 +194,11 @@ export default function HeroBuilder() {
         </div>
 
         <Link className={styles.talk} href="/start">
-          Prefer to talk it through? Take the AI call <span className={styles.arrow}>→</span>
+          <span className={styles.talkDot} aria-hidden="true" />
+          <span className={styles.talkTxt}>
+            Or just talk to the AI — it asks what you need, then takes you to the right page
+          </span>
+          <span className={styles.arrow}>→</span>
         </Link>
       </div>
     </div>
