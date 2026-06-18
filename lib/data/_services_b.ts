@@ -425,4 +425,324 @@ export const servicesB: LandingContent[] = [
     schema: "Service",
     icon: "Layers",
   },
+  {
+    "slug": "ai-review-engine",
+    "eyebrow": "AI Service",
+    "icon": "MessagesSquare",
+    "schema": "Service",
+    "ctaLabel": "Set up my Review Engine",
+    "h1": "How do I get more Google reviews without chasing customers?",
+    "title": "AI Review Engine: Automatic Google Reviews on Autopilot | Handbuilt",
+    "description": "An AI Review Engine that asks every finished customer for a review, sends happy ones to Google and unhappy ones to you privately. From $1,000 to set up, then $49/mo.",
+    "answer": "An AI Review Engine is a managed system that asks every customer for a review after their job finishes, reads how they felt, and routes them accordingly: happy customers go straight to your Google Business Profile, unhappy ones come to you privately first so you can fix the problem before it lands on Google. Handbuilt builds it on your real jobs and runs it for you — connected to Google Business, Twilio SMS and Gmail. It costs from $1,000 CAD to set up, then $49/mo to run.",
+    "pain": "You ask for reviews when you remember to, which is rarely — so your happiest customers stay silent while the occasional unhappy one heads straight to Google. Your rating ends up lower than the work you actually do.",
+    "scenario": "Take a Langley HVAC outfit closing maybe 12 to 15 service calls a week. The owner means to ask for reviews but is on the next call before the van's even packed up, so a strong month brings in two or three. With a Review Engine, every completed call triggers a text an hour later: a quick \"how did we do?\" The customers who tap thumbs-up get a one-tap link to the Google profile; the rare thumbs-down goes to the owner's inbox instead of public. A shop in that range could plausibly move from a trickle of reviews to a steadier flow each week — the exact lift depends on job volume and how happy the customer base already is.",
+    "steps": [
+      "We connect the Engine to Google Business, your SMS line (Twilio) and Gmail, and to your job or invoicing tool so it knows when a job is done",
+      "Each finished job triggers a short review request by text or email in your brand voice",
+      "The Engine reads the reply — happy customers get a direct Google review link, unhappy ones get routed to you privately to fix first",
+      "We watch the numbers and tune timing and wording so more requests turn into posted reviews"
+    ],
+    "gets": [
+      "A review request fired automatically after every finished job, by SMS and/or email",
+      "Sentiment routing: happy customers to Google, unhappy ones to you privately before they go public",
+      "Connected to Google Business, Twilio SMS and Gmail — we set it all up",
+      "A monthly report of requests sent, reviews posted and issues caught early"
+    ],
+    "keywords": [
+      "ai review engine",
+      "get more google reviews automatically",
+      "automated google review requests",
+      "review management for local business",
+      "sentiment review routing"
+    ],
+    "related": [
+      {
+        "label": "AI Review Request System",
+        "href": "/services/ai-review-request-system"
+      },
+      {
+        "label": "Free review reply generator",
+        "href": "/tools/review-reply-generator"
+      },
+      {
+        "label": "AI SMS Automation",
+        "href": "/services/ai-sms-automation"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How is this different from the simpler AI Review Request System?",
+        "a": "The Review Request System sends the ask and points happy customers to Google. The Review Engine adds sentiment routing — it reads how each customer felt and quietly diverts unhappy ones to you before they reach Google — and it's a managed service we run and tune each month for $49, rather than a one-time build."
+      },
+      {
+        "q": "Can it really stop bad reviews from landing on Google?",
+        "a": "It can't block anyone from posting — nobody can. What it does is catch an unhappy customer first and route them to you privately, so you get a chance to make it right before they think to leave a public review. Most upset customers just want the problem fixed."
+      },
+      {
+        "q": "What does it need to connect to?",
+        "a": "Google Business for posting reviews, Twilio for the text messages, and Gmail for email requests and your private alerts. We set up every connection during the build — you don't touch any technical settings."
+      }
+    ],
+  },
+  {
+    "slug": "ai-customer-reactivation",
+    "eyebrow": "AI Service",
+    "h1": "How do I win back past customers with AI?",
+    "title": "AI Customer Re-Activation Campaigns | Handbuilt",
+    "description": "Turn your old customer list into booked repeat jobs with an AI win-back campaign over email and text. Personalized, run on your own list, from $500 per campaign.",
+    "answer": "AI customer re-activation turns the people who already hired you into your cheapest source of new work. Handbuilt takes your past-customer list and writes a personalized win-back campaign — email plus text — that reminds each person you exist, references what they bought, and gives them an easy reason to book again. It runs as a one-off campaign on your own list and messaging, from $500 per campaign.",
+    "pain": "The cheapest job you can book is from someone who already paid you and liked the work. But most owners never reach back out, so that list of past customers just sits in a spreadsheet while you spend on ads chasing strangers.",
+    "scenario": "Take a Coquitlam house-cleaning company sitting on a list of maybe 300 past clients, most of whom haven't booked in a year. Roughly hedging, even a handful coming back for a one-time deep clean could more than cover the campaign cost. We'd write a short, warm message — \"it's been a while, here's a returning-client spot this month\" — send it by email and text, and route the replies straight to their booking. The point is to wake up people who already trust them, not to buy new attention.",
+    "steps": [
+      "You hand us your customer list — a spreadsheet export, your CRM, or even a pile of old invoices",
+      "We segment it by how long it's been and what each person bought, then write personalized email and text messages in your voice",
+      "We send the campaign over email and text using your own contacts, with a clear reason to rebook",
+      "Replies and bookings come straight back to you, and we report which messages pulled the most jobs"
+    ],
+    "gets": [
+      "A win-back campaign written for your real list and your services",
+      "Personalized email and text messages, segmented by customer history",
+      "Sent on your own list and accounts — Twilio for text, Gmail or Mailchimp for email",
+      "A simple report on opens, replies and jobs booked from the campaign"
+    ],
+    "ctaLabel": "Plan my win-back campaign",
+    "keywords": [
+      "ai customer reactivation campaign",
+      "win back past customers small business",
+      "reactivate old customer list",
+      "repeat business automation",
+      "customer win-back email and text"
+    ],
+    "related": [
+      {
+        "label": "Customer Re-Activation message writer (free tool)",
+        "href": "/tools/customer-reactivation"
+      },
+      {
+        "label": "AI SMS Automation",
+        "href": "/services/ai-sms-automation"
+      },
+      {
+        "label": "AI automation for cleaning businesses",
+        "href": "/industries/cleaning-business-ai-automation"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What do I need to give you to run this?",
+        "a": "Your past-customer list in whatever form you have it — a spreadsheet, a CRM export, or old invoices we can pull names and numbers from. The more it shows what each person bought and when, the more personal we can make the messages."
+      },
+      {
+        "q": "Will this annoy my customers?",
+        "a": "These are people who already hired you, and the message is short, friendly and easy to opt out of. We send to your own list, space the email and text so nobody gets hit twice, and keep the tone like a check-in, not a sales blast."
+      },
+      {
+        "q": "Is the $500 a monthly fee?",
+        "a": "No. It's priced per campaign, so you pay for a single win-back send on your list. If it pays for itself you can run another one each quarter, but there's no ongoing subscription unless you want one."
+      }
+    ],
+    "schema": "Service",
+    "icon": "CalendarCheck",
+  },
+  {
+    "slug": "ai-operations-dashboard",
+    "eyebrow": "AI Service",
+    "icon": "BarChart3",
+    "schema": "Service",
+    "h1": "Can I get one dashboard that answers who owes me money and which jobs are behind?",
+    "title": "AI Operations Dashboard for Small Business | Handbuilt",
+    "description": "One hosted dashboard you ask in plain English. It pulls from QuickBooks, your CRM, and your calendar to answer who owes money and what's behind. $1,500 setup, from $199/mo.",
+    "answer": "The answers to \"who owes me money,\" \"which jobs are behind,\" and \"which leads are hottest\" usually live in three or four different apps that don't talk to each other. Handbuilt builds you one hosted dashboard you ask in plain English — it pulls live from your invoicing, jobs, and leads and answers in seconds. We host it and run the AI usage, so there's nothing for you to maintain. $1,500 to set up, then from $199/mo all in.",
+    "pain": "The numbers that run your business are scattered across QuickBooks, a CRM, and a calendar that don't talk — so getting one straight answer means opening five tabs and doing the math in your head.",
+    "scenario": "Take an Abbotsford fencing contractor running QuickBooks for invoicing, a CRM for leads, and Google Calendar for the crew schedule — roughly 25 active jobs at a time and a handful of overdue invoices they keep meaning to chase. To answer \"what's owed and what's running late this week,\" the owner tends to flip between three apps on a Sunday night and still miss things. One dashboard that pulls from all three lets them type \"show me overdue invoices over 30 days and any job booked but not started\" and get the list straight away. How much time that saves depends on how messy the current spreadsheet habit is, but most owners in this spot are trading a recurring weekly scramble for a single question.",
+    "steps": [
+      "We connect to your QuickBooks, your CRM, Google Calendar, and Stripe with read access",
+      "We map your data so 'overdue,' 'behind,' and 'hot lead' mean what you mean",
+      "We build the hosted dashboard and a plain-English question box on top of it",
+      "We host it, include the AI usage in your monthly, and adjust as your business changes"
+    ],
+    "gets": [
+      "One hosted dashboard pulling live from invoicing, jobs, and leads",
+      "A plain-English question box — ask, don't build reports",
+      "Connections to QuickBooks, your CRM, Google Calendar, and Stripe",
+      "Hosting and AI usage included in the flat monthly"
+    ],
+    "ctaLabel": "Get my dashboard",
+    "keywords": [
+      "ai operations dashboard small business",
+      "quickbooks crm dashboard for contractors",
+      "plain english business dashboard",
+      "ai dashboard who owes me money",
+      "small business kpi dashboard ai"
+    ],
+    "related": [
+      {
+        "label": "AI Business Analyst",
+        "href": "/services/ai-business-analyst"
+      },
+      {
+        "label": "AI CRM Automation",
+        "href": "/services/ai-crm-automation"
+      },
+      {
+        "label": "AI Invoice Reminder System",
+        "href": "/services/ai-invoice-reminder-system"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What tools does it connect to?",
+        "a": "QuickBooks for invoicing, your existing CRM, Google Calendar for scheduling, and Stripe for payments. If you run a tool we haven't named, we confirm whether it has a connection before we start — most common small-business tools do."
+      },
+      {
+        "q": "Do I need to learn a reporting tool?",
+        "a": "No. You type a question the way you'd ask a bookkeeper — 'who's more than 30 days overdue' or 'which jobs are booked but haven't started' — and the dashboard answers from your live data. There are no charts to build."
+      },
+      {
+        "q": "Is the $199/mo the full cost?",
+        "a": "Yes. The $1,500 covers the build and the connections. The $199/mo is all in — we host the dashboard and the AI usage is included, so there's no separate API bill or hosting fee to manage."
+      }
+    ],
+  },
+  {
+    "slug": "ai-business-analyst",
+    "eyebrow": "AI Service",
+    "icon": "FileSearch",
+    "schema": "Service",
+    "h1": "Why was revenue down this month? Ask the AI Business Analyst",
+    "title": "AI Business Analyst | Handbuilt",
+    "description": "Ask why revenue moved and get an answer that checks your invoices, jobs, and payments — with the numbers shown, never guessed. Add-on from $99/mo.",
+    "answer": "\"Why was revenue down this month?\" is a question most owners feel but can't see without hours in a spreadsheet. The AI Business Analyst is an add-on to your Handbuilt Operations Dashboard: you ask a plain question and it checks your invoices, jobs, and payments, then explains what actually changed — always showing the exact numbers it used. If it can't verify something, it says so rather than guessing. Hosted, AI included, from $99/mo on top of your dashboard.",
+    "pain": "You can feel a slow month in your bank balance, but figuring out why means an evening in spreadsheets you don't have — so the real cause stays a guess.",
+    "scenario": "Take a Surrey electrical contractor who notices revenue is down maybe 15% from last month and has no time to dig into why. They ask the Analyst, and it pulls the actual figures: say job count held steady around 40, but the average invoice dropped because a big commercial job that closed in May had no equivalent in June, and three invoices are still unpaid past 30 days. Instead of a hunch, they get the breakdown with every number on screen — and a clear next step: chase the overdue invoices. How useful any given answer is depends on how clean the underlying data is, which is why the Analyst flags anything it can't confirm.",
+    "steps": [
+      "The Analyst connects to your QuickBooks, Stripe, and CRM through your existing Operations Dashboard",
+      "You ask a question in plain words — like why revenue moved, which jobs paid late, or what changed since last quarter",
+      "It queries your real invoices, jobs, and payments and writes a plain-language answer with the numbers it used shown alongside",
+      "Anything it can't verify from your data, it tells you it can't verify — it never fills the gap with a guess"
+    ],
+    "gets": [
+      "Plain-language answers to revenue and operations questions, on demand",
+      "Every answer shows the actual invoices, jobs, and payment figures behind it",
+      "Honest 'I can't verify that' when the data isn't there — no fabricated numbers",
+      "Connects to QuickBooks, Stripe, and your CRM through your Operations Dashboard"
+    ],
+    "ctaLabel": "Add the Analyst",
+    "keywords": [
+      "ai business analyst small business",
+      "why was revenue down this month",
+      "ask questions about my business data",
+      "ai financial analysis for contractors",
+      "operations dashboard add on"
+    ],
+    "related": [
+      {
+        "label": "AI Operations Dashboard",
+        "href": "/services/ai-operations-dashboard"
+      },
+      {
+        "label": "AI Invoice Reminder System",
+        "href": "/services/ai-invoice-reminder-system"
+      },
+      {
+        "label": "AI CRM Automation",
+        "href": "/services/ai-crm-automation"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need the Operations Dashboard to use this?",
+        "a": "Yes. The Analyst is an add-on that reads the data your Operations Dashboard already pulls together from QuickBooks, Stripe, and your CRM. It's $99/mo on top of the dashboard — we set up both together if you don't have the dashboard yet."
+      },
+      {
+        "q": "Can it make up a number if it doesn't have the data?",
+        "a": "No, and that's the point. Every answer shows the real figures it pulled. If your data doesn't cover what you asked — say a payment hasn't synced yet — it tells you it can't verify that rather than inventing a figure. You can trust what it shows because it shows its work."
+      },
+      {
+        "q": "What kind of questions can I actually ask?",
+        "a": "Things you'd otherwise dig through spreadsheets for: why revenue was up or down, which jobs are still unpaid, how this month compares to last, which service makes the most money. It answers from your invoices, jobs, and payments — not general advice."
+      }
+    ],
+  },
+  {
+    "slug": "ai-receptionist-os",
+    "eyebrow": "AI Service",
+    "schema": "Service",
+    "icon": "Headphones",
+    "h1": "What is an AI Receptionist OS for a local business?",
+    "title": "AI Receptionist OS — Your Whole Front Desk on Autopilot | Handbuilt",
+    "description": "One hosted system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — on one dashboard. $1,500 onboarding, then from $349/mo, calls included.",
+    "answer": "AI Receptionist OS is Handbuilt's flagship: one hosted system that runs your entire front desk so you never lose a lead in the gaps. It answers calls and texts, books jobs into your calendar, sends quotes, chases reviews, and follows up with every lead automatically — all on one dashboard, with nothing for you to stitch together. It's meant to cover the kind of front-desk work you'd otherwise hand to a part-time receptionist or a patchwork of separate apps. Pricing is $1,500 onboarding, then from $349/mo, fully hosted with calls and AI usage included.",
+    "pain": "You've patched together a receptionist, a texting app, a booking link, a review tool and a follow-up reminder — and leads still slip through the cracks between them because nothing talks to anything else.",
+    "scenario": "Take a busy Surrey HVAC company fielding maybe 40–50 calls and a dozen website and text inquiries a week, with one person trying to answer the phone, send quotes and remember to follow up — usually while on a job. A few calls a week go to voicemail, a couple of quotes never get sent, and review requests almost never happen. Running it all through one Receptionist OS means the calls get answered and booked, the quote goes out the same day, every closed job triggers a review ask, and any lead that goes quiet gets a follow-up text — all visible on one screen instead of five apps. The exact lift depends on how many leads are currently falling through the gaps, but closing those gaps is usually where the recovered revenue sits.",
+    "steps": [
+      "We map your whole front desk — how calls, texts, quotes, bookings and follow-ups flow today — and where leads currently leak",
+      "We connect the pieces: Twilio for calls and SMS, Google Calendar for booking, your CRM, Stripe for deposits, and Google Business for reviews",
+      "We configure the AI to answer, qualify, book, quote and chase reviews in your voice, with rules you approve before go-live",
+      "We host and run it on one dashboard, watch the first 30 days of live conversations, and tune the flows that need it"
+    ],
+    "gets": [
+      "A hosted system that answers calls and texts, books jobs, sends quotes and chases reviews",
+      "Automatic follow-up on every lead so none goes cold from neglect",
+      "One dashboard showing every call, message, booking and review in one place",
+      "Integrations with Twilio, Google Calendar, your CRM, Stripe and Google Business — calls and AI usage included in the monthly fee"
+    ],
+    "ctaLabel": "Build my Receptionist OS",
+    "keywords": [
+      "ai receptionist os",
+      "all in one ai receptionist small business",
+      "ai front desk system for local business",
+      "ai answering and booking system",
+      "ai receptionist with reviews and follow up"
+    ],
+    "related": [
+      {
+        "label": "AI Receptionist Setup",
+        "href": "/services/ai-receptionist-setup"
+      },
+      {
+        "label": "AI Voice Agent",
+        "href": "/services/ai-voice-agent"
+      },
+      {
+        "label": "AI Review Engine",
+        "href": "/services/ai-review-engine"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How is this different from the single AI Receptionist Setup?",
+        "a": "AI Receptionist Setup is the entry point — one AI that answers and books calls. Receptionist OS is the whole front desk: calls, texts, booking, quotes, reviews and lead follow-up running together on one dashboard, fully hosted and managed. If you just need calls answered, start with the setup; if you want the entire front desk on autopilot, this is it."
+      },
+      {
+        "q": "What does the $349/mo actually cover?",
+        "a": "Hosting, the AI usage, and the call minutes for normal local-business volume are all included — no separate Twilio or AI bills to manage. Onboarding is a one-time $1,500 to map your flow and connect your tools. Very high call volume can move the monthly tier up; we tell you where you'd land before you commit."
+      },
+      {
+        "q": "Will it work with the tools I already use?",
+        "a": "Yes. It connects to Twilio for calls and texts, Google Calendar for booking, Stripe for deposits, Google Business for reviews, and most common CRMs like Jobber or HubSpot. We confirm compatibility during onboarding and set up the connections for you."
+      }
+    ],
+  },
 ];

@@ -187,6 +187,7 @@ export const shopProducts: ShopProduct[] = [
       "Set up on your Google + messaging accounts; the monthly covers running the sentiment routing and keeping it tuned.",
     packageId: "starter",
     demoHref: "/tools/review-reply-generator",
+    learnHref: "/services/ai-review-engine",
   },
   {
     slug: "ai-customer-reactivation",
@@ -208,6 +209,7 @@ export const shopProducts: ShopProduct[] = [
       "Run as a one-off campaign on your own list + messaging — you pay only for the texts/emails actually sent (your accounts).",
     packageId: "starter",
     demoHref: "/tools/customer-reactivation",
+    learnHref: "/services/ai-customer-reactivation",
   },
   {
     slug: "ai-operations-dashboard",
@@ -229,6 +231,7 @@ export const shopProducts: ShopProduct[] = [
     usageNote:
       "We host it and include the AI — one monthly fee, connected to the systems you already use. No keys to manage.",
     packageId: "business",
+    learnHref: "/services/ai-operations-dashboard",
   },
   {
     slug: "ai-business-analyst",
@@ -249,6 +252,7 @@ export const shopProducts: ShopProduct[] = [
     usageNote:
       "An add-on to the Operations Dashboard — hosted by us, AI included in the monthly. Every answer is sourced from your data, never made up.",
     packageId: "business",
+    learnHref: "/services/ai-business-analyst",
   },
   {
     slug: "ai-receptionist-os",
@@ -272,6 +276,7 @@ export const shopProducts: ShopProduct[] = [
     packageId: "business",
     badge: "Flagship",
     demoHref: "/start",
+    learnHref: "/services/ai-receptionist-os",
   },
 ];
 
