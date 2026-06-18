@@ -122,10 +122,19 @@ export function breadcrumbSchema(crumbs: { name: string; path: string }[]) {
 }
 
 // Shop storefront schema: a breadcrumb + an ItemList of the products as
-// self-contained Service offers (priced via their package). Self-contained so
-// it never 404s on a cross-page URL.
+// self-contained Service offers. Prices each product by its real billing model —
+// a monthly UnitPriceSpecification for managed/hybrid systems, a one-time price
+// for builds — so the offer never misrepresents a $349/mo system as a flat fee.
 export function shopSchema(
-  products: { name: string; outcome: string; packageId: "starter" | "business" | "custom" }[]
+  products: {
+    name: string;
+    outcome: string;
+    packageId: "starter" | "business" | "custom";
+    billing?: "one-time" | "managed" | "hybrid";
+    priceLabel?: string;
+    monthlyPrice?: number;
+    setupPrice?: number;
+  }[]
 ): Record<string, unknown>[] {
   const itemList = {
     "@context": "https://schema.org",
@@ -133,6 +142,30 @@ export function shopSchema(
     name: "Ready-to-install AI systems",
     itemListElement: products.map((p, i) => {
       const pkg = getPackage(p.packageId);
+      // A recurring offer when there's a monthly; otherwise a one-time price.
+      const offer = p.monthlyPrice
+        ? {
+            "@type": "Offer",
+            price: p.monthlyPrice,
+            priceCurrency: site.currency,
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: p.monthlyPrice,
+              priceCurrency: site.currency,
+              unitText: "MONTH",
+            },
+            description: p.priceLabel ?? (pkg ? formatPackagePrice(pkg) : undefined),
+            url: `${site.url}/create`,
+          }
+        : (p.setupPrice ?? pkg?.price) != null
+          ? {
+              "@type": "Offer",
+              price: p.setupPrice ?? pkg!.price,
+              priceCurrency: site.currency,
+              description: p.priceLabel ?? (pkg ? formatPackagePrice(pkg) : undefined),
+              url: `${site.url}/create`,
+            }
+          : undefined;
       return {
         "@type": "ListItem",
         position: i + 1,
@@ -143,15 +176,7 @@ export function shopSchema(
           description: p.outcome,
           provider: { "@id": `${site.url}/#organization` },
           areaServed: "Worldwide",
-          ...(pkg && {
-            offers: {
-              "@type": "Offer",
-              price: pkg.price,
-              priceCurrency: site.currency,
-              description: formatPackagePrice(pkg),
-              url: `${site.url}/create`,
-            },
-          }),
+          ...(offer && { offers: offer }),
         },
       };
     }),

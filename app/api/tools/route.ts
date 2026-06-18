@@ -34,8 +34,27 @@ export const runtime = "nodejs";
 const MAX_FIELD = 600;
 const FREE_COOKIE = "tp_free";
 
-type Kind = "proposal" | "estimate" | "review" | "brief" | "reminder";
-const KINDS: Kind[] = ["proposal", "estimate", "review", "brief", "reminder"];
+type Kind =
+  | "proposal"
+  | "estimate"
+  | "review"
+  | "brief"
+  | "reminder"
+  | "quote"
+  | "sop"
+  | "hiring"
+  | "winback";
+const KINDS: Kind[] = [
+  "proposal",
+  "estimate",
+  "review",
+  "brief",
+  "reminder",
+  "quote",
+  "sop",
+  "hiring",
+  "winback",
+];
 
 const HONESTY =
   "\n\nHonesty rules: Use only the details the user gave you. Do not invent specific facts, credentials, awards, testimonials, statistics or guarantees. Any price you state is a rough estimate the user confirms — never a binding or guaranteed amount.";
@@ -104,6 +123,52 @@ SMS: a short text-message version (1-2 sentences).
 FINAL NOTICE: a firmer but still professional and respectful version, for if earlier reminders went unanswered.
 
 Rules: never threatening, never rude. Use the client name and amount given; don't invent other details. Always leave room that they may have already paid.${HONESTY}`;
+
+    case "quote":
+      return `You are a sharp quoting specialist for a hands-on service business. From the job details, build a clear THREE-TIER quote the customer can choose from — so they pick a tier instead of price-shopping you. Use realistic ranges for the trade and local market; every price is an estimate to confirm after a closer look, never a binding amount. Use this exact structure with ALLCAPS labels:
+
+BASIC: the no-frills option that solves the core job — one line on what's included + a price RANGE.
+BETTER: the recommended middle option (most people pick this) — what it adds over Basic + a price RANGE.
+PREMIUM: the highest-standard option for someone who wants the best — what it adds + a price RANGE.
+UPSELLS: 2-3 genuine add-ons worth offering with rough prices — only ones that fit this job.
+CUSTOMER MESSAGE: a short, friendly note presenting the three options and inviting them to pick, ending by asking to confirm details.
+
+Make each tier genuinely different in scope, not just price. Keep it tight and concrete to the job described.${HONESTY}`;
+
+    case "sop":
+      return `You are an operations expert who turns how a business does a task into a clean, repeatable SOP a new hire could follow on day one. From the process described, produce a complete standard operating procedure. Use this exact structure with ALLCAPS labels:
+
+OVERVIEW: 1-2 sentences on what this procedure covers and what a good result looks like.
+WHAT YOU NEED: the tools, equipment or materials required (or "n/a").
+STEPS: a numbered, in-order list of every step — specific and practical, the way it's actually done, not vague.
+QUALITY CHECKLIST: 4-6 check items to confirm the job was done right.
+COMMON MISTAKES: 2-3 things that go wrong and how to avoid them.
+TRAINING NOTES: 2-3 tips for teaching this to a new hire.
+
+Be concrete and specific to the task described. Write so someone who has never done it could follow along.${HONESTY}`;
+
+    case "hiring":
+      return `You are a hiring expert for small local businesses. From the role details, produce everything the owner needs to post the job and screen applicants well. Use this exact structure with ALLCAPS labels:
+
+JOB AD: a complete, ready-to-post ad — short intro to the role, what they'll do, what's offered. Warm and honest, no corporate clichés.
+MUST HAVES: the non-negotiable requirements as bullets.
+NICE TO HAVES: the bonus qualities as bullets.
+SCREENING QUESTIONS: 5-7 quick questions to filter applicants up front.
+RANKING RUBRIC: a simple way to score candidates — what a strong vs weak answer looks like.
+INTERVIEW QUESTIONS: 4-6 interview questions, including one practical or scenario question.
+
+Be specific to the role and the kind of business. Keep it practical for an owner with no HR team.${HONESTY}`;
+
+    case "winback":
+      return `You are a retention specialist helping a local business win back past customers who haven't booked in a while. From the details, write a short re-activation campaign that feels personal, not spammy. Use this exact structure with ALLCAPS labels:
+
+EMAIL: a warm "we'd love to see you again" email (with a subject line) — reference the relationship, make a clear offer, easy next step.
+SMS: a short, friendly text version (1-2 sentences).
+FOLLOW UP: a second, lighter message to send about a week later if there's no reply.
+OFFER IDEA: 1-2 genuine reactivation offers that fit this business — suggest only, never promise a specific discount the user didn't give.
+TIMING: a one-line suggestion on when and how often to send.
+
+Keep it genuine and specific to the business and the service offered. Never pushy.${HONESTY}`;
   }
 }
 
@@ -120,6 +185,14 @@ function fallback(kind: Kind, f: Record<string, string>): string {
       return `BRAND: A focused offer for ${f.audience || "your audience"}.\nSERVICES: Core service; add-on service; premium tier.\nWEBSITE PAGES: Home; Services; About; Contact.\nHERO COPY: A clear headline about the value you deliver.\nSEO KEYWORDS: your service + your city, "near me" variants.\nFAQS: What do you offer? How much? How to start?`;
     case "reminder":
       return `EMAIL: Hi ${f.client || "there"}, a friendly reminder that your invoice${f.amount ? ` of ${f.amount}` : ""} is now due. If you've already paid, thank you — please disregard. Any issues, just reply and we'll help.\nSMS: Hi ${f.client || "there"}, quick reminder your invoice${f.amount ? ` (${f.amount})` : ""} is due — thank you!\nFINAL NOTICE: Hi ${f.client || "there"}, following up once more on the outstanding invoice${f.amount ? ` of ${f.amount}` : ""}. Please arrange payment at your earliest convenience, or reply if there's a problem we can help with.`;
+    case "quote":
+      return `BASIC: Covers the core of "${f.job || "the job"}" to a solid standard — price confirmed after a quick look.\nBETTER: Recommended — the core job plus the add-ons most customers want.\nPREMIUM: The complete, highest-standard version with everything included.\nUPSELLS: A few sensible add-ons can be quoted alongside.\nCUSTOMER MESSAGE: Thanks for the details — here are three options to choose from; happy to confirm the exact price once we take a closer look.`;
+    case "sop":
+      return `OVERVIEW: A simple, repeatable procedure for "${f.task || "this task"}".\nWHAT YOU NEED: The usual tools and materials for the job.\nSTEPS: 1) Prepare and set up. 2) Do the work in order. 3) Check it against the standard. 4) Tidy up and confirm it's done.\nQUALITY CHECKLIST: Done safely; done to standard; customer happy; area left clean.\nCOMMON MISTAKES: Rushing the prep; skipping the final check.\nTRAINING NOTES: Walk a new hire through it once, then watch them do it.`;
+    case "hiring":
+      return `JOB AD: ${f.business || "We"} are hiring${f.role ? ` a ${f.role}` : ""} — an honest, hands-on team looking for someone reliable.\nMUST HAVES: Reliable; right attitude; the core skills for the role.\nNICE TO HAVES: Relevant experience; own transport; flexibility.\nSCREENING QUESTIONS: Why this role? Relevant experience? Availability? Reliable transport?\nRANKING RUBRIC: Score reliability, skill and attitude 1-5 each.\nINTERVIEW QUESTIONS: Tell me about a job you're proud of. How would you handle a difficult customer?`;
+    case "winback":
+      return `EMAIL: Hi there — it's been a while and we'd love to have you back${f.business ? ` at ${f.business}` : ""}.${f.service ? ` We're now offering ${f.service}.` : ""} Reply and we'll get you booked in.\nSMS: We'd love to see you again — want us to book you in?\nFOLLOW UP: Just checking back in — happy to find a time that works for you.\nOFFER IDEA: A small returning-customer thank-you can help bring people back.\nTIMING: Send it, then follow up about a week later if there's no reply.`;
   }
 }
 

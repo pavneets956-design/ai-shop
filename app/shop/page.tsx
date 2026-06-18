@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Sparkles, Plug, Clock } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Sparkles, Plug, Clock, Wallet } from "lucide-react";
 import GlowBackground from "@/components/GlowBackground";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
@@ -98,18 +98,26 @@ export default function ShopPage() {
       <section className="relative pb-8 pt-4">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal>
-            <span className="eyebrow">01 / Ready-to-install AI tools</span>
+            <span className="eyebrow">01 / Ready-to-install AI systems</span>
             <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-              Five systems that pay for themselves
+              Systems that pay for themselves
             </h2>
             <p className="mt-2 max-w-xl text-ink/55">
-              Each one solves a specific, expensive problem. Fixed scope, fixed price, live in days.
+              Each one solves a specific, expensive problem. Some are a one-time build you own and
+              run on your own accounts; the always-on ones we host and run for a flat monthly — no
+              API keys, no surprise bills.
             </p>
           </Reveal>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {shopProducts.map((p, i) => {
               const Icon = getIcon(p.icon);
+              const billingLabel =
+                p.billing === "managed"
+                  ? "Monthly · we run it"
+                  : p.billing === "hybrid"
+                    ? "Setup + monthly"
+                    : "One-time build";
               return (
                 <Reveal key={p.slug} delay={0.04 * i}>
                   <div className="glass-card spec-frame flex h-full flex-col p-7">
@@ -118,10 +126,17 @@ export default function ShopPage() {
                       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-clay-dark">
                         <Icon className="h-5 w-5" />
                       </span>
-                      <div>
-                        <h3 className="font-display text-xl font-semibold text-ink">{p.name}</h3>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="font-display text-xl font-semibold text-ink">{p.name}</h3>
+                          {p.badge && (
+                            <span className="rounded-full border border-amber/40 bg-amber/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-clay-dark">
+                              {p.badge}
+                            </span>
+                          )}
+                        </div>
                         <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-ink/40">
-                          {p.delivery}
+                          {p.delivery} · {billingLabel}
                         </p>
                       </div>
                     </div>
@@ -151,8 +166,12 @@ export default function ShopPage() {
                       </div>
                     </div>
 
-                    {/* Footer: price + time + CTAs */}
+                    {/* Footer: who-pays-usage disclosure + price + time + CTAs */}
                     <div className="mt-auto pt-6">
+                      <div className="mb-4 flex items-start gap-2 rounded-xl border border-ink/[0.06] bg-paper-2/40 px-3 py-2.5">
+                        <Wallet className="mt-0.5 h-3.5 w-3.5 flex-none text-ink/35" aria-hidden="true" />
+                        <p className="text-xs leading-relaxed text-ink/55">{p.usageNote}</p>
+                      </div>
                       <div className="flex items-center justify-between border-t border-ink/[0.06] pt-5">
                         <span className="text-sm font-semibold text-ink/75">{p.priceLabel}</span>
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-ink/45">
@@ -172,12 +191,14 @@ export default function ShopPage() {
                           </Link>
                         )}
                       </div>
-                      <Link
-                        href={`/services/${p.slug}`}
-                        className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-clay-dark"
-                      >
-                        How it works <ArrowRight className="h-3.5 w-3.5" />
-                      </Link>
+                      {p.learnHref && (
+                        <Link
+                          href={p.learnHref}
+                          className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-clay-dark"
+                        >
+                          How it works <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </Reveal>
@@ -187,9 +208,10 @@ export default function ShopPage() {
 
           <Reveal delay={0.1}>
             <p className="mt-6 text-center text-sm text-ink/50">
-              Every build is one-time. Want it run, monitored and tweaked for you?{" "}
+              One-time builds run on your own accounts — you own them outright. Managed systems are
+              hosted and run by us, AI usage included.{" "}
               <Link href="/pricing" className="font-semibold text-clay-dark hover:text-clay">
-                The AI Care Plan is $250/mo
+                See full pricing
               </Link>
               .
             </p>
@@ -354,7 +376,9 @@ export default function ShopPage() {
                     <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
                       Price
                     </dt>
-                    <dd className="mt-1 text-sm font-medium text-ink">from $1,000, one-time</dd>
+                    <dd className="mt-1 text-sm font-medium text-ink">
+                      from $1,000 one-time — or hosted from $129/mo
+                    </dd>
                   </div>
                   <div className="border-t border-amber/25 pt-4">
                     <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">

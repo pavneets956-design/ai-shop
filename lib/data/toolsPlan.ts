@@ -41,7 +41,7 @@ export const toolsPlan = {
     },
   ] as PlanInterval[],
   features: [
-    "Unlimited use of every tool — proposals, quotes, review replies, briefs, reminders",
+    "Unlimited use of every tool — proposals, quotes, SOPs, job ads, review replies, win-backs & more",
     "Premium outputs: longer, structured, ready to send",
     "Save your brand profile once — it prefills every tool",
     "Your full generation history, saved to your account",

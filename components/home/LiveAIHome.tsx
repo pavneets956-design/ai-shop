@@ -377,7 +377,7 @@ export default function LiveAIHome() {
           <div className={styles.wrap}>
             <div className={styles.toolspro}>
               <div className={styles.tpTitle}>Want the self-serve tools instead?</div>
-              <p className={styles.tpCopy}>Tools Pro is for owners who want to use AI tools themselves — proposals, quotes, review replies, reminders, and business copy. Done-for-you AI systems are for owners who want us to install the automation.</p>
+              <p className={styles.tpCopy}>Tools Pro is for owners who want to use AI tools themselves — proposals, quotes, SOPs, job ads, review replies, win-back campaigns and more. Done-for-you AI systems are for owners who want us to install the automation.</p>
               <Link className={`${styles.btn} ${styles.btnGhost}`} href="/tools/pro">Explore Tools Pro</Link>
             </div>
           </div>

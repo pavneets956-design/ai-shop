@@ -10,7 +10,7 @@ import { selfServeTools } from "@/lib/data/tools";
 export const metadata: Metadata = {
   title: "AI Tools for Small Businesses — Tools Pro by Handbuilt",
   description:
-    "AI tools for local and small businesses: proposal generator, quote & estimate generator, Google review reply writer, business brief generator and invoice reminders. One Tools Pro subscription unlocks them all.",
+    "AI tools for local and small businesses: proposal generator, quote builder, estimate generator, Google review reply writer, SOP builder, hiring assistant, customer re-activation, business brief generator and invoice reminders. One Tools Pro subscription unlocks them all.",
   alternates: { canonical: "/tools" },
 };
 
@@ -31,9 +31,9 @@ export default function ToolsHubPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-ink/60">
-              Generate proposals, quotes, review replies, briefs and reminders in seconds — built
-              and tuned by hand. Unlimited use from $19/mo. When you&apos;re ready to put one on
-              autopilot, we build it into your business.
+              Generate proposals, 3-tier quotes, SOPs, job ads, review replies, win-back campaigns
+              and more in seconds — built and tuned by hand. Unlimited use from $19/mo. When
+              you&apos;re ready to put one on autopilot, we build it into your business.
             </p>
           </Reveal>
           <Reveal delay={0.13}>
