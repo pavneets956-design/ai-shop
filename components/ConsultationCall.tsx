@@ -2,37 +2,61 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { routeForWant, type IntentRoute } from "@/lib/data/builder";
+import {
+  buildPlan,
+  routeForWant,
+  type BuildPlan,
+  type IntentKey,
+  type IntentRoute,
+} from "@/lib/data/builder";
 
 /**
- * Handbuilt "AI call" — a cinematic, voice-led intake experience.
+ * Handbuilt "AI Builder" — a voice-led, value-FIRST intake.
  *
- * A full-screen white overlay: five grey lines act as the AI's "voice".
- * It speaks first (browser SpeechSynthesis — free, no key), greets the
- * visitor, then runs an interview. At the end it captures the lead via
- * /api/build-request (email to the owner) and routes the visitor onward.
+ * It does NOT act like ChatGPT and it does NOT ask for contact details up
+ * front. It behaves like a business consultant that turns a pain point into a
+ * real system on screen:
  *
- * Two engines, chosen automatically:
- *   LIVE      — /api/consultation drives a real LLM that handles ANY typed
- *               answer and extracts the brief incrementally. Used when
- *               OPENAI_API_KEY is configured in the deploy.
- *   SCRIPTED  — a fixed adaptive interview (buildSteps). Used as the
- *               cold-start fallback when no key is present, AND as a
- *               deterministic finisher if the live model fails mid-call.
+ *   1. "What's wasting the most time?"          (the hook — their pain)
+ *   2. a couple of quick qualifiers             (business + volume)
+ *   3. DIAGNOSIS card                           (problem → impact → system → time → price)
+ *   4. "Want me to design the exact workflow?"  (commitment micro-yes)
+ *   5. VISUAL WORKFLOW                          (the wow moment)
+ *   6. deeper qualifiers                        (team / jobs / software)
+ *   7. BUILD PLAN card                          (time saved, launch, investment)
+ *   8. "Where should I send your plan?"         (email — LAST, never first)
  *
- * The probe IS the first live turn, fetched WHILE the fixed greeting plays —
- * so the live path adds no perceptible latency, and /start NEVER breaks in
- * prod with or without the key.
+ * Fully deterministic + zero API cost: the plan, pricing, and routing all come
+ * from lib/data/builder.ts (shared with the homepage hero), so the call and the
+ * site recommend the same systems and route to the same real pages.
+ *
+ * Voice: premium TTS (/api/tts) when a key is set, else free browser
+ * SpeechSynthesis. Voice drives pacing; text types in sync.
  */
 
 type StepType = "text" | "chips";
-type Step = { key: string; q: string; type: StepType; ph?: string; opts?: string[] };
 type Answers = Record<string, string>;
-type ChatMessage = { role: "user" | "assistant"; content: string };
-type LiveTurn = { reply: string; chips: string[]; briefPatch: Answers; done: boolean };
 type AnswerSpec = { type: StepType | "input"; opts?: string[]; ph?: string };
 
-const REQUIRED_FIELDS = ["name", "kind", "want", "city", "email"] as const;
+type DiagnosisCard = {
+  kind: "diagnosis";
+  problem: string;
+  impact: string;
+  system: string;
+  includes: string[];
+  timeline: string;
+  price: string;
+};
+type WorkflowCard = { kind: "workflow"; system: string; steps: { label: string; sub?: string }[] };
+type PlanCard = {
+  kind: "plan";
+  name: string;
+  includes: string[];
+  timeSaved: string;
+  launch: string;
+  price: string;
+};
+type Card = DiagnosisCard | WorkflowCard | PlanCard;
 
 const wait = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 const validEmail = (s?: string) => !!s && /\S+@\S+\.\S+/.test(s);
@@ -41,53 +65,94 @@ const validEmail = (s?: string) => !!s && /\S+@\S+\.\S+/.test(s);
 // <audio> element so later programmatic play() works (esp. iOS Safari).
 const SILENT_WAV =
   "data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAAAAA==";
-const hasAll = (b: Answers) =>
-  REQUIRED_FIELDS.every((k) => (k === "email" ? validEmail(b[k]) : !!b[k]?.trim()));
 
-function buildSteps(a: Answers): Step[] {
-  const name = a.name || "your business";
-  return [
-    { key: "name", type: "text", q: "Let's start — what's your business called?", ph: "type your answer" },
-    {
-      key: "kind",
-      type: "chips",
-      q: `Good to meet you. What does ${name} do?`,
-      opts: ["A service business", "A shop / online store", "A clinic or practice", "Something else"],
-    },
-    {
-      key: "want",
-      type: "chips",
-      q: `What do you want the AI to do for ${name}?`,
-      opts: ["Answer calls & book jobs", "Reply to website chats", "Capture leads 24/7", "Just build me a great site"],
-    },
-    { key: "city", type: "text", q: "Where are you based?", ph: "city" },
-    { key: "email", type: "text", q: "Last thing — where should I send your plan?", ph: "you@business.com" },
-  ];
-}
-
-// Canned prompts for the deterministic finisher (used if the live model dies
-// mid-call). Only fields still missing get asked — no re-asking.
-const FINISH_STEPS: Step[] = [
-  { key: "name", type: "text", q: "Sorry — let's pick this back up. What's your business called?", ph: "type your answer" },
-  {
-    key: "kind",
-    type: "chips",
-    q: "And what does it do?",
-    opts: ["A service business", "A shop / online store", "A clinic or practice", "Something else"],
-  },
-  {
-    key: "want",
-    type: "chips",
-    q: "What should the AI handle for you?",
-    opts: ["Answer calls & book jobs", "Reply to website chats", "Capture leads 24/7", "Just build me a great site"],
-  },
-  { key: "city", type: "text", q: "Where are you based?", ph: "city" },
-  { key: "email", type: "text", q: "Last thing — what's the best email for your plan?", ph: "you@business.com" },
+// The pain chips — the very first thing we ask. Order = most common first.
+const PAIN_CHIPS = [
+  "Answering calls",
+  "Following up with leads",
+  "Sending quotes",
+  "Chasing unpaid invoices",
+  "Scheduling jobs",
+  "Something else",
 ];
 
-// The single source of truth for "what fits you + where to send you" now lives
-// in lib/data/builder.ts (shared with the homepage HeroBuilder), so the call
-// and the hero recommend the same system and route to the same real pages.
+// Pain → the intent that drives the plan templates in builder.ts. We pass a
+// canonical phrase to buildPlan/routeForWant so detectIntent resolves cleanly.
+function painToIntentText(pain: string): { intent: IntentKey; text: string } {
+  if (/invoice|unpaid/i.test(pain)) return { intent: "invoices", text: "chasing unpaid invoices" };
+  if (/quote/i.test(pain)) return { intent: "quotes", text: "sending quotes" };
+  if (/lead|follow/i.test(pain)) return { intent: "leads", text: "following up with leads" };
+  if (/call|schedul|book|appoint/i.test(pain)) return { intent: "calls", text: "answering calls and booking" };
+  return { intent: "admin", text: "everything — run the whole business" };
+}
+
+// Per-intent qualifier + diagnosis copy. Volume answer is woven into the
+// problem line so the diagnosis feels specific to them.
+const DIAG: Record<
+  IntentKey,
+  {
+    volQ: string;
+    volOpts: string[];
+    problem: (vol: string) => string;
+    impact: string;
+    includes: string[];
+  }
+> = {
+  calls: {
+    volQ: "Roughly how many calls do you miss in a week?",
+    volOpts: ["A few", "5–15", "15–30", "30+"],
+    problem: (v) => `You're missing around ${v.toLowerCase()} calls a week — and most callers never try again.`,
+    impact: "Even 2–3 missed jobs a week can mean thousands in lost revenue a month.",
+    includes: ["AI Receptionist", "SMS follow-up", "Appointment booking", "Lead tracking"],
+  },
+  leads: {
+    volQ: "How many new leads come in each week?",
+    volOpts: ["Under 10", "10–25", "25–50", "50+"],
+    problem: (v) => `You're getting ${v.toLowerCase()} leads a week, but slow replies let too many go cold.`,
+    impact: "Replying in under a minute can double the leads you actually close.",
+    includes: ["AI lead follow-up", "Instant first reply", "Booking link", "Lead tracking"],
+  },
+  quotes: {
+    volQ: "How many quotes do you send in a week?",
+    volOpts: ["Under 5", "5–15", "15–30", "30+"],
+    problem: (v) => `You're writing ${v.toLowerCase()} quotes a week by hand — slow, and some never go out.`,
+    impact: "Faster quotes win the job before a competitor even replies.",
+    includes: ["AI Quote Agent", "Detail intake", "Auto-drafted estimate", "Follow-up reminder"],
+  },
+  invoices: {
+    volQ: "Roughly how much is usually sitting unpaid?",
+    volOpts: ["Under $2k", "$2k–$10k", "$10k–$25k", "$25k+"],
+    problem: (v) => `You've got around ${v} in unpaid invoices, and chasing it eats your evenings.`,
+    impact: "Polite automatic reminders get you paid days — sometimes weeks — faster.",
+    includes: ["AI invoice reminders", "One-tap pay link", "Gentle escalation", "Auto mark-paid"],
+  },
+  reviews: {
+    volQ: "How many reviews do you get in a month?",
+    volOpts: ["Barely any", "A handful", "10–25", "25+"],
+    problem: (v) => `You're getting ${v.toLowerCase()} reviews — not enough to win the search game.`,
+    impact: "More 5-star reviews puts you above competitors when locals search.",
+    includes: ["AI Review Manager", "Auto reply drafts", "Review requests", "Reputation alerts"],
+  },
+  admin: {
+    volQ: "How many hours a week disappear into admin and follow-up?",
+    volOpts: ["Under 5", "5–10", "10–20", "20+"],
+    problem: (v) => `You're losing ${v.toLowerCase()} hours a week to admin that an AI system can run for you.`,
+    impact: "One connected system hands those hours back to you every single week.",
+    includes: ["AI Receptionist", "Lead follow-up", "Quote generator", "Invoice reminders"],
+  },
+};
+
+// Light guess of the business "type" from the typed name, so the workflow
+// sub-labels read naturally. Falls back to a generic trades flavor.
+function guessBizKey(name: string): string {
+  const n = (name || "").toLowerCase();
+  if (/lawn|turf|landscap|garden|yard|mow/.test(n)) return "landscaping";
+  if (/salon|spa|hair|nail|beauty|barber/.test(n)) return "salon";
+  if (/dental|dentist|clinic|ortho|chiro|physio|medical/.test(n)) return "dental";
+  if (/realty|real ?estate|realtor|homes|properties/.test(n)) return "realestate";
+  if (/restaurant|cafe|cafe|bar|grill|kitchen|pizz|bistro/.test(n)) return "restaurant";
+  return "trades";
+}
 
 export default function ConsultationCall({ onHomepage = false }: { onHomepage?: boolean }) {
   const [dismissed, setDismissed] = useState(false);
@@ -100,10 +165,10 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   const [inputPh, setInputPh] = useState("");
   const [inputVal, setInputVal] = useState("");
   const [voiceName, setVoiceName] = useState<string | null>(null);
-  const [plan, setPlan] = useState<{ rows: [string, string][]; build: string; route: IntentRoute } | null>(null);
+  const [card, setCard] = useState<Card | null>(null);
+  const [route, setRoute] = useState<IntentRoute | null>(null);
 
   const briefRef = useRef<Answers>({});
-  const messagesRef = useRef<ChatMessage[]>([]);
   const leadSentRef = useRef(false);
   const resolverRef = useRef<((v: string) => void) | null>(null);
   const voiceRef = useRef<SpeechSynthesisVoice | null>(null);
@@ -204,16 +269,39 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         if (usedBrowser || finished) return;
         usedBrowser = true;
         const synth = typeof window !== "undefined" ? window.speechSynthesis : null;
-        if (synth && voiceRef.current) {
+        // Speak even when no specific voice was pre-selected — the engine uses
+        // its system default. Requiring voiceRef.current here was the #1 cause
+        // of total silence (voices load async / regex misses on some browsers).
+        if (synth) {
           const u = new SpeechSynthesisUtterance(text);
-          u.voice = voiceRef.current;
+          if (voiceRef.current) u.voice = voiceRef.current;
+          u.lang = voiceRef.current?.lang || "en-US";
           u.rate = 1.12;
           u.pitch = 1;
           u.volume = 1;
           u.onend = done;
           u.onerror = done;
-          synth.cancel();
-          synth.speak(u);
+          try {
+            synth.cancel();
+            // Chrome/Edge frequently get stuck "paused" after the silent-unlock
+            // utterance — speak() then does nothing. resume() defeats that.
+            synth.resume();
+            synth.speak(u);
+            // If it didn't actually start, nudge it once.
+            setTimeout(() => {
+              if (!finished && !synth.speaking && !synth.pending) {
+                try {
+                  synth.resume();
+                  synth.speak(u);
+                } catch {
+                  /* ignore */
+                }
+              }
+            }, 120);
+          } catch {
+            setTimeout(done, text.length * typeDelay + 600);
+            return;
+          }
           setTimeout(done, text.length * 48 + 1500);
         } else {
           setTimeout(done, text.length * typeDelay + 600);
@@ -303,16 +391,17 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     r?.(v);
   }, []);
 
-  // Build a readable transcript from the live conversation, or from the brief
-  // if the call was scripted/degraded (thin message history).
   const buildTranscript = useCallback((): string => {
-    const msgs = messagesRef.current;
-    if (msgs.length >= 2) {
-      return msgs.map((m) => (m.role === "assistant" ? "AI:  " : "You: ") + m.content).join("\n");
-    }
-    return buildSteps(briefRef.current)
-      .map((s) => `${s.q}\n→ ${briefRef.current[s.key] || "—"}`)
-      .join("\n\n");
+    const a = briefRef.current;
+    return [
+      `Pain: ${a.pain || "—"}`,
+      `Business: ${a.name || "—"}`,
+      `Volume: ${a.volume || "—"}`,
+      `Team: ${a.employees || "—"}`,
+      `Jobs/week: ${a.jobs || "—"}`,
+      `Software: ${a.software || "—"}`,
+      `Recommended: ${a.system || "—"}`,
+    ].join("\n");
   }, []);
 
   // Fire the lead exactly once (guarded), best-effort, never blocks the UI.
@@ -324,184 +413,112 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        source: "consultation",
+        source: "ai-builder",
         name: a.name || "",
         email: a.email || "",
-        kind: a.kind || "",
-        want: a.want || "",
-        city: a.city || "",
-        recommendedBuild: routeForWant(a.want || "").system,
+        kind: a.pain || "",
+        want: a.pain || "",
+        city: "",
+        recommendedBuild: a.system || "",
         transcript: buildTranscript(),
       }),
     }).catch(() => {});
   }, [buildTranscript]);
 
-  const showPlan = useCallback(() => {
-    const a = briefRef.current;
-    const route = routeForWant(a.want || "");
-    setMode("done");
-    setPlan({
-      build: route.system,
-      route,
-      rows: [
-        ["Business", a.name || "—"],
-        ["Type", a.kind || "—"],
-        ["AI should", a.want || "—"],
-        ["Location", a.city || "—"],
-        ["Recommended build", route.system],
-      ],
-    });
-  }, []);
-
-  // Wrap up. speakClosing=false when the live model already spoke its closing.
-  const finish = useCallback(
-    async (speakClosing: boolean) => {
-      if (validEmail(briefRef.current.email)) sendLead();
-      if (speakClosing) {
-        const n = briefRef.current.name;
-        const route = routeForWant(briefRef.current.want || "");
-        await speak(
-          `Perfect${n ? ", " + n : ""}. Based on that, the best fit is your ${route.system}. I'll put it on screen with your plan, and the full version is on its way to your email.`
-        );
-      }
-      showPlan();
-    },
-    [sendLead, speak, showPlan]
-  );
-
-  // One live turn against the API. Returns null on no-key / error / bad shape.
-  const callConsult = useCallback(async (): Promise<LiveTurn | null> => {
-    try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: messagesRef.current, brief: briefRef.current }),
-      });
-      if (!res.ok) return null;
-      const d = await res.json();
-      if (!d || d.fallback || typeof d.reply !== "string" || !d.reply.trim()) return null;
-      return {
-        reply: d.reply.trim(),
-        chips: Array.isArray(d.chips) ? d.chips.filter((c: unknown) => typeof c === "string") : [],
-        briefPatch: d.briefPatch && typeof d.briefPatch === "object" ? d.briefPatch : {},
-        done: Boolean(d.done),
-      };
-    } catch {
-      return null;
-    }
-  }, []);
-
-  // Retry once — most gpt-4o-mini hiccups are transient.
-  const callConsultRetry = useCallback(async (): Promise<LiveTurn | null> => {
-    const first = await callConsult();
-    if (first) return first;
-    await wait(500);
-    return callConsult();
-  }, [callConsult]);
-
-  const mergeBrief = useCallback((patch: Answers) => {
-    const merged = { ...briefRef.current };
-    REQUIRED_FIELDS.forEach((k) => {
-      const v = patch?.[k];
-      if (typeof v === "string" && v.trim()) merged[k] = v.trim();
-    });
-    briefRef.current = merged;
-  }, []);
-
-  // Deterministic finisher: collect whatever's still missing with canned
-  // prompts (never re-asking), then wrap up. Used when the model fails mid-call.
-  const degradedFinish = useCallback(async () => {
-    for (const s of FINISH_STEPS) {
-      const have = briefRef.current[s.key];
-      if (s.key === "email" ? validEmail(have) : have?.trim()) continue;
-      await speak(s.q);
-      const ans = await waitForAnswer({ type: s.type, opts: s.opts, ph: s.ph });
-      briefRef.current = { ...briefRef.current, [s.key]: ans };
-    }
-    await finish(true);
-  }, [speak, waitForAnswer, finish]);
-
-  // Live LLM loop. `first` is the prefetched opening turn.
-  const runLive = useCallback(
-    async (first: LiveTurn) => {
-      let turn = first;
-      while (true) {
-        mergeBrief(turn.briefPatch);
-        await speak(turn.reply);
-        messagesRef.current = [...messagesRef.current, { role: "assistant", content: turn.reply }];
-
-        if (turn.done) {
-          if (hasAll(briefRef.current)) await finish(false);
-          else await degradedFinish();
-          return;
-        }
-
-        const ph = /e-?mail/i.test(turn.reply) ? "you@business.com" : "type your answer";
-        const ans = await waitForAnswer({
-          type: turn.chips.length ? "chips" : "input",
-          opts: turn.chips,
-          ph,
-        });
-        messagesRef.current = [...messagesRef.current, { role: "user", content: ans }];
-
-        setThinking(true);
-        const next = await callConsultRetry();
-        setThinking(false);
-        if (!next) {
-          await degradedFinish();
-          return;
-        }
-        turn = next;
-      }
-    },
-    [mergeBrief, speak, waitForAnswer, callConsultRetry, finish, degradedFinish]
-  );
-
-  // Scripted cold-start flow (no key). Same fields, fixed questions.
-  const runScripted = useCallback(async () => {
-    let step = 0;
-    while (true) {
-      const steps = buildSteps(briefRef.current);
-      if (step >= steps.length) break;
-      const s = steps[step];
-      await speak(s.q);
-      const ans = await waitForAnswer({ type: s.type, opts: s.opts, ph: s.ph });
-      briefRef.current = { ...briefRef.current, [s.key]: ans };
-      step += 1;
-    }
-    await finish(true);
-  }, [speak, waitForAnswer, finish]);
-
-  const runFlow = useCallback(async () => {
-    // Prefetch the first live turn so the interview starts instantly if the
-    // visitor opts in. null => no key (or error) => scripted flow.
-    const firstTurn = callConsultRetry();
-
-    // 1) Orient + offer in one tight pass (kept short — the old 3-line intro
-    //    felt slow). Voice still drives pacing, but there's less of it.
+  // The value-first interview. Deterministic, zero API cost.
+  const runBuilder = useCallback(async () => {
+    // 1) The hook — their pain, before anything else.
     await wait(120);
-    await speak("Hi — you've reached Handbuilt. We build AI workers that answer calls, send quotes, and chase leads for small businesses.");
-    await wait(120);
+    await speak("Hi — I'm the AI Builder. Tell me what part of your business is wasting the most time right now.");
+    const pain = await waitForAnswer({ type: "chips", opts: PAIN_CHIPS });
+    briefRef.current.pain = pain;
+    const { intent, text } = painToIntentText(pain);
+    const diag = DIAG[intent];
 
-    // 2) Offer the choice: plan + quote here, or skip to the site.
-    await speak("I can build you a custom plan and a ballpark quote in under a minute. Want to do that now, or skip and explore the site?");
-    const choice = await waitForAnswer({
+    // 2) Two quick qualifiers — business + volume.
+    await speak("Got it. What's the business called?");
+    const name = await waitForAnswer({ type: "input", ph: "e.g. Delta Turf Mowers" });
+    briefRef.current.name = name;
+
+    await speak(diag.volQ);
+    const volume = await waitForAnswer({ type: "chips", opts: diag.volOpts });
+    briefRef.current.volume = volume;
+
+    // Build the plan from the shared engine (same data the site uses).
+    const plan: BuildPlan = buildPlan(guessBizKey(name), text);
+    briefRef.current.system = plan.system;
+    const intentRoute = routeForWant(text);
+    setRoute(intentRoute);
+
+    // 3) Diagnosis — problem → impact → system → time → price.
+    setThinking(true);
+    await wait(900);
+    setThinking(false);
+    setCard({
+      kind: "diagnosis",
+      problem: diag.problem(volume),
+      impact: diag.impact,
+      system: plan.system,
+      includes: diag.includes,
+      timeline: plan.timeline,
+      price: plan.priceRange,
+    });
+    const cleanTimeline = plan.timeline.replace(/^[≈~]\s*/, "");
+    await speak(
+      `Here's what I'm seeing for ${name}. I'd build you the ${plan.system} — roughly ${plan.priceRange}, ready in ${cleanTimeline}.`
+    );
+
+    // 4) Micro-commitment before the wow moment.
+    await speak("Want me to design the exact workflow?");
+    await waitForAnswer({ type: "chips", opts: ["Yes, show me the plan"] });
+
+    // 5) The visual workflow — the part that gets people excited.
+    setCard({ kind: "workflow", system: plan.system, steps: plan.steps });
+    await speak("Here's exactly how it'll run, end to end.");
+
+    // 6) Deeper qualifiers — now that they're invested.
+    await speak("A few quick things so the plan fits you. How many people work in the business right now?");
+    briefRef.current.employees = await waitForAnswer({
       type: "chips",
-      opts: ["Yes — build my plan", "Skip — explore the site"],
+      opts: ["Just me", "2–5", "6–15", "15+"],
     });
-    if (/skip/i.test(choice)) {
-      dismiss();
-      return;
-    }
 
-    // 3) Run the interview (live LLM if a key is set, else scripted).
-    await wait(120);
-    await speak("Perfect — let's do it.");
-    await wait(120);
-    const first = await firstTurn;
-    if (first) await runLive(first);
-    else await runScripted();
-  }, [callConsultRetry, speak, waitForAnswer, dismiss, runLive, runScripted]);
+    await speak("And roughly how many jobs do you complete in a week?");
+    briefRef.current.jobs = await waitForAnswer({ type: "input", ph: "e.g. 20" });
+
+    await speak("Last one — what software do you already use?");
+    briefRef.current.software = await waitForAnswer({
+      type: "input",
+      ph: "e.g. QuickBooks, Jobber — or 'none yet'",
+    });
+
+    // 7) The finished build plan.
+    setThinking(true);
+    await wait(1000);
+    setThinking(false);
+    setCard({
+      kind: "plan",
+      name: name,
+      includes: diag.includes,
+      timeSaved: plan.impact,
+      launch: plan.timeline,
+      price: plan.priceRange,
+    });
+    await speak(`Your AI build plan is ready, ${name}.`);
+
+    // 8) Email — LAST. Now there's a reason to give it.
+    await speak("Where should I send it?");
+    let email = await waitForAnswer({ type: "input", ph: "you@business.com" });
+    if (!validEmail(email)) {
+      await speak("That email looks off — what's the best one to send your plan to?");
+      email = await waitForAnswer({ type: "input", ph: "you@business.com" });
+    }
+    briefRef.current.email = email;
+    if (validEmail(email)) sendLead();
+
+    await speak("Done — it's on its way. Here's where to go next.");
+    setMode("done");
+  }, [speak, waitForAnswer, sendLead]);
 
   const start = useCallback(() => {
     setStarted(true);
@@ -526,8 +543,8 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         /* ignore */
       }
     }
-    runFlow();
-  }, [runFlow]);
+    runBuilder();
+  }, [runBuilder]);
 
   if (dismissed) return null;
 
@@ -551,10 +568,10 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
 
       {!started && (
         <div className="hbc-gate">
-          <button className="hbc-gate-tap" onClick={start} aria-label="Take the call">
+          <button className="hbc-gate-tap" onClick={start} aria-label="Start the AI Builder">
             <span className="hbc-dot" />
-            <span className="hbc-gate-title">Tap to take the call</span>
-            <span className="hbc-gate-sub">turn your sound on · built-in voice</span>
+            <span className="hbc-gate-title">Tap to start the AI Builder</span>
+            <span className="hbc-gate-sub">turn your sound on · it talks you through it</span>
           </button>
           {onHomepage && (
             <button className="hbc-gate-skip" onClick={dismiss}>
@@ -581,8 +598,89 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
           {speaking && <span className="hbc-cursor" />}
         </div>
 
+        {/* Diagnosis / workflow / plan cards render here, between the spoken
+            line and the answer controls. */}
+        {card && card.kind === "diagnosis" && (
+          <div className="hbc-card hbc-diag">
+            <div className="hbc-diag-row">
+              <span className="hbc-diag-k">Current problem</span>
+              <span className="hbc-diag-v">{card.problem}</span>
+            </div>
+            <div className="hbc-diag-row">
+              <span className="hbc-diag-k">Potential impact</span>
+              <span className="hbc-diag-v">{card.impact}</span>
+            </div>
+            <div className="hbc-diag-row">
+              <span className="hbc-diag-k">Recommended system</span>
+              <span className="hbc-diag-v">
+                <strong>{card.system}</strong>
+                <span className="hbc-chips-inline">
+                  {card.includes.map((x) => (
+                    <span key={x}>✓ {x}</span>
+                  ))}
+                </span>
+              </span>
+            </div>
+            <div className="hbc-diag-split">
+              <div>
+                <span className="hbc-diag-k">Build time</span>
+                <span className="hbc-diag-v">{card.timeline}</span>
+              </div>
+              <div>
+                <span className="hbc-diag-k">Estimated investment</span>
+                <span className="hbc-diag-v">{card.price}</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {card && card.kind === "workflow" && (
+          <div className="hbc-card hbc-flow">
+            <div className="hbc-flow-title">{card.system}</div>
+            {card.steps.map((s, idx) => (
+              <div className="hbc-flow-step" key={s.label}>
+                <div className="hbc-flow-node">
+                  <span className="hbc-flow-label">{s.label}</span>
+                  {s.sub && <span className="hbc-flow-sub">{s.sub}</span>}
+                </div>
+                {idx < card.steps.length - 1 && <span className="hbc-flow-arrow">↓</span>}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {card && card.kind === "plan" && (
+          <div className="hbc-card hbc-plan">
+            <div className="hbc-plan-head">Your AI Build Plan</div>
+            <div className="hbc-row">
+              <span>Business</span>
+              <span>{card.name}</span>
+            </div>
+            <div className="hbc-row hbc-row-top">
+              <span>Recommended systems</span>
+              <span className="hbc-plan-sys">
+                {card.includes.map((x) => (
+                  <span key={x}>✓ {x}</span>
+                ))}
+              </span>
+            </div>
+            <div className="hbc-row">
+              <span>Estimated time saved</span>
+              <span>{card.timeSaved}</span>
+            </div>
+            <div className="hbc-row">
+              <span>Estimated launch</span>
+              <span>{card.launch}</span>
+            </div>
+            <div className="hbc-row">
+              <span>Estimated investment</span>
+              <span>{card.price}</span>
+            </div>
+          </div>
+        )}
+
         <div className="hbc-answers">
-          {thinking && <span className="hbc-thinking" aria-label="thinking" />}
+          {thinking && <span className="hbc-thinking" aria-label="designing" />}
 
           {!thinking && mode === "chips" && (
             <div className="hbc-chips">
@@ -617,31 +715,23 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
           )}
         </div>
 
-        {mode === "done" && plan && (
-          <div className="hbc-plan">
-            {plan.rows.map(([k, v]) => (
-              <div className="hbc-row" key={k}>
-                <span>{k}</span>
-                <span>{v}</span>
-              </div>
-            ))}
-            <div className="hbc-cta">
-              <Link className="primary" href={plan.route.primaryHref}>
-                {plan.route.primaryLabel} →
+        {mode === "done" && route && (
+          <div className="hbc-cta">
+            <Link className="primary" href={route.primaryHref}>
+              {route.primaryLabel} →
+            </Link>
+            <Link className="ghost" href={route.demoHref}>
+              {route.demoLabel}
+            </Link>
+            {onHomepage ? (
+              <button className="ghost hbc-linkbtn" onClick={dismiss}>
+                Back to site
+              </button>
+            ) : (
+              <Link className="ghost" href="/">
+                Back to site
               </Link>
-              <Link className="ghost" href={plan.route.demoHref}>
-                {plan.route.demoLabel}
-              </Link>
-              {onHomepage ? (
-                <button className="ghost hbc-linkbtn" onClick={dismiss}>
-                  Back to site
-                </button>
-              ) : (
-                <Link className="ghost" href="/">
-                  Back to site
-                </Link>
-              )}
-            </div>
+            )}
             <p className="hbc-note">Your plan has been sent. I&apos;ll follow up by email shortly.</p>
           </div>
         )}
@@ -666,7 +756,7 @@ const HBC_CSS = `
 @keyframes hbc-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.4}}
 .hbc-gate-title{font-size:17px;color:#1d1d1f}
 .hbc-gate-sub{font-size:12px;color:#a1a1a6}
-.hbc-stage{width:100%;max-width:600px;display:flex;flex-direction:column;align-items:center;gap:44px}
+.hbc-stage{width:100%;max-width:600px;display:flex;flex-direction:column;align-items:center;gap:32px;padding:40px 0}
 .hbc-lines{display:flex;flex-direction:column;gap:10px;width:160px}
 .hbc-lines .ln{height:2px;border-radius:2px;background:#c7c7cc;transform-origin:center}
 .hbc-lines.idle .ln{animation:hbc-breathe 3.8s ease-in-out infinite}
@@ -688,7 +778,7 @@ const HBC_CSS = `
 .hbc-lines.thinking .ln:nth-child(4){animation-delay:.36s}
 .hbc-lines.thinking .ln:nth-child(5){animation-delay:.48s}
 @keyframes hbc-think{0%,100%{transform:scaleX(.4);opacity:.25}50%{transform:scaleX(.8);opacity:.55}}
-.hbc-q{font-size:27px;line-height:1.45;font-weight:400;text-align:center;min-height:80px;max-width:540px;letter-spacing:-.01em}
+.hbc-q{font-size:26px;line-height:1.45;font-weight:400;text-align:center;min-height:64px;max-width:540px;letter-spacing:-.01em}
 .hbc-cursor{display:inline-block;width:2px;height:26px;background:#1d1d1f;margin-left:1px;vertical-align:text-bottom;animation:hbc-blink 1.1s step-end infinite}
 @keyframes hbc-blink{50%{opacity:0}}
 .hbc-answers{min-height:54px;display:flex;align-items:center;justify-content:center;width:100%}
@@ -703,17 +793,42 @@ const HBC_CSS = `
 .hbc-inputrow input:focus{border-color:#1d1d1f}
 .hbc-inputrow button{border:none;background:none;color:#86868b;font-size:22px;cursor:pointer;padding:0 8px}
 .hbc-inputrow button:hover{color:#1d1d1f}
-.hbc-plan{width:100%;max-width:460px;text-align:left}
-.hbc-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #f0f0f2;font-size:16px}
-.hbc-row span:first-child{color:#86868b}
-.hbc-row span:last-child{font-weight:500;text-align:right;max-width:60%}
-.hbc-cta{display:flex;flex-direction:column;gap:1px;margin-top:28px}
+
+/* ---- cards ---- */
+.hbc-card{width:100%;max-width:480px;text-align:left;border:1px solid #ececef;border-radius:16px;padding:22px;background:#fafafa;animation:hbc-rise .4s ease both}
+@keyframes hbc-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hbc-diag-row{padding:12px 0;border-bottom:1px solid #f0f0f2;display:flex;flex-direction:column;gap:5px}
+.hbc-diag-k{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#a1a1a6}
+.hbc-diag-v{font-size:16px;color:#1d1d1f;line-height:1.4}
+.hbc-chips-inline{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+.hbc-chips-inline span{font-size:13px;color:#D97706;font-weight:600}
+.hbc-diag-split{display:flex;gap:18px;padding-top:14px}
+.hbc-diag-split>div{flex:1;display:flex;flex-direction:column;gap:5px}
+.hbc-diag-split .hbc-diag-v{font-weight:600;font-size:17px}
+
+.hbc-flow{display:flex;flex-direction:column;align-items:center;gap:0;max-width:400px}
+.hbc-flow-title{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#D97706;margin-bottom:14px}
+.hbc-flow-step{display:flex;flex-direction:column;align-items:center;width:100%}
+.hbc-flow-node{width:100%;text-align:center;border:1px solid #e6e6ea;border-radius:12px;padding:11px 14px;background:#fff;display:flex;flex-direction:column;gap:2px}
+.hbc-flow-label{font-size:15px;font-weight:600;color:#1d1d1f}
+.hbc-flow-sub{font-size:12px;color:#a1a1a6}
+.hbc-flow-arrow{color:#D97706;font-size:16px;line-height:1;padding:5px 0}
+
+.hbc-plan-head{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#D97706;margin-bottom:8px}
+.hbc-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:15px}
+.hbc-row span:first-child{color:#86868b;white-space:nowrap}
+.hbc-row span:last-child{font-weight:500;text-align:right}
+.hbc-row-top{align-items:flex-start}
+.hbc-plan-sys{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.hbc-plan-sys span{font-size:14px;color:#D97706;font-weight:600}
+
+.hbc-cta{display:flex;flex-direction:column;gap:1px;width:100%;max-width:460px}
 .hbc-cta a,.hbc-cta button{text-align:center;text-decoration:none;font-size:16px;padding:15px;border-radius:12px;border:none;background:none;cursor:pointer;width:100%;font-family:inherit}
 .hbc-cta .primary{background:#D97706;color:#fff;font-weight:600}
 .hbc-cta .ghost{color:#1d1d1f}
 .hbc-cta .ghost:hover{color:#86868b}
-.hbc-note{font-size:12px;color:#c7c7cc;text-align:center;margin-top:20px}
+.hbc-note{font-size:12px;color:#c7c7cc;text-align:center;margin-top:16px}
 @media (prefers-reduced-motion: reduce){
-  .hbc-lines .ln,.hbc-dot,.hbc-cursor,.hbc-thinking{animation:none!important}
+  .hbc-lines .ln,.hbc-dot,.hbc-cursor,.hbc-thinking,.hbc-card{animation:none!important}
 }
 `;
