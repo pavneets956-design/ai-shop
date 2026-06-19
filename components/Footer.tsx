@@ -19,7 +19,6 @@ export default function Footer() {
               <span className="font-display text-lg font-semibold text-ink">Handbuilt</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/50">{site.tagline}</p>
-            <p className="mt-4 text-sm text-ink/40">Surrey, BC → worldwide</p>
             <div className="mt-5 flex gap-3">
               <a href={`mailto:${site.email}`} className="rounded-lg border border-ink/10 p-2 text-ink/60 transition hover:text-ink" aria-label="Email">
                 <Mail className="h-4 w-4" />
