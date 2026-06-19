@@ -39,11 +39,16 @@ export async function POST(req: Request) {
       const { Resend } = await import("resend");
       const resend = new Resend(key);
       const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
-      // From-address must be on a Resend-verified domain matching the API key's scope.
-      // Key is scoped to coitracker.co. Swap to an Handbuilt / handbuilt.ai address once
-      // that domain is bought + verified in Resend.
-      const from = process.env.LEAD_FROM_EMAIL || "Handbuilt <leads@coitracker.co>";
-      const isConsultation = payload.source === "consultation";
+      // From-address: Resend's shared `onboarding@resend.dev` needs NO domain
+      // verification and reliably delivers to your own Resend-account email — ideal
+      // for a self-notification (you email yourself the lead). No Handbuilt mailbox
+      // or domain required. Override LEAD_FROM_EMAIL once you verify a domain, e.g.
+      // "Handbuilt <leads@aibuiltbyhand.com>" or your existing "leads@coitracker.co".
+      const from = process.env.LEAD_FROM_EMAIL || "Handbuilt Leads <onboarding@resend.dev>";
+      // The /start AI call posts source "ai-builder"; an older flow used "consultation".
+      // Both carry the rich brief (pain, recommended build, transcript) → rich format.
+      const isConsultation =
+        payload.source === "ai-builder" || payload.source === "consultation";
       const kind = isConsultation
         ? "AI consultation"
         : payload.type === "plan"
@@ -66,12 +71,22 @@ export async function POST(req: Request) {
   return NextResponse.json({ ok: true });
 }
 
+/** Any payload keys not already shown — so a lead email never silently drops data. */
+function extraLines(lead: Record<string, unknown>, shown: string[]): string[] {
+  const skip = new Set([...shown, "type", "source", "receivedAt"]);
+  const rows = Object.entries(lead)
+    .filter(([k, v]) => !skip.has(k) && v !== undefined && v !== null && v !== "")
+    .map(([k, v]) => `${k}: ${typeof v === "object" ? JSON.stringify(v) : String(v)}`);
+  return rows.length ? ["", "— Other details —", ...rows] : [];
+}
+
 function formatConsultation(lead: Record<string, unknown>): string {
   const g = (k: string) => {
     const v = lead[k];
     if (v === undefined || v === null || v === "") return "—";
     return typeof v === "object" ? JSON.stringify(v) : String(v);
   };
+  const shown = ["name", "email", "kind", "want", "city", "recommendedBuild", "transcript"];
   return [
     "NEW AI CONSULTATION — Handbuilt (/start)",
     "",
@@ -85,6 +100,7 @@ function formatConsultation(lead: Record<string, unknown>): string {
     "",
     "— Transcript —",
     g("transcript"),
+    ...extraLines(lead, shown),
     "",
     `Received:  ${g("receivedAt")}`,
   ].join("\n");
@@ -96,6 +112,10 @@ function formatLead(lead: Record<string, unknown>): string {
     if (v === undefined || v === null || v === "") return "—";
     return typeof v === "object" ? JSON.stringify(v) : String(v);
   };
+  const shown = [
+    "name", "email", "phone", "website", "goal", "tasks",
+    "useType", "industry", "existing", "tools", "budget", "timeline",
+  ];
   return [
     "NEW BUILD REQUEST — Handbuilt",
     "",
@@ -114,6 +134,7 @@ function formatLead(lead: Record<string, unknown>): string {
     `Tools:     ${g("tools")}`,
     `Budget:    ${g("budget")}`,
     `Timeline:  ${g("timeline")}`,
+    ...extraLines(lead, shown),
     "",
     `Received:  ${g("receivedAt")}`,
   ].join("\n");
