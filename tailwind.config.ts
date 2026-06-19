@@ -50,6 +50,44 @@ const config: Config = {
         display: ["var(--font-display)", "Archivo", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
+      // Design-system type scale (Doc 2). Apply with text-hero / text-section / etc.
+      // Archivo ships 500/600/700/800, so 750-spec titles use 700.
+      fontSize: {
+        hero: ["64px", { lineHeight: "0.95", fontWeight: "800", letterSpacing: "-0.02em" }],
+        "hero-lg": ["56px", { lineHeight: "0.96", fontWeight: "800", letterSpacing: "-0.02em" }],
+        "hero-md": ["46px", { lineHeight: "0.98", fontWeight: "800", letterSpacing: "-0.02em" }],
+        "hero-sm": ["38px", { lineHeight: "1.0", fontWeight: "800", letterSpacing: "-0.015em" }],
+        section: ["42px", { lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "section-sm": ["32px", { lineHeight: "1.08", fontWeight: "700", letterSpacing: "-0.015em" }],
+        "card-title": ["22px", { lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.01em" }],
+        "body-lg": ["20px", { lineHeight: "1.55" }],
+        body: ["16px", { lineHeight: "1.55" }],
+        small: ["13px", { lineHeight: "1.4" }],
+        "tiny-label": ["11px", { lineHeight: "1.2", letterSpacing: "0.06em" }],
+        btn: ["15px", { lineHeight: "1", fontWeight: "700" }],
+        nav: ["14px", { lineHeight: "1", fontWeight: "600" }],
+      },
+      maxWidth: {
+        container: "1180px", // main page container
+        wide: "1280px", // wide sections
+      },
+      spacing: {
+        header: "72px", // sticky header height (single source of truth)
+        "section-y": "96px", // desktop section vertical padding
+      },
+      borderRadius: {
+        card: "24px",
+        "card-sm": "18px",
+        btn: "14px",
+        input: "14px",
+        phone: "44px",
+      },
+      height: {
+        header: "72px",
+        btn: "56px",
+        input: "52px",
+        chip: "42px",
+      },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out both",
         "slide-up": "slideUp 0.6s cubic-bezier(0.22,1,0.36,1) both",

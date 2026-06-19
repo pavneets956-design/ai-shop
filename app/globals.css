@@ -27,6 +27,8 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    /* Anchor jumps (#lab etc.) clear the 72px sticky header — never hide a heading. */
+    scroll-padding-top: 88px;
   }
 
   body {
@@ -82,34 +84,35 @@
 }
 
 @layer components {
-  /* ---------- Buttons ---------- */
+  /* ---------- Buttons — exactly 3 variants (design system) ---------- */
+  /* Primary: the ONE orange action per section. 56px, pill-radius 14px. */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-md
-           px-6 py-3 text-sm font-bold text-ink
-           bg-amber transition-all duration-150
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
+           text-btn text-ink bg-clay transition duration-150
+           hover:bg-clay-dark
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.12), 0 8px 20px -12px rgba(201, 111, 0, 0.7);
+    box-shadow: 0 12px 24px rgba(232, 138, 0, 0.22);
   }
   .btn-primary:hover {
-    @apply bg-amber-dark;
-    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.16), 0 10px 24px -12px rgba(201, 111, 0, 0.8);
     transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(232, 138, 0, 0.26);
   }
 
+  /* Secondary: white surface, warm border, black text. No orange. */
   .btn-secondary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-md
-           px-6 py-3 text-sm font-semibold text-ink
-           border border-ink/20 bg-white
-           transition-all duration-150 hover:border-clay/50 hover:bg-paper-2
+    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
+           text-btn text-ink bg-white border border-line
+           transition duration-150 hover:border-line-strong hover:bg-paper-2
            focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.04);
   }
 
+  /* Ghost: text-only, for low-priority links. */
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium
-           text-ink/70 transition-colors hover:text-clay-dark
+    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-4
+           text-btn font-semibold text-ink/70 transition-colors
+           hover:text-ink hover:bg-ink/[0.04]
            focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30;
   }
 
@@ -185,10 +188,22 @@
     @apply text-clay;
   }
 
-  /* Spec-label "eyebrow": squared, monospace, structural — the Blueprint tell. */
+  /* Eyebrow label — neutral cream pill (orange reserved for the dot only). */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-[3px] border border-clay/30
-           bg-clay/[0.06] px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-clay-dark;
+    @apply inline-flex items-center gap-2 rounded-full border border-line
+           bg-paper-2 px-3 py-1.5 text-tiny-label font-semibold uppercase text-ink-soft;
+  }
+
+  /* ---------- Layout primitives (8px grid, locked widths) ---------- */
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-5 sm:px-6 lg:px-8;
+  }
+  /* Section vertical rhythm: 56 mobile · 72 tablet · 96 desktop. */
+  .section-pad {
+    @apply py-14 md:py-[72px] lg:py-24;
   }
 
   /* ---------- Inputs ---------- */

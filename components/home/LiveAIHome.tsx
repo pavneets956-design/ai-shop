@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { liveTools, outcomes, pricingTiers, systems, industries, type LiveTool } from "@/lib/data/liveTools";
-import HeroBuilder from "./HeroBuilder";
+import HeroWorkerPreview from "./HeroWorkerPreview";
 import styles from "./LiveAIHome.module.css";
 
 const byKey: Record<string, LiveTool> = Object.fromEntries(liveTools.map((t) => [t.key, t]));
@@ -142,25 +142,30 @@ export default function LiveAIHome() {
 
       <div className={styles.inner}>
         {/* HERO */}
-        <div className={styles.wrap}>
-          <section className={styles.hero}>
-            <div>
-              <div className={styles.eyebrow}><i />Ready-to-install AI workers · built in Canada</div>
-              <h1 className={styles.headline}>AI workers for small businesses — built, customized &amp; <span className={styles.hl}>live in days</span>.</h1>
-              <p className={styles.lead}>Pick a ready-to-install AI receptionist, quote agent, follow-up agent, or admin system. We customize it to your business, connect it to your workflow, and launch it — without months of meetings.</p>
-              <div className={styles.ctas}>
-                <a className={`${styles.btn} ${styles.btnGreen}`} href="#lab">Try a live demo <span className={styles.arrow}>→</span></a>
-                <Link className={`${styles.btn} ${styles.btnTalk}`} href="/start"><span className={styles.liveDot} aria-hidden="true" />Talk to the AI <span className={styles.arrow}>→</span></Link>
-                <Link className={`${styles.btn} ${styles.btnGhost}`} href="/shop">Shop AI systems</Link>
-              </div>
-              <div className={styles.trustline}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                Built in Canada · Fixed CAD pricing · <b>real demos, not mockups</b>
-              </div>
+        <div className="container-page grid grid-cols-1 items-center gap-10 pb-12 pt-12 lg:grid-cols-[minmax(0,560px)_minmax(0,460px)] lg:justify-center lg:gap-[88px] lg:pb-16 lg:pt-20">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-2 px-3 py-1.5 text-tiny-label font-semibold uppercase text-ink-soft">
+              <span className="h-1.5 w-1.5 rounded-full bg-clay" aria-hidden="true" />
+              Ready-to-install AI workers · built in Canada
             </div>
+            <h1 className="mt-5 text-hero-sm text-ink sm:text-hero-md lg:text-hero">
+              AI workers for small businesses — <span className="text-clay">live in days.</span>
+            </h1>
+            <p className="mt-5 max-w-[46ch] text-body-lg text-ink-soft">
+              Try a receptionist, quote agent, follow-up agent, or admin worker live. If it fits your
+              business, I customize it, connect it to your workflow, and launch it in days.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a href="#lab" className="btn-primary">Try a live AI worker</a>
+              <Link href="/shop" className="btn-secondary">See ready-made systems</Link>
+            </div>
+            <p className="mt-6 flex items-center gap-2 text-small text-ink-soft">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="text-clay" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+              Built in Canada · Fixed CAD pricing · <b className="font-semibold text-ink">Real demos, not mockups</b>
+            </p>
+          </div>
 
-            <HeroBuilder />
-          </section>
+          <HeroWorkerPreview />
         </div>
 
         {/* LAB */}

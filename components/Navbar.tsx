@@ -13,9 +13,9 @@ export default function Navbar() {
   const authed = status === "authenticated";
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-ink/[0.06] bg-paper/70 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-xl">
+      <div className="container-page">
+        <div className="flex h-header items-center justify-between">
           {/* Brand */}
           <Link
             href="/"
@@ -29,29 +29,32 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-ink/60 transition-colors hover:text-ink"
+                className="text-nav text-ink-soft transition-colors hover:text-ink"
               >
                 {l.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden items-center gap-4 md:flex">
+          {/* CTA — compact (not oversized) for the 72px header */}
+          <div className="hidden items-center gap-5 md:flex">
             {authed && (
               <Link
                 href="/account"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/60 transition-colors hover:text-ink"
+                className="inline-flex items-center gap-1.5 text-nav text-ink-soft transition-colors hover:text-ink"
               >
                 <UserRound className="h-4 w-4" /> Account
               </Link>
             )}
-            <Link href="/create" className="btn-primary text-sm">
+            <Link
+              href="/create"
+              className="inline-flex h-10 items-center gap-1.5 rounded-btn bg-clay px-4 text-nav font-bold text-ink shadow-[0_8px_18px_rgba(232,138,0,0.22)] transition hover:bg-clay-dark"
+            >
               Start a build <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
