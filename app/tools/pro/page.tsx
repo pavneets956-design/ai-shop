@@ -6,6 +6,10 @@ import Reveal from "@/components/Reveal";
 import ProCheckout from "@/components/ProCheckout";
 import { getIcon } from "@/lib/icons";
 import { selfServeTools } from "@/lib/data/tools";
+import { getToolsPlanPrices } from "@/lib/stripe";
+
+// Re-read the live Stripe price hourly so the page always matches checkout.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Tools Pro — Every AI Business Tool, Unlimited",
@@ -14,7 +18,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/pro" },
 };
 
-export default function ToolsProPage() {
+export default async function ToolsProPage() {
+  const prices = await getToolsPlanPrices();
   return (
     <section className="relative overflow-hidden pb-24 pt-32">
       <GlowBackground variant="hero" />
@@ -39,7 +44,7 @@ export default function ToolsProPage() {
         <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.1fr]">
           {/* Plan */}
           <Reveal>
-            <ProCheckout callbackUrl="/tools/pro" />
+            <ProCheckout callbackUrl="/tools/pro" prices={prices} />
           </Reveal>
 
           {/* What's inside */}

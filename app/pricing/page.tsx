@@ -10,8 +10,12 @@ import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
 import { toolsPlan } from "@/lib/data/toolsPlan";
+import { getToolsPlanPrices } from "@/lib/stripe";
 import { pricingPageFaqs } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
+
+// Re-read the live Stripe Tools Pro price hourly (single source of truth).
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Pricing — Custom AI Builds from $1,000 CAD",
@@ -20,8 +24,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/pricing" },
 };
 
-export default function PricingPage() {
+export default async function PricingPage() {
   const pricingFaqs = pricingPageFaqs();
+  const toolsPrices = await getToolsPlanPrices();
+  const toolsMonthly = toolsPrices?.monthly?.priceLabel ?? "$29";
 
   return (
     <>
@@ -64,8 +70,8 @@ export default function PricingPage() {
               <h3 className="font-display text-2xl font-semibold text-ink">{toolsPlan.name}</h3>
               <p className="mt-1 text-sm text-ink/55">Self-serve AI tools you run yourself — text only, no phone.</p>
               <div className="mt-5 flex items-end gap-2">
-                <span className="font-display text-4xl font-bold text-ink">$29</span>
-                <span className="pb-1 text-sm text-ink/50">/mo · or $19/mo billed yearly</span>
+                <span className="font-display text-4xl font-bold text-ink">{toolsMonthly}</span>
+                <span className="pb-1 text-sm text-ink/50">/mo · annual billing available</span>
               </div>
               <ul className="mt-6 flex-1 space-y-3">
                 {toolsPlan.features.slice(0, 4).map((f) => (

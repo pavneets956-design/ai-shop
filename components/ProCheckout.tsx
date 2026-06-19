@@ -9,14 +9,33 @@ import { toolsPlan } from "@/lib/data/toolsPlan";
  * Tools Pro plan card with monthly/annual toggle. Handles the full path:
  * not signed in → Google sign-in; signed in → Stripe Checkout. Reused by the
  * /tools/pro page and the per-tool paywall.
+ *
+ * `prices` (when passed by a server component via getToolsPlanPrices) carries
+ * the LIVE amounts read from Stripe, so the shown price always matches what
+ * checkout charges. Falls back to the static toolsPlan labels when absent.
  */
-export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
+type LivePrices = {
+  monthly: { priceLabel: string; sublabel: string } | null;
+  annual: { priceLabel: string; sublabel: string } | null;
+} | null;
+
+export default function ProCheckout({
+  callbackUrl,
+  prices,
+}: {
+  callbackUrl?: string;
+  prices?: LivePrices;
+}) {
   const { status } = useSession();
   const [billingInterval, setBillingInterval] = useState<"monthly" | "annual">("monthly");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const plan = toolsPlan.intervals.find((i) => i.id === billingInterval)!;
+  // Prefer the live Stripe amount; fall back to the static label.
+  const live = prices ? (billingInterval === "monthly" ? prices.monthly : prices.annual) : null;
+  const priceLabel = live?.priceLabel ?? plan.priceLabel;
+  const sublabel = live?.sublabel ?? plan.sublabel;
   const authed = status === "authenticated";
   // True once at least one Stripe Price ID is configured in env.
   const billingConfigured = toolsPlan.intervals.some((i) => i.priceId);
@@ -87,13 +106,8 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
       </div>
 
       <div className="mt-5 flex items-end gap-2">
-        <span className="font-display text-4xl font-bold text-ink">{plan.priceLabel}</span>
-        {plan.anchorLabel && (
-          <span className="pb-1 text-lg text-ink/35 line-through" aria-label={`regular price ${plan.anchorLabel}`}>
-            {plan.anchorLabel}
-          </span>
-        )}
-        <span className="pb-1 text-sm text-ink/50">{plan.sublabel}</span>
+        <span className="font-display text-4xl font-bold text-ink">{priceLabel}</span>
+        <span className="pb-1 text-sm text-ink/50">{sublabel}</span>
       </div>
       {toolsPlan.founding && (
         <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-ink">
