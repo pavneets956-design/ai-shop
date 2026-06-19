@@ -17,22 +17,22 @@ export function LogoMark({ className = "h-8 w-8" }: { className?: string }) {
     >
       <defs>
         <linearGradient id="hbBar" x1="16" y1="22" x2="32" y2="26" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#F59E0B" />
-          <stop offset="1" stopColor="#D97706" />
+          <stop stopColor="#F3A638" />
+          <stop offset="1" stopColor="#E88A00" />
         </linearGradient>
       </defs>
       {/* slate tile */}
-      <rect x="2" y="2" width="44" height="44" rx="11" fill="#1C2B3A" />
+      <rect x="2" y="2" width="44" height="44" rx="11" fill="#191716" />
       {/* subtle corner brackets (amber) */}
-      <path d="M9 14 V9 H14" stroke="#D97706" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-      <path d="M39 34 V39 H34" stroke="#D97706" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <path d="M9 14 V9 H14" stroke="#E88A00" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      <path d="M39 34 V39 H34" stroke="#E88A00" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
       {/* engineered "H" */}
-      <path d="M16 14 V34" stroke="#F4F5F7" strokeWidth="4.4" strokeLinecap="round" />
-      <path d="M32 14 V34" stroke="#F4F5F7" strokeWidth="4.4" strokeLinecap="round" />
+      <path d="M16 14 V34" stroke="#FAF7F2" strokeWidth="4.4" strokeLinecap="round" />
+      <path d="M32 14 V34" stroke="#FAF7F2" strokeWidth="4.4" strokeLinecap="round" />
       <path d="M16 24 H32" stroke="url(#hbBar)" strokeWidth="4.4" strokeLinecap="round" />
       {/* amber spark node + soft glow */}
-      <circle cx="32" cy="14" r="5" fill="#F59E0B" opacity="0.22" />
-      <circle cx="32" cy="14" r="2.8" fill="#F59E0B" />
+      <circle cx="32" cy="14" r="5" fill="#F3A638" opacity="0.22" />
+      <circle cx="32" cy="14" r="2.8" fill="#F3A638" />
     </svg>
   );
 }

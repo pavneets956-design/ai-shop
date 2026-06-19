@@ -108,7 +108,7 @@ export default function BuildRequestForm() {
   if (status === "done") {
     return (
       <div className="border-glow glass mx-auto max-w-2xl rounded-3xl p-10 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#D97706]/12 text-[#B45309]">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E88A00]/12 text-[#C96F00]">
           <Check className="h-7 w-7" />
         </div>
         <h2 className="mt-5 font-display text-2xl font-semibold text-ink">Request received.</h2>

@@ -13,17 +13,17 @@ export default function GlowBackground({
       {/* faint cool washes — subtle, never a halo */}
       <div
         className="absolute left-1/2 top-[-12%] h-[55vh] w-[55vh] -translate-x-1/2 rounded-full blur-[130px]"
-        style={{ background: "radial-gradient(circle, rgba(47,111,106,0.10), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(232,138,0,0.10), transparent 70%)" }}
       />
       {variant !== "subtle" && (
         <>
           <div
             className="absolute left-[6%] top-[28%] h-[40vh] w-[40vh] rounded-full blur-[130px]"
-            style={{ background: "radial-gradient(circle, rgba(28,43,58,0.07), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, rgba(25,23,22,0.07), transparent 70%)" }}
           />
           <div
             className="absolute right-[5%] top-[10%] h-[36vh] w-[36vh] rounded-full blur-[130px]"
-            style={{ background: "radial-gradient(circle, rgba(62,140,133,0.10), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, rgba(232,138,0,0.10), transparent 70%)" }}
           />
         </>
       )}
@@ -31,7 +31,7 @@ export default function GlowBackground({
       {variant === "hero" && (
         <div
           className="absolute inset-x-0 bottom-0 h-[36%]"
-          style={{ background: "linear-gradient(to top, #F4F5F7 10%, transparent)" }}
+          style={{ background: "linear-gradient(to top, #FAF7F2 10%, transparent)" }}
         />
       )}
     </div>

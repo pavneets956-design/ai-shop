@@ -10,34 +10,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // "Handbuilt" palette — calm premium, neutrals + a single warm amber accent (no teal/green).
+        // "Handbuilt" palette — WARM PREMIUM: cream paper, black ink, a single
+        // orange action color (no blue SaaS, no neon AI). Token NAMES kept so all
+        // existing classes inherit the new palette automatically.
         paper: {
-          DEFAULT: "#F4F5F7", // base background (cool drafting white)
-          2: "#E9ECF1", // deeper alternating section
+          DEFAULT: "#FAF7F2", // base background (warm cream)
+          2: "#FFF8EF", // soft warm surface (alternating sections / soft fills)
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#1C2B3A", // slate navy text
-          soft: "#5B6B7A", // muted slate
+          DEFAULT: "#191716", // near-black warm text
+          soft: "#6F6862", // muted warm gray
         },
-        // "clay" token name kept (used site-wide) but now holds the AMBER accent.
+        // "clay" token name kept (used site-wide) — now holds the PRIMARY ORANGE.
         clay: {
-          DEFAULT: "#B45309", // primary accent (amber-700, AA-safe as text on white)
-          dark: "#92400E",
-          soft: "#F6DCB0",
+          DEFAULT: "#E88A00", // primary orange (CTA, active, one hero highlight)
+          dark: "#C96F00", // primary hover
+          soft: "#FFF1DC", // soft orange fill
         },
-        // Amber — reserved for CTAs only (the single "spark").
+        // Amber — same orange ramp, reserved for CTAs (the single "spark").
         amber: {
-          DEFAULT: "#E8A13C",
-          dark: "#CE8B2B",
-          soft: "#F4CF94",
+          DEFAULT: "#E88A00",
+          dark: "#C96F00",
+          soft: "#FFF1DC",
         },
-        // Legacy tokens remapped to the Handbuilt amber palette so any unswept refs stay coherent.
-        obsidian: { DEFAULT: "#F4F5F7", 50: "#E9ECF1", 100: "#E9ECF1", 200: "#DDE2E9" },
-        electric: "#D97706",
-        violet: { glow: "#D97706" },
-        cyan: { glow: "#F59E0B" },
-        gold: { soft: "#E8A13C" },
+        // Warm borders + semantic accents (used sparingly per the design system).
+        line: { DEFAULT: "#E8DED3", strong: "#D7C6B5" },
+        success: "#2F6B4F", // only for "captured / complete"
+        danger: "#B42318", // only for urgent jobs
+        // Legacy tokens remapped to the warm palette so any unswept refs stay coherent.
+        obsidian: { DEFAULT: "#FAF7F2", 50: "#FFF8EF", 100: "#FFF8EF", 200: "#E8DED3" },
+        electric: "#E88A00",
+        violet: { glow: "#E88A00" },
+        cyan: { glow: "#F3C482" },
+        gold: { soft: "#F3C482" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -100,14 +106,15 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "brand-gradient": "linear-gradient(120deg, #F59E0B 0%, #D97706 100%)",
+        "brand-gradient": "linear-gradient(120deg, #E88A00 0%, #C96F00 100%)",
       },
       boxShadow: {
-        // Blueprint — crisp, structural, low-blur shadows (no soft warm halo).
-        glow: "0 10px 30px -18px rgba(28,43,58,0.28)",
-        "glow-violet": "0 12px 34px -18px rgba(47,111,106,0.28)",
-        "glow-cyan": "0 12px 34px -18px rgba(47,111,106,0.24)",
-        card: "0 1px 0 rgba(28,43,58,0.06), 0 10px 26px -18px rgba(28,43,58,0.22)",
+        // Warm-premium shadow scale (design system): no harsh black, no random sizes.
+        card: "0 20px 60px rgba(25,23,22,0.07)", // soft card
+        glow: "0 12px 24px rgba(232,138,0,0.22)", // primary-button orange glow
+        phone: "0 30px 90px rgba(25,23,22,0.18)", // demo phone
+        "glow-violet": "0 16px 40px -20px rgba(25,23,22,0.18)",
+        "glow-cyan": "0 16px 40px -20px rgba(25,23,22,0.16)",
       },
     },
   },

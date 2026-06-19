@@ -76,8 +76,8 @@ export default function HeroCommandCenter() {
           <div className="flex items-center justify-between border-b border-ink/10 pb-3">
             <div className="flex items-center gap-2">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D97706]/70" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#D97706]" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E88A00]/70" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#E88A00]" />
               </span>
               <span className="text-sm font-semibold text-ink">AI Receptionist</span>
             </div>
@@ -96,7 +96,7 @@ export default function HeroCommandCenter() {
 
           {/* footer status */}
           <div className="flex items-center gap-2 border-t border-ink/10 pt-3 text-xs text-ink/50">
-            <Check className="h-3.5 w-3.5 text-[#B45309]" />
+            <Check className="h-3.5 w-3.5 text-[#C96F00]" />
             Job booked · details texted to you · calendar updated
           </div>
         </div>

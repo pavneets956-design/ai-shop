@@ -4,14 +4,20 @@
 
 @layer base {
   :root {
-    --bg: #f4f5f7;
+    --bg: #faf7f2; /* warm cream */
     --surface: #ffffff;
-    --border: rgba(28, 43, 58, 0.14);
-    --clay: #b45309; /* amber accent (token name kept site-wide) */
-    --clay-dark: #92400e;
-    --amber: #e8a13c; /* CTA spark */
-    --amber-dark: #ce8b2b;
-    --ink: #1c2b3a;
+    --surface-soft: #fff8ef;
+    --border: #e8ded3; /* warm border */
+    --border-strong: #d7c6b5;
+    --clay: #e88a00; /* primary orange (token name kept site-wide) */
+    --clay-dark: #c96f00;
+    --amber: #e88a00; /* CTA spark (same orange ramp) */
+    --amber-dark: #c96f00;
+    --ink: #191716; /* near-black warm text */
+    --muted: #6f6862;
+    --muted-light: #9b928a;
+    --success: #2f6b4f;
+    --danger: #b42318;
   }
 
   * {
@@ -25,8 +31,8 @@
 
   body {
     @apply bg-paper text-ink antialiased;
-    background-color: #f4f5f7;
-    color: #1c2b3a;
+    background-color: #faf7f2;
+    color: #191716;
     font-feature-settings: "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -34,8 +40,8 @@
   }
 
   ::selection {
-    background: rgba(47, 111, 106, 0.18);
-    color: #1c2b3a;
+    background: rgba(232, 138, 0, 0.18);
+    color: #191716;
   }
 
   /* Custom scrollbar */
@@ -44,14 +50,14 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #e9ecf1;
+    background: #fff8ef;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(28, 43, 58, 0.2);
+    background: rgba(25, 23, 22, 0.2);
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(28, 43, 58, 0.32);
+    background: rgba(25, 23, 22, 0.32);
   }
 }
 
@@ -83,11 +89,11 @@
            bg-amber transition-all duration-150
            focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.12), 0 8px 20px -12px rgba(206, 139, 43, 0.7);
+    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.12), 0 8px 20px -12px rgba(201, 111, 0, 0.7);
   }
   .btn-primary:hover {
     @apply bg-amber-dark;
-    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.16), 0 10px 24px -12px rgba(206, 139, 43, 0.8);
+    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.16), 0 10px 24px -12px rgba(201, 111, 0, 0.8);
     transform: translateY(-1px);
   }
 
@@ -98,7 +104,7 @@
            transition-all duration-150 hover:border-clay/50 hover:bg-paper-2
            focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.04);
+    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.04);
   }
 
   .btn-ghost {
@@ -115,11 +121,11 @@
   .glass-card {
     @apply relative rounded-lg border border-ink/[0.12] bg-white p-6
            transition-all duration-200;
-    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.05), 0 12px 30px -22px rgba(28, 43, 58, 0.2);
+    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.05), 0 12px 30px -22px rgba(25, 23, 22, 0.2);
   }
   .glass-card:hover {
     @apply border-clay/35;
-    box-shadow: 0 1px 0 rgba(28, 43, 58, 0.06), 0 16px 36px -24px rgba(28, 43, 58, 0.26);
+    box-shadow: 0 1px 0 rgba(25, 23, 22, 0.06), 0 16px 36px -24px rgba(25, 23, 22, 0.26);
     transform: translateY(-2px);
   }
 
@@ -159,7 +165,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(130deg, rgba(217, 119, 6, 0.55), rgba(217, 119, 6, 0.12));
+    background: linear-gradient(130deg, rgba(232, 138, 0, 0.55), rgba(232, 138, 0, 0.12));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -200,8 +206,8 @@
 @layer utilities {
   /* Blueprint structural grid backdrop — the brand's signature texture. */
   .bg-grid {
-    background-image: linear-gradient(rgba(28, 43, 58, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(28, 43, 58, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(25, 23, 22, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(25, 23, 22, 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   .bg-grid-fade {
