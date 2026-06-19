@@ -49,10 +49,10 @@ export default function ShopPage() {
           <Reveal>
             <Link
               href="/tools"
-              className="group flex flex-col items-start justify-between gap-4 rounded-2xl border border-clay/20 bg-paper-2/60 p-6 transition hover:border-clay/40 sm:flex-row sm:items-center"
+              className="group flex flex-col items-start justify-between gap-4 rounded-2xl border border-line bg-paper-2/60 p-6 transition hover:border-line-strong sm:flex-row sm:items-center"
             >
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-clay/20 bg-white text-clay-dark">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-line bg-white text-ink">
                   <Sparkles className="h-5 w-5" />
                 </span>
                 <div>
@@ -65,7 +65,7 @@ export default function ShopPage() {
                   </p>
                 </div>
               </div>
-              <span className="inline-flex flex-none items-center gap-1.5 text-sm font-semibold text-clay-dark">
+              <span className="inline-flex flex-none items-center gap-1.5 text-sm font-semibold text-ink">
                 See Tools Pro
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
@@ -123,14 +123,14 @@ export default function ShopPage() {
                   <div className="glass-card spec-frame flex h-full flex-col p-7">
                     {/* Head */}
                     <div className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-clay-dark">
+                      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-ink">
                         <Icon className="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2">
                           <h3 className="font-display text-xl font-semibold text-ink">{p.name}</h3>
                           {p.badge && (
-                            <span className="rounded-full border border-amber/40 bg-amber/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-clay-dark">
+                            <span className="rounded-full border border-line bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">
                               {p.badge}
                             </span>
                           )}
@@ -194,7 +194,7 @@ export default function ShopPage() {
                       {p.learnHref && (
                         <Link
                           href={p.learnHref}
-                          className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-clay-dark"
+                          className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-ink"
                         >
                           How it works <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
@@ -210,7 +210,7 @@ export default function ShopPage() {
             <p className="mt-6 text-center text-sm text-ink/50">
               One-time builds run on your own accounts — you own them outright. Managed systems are
               hosted and run by us, AI usage included.{" "}
-              <Link href="/pricing" className="font-semibold text-clay-dark hover:text-clay">
+              <Link href="/pricing" className="font-semibold text-ink hover:text-ink">
                 See full pricing
               </Link>
               .
@@ -240,7 +240,7 @@ export default function ShopPage() {
                   className="glass-card group flex items-center justify-between px-4 py-3.5 text-sm font-medium text-ink/75 transition hover:text-ink"
                 >
                   {ind.label}
-                  <ArrowUpRight className="h-4 w-4 text-ink/30 transition group-hover:text-clay-dark" />
+                  <ArrowUpRight className="h-4 w-4 text-ink/30 transition group-hover:text-ink" />
                 </Link>
               </Reveal>
             ))}
@@ -277,7 +277,7 @@ export default function ShopPage() {
                   <ul className="mt-5 space-y-2">
                     {item.outcomes.map((o) => (
                       <li key={o} className="flex items-start gap-2.5 text-sm text-ink/75">
-                        <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-clay/60" />
+                        <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-ink/40" />
                         {o}
                       </li>
                     ))}
@@ -290,14 +290,14 @@ export default function ShopPage() {
                         href={utmHref(item.href, item.id)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-clay-dark hover:text-clay"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-ink"
                       >
                         Live product <ArrowUpRight className="h-4 w-4" />
                       </a>
                     ) : (
                       <Link
                         href="/create"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-clay-dark hover:text-clay"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-ink"
                       >
                         Ask about it <ArrowRight className="h-4 w-4" />
                       </Link>
@@ -366,44 +366,44 @@ export default function ShopPage() {
               </div>
 
               {/* AI System column — amber accent */}
-              <div className="glass-card flex h-full flex-col border-amber/45 p-7">
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-clay-dark">
+              <div className="glass-card flex h-full flex-col border-line-strong p-7">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
                   Done for you
                 </span>
                 <h3 className="mt-2 font-display text-xl font-semibold text-ink">AI System</h3>
                 <dl className="mt-6 space-y-4">
-                  <div className="border-t border-amber/25 pt-4">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                  <div className="border-t border-line pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                       Price
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-ink">
                       from $1,000 one-time — or hosted from $129/mo
                     </dd>
                   </div>
-                  <div className="border-t border-amber/25 pt-4">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                  <div className="border-t border-line pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                       Setup
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-ink">
                       Installed for you in ~5 days–3 weeks
                     </dd>
                   </div>
-                  <div className="border-t border-amber/25 pt-4">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                  <div className="border-t border-line pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                       Integrations
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-ink">Built &amp; connected by Handbuilt</dd>
                   </div>
-                  <div className="border-t border-amber/25 pt-4">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                  <div className="border-t border-line pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                       Support
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-ink">
                       Dedicated setup + optional Care Plan ($250/mo)
                     </dd>
                   </div>
-                  <div className="border-t border-amber/25 pt-4">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-dark/70">
+                  <div className="border-t border-line pt-4">
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                       Best for
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-ink">
@@ -433,7 +433,7 @@ export default function ShopPage() {
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-clay/20 bg-white px-3 py-1 text-xs font-semibold text-clay-dark">
+            <div className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-ink">
               <Sparkles className="h-3.5 w-3.5" /> Not sure which one?
             </div>
           </Reveal>

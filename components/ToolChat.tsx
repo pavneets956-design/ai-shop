@@ -102,7 +102,7 @@ export default function ToolChat({
           <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             <div
               className={`max-w-[82%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed ${
-                m.role === "user" ? "bg-clay/15 text-ink" : "bg-paper-2 text-ink/80"
+                m.role === "user" ? "bg-ink text-white" : "bg-paper-2 text-ink/80"
               }`}
             >
               {m.content}
@@ -129,7 +129,7 @@ export default function ToolChat({
               key={s}
               type="button"
               onClick={() => sendText(s)}
-              className="rounded-full border border-ink/15 bg-white px-3 py-1.5 text-xs text-ink/70 transition hover:border-clay/40 hover:text-clay-dark"
+              className="rounded-full border border-ink/15 bg-white px-3 py-1.5 text-xs text-ink/70 transition hover:border-line-strong hover:text-ink"
             >
               {s}
             </button>

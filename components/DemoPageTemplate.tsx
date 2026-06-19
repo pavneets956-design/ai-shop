@@ -53,7 +53,7 @@ export default function DemoPageTemplate({
             <ul className="mt-4 space-y-2">
               {customize.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-ink/70">
-                  <Check className="mt-0.5 h-4 w-4 flex-none text-clay" />
+                  <Check className="mt-0.5 h-4 w-4 flex-none text-ink" />
                   <span>{item}</span>
                 </li>
               ))}

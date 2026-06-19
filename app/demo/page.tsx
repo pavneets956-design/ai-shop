@@ -1,28 +1,15 @@
 import type { Metadata } from "next";
-import DemoPageTemplate from "@/components/DemoPageTemplate";
-import ReceptionistDemo from "@/components/ReceptionistDemo";
+import Showroom from "@/components/showroom/Showroom";
 
 export const metadata: Metadata = {
-  title: "Live Demo — Talk to an AI Receptionist",
+  title: "AI Worker Showroom — Test a Real AI Worker",
   description:
-    "Try a real, live AI receptionist built by Handbuilt. Play the customer — ask for a quote, book a job, or describe an emergency — and see exactly what your callers would experience.",
+    "Pick an AI worker, play the customer, and watch it turn the conversation into real business work — captured lead, next actions, and simulated CRM/SMS/calendar updates. Live demo, no real call, text, email or booking sent.",
   alternates: { canonical: "/demo" },
 };
 
 export default function DemoPage() {
-  return (
-    <DemoPageTemplate
-      title="Talk to an AI receptionist"
-      description="No sign-up, no script. Pick a business, then message it like a customer would — this is the exact experience your callers would get."
-      customize={[
-        "Business hours & rules",
-        "Call flows & triage",
-        "Calendar + booking integration",
-      ]}
-      ctaText="Get my AI receptionist"
-      ctaLink="/create"
-    >
-      <ReceptionistDemo />
-    </DemoPageTemplate>
-  );
+  // The Showroom owns its full-width layout (sticky-header-safe top offset +
+  // 3-zone grid + CTA). Root layout already provides <main>; don't nest another.
+  return <Showroom />;
 }

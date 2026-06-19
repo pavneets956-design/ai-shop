@@ -19,7 +19,8 @@ const config: Config = {
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#191716", // near-black warm text
+          DEFAULT: "#191716", // near-black warm text + PRIMARY buttons
+          hover: "#2A2623", // primary button hover
           soft: "#6F6862", // muted warm gray
         },
         // "clay" token name kept (used site-wide) — now holds the PRIMARY ORANGE.
@@ -34,7 +35,8 @@ const config: Config = {
           dark: "#C96F00",
           soft: "#FFF1DC",
         },
-        // Warm borders + semantic accents (used sparingly per the design system).
+        // Warm muted text + borders + semantic accents (used sparingly per the system).
+        muted: { DEFAULT: "#6F6862", light: "#9B928A" },
         line: { DEFAULT: "#E8DED3", strong: "#D7C6B5" },
         success: "#2F6B4F", // only for "captured / complete"
         danger: "#B42318", // only for urgent jobs
@@ -144,7 +146,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "brand-gradient": "linear-gradient(120deg, #E88A00 0%, #C96F00 100%)",
+        // Premium near-black gradient (was orange). Every badge/number/icon-tile
+        // using bg-brand-gradient now reads as black ink, not orange.
+        "brand-gradient": "linear-gradient(135deg, #2A2623 0%, #191716 100%)",
       },
       boxShadow: {
         // Warm-premium shadow scale (design system): no harsh black, no random sizes.

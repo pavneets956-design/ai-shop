@@ -5,10 +5,10 @@ import { featuredBuilds } from "@/lib/data/solutions";
 import { getIcon } from "@/lib/icons";
 
 const accentStyles: Record<string, { bg: string; text: string }> = {
-  electric: { bg: "from-clay/25 to-clay/5", text: "text-clay" },
-  violet: { bg: "from-clay/25 to-clay/5", text: "text-clay" },
-  cyan: { bg: "from-clay/25 to-clay/5", text: "text-clay" },
-  gold: { bg: "from-gold-soft/25 to-gold-soft/5", text: "text-gold-soft" },
+  electric: { bg: "from-ink/[0.06] to-ink/[0.02]", text: "text-ink" },
+  violet: { bg: "from-ink/[0.06] to-ink/[0.02]", text: "text-ink" },
+  cyan: { bg: "from-ink/[0.06] to-ink/[0.02]", text: "text-ink" },
+  gold: { bg: "from-ink/[0.06] to-ink/[0.02]", text: "text-ink" },
 };
 
 const nf = new Intl.NumberFormat("en-CA");
@@ -25,7 +25,7 @@ export default function FeaturedBuilds() {
               href="/create"
               className="border-glow glass-card group flex h-full flex-col"
             >
-              <span className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${a.bg} ${a.text}`}>
+              <span className={`flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-gradient-to-br ${a.bg} ${a.text}`}>
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 flex items-center gap-1 font-semibold text-ink">

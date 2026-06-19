@@ -108,7 +108,7 @@ export default function BuildRequestForm() {
   if (status === "done") {
     return (
       <div className="border-glow glass mx-auto max-w-2xl rounded-3xl p-10 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E88A00]/12 text-[#C96F00]">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-line bg-paper-2 text-ink">
           <Check className="h-7 w-7" />
         </div>
         <h2 className="mt-5 font-display text-2xl font-semibold text-ink">Request received.</h2>
@@ -149,9 +149,9 @@ export default function BuildRequestForm() {
                   <span
                     className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-semibold transition ${
                       state === "done"
-                        ? "border-clay/60 bg-clay/20 text-ink"
+                        ? "border-ink bg-ink text-white"
                         : state === "active"
-                          ? "border-clay/60 bg-clay/15 text-ink"
+                          ? "border-ink bg-ink text-white"
                           : "border-ink/15 bg-ink/[0.03] text-ink/40"
                     }`}
                   >
@@ -164,7 +164,7 @@ export default function BuildRequestForm() {
                 {i < STEPS.length - 1 && (
                   <span
                     className={`mx-3 h-px flex-1 transition ${
-                      i < step ? "bg-clay/50" : "bg-ink/10"
+                      i < step ? "bg-ink/50" : "bg-ink/10"
                     }`}
                   />
                 )}
@@ -345,7 +345,7 @@ function ChipRow({
           onClick={() => onPick(o.id)}
           className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
             value === o.id
-              ? "border-clay/60 bg-clay/15 text-ink"
+              ? "border-ink bg-ink text-white"
               : "border-ink/10 bg-ink/[0.03] text-ink/60 hover:border-ink/25 hover:text-ink"
           }`}
         >

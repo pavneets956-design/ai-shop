@@ -801,30 +801,30 @@ const HBC_CSS = `
 .hbc-diag-k{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#a1a1a6}
 .hbc-diag-v{font-size:16px;color:#1d1d1f;line-height:1.4}
 .hbc-chips-inline{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
-.hbc-chips-inline span{font-size:13px;color:#E88A00;font-weight:600}
+.hbc-chips-inline span{font-size:13px;color:#1d1d1f;font-weight:600}
 .hbc-diag-split{display:flex;gap:18px;padding-top:14px}
 .hbc-diag-split>div{flex:1;display:flex;flex-direction:column;gap:5px}
 .hbc-diag-split .hbc-diag-v{font-weight:600;font-size:17px}
 
 .hbc-flow{display:flex;flex-direction:column;align-items:center;gap:0;max-width:400px}
-.hbc-flow-title{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#E88A00;margin-bottom:14px}
+.hbc-flow-title{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d1d1f;margin-bottom:14px}
 .hbc-flow-step{display:flex;flex-direction:column;align-items:center;width:100%}
 .hbc-flow-node{width:100%;text-align:center;border:1px solid #e6e6ea;border-radius:12px;padding:11px 14px;background:#fff;display:flex;flex-direction:column;gap:2px}
 .hbc-flow-label{font-size:15px;font-weight:600;color:#1d1d1f}
 .hbc-flow-sub{font-size:12px;color:#a1a1a6}
-.hbc-flow-arrow{color:#E88A00;font-size:16px;line-height:1;padding:5px 0}
+.hbc-flow-arrow{color:#86868b;font-size:16px;line-height:1;padding:5px 0}
 
-.hbc-plan-head{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#E88A00;margin-bottom:8px}
+.hbc-plan-head{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d1d1f;margin-bottom:8px}
 .hbc-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:15px}
 .hbc-row span:first-child{color:#86868b;white-space:nowrap}
 .hbc-row span:last-child{font-weight:500;text-align:right}
 .hbc-row-top{align-items:flex-start}
 .hbc-plan-sys{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
-.hbc-plan-sys span{font-size:14px;color:#E88A00;font-weight:600}
+.hbc-plan-sys span{font-size:14px;color:#1d1d1f;font-weight:600}
 
 .hbc-cta{display:flex;flex-direction:column;gap:1px;width:100%;max-width:460px}
 .hbc-cta a,.hbc-cta button{text-align:center;text-decoration:none;font-size:16px;padding:15px;border-radius:12px;border:none;background:none;cursor:pointer;width:100%;font-family:inherit}
-.hbc-cta .primary{background:#E88A00;color:#fff;font-weight:600}
+.hbc-cta .primary{background:#1d1d1f;color:#fff;font-weight:600}
 .hbc-cta .ghost{color:#1d1d1f}
 .hbc-cta .ghost:hover{color:#86868b}
 .hbc-note{font-size:12px;color:#c7c7cc;text-align:center;margin-top:16px}

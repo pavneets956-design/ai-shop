@@ -53,7 +53,7 @@ export default function Navbar() {
             )}
             <Link
               href="/create"
-              className="inline-flex h-10 items-center gap-1.5 rounded-btn bg-clay px-4 text-nav font-bold text-ink shadow-[0_8px_18px_rgba(232,138,0,0.22)] transition hover:bg-clay-dark"
+              className="inline-flex h-10 items-center gap-1.5 rounded-btn bg-ink px-4 text-nav font-bold text-white shadow-[0_8px_18px_rgba(25,23,22,0.16)] transition hover:bg-ink-hover"
             >
               Start a build <ArrowRight className="h-4 w-4" />
             </Link>

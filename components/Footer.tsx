@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
-              <LogoMark className="h-8 w-8 [filter:drop-shadow(0_0_14px_rgba(199,93,67,0.32))]" />
+              <LogoMark className="h-8 w-8 [filter:drop-shadow(0_0_14px_rgba(25,23,22,0.32))]" />
               <span className="font-display text-lg font-semibold text-ink">Handbuilt</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/50">{site.tagline}</p>

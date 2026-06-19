@@ -96,7 +96,8 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
         <span className="pb-1 text-sm text-ink/50">{plan.sublabel}</span>
       </div>
       {toolsPlan.founding && (
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-clay-dark">
+        <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-ink">
+          <span className="h-1.5 w-1.5 rounded-full bg-clay" aria-hidden="true" />
           {toolsPlan.founding}
         </p>
       )}
@@ -104,13 +105,19 @@ export default function ProCheckout({ callbackUrl }: { callbackUrl?: string }) {
       <ul className="mt-6 space-y-3">
         {toolsPlan.features.map((f) => (
           <li key={f} className="flex items-start gap-3 text-[15px] text-ink/80">
-            <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-clay/[0.12] text-clay-dark">
+            <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-ink text-white">
               <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
             </span>
             {f}
           </li>
         ))}
       </ul>
+
+      <p className="mt-4 rounded-card-sm border border-line bg-paper-2 px-3.5 py-2.5 text-[12.5px] leading-relaxed text-ink-soft">
+        Tools Pro is <span className="font-semibold text-ink">text-only tools</span> — no phone minutes.
+        The phone <span className="font-semibold text-ink">AI Receptionist</span> (live call answering) is a
+        separate plan with its own setup, monthly and included minutes.
+      </p>
 
       <button
         onClick={go}

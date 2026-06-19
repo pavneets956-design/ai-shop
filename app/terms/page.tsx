@@ -78,7 +78,7 @@ export default function TermsPage() {
           <Section title="Contact">
             <p>
               Questions about these terms? Email{" "}
-              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
+              <a href={`mailto:${site.email}`} className="text-ink hover:underline">
                 {site.email}
               </a>
               .

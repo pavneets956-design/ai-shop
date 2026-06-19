@@ -71,6 +71,38 @@ export function checkGlobalDaily(): RateResult {
 
 export const DAILY_LIMIT = USER_DAILY_LIMIT;
 
+// ---------------------------------------------------------------------------
+// Public AI Worker Showroom demo limits (anti-abuse / cost guard). All caps are
+// best-effort per-instance — the daily global cap is the real spend backstop.
+// ---------------------------------------------------------------------------
+const demoIpMinute = new Map<string, Bucket>();
+const demoIpDay = new Map<string, Bucket>();
+
+/** 3 demo messages per minute per IP. */
+export function checkDemoPerMinute(ip: string): RateResult {
+  return take(demoIpMinute, ip, 3, 60_000);
+}
+
+/** 20 demo messages per IP per day (AI_DEMO_MAX_MESSAGES_PER_IP_DAY). */
+export function checkDemoPerDay(ip: string): RateResult {
+  const max = Number(process.env.AI_DEMO_MAX_MESSAGES_PER_IP_DAY || 20);
+  return take(demoIpDay, ip, max, DAY);
+}
+
+// Global daily request ceiling on the public demo — hard backstop on spend
+// across all IPs (AI_DEMO_DAILY_REQUEST_CAP, default 300 ≈ pennies/day on mini).
+let demoGlobalDay = { count: 0, resetAt: 0 };
+export function checkDemoGlobalDaily(): RateResult {
+  const max = Number(process.env.AI_DEMO_DAILY_REQUEST_CAP || 300);
+  const now = Date.now();
+  if (now >= demoGlobalDay.resetAt) demoGlobalDay = { count: 0, resetAt: now + DAY };
+  if (demoGlobalDay.count >= max) {
+    return { ok: false, retryAfter: Math.max(1, Math.ceil((demoGlobalDay.resetAt - now) / 1000)) };
+  }
+  demoGlobalDay.count++;
+  return { ok: true, retryAfter: 0 };
+}
+
 /** Best-effort client IP from proxy headers. */
 export function clientIp(req: Request): string {
   const xff = req.headers.get("x-forwarded-for");

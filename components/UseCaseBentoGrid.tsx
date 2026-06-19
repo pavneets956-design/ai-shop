@@ -28,7 +28,7 @@ export default function UseCaseBentoGrid() {
               href={`/create?category=${c.slug}`}
               className="border-glow glass-card group flex h-full flex-col"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-clay/20 to-clay/20 text-clay">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-paper-2 text-ink">
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className={`mt-4 font-semibold text-ink ${feature ? "text-2xl" : "text-lg"}`}>

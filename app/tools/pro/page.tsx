@@ -55,7 +55,7 @@ export default function ToolsProPage() {
                       href={`/tools/${t.slug}`}
                       className="glass-card group flex flex-col p-5 transition hover:-translate-y-0.5"
                     >
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-clay-dark">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-ink">
                         <Icon className="h-4.5 w-4.5" />
                       </span>
                       <h3 className="mt-3 font-display text-base font-semibold text-ink">
@@ -95,7 +95,7 @@ export default function ToolsProPage() {
         <Reveal delay={0.16}>
           <p className="mt-8 text-center text-sm text-ink/50">
             Questions first?{" "}
-            <Link href="/create" className="font-semibold text-clay-dark hover:text-clay">
+            <Link href="/create" className="font-semibold text-ink hover:text-ink">
               Talk to Handbuilt <ArrowRight className="inline h-3.5 w-3.5" />
             </Link>
           </p>

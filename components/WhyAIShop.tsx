@@ -18,7 +18,7 @@ export default function WhyAIShop() {
         return (
           <Reveal key={p.title} delay={(idx % 3) * 0.06}>
             <div className="glass-card h-full">
-              <Icon className="h-6 w-6 text-clay" />
+              <Icon className="h-6 w-6 text-ink" />
               <h3 className="mt-4 font-semibold text-ink">{p.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink/55">{p.body}</p>
             </div>

@@ -31,7 +31,7 @@ export default function CheckoutFinalizing() {
 
   if (gaveUp) {
     return (
-      <div className="mb-6 rounded-xl border border-amber/30 bg-amber/[0.08] px-4 py-3 text-sm text-ink/75">
+      <div className="mb-6 rounded-xl border border-line bg-paper-2 px-4 py-3 text-sm text-ink/75">
         Payment received — your subscription is taking a moment to activate. Refresh in a minute, or
         contact us if it doesn&apos;t show.
       </div>
@@ -39,8 +39,8 @@ export default function CheckoutFinalizing() {
   }
 
   return (
-    <div className="mb-6 flex items-center gap-3 rounded-xl border border-clay/20 bg-clay/[0.06] px-4 py-3 text-sm text-ink/75">
-      <Loader2 className="h-4 w-4 flex-none animate-spin text-clay-dark" aria-hidden="true" />
+    <div className="mb-6 flex items-center gap-3 rounded-xl border border-line bg-paper-2 px-4 py-3 text-sm text-ink/75">
+      <Loader2 className="h-4 w-4 flex-none animate-spin text-ink" aria-hidden="true" />
       <span>
         <span className="font-semibold text-ink">Payment received.</span> Finalizing your Tools Pro
         subscription…

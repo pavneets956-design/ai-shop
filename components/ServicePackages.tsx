@@ -4,10 +4,11 @@ import Reveal from "./Reveal";
 import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
 import { formatNum } from "@/lib/format";
 
+// Featured card lift — neutral premium shadow (no orange glow).
 const accentRing: Record<string, string> = {
-  electric: "shadow-glow",
-  violet: "shadow-glow-violet",
-  cyan: "shadow-glow-cyan",
+  electric: "shadow-card",
+  violet: "shadow-card",
+  cyan: "shadow-card",
 };
 
 export default function ServicePackages({ showCarePlan = true }: { showCarePlan?: boolean }) {
@@ -18,7 +19,7 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
           <Reveal key={p.id} delay={idx * 0.08}>
             <div
               className={`border-glow glass-card flex h-full flex-col ${
-                p.highlight ? `border-clay/40 ${accentRing[p.accent]}` : ""
+                p.highlight ? `border-ink ${accentRing[p.accent]}` : ""
               }`}
             >
               {p.badge && (
@@ -47,7 +48,7 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
               <ul className="mt-5 flex-1 space-y-3">
                 {p.includes.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-ink/75">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
                     <span>{item}</span>
                   </li>
                 ))}

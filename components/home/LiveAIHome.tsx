@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { liveTools, outcomes, pricingTiers, systems, industries, type LiveTool } from "@/lib/data/liveTools";
 import HeroWorkerPreview from "./HeroWorkerPreview";
+import HeroFlowField from "./HeroFlowField";
 import styles from "./LiveAIHome.module.css";
 
 const byKey: Record<string, LiveTool> = Object.fromEntries(liveTools.map((t) => [t.key, t]));
@@ -138,7 +139,9 @@ export default function LiveAIHome() {
 
   return (
     <div className={styles.root}>
-      <div className={styles.aurora}><b className={styles.a1} /><b className={styles.a2} /><b className={styles.a3} /></div>
+      {/* live ink flow-field — the soothing, alive background (Canvas 2D) */}
+      <div className={styles.fieldHost}><HeroFlowField className={styles.field} /></div>
+      <div className={styles.heroScrim} aria-hidden="true" />
 
       <div className={styles.inner}>
         {/* HERO */}
@@ -149,7 +152,7 @@ export default function LiveAIHome() {
               Ready-to-install AI workers · built in Canada
             </div>
             <h1 className="mt-5 text-hero-sm text-ink sm:text-hero-md lg:text-hero">
-              AI workers for small businesses — <span className="text-clay">live in days.</span>
+              AI workers for small businesses — live in days.
             </h1>
             <p className="mt-5 max-w-[46ch] text-body-lg text-ink-soft">
               Try a receptionist, quote agent, follow-up agent, or admin worker live. If it fits your
@@ -160,7 +163,7 @@ export default function LiveAIHome() {
               <Link href="/shop" className="btn-secondary">See ready-made systems</Link>
             </div>
             <p className="mt-6 flex items-center gap-2 text-small text-ink-soft">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="text-clay" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="text-ink" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
               Built in Canada · Fixed CAD pricing · <b className="font-semibold text-ink">Real demos, not mockups</b>
             </p>
           </div>

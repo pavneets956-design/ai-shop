@@ -18,6 +18,11 @@
     --muted-light: #9b928a;
     --success: #2f6b4f;
     --danger: #b42318;
+    /* Premium black/cream system: PRIMARY is ink (black), accent is a tiny orange spark only. */
+    --primary: #191716;
+    --primary-hover: #2a2623;
+    --accent: #e88a00;
+    --accent-soft: #fff1dc;
   }
 
   * {
@@ -42,7 +47,7 @@
   }
 
   ::selection {
-    background: rgba(232, 138, 0, 0.18);
+    background: rgba(25, 23, 22, 0.12);
     color: #191716;
   }
 
@@ -85,18 +90,18 @@
 
 @layer components {
   /* ---------- Buttons — exactly 3 variants (design system) ---------- */
-  /* Primary: the ONE orange action per section. 56px, pill-radius 14px. */
+  /* Primary: BLACK ink action. 56px, pill-radius 14px. Orange is never a button. */
   .btn-primary {
     @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
-           text-btn text-ink bg-clay transition duration-150
-           hover:bg-clay-dark
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+           text-btn text-white bg-ink transition duration-150
+           hover:bg-ink-hover
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 12px 24px rgba(232, 138, 0, 0.22);
+    box-shadow: 0 12px 24px rgba(25, 23, 22, 0.16);
   }
   .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 16px 30px rgba(232, 138, 0, 0.26);
+    box-shadow: 0 16px 30px rgba(25, 23, 22, 0.22);
   }
 
   /* Secondary: white surface, warm border, black text. No orange. */
@@ -127,7 +132,7 @@
     box-shadow: 0 1px 0 rgba(25, 23, 22, 0.05), 0 12px 30px -22px rgba(25, 23, 22, 0.2);
   }
   .glass-card:hover {
-    @apply border-clay/35;
+    @apply border-line-strong;
     box-shadow: 0 1px 0 rgba(25, 23, 22, 0.06), 0 16px 36px -24px rgba(25, 23, 22, 0.26);
     transform: translateY(-2px);
   }
@@ -142,9 +147,9 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    border-color: var(--clay);
+    border-color: var(--border-strong);
     border-style: solid;
-    opacity: 0.55;
+    opacity: 0.9;
     pointer-events: none;
   }
   .spec-frame::before {
@@ -168,7 +173,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(130deg, rgba(232, 138, 0, 0.55), rgba(232, 138, 0, 0.12));
+    background: linear-gradient(130deg, rgba(25, 23, 22, 0.28), rgba(25, 23, 22, 0.06));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -184,8 +189,10 @@
   .text-gradient {
     @apply text-ink;
   }
+  /* Highlight words are INK now (no orange headline words). Kept as a class so
+     every existing `.text-gradient-brand` usage flips to black in one place. */
   .text-gradient-brand {
-    @apply text-clay;
+    @apply text-ink;
   }
 
   /* Eyebrow label — neutral cream pill (orange reserved for the dot only). */

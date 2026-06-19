@@ -22,7 +22,7 @@ export default function FAQSection({ items }: { items: Pick<FAQ, "q" | "a">[] })
               <span className="font-medium text-ink">{f.q}</span>
               <Plus
                 className={`h-5 w-5 shrink-0 text-ink/40 transition-transform duration-300 ${
-                  isOpen ? "rotate-45 text-clay" : ""
+                  isOpen ? "rotate-45 text-ink" : ""
                 }`}
               />
             </button>

@@ -10,20 +10,20 @@ export default function GlowBackground({
       {/* structural blueprint grid */}
       <div className="absolute inset-0 bg-grid bg-grid-fade opacity-70" />
 
-      {/* faint cool washes — subtle, never a halo */}
+      {/* faint neutral ink washes — subtle depth, no orange halo */}
       <div
         className="absolute left-1/2 top-[-12%] h-[55vh] w-[55vh] -translate-x-1/2 rounded-full blur-[130px]"
-        style={{ background: "radial-gradient(circle, rgba(232,138,0,0.10), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(25,23,22,0.05), transparent 70%)" }}
       />
       {variant !== "subtle" && (
         <>
           <div
             className="absolute left-[6%] top-[28%] h-[40vh] w-[40vh] rounded-full blur-[130px]"
-            style={{ background: "radial-gradient(circle, rgba(25,23,22,0.07), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, rgba(25,23,22,0.06), transparent 70%)" }}
           />
           <div
             className="absolute right-[5%] top-[10%] h-[36vh] w-[36vh] rounded-full blur-[130px]"
-            style={{ background: "radial-gradient(circle, rgba(232,138,0,0.10), transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, rgba(25,23,22,0.045), transparent 70%)" }}
           />
         </>
       )}

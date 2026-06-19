@@ -51,13 +51,13 @@ export default function UseCasesIndex() {
             {useCases.map((u, idx) => (
               <Reveal key={u.slug} delay={(idx % 2) * 0.06}>
                 <Link href={`/use-cases/${u.slug}`} className="border-glow glass-card group flex h-full flex-col">
-                  <p className="text-xs uppercase tracking-wide text-clay">{u.industry}</p>
+                  <p className="text-xs uppercase tracking-wide text-muted">{u.industry}</p>
                   <h2 className="mt-2 flex items-center gap-1 font-display text-xl font-semibold text-ink">
                     {u.solution}
                     <ArrowUpRight className="h-4 w-4 text-ink/20 transition group-hover:text-ink" />
                   </h2>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/55">{u.answer.split(". ")[0]}.</p>
-                  <span className="mt-4 text-sm font-medium text-ink/70 group-hover:text-clay">
+                  <span className="mt-4 text-sm font-medium text-ink/70 group-hover:text-ink">
                     Read the guide →
                   </span>
                 </Link>

@@ -34,9 +34,9 @@ function LoginInner() {
         <div className="glass-card spec-frame p-8">
           <button
             onClick={() => signIn("google", { callbackUrl })}
-            className="flex w-full items-center justify-center gap-3 rounded-md border border-ink/15 bg-white px-4 py-3 font-semibold text-ink transition hover:border-clay/40 hover:bg-paper-2"
+            className="flex w-full items-center justify-center gap-3 rounded-md border border-ink/15 bg-white px-4 py-3 font-semibold text-ink transition hover:border-line-strong hover:bg-paper-2"
           >
-            <Chrome className="h-5 w-5 text-clay-dark" />
+            <Chrome className="h-5 w-5 text-ink" />
             Continue with Google
           </button>
           <p className="mt-5 text-center text-xs text-ink/40">

@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <p>
               You can request a copy of the information we hold about you, ask us to correct it, or ask
               us to delete it. Email{" "}
-              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
+              <a href={`mailto:${site.email}`} className="text-ink hover:underline">
                 {site.email}
               </a>{" "}
               and we&apos;ll handle it.
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
           <Section title="Contact">
             <p>
               Questions about this policy? Email{" "}
-              <a href={`mailto:${site.email}`} className="text-clay hover:underline">
+              <a href={`mailto:${site.email}`} className="text-ink hover:underline">
                 {site.email}
               </a>
               . {site.name} is based in {site.region}, Canada.

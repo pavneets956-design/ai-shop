@@ -122,7 +122,7 @@ export default function ToolGenerator({
                 }}
                 className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
                   biz?.id === b.id
-                    ? "border-clay/60 bg-clay/15 text-ink"
+                    ? "border-ink bg-ink text-white"
                     : "border-ink/10 bg-white text-ink/60 hover:border-ink/25 hover:text-ink"
                 }`}
               >
@@ -192,8 +192,8 @@ export default function ToolGenerator({
 
       {/* Upgrade prompt (free run spent) */}
       {upgrade && (
-        <div className="mt-5 rounded-3xl border border-clay/25 bg-clay/[0.06] p-6 text-center shadow-card">
-          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-clay/15 text-clay-dark">
+        <div className="mt-5 rounded-3xl border border-line bg-paper-2 p-6 text-center shadow-card">
+          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper-2 text-ink">
             <Lock className="h-5 w-5" aria-hidden="true" />
           </span>
           <p className="mt-4 text-[15px] text-ink/80">{upgrade}</p>
@@ -215,7 +215,7 @@ export default function ToolGenerator({
                 <button
                   type="button"
                   onClick={() => window.print()}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink transition hover:text-ink"
                 >
                   <Printer className="h-3.5 w-3.5" aria-hidden="true" /> Print / PDF
                 </button>
@@ -224,7 +224,7 @@ export default function ToolGenerator({
                 <button
                   type="button"
                   onClick={copy}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-clay-dark transition hover:text-clay"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink transition hover:text-ink"
                 >
                   {copied ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : <Copy className="h-3.5 w-3.5" aria-hidden="true" />}
                   {copied ? "Copied" : "Copy"}

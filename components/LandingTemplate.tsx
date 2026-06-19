@@ -170,7 +170,7 @@ export default function LandingTemplate({
                     <ul className="mt-4 space-y-3">
                       {sec.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-3 text-ink/80">
-                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-clay" />
+                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-ink" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -201,7 +201,7 @@ export default function LandingTemplate({
                   >
                     <div className="p-4 font-medium text-ink/70">{r.factor}</div>
                     <div className="flex items-start gap-2 p-4 text-ink/80">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
                       <span>{r.handbuilt}</span>
                     </div>
                     <div className="flex items-start gap-2 p-4 text-ink/55">
@@ -227,7 +227,7 @@ export default function LandingTemplate({
                   <ul className="mt-5 space-y-3">
                     {content.gets.map((g) => (
                       <li key={g} className="flex items-start gap-3 text-ink/80">
-                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-clay" />
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-ink" />
                         <span>{g}</span>
                       </li>
                     ))}

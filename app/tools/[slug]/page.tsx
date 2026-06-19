@@ -90,8 +90,8 @@ export default async function ToolPage({ params }: { params: { slug: string } })
             {showGenerator ? (
               <>
                 {!sub.subscribed && (
-                  <div className="mb-4 flex items-center gap-3 rounded-xl border border-clay/20 bg-clay/[0.06] px-4 py-3 text-sm text-ink/75">
-                    <Sparkles className="h-4 w-4 flex-none text-clay-dark" aria-hidden="true" />
+                  <div className="mb-4 flex items-center gap-3 rounded-xl border border-line bg-paper-2 px-4 py-3 text-sm text-ink/75">
+                    <Sparkles className="h-4 w-4 flex-none text-ink" aria-hidden="true" />
                     <span>
                       <span className="font-semibold text-ink">Your first one&apos;s on us.</span>{" "}
                       Try it free — Tools Pro unlocks unlimited use of every tool.
@@ -115,7 +115,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                     <>
                       {" "}
                       Saved to your{" "}
-                      <Link href="/account" className="font-semibold text-clay-dark hover:text-clay">
+                      <Link href="/account" className="font-semibold text-ink hover:text-ink">
                         history
                       </Link>
                       .
@@ -141,7 +141,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               <Link
                 href={`/create?build=${tool.funnelBuild}`}
-                className="inline-flex items-center gap-1.5 font-semibold text-clay-dark hover:text-clay"
+                className="inline-flex items-center gap-1.5 font-semibold text-ink hover:text-ink"
               >
                 Start a build <ArrowRight className="h-4 w-4" />
               </Link>
@@ -157,7 +157,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
           {/* More tools */}
           <div className="mt-12">
             <div className="mb-3 flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-clay-dark" />
+              <Sparkles className="h-4 w-4 text-ink" />
               <p className="field-label">More Pro tools</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -168,7 +168,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                   className="glass-card group flex items-center justify-between p-4 text-sm font-medium text-ink/75 transition hover:text-ink"
                 >
                   {t.name}
-                  <ArrowUpRight className="h-4 w-4 text-ink/30 transition group-hover:text-clay-dark" />
+                  <ArrowUpRight className="h-4 w-4 text-ink/30 transition group-hover:text-ink" />
                 </Link>
               ))}
             </div>

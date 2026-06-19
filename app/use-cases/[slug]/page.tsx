@@ -186,7 +186,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
               <ul className="mt-5 space-y-3">
                 {uc.gets.map((g) => (
                   <li key={g} className="flex items-start gap-3 text-ink/80">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-clay" />
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-ink" />
                     <span>{g}</span>
                   </li>
                 ))}
@@ -226,7 +226,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                 return (
                   <Reveal key={b!.slug} delay={i * 0.06}>
                     <Link href="/create" className="border-glow glass-card group flex items-center gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-clay/20 to-clay/20 text-clay">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-paper-2 text-ink">
                         <Icon className="h-5 w-5" />
                       </span>
                       <span className="min-w-0">
