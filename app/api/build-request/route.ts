@@ -115,8 +115,14 @@ function formatLead(lead: Record<string, unknown>): string {
   };
   const shown = [
     "name", "email", "phone", "website", "goal", "tasks",
-    "useType", "industry", "existing", "tools", "budget", "timeline",
+    "useType", "industry", "existing", "tools", "budget", "timeline", "intake",
   ];
+  const jobLines =
+    lead.intake && typeof lead.intake === "object"
+      ? ["", "— Job details —", ...Object.entries(lead.intake as Record<string, unknown>)
+          .filter(([, v]) => v !== undefined && v !== null && v !== "")
+          .map(([k, v]) => `${k}: ${String(v)}`)]
+      : [];
   return [
     "NEW BUILD REQUEST — Handbuilt",
     "",
@@ -135,6 +141,7 @@ function formatLead(lead: Record<string, unknown>): string {
     `Tools:     ${g("tools")}`,
     `Budget:    ${g("budget")}`,
     `Timeline:  ${g("timeline")}`,
+    ...jobLines,
     ...extraLines(lead, shown),
     "",
     `Received:  ${g("receivedAt")}`,
@@ -321,6 +328,17 @@ function htmlLead(lead: Record<string, unknown>): string {
     has(lead, "timeline") ? row("Timeline", lead.timeline) : "",
   ]);
 
+  // Occupation-specific intake (Phase D): an object of { "City": "Delta", ... }.
+  const jobDetails =
+    lead.intake && typeof lead.intake === "object"
+      ? section(
+          "Job details",
+          Object.entries(lead.intake as Record<string, unknown>)
+            .filter(([, v]) => v !== undefined && v !== null && v !== "")
+            .map(([k, v]) => row(k, v)),
+        )
+      : "";
+
   const shownExtra = [
     "name",
     "email",
@@ -334,6 +352,7 @@ function htmlLead(lead: Record<string, unknown>): string {
     "tools",
     "budget",
     "timeline",
+    "intake",
   ];
   const admin = section("Admin", [
     has(lead, "source") ? row("Source", lead.source) : "",
@@ -344,7 +363,7 @@ function htmlLead(lead: Record<string, unknown>): string {
   return shell({
     kicker: "New build request",
     heading,
-    sections: [contact, business, project, admin].join("\n"),
+    sections: [contact, business, project, jobDetails, admin].join("\n"),
     receivedAt: lead.receivedAt,
   });
 }

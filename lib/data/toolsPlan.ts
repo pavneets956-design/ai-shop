@@ -14,29 +14,31 @@ export interface PlanInterval {
   priceId: string | undefined;
 }
 
-// Pricing: list price is $29/mo ($290/yr). Launch with a FOUNDING deal — first
-// 20 members lock in $19/mo ($190/yr) for life. Create the Stripe Prices at the
-// founding numbers ($19 / $190); when 20 are sold, create $29/$290 Prices and
-// swap the env IDs (existing members keep their grandfathered price in Stripe).
+// Tools Pro pricing (Phase C): Monthly $29/mo, Annual $19/mo billed yearly ($228/yr).
+// The toggle shows ONE interval at a time, so there's no confusing "$19 $29 / mo".
+//
+// ⚠️ STRIPE: the Prices behind NEXT_PUBLIC_STRIPE_PRICE_MONTHLY / _ANNUAL MUST
+// match these amounts — a $29/mo recurring Price and a $228/yr recurring Price.
+// If they still point at the old $19/$190 founding Prices, checkout will charge
+// the old amount (an undercharge, not an overcharge). Update them in Stripe +
+// Vercel before relying on the new numbers.
 export const toolsPlan = {
   name: "Tools Pro",
   tagline: "Every AI tool, unlimited — built and tuned by Handbuilt.",
-  founding: "Founding price — first 20 members, locked in for life.",
+  founding: "", // founding-deal framing retired — clean monthly/annual now
   intervals: [
     {
       id: "monthly",
       label: "Monthly",
-      priceLabel: "$19",
-      anchorLabel: "$29",
+      priceLabel: "$29",
       sublabel: "per month",
       priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_MONTHLY,
     },
     {
       id: "annual",
       label: "Annual",
-      priceLabel: "$190",
-      anchorLabel: "$290",
-      sublabel: "per year · 2 months free",
+      priceLabel: "$19",
+      sublabel: "per month, billed yearly — save 34%",
       priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ANNUAL,
     },
   ] as PlanInterval[],

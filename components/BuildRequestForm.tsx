@@ -6,8 +6,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from "lucide-react";
 import { packages } from "@/lib/data/packages";
 import { shopProducts } from "@/lib/data/shopProducts";
-import { industries } from "@/lib/data/finder";
+import { TRADES, tradeById, intakeToLabels } from "@/lib/data/intake";
 import { site } from "@/lib/data/site";
+import OccupationIntake from "@/components/intake/OccupationIntake";
 
 const budgets = [
   { id: "starter", label: "~$1,000 (one tool)" },
@@ -43,13 +44,15 @@ export default function BuildRequestForm() {
   const presetBuild = shopProducts.find((p) => p.slug === params.get("build"));
   // ?goal= lets the homepage hero builder carry its designed system in as the goal.
   const presetGoal = params.get("goal") ?? "";
+  // ?industry= (from the showroom "Get this installed" CTA) preselects the trade.
+  const presetIndustry = tradeById(params.get("industry") ?? "")?.id ?? "";
 
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState(1);
   const [form, setForm] = useState({
     goal: presetBuild ? `${presetBuild.name} — ${presetBuild.outcome}` : presetGoal,
     useType: "business",
-    industry: "",
+    industry: presetIndustry,
     tasks: "",
     existing: "none",
     website: "",
@@ -62,9 +65,12 @@ export default function BuildRequestForm() {
     email: "",
     phone: "",
   });
+  // Occupation-specific answers (Phase D) — keyed by field key for the selected trade.
+  const [intake, setIntake] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   const set = (k: string, v: string) => setForm((s) => ({ ...s, [k]: v }));
+  const trade = tradeById(form.industry);
 
   const go = (next: number) => {
     setDir(next > step ? 1 : -1);
@@ -93,10 +99,17 @@ export default function BuildRequestForm() {
     }
     setStatus("sending");
     try {
+      const intakeLabels = trade ? intakeToLabels(trade, intake) : {};
       const res = await fetch("/api/build-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "build-request", ...form }),
+        body: JSON.stringify({
+          type: "build-request",
+          ...form,
+          // Send the readable trade label + the occupation answers for the email.
+          industry: trade?.label ?? form.industry,
+          ...(Object.keys(intakeLabels).length ? { intake: intakeLabels } : {}),
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("done");
@@ -200,14 +213,21 @@ export default function BuildRequestForm() {
                 <Group label="Is this for business or personal use?">
                   <ChipRow options={useTypes} value={form.useType} onPick={(v) => set("useType", v)} />
                 </Group>
-                <Group label="What industry / area?">
-                  <ChipRow options={industries} value={form.industry} onPick={(v) => set("industry", v)} />
+                <Group label="What's your trade / industry?">
+                  <ChipRow options={TRADES} value={form.industry} onPick={(v) => set("industry", v)} wrap />
                 </Group>
               </>
             )}
 
             {step === 1 && (
               <>
+                {trade && trade.fields.length > 0 && (
+                  <OccupationIntake
+                    trade={trade}
+                    values={intake}
+                    onChange={(k, v) => setIntake((s) => ({ ...s, [k]: v }))}
+                  />
+                )}
                 <Group label="What should the AI actually do?">
                   <textarea
                     rows={2}

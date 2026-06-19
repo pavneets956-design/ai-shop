@@ -170,6 +170,10 @@ export default function Showroom() {
 
   const atLimit = limited || turns >= MAX_SESSION_TURNS;
   const prompts = useMemo(() => QUICK_PROMPTS[worker.id].map((p) => fillPrompt(p, industry)), [worker, industry]);
+  // Carry the chosen worker + trade into the occupation-specific intake (Phase D).
+  const createHref = `/create?industry=${industry.id}&goal=${encodeURIComponent(
+    `${worker.label} for my ${industry.label} business`,
+  )}`;
 
   return (
     <div className="container-page pb-24 pt-[88px] md:pt-[104px]">
@@ -210,7 +214,7 @@ export default function Showroom() {
         <OutcomePanel
           captured={captured} leadSummary={leadSummary} nextActions={nextActions}
           events={events} suggested={suggested} cta={cta}
-          atLimit={atLimit} onSuggest={send}
+          atLimit={atLimit} onSuggest={send} createHref={createHref}
         />
       </div>
     </div>
@@ -423,9 +427,9 @@ function Typing() {
 function OutcomePanel(props: {
   captured: CapturedFields | null; leadSummary: string; nextActions: string[];
   events: Event[]; suggested: string[]; cta: DemoResponse["cta"];
-  atLimit: boolean; onSuggest: (s: string) => void;
+  atLimit: boolean; onSuggest: (s: string) => void; createHref: string;
 }) {
-  const { captured, leadSummary, nextActions, events, suggested, cta, atLimit, onSuggest } = props;
+  const { captured, leadSummary, nextActions, events, suggested, cta, atLimit, onSuggest, createHref } = props;
   const high = captured?.urgency?.toLowerCase().includes("high");
   const fields: [string, string | null][] = captured ? [
     ["Name", captured.name],
@@ -552,7 +556,7 @@ function OutcomePanel(props: {
                 : "We customize this exact worker on your business, connect it to your tools, and launch in days."}
             </p>
             <div className="mt-4 flex flex-wrap gap-2.5">
-              <Link href="/create" className="inline-flex h-10 items-center gap-1.5 rounded-btn bg-white px-4 text-[13px] font-bold text-ink transition hover:bg-paper-2">
+              <Link href={createHref} className="inline-flex h-10 items-center gap-1.5 rounded-btn bg-white px-4 text-[13px] font-bold text-ink transition hover:bg-paper-2">
                 {atLimit ? "Start my build" : "Get this installed"} <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/pricing" className="inline-flex h-10 items-center rounded-btn border border-white/25 px-4 text-[13px] font-semibold text-white transition hover:border-white/50">
