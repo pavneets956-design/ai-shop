@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { modelFor } from "@/lib/ai/core";
 
 export const runtime = "nodejs";
 
@@ -176,7 +177,7 @@ export async function POST(req: Request) {
     const { default: OpenAI } = await import("openai");
     const openai = new OpenAI({ apiKey: key });
     const completion = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      model: modelFor("fast"),
       messages: [{ role: "system", content: systemPrompt(brief, wrapUp) }, ...convo],
       temperature: 0.6,
       max_tokens: MAX_TOKENS,

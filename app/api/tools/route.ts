@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { modelFor } from "@/lib/ai/core";
 import { getSubStatus } from "@/lib/subscription";
 import {
   checkIpRate,
@@ -330,7 +331,8 @@ export async function POST(req: Request) {
     const { default: OpenAI } = await import("openai");
     const openai = new OpenAI({ apiKey: key });
     const completion = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      // Paid Tools Pro output → premium model when configured (falls back to fast).
+      model: modelFor("premium"),
       messages: [
         { role: "system", content: systemPrompt(kind) },
         { role: "user", content: userContent },

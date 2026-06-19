@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { recommend, type FinderInput, type Recommendation } from "@/lib/data/finder";
 import { packages } from "@/lib/data/packages";
+import { modelFor } from "@/lib/ai/core";
 
 export const runtime = "nodejs";
 
@@ -46,7 +47,7 @@ export async function POST(req: Request) {
     });
 
     const completion = await client.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: modelFor("fast"),
       temperature: 0.7,
       max_tokens: 320,
       response_format: { type: "json_object" },

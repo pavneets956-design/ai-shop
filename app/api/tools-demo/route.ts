@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getOpenAI, modelFor, DEMO_SAFETY, DEMO_REFUSAL, looksLikeInjection } from "@/lib/ai/core";
 
 export const runtime = "nodejs";
 
@@ -138,8 +139,16 @@ export async function POST(req: Request) {
     modelMessages = [{ role: "user", content: userContent || "No details provided." }];
   }
 
-  const key = process.env.OPENAI_API_KEY;
-  if (!key) {
+  // Cheap pre-filter on interactive chat kinds: refuse obvious injection / off-topic.
+  if (isChatKind(kind)) {
+    const lastUser = [...modelMessages].reverse().find((m) => m.role === "user")?.content ?? "";
+    if (looksLikeInjection(lastUser)) {
+      return NextResponse.json({ reply: DEMO_REFUSAL });
+    }
+  }
+
+  const openai = await getOpenAI();
+  if (!openai) {
     const reply = isChatKind(kind)
       ? chatFallback(kind, modelMessages)
       : generatorFallback(kind, fields);
@@ -147,11 +156,12 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { default: OpenAI } = await import("openai");
-    const openai = new OpenAI({ apiKey: key });
     const completion = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-      messages: [{ role: "system", content: systemPrompt(kind, business) }, ...modelMessages],
+      model: modelFor("fast"),
+      messages: [
+        { role: "system", content: systemPrompt(kind, business) + DEMO_SAFETY },
+        ...modelMessages,
+      ],
       temperature: kind === "nudge" || kind === "quote" ? 0.6 : 0.7,
       max_tokens: isChatKind(kind) ? 180 : 320,
     });
