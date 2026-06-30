@@ -27,9 +27,7 @@ export const site = {
 };
 
 export const navLinks = [
-  { label: "Demos", href: "/demo" },
-  { label: "Shop", href: "/shop" },
+  { label: "Demo", href: "/demo" },
+  { label: "AI Systems", href: "/shop" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Industries", href: "/industries" },
-  { label: "Tools Pro", href: "/tools/pro" },
 ] as const;
