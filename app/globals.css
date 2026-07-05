@@ -4,25 +4,27 @@
 
 @layer base {
   :root {
-    --bg: #faf7f2; /* warm cream */
+    --bg: #fbfbfd; /* cool near-white */
     --surface: #ffffff;
-    --surface-soft: #fff8ef;
-    --border: #e8ded3; /* warm border */
-    --border-strong: #d7c6b5;
-    --clay: #e88a00; /* primary orange (token name kept site-wide) */
-    --clay-dark: #c96f00;
-    --amber: #e88a00; /* CTA spark (same orange ramp) */
-    --amber-dark: #c96f00;
-    --ink: #191716; /* near-black warm text */
-    --muted: #6f6862;
-    --muted-light: #9b928a;
+    --surface-soft: #f5f5f7;
+    --border: #d2d2d7; /* cool border */
+    --border-strong: #c7c7cc;
+    --clay: #e0362c; /* primary red (token name kept site-wide) */
+    --clay-dark: #b8221a;
+    --amber: #e0362c; /* CTA spark (same red ramp) */
+    --amber-dark: #b8221a;
+    --ink: #1d1d1f; /* near-black text */
+    --muted: #6e6e73;
+    --muted-light: #a1a1a6;
     --success: #2f6b4f;
     --danger: #b42318;
-    /* Premium black/cream system: PRIMARY is ink (black), accent is a tiny orange spark only. */
-    --primary: #191716;
-    --primary-hover: #2a2623;
-    --accent: #e88a00;
-    --accent-soft: #fff1dc;
+    /* Molten Forge system: ink is the workhorse text/surface, RED is the CTA spark. */
+    --primary: #1d1d1f;
+    --primary-hover: #2a2a2e;
+    --accent: #e0362c;
+    --accent-soft: #ffe9e7;
+    /* Red gradient CTA (matches the homepage). */
+    --red-grad: linear-gradient(180deg, #ff6961, #e0362c);
   }
 
   * {
@@ -38,8 +40,8 @@
 
   body {
     @apply bg-paper text-ink antialiased;
-    background-color: #faf7f2;
-    color: #191716;
+    background-color: #fbfbfd;
+    color: #1d1d1f;
     font-feature-settings: "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -47,8 +49,8 @@
   }
 
   ::selection {
-    background: rgba(25, 23, 22, 0.12);
-    color: #191716;
+    background: rgba(224, 54, 44, 0.16);
+    color: #1d1d1f;
   }
 
   /* Brand ambient glow — soft red radial behind every page (matches the
@@ -72,14 +74,14 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #fff8ef;
+    background: #f5f5f7;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(25, 23, 22, 0.2);
+    background: rgba(29, 29, 31, 0.2);
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(25, 23, 22, 0.32);
+    background: rgba(29, 29, 31, 0.32);
   }
 }
 
@@ -105,26 +107,28 @@
 
 @layer components {
   /* ---------- Buttons — exactly 3 variants (design system) ---------- */
-  /* Primary: BLACK ink action. 56px, pill-radius 14px. Orange is never a button. */
+  /* Primary: the RED GRADIENT money CTA (Molten Forge). 56px, radius 14px.
+     One primary per viewport — everything else is secondary/ghost (ink). */
   .btn-primary {
     @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
-           text-btn text-white bg-ink transition duration-150
-           hover:bg-ink-hover
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+           text-btn text-white transition duration-150
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
-    box-shadow: 0 12px 24px rgba(25, 23, 22, 0.16);
+    background-image: var(--red-grad);
+    box-shadow: 0 12px 24px rgba(255, 69, 58, 0.28);
   }
   .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 16px 30px rgba(25, 23, 22, 0.22);
+    filter: brightness(1.04);
+    box-shadow: 0 16px 30px rgba(255, 69, 58, 0.4), 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
-  /* Secondary: white surface, warm border, black text. No orange. */
+  /* Secondary: white surface, cool border, ink text. The workhorse button. */
   .btn-secondary {
     @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
            text-btn text-ink bg-white border border-line
            transition duration-150 hover:border-line-strong hover:bg-paper-2
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/25 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
@@ -152,30 +156,14 @@
     transform: translateY(-2px);
   }
 
-  /* Blueprint corner brackets — the signature device. Add to a relative element. */
+  /* Blueprint corner brackets RETIRED (old brand). Molten Forge is clean white +
+     red glow; the class stays a harmless no-op so existing usages don't break. */
   .spec-frame {
     position: relative;
   }
   .spec-frame::before,
   .spec-frame::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-color: var(--border-strong);
-    border-style: solid;
-    opacity: 0.9;
-    pointer-events: none;
-  }
-  .spec-frame::before {
-    top: 10px;
-    left: 10px;
-    border-width: 1.5px 0 0 1.5px;
-  }
-  .spec-frame::after {
-    bottom: 10px;
-    right: 10px;
-    border-width: 0 1.5px 1.5px 0;
+    display: none;
   }
 
   /* amber hairline accent on hover */
@@ -232,8 +220,8 @@
   .field {
     @apply w-full rounded-md border border-ink/20 bg-white px-4 py-3 text-sm
            text-ink placeholder-ink/35 transition-all
-           focus:border-clay/60 focus:outline-none
-           focus:ring-2 focus:ring-clay/25;
+           focus:border-ink/50 focus:outline-none
+           focus:ring-2 focus:ring-ink/15;
   }
   .field-label {
     @apply mb-2 block text-sm font-medium text-ink/80;
@@ -241,10 +229,11 @@
 }
 
 @layer utilities {
-  /* Blueprint structural grid backdrop — the brand's signature texture. */
+  /* Blueprint grid RETIRED (old brand). Molten Forge is clean white; kept as a
+     whisper-faint cool grid so full-bleed sections aren't dead-flat. */
   .bg-grid {
-    background-image: linear-gradient(rgba(25, 23, 22, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(25, 23, 22, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(29, 29, 31, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29, 29, 31, 0.025) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   .bg-grid-fade {
