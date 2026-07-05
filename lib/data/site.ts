@@ -27,7 +27,9 @@ export const site = {
 };
 
 export const navLinks = [
-  { label: "See it work", href: "/ai-front-desk" },
+  // "See it work" pointed at the retired /ai-front-desk cinematic showpiece;
+  // repointed to the on-brand flagship (same "never miss a call" intent).
+  { label: "See it work", href: "/ai-receptionist" },
   { label: "Demo", href: "/demo" },
   { label: "AI Systems", href: "/shop" },
   { label: "Pricing", href: "/pricing" },
