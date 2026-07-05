@@ -1,6 +1,6 @@
 // Central site config — single source of truth for brand, contact, SEO.
 export const site = {
-  name: "Handbuilt",
+  name: "Handbuilt AI",
   legalName: "Handbuilt AI Studio",
   tagline: "AI that works for your business — built by hand, not bought off a shelf.",
   subTagline:
@@ -27,6 +27,7 @@ export const site = {
 };
 
 export const navLinks = [
+  { label: "See it work", href: "/ai-front-desk" },
   { label: "Demo", href: "/demo" },
   { label: "AI Systems", href: "/shop" },
   { label: "Pricing", href: "/pricing" },

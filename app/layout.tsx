@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Archivo, IBM_Plex_Mono, Quicksand, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
 import Providers from "@/components/Providers";
 import { site } from "@/lib/data/site";
@@ -22,15 +23,28 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
   weight: ["400", "500", "600"],
 });
+// Homepage "Molten Forge" type system: Quicksand (rounded premium sans) + JetBrains Mono (spec labels).
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+const jbMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jbmono",
+  display: "swap",
+  weight: ["400", "500", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Handbuilt | Custom AI Apps, Agents & Business Automation",
-    template: "%s | Handbuilt",
+    default: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
+    template: "%s | Handbuilt AI",
   },
   description:
-    "Handbuilt builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
+    "Handbuilt AI builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
   keywords: [
     "custom AI app development",
     "AI automation services",
@@ -53,13 +67,13 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: site.url,
     siteName: site.name,
-    title: "Handbuilt | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
     description:
       "Tell us what you want AI to do. We design and build the system — apps, agents, automations and dashboards, around your exact workflow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Handbuilt | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
     description:
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
   },
@@ -89,13 +103,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable} ${quicksand.variable} ${jbMono.variable}`}>
       <body className="font-sans antialiased">
+        {/* Brand ambient glow — soft red radial behind every page (matches the
+            homepage). Fixed, -z-1: paints over the cream body but behind all page
+            content, so opaque pages (e.g. the homepage) simply cover it. */}
+        <div className="site-glow" aria-hidden />
         <Providers>
           <JsonLd data={[organizationSchema(), websiteSchema()]} />
-          <Navbar />
+          <ChromeGate>
+            <Navbar />
+          </ChromeGate>
           <main className="min-h-screen">{children}</main>
-          <Footer />
+          <ChromeGate>
+            <Footer />
+          </ChromeGate>
         </Providers>
       </body>
     </html>

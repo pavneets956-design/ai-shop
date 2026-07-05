@@ -39,6 +39,12 @@ const nextConfig = {
       { protocol: 'https', hostname: '**.supabase.co' },
     ],
   },
+  async redirects() {
+    return [
+      // The old noindexed showpiece slug — replaced by the indexable film route.
+      { source: '/quiet-hours', destination: '/ai-front-desk', permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: '/:path*', headers: baseSecurityHeaders },

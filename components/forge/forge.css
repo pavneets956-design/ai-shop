@@ -1,0 +1,176 @@
+/* /forge — "Forged Gold" tokens + route-scoped utilities.
+   Contract: ~/.claude/design-os/ledger/ai-shop-forge/art-direction.md
+   One accent (gold→ember), near-black canvas, film-frame restraint. */
+
+.forge {
+  --forge-bg: #0a0a0b;
+  --forge-panel: #111113;
+  --forge-border: rgba(237, 237, 237, 0.08);
+  --forge-text: #ededed;
+  --forge-muted: #6b6b70;
+  --forge-gold: #f5a623;
+  --forge-ember: #ff6b1a;
+  --forge-gold-fg: #0a0a0b;
+  --forge-display: var(--font-forge-display), var(--font-inter), sans-serif;
+
+  background: var(--forge-bg);
+  color: var(--forge-text);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.forge ::selection {
+  background: var(--forge-gold);
+  color: var(--forge-gold-fg);
+}
+
+/* Display type — Space Grotesk carries the brand. */
+.forge-display {
+  font-family: var(--forge-display);
+  letter-spacing: -0.03em;
+  line-height: 0.97;
+  font-weight: 700;
+}
+
+/* Numbered forge-mark kicker with the asymmetric gold tick (signature moment 2). */
+.forge-kicker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--forge-display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--forge-gold);
+}
+.forge-kicker::before {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  margin-left: -20px; /* extends past the container edge — deliberate editorial tick */
+  background: linear-gradient(90deg, var(--forge-ember), var(--forge-gold));
+  flex: none;
+}
+
+/* Solid panel with border-light (layer 2 of the depth stack). */
+.forge-panel {
+  background: var(--forge-panel);
+  border: 1px solid var(--forge-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* The ONE glass layer — proof cards only. */
+.forge-glass {
+  background: rgba(237, 237, 237, 0.04);
+  border: 1px solid var(--forge-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.6s ease,
+    box-shadow 0.6s ease;
+}
+.forge-glass:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 166, 35, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(245, 166, 35, 0.18),
+    0 12px 48px -12px rgba(255, 107, 26, 0.25);
+}
+
+/* Primary CTA — the only filled-gold element per screen. */
+.forge-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--forge-display);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  color: var(--forge-gold-fg);
+  background: linear-gradient(135deg, var(--forge-gold), var(--forge-ember));
+  padding: 0.9rem 1.6rem;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+.forge-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 8px 32px -8px rgba(255, 107, 26, 0.5);
+}
+.forge-cta:active {
+  transform: translateY(0);
+}
+
+/* High-contrast branded focus — keyboard users get the molten ring. */
+.forge :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--forge-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Form fields — sharp, panel-toned, gold on focus. */
+.forge-field {
+  width: 100%;
+  background: var(--forge-panel);
+  border: 1px solid var(--forge-border);
+  color: var(--forge-text);
+  padding: 0.85rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.forge-field::placeholder {
+  color: var(--forge-muted);
+}
+.forge-field:focus {
+  outline: none;
+  border-color: rgba(245, 166, 35, 0.5);
+  box-shadow: 0 0 0 1px rgba(245, 166, 35, 0.25);
+}
+
+/* Faint drifting ember glow behind the hero copy (layer 1). CSS-only, no images. */
+.forge-glow {
+  background: radial-gradient(
+    ellipse 55% 45% at 32% 55%,
+    rgba(255, 107, 26, 0.07) 0%,
+    transparent 65%
+  );
+  animation: forge-glow-drift 14s ease-in-out infinite alternate;
+}
+@keyframes forge-glow-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to   { transform: translate3d(2%, 2%, 0) scale(1.06); }
+}
+
+/* Scrim behind copy-dense blocks so text never fights the lit metal (DOM-side,
+   far cheaper than dodging text in 3D). */
+.forge-scrim {
+  background: radial-gradient(
+    ellipse 90% 90% at 40% 50%,
+    rgba(10, 10, 11, 0.72) 0%,
+    rgba(10, 10, 11, 0.35) 55%,
+    transparent 80%
+  );
+}
+
+/* Screenshot slot placeholder — engineered hatch, no fake imagery. */
+.forge-slot {
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(237, 237, 237, 0.03) 0 1px,
+      transparent 1px 9px
+    ),
+    linear-gradient(160deg, rgba(245, 166, 35, 0.05), rgba(10, 10, 11, 0.4));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forge-glow { animation: none; }
+  .forge-glass, .forge-cta, .forge-field { transition: none; }
+}

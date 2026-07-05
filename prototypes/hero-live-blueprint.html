@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Handbuilt — Live Blueprint hero (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F4F5F7; --ink:#1C2B3A; --ink-soft:#54606e; --teal:#2F6F6A;
+    --amber:#E8A13C; --line:#d7dbe0; --card:#ffffff; --green:#2f8f5b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--paper);
+    background-image:linear-gradient(rgba(28,43,58,.045) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(28,43,58,.045) 1px,transparent 1px);
+    background-size:34px 34px;
+    -webkit-font-smoothing:antialiased;line-height:1.45;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 24px 70px}
+
+  /* top bar */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:54px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;font-size:19px}
+  .brand .mark{width:30px;height:30px;background:var(--ink);border-radius:6px;position:relative;flex:none}
+  .brand .mark::before{content:"H";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:900;font-size:17px}
+  .brand .mark::after{content:"";position:absolute;left:6px;right:6px;top:50%;height:2px;background:var(--teal);transform:translateY(-1px)}
+  .nav{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--ink-soft)}
+  .nav a{color:inherit;text-decoration:none}
+  .nav a:hover{color:var(--ink)}
+  @media(max-width:760px){.nav{display:none}}
+
+  /* hero grid */
+  .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:46px;align-items:start}
+  @media(max-width:920px){.hero{grid-template-columns:1fr;gap:34px}}
+
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:18px}
+  h1{font-size:clamp(34px,5vw,52px);line-height:1.02;letter-spacing:-.025em;font-weight:800;margin-bottom:18px}
+  h1 .hl{color:var(--teal)}
+  .sub{font-size:18px;color:var(--ink-soft);max-width:33ch;margin-bottom:28px}
+
+  .control-label{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;color:var(--ink);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .control-label::before{content:"";width:7px;height:7px;background:var(--amber);border-radius:50%}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:500;padding:10px 15px;border:1.5px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;transition:all .16s ease;color:var(--ink)}
+  .chip:hover{border-color:var(--teal);transform:translateY(-1px)}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .bizrow{display:flex;gap:10px;margin-bottom:8px;max-width:420px}
+  .bizrow input{font-family:'IBM Plex Mono',monospace;font-size:13.5px;padding:10px 13px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);flex:1;min-width:0}
+  .bizrow input:focus{outline:none;border-color:var(--teal)}
+  .bizrow input.city{max-width:118px}
+  .hint{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);margin-top:4px}
+
+  /* the live card */
+  .cardwrap{position:relative;padding:9px}
+  .brackets{position:absolute;inset:0;pointer-events:none}
+  .brackets path{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-dasharray:60;stroke-dashoffset:60;animation:draw .8s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 18px 50px -28px rgba(28,43,58,.35)}
+
+  .titleblock{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1.5px solid var(--line);background:linear-gradient(#fff,#fbfcfd)}
+  .tb-left{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .tb-name{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tb-meta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .live{display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.1em;flex:none}
+  .live .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(47,111,106,.5)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(47,111,106,0)}}
+  .tag-example{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#fff;background:var(--ink-soft);padding:3px 7px;border-radius:4px}
+
+  .convo{padding:18px;min-height:320px;display:flex;flex-direction:column;gap:12px;background:
+    radial-gradient(circle at 1px 1px, rgba(28,43,58,.05) 1px, transparent 0) 0 0/18px 18px}
+  .msg{max-width:84%;font-size:14.5px;line-height:1.42;padding:10px 13px;border-radius:11px;opacity:0;transform:translateY(10px) scale(.98);animation:rise .42s cubic-bezier(.22,1,.36,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .msg.cust{align-self:flex-end;background:var(--ink);color:#fff;border-bottom-right-radius:3px}
+  .msg.ai{align-self:flex-start;background:#eef4f3;color:var(--ink);border:1px solid #d8e6e4;border-bottom-left-radius:3px}
+  .msg .who{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;display:block;margin-bottom:3px}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:13px 14px;background:#eef4f3;border:1px solid #d8e6e4;border-radius:11px}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:.4;animation:blink 1.2s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+
+  .booked{margin:2px 18px 0;display:none;align-items:center;gap:9px;padding:11px 14px;background:#edf7f1;border:1px solid #bfe3cd;border-radius:9px;color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;opacity:0;transform:translateY(6px)}
+  .booked.show{display:flex;animation:rise .35s ease forwards}
+  .booked .check{width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px;flex:none}
+
+  .payoff{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px;border-top:1.5px solid var(--line);background:#fbfcfd}
+  .spec{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);padding:6px 10px;border-radius:6px}
+  .spec b{color:var(--teal)}
+  .priceline{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);padding:0 18px 16px;background:#fbfcfd;border-bottom:1.5px solid var(--line)}
+  .priceline b{color:var(--ink)}
+
+  .coach{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .coach .cc{font-family:'IBM Plex Mono',monospace;font-size:12.5px;padding:8px 12px;border:1.5px dashed var(--line);background:transparent;border-radius:7px;cursor:pointer;color:var(--ink-soft);transition:all .15s}
+  .coach .cc:hover{border-color:var(--teal);color:var(--teal)}
+  .coach-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 9px}
+
+  .cta{margin-top:24px;display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--ink);font-weight:800;font-size:16px;padding:15px 24px;border:none;border-radius:9px;cursor:pointer;transition:transform .15s,box-shadow .15s;letter-spacing:-.01em}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(232,161,60,.7)}
+  .cta .arrow{transition:transform .15s}.cta:hover .arrow{transform:translateX(3px)}
+  .cta-note{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);margin-top:10px;max-width:40ch}
+
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:13px 18px;border-radius:9px;opacity:0;transition:all .3s;pointer-events:none;z-index:50;max-width:90vw;text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  .protostamp{position:fixed;right:14px;bottom:12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--ink-soft);opacity:.6;text-transform:uppercase}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001s!important}
+    .brackets path{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand"><span class="mark"></span>Handbuilt</div>
+    <nav class="nav">
+      <a>Shop</a><a>Live demo</a><a>Pricing</a><a>Work</a>
+      <a style="color:var(--teal)">Find my AI →</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <!-- LEFT: copy + the one control -->
+    <div>
+      <div class="eyebrow">Small-business AI studio · Surrey BC → worldwide</div>
+      <h1>AI that answers your phone — <span class="hl">built by hand.</span></h1>
+      <p class="sub">Pick your trade. Watch a real AI receptionist triage and book a live call for your business — right now, no signup.</p>
+
+      <div class="control-label">Tap your trade. Watch your AI answer a real customer.</div>
+      <div class="chips" id="chips"></div>
+      <div class="bizrow">
+        <input id="biz" placeholder="Your business name (optional)" autocomplete="off" />
+        <input id="city" class="city" value="Surrey" autocomplete="off" />
+      </div>
+      <div class="hint">↑ Optional — tap a trade and it just works.</div>
+
+      <div class="coach-label" id="coachLabel" style="display:none">Push it — tap a customer line:</div>
+      <div class="coach" id="coach"></div>
+
+      <button class="cta" id="cta">Get this answering YOUR phone <span class="arrow">→</span></button>
+      <div class="cta-note" id="ctaNote">↑ Opens a 60-second voice consult with the builder — pre-filled with your trade, so it picks up right where this left off.</div>
+    </div>
+
+    <!-- RIGHT: the live blueprint card -->
+    <div class="cardwrap">
+      <svg class="brackets" id="brackets"></svg>
+      <div class="card">
+        <div class="titleblock">
+          <div class="tb-left">
+            <div class="tb-name mono" id="tbName">YOUR BUSINESS — AI RECEPTIONIST</div>
+            <div class="tb-meta" id="tbMeta">Emergency intake · booking · SMS confirmation</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex:none">
+            <span class="tag-example mono" id="exTag">EXAMPLE</span>
+            <span class="live"><span class="dot"></span>LIVE</span>
+          </div>
+        </div>
+        <div class="convo" id="convo"></div>
+        <div class="booked" id="booked"><span class="check">✓</span><span id="bookedText">Emergency job booked · plumber notified · customer confirmed</span></div>
+        <div class="priceline" id="priceline">Turn missed calls into booked jobs — <b>AI Receptionist</b> · live in ~5 days · from <b>$1,000 CAD</b></div>
+        <div class="payoff" id="payoff">
+          <span class="spec"><b>✓</b> Answers 24/7</span>
+          <span class="spec"><b>✓</b> Triages urgent calls</span>
+          <span class="spec"><b>✓</b> Books jobs automatically</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="protostamp">prototype · live blueprint</div>
+
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+const PRICE = '· live in ~5 days · from <b>$1,000 CAD</b>';
+const trades = {
+  plumber:{label:'Plumber',biz:'Hilltop Plumbing',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Thanks for calling Hilltop Plumbing. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"My water heater burst. There's water all over the basement floor."},
+      {who:'ai',t:"That sounds urgent. If it's safe, shut off the water supply to the heater — or the main valve. I can hold a same-day emergency window, 2–4 PM. What's the service address and best callback number?"},
+      {who:'cust',t:"42 Maple Ave, 604-555-0148."},
+      {who:'ai',t:"Got it — 42 Maple Ave, 604-555-0148. Is water still actively leaking, or is it shut off now?"},
+      {who:'cust',t:"It's shut off now, but the basement is wet."},
+      {who:'ai',t:"Booked. I've marked this urgent, sent the job details to your plumber, and texted you a confirmation for today, 2–4 PM."}
+    ],
+    booked:"Emergency job booked · plumber notified · customer confirmed",
+    price:"Turn missed calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    coach:[
+      {q:"Do you do drain cleaning?",a:"Yes — drain cleaning is a standard service. I can hold a same-day window. What's the address and a callback number?"},
+      {q:"How much for a faucet swap?",a:"A faucet swap is a flat-rate job — the plumber confirms the price on site before any work. Want me to book a visit?"},
+      {q:"Are you licensed and insured?",a:"Yes — fully licensed and insured, and every plumber is background-checked. Want me to get one booked?"}
+    ]},
+  electrician:{label:'Electrician',biz:'Northline Electric',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Northline Electric, front desk. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"Half my house lost power and the panel is buzzing."},
+      {who:'ai',t:"A buzzing panel can be a fire risk — please keep clear of it and don't touch the breakers. I can get a licensed electrician out today, 1–3 PM. What's the address and best callback number?"},
+      {who:'cust',t:"88 Cedar Rd, 778-555-0190."},
+      {who:'ai',t:"Thanks — 88 Cedar Rd, 778-555-0190. Is the buzzing constant, or only when you flip a breaker?"},
+      {who:'cust',t:"It's constant."},
+      {who:'ai',t:"Booked. Flagged as a priority safety call, sent the details to your on-call electrician, and texted you a confirmation for today, 1–3 PM."}
+    ],
+    booked:"Priority job booked · electrician notified · customer confirmed",
+    price:"Turn after-hours calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    coach:[
+      {q:"Do you do panel upgrades?",a:"Yes, panel upgrades are one of our core jobs. I can book a licensed electrician to quote it — what day works?"},
+      {q:"Is this safe to wait on?",a:"A buzzing panel isn't safe to leave — keep clear and I'll prioritize a same-day visit. Address and callback number?"},
+      {q:"Do you give free quotes?",a:"Quotes on new work are free. I can book an electrician to come assess it — what day suits you?"}
+    ]},
+  hvac:{label:'HVAC',biz:'TrueAir Heating & Cooling',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"TrueAir Heating & Cooling. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"My furnace died and it's freezing — we have a newborn at home."},
+      {who:'ai',t:"Let's get heat back fast. With an infant in the home I'll prioritize this. I can hold a same-day visit, 3–5 PM. What's the address and best callback number?"},
+      {who:'cust',t:"12 Birch Pl, 604-555-0177."},
+      {who:'ai',t:"Got it — 12 Birch Pl, 604-555-0177. Is the furnace completely off, or running but not heating?"},
+      {who:'cust',t:"Completely off."},
+      {who:'ai',t:"Booked. Marked urgent (infant in home), sent the job to your technician, and texted you a confirmation for today, 3–5 PM."}
+    ],
+    booked:"Emergency job booked · technician notified · customer confirmed",
+    price:"Turn no-heat calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    coach:[
+      {q:"Do you offer maintenance plans?",a:"We do — seasonal plans keep your system under warranty and catch issues early. Want me to add a callback to go over it?"},
+      {q:"Can you install AC too?",a:"Yes, we install and service AC. I can book a free in-home assessment — what day works?"},
+      {q:"How fast can someone come?",a:"For no-heat calls I prioritize same-day. I can hold a window today — address and callback number?"}
+    ]},
+  roofer:{label:'Roofer',biz:'Summit Roofing',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Summit Roofing, front desk. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"There's a leak coming through my ceiling after last night's storm."},
+      {who:'ai',t:"Let's limit the damage — place a bucket under the leak and move valuables clear. I can send an emergency tarp crew today, or book a full inspection tomorrow 9–11 AM. Which do you need?"},
+      {who:'cust',t:"Today please — 5 Oakhill Dr, 778-555-0122."},
+      {who:'ai',t:"Got it — 5 Oakhill Dr, 778-555-0122. Is the leak actively dripping right now?"},
+      {who:'cust',t:"Yes, still dripping."},
+      {who:'ai',t:"Booked. Dispatched an emergency tarp crew for today, sent the details to your roofer, and texted you a confirmation."}
+    ],
+    booked:"Emergency job booked · roofer notified · customer confirmed",
+    price:"Turn storm calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    coach:[
+      {q:"Do you give free estimates?",a:"Yes — roof estimates are free. I can book an inspection this week. What's the address?"},
+      {q:"Can you tarp it today?",a:"Yes, I can dispatch an emergency tarp crew today to stop the damage. What's the address and callback number?"},
+      {q:"Do you handle gutters too?",a:"We do gutters and roofing both — I'll add it to the inspection. What's the address?"}
+    ]},
+  clinic:{label:'Clinic',biz:'Maple Dental',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Maple Dental, reception. Is this a dental emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"I cracked a tooth and it's really painful — can I get in today?"},
+      {who:'ai',t:"I'm sorry, that sounds painful. We keep emergency slots open — I can offer 4:15 PM today. Can I get your name and a callback number?"},
+      {who:'cust',t:"Dana Lee, 604-555-0163."},
+      {who:'ai',t:"Thank you, Dana. Are you in severe pain or any swelling I should flag for the dentist?"},
+      {who:'cust',t:"Pain, no swelling."},
+      {who:'ai',t:"Booked. I've reserved the 4:15 PM emergency slot, flagged your pain level for the dentist, and texted you the confirmation and intake form."}
+    ],
+    booked:"Emergency visit booked · dentist notified · patient confirmed",
+    price:"Turn missed calls into booked patients — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Screens urgent cases","Books appointments automatically"],
+    coach:[
+      {q:"Do you take my insurance?",a:"We accept most major plans — reception confirms yours at check-in. Want me to book you in?"},
+      {q:"Are you taking new patients?",a:"Yes, we're accepting new patients. I can book your first visit — name and number to start?"},
+      {q:"How soon can I be seen?",a:"For pain we keep same-day emergency slots — I can offer one today. Can I get your name and number?"}
+    ]},
+  salon:{label:'Salon',biz:'Luxe Hair Studio',
+    meta:'Bookings · scheduling · SMS reminders',
+    opener:"Luxe Hair Studio — thanks for calling! Are you booking an appointment, or is there something else I can help with?",
+    convo:[
+      {who:'cust',t:"Do you have anything for a cut and color this Saturday?"},
+      {who:'ai',t:"We do! Saturday I have 11 AM or 2:30 PM with a senior stylist. Which suits you, and can I get your name and number?"},
+      {who:'cust',t:"2:30 works — Priya, 778-555-0144."},
+      {who:'ai',t:"Perfect, Priya. Is this a full color or a root touch-up, so I can set aside the right amount of time?"},
+      {who:'cust',t:"Full color."},
+      {who:'ai',t:"Booked — cut & full color, Saturday 2:30 PM with a senior stylist. Added to the calendar and texted you a confirmation plus a reminder the day before."}
+    ],
+    booked:"Appointment booked · stylist scheduled · customer confirmed",
+    price:"Turn missed calls into booked chairs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books appointments automatically"],
+    coach:[
+      {q:"What does balayage cost?",a:"Balayage is priced by length and stylist — I can text you the range and book a consult. Best number?"},
+      {q:"Any openings today?",a:"Let me check — yes, there's a slot this afternoon. Want me to hold it? Name and number?"},
+      {q:"Do you do extensions?",a:"Yes, extensions are by consultation. I can book one this week — what day works?"}
+    ]},
+  contractor:{label:'Contractor',biz:'Cornerstone Renos',
+    meta:'Lead intake · estimates · SMS confirmation',
+    opener:"Cornerstone Renos, front desk. Are you looking for a quote, or following up on a project?",
+    convo:[
+      {who:'cust',t:"I want a quote on a basement reno — fairly big job."},
+      {who:'ai',t:"Happy to set that up. I can book a free on-site estimate this week — Thursday 10 AM or Friday 1 PM. Which works, and what's the address?"},
+      {who:'cust',t:"Friday 1 PM, 27 Lakeview Tce."},
+      {who:'ai',t:"Great — Friday 1 PM at 27 Lakeview Tce. Roughly what's the scope, so I send the right estimator — full basement with a bathroom, or mainly finishing?"},
+      {who:'cust',t:"Full basement with a bathroom."},
+      {who:'ai',t:"Booked. On-site estimate Friday 1 PM, assigned to a basement-and-bath estimator, details sent to the owner, and a confirmation texted to you."}
+    ],
+    booked:"Estimate booked · estimator assigned · customer confirmed",
+    price:"Turn quote calls into booked estimates — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books estimates automatically"],
+    coach:[
+      {q:"Is the estimate free?",a:"Yes — on-site estimates are free with no obligation. I can book one this week. What's the address?"},
+      {q:"How soon can you start?",a:"Start date is locked at the estimate once scope is set. Want me to book the free on-site visit?"},
+      {q:"Do you pull permits?",a:"We handle permits as part of the job. I'll note it for the estimate — what day works for a site visit?"}
+    ]},
+  other:{label:'Other →',biz:'Your Business',
+    meta:'Call answering · booking · SMS confirmation',
+    opener:"Thanks for calling — front desk here. Is this urgent, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"I'd like to book your service and ask a couple of questions."},
+      {who:'ai',t:"Of course. I can check availability and hold a spot now. What day works best, and what's the best callback number?"},
+      {who:'cust',t:"Tomorrow afternoon, 604-555-0100."},
+      {who:'ai',t:"Got it — tomorrow afternoon, 604-555-0100. Anything specific I should note for the team before your visit?"},
+      {who:'cust',t:"Just a standard service call."},
+      {who:'ai',t:"Booked. Held a slot for tomorrow afternoon, sent the details to the owner, and texted you a confirmation."}
+    ],
+    booked:"Job booked · owner notified · customer confirmed",
+    price:"Turn missed calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books jobs automatically"],
+    coach:[
+      {q:"What are your hours?",a:"Happy to help — and the AI answers 24/7, so after-hours calls are never missed. Want to book something?"},
+      {q:"Can I get a quote?",a:"Absolutely — I can set up a free quote. What's the job and the best day to come by?"},
+      {q:"Do you come to me?",a:"Yes, we come to you. What's the address and a good day for the visit?"}
+    ]}
+};
+
+const exampleCycle = ['plumber','salon','clinic'];
+const convoEl = document.getElementById('convo');
+const tbName = document.getElementById('tbName');
+const tbMeta = document.getElementById('tbMeta');
+const exTag = document.getElementById('exTag');
+const bookedEl = document.getElementById('booked');
+const bookedText = document.getElementById('bookedText');
+const pricelineEl = document.getElementById('priceline');
+const payoffEl = document.getElementById('payoff');
+const coachEl = document.getElementById('coach');
+const coachLabel = document.getElementById('coachLabel');
+const toast = document.getElementById('toast');
+let activeKey = null, runToken = 0, cycling = true, cycleIdx = 0;
+
+function bizName(key){
+  const typed = document.getElementById('biz').value.trim();
+  return (typed || trades[key].biz).toUpperCase();
+}
+function clearConvo(){ convoEl.innerHTML=''; bookedEl.classList.remove('show'); }
+
+function addMsg(m){
+  const d=document.createElement('div');
+  d.className='msg '+(m.who==='cust'?'cust':'ai');
+  d.innerHTML='<span class="who">'+(m.who==='cust'?'Customer':'AI receptionist')+'</span>'+m.t;
+  convoEl.appendChild(d);
+  convoEl.scrollTop=convoEl.scrollHeight;
+}
+function addTyping(){
+  const d=document.createElement('div');d.className='typing';d.id='typing';
+  d.innerHTML='<span></span><span></span><span></span>';
+  convoEl.appendChild(d);convoEl.scrollTop=convoEl.scrollHeight;return d;
+}
+function rmTyping(){const t=document.getElementById('typing');if(t)t.remove();}
+
+async function wait(ms){return new Promise(r=>setTimeout(r,reduce?Math.min(ms,40):ms));}
+
+function applyTradeChrome(key,isExample){
+  const tr=trades[key];
+  tbName.textContent = isExample ? tr.biz.toUpperCase()+' — AI RECEPTIONIST' : bizName(key)+' — AI RECEPTIONIST';
+  const city=document.getElementById('city').value.trim()||'Surrey';
+  tbMeta.textContent = (isExample?'Example':tr.label+' · '+city)+' · '+tr.meta;
+  exTag.style.display = isExample ? 'inline-block' : 'none';
+  bookedText.textContent = tr.booked;
+  pricelineEl.innerHTML = tr.price;
+  payoffEl.innerHTML = tr.chips.map(c=>'<span class="spec"><b>✓</b> '+c+'</span>').join('');
+}
+
+async function playConvo(key, isExample){
+  const token=++runToken;
+  clearConvo();
+  const tr=trades[key];
+  applyTradeChrome(key,isExample);
+
+  // instant opener (sub-1s, no network wait in real build)
+  addMsg({who:'ai',t:tr.opener});
+  await wait(720); if(token!==runToken)return;
+
+  for(const m of tr.convo){
+    if(m.who==='ai'){const t=addTyping();await wait(900);if(token!==runToken){rmTyping();return}rmTyping();}
+    else {await wait(620);if(token!==runToken)return;}
+    addMsg(m); await wait(240); if(token!==runToken)return;
+  }
+  await wait(280); if(token!==runToken)return;
+  bookedEl.classList.add('show');
+}
+
+async function runExampleCycle(){
+  while(cycling){
+    const key=exampleCycle[cycleIdx%exampleCycle.length];
+    await playConvo(key,true);
+    if(!cycling)return;
+    await wait(3000);
+    cycleIdx++;
+  }
+}
+
+function selectTrade(key){
+  cycling=false;
+  activeKey=key;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.key===key));
+  coachLabel.style.display='block';
+  coachEl.innerHTML='';
+  trades[key].coach.forEach(c=>{
+    const b=document.createElement('button');b.className='cc';b.textContent=c.q;
+    b.onclick=()=>pushCustomerLine(c.q,c.a);coachEl.appendChild(b);
+  });
+  playConvo(key,false);
+}
+
+async function pushCustomerLine(q,a){
+  if(!activeKey)return;
+  await wait(120);
+  addMsg({who:'cust',t:q});
+  const t=addTyping();await wait(950);rmTyping();
+  addMsg({who:'ai',t:a});
+}
+
+// build chips
+const chipsEl=document.getElementById('chips');
+Object.keys(trades).forEach(key=>{
+  const b=document.createElement('button');
+  b.className='chip';b.dataset.key=key;b.textContent=trades[key].label;
+  b.onclick=()=>selectTrade(key);chipsEl.appendChild(b);
+});
+
+// re-stamp title live as business name typed
+document.getElementById('biz').addEventListener('input',()=>{if(activeKey)tbName.textContent=bizName(activeKey)+' — AI RECEPTIONIST';});
+
+// CTA
+document.getElementById('cta').addEventListener('click',()=>{
+  const biz=document.getElementById('biz').value.trim();
+  const label=activeKey?trades[activeKey].label:'your trade';
+  toast.textContent='→ /start?trade='+(activeKey||'')+(biz?'&business='+encodeURIComponent(biz):'')+'  — voice consult opens pre-filled for '+label;
+  toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3400);
+});
+
+// corner brackets svg (drawn)
+const svg=document.getElementById('brackets');
+function drawBrackets(){
+  const w=svg.clientWidth,h=svg.clientHeight,L=26,o=4;
+  svg.setAttribute('viewBox','0 0 '+w+' '+h);
+  svg.innerHTML=[
+    'M'+o+' '+(o+L)+' L'+o+' '+o+' L'+(o+L)+' '+o,
+    'M'+(w-o-L)+' '+o+' L'+(w-o)+' '+o+' L'+(w-o)+' '+(o+L),
+    'M'+o+' '+(h-o-L)+' L'+o+' '+(h-o)+' L'+(o+L)+' '+(h-o),
+    'M'+(w-o-L)+' '+(h-o)+' L'+(w-o)+' '+(h-o)+' L'+(w-o)+' '+(h-o-L)
+  ].map(d=>'<path d="'+d+'"/>').join('');
+}
+window.addEventListener('resize',drawBrackets);
+
+// boot
+drawBrackets();
+runExampleCycle();
+</script>
+</body>
+</html>

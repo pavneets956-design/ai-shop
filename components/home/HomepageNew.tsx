@@ -1,132 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import HandStage, { MobileHero } from "./stage/HandStage";
 
 /* ─── Design tokens (matches /v2 DOM extraction) ─── */
 const AMBER = "#E88A00";
 const INK = "#191716";
 const PAPER = "#FAF7F2";
-
-/* ─── Hero product cards ─── */
-function HeroCards() {
-  return (
-    <div className="relative h-[420px] w-full select-none md:h-[500px]">
-      {/* Center brand mark */}
-      <div
-        className="absolute left-1/2 top-1/2 z-10 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl shadow-2xl"
-        style={{ background: INK }}
-      >
-        <span className="font-display text-2xl font-extrabold text-white">H</span>
-      </div>
-      <div
-        className="absolute left-1/2 top-[58%] -translate-x-1/2 text-[9px] font-mono font-semibold uppercase tracking-[0.2em]"
-        style={{ color: "#9B928A" }}
-      >
-        Assembling worker
-      </div>
-
-      {/* AI Receptionist status card — main, top-right */}
-      <div
-        className="absolute right-0 top-6 z-20 w-52 animate-[floatA_5s_ease-in-out_infinite] rounded-2xl border bg-white p-3.5 shadow-lg"
-        style={{ borderColor: "#E8DED3" }}
-      >
-        <div className="flex items-center gap-2.5">
-          <div
-            className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl"
-            style={{ background: INK }}
-          >
-            <span className="text-[13px]">🎧</span>
-          </div>
-          <div>
-            <div className="text-[12px] font-semibold" style={{ color: INK }}>AI Receptionist</div>
-            <div className="flex items-center gap-1 text-[10px] font-semibold" style={{ color: "#2F6B4F" }}>
-              <span className="h-1.5 w-1.5 rounded-full bg-green-500 inline-block" />
-              Live · answering
-            </div>
-          </div>
-        </div>
-        <div className="mt-2.5 space-y-1">
-          {["Call answered & triaged", "Job booked, 1–3 PM", "Owner texted the lead"].map((t) => (
-            <div key={t} className="flex items-center gap-1.5 text-[11px]" style={{ color: "#615A53" }}>
-              <span style={{ color: "#2F6B4F" }}>✓</span> {t}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Notification cards — left */}
-      <div
-        className="absolute left-0 top-10 w-44 animate-[floatB_6s_ease-in-out_infinite] rounded-xl border bg-white p-3 shadow-md"
-        style={{ borderColor: "#E8DED3" }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-[14px]">💬</span>
-          <div>
-            <div className="text-[11px] font-semibold" style={{ color: INK }}>New DM · "quote?"</div>
-            <div className="text-[10px]" style={{ color: "#9B928A" }}>Instagram · 2 min ago</div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="absolute left-2 top-[44%] w-44 animate-[floatC_7s_ease-in-out_infinite] rounded-xl border bg-white p-3 shadow-md"
-        style={{ borderColor: "#E8DED3" }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-[14px]">📵</span>
-          <div>
-            <div className="text-[11px] font-semibold" style={{ color: INK }}>Missed call</div>
-            <div className="text-[10px]" style={{ color: "#9B928A" }}>7:42 PM · no voicemail</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom cards */}
-      <div
-        className="absolute bottom-16 left-8 w-44 animate-[floatA_5.5s_ease-in-out_0.5s_infinite] rounded-xl border bg-white p-3 shadow-md"
-        style={{ borderColor: "#E8DED3" }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-[14px]">📅</span>
-          <div>
-            <div className="text-[11px] font-semibold" style={{ color: INK }}>Booking request</div>
-            <div className="text-[10px]" style={{ color: "#9B928A" }}>Tue · 1–3 PM slot</div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="absolute bottom-24 right-4 w-44 animate-[floatB_6.5s_ease-in-out_1s_infinite] rounded-xl border bg-white p-3 shadow-md"
-        style={{ borderColor: "#E8DED3" }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-[14px]">🧾</span>
-          <div>
-            <div className="text-[11px] font-semibold" style={{ color: INK }}>Invoice #1048</div>
-            <div className="text-[10px] font-medium" style={{ color: "#B42318" }}>$650 · 7 days late</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Launches into pill row */}
-      <div className="absolute bottom-4 right-0 flex items-center gap-1.5">
-        <span className="text-[9px] font-mono font-semibold uppercase tracking-[0.18em]" style={{ color: "#9B928A" }}>
-          Launches into
-        </span>
-        {["📅 Calendar", "💬 SMS", "👤 CRM", "🧾 Invoices"].map((item) => (
-          <span
-            key={item}
-            className="rounded-lg border px-2 py-0.5 text-[10px] font-semibold"
-            style={{ borderColor: "#E8DED3", background: "#fff", color: INK }}
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* ─── Animated grid background ─── */
 function GridBg({ dark = false }: { dark?: boolean }) {
@@ -328,16 +209,6 @@ export default function HomepageNew() {
           0%   { background-position: 0 0; }
           100% { background-position: 48px 48px; }
         }
-        @keyframes floatA {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-8px); }
-        }
-        @keyframes floatB {
-          0%, 100% { transform: translateY(-4px); }
-          50%       { transform: translateY(6px); }
-        }
-        @keyframes floatC {
-          0%, 100% { transform: translateY(4px); }
           50%       { transform: translateY(-6px); }
         }
         @keyframes blink {
@@ -355,100 +226,9 @@ export default function HomepageNew() {
         }
       `}</style>
 
-      {/* ── Section 1: Hero ───────────────────────────────────── */}
-      <section
-        id="top"
-        className="relative overflow-hidden"
-        style={{ background: PAPER, minHeight: "calc(100vh - 64px)" }}
-      >
-        <GridBg />
-        {/* bottom vignette */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(120% 80% at 50% 120%, rgba(25,23,22,0.1), transparent 55%)" }}
-        />
-
-        <div className="relative z-10 mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
-            {/* Left: copy */}
-            <div data-reveal className="max-w-[560px]">
-              {/* pill */}
-              <div
-                className="mb-6 inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.05em]"
-                style={{ background: "rgba(255,248,239,0.8)", borderColor: "#E8DED3", color: "#6F6862", boxShadow: "0 2px 8px rgba(25,23,22,0.04)" }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-green-500" style={{ boxShadow: "0 0 0 3px rgba(15,169,104,0.18)" }} />
-                Built in BC · Installed, not advised
-              </div>
-
-              {/* headline */}
-              <h1
-                className="font-display font-extrabold leading-[0.96] tracking-[-0.028em]"
-                style={{ fontSize: "clamp(40px, 5.8vw, 70px)", color: INK }}
-              >
-                Your busywork
-                <br />goes in.
-                <br />A working
-                <br />
-                <span style={{ color: AMBER, textDecoration: "underline", textDecorationColor: `${AMBER}50`, textUnderlineOffset: "4px" }}>
-                  AI worker
-                </span>
-                <br />comes out.
-              </h1>
-
-              {/* subtext */}
-              <p className="mt-6 max-w-[44ch] text-[16px] leading-relaxed" style={{ color: "#615A53" }}>
-                We take the calls, texts, quotes, and invoices that eat your day — and build them into one real AI worker, wired into your tools and live in days.
-              </p>
-
-              {/* CTAs */}
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/start"
-                  className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold text-white transition-all duration-200 hover:opacity-90"
-                  style={{ background: INK }}
-                >
-                  Start a build
-                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                </Link>
-                <Link
-                  href="/demo"
-                  className="inline-flex items-center gap-2.5 rounded-full border px-5 py-3.5 text-[14px] font-semibold transition-all duration-200 hover:border-amber-400"
-                  style={{ borderColor: "#E8DED3", color: INK }}
-                >
-                  <span
-                    className="flex h-6 w-6 items-center justify-center rounded-full text-[11px]"
-                    style={{ background: AMBER, color: INK }}
-                  >
-                    ▶
-                  </span>
-                  Try the live demo
-                </Link>
-              </div>
-
-              {/* trust bar */}
-              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]" style={{ color: "#9B928A" }}>
-                <span className="flex items-center gap-1.5"><span style={{ color: "#2F6B4F" }}>✓</span> Fixed CAD pricing</span>
-                <span>·</span>
-                <span>Real demos, not mockups</span>
-                <span>·</span>
-                <span className="font-semibold" style={{ color: "#615A53" }}>one builder, no agency handoff</span>
-              </div>
-            </div>
-
-            {/* Right: floating cards */}
-            <div data-reveal className="hidden md:block" style={{ transitionDelay: "0.1s" }}>
-              <HeroCards />
-            </div>
-          </div>
-        </div>
-
-        {/* scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="font-mono text-[9px] uppercase tracking-[0.34em]" style={{ color: "rgba(25,23,22,0.35)" }}>Scroll</span>
-          <div className="h-6 w-px animate-pulse" style={{ background: "rgba(25,23,22,0.2)" }} />
-        </div>
-      </section>
+      {/* ── Section 1: Hero — the AI-hand cinematic stage ───────── */}
+      <HandStage />
+      <MobileHero />
 
       {/* ── Section 2: Live Demo ──────────────────────────────── */}
       <section

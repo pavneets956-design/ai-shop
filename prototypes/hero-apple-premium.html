@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Handbuilt — Apple-premium hero (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FBFCFE; --ink:#101A24; --ink-2:#3a4654; --muted:#737e8b;
+    --line:#e9ecf1; --card:#ffffff; --teal:#2F6F6A; --amber:#E8A13C; --green:#1faa5a;
+    --shadow-lg:0 50px 100px -45px rgba(16,26,36,.30), 0 8px 24px -16px rgba(16,26,36,.18);
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,system-ui,sans-serif;color:var(--ink);
+    background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(900px 520px at 50% -8%, rgba(47,111,106,.10), transparent 70%),
+      radial-gradient(700px 460px at 88% 8%, rgba(232,161,60,.08), transparent 72%);
+    background-repeat:no-repeat;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(180%) blur(14px);
+      background:rgba(251,252,254,.72);border-bottom:1px solid rgba(16,26,36,.05)}
+  .navin{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .brand .mark{width:28px;height:28px;border-radius:9px;background:linear-gradient(150deg,#26323f,#101a24);position:relative;flex:none;box-shadow:0 4px 10px -4px rgba(16,26,36,.5)}
+  .brand .mark::before{content:"H";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px}
+  .brand .mark::after{content:"";position:absolute;left:6px;right:6px;top:50%;height:2px;background:var(--teal);transform:translateY(-1px);border-radius:2px}
+  .navlinks{display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+  .navlinks a{color:inherit;text-decoration:none;transition:color .15s}
+  .navlinks a:hover{color:var(--ink)}
+  .navbtn{background:var(--ink);color:#fff;padding:9px 17px;border-radius:999px;font-weight:600;font-size:14px}
+  @media(max-width:760px){.navlinks a:not(.navbtn){display:none}}
+
+  /* hero */
+  .hero{text-align:center;padding:74px 0 36px}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--teal);
+    display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
+    background:rgba(47,111,106,.08);border:1px solid rgba(47,111,106,.16);margin-bottom:26px;
+    opacity:0;animation:up .7s var(--ease) .05s forwards}
+  h1{font-size:clamp(40px,6.4vw,74px);line-height:1.03;letter-spacing:-.038em;font-weight:800;
+    max-width:14ch;margin:0 auto 22px;opacity:0;animation:up .8s var(--ease) .12s forwards}
+  h1 .grad{background:linear-gradient(110deg,var(--teal),#3f8f88 60%,var(--amber));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{font-size:clamp(17px,2.1vw,21px);color:var(--muted);max-width:42ch;margin:0 auto 34px;font-weight:450;
+    opacity:0;animation:up .8s var(--ease) .2s forwards}
+
+  .control-label{font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:14px;opacity:0;animation:up .8s var(--ease) .28s forwards}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:680px;margin:0 auto 14px;
+    opacity:0;animation:up .8s var(--ease) .34s forwards}
+  .chip{font-size:14.5px;font-weight:600;padding:11px 18px;border:1.5px solid var(--line);background:#fff;
+    border-radius:999px;cursor:pointer;transition:all .22s var(--ease);color:var(--ink-2);
+    box-shadow:0 1px 2px rgba(16,26,36,.04)}
+  .chip:hover{border-color:rgba(47,111,106,.5);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(16,26,36,.25)}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 10px 22px -10px rgba(16,26,36,.5)}
+  .bizrow{display:flex;gap:10px;justify-content:center;max-width:440px;margin:6px auto 0;opacity:0;animation:up .8s var(--ease) .4s forwards}
+  .bizrow input{font-size:14px;font-family:inherit;padding:11px 15px;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);flex:1;min-width:0;transition:border-color .2s}
+  .bizrow input:focus{outline:none;border-color:var(--teal)}
+  .bizrow input.city{max-width:120px;text-align:center}
+  .hint{font-size:12.5px;color:var(--muted);margin-top:9px;opacity:0;animation:up .8s var(--ease) .46s forwards}
+
+  /* showcase */
+  .showcase{max-width:980px;margin:42px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:30px;box-shadow:var(--shadow-lg);padding:22px;display:grid;
+    grid-template-columns:1fr 286px;gap:22px;align-items:stretch;
+    opacity:0;transform:translateY(34px);animation:up 1s var(--ease) .54s forwards}
+  @media(max-width:880px){.showcase{grid-template-columns:1fr;gap:26px}}
+
+  .chat{display:flex;flex-direction:column;background:#fafbfc;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .chat-head{display:flex;align-items:center;justify-content:space-between;padding:14px 17px;border-bottom:1px solid var(--line);background:#fff}
+  .ch-left{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .ch-name{font-size:14px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ch-meta{font-size:11px;color:var(--muted);font-weight:500}
+  .ch-right{display:flex;align-items:center;gap:9px;flex:none}
+  .ex-tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:#fff;background:#aeb6c0;padding:3px 8px;border-radius:999px}
+  .live{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--teal)}
+  .live .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(47,111,106,.5);animation:pulse 1.7s var(--ease) infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(47,111,106,.45)}55%{box-shadow:0 0 0 6px rgba(47,111,106,0)}}
+  .sound{border:none;background:#eef1f4;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:13px;display:grid;place-items:center;transition:background .15s}
+  .sound:hover{background:#e2e6ea}
+
+  .convo{padding:16px;min-height:312px;display:flex;flex-direction:column;gap:11px}
+  .msg{max-width:86%;font-size:14px;line-height:1.42;padding:10px 13px;border-radius:16px;
+    opacity:0;transform:translateY(10px) scale(.97);animation:rise .5s var(--ease) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .msg.cust{align-self:flex-end;background:var(--ink);color:#fff;border-bottom-right-radius:5px}
+  .msg.ai{align-self:flex-start;background:#fff;color:var(--ink);border:1px solid var(--line);border-bottom-left-radius:5px;box-shadow:0 2px 6px -4px rgba(16,26,36,.18)}
+  .msg .who{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;opacity:.55;display:block;margin-bottom:3px;font-weight:600}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:13px 14px;background:#fff;border:1px solid var(--line);border-radius:16px}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:.4;animation:blink 1.2s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+
+  .booked{margin:0 16px;display:none;align-items:center;gap:9px;padding:11px 13px;background:rgba(31,170,90,.09);
+    border:1px solid rgba(31,170,90,.28);border-radius:14px;color:var(--green);font-size:12.5px;font-weight:700;
+    opacity:0;transform:translateY(8px)}
+  .booked.show{display:flex;animation:rise .5s var(--ease) forwards}
+  .booked .check{width:19px;height:19px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px;flex:none}
+
+  .priceline{font-size:12.5px;color:var(--ink-2);padding:13px 16px 4px;font-weight:500}
+  .priceline b{color:var(--ink);font-weight:700}
+  .payoff{display:flex;flex-wrap:wrap;gap:7px;padding:8px 16px 16px}
+  .spec{font-size:11.5px;font-weight:600;color:var(--ink-2);background:#fff;border:1px solid var(--line);padding:6px 11px;border-radius:999px}
+  .spec b{color:var(--teal)}
+
+  /* iphone */
+  .phonecol{display:flex;align-items:center;justify-content:center}
+  .phone{width:248px;height:506px;background:#0a0a0c;border-radius:46px;padding:9px;position:relative;
+    box-shadow:0 40px 70px -30px rgba(16,26,36,.55), 0 0 0 2px #23262d inset, 0 0 0 7px #0a0a0c;}
+  .screen{width:100%;height:100%;border-radius:38px;overflow:hidden;position:relative;
+    background:linear-gradient(165deg,#3a4a5e 0%,#26384b 42%,#15273a 100%)}
+  .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:88px;height:24px;background:#000;border-radius:14px;z-index:5}
+  .statusbar{position:absolute;top:16px;left:0;right:0;display:flex;justify-content:space-between;padding:0 24px;color:#fff;font-size:11px;font-weight:600;z-index:4;opacity:.92}
+  .lock{position:absolute;top:62px;left:0;right:0;text-align:center;color:#fff;z-index:2}
+  .lock-time{font-size:52px;font-weight:700;letter-spacing:-.02em;line-height:1}
+  .lock-date{font-size:12px;opacity:.85;margin-top:4px;font-weight:500}
+  .notifs{position:absolute;left:11px;right:11px;top:172px;display:flex;flex-direction:column;gap:9px;z-index:3}
+  .notif{background:rgba(248,250,252,.82);backdrop-filter:blur(16px);border-radius:18px;padding:10px 12px;display:flex;gap:10px;
+    opacity:0;transform:translateY(-12px) scale(.95);transition:all .5s var(--ease);box-shadow:0 8px 22px -10px rgba(0,0,0,.45)}
+  .notif.show{opacity:1;transform:none}
+  .notif .ic{width:32px;height:32px;border-radius:9px;flex:none;display:grid;place-items:center;font-size:17px;
+    background:linear-gradient(#3ad257,#22b43c);box-shadow:0 3px 8px -3px rgba(34,180,60,.6)}
+  .notif .nb{min-width:0;flex:1}
+  .notif .nhead{display:flex;justify-content:space-between;font-size:9px;font-weight:600;letter-spacing:.04em;color:#5b626b;text-transform:uppercase;margin-bottom:2px}
+  .notif .ntitle{font-size:12px;font-weight:700;color:#0c0c0d;line-height:1.2}
+  .notif .ntext{font-size:11.5px;color:#22252a;line-height:1.32;margin-top:2px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* cta */
+  .ctawrap{text-align:center;padding:40px 0 30px;opacity:0;animation:up 1s var(--ease) .66s forwards}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:#1a1205;font-weight:700;font-size:17px;
+    padding:16px 30px;border:none;border-radius:999px;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+    box-shadow:0 16px 34px -14px rgba(232,161,60,.75)}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(232,161,60,.85)}
+  .cta .arrow{transition:transform .2s var(--ease)}.cta:hover .arrow{transform:translateX(4px)}
+  .cta-note{font-size:12.5px;color:var(--muted);margin-top:14px;max-width:44ch;margin-left:auto;margin-right:auto}
+  .coachwrap{text-align:center;margin-top:22px;min-height:44px}
+  .coach-label{font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin-bottom:10px;display:none}
+  .coach{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+  .coach .cc{font-size:13px;font-weight:500;padding:9px 15px;border:1.5px solid var(--line);background:#fff;border-radius:999px;cursor:pointer;color:var(--ink-2);transition:all .18s var(--ease)}
+  .coach .cc:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px)}
+
+  @keyframes up{to{opacity:1;transform:none}}
+  .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;
+    font-size:13px;font-weight:500;padding:14px 20px;border-radius:14px;opacity:0;transition:all .35s var(--ease);pointer-events:none;z-index:60;max-width:92vw;text-align:center;box-shadow:0 20px 40px -16px rgba(16,26,36,.5)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .protostamp{position:fixed;right:14px;bottom:11px;font-size:10px;letter-spacing:.08em;color:var(--muted);opacity:.6;text-transform:uppercase}
+
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.05s!important}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="navin">
+    <div class="brand"><span class="mark"></span>Handbuilt</div>
+    <div class="navlinks">
+      <a>Shop</a><a>Live demo</a><a>Pricing</a><a>Work</a>
+      <a class="navbtn">Find my AI</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">● &nbsp;Small-business AI studio · Surrey BC → worldwide</div>
+    <h1>AI that answers your phone, <span class="grad">built by hand.</span></h1>
+    <p class="sub">Pick your trade. Watch a real AI receptionist triage a live call and book the job — right now, no signup.</p>
+
+    <div class="control-label">Tap your trade. Watch your AI answer a real customer ↓</div>
+    <div class="chips" id="chips"></div>
+    <div class="bizrow">
+      <input id="biz" placeholder="Your business name (optional)" autocomplete="off" />
+      <input id="city" class="city" value="Surrey" autocomplete="off" />
+    </div>
+    <div class="hint">Optional — tap a trade and it just works.</div>
+
+    <!-- product showcase -->
+    <div class="showcase">
+      <div class="chat">
+        <div class="chat-head">
+          <div class="ch-left">
+            <div class="ch-name" id="chName">Your business — AI receptionist</div>
+            <div class="ch-meta" id="chMeta">Emergency intake · booking · SMS confirmation</div>
+          </div>
+          <div class="ch-right">
+            <span class="ex-tag" id="exTag">EXAMPLE</span>
+            <span class="live"><span class="dot"></span>Live</span>
+            <button class="sound" id="sound" title="Sound on/off">🔊</button>
+          </div>
+        </div>
+        <div class="convo" id="convo"></div>
+        <div class="booked" id="booked"><span class="check">✓</span><span id="bookedText">Emergency job booked · plumber notified · customer confirmed</span></div>
+        <div class="priceline" id="priceline">Turn missed calls into booked jobs — <b>AI Receptionist</b> · live in ~5 days · from <b>$1,000 CAD</b></div>
+        <div class="payoff" id="payoff"></div>
+      </div>
+
+      <div class="phonecol">
+        <div class="phone">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span>5G&nbsp;&nbsp;100% 🔋</span></div>
+            <div class="lock">
+              <div class="lock-time">9:41</div>
+              <div class="lock-date" id="lockDate">Today · Owner's phone</div>
+            </div>
+            <div class="notifs" id="notifs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coachwrap">
+      <div class="coach-label" id="coachLabel">Push it — tap a customer line:</div>
+      <div class="coach" id="coach"></div>
+    </div>
+
+    <div class="ctawrap">
+      <button class="cta" id="cta">Get this answering YOUR phone <span class="arrow">→</span></button>
+      <div class="cta-note">Opens a 60-second voice consult with the builder — pre-filled with your trade, so it picks up right where this left off.</div>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="protostamp">prototype · apple-premium</div>
+
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const PRICE='· live in ~5 days · from <b>$1,000 CAD</b>';
+
+const trades = {
+  plumber:{label:'Plumber',biz:'Hilltop Plumbing',emoji:'🔧',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Thanks for calling Hilltop Plumbing. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"My water heater burst. There's water all over the basement floor."},
+      {who:'ai',t:"That sounds urgent. If it's safe, shut off the water supply to the heater — or the main valve. I can hold a same-day emergency window, 2–4 PM. What's the service address and best callback number?"},
+      {who:'cust',t:"42 Maple Ave, 604-555-0148."},
+      {who:'ai',t:"Got it — 42 Maple Ave, 604-555-0148. Is water still actively leaking, or is it shut off now?"},
+      {who:'cust',t:"It's shut off now, but the basement is wet."},
+      {who:'ai',t:"Booked. I've marked this urgent, sent the job details to your plumber, and texted you a confirmation for today, 2–4 PM."}
+    ],
+    booked:"Emergency job booked · plumber notified · customer confirmed",
+    price:"Turn missed calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    notif:"New EMERGENCY — burst water heater, 42 Maple Ave. Booked today 2–4 PM. Callback: 604-555-0148.",
+    coach:[
+      {q:"Do you do drain cleaning?",a:"Yes — drain cleaning is a standard service. I can hold a same-day window. What's the address and a callback number?"},
+      {q:"How much for a faucet swap?",a:"A faucet swap is a flat-rate job — the plumber confirms the price on site before any work. Want me to book a visit?"},
+      {q:"Are you licensed and insured?",a:"Yes — fully licensed and insured, and every plumber is background-checked. Want me to get one booked?"}
+    ]},
+  electrician:{label:'Electrician',biz:'Northline Electric',emoji:'⚡',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Northline Electric, front desk. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"Half my house lost power and the panel is buzzing."},
+      {who:'ai',t:"A buzzing panel can be a fire risk — please keep clear of it and don't touch the breakers. I can get a licensed electrician out today, 1–3 PM. What's the address and best callback number?"},
+      {who:'cust',t:"88 Cedar Rd, 778-555-0190."},
+      {who:'ai',t:"Thanks — 88 Cedar Rd, 778-555-0190. Is the buzzing constant, or only when you flip a breaker?"},
+      {who:'cust',t:"It's constant."},
+      {who:'ai',t:"Booked. Flagged as a priority safety call, sent the details to your on-call electrician, and texted you a confirmation for today, 1–3 PM."}
+    ],
+    booked:"Priority job booked · electrician notified · customer confirmed",
+    price:"Turn after-hours calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    notif:"PRIORITY — buzzing panel, possible fire risk, 88 Cedar Rd. Booked today 1–3 PM. Callback: 778-555-0190.",
+    coach:[
+      {q:"Do you do panel upgrades?",a:"Yes, panel upgrades are one of our core jobs. I can book a licensed electrician to quote it — what day works?"},
+      {q:"Is this safe to wait on?",a:"A buzzing panel isn't safe to leave — keep clear and I'll prioritize a same-day visit. Address and callback number?"},
+      {q:"Do you give free quotes?",a:"Quotes on new work are free. I can book an electrician to come assess it — what day suits you?"}
+    ]},
+  hvac:{label:'HVAC',biz:'TrueAir Heating & Cooling',emoji:'🔥',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"TrueAir Heating & Cooling. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"My furnace died and it's freezing — we have a newborn at home."},
+      {who:'ai',t:"Let's get heat back fast. With an infant in the home I'll prioritize this. I can hold a same-day visit, 3–5 PM. What's the address and best callback number?"},
+      {who:'cust',t:"12 Birch Pl, 604-555-0177."},
+      {who:'ai',t:"Got it — 12 Birch Pl, 604-555-0177. Is the furnace completely off, or running but not heating?"},
+      {who:'cust',t:"Completely off."},
+      {who:'ai',t:"Booked. Marked urgent (infant in home), sent the job to your technician, and texted you a confirmation for today, 3–5 PM."}
+    ],
+    booked:"Emergency job booked · technician notified · customer confirmed",
+    price:"Turn no-heat calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    notif:"URGENT — no heat, infant in home, 12 Birch Pl. Booked today 3–5 PM. Callback: 604-555-0177.",
+    coach:[
+      {q:"Do you offer maintenance plans?",a:"We do — seasonal plans keep your system under warranty and catch issues early. Want me to add a callback to go over it?"},
+      {q:"Can you install AC too?",a:"Yes, we install and service AC. I can book a free in-home assessment — what day works?"},
+      {q:"How fast can someone come?",a:"For no-heat calls I prioritize same-day. I can hold a window today — address and callback number?"}
+    ]},
+  roofer:{label:'Roofer',biz:'Summit Roofing',emoji:'🏠',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Summit Roofing, front desk. Is this an emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"There's a leak coming through my ceiling after last night's storm."},
+      {who:'ai',t:"Let's limit the damage — place a bucket under the leak and move valuables clear. I can send an emergency tarp crew today, or book a full inspection tomorrow 9–11 AM. Which do you need?"},
+      {who:'cust',t:"Today please — 5 Oakhill Dr, 778-555-0122."},
+      {who:'ai',t:"Got it — 5 Oakhill Dr, 778-555-0122. Is the leak actively dripping right now?"},
+      {who:'cust',t:"Yes, still dripping."},
+      {who:'ai',t:"Booked. Dispatched an emergency tarp crew for today, sent the details to your roofer, and texted you a confirmation."}
+    ],
+    booked:"Emergency job booked · roofer notified · customer confirmed",
+    price:"Turn storm calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Triages urgent calls","Books jobs automatically"],
+    notif:"EMERGENCY — active roof leak, 5 Oakhill Dr. Tarp crew dispatched today. Callback: 778-555-0122.",
+    coach:[
+      {q:"Do you give free estimates?",a:"Yes — roof estimates are free. I can book an inspection this week. What's the address?"},
+      {q:"Can you tarp it today?",a:"Yes, I can dispatch an emergency tarp crew today to stop the damage. What's the address and callback number?"},
+      {q:"Do you handle gutters too?",a:"We do gutters and roofing both — I'll add it to the inspection. What's the address?"}
+    ]},
+  clinic:{label:'Clinic',biz:'Maple Dental',emoji:'🦷',
+    meta:'Emergency intake · booking · SMS confirmation',
+    opener:"Maple Dental, reception. Is this a dental emergency, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"I cracked a tooth and it's really painful — can I get in today?"},
+      {who:'ai',t:"I'm sorry, that sounds painful. We keep emergency slots open — I can offer 4:15 PM today. Can I get your name and a callback number?"},
+      {who:'cust',t:"Dana Lee, 604-555-0163."},
+      {who:'ai',t:"Thank you, Dana. Are you in severe pain or any swelling I should flag for the dentist?"},
+      {who:'cust',t:"Pain, no swelling."},
+      {who:'ai',t:"Booked. I've reserved the 4:15 PM emergency slot, flagged your pain level for the dentist, and texted you the confirmation and intake form."}
+    ],
+    booked:"Emergency visit booked · dentist notified · patient confirmed",
+    price:"Turn missed calls into booked patients — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Screens urgent cases","Books appointments automatically"],
+    notif:"EMERGENCY — cracked tooth, in pain. Dana Lee booked 4:15 PM today. Callback: 604-555-0163.",
+    coach:[
+      {q:"Do you take my insurance?",a:"We accept most major plans — reception confirms yours at check-in. Want me to book you in?"},
+      {q:"Are you taking new patients?",a:"Yes, we're accepting new patients. I can book your first visit — name and number to start?"},
+      {q:"How soon can I be seen?",a:"For pain we keep same-day emergency slots — I can offer one today. Can I get your name and number?"}
+    ]},
+  salon:{label:'Salon',biz:'Luxe Hair Studio',emoji:'✂️',
+    meta:'Bookings · scheduling · SMS reminders',
+    opener:"Luxe Hair Studio — thanks for calling! Are you booking an appointment, or is there something else I can help with?",
+    convo:[
+      {who:'cust',t:"Do you have anything for a cut and color this Saturday?"},
+      {who:'ai',t:"We do! Saturday I have 11 AM or 2:30 PM with a senior stylist. Which suits you, and can I get your name and number?"},
+      {who:'cust',t:"2:30 works — Priya, 778-555-0144."},
+      {who:'ai',t:"Perfect, Priya. Is this a full color or a root touch-up, so I can set aside the right amount of time?"},
+      {who:'cust',t:"Full color."},
+      {who:'ai',t:"Booked — cut & full color, Saturday 2:30 PM with a senior stylist. Added to the calendar and texted you a confirmation plus a reminder the day before."}
+    ],
+    booked:"Appointment booked · stylist scheduled · customer confirmed",
+    price:"Turn missed calls into booked chairs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books appointments automatically"],
+    notif:"New booking — Priya, cut & full color, Sat 2:30 PM with a senior stylist. Callback: 778-555-0144.",
+    coach:[
+      {q:"What does balayage cost?",a:"Balayage is priced by length and stylist — I can text you the range and book a consult. Best number?"},
+      {q:"Any openings today?",a:"Let me check — yes, there's a slot this afternoon. Want me to hold it? Name and number?"},
+      {q:"Do you do extensions?",a:"Yes, extensions are by consultation. I can book one this week — what day works?"}
+    ]},
+  contractor:{label:'Contractor',biz:'Cornerstone Renos',emoji:'🏗️',
+    meta:'Lead intake · estimates · SMS confirmation',
+    opener:"Cornerstone Renos, front desk. Are you looking for a quote, or following up on a project?",
+    convo:[
+      {who:'cust',t:"I want a quote on a basement reno — fairly big job."},
+      {who:'ai',t:"Happy to set that up. I can book a free on-site estimate this week — Thursday 10 AM or Friday 1 PM. Which works, and what's the address?"},
+      {who:'cust',t:"Friday 1 PM, 27 Lakeview Tce."},
+      {who:'ai',t:"Great — Friday 1 PM at 27 Lakeview Tce. Roughly what's the scope, so I send the right estimator — full basement with a bathroom, or mainly finishing?"},
+      {who:'cust',t:"Full basement with a bathroom."},
+      {who:'ai',t:"Booked. On-site estimate Friday 1 PM, assigned to a basement-and-bath estimator, details sent to the owner, and a confirmation texted to you."}
+    ],
+    booked:"Estimate booked · estimator assigned · customer confirmed",
+    price:"Turn quote calls into booked estimates — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books estimates automatically"],
+    notif:"New lead — basement + bath estimate, 27 Lakeview Tce, Fri 1 PM. Estimator assigned.",
+    coach:[
+      {q:"Is the estimate free?",a:"Yes — on-site estimates are free with no obligation. I can book one this week. What's the address?"},
+      {q:"How soon can you start?",a:"Start date is locked at the estimate once scope is set. Want me to book the free on-site visit?"},
+      {q:"Do you pull permits?",a:"We handle permits as part of the job. I'll note it for the estimate — what day works for a site visit?"}
+    ]},
+  other:{label:'Other →',biz:'Your Business',emoji:'📋',
+    meta:'Call answering · booking · SMS confirmation',
+    opener:"Thanks for calling — front desk here. Is this urgent, or are you booking a regular appointment?",
+    convo:[
+      {who:'cust',t:"I'd like to book your service and ask a couple of questions."},
+      {who:'ai',t:"Of course. I can check availability and hold a spot now. What day works best, and what's the best callback number?"},
+      {who:'cust',t:"Tomorrow afternoon, 604-555-0100."},
+      {who:'ai',t:"Got it — tomorrow afternoon, 604-555-0100. Anything specific I should note for the team before your visit?"},
+      {who:'cust',t:"Just a standard service call."},
+      {who:'ai',t:"Booked. Held a slot for tomorrow afternoon, sent the details to the owner, and texted you a confirmation."}
+    ],
+    booked:"Job booked · owner notified · customer confirmed",
+    price:"Turn missed calls into booked jobs — <b>AI Receptionist</b> "+PRICE,
+    chips:["Answers 24/7","Captures every lead","Books jobs automatically"],
+    notif:"New booking — service call, tomorrow afternoon. Callback: 604-555-0100.",
+    coach:[
+      {q:"What are your hours?",a:"Happy to help — and the AI answers 24/7, so after-hours calls are never missed. Want to book something?"},
+      {q:"Can I get a quote?",a:"Absolutely — I can set up a free quote. What's the job and the best day to come by?"},
+      {q:"Do you come to me?",a:"Yes, we come to you. What's the address and a good day for the visit?"}
+    ]}
+};
+
+const exampleCycle=['plumber','salon','clinic'];
+const convoEl=document.getElementById('convo');
+const chName=document.getElementById('chName');
+const chMeta=document.getElementById('chMeta');
+const exTag=document.getElementById('exTag');
+const bookedEl=document.getElementById('booked');
+const bookedText=document.getElementById('bookedText');
+const pricelineEl=document.getElementById('priceline');
+const payoffEl=document.getElementById('payoff');
+const coachEl=document.getElementById('coach');
+const coachLabel=document.getElementById('coachLabel');
+const notifsEl=document.getElementById('notifs');
+const lockDate=document.getElementById('lockDate');
+const toast=document.getElementById('toast');
+let activeKey=null,runToken=0,cycling=true,cycleIdx=0;
+
+/* ---- audio (synthesized iMessage-style pops) ---- */
+let actx=null,muted=false;
+function ensureAudio(){try{if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();}catch(e){}}
+function blip(freq,dur,type,when,vol){if(!actx||muted)return;const o=actx.createOscillator(),g=actx.createGain();o.type=type||'sine';o.frequency.value=freq;const t=actx.currentTime+(when||0);o.connect(g);g.connect(actx.destination);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol||.16,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+(dur||.12));o.start(t);o.stop(t+(dur||.12)+.03);}
+function popSent(){blip(840,.085,'triangle',0,.10);}
+function popRecv(){blip(560,.09,'sine',0,.12);blip(880,.11,'sine',.06,.12);}
+function dingNotif(){blip(680,.10,'sine',0,.15);blip(1020,.16,'sine',.08,.15);}
+document.getElementById('sound').addEventListener('click',e=>{muted=!muted;e.currentTarget.textContent=muted?'🔇':'🔊';if(!muted)ensureAudio();});
+
+function bizName(key){const typed=document.getElementById('biz').value.trim();return (typed||trades[key].biz);}
+function clearStage(){convoEl.innerHTML='';bookedEl.classList.remove('show');notifsEl.innerHTML='';}
+
+function addMsg(m){const d=document.createElement('div');d.className='msg '+(m.who==='cust'?'cust':'ai');d.innerHTML='<span class="who">'+(m.who==='cust'?'Customer':'AI receptionist')+'</span>'+m.t;convoEl.appendChild(d);convoEl.scrollTop=convoEl.scrollHeight;}
+function addTyping(){const d=document.createElement('div');d.className='typing';d.id='typing';d.innerHTML='<span></span><span></span><span></span>';convoEl.appendChild(d);convoEl.scrollTop=convoEl.scrollHeight;return d;}
+function rmTyping(){const t=document.getElementById('typing');if(t)t.remove();}
+async function wait(ms){return new Promise(r=>setTimeout(r,reduce?Math.min(ms,40):ms));}
+
+function applyChrome(key,isExample){
+  const tr=trades[key];
+  chName.textContent=(isExample?tr.biz:bizName(key))+' — AI receptionist';
+  const city=document.getElementById('city').value.trim()||'Surrey';
+  chMeta.textContent=(isExample?'Example':tr.label+' · '+city)+' · '+tr.meta;
+  exTag.style.display=isExample?'inline-block':'none';
+  lockDate.textContent=(isExample?tr.biz:bizName(key))+" · owner's phone";
+  bookedText.textContent=tr.booked;
+  pricelineEl.innerHTML=tr.price;
+  payoffEl.innerHTML=tr.chips.map(c=>'<span class="spec"><b>✓</b> '+c+'</span>').join('');
+}
+
+function pushNotif(emoji,title,text,sound){
+  const d=document.createElement('div');d.className='notif';
+  d.innerHTML='<div class="ic">'+emoji+'</div><div class="nb"><div class="nhead"><span>Messages</span><span>now</span></div><div class="ntitle">'+title+'</div><div class="ntext">'+text+'</div></div>';
+  notifsEl.appendChild(d);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));
+  if(sound)dingNotif();
+}
+
+async function playConvo(key,isExample){
+  const token=++runToken;clearStage();
+  const tr=trades[key];applyChrome(key,isExample);
+  addMsg({who:'ai',t:tr.opener}); if(!isExample)popRecv();
+  await wait(760); if(token!==runToken)return;
+  for(const m of tr.convo){
+    if(m.who==='ai'){const t=addTyping();await wait(900);if(token!==runToken){rmTyping();return}rmTyping();addMsg(m);if(!isExample)popRecv();}
+    else{await wait(620);if(token!==runToken)return;addMsg(m);if(!isExample)popSent();}
+    await wait(240);if(token!==runToken)return;
+  }
+  await wait(300);if(token!==runToken)return;
+  bookedEl.classList.add('show');
+  await wait(520);if(token!==runToken)return;
+  pushNotif(tr.emoji,(isExample?tr.biz:bizName(key)),tr.notif,!isExample);
+  await wait(900);if(token!==runToken)return;
+  pushNotif('💬','Customer','Replied: “Confirmed — thank you! ✅”',!isExample);
+}
+
+async function runExampleCycle(){
+  while(cycling){const key=exampleCycle[cycleIdx%exampleCycle.length];await playConvo(key,true);if(!cycling)return;await wait(3200);cycleIdx++;}
+}
+
+function selectTrade(key){
+  ensureAudio();cycling=false;activeKey=key;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.key===key));
+  coachLabel.style.display='block';coachEl.innerHTML='';
+  trades[key].coach.forEach(c=>{const b=document.createElement('button');b.className='cc';b.textContent=c.q;b.onclick=()=>pushCustomerLine(c.q,c.a);coachEl.appendChild(b);});
+  playConvo(key,false);
+}
+async function pushCustomerLine(q,a){if(!activeKey)return;await wait(120);addMsg({who:'cust',t:q});popSent();const t=addTyping();await wait(950);rmTyping();addMsg({who:'ai',t:a});popRecv();}
+
+const chipsEl=document.getElementById('chips');
+Object.keys(trades).forEach(key=>{const b=document.createElement('button');b.className='chip';b.dataset.key=key;b.textContent=trades[key].label;b.onclick=()=>selectTrade(key);chipsEl.appendChild(b);});
+document.getElementById('biz').addEventListener('input',()=>{if(activeKey){chName.textContent=bizName(activeKey)+' — AI receptionist';lockDate.textContent=bizName(activeKey)+" · owner's phone";}});
+document.getElementById('cta').addEventListener('click',()=>{const biz=document.getElementById('biz').value.trim();const label=activeKey?trades[activeKey].label:'your trade';toast.textContent='→ /start?trade='+(activeKey||'')+(biz?'&business='+encodeURIComponent(biz):'')+'  — voice consult opens pre-filled for '+label;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3600);});
+
+runExampleCycle();
+</script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aibuiltbyhand — Chaos → Order (Concept 01)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,640&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-cold:#F1F0ED; --bg-ink:#131311;
+  --ink:#1A1917; --paper:#F2F0EA;
+  --muted:#71706A; --muted-dark:#8B8A82;
+  --pain:#E5484D; --ok:#8A897F;
+  --font-display:"Fraunces",serif;
+  --font-body:"Archivo",sans-serif;
+  --font-mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--bg-cold);color:var(--ink);font-family:var(--font-body);overflow-x:hidden}
+
+/* ---------- grain ---------- */
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:22px 4vw;transition:color .5s ease}
+.wordmark{font-family:var(--font-mono);font-size:.85rem;letter-spacing:.02em;color:inherit;text-decoration:none}
+.nav-chip{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid currentColor;border-radius:999px;padding:5px 12px;opacity:.55}
+body{color:var(--ink)}
+body.dark-mode nav{color:var(--paper)}
+
+/* ---------- scroll track / stage ---------- */
+.track{height:760vh;position:relative}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden}
+.stage-dark{position:absolute;inset:0;background:var(--bg-ink);opacity:0;pointer-events:none;z-index:2}
+.fog{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+   radial-gradient(ellipse 90% 70% at 18% 0%, rgba(255,255,255,.55) 0%, transparent 60%),
+   radial-gradient(ellipse 70% 60% at 85% 100%, rgba(0,0,0,.05) 0%, transparent 65%);}
+
+/* ---------- props ---------- */
+.prop{position:absolute;left:0;top:0;z-index:5;will-change:transform;pointer-events:none}
+.prop .ph{position:relative;width:100%;aspect-ratio:1/1}
+.prop img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* inlay tile — the photo sits flush, set INTO the surface */
+.card{position:absolute;inset:0;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(26,25,23,.10);
+  box-shadow:inset 0 2px 10px rgba(26,25,23,.16),inset 0 -1px 0 rgba(255,255,255,.45),0 10px 30px rgba(26,25,23,.10)}
+.card img.grey{filter:grayscale(1) contrast(.95) brightness(1.03);will-change:opacity}
+/* the hand is an actor, not an embedded object — keep its soft iris */
+#p-hand img{
+  -webkit-mask-image:radial-gradient(ellipse 62% 62% at 50% 50%, #000 52%, transparent 76%);
+          mask-image:radial-gradient(ellipse 62% 62% at 50% 50%, #000 52%, transparent 76%);
+  mix-blend-mode:normal;-webkit-mask-composite:initial;mask-composite:initial}
+.badge{position:absolute;top:6%;left:58%;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.05em;color:var(--ink);
+  background:rgba(255,255,255,.82);border:1px solid rgba(26,25,23,.16);border-radius:999px;padding:6px 12px;
+  box-shadow:0 2px 10px rgba(26,25,23,.10);will-change:opacity}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--pain);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.45);opacity:.55}}
+
+/* recessed shelf plates under sorted groups */
+.pool{position:absolute;z-index:3;width:26vw;height:33vh;border-radius:22px;opacity:0;will-change:opacity;pointer-events:none;
+  background:#191916;border:1px solid rgba(244,242,236,.07);
+  box-shadow:inset 0 1px 0 rgba(244,242,236,.05),inset 0 14px 40px rgba(0,0,0,.5)}
+.pool-label{position:absolute;z-index:6;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted-dark);text-align:center;opacity:0;will-change:opacity,transform}
+.pool-label b{display:block;color:var(--paper);font-weight:500;margin-bottom:5px}
+.pool-label .tick{color:var(--ok);margin-right:6px}
+
+/* ---------- acts (text) ---------- */
+.act{position:absolute;z-index:10;will-change:transform,opacity}
+.kicker{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.act h1,.act .h1{font-family:var(--font-display);font-weight:500;letter-spacing:-0.03em;line-height:.98;
+  font-size:clamp(2.6rem,5.6vw,5.2rem);color:var(--ink)}
+.act .sub{margin-top:26px;max-width:34ch;font-size:clamp(.95rem,1.15vw,1.12rem);line-height:1.65;color:var(--muted)}
+.act-1{left:6vw;top:16vh;max-width:46vw}
+.act-2{left:6vw;top:18vh;max-width:40vw;opacity:0}
+.act-2 .h1{font-size:clamp(2.2rem,4.4vw,4rem)}
+.act-3{left:6vw;top:12vh;opacity:0}
+.act-3 .h1{color:var(--paper);font-size:clamp(3.4rem,8vw,7.5rem);font-weight:640}
+.act-cta{left:6vw;top:33vh;max-width:44vw;opacity:0}
+.act-cta .line{font-family:var(--font-display);font-weight:500;letter-spacing:-0.02em;line-height:1.15;
+  font-size:clamp(1.3rem,2vw,1.8rem);color:var(--paper);max-width:26ch}
+.cta-row{display:flex;align-items:center;gap:26px;margin-top:34px;position:relative}
+.cta-btn{position:relative;font-family:var(--font-body);font-weight:500;font-size:1rem;color:var(--bg-ink);
+  background:var(--paper);border:none;border-radius:999px;padding:16px 30px;cursor:pointer;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(242,240,234,.18)}
+.cta-btn:focus-visible{outline:2px solid var(--paper);outline-offset:4px}
+.cta-alt{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.04em;color:var(--muted-dark);text-decoration:none;border-bottom:1px solid rgba(139,138,130,.4);padding-bottom:2px}
+.cta-alt:hover{color:var(--paper)}
+.mini-hand{position:absolute;width:120px;left:150px;top:-74px;pointer-events:none;opacity:0;
+  transform:translate(34px,-26px) rotate(14deg);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s ease;
+  -webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%, #000 45%, transparent 72%);
+          mask-image:radial-gradient(ellipse 60% 60% at 50% 50%, #000 45%, transparent 72%);}
+.cta-row:hover .mini-hand{opacity:1;transform:translate(0,0) rotate(3deg)}
+.cta-btn:active ~ .mini-hand{transform:translate(-4px,8px) rotate(0deg)}
+
+/* scroll hint */
+.hint{position:absolute;z-index:10;left:6vw;bottom:6vh;display:flex;align-items:center;gap:12px;
+  font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hint .bar{width:46px;height:1px;background:var(--muted);position:relative;overflow:hidden}
+.hint .bar::after{content:'';position:absolute;inset:0;background:var(--ink);transform:translateX(-100%);animation:slide 2.2s ease-in-out infinite}
+@keyframes slide{0%{transform:translateX(-100%)}55%{transform:translateX(100%)}100%{transform:translateX(100%)}}
+
+/* footer strip */
+footer{background:var(--bg-ink);color:var(--muted-dark);font-family:var(--font-mono);font-size:.66rem;
+  letter-spacing:.1em;text-transform:uppercase;padding:26px 4vw;display:flex;justify-content:space-between}
+
+@media (max-width:720px){
+  .act-1,.act-2{max-width:88vw}
+  .act-cta{max-width:88vw}
+  .badge{font-size:.56rem;padding:4px 9px}
+}
+@media (prefers-reduced-motion: reduce){
+  .badge i,.hint .bar::after{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<nav>
+  <a class="wordmark" href="#">aibuiltbyhand</a>
+  <span class="nav-chip">Concept 01 — chaos → order</span>
+</nav>
+
+<div class="track" id="track">
+  <div class="stage" id="stage">
+    <div class="fog" aria-hidden="true"></div>
+    <div class="stage-dark" id="stageDark" aria-hidden="true"></div>
+
+    <!-- light pools (sorted shelf) -->
+    <div class="pool" id="pool1" style="left:5vw;top:46vh"></div>
+    <div class="pool" id="pool2" style="left:33vw;top:46vh"></div>
+    <div class="pool" id="pool3" style="left:63vw;top:46vh"></div>
+    <div class="pool-label" id="label1" style="left:8vw;top:84vh;width:20vw"><b>Calls</b><span class="tick">✓</span>answered 24/7</div>
+    <div class="pool-label" id="label2" style="left:37vw;top:84vh;width:20vw"><b>Paperwork</b><span class="tick">✓</span>chased to paid</div>
+    <div class="pool-label" id="label3" style="left:66vw;top:84vh;width:20vw"><b>Proof</b><span class="tick">✓</span>five stars, on repeat</div>
+
+    <!-- props -->
+    <div class="prop" id="p-sticky"><div class="ph">
+      <div class="card"><img src="assets/sticky-note.png" alt=""><img class="grey" src="assets/sticky-note.png" alt=""></div>
+      <span class="badge"><i></i>5 to-dos, no owner</span></div></div>
+    <div class="prop" id="p-phone1"><div class="ph">
+      <div class="card"><img src="assets/phone-missed.png" alt=""><img class="grey" src="assets/phone-missed.png" alt=""></div>
+      <span class="badge"><i></i>3 missed calls</span></div></div>
+    <div class="prop" id="p-phone2"><div class="ph">
+      <div class="card"><img src="assets/phone-notifs.png" alt=""><img class="grey" src="assets/phone-notifs.png" alt=""></div>
+      <span class="badge"><i></i>12 unread</span></div></div>
+    <div class="prop" id="p-crumpled"><div class="ph">
+      <div class="card"><img src="assets/invoice-crumpled.png" alt=""><img class="grey" src="assets/invoice-crumpled.png" alt=""></div>
+      <span class="badge"><i></i>43 days overdue</span></div></div>
+    <div class="prop" id="p-receipt"><div class="ph">
+      <div class="card"><img src="assets/receipt.png" alt=""><img class="grey" src="assets/receipt.png" alt=""></div>
+      <span class="badge" style="left:auto;right:55%"><i></i>not reconciled</span></div></div>
+    <div class="prop" id="p-clean"><div class="ph">
+      <div class="card"><img src="assets/invoice-clean.png" alt=""></div></div></div>
+    <div class="prop" id="p-review"><div class="ph">
+      <div class="card"><img src="assets/review-card.png" alt=""></div></div></div>
+    <div class="prop" id="p-hand"><div class="ph">
+      <img src="assets/hand-tap.png" alt=""></div></div>
+
+    <!-- acts -->
+    <div class="act act-1" id="act1">
+      <div class="kicker">aibuiltbyhand — AI systems, installed by a person</div>
+      <h1>Your week,<br>currently.</h1>
+      <p class="sub">Three missed calls. An invoice 43 days overdue. Twelve unread messages. All of it yours to remember — none of it moving.</p>
+    </div>
+
+    <div class="act act-2" id="act2">
+      <div class="kicker">The fix</div>
+      <div class="h1">Then a hand<br>shows up.</div>
+      <p class="sub">An AI system built for your exact mess — answering, chasing, sorting. Installed by a person, not a platform.</p>
+    </div>
+
+    <div class="act act-3" id="act3">
+      <div class="h1">Handled.</div>
+    </div>
+
+    <div class="act act-cta" id="actCta">
+      <p class="line">Your mess is a spec sheet to us.<br>Bring it.</p>
+      <div class="cta-row">
+        <button class="cta-btn">Show me my version</button>
+        <a class="cta-alt" href="#">or browse what's already built →</a>
+        <img class="mini-hand" src="assets/hand-tap.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+
+    <div class="hint" id="hint"><span class="bar"></span>scroll</div>
+  </div>
+</div>
+
+<footer>
+  <span>aibuiltbyhand.com</span>
+  <span>prototype — not live</span>
+</footer>
+
+<script>
+(() => {
+const lerp=(a,b,t)=>a+(b-a)*t;
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+const easeIO=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeO=t=>1-Math.pow(1-t,4);
+
+// keyframe track: keys = [{p, v:{...}}]; returns interpolated object at p
+function at(keys,p,ease=easeIO){
+  if(p<=keys[0].p) return {...keys[0].v};
+  if(p>=keys[keys.length-1].p) return {...keys[keys.length-1].v};
+  let i=0; while(keys[i+1].p<p) i++;
+  const a=keys[i], b=keys[i+1], t=ease((p-a.p)/(b.p-a.p)), out={};
+  for(const k in a.v) out[k]=lerp(a.v[k], b.v[k], t);
+  return out;
+}
+
+/*
+ v fields: x,y (vw/vh, element center), w (vw width), r (deg), o (opacity),
+           g (grey-layer opacity), b (badge opacity), c (card/embedded-shelf state)
+ desktop poses; mobile gets a width multiplier
+*/
+const P=(x,y,w,r,o,g,b,c)=>({x,y,w,r,o,g,b,c:c||0});
+const props=[
+ {id:'p-sticky', depth:.9, bob:1.1, keys:[
+   {p:0.00, v:P(20,66,15,-14,1,1,1,0)},
+   {p:0.38, v:P(20,66,15,-14,1,1,1,0)},
+   {p:0.40, v:P(20,66,15,-14,1,1,0,0)},
+   {p:0.50, v:P(40,68, 9, -4,1,0,0,1)},
+   {p:1.00, v:P(40,68, 9, -4,1,0,0,1)}]},
+ {id:'p-phone1', depth:.6, bob:.8, keys:[
+   {p:0.00, v:P(64,32,14, 10,1,1,1,0)},
+   {p:0.28, v:P(64,32,14, 10,1,1,1,0)},
+   {p:0.30, v:P(64,32,14, 10,1,1,0,0)},
+   {p:0.40, v:P(13,62,11, -2,1,0,0,1)},
+   {p:1.00, v:P(13,62,11, -2,1,0,0,1)}]},
+ {id:'p-phone2', depth:.75, bob:1.3, keys:[
+   {p:0.00, v:P(83,64,14, -7,1,1,1,0)},
+   {p:0.33, v:P(83,64,14, -7,1,1,1,0)},
+   {p:0.35, v:P(83,64,14, -7,1,1,0,0)},
+   {p:0.45, v:P(23,66,11,  3,1,0,0,1)},
+   {p:1.00, v:P(23,66,11,  3,1,0,0,1)}]},
+ {id:'p-receipt', depth:.5, bob:.9, keys:[
+   {p:0.00, v:P(84,20,12, 18,1,1,1,0)},
+   {p:0.43, v:P(84,20,12, 18,1,1,1,0)},
+   {p:0.45, v:P(84,20,12, 18,1,1,0,0)},
+   {p:0.55, v:P(53,66, 9,  2,1,0,0,1)},
+   {p:1.00, v:P(53,66, 9,  2,1,0,0,1)}]},
+ // crumpled invoice: chaos → hand zone → vanish (swapped)
+ {id:'p-crumpled', depth:.65, bob:1, keys:[
+   {p:0.00, v:P(48,76,17,  6,1,1,1,0)},
+   {p:0.34, v:P(48,76,17,  6,1,1,1,0)},
+   {p:0.36, v:P(48,76,17,  6,1,1,0,0)},
+   {p:0.44, v:P(55,51,13,  2,1,.5,0,0)},
+   {p:0.50, v:P(55,51,12,  0,0,0,0,0)},
+   {p:1.00, v:P(55,51,12,  0,0,0,0,0)}]},
+ // clean invoice: appears in hand zone → slot (always the crisp card)
+ {id:'p-clean', depth:.65, bob:0, keys:[
+   {p:0.00, v:P(55,51,11,  0,0,0,0,1)},
+   {p:0.44, v:P(55,51,11,  0,0,0,0,1)},
+   {p:0.50, v:P(55,51,13,  0,1,0,0,1)},
+   {p:0.62, v:P(45,60,12, -2,1,0,0,1)},
+   {p:1.00, v:P(45,60,12, -2,1,0,0,1)}]},
+ // review card: rises at the end into shelf 3 (always card)
+ {id:'p-review', depth:.7, bob:0, keys:[
+   {p:0.00, v:P(78,118,14,4,0,0,0,1)},
+   {p:0.60, v:P(78,118,14,4,1,0,0,1)},
+   {p:0.72, v:P(76, 62,14,0,1,0,0,1)},
+   {p:1.00, v:P(76, 62,14,0,1,0,0,1)}]},
+ // the hand
+ {id:'p-hand', depth:.3, bob:.5, keys:[
+   {p:0.00, v:P(118,30,30,0,1,.6,0,0)},
+   {p:0.16, v:P(118,30,30,0,1,.6,0,0)},
+   {p:0.26, v:P( 80,28,30,0,1,0,0,0)},
+   {p:0.40, v:P( 62,36,28,0,1,0,0,0)},
+   {p:0.44, v:P( 59,41,28,0,1,0,0,0)},
+   {p:0.48, v:P( 61,37,28,0,1,0,0,0)},
+   {p:0.58, v:P( 82,26,26,0,1,0,0,0)},
+   {p:0.68, v:P(118,22,26,0,0,0,0,0)},
+   {p:1.00, v:P(118,22,26,0,0,0,0,0)}]}
+];
+
+// text/overlay tracks: [el, keys of {o, y(offset vh)}]
+const acts=[
+ ['act1',[{p:0,v:{o:1,y:0}},{p:.10,v:{o:1,y:0}},{p:.18,v:{o:0,y:-6}}]],
+ ['act2',[{p:0,v:{o:0,y:5}},{p:.20,v:{o:0,y:5}},{p:.26,v:{o:1,y:0}},{p:.46,v:{o:1,y:0}},{p:.54,v:{o:0,y:-5}}]],
+ ['act3',[{p:0,v:{o:0,y:6}},{p:.66,v:{o:0,y:6}},{p:.74,v:{o:1,y:0}}]],
+ ['actCta',[{p:0,v:{o:0,y:6}},{p:.78,v:{o:0,y:6}},{p:.86,v:{o:1,y:0}}]],
+ ['hint',[{p:0,v:{o:1,y:0}},{p:.06,v:{o:1,y:0}},{p:.12,v:{o:0,y:0}}]]
+];
+const pools=[
+ ['pool1',.52,.62],['pool2',.56,.66],['pool3',.64,.72],
+ ['label1',.58,.66],['label2',.63,.71],['label3',.70,.78]
+];
+
+const els={};
+[...props.map(p=>p.id),...acts.map(a=>a[0]),...pools.map(p=>p[0]),'stageDark'].forEach(id=>els[id]=document.getElementById(id));
+props.forEach(p=>{
+  const root=els[p.id];
+  p.grey=root.querySelector('img.grey');
+  p.badge=root.querySelector('.badge');
+  p.phase=Math.random()*Math.PI*2;
+});
+
+const track=document.getElementById('track');
+let vw=innerWidth, vh=innerHeight, mob=vw<720;
+addEventListener('resize',()=>{vw=innerWidth;vh=innerHeight;mob=vw<720;});
+
+// mouse parallax
+let mx=0,my=0,tmx=0,tmy=0;
+addEventListener('pointermove',e=>{tmx=(e.clientX/vw-.5);tmy=(e.clientY/vh-.5);});
+
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let progress=0;
+
+function render(p,t){
+  mx=lerp(mx,tmx,.06); my=lerp(my,tmy,.06);
+  const par=(1-clamp(p*1.6,0,1));           // parallax dies as things sort
+  for(const pr of props){
+    const v=at(pr.keys,p);
+    const wMul=mob?1.9:1;
+    const wpx=v.w*wMul/100*vw;
+    const bob=pr.bob*Math.sin(t*.0011+pr.phase)*6*par;
+    const px=v.x/100*vw - wpx/2 + mx*26*pr.depth*par;
+    const py=v.y/100*vh - wpx/2 + bob + my*18*pr.depth*par;
+    els[pr.id].style.transform=`translate3d(${px}px,${py}px,0) rotate(${v.r}deg)`;
+    els[pr.id].style.width=wpx+'px';
+    els[pr.id].style.opacity=v.o;
+    if(pr.grey) pr.grey.style.opacity=v.g;
+    if(pr.badge) pr.badge.style.opacity=v.b;
+  }
+  for(const [id,keys] of acts){
+    const v=at(keys,p,easeO);
+    els[id].style.opacity=v.o;
+    els[id].style.transform=`translate3d(0,${v.y}vh,0)`;
+  }
+  for(const [id,a,b] of pools){
+    const o=clamp((p-a)/(b-a),0,1);
+    els[id].style.opacity=id.startsWith('label')?o:o;
+    if(id.startsWith('label')) els[id].style.transform=`translate3d(0,${(1-o)*3}vh,0)`;
+  }
+  // dark grade
+  const dk=clamp((p-.52)/.20,0,1);
+  els.stageDark.style.opacity=dk;
+  document.body.classList.toggle('dark-mode',dk>.5);
+}
+
+if(reduced){
+  render(0.9,0);
+  document.getElementById('act1').style.opacity=0;
+}else{
+  let raf;
+  const loop=(t)=>{
+    const max=track.offsetHeight-vh;
+    progress=clamp(scrollY/max,0,1);
+    render(progress,t);
+    raf=requestAnimationFrame(loop);
+  };
+  raf=requestAnimationFrame(loop);
+}
+})();
+</script>
+</body>
+</html>

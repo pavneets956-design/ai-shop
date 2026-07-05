@@ -24,7 +24,7 @@ export default function Navbar() {
           >
             <LogoMark className="h-8 w-8 transition-transform duration-300 group-hover:scale-105" />
             <span className="font-display text-lg font-semibold tracking-tight text-ink">
-              Handbuilt
+              Handbuilt&nbsp;AI
             </span>
           </Link>
 

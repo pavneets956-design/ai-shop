@@ -51,6 +51,21 @@
     color: #191716;
   }
 
+  /* Brand ambient glow — soft red radial behind every page (matches the
+     homepage's Molten Forge glow). Fixed to the viewport and painted at -z-1:
+     it sits above the cream body background but behind all page content, so
+     pages with their own opaque backgrounds (e.g. the homepage) cover it while
+     the cream Blueprint pages get a subtle warm bloom top and bottom. */
+  .site-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 78% 48% at 50% -6%, rgba(255, 69, 58, 0.1), transparent 60%),
+      radial-gradient(ellipse 68% 42% at 50% 106%, rgba(255, 69, 58, 0.07), transparent 62%);
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
