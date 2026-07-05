@@ -43,11 +43,10 @@ const nextConfig = {
     return [
       // Legacy cinematic showpieces retired in favour of the Molten Forge site.
       // Point straight at the on-brand equivalents (no redirect chains).
-      // Temporary (307) while on the branch so it's cleanly reversible; promote
-      // to permanent once the retirement is confirmed on prod.
+      // Permanent (308) — retirement confirmed for production.
       { source: '/quiet-hours', destination: '/ai-receptionist', permanent: true },
-      { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: false },
-      { source: '/forge', destination: '/', permanent: false },
+      { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: true },
+      { source: '/forge', destination: '/', permanent: true },
     ];
   },
   async headers() {
