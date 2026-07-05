@@ -10,55 +10,57 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // "Handbuilt" palette — WARM PREMIUM: cream paper, black ink, a single
-        // orange action color (no blue SaaS, no neon AI). Token NAMES kept so all
+        // "Handbuilt AI" palette — MOLTEN FORGE: cool near-white paper, near-black
+        // ink, a single RED action color (red gradient CTA). Token NAMES kept so all
         // existing classes inherit the new palette automatically.
         paper: {
-          DEFAULT: "#FAF7F2", // base background (warm cream)
-          2: "#FFF8EF", // soft warm surface (alternating sections / soft fills)
+          DEFAULT: "#FBFBFD", // base background (cool near-white)
+          2: "#F5F5F7", // soft cool surface (alternating sections / soft fills)
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#191716", // near-black warm text + PRIMARY buttons
-          hover: "#2A2623", // primary button hover
-          soft: "#6F6862", // muted warm gray
+          DEFAULT: "#1D1D1F", // near-black text
+          hover: "#2A2A2E", // ink-surface hover
+          soft: "#6E6E73", // muted cool gray
         },
-        // "clay" token name kept (used site-wide) — now holds the PRIMARY ORANGE.
+        // "clay" token name kept (used site-wide) — now holds the PRIMARY RED.
         clay: {
-          DEFAULT: "#E88A00", // primary orange (CTA, active, one hero highlight)
-          dark: "#C96F00", // primary hover
-          soft: "#FFF1DC", // soft orange fill
+          DEFAULT: "#E0362C", // primary red (CTA, active, one hero highlight)
+          dark: "#B8221A", // primary hover
+          soft: "#FFE9E7", // soft red fill
         },
-        // Amber — same orange ramp, reserved for CTAs (the single "spark").
+        // Amber — same red ramp, reserved for CTAs (the single "spark").
         amber: {
-          DEFAULT: "#E88A00",
-          dark: "#C96F00",
-          soft: "#FFF1DC",
+          DEFAULT: "#E0362C",
+          dark: "#B8221A",
+          soft: "#FFE9E7",
         },
-        // Warm muted text + borders + semantic accents (used sparingly per the system).
-        muted: { DEFAULT: "#6F6862", light: "#9B928A" },
-        line: { DEFAULT: "#E8DED3", strong: "#D7C6B5" },
+        // Cool muted text + borders + semantic accents (used sparingly per the system).
+        muted: { DEFAULT: "#6E6E73", light: "#A1A1A6" },
+        line: { DEFAULT: "#D2D2D7", strong: "#C7C7CC" },
         success: "#2F6B4F", // only for "captured / complete"
         danger: "#B42318", // only for urgent jobs
-        // Legacy tokens remapped to the warm palette so any unswept refs stay coherent.
-        obsidian: { DEFAULT: "#FAF7F2", 50: "#FFF8EF", 100: "#FFF8EF", 200: "#E8DED3" },
-        electric: "#E88A00",
-        violet: { glow: "#E88A00" },
-        cyan: { glow: "#F3C482" },
-        gold: { soft: "#F3C482" },
+        // Legacy tokens remapped to the cool/red palette so any unswept refs stay coherent.
+        obsidian: { DEFAULT: "#FBFBFD", 50: "#F5F5F7", 100: "#F5F5F7", 200: "#D2D2D7" },
+        electric: "#E0362C",
+        violet: { glow: "#E0362C" },
+        cyan: { glow: "#FF6961" },
+        gold: { soft: "#FF6961" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Archivo", "system-ui", "sans-serif"],
+        // Display face flipped to Quicksand (Molten Forge). Body stays Inter,
+        // mono stays Plex/JetBrains — rounded Quicksand is headings-only.
+        display: ["var(--font-quicksand)", "Quicksand", "ui-rounded", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       // Design-system type scale (Doc 2). Apply with text-hero / text-section / etc.
-      // Archivo ships 500/600/700/800, so 750-spec titles use 700.
+      // Quicksand tops out at 700, so hero titles use 700 (its boldest weight).
       fontSize: {
-        hero: ["64px", { lineHeight: "0.95", fontWeight: "800", letterSpacing: "-0.02em" }],
-        "hero-lg": ["56px", { lineHeight: "0.96", fontWeight: "800", letterSpacing: "-0.02em" }],
-        "hero-md": ["46px", { lineHeight: "0.98", fontWeight: "800", letterSpacing: "-0.02em" }],
-        "hero-sm": ["38px", { lineHeight: "1.0", fontWeight: "800", letterSpacing: "-0.015em" }],
+        hero: ["64px", { lineHeight: "0.95", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "hero-lg": ["56px", { lineHeight: "0.96", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "hero-md": ["46px", { lineHeight: "0.98", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "hero-sm": ["38px", { lineHeight: "1.0", fontWeight: "700", letterSpacing: "-0.015em" }],
         section: ["42px", { lineHeight: "1.05", fontWeight: "700", letterSpacing: "-0.02em" }],
         "section-sm": ["32px", { lineHeight: "1.08", fontWeight: "700", letterSpacing: "-0.015em" }],
         "card-title": ["22px", { lineHeight: "1.15", fontWeight: "700", letterSpacing: "-0.01em" }],
@@ -146,15 +148,15 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        // Premium near-black gradient (was orange). Every badge/number/icon-tile
-        // using bg-brand-gradient now reads as black ink, not orange.
-        "brand-gradient": "linear-gradient(135deg, #2A2623 0%, #191716 100%)",
+        // Premium near-black gradient. Every badge/number/icon-tile using
+        // bg-brand-gradient reads as ink (NOT red) — red is reserved for CTAs.
+        "brand-gradient": "linear-gradient(135deg, #2A2A2E 0%, #1D1D1F 100%)",
       },
       boxShadow: {
         // Warm-premium shadow scale (design system): no harsh black, no random sizes.
-        card: "0 20px 60px rgba(25,23,22,0.07)", // soft card
-        glow: "0 12px 24px rgba(232,138,0,0.22)", // primary-button orange glow
-        phone: "0 30px 90px rgba(25,23,22,0.18)", // demo phone
+        card: "0 20px 60px rgba(29,29,31,0.07)", // soft card
+        glow: "0 12px 24px rgba(255,69,58,0.28)", // primary-button red glow
+        phone: "0 30px 90px rgba(29,29,31,0.18)", // demo phone
         "glow-violet": "0 16px 40px -20px rgba(25,23,22,0.18)",
         "glow-cyan": "0 16px 40px -20px rgba(25,23,22,0.16)",
       },

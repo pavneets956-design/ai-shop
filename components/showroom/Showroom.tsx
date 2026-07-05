@@ -461,8 +461,8 @@ function OutcomePanel(props: {
                 {v ? (
                   <motion.span
                     key={v}
-                    initial={{ backgroundColor: "rgba(232,138,0,0.16)" }}
-                    animate={{ backgroundColor: "rgba(232,138,0,0)" }}
+                    initial={{ backgroundColor: "rgba(224,54,44,0.16)" }}
+                    animate={{ backgroundColor: "rgba(224,54,44,0)" }}
                     transition={{ duration: 1.1 }}
                     className="rounded px-1 text-ink"
                   >
@@ -515,8 +515,8 @@ function OutcomePanel(props: {
                 className="flex items-center gap-2.5 rounded-card-sm border border-line bg-paper-2 px-3 py-2 text-[12px] text-ink"
               >
                 <motion.span
-                  initial={{ backgroundColor: "#E88A00" }}
-                  animate={{ backgroundColor: "#191716" }}
+                  initial={{ backgroundColor: "#E0362C" }}
+                  animate={{ backgroundColor: "#1D1D1F" }}
                   transition={{ duration: 1.2 }}
                   className="h-1.5 w-1.5 flex-none rounded-full"
                 />

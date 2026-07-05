@@ -41,8 +41,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // The old noindexed showpiece slug — replaced by the indexable film route.
-      { source: '/quiet-hours', destination: '/ai-front-desk', permanent: true },
+      // Legacy cinematic showpieces retired in favour of the Molten Forge site.
+      // Point straight at the on-brand equivalents (no redirect chains).
+      // Permanent (308) — retirement confirmed for production.
+      { source: '/quiet-hours', destination: '/ai-receptionist', permanent: true },
+      { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: true },
+      { source: '/forge', destination: '/', permanent: true },
     ];
   },
   async headers() {

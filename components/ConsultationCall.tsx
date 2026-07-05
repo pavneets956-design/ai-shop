@@ -752,7 +752,7 @@ const HBC_CSS = `
 .hbc-gate-tap{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:24px}
 .hbc-gate-skip{border:none;background:none;cursor:pointer;color:#a1a1a6;font-size:13px;position:absolute;bottom:36px}
 .hbc-gate-skip:hover{color:#1d1d1f}
-.hbc-dot{width:14px;height:14px;border-radius:50%;background:#E88A00;animation:hbc-pulse 1.8s ease-in-out infinite}
+.hbc-dot{width:14px;height:14px;border-radius:50%;background:#E0362C;animation:hbc-pulse 1.8s ease-in-out infinite}
 @keyframes hbc-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.4}}
 .hbc-gate-title{font-size:17px;color:#1d1d1f}
 .hbc-gate-sub{font-size:12px;color:#a1a1a6}

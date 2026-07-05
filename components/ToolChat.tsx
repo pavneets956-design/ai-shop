@@ -82,8 +82,8 @@ export default function ToolChat({
       <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E88A00]/70" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#E88A00]" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E0362C]/70" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#E0362C]" />
           </span>
           <span className="text-sm font-semibold text-ink">{label}</span>
           {sub && <span className="hidden text-xs text-ink/40 sm:inline">· {sub}</span>}
