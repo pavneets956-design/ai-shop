@@ -32,9 +32,12 @@ const redText: React.CSSProperties = {
 };
 
 /* ─── config ─────────────────────────────────────────────────── */
-const AUDIT_HREF = "mailto:build@aibuiltbyhand.com?subject=Free%2010-min%20fit%20check";
-const buildHref = (s: string) =>
-  `mailto:build@aibuiltbyhand.com?subject=${encodeURIComponent(s)}`;
+// CTAs route to the on-site build form (/create), which POSTs to
+// /api/build-request and emails the lead to pavneets956@gmail.com via Resend.
+// NOT a mailto: — a mailto pops the visitor's desktop mail app (Outlook) and
+// targeted build@aibuiltbyhand.com, a mailbox that doesn't exist yet.
+const AUDIT_HREF = "/create";
+const buildHref = (s: string) => `/create?goal=${encodeURIComponent(s)}`;
 // Sample recording of the Ironwood Grounds AI receptionist greeting (Kokoro TTS
 // re-creation of the real greeting script — labelled "sample", not the literal
 // production voice). Swap in a real exported call recording anytime. Empty
@@ -450,7 +453,7 @@ export default function MoltenForge() {
 
   const waveDelays = [-0.9, -0.3, -0.7, -0.15, -0.55, -0.95, -0.4, -0.8, -0.25, -0.65, -0.05, -0.5];
 
-  const eyebrow = { fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 20 } as React.CSSProperties;
+  const eyebrow = { fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 20 } as React.CSSProperties;
   const h2 = { fontSize: "clamp(34px, 4.4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.03em", fontWeight: 700, color: "#1D1D1F", margin: "0 0 56px" } as React.CSSProperties;
 
   const renderScreenBody = (d: (typeof demos)[number]) => {
@@ -597,7 +600,7 @@ export default function MoltenForge() {
         <div style={{ position: "absolute", top: -220, left: "50%", transform: "translateX(-50%)", width: 980, height: 560, background: "radial-gradient(ellipse at center, rgba(255,69,58,0.12) 0%, rgba(255,69,58,0.04) 45%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 64, alignItems: "center" }}>
           <div>
-            <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 28, display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 28, display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ width: 22, height: 1, background: "linear-gradient(90deg, #E0362C, transparent)", display: "inline-block" }} />
               HANDBUILT AI WORKERS · SURREY / DELTA, BC
             </div>
@@ -611,7 +614,7 @@ export default function MoltenForge() {
               <a className="mf-cta" href={AUDIT_HREF} style={{ display: "inline-flex", alignItems: "center", gap: 10, background: RED_GRAD, color: "#FFFFFF", fontWeight: 700, fontSize: 16, padding: "17px 30px", borderRadius: 12, textDecoration: "none", boxShadow: "0 4px 20px rgba(255,69,58,0.35), 0 8px 24px rgba(0,0,0,0.08)" }}>Find my first AI worker <span aria-hidden="true">→</span></a>
               <a className="mf-secondary" href="#workers" style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid #D2D2D7", color: "#1D1D1F", fontWeight: 600, fontSize: 16, padding: "16px 26px", borderRadius: 12, textDecoration: "none" }}>See the AI workers</a>
             </div>
-            <div style={{ fontFamily: MONO, fontSize: 12, lineHeight: 2, letterSpacing: "0.05em", color: "#1D1D1F" }}>Built in Surrey / Delta, BC&nbsp;&nbsp;·&nbsp;&nbsp;Free 10-min fit check&nbsp;&nbsp;·&nbsp;&nbsp;Live in ~5 business days&nbsp;&nbsp;·&nbsp;&nbsp;From $1,500 CAD</div>
+            <div style={{ fontFamily: MONO, fontSize: 13, lineHeight: 2, letterSpacing: "0.05em", color: "#1D1D1F" }}>Built in Surrey / Delta, BC&nbsp;&nbsp;·&nbsp;&nbsp;Free 10-min fit check&nbsp;&nbsp;·&nbsp;&nbsp;Live in ~5 business days&nbsp;&nbsp;·&nbsp;&nbsp;From $1,500 CAD</div>
           </div>
           {/* orbit phone */}
           <div style={{ position: "relative", minHeight: "calc(680px * var(--phoneScale, 1))", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -652,9 +655,9 @@ export default function MoltenForge() {
         <div ref={trackRef} style={{ height: "460vh" }}>
           <div style={{ position: "sticky", top: 0, height: "100vh", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 32px" }}>
             <div style={{ maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 14 }}>01 / SEE THEM WORK</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 14 }}>01 / SEE THEM WORK</div>
               <h2 style={{ fontSize: "clamp(28px, 3.4vw, 44px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 700, color: "#1D1D1F", margin: "0 0 12px" }}>Same phone. Watch them work.</h2>
-              <div style={{ fontFamily: MONO, fontSize: 12, lineHeight: 1.5, letterSpacing: "0.06em", color: "#8E8E93", marginBottom: "var(--demoH2mb, 48px)" }}>Sample workflows based on a real local contractor setup — not live customer data.</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, lineHeight: 1.5, letterSpacing: "0.06em", color: "#8E8E93", marginBottom: "var(--demoH2mb, 48px)" }}>Sample workflows based on a real local contractor setup — not live customer data.</div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--demoGap, 72px)", alignItems: "center" }}>
                 <div style={{ flex: "none", width: "calc(262px * var(--phoneScale, 1))", height: "calc(554px * var(--phoneScale, 1))", transform: phoneTransform, opacity: phoneOpacity, willChange: "transform, opacity" }}>
                   <div style={{ transform: "scale(var(--phoneScale, 1))", transformOrigin: "top left" }}>
@@ -666,10 +669,10 @@ export default function MoltenForge() {
                   <div style={{ position: "relative", minHeight: "var(--demoTextMinH, 320px)" }}>
                     {demos.map((d) => (
                       <div key={d.part} style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "center", opacity: d.on, pointerEvents: d.ptr as React.CSSProperties["pointerEvents"], transition: "opacity 0.45s ease" }}>
-                        <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 16 }}>{d.part}</div>
+                        <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 16 }}>{d.part}</div>
                         <h3 style={{ fontSize: "clamp(30px, 3.6vw, 48px)", lineHeight: 1.04, letterSpacing: "-0.02em", fontWeight: 700, color: "#1D1D1F", margin: "0 0 16px" }}>{d.name}</h3>
                         <p style={{ fontSize: 17, lineHeight: 1.6, color: "#1D1D1F", maxWidth: 460, margin: "0 0 14px", textWrap: "pretty" }}>{d.copy}</p>
-                        <div style={{ display: "inline-flex", alignSelf: "flex-start", fontFamily: MONO, fontSize: 11, letterSpacing: "0.06em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "5px 11px", marginBottom: 18 }}>{d.bestFor}</div>
+                        <div style={{ display: "inline-flex", alignSelf: "flex-start", fontFamily: MONO, fontSize: 12.5, letterSpacing: "0.06em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "5px 11px", marginBottom: 18 }}>{d.bestFor}</div>
                         <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.06em", color: "#1D1D1F" }}>{d.price} · {d.time}</div>
                       </div>
                     ))}
@@ -696,7 +699,7 @@ export default function MoltenForge() {
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
             <div className="mf-card" style={{ background: "#FFFFFF", border: "1px solid #E8E8ED", borderRadius: 18, padding: "36px 34px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>THE DIY TOOL</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>THE DIY TOOL</div>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 18, fontSize: 16, lineHeight: 1.55, color: "#1D1D1F" }}>
                 {["The software may answer calls and book jobs.", "You configure the scripts, services, prices, calendar rules, and edge cases.", "You connect the apps and test the whole flow yourself.", "If it misbooks or gives bad info, you find out from the customer.", "Support is usually docs, chat, or a ticket queue."].map((t) => (
                   <li key={t} style={{ display: "flex", gap: 14 }}><span style={{ color: "#C7C7CC", fontFamily: MONO, flexShrink: 0 }}>✕</span>{t}</li>
@@ -704,7 +707,7 @@ export default function MoltenForge() {
               </ul>
             </div>
             <div className="mf-card" style={{ position: "relative", background: "#FFFFFF", border: "1px solid rgba(255,69,58,0.45)", borderRadius: 18, padding: "36px 34px", boxShadow: "0 8px 30px rgba(255,69,58,0.12), inset 0 1px 0 rgba(255,105,97,0.25)" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>THE HANDBUILT INSTALL</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>THE HANDBUILT INSTALL</div>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 18, fontSize: 16, lineHeight: 1.55, color: "#1D1D1F" }}>
                 {["I set it up around your services, prices, service area, calendar, and rules.", "I run real test calls before it ever touches a customer.", "I connect the workflow: call → request → quote → booking → invoice → follow-up.", "I tune it when your services, prices, or process change.", "You deal with the builder who installed it — not a ticket queue."].map((t) => (
                   <li key={t} style={{ display: "flex", gap: 14 }}><span style={{ color: "#1D1D1F", fontFamily: MONO, flexShrink: 0 }}>▸</span>{t}</li>
@@ -721,27 +724,27 @@ export default function MoltenForge() {
           <div style={eyebrow}>03 / THE WORKERS</div>
           <h2 style={h2}>Six workers. Pick your first hire.</h2>
           <div style={{ border: "1px solid #E8E8ED", borderRadius: 18, overflow: "hidden", background: "#FFFFFF", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 20px", padding: "14px 28px", borderBottom: "1px solid #E8E8ED", background: "#FAFAFC", fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.14em", color: "#1D1D1F" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 20px", padding: "14px 28px", borderBottom: "1px solid #E8E8ED", background: "#FAFAFC", fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F" }}>
               <span style={{ flex: "0 0 60px" }}>PART №</span>
               <span style={{ flex: "1 1 200px", minWidth: 0 }}>WORKER</span>
               <span style={{ flex: "0 1 auto", marginLeft: "auto", display: "flex", gap: 20 }}><span style={{ minWidth: 110, textAlign: "right" }}>BUILD FEE</span><span style={{ minWidth: 68, textAlign: "right" }}>LIVE IN</span></span>
             </div>
             {WORKERS_CATALOG.map((w) => (
               <div key={w.num} className="mf-row" style={{ display: "flex", flexWrap: "wrap", gap: "10px 20px", padding: "22px 28px", borderBottom: "1px solid #F0F0F2", alignItems: "baseline" }}>
-                <span style={{ flex: "0 0 60px", fontFamily: MONO, fontSize: 12, color: "#1D1D1F" }}>{w.num}</span>
+                <span style={{ flex: "0 0 60px", fontFamily: MONO, fontSize: 13, color: "#1D1D1F" }}>{w.num}</span>
                 <span style={{ flex: "1 1 200px", minWidth: 0 }}>
                   <span style={{ display: "block", color: "#1D1D1F", fontWeight: 600, fontSize: 18, letterSpacing: "-0.01em" }}>{w.name}</span>
-                  <span style={{ display: "block", color: "#1D1D1F", fontSize: 14, lineHeight: 1.5, marginTop: 4 }}>{w.desc}</span>
-                  <span style={{ display: "inline-block", marginTop: 8, fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.06em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "3px 9px" }}>BEST FOR: {w.best.toUpperCase()}</span>
+                  <span style={{ display: "block", color: "#1D1D1F", fontSize: 15, lineHeight: 1.55, marginTop: 5 }}>{w.desc}</span>
+                  <span style={{ display: "inline-block", marginTop: 8, fontFamily: MONO, fontSize: 12, letterSpacing: "0.06em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "3px 9px" }}>BEST FOR: {w.best.toUpperCase()}</span>
                 </span>
                 <span style={{ flex: "0 1 auto", marginLeft: "auto", display: "flex", gap: 20, alignItems: "baseline" }}>
                   <span style={{ minWidth: 110, textAlign: "right", fontFamily: MONO, fontSize: 15, fontWeight: 700, color: "#1D1D1F" }}>{w.price}</span>
-                  <span style={{ minWidth: 68, textAlign: "right", fontFamily: MONO, fontSize: 12, color: "#1D1D1F" }}>{w.time}</span>
+                  <span style={{ minWidth: 68, textAlign: "right", fontFamily: MONO, fontSize: 13, color: "#1D1D1F" }}>{w.time}</span>
                 </span>
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 20, fontFamily: MONO, fontSize: 12, color: "#1D1D1F", letterSpacing: "0.05em" }}>All prices CAD, fixed before the build starts. No hourly billing.</div>
+          <div style={{ marginTop: 20, fontFamily: MONO, fontSize: 13, color: "#1D1D1F", letterSpacing: "0.05em" }}>All prices CAD, fixed before the build starts. No hourly billing.</div>
         </div>
       </section>
 
@@ -756,9 +759,9 @@ export default function MoltenForge() {
           {/* audit lead-in */}
           <div className="mf-card" style={{ background: "#FFFFFF", border: "1px solid rgba(255,69,58,0.45)", borderRadius: 18, padding: "24px 30px", marginBottom: 24, display: "flex", flexWrap: "wrap", gap: 20, alignItems: "center", justifyContent: "space-between", boxShadow: "0 8px 30px rgba(255,69,58,0.10)" }}>
             <div style={{ minWidth: 260, flex: 1 }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 8 }}>START HERE · FREE 10-MIN FIT CHECK</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 8 }}>START HERE · FREE 10-MIN FIT CHECK</div>
               <div style={{ color: "#1D1D1F", fontSize: 18, fontWeight: 600 }}>A free 10-min fit check to see if there’s a real system worth mapping — no pressure, no pitch.</div>
-              <div style={{ color: "#1D1D1F", fontSize: 14, marginTop: 6 }}>If we both agree there is, the $99 workflow audit maps it — credited toward your build.</div>
+              <div style={{ color: "#1D1D1F", fontSize: 15, marginTop: 6 }}>If we both agree there is, the $99 workflow audit maps it — credited toward your build.</div>
             </div>
             <a className="mf-cta" href={AUDIT_HREF} style={{ background: RED_GRAD, color: "#FFFFFF", fontWeight: 700, fontSize: 15, padding: "14px 26px", borderRadius: 12, textDecoration: "none", boxShadow: "0 3px 16px rgba(255,69,58,0.32)", whiteSpace: "nowrap" }}>Book my fit check →</a>
           </div>
@@ -766,10 +769,10 @@ export default function MoltenForge() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(258px, 1fr))", gap: 24, alignItems: "stretch" }}>
             {TIERS.map((t) => (
               <div key={t.label} className="mf-card" style={{ position: "relative", background: "#FFFFFF", border: t.featured ? "1px solid rgba(255,69,58,0.55)" : "1px solid #E8E8ED", borderRadius: 18, padding: "36px 30px", display: "flex", flexDirection: "column", boxShadow: t.featured ? "0 10px 36px rgba(255,69,58,0.14), inset 0 1px 0 rgba(255,105,97,0.3)" : "0 2px 12px rgba(0,0,0,0.04)" }}>
-                {t.featured && <div style={{ position: "absolute", top: -11, left: 30, background: RED_GRAD, color: "#FFFFFF", fontFamily: MONO, fontSize: 10.5, fontWeight: 700, letterSpacing: "0.12em", padding: "5px 12px", borderRadius: 8, boxShadow: "0 2px 10px rgba(255,69,58,0.35)" }}>MOST BUILDS</div>}
-                <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 18 }}>{t.label}</div>
+                {t.featured && <div style={{ position: "absolute", top: -11, left: 30, background: RED_GRAD, color: "#FFFFFF", fontFamily: MONO, fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", padding: "5px 12px", borderRadius: 8, boxShadow: "0 2px 10px rgba(255,69,58,0.35)" }}>MOST BUILDS</div>}
+                <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 18 }}>{t.label}</div>
                 <div style={{ fontFamily: MONO, fontSize: 32, fontWeight: 700, color: "#1D1D1F", letterSpacing: "-0.01em" }}>{t.price}{t.range && <span style={{ fontSize: 18, color: "#1D1D1F" }}>{t.range}</span>}<span style={{ fontSize: 15, color: "#1D1D1F" }}>{t.suffix}</span></div>
-                <div style={{ fontFamily: MONO, fontSize: 11, color: "#1D1D1F", letterSpacing: "0.08em", margin: "6px 0 22px" }}>{t.sub}</div>
+                <div style={{ fontFamily: MONO, fontSize: 12.5, color: "#1D1D1F", letterSpacing: "0.08em", margin: "6px 0 22px" }}>{t.sub}</div>
                 <p style={{ fontSize: 15, lineHeight: 1.6, color: "#1D1D1F", margin: "0 0 26px", flexGrow: 1 }}>{t.desc}</p>
                 <a className={t.featured ? "mf-cta-lg" : "mf-outline"} href={buildHref(t.subject)} style={t.featured
                   ? { display: "block", textAlign: "center", background: RED_GRAD, color: "#FFFFFF", fontWeight: 700, fontSize: 15, padding: 14, borderRadius: 12, textDecoration: "none", boxShadow: "0 3px 16px rgba(255,69,58,0.32)" }
@@ -781,7 +784,7 @@ export default function MoltenForge() {
           {/* optional care plan */}
           <div style={{ height: 1, background: "linear-gradient(90deg, transparent 4%, rgba(255,69,58,0.35) 50%, transparent 96%)", margin: "48px 0 40px" }} />
           <div style={{ maxWidth: 760, marginBottom: 30 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: MONO, fontSize: 11, letterSpacing: "0.12em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "5px 12px", marginBottom: 16 }}>OPTIONAL · CARE PLAN</div>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: MONO, fontSize: 12.5, letterSpacing: "0.12em", color: "#E0362C", background: "rgba(255,69,58,0.07)", borderRadius: 999, padding: "5px 12px", marginBottom: 16 }}>OPTIONAL · CARE PLAN</div>
             <h3 style={{ fontSize: "clamp(26px, 3.2vw, 38px)", lineHeight: 1.08, letterSpacing: "-0.02em", fontWeight: 700, color: "#1D1D1F", margin: "0 0 14px", textWrap: "balance" }}>You do not need a care plan to own the system.</h3>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "#1D1D1F", margin: 0, maxWidth: 640, textWrap: "pretty" }}>
               The care plan is for owners who want it monitored, tuned, updated, and fixed when tools, prices, calendars, scripts, or integrations change.
@@ -790,7 +793,7 @@ export default function MoltenForge() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(258px, 1fr))", gap: 24, alignItems: "stretch" }}>
             {CARE.map((c) => (
               <div key={c.label} className="mf-card" style={{ background: "#FFFFFF", border: "1px solid #E8E8ED", borderRadius: 18, padding: "32px 30px", display: "flex", flexDirection: "column", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 18 }}>{c.label}</div>
+                <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 18 }}>{c.label}</div>
                 <div style={{ fontFamily: MONO, fontSize: 30, fontWeight: 700, color: "#1D1D1F", letterSpacing: "-0.01em" }}>{c.price}{c.range && <span style={{ fontSize: 17, color: "#1D1D1F" }}>{c.range}</span>}<span style={{ fontSize: 14, color: "#1D1D1F" }}>/mo CAD</span></div>
                 <p style={{ fontSize: 15, lineHeight: 1.6, color: "#1D1D1F", margin: "22px 0 0" }}>{c.desc}</p>
               </div>
@@ -798,7 +801,7 @@ export default function MoltenForge() {
           </div>
 
           {/* ownership */}
-          <div style={{ marginTop: 24, fontFamily: MONO, fontSize: 12.5, lineHeight: 1.7, color: "#1D1D1F", letterSpacing: "0.02em", maxWidth: 900 }}>
+          <div style={{ marginTop: 24, fontFamily: MONO, fontSize: 13.5, lineHeight: 1.7, color: "#1D1D1F", letterSpacing: "0.02em", maxWidth: 900 }}>
             You own the prompts, workflows, documentation, and custom code. Third-party tools like Jobber, Twilio, OpenAI, and hosting stay separate if used. No lock-in.
           </div>
         </div>
@@ -814,7 +817,7 @@ export default function MoltenForge() {
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
             <div className="mf-card" style={{ background: "#FFFFFF", border: "1px solid rgba(255,69,58,0.45)", borderRadius: 18, padding: "36px 34px", boxShadow: "0 8px 30px rgba(255,69,58,0.12), inset 0 1px 0 rgba(255,105,97,0.25)" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>A GOOD FIT IF</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>A GOOD FIT IF</div>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 18, fontSize: 16, lineHeight: 1.55, color: "#1D1D1F" }}>
                 {["You lose real work when calls go to voicemail while you’re on the job.", "You want calls, quotes, bookings, and follow-ups working as one system — not five apps you babysit.", "You’d rather one builder set it up right and tune it than wire it together yourself."].map((t) => (
                   <li key={t} style={{ display: "flex", gap: 14 }}><span style={{ color: "#1D1D1F", fontFamily: MONO, flexShrink: 0 }}>▸</span>{t}</li>
@@ -822,7 +825,7 @@ export default function MoltenForge() {
               </ul>
             </div>
             <div className="mf-card" style={{ background: "#FFFFFF", border: "1px solid #E8E8ED", borderRadius: 18, padding: "36px 34px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-              <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>PROBABLY NOT FOR YOU IF</div>
+              <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 26 }}>PROBABLY NOT FOR YOU IF</div>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 18, fontSize: 16, lineHeight: 1.55, color: "#1D1D1F" }}>
                 {["You only need a basic message-taking bot.", "You never miss a call and your admin is already handled.", "You want to configure and maintain everything yourself."].map((t) => (
                   <li key={t} style={{ display: "flex", gap: 14 }}><span style={{ color: "#C7C7CC", fontFamily: MONO, flexShrink: 0 }}>✕</span>{t}</li>
@@ -848,7 +851,7 @@ export default function MoltenForge() {
           </div>
           {/* internal links */}
           <div style={{ marginTop: 56, paddingTop: 32, borderTop: "1px solid #E8E8ED" }}>
-            <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 16 }}>EXPLORE</div>
+            <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.14em", color: "#1D1D1F", marginBottom: 16 }}>EXPLORE</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 22px", fontSize: 14.5 }}>
               {INTERNAL_LINKS.map((l) => (
                 <a key={l.href} className="mf-link" href={l.href}>{l.label}</a>
@@ -864,13 +867,13 @@ export default function MoltenForge() {
         <div style={{ position: "relative", maxWidth: 800, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 34 }}>
           <h2 style={{ fontSize: "clamp(44px, 6vw, 84px)", lineHeight: 1.0, letterSpacing: "-0.035em", fontWeight: 700, color: "#1D1D1F", margin: 0, textWrap: "balance" }}>One calm desk. <span style={redText}>Yours.</span></h2>
           <a className="mf-cta-xl" href={AUDIT_HREF} style={{ display: "inline-flex", alignItems: "center", gap: 10, background: RED_GRAD, color: "#FFFFFF", fontWeight: 700, fontSize: 17, padding: "20px 40px", borderRadius: 12, textDecoration: "none", boxShadow: "0 4px 24px rgba(255,69,58,0.4), 0 10px 28px rgba(0,0,0,0.08)" }}>Book my workflow audit <span aria-hidden="true">→</span></a>
-          <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.1em", color: "#1D1D1F" }}>USUALLY LIVE WITHIN 5 BUSINESS DAYS</div>
+          <div style={{ fontFamily: MONO, fontSize: 13, letterSpacing: "0.1em", color: "#1D1D1F" }}>USUALLY LIVE WITHIN 5 BUSINESS DAYS</div>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer style={{ borderTop: "1px solid #E8E8ED", padding: 32, background: "#F5F5F7" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 11.5, letterSpacing: "0.06em", color: "#1D1D1F" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 12.5, letterSpacing: "0.06em", color: "#1D1D1F" }}>
           <span>© 2026 HANDBUILT AI · BY AI BUILT BY HAND · AIBUILTBYHAND.COM</span>
           <span>ONE BUILDER · SURREY / DELTA, BC · BUILD@AIBUILTBYHAND.COM</span>
         </div>
