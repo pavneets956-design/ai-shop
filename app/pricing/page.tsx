@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check } from "lucide-react";
 import GlowBackground from "@/components/GlowBackground";
 import ServicePackages from "@/components/ServicePackages";
 import PhoneReceptionistPlan from "@/components/PhoneReceptionistPlan";
@@ -9,13 +8,8 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
-import { toolsPlan } from "@/lib/data/toolsPlan";
-import { getToolsPlanPrices } from "@/lib/stripe";
 import { pricingPageFaqs } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
-
-// Re-read the live Stripe Tools Pro price hourly (single source of truth).
-export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Pricing — Custom AI Builds from $1,500 CAD",
@@ -26,8 +20,6 @@ export const metadata: Metadata = {
 
 export default async function PricingPage() {
   const pricingFaqs = pricingPageFaqs();
-  const toolsPrices = await getToolsPlanPrices();
-  const toolsMonthly = toolsPrices?.monthly?.priceLabel ?? "$29";
 
   return (
     <>
@@ -70,35 +62,11 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      {/* Two more ways to work with Handbuilt — self-serve tools vs phone. */}
+      {/* Also available — the AI Phone Receptionist plan (setup + minutes). */}
       <section className="relative border-t border-ink/[0.06] py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl px-4">
-          <SectionHeading eyebrow="Also available" title="Two more ways to get AI" />
-          <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2">
-            {/* Tools Pro — text-only self-serve */}
-            <div className="glass-card spec-frame flex h-full flex-col p-7 sm:p-8">
-              <h3 className="font-display text-2xl font-semibold text-ink">{toolsPlan.name}</h3>
-              <p className="mt-1 text-sm text-ink/55">Self-serve AI tools you run yourself — text only, no phone.</p>
-              <div className="mt-5 flex items-end gap-2">
-                <span className="font-display text-4xl font-bold text-ink">{toolsMonthly}</span>
-                <span className="pb-1 text-sm text-ink/50">/mo · annual billing available</span>
-              </div>
-              <ul className="mt-6 flex-1 space-y-3">
-                {toolsPlan.features.slice(0, 4).map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-[15px] text-ink/80">
-                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-ink text-white">
-                      <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/tools/pro" className="btn-secondary mt-6 w-full">
-                Explore Tools Pro
-              </Link>
-            </div>
-
-            {/* AI Phone Receptionist — separate plan with setup + minutes */}
+        <div className="mx-auto max-w-2xl px-4">
+          <SectionHeading eyebrow="Also available" title="AI Phone Receptionist" />
+          <div className="mt-10">
             <PhoneReceptionistPlan />
           </div>
         </div>

@@ -48,6 +48,12 @@ const nextConfig = {
       { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: true },
       { source: '/forge', destination: '/', permanent: true },
 
+      // Tools Pro (the $29/mo self-serve subscription) retired 2026-07-06 — the
+      // monthly option is gone; creators now buy tools one-time (you own it).
+      // Redirect the whole /tools tree to the shop, EXCEPT the free Form Filler.
+      { source: '/tools', destination: '/shop', permanent: true },
+      { source: '/tools/:slug((?!form-filler).*)', destination: '/shop', permanent: true },
+
       // SEO canonicalisation (308). These buyer-intent root/alias URLs are the
       // ones people type or link, but the ranking page already lives elsewhere.
       // Redirecting instead of duplicating keeps one canonical page per keyword

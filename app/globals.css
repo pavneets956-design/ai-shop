@@ -274,3 +274,126 @@
     }
   }
 }
+
+/* ============================================================
+   CREATOR STUDIO — dark "Cutting Room" skin for the /creators hub.
+   SCOPED to .creator-studio only: zero impact on the light
+   red/white site. Keeps the brand red as the record light /
+   scrubber accent on a near-black editing-suite canvas.
+   Contract: ~/.claude/design-os/ledger/ai-shop-creators/contract.md
+   ============================================================ */
+.creator-studio {
+  --cr-bg: #0b0b0d;
+  --cr-surface: #141418;
+  --cr-surface-2: #1c1c22;
+  --cr-border: rgba(255, 255, 255, 0.08);
+  --cr-border-strong: rgba(255, 255, 255, 0.16);
+  --cr-text: #f4f4f6;
+  --cr-muted: #8a8a93;
+  --cr-red: #ff453a; /* emissive red for dark bg (playhead, REC, glow) */
+  --cr-red-deep: #e0362c; /* brand red (CTA gradient fill) */
+  background-color: var(--cr-bg);
+  color: var(--cr-text);
+  /* Neutralise the global cool selection tint on dark. */
+}
+.creator-studio ::selection {
+  background: rgba(255, 69, 58, 0.28);
+  color: #fff;
+}
+
+/* Atmosphere: faint red top/bottom glow + film grain (two cheap fixed layers). */
+.creator-studio .cr-atmos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -8%, rgba(255, 69, 58, 0.14), transparent 60%),
+    radial-gradient(ellipse 90% 55% at 50% 118%, rgba(255, 69, 58, 0.06), transparent 60%);
+}
+.creator-studio .cr-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Clip card — raised surface, border-light, crafted hover (lift + red edge). */
+.creator-studio .cr-clip {
+  position: relative;
+  background: var(--cr-surface-2);
+  border: 1px solid var(--cr-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.creator-studio .cr-clip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 69, 58, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 14px 40px -18px rgba(255, 69, 58, 0.5),
+    0 0 0 1px rgba(255, 69, 58, 0.18);
+}
+.creator-studio .cr-clip:focus-visible {
+  outline: none;
+  border-color: var(--cr-red);
+  box-shadow: 0 0 0 2px rgba(255, 69, 58, 0.6);
+}
+/* Left edge tab — the "clip handle" (brightens on hover). */
+.creator-studio .cr-clip::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 3px;
+  background: rgba(255, 69, 58, 0.35);
+  transition: background 0.35s ease;
+}
+.creator-studio .cr-clip:hover::before {
+  background: var(--cr-red);
+}
+
+/* The scrubbing playhead — a thin red line sweeping across the timeline. */
+@keyframes crPlayhead {
+  0% { left: 2%; }
+  100% { left: 99%; }
+}
+.creator-studio .cr-playhead {
+  animation: crPlayhead 9s linear infinite alternate;
+}
+
+/* REC dot pulse. */
+@keyframes crPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+.creator-studio .cr-rec {
+  animation: crPulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-studio .cr-playhead {
+    animation: none;
+    left: 32%;
+  }
+  .creator-studio .cr-rec {
+    animation: none;
+  }
+}
+
+/* Homepage → creators doorway link (dark portal band above the footer). */
+.mf-creator-door {
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.mf-creator-door:hover {
+  border-color: rgba(255, 69, 58, 0.6) !important;
+  background-color: rgba(255, 69, 58, 0.08);
+  transform: translateY(-1px);
+}

@@ -876,6 +876,28 @@ export default function MoltenForge() {
         </div>
       </section>
 
+      {/* CREATORS DOORWAY — slim cross-link to the dark /creators hub. Low on
+          the page by design (Fable): the homepage sells the local trades ICP;
+          this is a quiet doorway for the creator minority, not a competing
+          section. Rendered DARK as a portal that previews the Cutting Room,
+          tied to the brand red. */}
+      <section style={{ background: "#0B0B0D", borderTop: "1px solid #E8E8ED" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "26px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px 32px" }}>
+          <div style={{ minWidth: 260, flex: "1 1 auto" }}>
+            <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: "0.16em", color: "#FF453A", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#FF453A", display: "inline-block" }} />
+              ALSO · FOR CREATORS
+            </div>
+            <div style={{ fontFamily: QS, fontSize: 17, fontWeight: 600, color: "#F4F4F6", letterSpacing: "-0.01em", maxWidth: 640, textWrap: "pretty" }}>
+              Clipping, editing, captions, voiceovers, channel ops — the same handbuilt approach, built for creators.
+            </div>
+          </div>
+          <a className="mf-creator-door" href="/creators" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: MONO, fontSize: 13, letterSpacing: "0.08em", color: "#F4F4F6", border: "1px solid rgba(255,255,255,0.22)", borderRadius: 12, padding: "13px 22px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            See the creator studio <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer style={{ borderTop: "1px solid #E8E8ED", padding: 32, background: "#F5F5F7" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "16px 32px", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 12.5, letterSpacing: "0.06em", color: "#1D1D1F" }}>

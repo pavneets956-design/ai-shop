@@ -107,10 +107,5 @@ export function pricingPageFaqs(): FAQ[] {
       q: "Can I start with one AI worker?",
       a: "Yes — most businesses should. Start with one clear problem (missed calls, slow quotes, or lead follow-up) and add more workers as you see results. Zero rework, just expansion.",
     },
-    {
-      category: "pricing",
-      q: "What's the difference between Tools Pro and done-for-you?",
-      a: "Tools Pro is a $19/mo self-serve suite you use yourself for writing tasks. Done-for-you AI systems are installed and connected to your workflow by us, starting at $1,500 — automation that runs without you.",
-    },
   ];
 }

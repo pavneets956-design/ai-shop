@@ -24,10 +24,10 @@ function LoginInner() {
             </span>
           </Link>
           <h1 className="mt-6 font-display text-3xl font-semibold tracking-tight text-ink">
-            Sign in to Tools Pro
+            Sign in to your account
           </h1>
           <p className="mt-2 text-ink/55">
-            Access every AI tool, your saved brand profile, and your generation history.
+            Access your Handbuilt account and saved work.
           </p>
         </div>
 
@@ -46,10 +46,10 @@ function LoginInner() {
 
         <div className="mt-6 text-center">
           <Link
-            href="/tools/pro"
+            href="/"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/50 transition hover:text-ink"
           >
-            <ArrowLeft className="h-4 w-4" /> Back to Tools Pro
+            <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>
         </div>
       </div>

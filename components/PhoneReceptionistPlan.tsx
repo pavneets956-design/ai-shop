@@ -34,7 +34,7 @@ export default function PhoneReceptionistPlan() {
         </span>
         <div>
           <h3 className="font-display text-2xl font-semibold text-ink">AI Phone Receptionist</h3>
-          <p className="text-sm text-ink/55">Live call answering — a separate plan from Tools Pro.</p>
+          <p className="text-sm text-ink/55">Live call answering — its own plan, with setup + minutes.</p>
         </div>
       </div>
 

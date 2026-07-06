@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 // has its own logo, nav rail, and footer act) — hide the global Navbar/Footer.
 const HIDDEN_PREFIXES = ["/ai-front-desk", "/forge"];
 // Exact routes with self-contained chrome. The homepage ("/") renders the
-// "Molten Forge" landing, which brings its own sticky nav + footer.
-const HIDDEN_EXACT = ["/"];
+// "Molten Forge" landing, and "/creators" renders the dark "Cutting Room"
+// hub — both bring their own sticky nav + footer. (Note: EXACT match only —
+// the /creators/[slug] leaf pages keep the global light chrome + template.)
+const HIDDEN_EXACT = ["/", "/creators"];
 
 export default function ChromeGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";
