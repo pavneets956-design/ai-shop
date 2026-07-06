@@ -382,7 +382,173 @@ export const howtos: LandingContent[] = [
     }
   ],
   schema: "HowTo"
-}
+},
+  {
+    slug: "automate-youtube-shorts",
+    eyebrow: "How-to",
+    h1: "How to Automate YouTube Shorts From Your Long Videos",
+    title: "How to Automate YouTube Shorts (Step by Step) | Handbuilt",
+    description:
+      "Turn every long video into a week of Shorts automatically. A step-by-step way to clip, caption, reframe and schedule Shorts from your existing content.",
+    answer:
+      "To automate YouTube Shorts, set up a pipeline that scans each long video for high-retention, self-contained moments, clips them, adds captions, reframes them to vertical, and queues them as Shorts for review. Done right, one long upload becomes 5–10 Shorts a week with only a quick approval step from you.",
+    steps: [
+      "Define what makes a strong clip for your channel — a hook, a payoff, a self-contained point.",
+      "Use a clip-detection tool (or a built pipeline) to scan each long video for those moments.",
+      "Auto-caption each clip and reframe it from horizontal to vertical 9:16.",
+      "Draft a short title and hook for each clip so it stands alone in the feed.",
+      "Queue the clips as Shorts on a schedule and review them before they publish.",
+    ],
+    gets: [
+      "5–10 Shorts from every long video",
+      "Captions and vertical reframing done automatically",
+      "A steady discovery feed without extra filming",
+    ],
+    sections: [
+      {
+        heading: "Do it with tools, or have it built",
+        body: "You can stitch this together with off-the-shelf clip tools if you're comfortable maintaining them. If you'd rather it just run, Handbuilt builds the whole pipeline around your channel and clip style so you only approve the output.",
+      },
+    ],
+    keywords: ["how to automate youtube shorts", "automate shorts from long videos", "youtube shorts automation", "repurpose long video to shorts"],
+    related: [
+      { label: "AI YouTube Shorts Automation", href: "/creators/ai-youtube-shorts-automation" },
+      { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
+      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+    ],
+    faqs: [
+      { q: "How many Shorts can one long video make?", a: "Typically 5–10, depending on length and how many self-contained moments it has. A 20-minute video usually yields a week's worth." },
+      { q: "Will this hurt my long-form views?", a: "Used well, Shorts drive new viewers to your long-form. Queue clips that tease the full video rather than give everything away." },
+    ],
+    ctaLabel: "Automate my Shorts",
+    schema: "HowTo",
+    icon: "Youtube"
+  },
+  {
+    slug: "build-faceless-content-system",
+    eyebrow: "How-to",
+    h1: "How to Build a Faceless Content System",
+    title: "How to Build a Faceless Content System (Step by Step) | Handbuilt",
+    description:
+      "A step-by-step blueprint for a faceless channel that produces at volume — research, scripts, licensed voiceover, visuals, editing and publishing, safely monetisable.",
+    answer:
+      "To build a faceless content system, connect five stages into one pipeline: topic research, scripting, licensed voiceover, visual assembly, and editing plus publishing. The key to lasting is using original scripts and licensed voices and assets so the channel stays monetisation-safe, and keeping a human approval step on quality.",
+    steps: [
+      "Pick a defined niche and format so every video follows a repeatable template.",
+      "Set up topic research that feeds a scripting step in a consistent voice.",
+      "Convert scripts to voiceover using a properly licensed voice (or a consented clone of your own).",
+      "Assemble visuals and b-roll from licensed or original sources to match the script.",
+      "Automate the edit, then queue finished videos for your review and scheduled upload.",
+    ],
+    gets: [
+      "A repeatable research → script → voice → visuals → edit pipeline",
+      "Licensed voice and assets so the channel is safe to monetise",
+      "Volume without doing every step by hand",
+    ],
+    sections: [
+      {
+        heading: "Staying monetisable",
+        body: "Faceless channels get demonetised when they rely on reused content, unlicensed assets or low-effort mass production. Original scripting, licensed voices and assets, and a human quality check are what keep a faceless channel eligible and growing. Handbuilt builds the full system with those guardrails in place.",
+      },
+    ],
+    keywords: ["how to build a faceless content system", "faceless youtube channel automation", "faceless content system", "automate faceless channel"],
+    related: [
+      { label: "AI Faceless Channel Automation", href: "/creators/ai-faceless-channel-automation" },
+      { label: "AI Text-to-Speech for Creators", href: "/creators/ai-text-to-speech-for-creators" },
+      { label: "AI Script Writing System", href: "/creators/ai-script-writing-system" },
+    ],
+    faqs: [
+      { q: "Are faceless channels allowed to monetise?", a: "Yes, when the content is original and adds value. Platforms penalise reused or low-effort mass-produced content, not faceless formats themselves." },
+      { q: "Do I need to be technical to run one?", a: "To build and maintain the pipeline, usually yes. Handbuilt builds it for you so you direct the channel and approve videos without wiring the tools yourself." },
+    ],
+    ctaLabel: "Build my faceless system",
+    schema: "HowTo",
+    icon: "Film"
+  },
+  {
+    slug: "automate-missed-calls",
+    eyebrow: "How-to",
+    h1: "How to Automate Missed Calls for Your Business",
+    title: "How to Automate Missed Calls (Step by Step) | Handbuilt",
+    description:
+      "Stop losing jobs to voicemail. A step-by-step way to automatically text back every missed call and turn it into a booked lead instead of a lost one.",
+    answer:
+      "To automate missed calls, set up a system that instantly texts back anyone whose call you couldn't answer, then uses AI to answer their questions, qualify them, and book or route the lead. Done right, a missed call becomes a live conversation within seconds instead of a lost customer who never leaves a voicemail.",
+    steps: [
+      "Connect a missed-call trigger to your business phone number.",
+      "Set an instant, on-brand text-back — \"Sorry we missed you, how can we help?\"",
+      "Add an AI assistant to answer questions and qualify the lead in the text thread.",
+      "Let it book the job into your calendar, or route hot leads to you.",
+      "Track recovered leads so you can see the missed-call revenue you're now keeping.",
+    ],
+    gets: [
+      "Instant text-back on every missed call",
+      "Leads engaged before they call a competitor",
+      "Booking or routing built in",
+      "Visibility into recovered revenue",
+    ],
+    sections: [
+      {
+        heading: "DIY or done-for-you",
+        body: "Some phone systems and CRMs offer basic missed-call text-back you can set up yourself. For AI that actually answers, qualifies and books — trained on your business — Handbuilt builds the full system on your number so nothing falls through.",
+      },
+    ],
+    keywords: ["how to automate missed calls", "missed call text back setup", "automate missed call follow up", "stop losing missed calls"],
+    related: [
+      { label: "Missed-Call Automation", href: "/use-cases/missed-call-automation" },
+      { label: "AI Receptionist", href: "/ai-receptionist" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
+    ],
+    faqs: [
+      { q: "How fast does the text go out?", a: "Within seconds of the missed call, while the caller still has their phone in hand — which is exactly why it recovers so many leads." },
+      { q: "Can it book the job, not just text?", a: "Yes — with an AI assistant in the thread, it can qualify the lead and book directly into your calendar, or hand complex cases to you." },
+    ],
+    ctaLabel: "Automate my missed calls",
+    schema: "HowTo",
+    icon: "Phone"
+  },
+  {
+    slug: "automate-review-requests",
+    eyebrow: "How-to",
+    h1: "How to Automate Review Requests",
+    title: "How to Automate Review Requests (Step by Step) | Handbuilt",
+    description:
+      "Get more 5-star reviews on autopilot. A step-by-step way to automatically ask happy customers for reviews at the right moment and grow your local reputation.",
+    answer:
+      "To automate review requests, trigger a personalised ask right after a job is completed or an appointment ends, send it by text or email with a direct link to your review page, and follow up once if there's no response. Timing and a one-tap link are what turn happy customers into the reviews that win local search.",
+    steps: [
+      "Pick the trigger — job completed, invoice paid, or appointment finished.",
+      "Send a short, personalised request by text or email with a direct review link.",
+      "Make it one tap — link straight to your Google (or preferred) review page.",
+      "Follow up once, politely, if there's no response after a day or two.",
+      "Route any unhappy feedback to you privately before it becomes a public review.",
+    ],
+    gets: [
+      "Automatic review asks at the perfect moment",
+      "One-tap links that lift response rates",
+      "A gentle follow-up that catches non-responders",
+      "Private routing for unhappy feedback",
+    ],
+    sections: [
+      {
+        heading: "Why timing and routing matter",
+        body: "Ask at the moment a customer is happiest — right after the work is done — and make leaving a review effortless. Routing unhappy feedback to you first (rather than straight to a public page) lets you fix issues privately and protects your rating. We build both into the flow.",
+      },
+    ],
+    keywords: ["how to automate review requests", "automate google reviews", "review request automation", "get more reviews automatically"],
+    related: [
+      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "Google Business Profile Lead Automation", href: "/use-cases/google-business-profile-lead-automation" },
+      { label: "Best AI Automations for Service Businesses", href: "/resources/best-ai-automations-for-service-businesses" },
+    ],
+    faqs: [
+      { q: "Does automating reviews violate Google's rules?", a: "Asking all customers for honest reviews is fine; selectively soliciting only positive ones or gating reviews can violate platform policies. We build a compliant flow that asks everyone and routes concerns to you privately." },
+      { q: "Which platforms can it request reviews on?", a: "Most commonly Google, plus others like Facebook or industry sites. We point the flow at wherever reviews matter most for your business." },
+    ],
+    ctaLabel: "Automate my reviews",
+    schema: "HowTo",
+    icon: "Star"
+  }
 ];
 
 export function getHowto(slug: string): LandingContent | undefined {

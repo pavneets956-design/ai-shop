@@ -36,6 +36,21 @@ import {
   FileText,
   Star,
   Headset,
+  // Creator economy
+  Video,
+  Mic,
+  Youtube,
+  Music,
+  Clapperboard,
+  Scissors,
+  Captions,
+  Film,
+  Wand2,
+  Repeat,
+  GraduationCap,
+  Radio,
+  Megaphone,
+  Newspaper,
   type LucideIcon,
 } from "lucide-react";
 
@@ -78,6 +93,20 @@ export const iconMap: Record<string, LucideIcon> = {
   FileText,
   Star,
   Headset,
+  Video,
+  Mic,
+  Youtube,
+  Music,
+  Clapperboard,
+  Scissors,
+  Captions,
+  Film,
+  Wand2,
+  Repeat,
+  GraduationCap,
+  Radio,
+  Megaphone,
+  Newspaper,
 };
 
 export function getIcon(name: string): LucideIcon {

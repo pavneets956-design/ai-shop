@@ -7,6 +7,7 @@ import { locations } from "./locations";
 import { comparisons } from "./compare";
 import { resources } from "./resources";
 import { howtos } from "./howto";
+import { creators } from "./creators";
 import { useCases } from "./useCases";
 import { type PageType, type LandingContent, landingPath } from "./landing";
 
@@ -23,6 +24,7 @@ export const landingGroups: RegistryGroup[] = [
   { type: "money", hub: "/services", label: "Core AI Services", priority: 0.9, items: moneyPages },
   { type: "service", hub: "/services", label: "AI Services", priority: 0.8, items: services },
   { type: "industry", hub: "/industries", label: "AI by Industry", priority: 0.8, items: industries },
+  { type: "creators", hub: "/creators", label: "AI for Creators", priority: 0.8, items: creators },
   { type: "location", hub: "/locations", label: "AI by Location", priority: 0.75, items: locations },
   { type: "resource", hub: "/resources", label: "Resources & Guides", priority: 0.7, items: resources },
   { type: "howto", hub: "/how-to", label: "How-to Guides", priority: 0.6, items: howtos },

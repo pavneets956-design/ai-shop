@@ -32,5 +32,6 @@ export const navLinks = [
   { label: "See it work", href: "/ai-receptionist" },
   { label: "Demo", href: "/demo" },
   { label: "AI Systems", href: "/shop" },
+  { label: "For Creators", href: "/creators" },
   { label: "Pricing", href: "/pricing" },
 ] as const;

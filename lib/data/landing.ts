@@ -14,7 +14,8 @@ export type PageType =
   | "location"
   | "compare"
   | "resource"
-  | "howto";
+  | "howto"
+  | "creators";
 
 export interface LandingSection {
   heading: string;
@@ -79,6 +80,7 @@ export const TYPE_BASE: Record<PageType, string> = {
   compare: "/compare",
   resource: "/resources",
   howto: "/how-to",
+  creators: "/creators",
 };
 
 export const TYPE_LABEL: Record<PageType, string> = {
@@ -89,6 +91,7 @@ export const TYPE_LABEL: Record<PageType, string> = {
   compare: "Compare",
   resource: "Resources",
   howto: "How-to Guides",
+  creators: "For Creators",
 };
 
 /** Build the canonical path for a landing entry. */

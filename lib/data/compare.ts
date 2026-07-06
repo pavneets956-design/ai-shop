@@ -1501,6 +1501,130 @@ export const comparisons: LandingContent[] = [
       },
     ],
     schema: "Comparison" as const,
+  },
+  {
+    slug: "ai-consultant-vs-ai-automation-agency",
+    eyebrow: "Compare",
+    h1: "AI Consultant vs AI Automation Agency",
+    title: "AI Consultant vs AI Automation Agency | Handbuilt",
+    description:
+      "A consultant advises; an automation agency builds. Here's when you need strategy, when you need something installed, and how to avoid paying for advice you can't use.",
+    answer:
+      "An AI consultant gives you advice, a strategy and a roadmap — you (or someone else) still have to build it. An AI automation agency scopes, builds and installs the working system. If you have a team who can execute, a consultant may be enough; if you want the outcome without hiring developers, a done-for-you builder like Handbuilt is usually the better spend, starting at $1,500 CAD.",
+    sections: [
+      {
+        heading: "When a consultant makes sense",
+        body: "Consulting is worth it when the gap is knowledge, not execution — you have people who can build, they just need direction.",
+        bullets: [
+          "You have in-house developers or a technical team",
+          "You need an AI strategy or roadmap across a larger org",
+          "You want a second opinion before committing budget",
+          "The main risk is choosing the wrong direction, not building",
+        ],
+      },
+      {
+        heading: "When you want it built and installed",
+        body: "For most small businesses the gap is execution — you don't want a slide deck, you want the AI receptionist answering calls next week.",
+        bullets: [
+          "You want the working system, not a plan to build one",
+          "You don't have developers to hand a roadmap to",
+          "You'd rather pay once for an outcome than by the hour for advice",
+          "You want one person accountable for the result",
+        ],
+      },
+    ],
+    comparison: {
+      alternativeLabel: "AI Consultant",
+      rows: [
+        { factor: "What you get", handbuilt: "A built, installed, working AI system", alternative: "Advice, strategy and a roadmap" },
+        { factor: "Who executes", handbuilt: "We build it for you", alternative: "You or a separate dev team" },
+        { factor: "Pricing", handbuilt: "Flat CAD price per build, from $1,500", alternative: "Hourly or retainer, output not guaranteed" },
+        { factor: "Time to a working result", handbuilt: "Days to weeks", alternative: "You still have to build after the advice" },
+        { factor: "Accountability", handbuilt: "One builder owns the outcome", alternative: "Advisor isn't on the hook for the build" },
+        { factor: "Best for", handbuilt: "SMBs who want the outcome done", alternative: "Teams that can execute themselves" },
+      ],
+    },
+    packageId: "starter",
+    ctaLabel: "Get it built, not just advised",
+    keywords: [
+      "ai consultant vs ai automation agency",
+      "ai consultant or agency",
+      "ai consulting vs done for you",
+      "hire ai consultant or builder",
+    ],
+    related: [
+      { label: "AI Automation Agency", href: "/ai-automation-agency" },
+      { label: "AI Built By Hand vs Generic AI Agency", href: "/compare/ai-built-by-hand-vs-generic-ai-agency" },
+      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    faqs: [
+      { q: "Can't I just get advice and build it myself?", a: "If you have the technical team, yes. Most small businesses don't — so a roadmap becomes shelfware. Done-for-you gets you the working result without hiring developers." },
+      { q: "Do you also advise, or only build?", a: "The discovery call includes the strategy — which automation pays back fastest — but you don't pay for advice you then have to execute. The plan comes with the build." },
+    ],
+    schema: "Comparison" as const,
+  },
+  {
+    slug: "ai-built-by-hand-vs-generic-ai-agency",
+    eyebrow: "Compare",
+    h1: "Handbuilt vs a Generic AI Agency",
+    title: "Handbuilt vs a Generic AI Agency | Handbuilt",
+    description:
+      "Most AI agencies resell the same templated funnel to everyone. Handbuilt builds one system, by hand, around your real business — and one person owns the result.",
+    answer:
+      "A generic AI agency typically resells a templated, one-size-fits-all setup, hands you off between sales and support, and locks you into monthly fees. Handbuilt is one builder who scopes and builds a custom system around your real business, at a fixed CAD price, that you own. You trade agency scale for a build that actually fits and one person who's accountable.",
+    sections: [
+      {
+        heading: "What 'generic agency' usually means",
+        body: "Not always, but often, the model is volume: sell the same package widely, deliver a template, and monetise the monthly.",
+        bullets: [
+          "The same templated funnel resold to every client",
+          "Sales rep, then account manager, then support queue",
+          "Monthly fees you can't cancel without losing everything",
+          "Little understanding of your specific operation",
+        ],
+      },
+      {
+        heading: "What handbuilt means here",
+        body: "One builder, fewer clients at once, each system built around the real business — intentionally the opposite of the volume model.",
+        bullets: [
+          "A system scoped and built around how you actually work",
+          "One person from discovery to handoff, reachable directly",
+          "A fixed CAD price and a build you own outright",
+          "Optional Care Plan for upkeep — not a lock-in",
+        ],
+      },
+    ],
+    comparison: {
+      alternativeLabel: "Generic AI agency",
+      rows: [
+        { factor: "The build", handbuilt: "Custom, built around your business", alternative: "Templated, resold to everyone" },
+        { factor: "Who you deal with", handbuilt: "One builder, start to finish", alternative: "Sales → account manager → support" },
+        { factor: "Pricing", handbuilt: "Fixed CAD price, you own it", alternative: "Recurring fees, often locked in" },
+        { factor: "Ownership", handbuilt: "You own the system", alternative: "Stops working if you stop paying" },
+        { factor: "Fit to your business", handbuilt: "Built around your real workflow", alternative: "You adapt to their template" },
+        { factor: "Capacity", handbuilt: "Fewer clients, done properly", alternative: "High volume, thin attention" },
+      ],
+    },
+    packageId: "starter",
+    ctaLabel: "Get a build that fits",
+    keywords: [
+      "custom ai vs generic ai agency",
+      "handbuilt ai vs agency",
+      "bespoke ai build vs template",
+      "ai agency alternative small business",
+    ],
+    related: [
+      { label: "AI Consultant vs AI Automation Agency", href: "/compare/ai-consultant-vs-ai-automation-agency" },
+      { label: "AI Automation Agency vs DIY", href: "/compare/ai-automation-agency-vs-diy" },
+      { label: "Custom AI Tool vs SaaS", href: "/compare/custom-ai-tool-vs-saas" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    faqs: [
+      { q: "Aren't agencies more reliable than one person?", a: "Agencies offer scale, but for a small business that often means being one templated client of hundreds. Handbuilt takes on fewer projects so each is built properly — the trade-off is intentional." },
+      { q: "What if I need ongoing help after launch?", a: "There's an optional $99/mo Care Plan for monitoring and tweaks — but you own the system either way, so it keeps working whether or not you subscribe." },
+    ],
+    schema: "Comparison" as const,
   }
 ];
 

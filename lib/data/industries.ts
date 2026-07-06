@@ -1,5 +1,6 @@
 import type { LandingContent } from "./landing";
 import { industriesB } from "./_industries_b";
+import { industriesC } from "./_industries_c";
 
 const industriesA: LandingContent[] = [
   {
@@ -674,7 +675,7 @@ const industriesA: LandingContent[] = [
   },
 ];
 
-export const industries: LandingContent[] = [...industriesA, ...industriesB];
+export const industries: LandingContent[] = [...industriesA, ...industriesB, ...industriesC];
 
 export function getIndustry(slug: string): LandingContent | undefined {
   return industries.find((i) => i.slug === slug);

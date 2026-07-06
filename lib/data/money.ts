@@ -850,7 +850,132 @@ export const moneyPages: LandingContent[] = [
     ],
     schema: "Service",
     icon: "Globe",
-  }
+  },
+  {
+    slug: "ai-integration-services",
+    eyebrow: "Core Service",
+    h1: "AI Integration Services for Business",
+    title: "AI Integration Services for Business | Handbuilt",
+    description:
+      "We integrate AI into the tools and workflows your business already runs on — calls, CRM, forms, email, booking and more. Done-for-you, from $1,500 CAD.",
+    answer:
+      "AI integration services connect AI into the systems your business already uses — your phone, CRM, forms, email, calendar and internal tools — so it does real work inside your actual workflow instead of sitting in a separate app. Handbuilt scopes, builds and installs the integration for you, starting at $1,500 CAD, and you own the result.",
+    pain: "The AI tools are everywhere and cheap; the hard part is wiring them into how your business actually runs so they save real time. That integration work is exactly what most businesses can't do themselves — and what generic SaaS leaves to you.",
+    scenario:
+      "A service business has a phone line, a CRM, a booking tool and a website form that don't talk to each other. We integrate AI across them: calls get answered and logged, form leads get instant follow-up, bookings sync to the calendar, and the CRM stays up to date automatically. The tools they already pay for finally work as one system.",
+    steps: [
+      "We map your current tools, data and the workflow you want AI inside of",
+      "We scope exactly what gets integrated and the outcome, at a flat price",
+      "We build and connect the AI into your real stack, and test it live",
+      "We hand it over — you own it — with an optional Care Plan for upkeep",
+    ],
+    gets: [
+      "AI wired into the tools you already use",
+      "One connected system instead of disconnected apps",
+      "Built around your real data and workflow",
+      "You own the integration outright",
+    ],
+    sections: [
+      {
+        heading: "What we integrate AI into",
+        body: "If it's part of how your business runs, it can usually be integrated. Common ones:",
+        bullets: [
+          "Phone and SMS — AI answering, routing and follow-up",
+          "CRM and pipelines — auto-logging, enrichment, updates",
+          "Website, forms and chat — instant capture and qualification",
+          "Email, calendar and booking — scheduling and reminders",
+          "Internal tools and docs — an assistant trained on your knowledge",
+        ],
+      },
+      {
+        heading: "Why integration is the real value",
+        body: "Anyone can sign up for an AI app. The leverage comes from AI doing work inside your existing systems — so leads, bookings and data flow automatically instead of needing a human to copy things between tools. That connective work is the craft, and it's what we do.",
+      },
+    ],
+    packageId: "business",
+    ctaLabel: "Scope my integration",
+    keywords: [
+      "ai integration services",
+      "ai integration for business",
+      "integrate ai into my business",
+      "done for you ai integration",
+    ],
+    related: [
+      { label: "AI Automation Agency", href: "/ai-automation-agency" },
+      { label: "Custom AI App Development", href: "/custom-ai-app-development" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
+      { label: "Custom Business Automation", href: "/services/custom-business-automation" },
+    ],
+    faqs: [
+      { q: "Do you integrate with the tools I already use?", a: "That's the point — we build around your existing stack (CRM, phone, calendar, forms, email and more) rather than making you switch. We confirm exactly what's supported in the discovery call." },
+      { q: "What if my tools don't have a direct integration?", a: "We can usually bridge them with automation platforms or custom connections. If something genuinely can't be integrated, we'll tell you upfront and propose the closest workable path." },
+      { q: "Do I own the integration?", a: "Yes — you own what we build. The optional $99/mo Care Plan covers monitoring and tweaks but isn't required to keep using it." },
+    ],
+    schema: "Service",
+    icon: "Boxes",
+  },
+  {
+    slug: "ai-automation-canada",
+    eyebrow: "Core Service",
+    h1: "AI Automation Services in Canada",
+    title: "AI Automation Services in Canada | Handbuilt",
+    description:
+      "Done-for-you AI automation for Canadian businesses — receptionists, chatbots, lead follow-up and custom systems. Fixed CAD pricing, delivered remotely nationwide.",
+    answer:
+      "Handbuilt provides done-for-you AI automation for businesses across Canada — AI receptionists, chatbots, lead follow-up, quote and booking automation, and custom AI tools. Based in BC and delivered remotely nationwide, with fixed CAD pricing from $1,500 and one builder accountable start to finish.",
+    pain: "Canadian small businesses want practical AI that actually works in their operation — not a US-priced agency retainer or a generic SaaS tool that half-fits. Finding someone who'll build the real thing, in CAD, and stand behind it is the hard part.",
+    scenario:
+      "A business in Alberta, Ontario or the Maritimes wants AI to stop missed-call losses and slow lead follow-up. We scope it over video, build the system around their real services and tools, test it live, and hand it over — same process whether they're in Surrey or Halifax. Fixed CAD pricing, no surprise US-dollar invoices.",
+    steps: [
+      "Discovery call over video — map where time and leads leak",
+      "Scoped proposal — a flat CAD price and a clear outcome",
+      "Build & test — around your real business, wherever you are in Canada",
+      "Handoff & support — you own it, with an optional $99/mo Care Plan",
+    ],
+    gets: [
+      "Done-for-you AI built around your business",
+      "Fixed CAD pricing, no currency surprises",
+      "Delivered remotely anywhere in Canada",
+      "One accountable builder, not an agency queue",
+    ],
+    sections: [
+      {
+        heading: "AI automation for Canadian businesses",
+        body: "From BC to Ontario and beyond, the fastest-payback automations are the same: stop losing leads to missed calls and slow replies, and take repetitive admin off your team.",
+        bullets: [
+          "AI receptionists and missed-call recovery",
+          "Lead follow-up and quote/booking automation",
+          "Website and social chat that captures and qualifies",
+          "Custom AI tools and workflow automation",
+        ],
+      },
+      {
+        heading: "Local roots, national (and global) reach",
+        body: "Handbuilt is based in the Surrey/Delta area of BC and serves businesses across Canada — and worldwide — remotely. The build is identical wherever you are: discovery over video, the system built around your real operation, support a message away.",
+      },
+    ],
+    packageId: "starter",
+    ctaLabel: "Get a fixed quote",
+    keywords: [
+      "ai automation canada",
+      "ai automation services canada",
+      "ai for small business canada",
+      "done for you ai automation canada",
+    ],
+    related: [
+      { label: "Remote AI Development", href: "/remote-ai-development" },
+      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
+      { label: "AI Automation in Toronto, ON", href: "/locations/ai-automation-toronto-on" },
+      { label: "AI Automation in Calgary, AB", href: "/locations/ai-automation-calgary-ab" },
+    ],
+    faqs: [
+      { q: "Do you work with businesses outside BC?", a: "Yes — we serve businesses across Canada (and internationally) remotely. Discovery is over video and the build is the same as a local one." },
+      { q: "Is pricing in Canadian dollars?", a: "Yes — fixed CAD pricing. A single AI worker starts at $1,500 CAD; larger multi-worker systems run $3,500–$7,500." },
+      { q: "How long does it take?", a: "A single AI worker is usually live in about 5 business days; larger systems take a few weeks depending on scope." },
+    ],
+    schema: "Service",
+    icon: "MapPin",
+  },
 ];
 
 export function getMoneyPage(slug: string): LandingContent | undefined {

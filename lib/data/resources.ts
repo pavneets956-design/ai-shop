@@ -766,7 +766,567 @@ export const resources: LandingContent[] = [
     }
   ],
   schema: "Article"
-}
+},
+  {
+    slug: "can-ai-edit-videos",
+    eyebrow: "Creator Guide",
+    h1: "Can AI Edit Videos?",
+    title: "Can AI Edit Videos? What It Can (and Can't) Do | Handbuilt",
+    description:
+      "Yes — AI can handle cuts, silence removal, captions, reframing and clipping. Here's what AI video editing does well, where it still needs a human, and how creators use it.",
+    answer:
+      "Yes — AI can already handle the mechanical parts of video editing: removing silences and filler, making first-pass cuts, adding captions, reframing to vertical, and clipping long videos into shorts. It doesn't yet replace human creative judgement on story, pacing and taste — the best setups automate the tedious 70% and leave the creative polish to you.",
+    sections: [
+      {
+        heading: "What AI video editing does well today",
+        body: "The reliable wins are the repetitive tasks that eat a creator's time.",
+        bullets: [
+          "Cutting silences, filler words and dead air",
+          "Auto-captions and burned-in subtitles",
+          "Reframing horizontal footage to vertical for shorts",
+          "Finding and clipping the strongest moments from long videos",
+          "Applying your presets, fonts and transitions consistently",
+        ],
+      },
+      {
+        heading: "Where a human still matters",
+        body: "AI is weak at the things that make content actually good: story structure, comedic timing, emotional pacing and knowing which moment lands. Treat AI as the assistant that does the grunt work so you can focus on the creative decisions that differentiate you.",
+      },
+    ],
+    keywords: ["can ai edit videos", "ai video editing", "does ai edit videos", "ai video editor for creators"],
+    related: [
+      { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
+      { label: "AI Caption & Subtitle Automation", href: "/creators/ai-caption-subtitle-automation" },
+      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+    ],
+    faqs: [
+      { q: "Will AI replace my video editor?", a: "Not the creative part. It removes the mechanical 70% — cuts, captions, reframing — so you or your editor spend time on the polish that sets your content apart." },
+      { q: "Does AI-edited video look generic?", a: "Only if it's off-the-shelf. Built around your presets and style, the output looks like your channel rather than a template." },
+    ],
+    ctaLabel: "Automate my editing",
+    schema: "Article",
+    icon: "Film"
+  },
+  {
+    slug: "can-ai-clone-my-voice-legally",
+    eyebrow: "Creator Guide",
+    h1: "Can AI Clone My Voice Legally?",
+    title: "Can AI Clone My Voice Legally? Consent & Rights | Handbuilt",
+    description:
+      "Cloning your own voice with consent is legitimate and common. Here's how voice cloning works legally for creators — consent, disclosure, platform rules and control.",
+    answer:
+      "Yes — cloning your own voice, with your consent, is legitimate and increasingly common for scaling narration. The legal lines are about consent and deception: cloning your own voice (or one you have explicit written rights to) is fine; cloning someone else's voice without permission, or using a clone to deceive, is not. Laws on voice and likeness vary by region.",
+    sections: [
+      {
+        heading: "The rules that actually matter",
+        body: "Voice-cloning problems are almost always consent and disclosure problems, not technology problems.",
+        bullets: [
+          "Clone only your own voice, or one you have explicit written permission to use",
+          "Never use a clone to impersonate or deceive people",
+          "Disclose synthetic audio where a platform or your audience expects it",
+          "Keep control — approve outputs, and be able to revoke access",
+        ],
+      },
+      {
+        heading: "How we build it",
+        body: "Handbuilt builds consent-first voice workflows: you record and approve a sample, scripts render in your voice for your review before anything publishes, and you control where it's used. We won't build impersonation or non-consensual clones. This is general information, not legal advice — confirm specifics for your jurisdiction.",
+      },
+    ],
+    keywords: ["can ai clone my voice legally", "is voice cloning legal", "ai voice cloning consent", "legal ai voice for creators"],
+    related: [
+      { label: "AI Voice Cloning Workflow (Consent-First)", href: "/creators/ai-voice-cloning-workflow" },
+      { label: "AI Text-to-Speech for Creators", href: "/creators/ai-text-to-speech-for-creators" },
+      { label: "AI Avatar Video Creation", href: "/creators/ai-avatar-video-creation" },
+    ],
+    faqs: [
+      { q: "Can I clone another creator's or celebrity's voice?", a: "No. We build voice cloning only for your own voice or a voice you have explicit written rights to. Cloning someone else's voice without consent risks serious legal and platform consequences." },
+      { q: "Do I need to disclose that a voice is AI?", a: "Increasingly, yes — several platforms now require labelling synthetic media, and disclosure protects audience trust. We help you set this up correctly." },
+    ],
+    ctaLabel: "Discuss a voice workflow",
+    schema: "Article",
+    icon: "Mic"
+  },
+  {
+    slug: "can-ai-make-tiktok-videos",
+    eyebrow: "Creator Guide",
+    h1: "Can AI Make TikTok Videos?",
+    title: "Can AI Make TikTok Videos? How Creators Use It | Handbuilt",
+    description:
+      "Yes — AI can help script, clip, caption and schedule TikToks. Here's what AI can realistically do for your TikTok, what still needs you, and how to keep it from looking generic.",
+    answer:
+      "Yes — AI can help produce TikToks end to end: generating hook ideas, drafting scripts, clipping and captioning footage, reframing to vertical and scheduling posts. What it can't do is replace your taste and originality — TikTok punishes generic AI content, so the winning approach uses AI to remove the grind around your ideas, not to replace them.",
+    sections: [
+      {
+        heading: "What AI handles well for TikTok",
+        body: "AI is strongest on the repetitive production work that stops creators posting consistently.",
+        bullets: [
+          "Hook ideas tuned to what performs in your niche",
+          "Fast script drafts in your voice",
+          "Clipping, captioning and vertical reframing",
+          "Scheduling posts at your audience's peak times",
+        ],
+      },
+      {
+        heading: "Why generic AI content fails on TikTok",
+        body: "TikTok's algorithm and audience are unusually sensitive to low-effort, obviously-AI content. The channels that win use AI to post more of their own voice, not to mass-produce filler. That's why a system built around your best content beats any off-the-shelf 'AI TikTok generator'.",
+      },
+    ],
+    keywords: ["can ai make tiktok videos", "ai tiktok video maker", "ai for tiktok content", "automate tiktok videos"],
+    related: [
+      { label: "AI TikTok Content System", href: "/creators/ai-tiktok-content-system" },
+      { label: "AI Script Writing System", href: "/creators/ai-script-writing-system" },
+      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+    ],
+    faqs: [
+      { q: "Can AI fully run my TikTok for me?", a: "It can run the production grind — scripting, clipping, captioning, scheduling — but your ideas and taste are what make it work. Fully hands-off, generic AI accounts tend to get buried." },
+      { q: "Will AI TikToks get flagged or throttled?", a: "Low-effort, clearly-synthetic spam can be. Original content produced with AI assistance in your voice is fine — the difference is effort and originality, not the tools." },
+    ],
+    ctaLabel: "Build my TikTok system",
+    schema: "Article",
+    icon: "Video"
+  },
+  {
+    slug: "best-ai-tools-for-content-creators",
+    eyebrow: "Creator Guide",
+    h1: "Best AI Tools for Content Creators",
+    title: "Best AI Tools for Content Creators (2026) | Handbuilt",
+    description:
+      "The most useful categories of AI tools for creators — clipping, editing, scripts, captions, repurposing, voice and scheduling — plus why a connected system beats ten apps.",
+    answer:
+      "The most useful AI tools for content creators fall into a few categories: clip generators, editing assistants, script and hook tools, caption/subtitle tools, repurposing engines, voice/TTS tools and scheduling automation. The tools themselves are cheap and plentiful — the real leverage comes from connecting the right ones into one workflow tuned to your voice, instead of juggling ten disconnected subscriptions.",
+    sections: [
+      {
+        heading: "The categories that matter",
+        body: "Rather than chase brand names that change monthly, pick by the job you need done.",
+        bullets: [
+          "Clip generators — turn long videos and podcasts into shorts",
+          "Editing assistants — silence removal, cuts, reframing",
+          "Script & hook tools — beat the blank page in your voice",
+          "Caption & subtitle tools — for the muted majority of viewers",
+          "Repurposing engines — one recording into a week of content",
+          "Voice / TTS — narration and voiceover at scale (with consent)",
+          "Scheduling — consistent posting without living in the apps",
+        ],
+      },
+      {
+        heading: "Why a system beats a pile of apps",
+        body: "Any creator can subscribe to ten AI tools. The problem is they don't talk to each other, none of them sound like you by default, and maintaining them becomes its own job. A connected system — the right tools, wired together around your workflow and voice — is what actually saves you hours. That's what Handbuilt builds for creators.",
+      },
+    ],
+    keywords: ["best ai tools for content creators", "ai tools for creators", "ai tools for youtubers", "creator ai stack"],
+    related: [
+      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
+      { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
+    ],
+    faqs: [
+      { q: "Which single AI tool is best for creators?", a: "There isn't one — it depends on your bottleneck. A clip generator helps a podcaster; an editing assistant helps a vlogger. The best results come from combining the right few into one workflow." },
+      { q: "Do I need to be technical to use these?", a: "To assemble and maintain a connected system, usually yes — which is why we build and install it for you, tuned to your channels, so you just use it." },
+    ],
+    ctaLabel: "Build my creator system",
+    schema: "Article",
+    icon: "Sparkles"
+  },
+  {
+    slug: "ai-chatbot-cost",
+    eyebrow: "Cost Guide",
+    h1: "How Much Does an AI Chatbot Cost?",
+    title: "How Much Does an AI Chatbot Cost? (2026) | Handbuilt",
+    description:
+      "AI chatbot pricing ranges from free DIY widgets to custom builds. Here's what each tier really costs, and what a done-for-you chatbot trained on your business runs.",
+    answer:
+      "An AI chatbot can cost anywhere from $0 for a basic DIY widget to $30–300/month for a SaaS tool, to a one-time custom build. A done-for-you chatbot trained on your real business — services, pricing, FAQs — and connected to your lead capture starts at $1,500 CAD from Handbuilt, and you own it with no per-seat fees.",
+    sections: [
+      {
+        heading: "The three pricing tiers",
+        body: "What you pay tracks how custom and connected the chatbot is.",
+        bullets: [
+          "DIY widgets: free to ~$50/mo — generic, you set it up and maintain it",
+          "SaaS chatbots: ~$30–300/mo — better, but templated and rented forever",
+          "Custom build: one-time from $1,500 CAD — trained on your business, yours to keep",
+        ],
+      },
+      {
+        heading: "What drives the price of a custom build",
+        body: "Scope is everything: a single website chatbot trained on your FAQs is at the lower end; one that also books appointments, qualifies leads, connects to your CRM, and works across your site and social DMs sits higher. Handbuilt quotes a flat CAD price after a short discovery call so there are no surprises.",
+      },
+    ],
+    keywords: ["ai chatbot cost", "how much does an ai chatbot cost", "ai chatbot pricing", "custom chatbot price"],
+    related: [
+      { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
+      { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
+      { label: "Custom AI Tool vs SaaS", href: "/compare/custom-ai-tool-vs-saas" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    faqs: [
+      { q: "Is a free chatbot good enough?", a: "For a basic FAQ deflector, sometimes. If you want it trained on your real business, capturing qualified leads and connected to your tools, a custom build pays back by converting visitors a generic widget loses." },
+      { q: "Are there ongoing costs?", a: "You own the build. There may be small usage costs for the AI provider, and an optional $99/mo Care Plan for monitoring and tweaks, but no per-seat SaaS fees." },
+    ],
+    packageId: "starter",
+    ctaLabel: "Get a chatbot quote",
+    schema: "Article",
+    icon: "MessagesSquare"
+  },
+  {
+    slug: "custom-ai-tool-cost",
+    eyebrow: "Cost Guide",
+    h1: "How Much Does a Custom AI Tool Cost?",
+    title: "How Much Does a Custom AI Tool Cost? | Handbuilt",
+    description:
+      "Custom AI tool pricing explained — what a bespoke AI app or internal tool costs, what drives the price, and how it compares to paying SaaS fees forever.",
+    answer:
+      "A custom AI tool typically costs a one-time build fee rather than a monthly subscription. With Handbuilt, a focused custom AI tool or internal app starts around $3,500 CAD and scales with complexity, with larger systems in the $7,500–$10,000+ range. You own it outright — no per-seat fees that compound as you grow.",
+    sections: [
+      {
+        heading: "What you're paying for",
+        body: "A custom tool is priced by scope and integration, not by seats.",
+        bullets: [
+          "How many workflows and steps the tool handles",
+          "Which systems it connects to (CRM, calendar, payments, docs)",
+          "How much custom logic and data it needs",
+          "Whether it's internal-only or customer-facing",
+        ],
+      },
+      {
+        heading: "Custom build vs SaaS over time",
+        body: "SaaS is cheaper to start but bills forever and per seat. A custom tool is a larger upfront cost you own — so past a certain size or subscription stack, it's cheaper over a couple of years and fits your workflow exactly. We'll tell you honestly when SaaS is the smarter call.",
+      },
+    ],
+    keywords: ["custom ai tool cost", "how much does a custom ai tool cost", "custom ai app pricing", "bespoke ai software cost"],
+    related: [
+      { label: "Custom AI App Development", href: "/custom-ai-app-development" },
+      { label: "Custom AI Tool vs SaaS", href: "/compare/custom-ai-tool-vs-saas" },
+      { label: "AI Integration Services", href: "/ai-integration-services" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    faqs: [
+      { q: "Why is it one-time instead of monthly?", a: "Because you own what we build. There may be small AI-provider usage costs and an optional Care Plan, but you're not renting the tool — it's yours." },
+      { q: "How do I know if custom is worth it?", a: "Add up the SaaS subscriptions touching the same workflow. If they exceed roughly $250/mo, a custom tool often pays back inside 18 months — and fits exactly how you work." },
+    ],
+    packageId: "business",
+    ctaLabel: "Get a custom quote",
+    schema: "Article",
+    icon: "AppWindow"
+  },
+  {
+    slug: "ai-integration-cost",
+    eyebrow: "Cost Guide",
+    h1: "How Much Does AI Integration Cost?",
+    title: "How Much Does AI Integration Cost? | Handbuilt",
+    description:
+      "AI integration pricing — what it costs to wire AI into your existing tools (CRM, phone, forms, calendar), what drives the price, and how Handbuilt quotes it.",
+    answer:
+      "AI integration — wiring AI into the tools you already use — is usually priced as a one-time build based on how many systems connect and how much logic is involved. With Handbuilt, integrations start at $1,500 CAD for a focused connection and scale to $3,500–$7,500 for multi-system setups, quoted at a flat price after discovery.",
+    sections: [
+      {
+        heading: "What affects the cost",
+        body: "Integration pricing is mostly about connection points and complexity.",
+        bullets: [
+          "How many tools are being connected",
+          "Whether they have clean APIs or need bridging",
+          "How much custom logic runs between them",
+          "How much of your data needs to flow automatically",
+        ],
+      },
+      {
+        heading: "Why it's worth quoting properly",
+        body: "A cheap integration that breaks silently costs more than one built and tested right. Handbuilt scopes exactly what connects and what the outcome is at a fixed CAD price, then tests it live — so it actually works in your real operation, not just in a demo.",
+      },
+    ],
+    keywords: ["ai integration cost", "how much does ai integration cost", "ai integration pricing", "cost to integrate ai into business"],
+    related: [
+      { label: "AI Integration Services", href: "/ai-integration-services" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
+      { label: "Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+    faqs: [
+      { q: "Can you integrate with the tools I already use?", a: "Usually yes — CRMs, phone systems, calendars, forms and more. We confirm exactly what's supported and quote a flat price before any work starts." },
+      { q: "What if a tool has no direct integration?", a: "We can often bridge it with automation platforms or custom connections. If something genuinely can't connect, we'll say so and propose the closest workable path." },
+    ],
+    packageId: "starter",
+    ctaLabel: "Scope my integration",
+    schema: "Article",
+    icon: "Boxes"
+  },
+  {
+    slug: "small-business-ai-setup-cost",
+    eyebrow: "Cost Guide",
+    h1: "How Much Does It Cost to Set Up AI for a Small Business?",
+    title: "Small Business AI Setup Cost (2026) | Handbuilt",
+    description:
+      "What it really costs a small business to set up AI — from a single AI worker to a full system — with honest CAD price ranges and what pays back fastest.",
+    answer:
+      "Setting up AI for a small business ranges from about $1,500 CAD for a single AI worker (like a receptionist or chatbot) to $3,500–$7,500 for a multi-worker system, and $10,000+ for a fully custom app. Most businesses start with the one automation tied to lost revenue and expand once it's paying for itself.",
+    sections: [
+      {
+        heading: "Typical setup costs by scope",
+        body: "You don't need to buy everything at once — most start small.",
+        bullets: [
+          "Single AI worker (receptionist, chatbot, quote agent): from $1,500 CAD",
+          "Multi-worker system (calls + follow-up + booking): $3,500–$7,500",
+          "Fully custom AI app or internal tool: $10,000+",
+          "Optional ongoing Care Plan: $99/mo for monitoring and tweaks",
+        ],
+      },
+      {
+        heading: "Where to start for the fastest payback",
+        body: "For most small businesses, the fastest return is stopping lost leads — a missed-call recovery or AI receptionist, or a lead follow-up agent. Start there, measure the recovered revenue, and add the next piece. A short discovery call pinpoints your fastest payback.",
+      },
+    ],
+    keywords: ["small business ai setup cost", "cost to set up ai for business", "ai setup pricing small business", "how much to add ai to my business"],
+    related: [
+      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
+      { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" },
+      { label: "AI Automation Packages & Pricing", href: "/pricing" },
+      { label: "AI Receptionist", href: "/ai-receptionist" },
+    ],
+    faqs: [
+      { q: "Do I have to build the whole system at once?", a: "No — most businesses start with one AI worker tied to lost revenue, prove the payback, then expand. It keeps the upfront cost low and the return clear." },
+      { q: "Are there hidden monthly fees?", a: "You own what we build. There may be small AI-provider usage costs and an optional $99/mo Care Plan, but no mandatory per-seat subscriptions." },
+    ],
+    packageId: "starter",
+    ctaLabel: "Get a setup quote",
+    schema: "Article",
+    icon: "Receipt"
+  },
+  {
+    slug: "can-ai-send-quotes-automatically",
+    eyebrow: "Guide",
+    h1: "Can AI Send Quotes Automatically?",
+    title: "Can AI Send Quotes Automatically? | Handbuilt",
+    description:
+      "Yes — AI can capture a request, apply your pricing rules, and send a quote in minutes. Here's how automated quoting works and where a human still signs off.",
+    answer:
+      "Yes — AI can capture a quote request, ask the right qualifying questions, apply your pricing rules, and send a professional quote in minutes instead of days. For anything complex or high-value, it can prepare the quote and route it to you to approve before it goes out. Handbuilt builds this around your services and pricing.",
+    sections: [
+      {
+        heading: "How automated quoting works",
+        body: "The AI turns an inquiry into a quote using your rules, not guesswork.",
+        bullets: [
+          "Captures the request from a call, form or message",
+          "Asks the qualifying questions your quotes depend on",
+          "Applies your pricing logic and options",
+          "Sends the quote, or routes it to you to approve first",
+        ],
+      },
+      {
+        heading: "Why speed wins quotes",
+        body: "The business that quotes first usually wins the job. Automated quoting means a lead that comes in at 9pm gets a real quote before a competitor even sees the message — while you keep control over pricing and final approval on the big ones.",
+      },
+    ],
+    keywords: ["can ai send quotes automatically", "ai quote automation", "automated quoting", "ai generate quotes for business"],
+    related: [
+      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
+      { label: "Estimate Follow-Up Automation", href: "/use-cases/estimate-follow-up-automation" },
+      { label: "How to Automate Quote Requests", href: "/how-to/automate-quote-requests" },
+    ],
+    faqs: [
+      { q: "Will it quote wrong on complex jobs?", a: "For anything outside clear rules, it prepares the quote and hands it to you to approve — so complex or high-value jobs still get your eyes before they go out." },
+      { q: "Does it use my actual pricing?", a: "Yes — it applies your real pricing rules and options, so quotes are consistent and on-brand every time." },
+    ],
+    ctaLabel: "Automate my quoting",
+    schema: "Article",
+    icon: "Receipt"
+  },
+  {
+    slug: "can-ai-follow-up-with-leads",
+    eyebrow: "Guide",
+    h1: "Can AI Follow Up With Leads Automatically?",
+    title: "Can AI Follow Up With Leads Automatically? | Handbuilt",
+    description:
+      "Yes — AI can follow up with every lead instantly and persistently until they respond. Here's how automated lead follow-up works and why it lifts close rates.",
+    answer:
+      "Yes — AI can respond to every new lead within seconds and keep following up on a proven cadence until they reply, book, or opt out. It answers questions, handles objections, and routes hot leads to you. Handbuilt builds it around your sales process so no lead goes cold from slow or forgotten follow-up.",
+    sections: [
+      {
+        heading: "What automated follow-up does",
+        body: "It does the persistent chasing that humans forget under a busy week.",
+        bullets: [
+          "Instant first response, day or night",
+          "A multi-touch cadence instead of one-and-done",
+          "Answers common questions and handles objections",
+          "Stops the moment a lead replies and routes them to you",
+        ],
+      },
+      {
+        heading: "Why it lifts close rates",
+        body: "Most leads are lost not to a 'no' but to silence — a slow first reply and no follow-through. Automating instant, persistent follow-up recovers the leads that would otherwise slip, without your team having to remember to chase anyone.",
+      },
+    ],
+    keywords: ["can ai follow up with leads", "ai lead follow up", "automated lead follow up", "ai follow up leads automatically"],
+    related: [
+      { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },
+      { label: "AI Lead Follow-Up Guide", href: "/resources/ai-lead-follow-up-guide" },
+      { label: "Facebook Lead Automation", href: "/use-cases/facebook-lead-automation" },
+    ],
+    faqs: [
+      { q: "Won't automated follow-up feel spammy?", a: "It's built to feel like a helpful, human check-in on your tone and cadence, and it stops instantly when a lead responds. You set how many touches and how often." },
+      { q: "Does it know when to hand off to me?", a: "Yes — hot or complex leads are routed straight to you, so automation handles the chasing and you handle the closing." },
+    ],
+    ctaLabel: "Automate my follow-up",
+    schema: "Article",
+    icon: "Magnet"
+  },
+  {
+    slug: "can-ai-run-my-customer-support",
+    eyebrow: "Guide",
+    h1: "Can AI Run My Customer Support?",
+    title: "Can AI Run My Customer Support? | Handbuilt",
+    description:
+      "Yes — AI can handle the bulk of customer support instantly, 24/7, and escalate the rest to your team. Here's what it handles well and where humans still matter.",
+    answer:
+      "Yes — AI can handle a large share of customer support: answering common questions from your own help content, tracking orders, handling returns and FAQs, and escalating anything complex or sensitive to your team. Handbuilt builds it trained on your real support material so answers are accurate and on-brand, 24/7.",
+    sections: [
+      {
+        heading: "What AI support handles well",
+        body: "The repetitive majority of tickets are a great fit for automation.",
+        bullets: [
+          "Common questions answered from your help docs",
+          "Order status, returns and account basics",
+          "Instant responses around the clock",
+          "Consistent, on-brand answers every time",
+        ],
+      },
+      {
+        heading: "Where humans still matter",
+        body: "Complex, sensitive or high-stakes issues should reach a person, and good AI support knows when to escalate rather than guess. The goal isn't to remove your team — it's to free them from the repetitive 70% so they handle the cases that actually need a human.",
+      },
+    ],
+    keywords: ["can ai run my customer support", "ai customer support", "automate customer support", "ai support agent for business"],
+    related: [
+      { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
+      { label: "AI Support Bot for SaaS", href: "/use-cases/ai-support-bot-for-saas" },
+      { label: "AI Website Assistant", href: "/services/ai-website-assistant" },
+    ],
+    faqs: [
+      { q: "Will it give wrong answers?", a: "It answers from your real support content rather than the open internet, and escalates anything it isn't confident about — which keeps answers accurate and avoids confident mistakes." },
+      { q: "Does it replace my support team?", a: "No — it handles the repetitive majority so your team focuses on the complex and sensitive cases that genuinely need a person." },
+    ],
+    ctaLabel: "Automate my support",
+    schema: "Article",
+    icon: "Headset"
+  },
+  {
+    slug: "what-is-an-ai-worker",
+    eyebrow: "Guide",
+    h1: "What Is an AI Worker?",
+    title: "What Is an AI Worker? (Plain-English Guide) | Handbuilt",
+    description:
+      "An AI worker is a system that does a specific job in your business — answering calls, following up leads, booking appointments — automatically. Here's how they work.",
+    answer:
+      "An AI worker is a system set up to do a specific, repetitive job in your business — like answering calls, following up with leads, booking appointments, or replying to reviews — automatically and around the clock. Unlike a generic chatbot, an AI worker is trained on your business and connected to your tools so it produces a real outcome, not just conversation.",
+    sections: [
+      {
+        heading: "Examples of AI workers",
+        body: "Each one owns a single job you'd otherwise do by hand or hire for.",
+        bullets: [
+          "An AI receptionist that answers and books every call",
+          "A lead follow-up agent that chases quotes and inquiries",
+          "A booking agent that fills and manages your calendar",
+          "A review agent that requests and responds to reviews",
+        ],
+      },
+      {
+        heading: "AI worker vs chatbot",
+        body: "A chatbot chats; an AI worker gets a job done. The difference is training and connection — an AI worker knows your business and plugs into your phone, CRM, calendar and forms, so it books the appointment or captures the lead rather than just answering a question. You can start with one and add more over time.",
+      },
+    ],
+    keywords: ["what is an ai worker", "ai worker meaning", "ai employee for business", "ai worker vs chatbot"],
+    related: [
+      { label: "AI Business System", href: "/ai-business-system" },
+      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
+      { label: "AI Employee vs Human Assistant", href: "/compare/hiring-vs-ai-automation" },
+      { label: "AI Automation Examples", href: "/resources/ai-automation-examples-for-small-business" },
+    ],
+    faqs: [
+      { q: "Is an AI worker the same as an employee?", a: "It does a defined job like an employee would, around the clock, but it's a system you own — not a person. Most businesses use AI workers to handle repetitive work so their people focus on higher-value tasks." },
+      { q: "Can I start with just one?", a: "Yes — most businesses start with a single AI worker tied to lost revenue, then add more as it proves its value." },
+    ],
+    ctaLabel: "Get an AI worker",
+    schema: "Article",
+    icon: "Bot"
+  },
+  {
+    slug: "best-ai-tools-for-contractors",
+    eyebrow: "Guide",
+    h1: "Best AI Tools for Contractors",
+    title: "Best AI Tools for Contractors (2026) | Handbuilt",
+    description:
+      "The AI tools that actually move the needle for contractors — call answering, quote follow-up, booking and review generation — and why a built-in system beats apps.",
+    answer:
+      "The most useful AI tools for contractors solve the money-losing gaps: missed calls, slow quote follow-up, booking, and reviews. The highest-impact ones are an AI receptionist to catch every call, automated estimate follow-up, booking automation, and review requests. The real leverage is connecting them into one system built around how a trade actually runs.",
+    sections: [
+      {
+        heading: "The tools that pay back fastest",
+        body: "For trades, the fastest ROI is stopping lost jobs on the phone and in the quote pipeline.",
+        bullets: [
+          "AI receptionist — answers and books every call while you're on the tools",
+          "Estimate follow-up — chases quiet quotes to a yes or no",
+          "Booking automation — fills the calendar without phone tag",
+          "Review requests — builds the reputation that wins local search",
+        ],
+      },
+      {
+        heading: "Why a connected system beats separate apps",
+        body: "Ten contractor apps that don't talk to each other create more admin, not less. A system where the call, the quote, the booking and the follow-up connect — built around your services and service area — is what actually saves a busy trade time. That's what Handbuilt builds.",
+      },
+    ],
+    keywords: ["best ai tools for contractors", "ai tools for contractors", "ai for trades business", "contractor automation tools"],
+    related: [
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
+      { label: "Contractor AI Automation", href: "/industries/contractor-ai-automation" },
+      { label: "Estimate Follow-Up Automation", href: "/use-cases/estimate-follow-up-automation" },
+      { label: "Missed-Call Automation", href: "/use-cases/missed-call-automation" },
+    ],
+    faqs: [
+      { q: "I'm a one-person operation — which tool first?", a: "An AI receptionist, almost always. When you're on the tools, the calls you miss are the jobs you lose — catching them usually pays for the whole thing." },
+      { q: "Do I need to be techy to use these?", a: "No — we build and install the system around your business, so you just use it. That's the point of done-for-you." },
+    ],
+    ctaLabel: "See contractor AI",
+    schema: "Article",
+    icon: "Hammer"
+  },
+  {
+    slug: "best-ai-automations-for-service-businesses",
+    eyebrow: "Guide",
+    h1: "Best AI Automations for Service Businesses",
+    title: "Best AI Automations for Service Businesses | Handbuilt",
+    description:
+      "The AI automations with the highest ROI for service businesses — missed-call recovery, lead follow-up, booking, reminders and reviews. Where to start and why.",
+    answer:
+      "The best AI automations for a service business target lost revenue and wasted time: missed-call recovery, instant lead follow-up, booking automation, appointment reminders, and review generation. Most service businesses see the fastest payback from whichever one plugs their biggest leak — usually missed calls or slow follow-up.",
+    sections: [
+      {
+        heading: "The highest-ROI automations",
+        body: "These consistently pay back fastest for appointment- and lead-driven businesses.",
+        bullets: [
+          "Missed-call recovery — text back every missed call instantly",
+          "Lead follow-up — respond and chase until they book or opt out",
+          "Booking and reminders — fill the calendar, cut no-shows",
+          "Review requests — turn happy customers into local-search proof",
+        ],
+      },
+      {
+        heading: "How to choose where to start",
+        body: "Don't automate everything at once. Find your biggest leak — the missed calls, the un-chased leads, the empty slots from no-shows — automate that first, measure the recovered revenue, then add the next. A short discovery call maps it for your specific business.",
+      },
+    ],
+    keywords: ["best ai automations for service businesses", "ai automation service business", "top ai automations small business", "service business automation ideas"],
+    related: [
+      { label: "AI Automation Examples for Small Business", href: "/resources/ai-automation-examples-for-small-business" },
+      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
+      { label: "Missed-Call Automation", href: "/use-cases/missed-call-automation" },
+      { label: "No-Show Reminder Automation", href: "/use-cases/no-show-reminder-automation" },
+    ],
+    faqs: [
+      { q: "Which automation should I start with?", a: "The one plugging your biggest leak — usually missed calls or slow lead follow-up. Start there, prove the return, then expand. The discovery call finds it for you." },
+      { q: "Can these connect to my existing tools?", a: "Yes — we build around your phone, CRM, calendar and forms so the automations work inside your real workflow, not in a separate app." },
+    ],
+    ctaLabel: "Find my fastest win",
+    schema: "Article",
+    icon: "Sparkles"
+  }
 ];
 
 export function getResource(slug: string): LandingContent | undefined {
