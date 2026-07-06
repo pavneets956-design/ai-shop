@@ -40,6 +40,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <FooterLink href="/services">All services</FooterLink>
               <FooterLink href="/industries">By industry</FooterLink>
+              <FooterLink href="/locations">By location</FooterLink>
+              <FooterLink href="/remote-ai-development">Remote / international</FooterLink>
               <FooterLink href="/use-cases">Use cases</FooterLink>
               <FooterLink href="/compare">Compare</FooterLink>
               <FooterLink href="/pricing">Pricing</FooterLink>

@@ -3,6 +3,7 @@
 import { moneyPages } from "./money";
 import { services } from "./services";
 import { industries } from "./industries";
+import { locations } from "./locations";
 import { comparisons } from "./compare";
 import { resources } from "./resources";
 import { howtos } from "./howto";
@@ -22,6 +23,7 @@ export const landingGroups: RegistryGroup[] = [
   { type: "money", hub: "/services", label: "Core AI Services", priority: 0.9, items: moneyPages },
   { type: "service", hub: "/services", label: "AI Services", priority: 0.8, items: services },
   { type: "industry", hub: "/industries", label: "AI by Industry", priority: 0.8, items: industries },
+  { type: "location", hub: "/locations", label: "AI by Location", priority: 0.75, items: locations },
   { type: "resource", hub: "/resources", label: "Resources & Guides", priority: 0.7, items: resources },
   { type: "howto", hub: "/how-to", label: "How-to Guides", priority: 0.6, items: howtos },
   { type: "compare", hub: "/compare", label: "Comparisons", priority: 0.6, items: comparisons },

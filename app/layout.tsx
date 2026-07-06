@@ -65,6 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
+    alternateLocale: ["en_US", "en_AU", "en_NZ", "en_GB"],
     url: site.url,
     siteName: site.name,
     title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",

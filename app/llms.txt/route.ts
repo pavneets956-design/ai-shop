@@ -12,11 +12,11 @@ export function GET() {
   lines.push(`# ${site.legalName} (${site.name})`);
   lines.push("");
   lines.push(
-    `> ${site.tagline} ${site.subTagline} Based in ${site.region}, ${site.country}; serves Canada and remote worldwide.`
+    `> ${site.tagline} ${site.subTagline} Based in ${site.region}, Canada; delivers remotely to small businesses across Canada, the United States, Australia, New Zealand and the United Kingdom.`
   );
   lines.push("");
   lines.push(
-    "Handbuilt is a one-person AI studio that designs and builds custom AI apps, agents, chatbots, and automations for small and local businesses. Every build is trained on the client's real business and built by hand, not assembled from a template."
+    "Handbuilt is a one-person AI studio that designs and builds custom AI apps, agents, chatbots, and automations for small and local businesses. Every build is trained on the client's real business and built by hand, not assembled from a template. The founder (Pavneet) is based in Surrey/Delta, British Columbia, Canada, and works with clients remotely worldwide — most commonly Canada, the United States, Australia and New Zealand. Pricing is fixed in CAD (roughly 0.72–0.75 USD at time of writing); USD, AUD and NZD invoicing is available on request."
   );
   lines.push("");
 

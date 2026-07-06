@@ -11,6 +11,7 @@ export type PageType =
   | "money"
   | "service"
   | "industry"
+  | "location"
   | "compare"
   | "resource"
   | "howto";
@@ -74,6 +75,7 @@ export const TYPE_BASE: Record<PageType, string> = {
   money: "",
   service: "/services",
   industry: "/industries",
+  location: "/locations",
   compare: "/compare",
   resource: "/resources",
   howto: "/how-to",
@@ -83,6 +85,7 @@ export const TYPE_LABEL: Record<PageType, string> = {
   money: "Services",
   service: "AI Services",
   industry: "Industries",
+  location: "Locations",
   compare: "Compare",
   resource: "Resources",
   howto: "How-to Guides",

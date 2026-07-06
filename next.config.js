@@ -47,6 +47,27 @@ const nextConfig = {
       { source: '/quiet-hours', destination: '/ai-receptionist', permanent: true },
       { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: true },
       { source: '/forge', destination: '/', permanent: true },
+
+      // SEO canonicalisation (308). These buyer-intent root/alias URLs are the
+      // ones people type or link, but the ranking page already lives elsewhere.
+      // Redirecting instead of duplicating keeps one canonical page per keyword
+      // (no content cannibalisation) while the requested URL still resolves.
+      { source: '/ai-quote-generator', destination: '/services/ai-quote-generator', permanent: true },
+      { source: '/ai-workflow-automation', destination: '/services/ai-workflow-automation', permanent: true },
+      { source: '/ai-crm-automation', destination: '/services/ai-crm-automation', permanent: true },
+      { source: '/ai-invoice-reminder-system', destination: '/services/ai-invoice-reminder-system', permanent: true },
+      { source: '/ai-email-automation', destination: '/services/ai-email-automation', permanent: true },
+      { source: '/ai-booking-assistant', destination: '/services/ai-calendar-booking-agent', permanent: true },
+      { source: '/ai-customer-support-bot', destination: '/services/ai-customer-support-agent', permanent: true },
+      { source: '/ai-voice-agent-for-business', destination: '/services/ai-voice-agent', permanent: true },
+      { source: '/custom-ai-app-development-canada', destination: '/custom-ai-app-development', permanent: true },
+      // Resource aliases → canonical resource/how-to pages.
+      { source: '/resources/how-to-automate-quote-requests', destination: '/how-to/automate-quote-requests', permanent: true },
+      { source: '/resources/how-to-automate-invoice-reminders', destination: '/how-to/automate-invoice-reminders', permanent: true },
+      { source: '/resources/best-ai-tools-for-small-business-canada', destination: '/resources/best-ai-tools-for-small-business', permanent: true },
+      { source: '/resources/ai-automation-examples-small-business', destination: '/resources/ai-automation-examples-for-small-business', permanent: true },
+      // Comparison alias.
+      { source: '/compare/custom-ai-app-vs-saas-tool', destination: '/compare/custom-ai-tool-vs-saas', permanent: true },
     ];
   },
   async headers() {

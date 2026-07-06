@@ -42,11 +42,11 @@ export const howtos: LandingContent[] = [
       },
       {
         heading: "What it costs to set up",
-        body: "DIY with an off-the-shelf widget: free to $50/month ongoing, 1–3 days of your own time to configure. DIY custom build: 20–40 hours of dev time plus API costs. Hiring Handbuilt: Starter package at $1,000 CAD flat — includes chatbot build, knowledge base setup, embed, and two weeks of monitoring. You get a working chatbot faster than you'd finish the DIY research.",
+        body: "DIY with an off-the-shelf widget: free to $50/month ongoing, 1–3 days of your own time to configure. DIY custom build: 20–40 hours of dev time plus API costs. Hiring Handbuilt: Starter package at $1,500 CAD — includes chatbot build, knowledge base setup, embed, and two weeks of monitoring. You get a working chatbot faster than you'd finish the DIY research.",
       },
     ],
     packageId: "starter",
-    ctaLabel: "Get a chatbot built for $1,000 CAD",
+    ctaLabel: "Get a chatbot built for $1,500 CAD",
     keywords: [
       "add ai chatbot to website",
       "website chatbot for small business",
@@ -117,11 +117,11 @@ export const howtos: LandingContent[] = [
       },
       {
         heading: "What it costs to set up",
-        body: "DIY: 10–20 hours to map your pricing, build the form, wire the automation, and test edge cases. Tools cost $0–$70/month ongoing. Hiring Handbuilt: Starter package at $1,000 CAD flat covers the full quote automation — form, pricing logic, email template, and CRM logging. Most clients recover the cost within the first month from leads they would have lost overnight.",
+        body: "DIY: 10–20 hours to map your pricing, build the form, wire the automation, and test edge cases. Tools cost $0–$70/month ongoing. Hiring Handbuilt: Starter package at $1,500 CAD covers the full quote automation — form, pricing logic, email template, and CRM logging. Most clients recover the cost within the first month from leads they would have lost overnight.",
       },
     ],
     packageId: "starter",
-    ctaLabel: "Get quote automation built for $1,000 CAD",
+    ctaLabel: "Get quote automation built for $1,500 CAD",
     keywords: [
       "automate quote requests small business",
       "ai quote generator canada",
@@ -192,11 +192,11 @@ export const howtos: LandingContent[] = [
       },
       {
         heading: "What it costs to set up",
-        body: "DIY: 15–30 hours to build the script, configure the platform, connect the calendar, and test. Ongoing: $50–$200/month in platform fees. Hiring Handbuilt: Starter package at $1,000 CAD flat — script, platform setup, calendar integration, escalation routing, and one round of live testing. You get a working receptionist faster than you'd finish reading the platform docs.",
+        body: "DIY: 15–30 hours to build the script, configure the platform, connect the calendar, and test. Ongoing: $50–$200/month in platform fees. Hiring Handbuilt: Starter package at $1,500 CAD — script, platform setup, calendar integration, escalation routing, and one round of live testing. You get a working receptionist faster than you'd finish reading the platform docs.",
       },
     ],
     packageId: "starter",
-    ctaLabel: "Get an AI receptionist set up for $1,000 CAD",
+    ctaLabel: "Get an AI receptionist set up for $1,500 CAD",
     keywords: [
       "ai receptionist small business canada",
       "automated phone answering service bc",
@@ -262,12 +262,12 @@ export const howtos: LandingContent[] = [
         bullets: [
           "Gmail + Zapier + OpenAI: ~$30–$60/month, handles email auto-reply",
           "Freshdesk or Front with AI: $15–$60/agent/month, built-in AI features",
-          "Custom GPT agent (Business package): full control, any channel, custom tone — $2,500–$5,000 CAD build",
+          "Custom GPT agent (Business package): full control, any channel, custom tone — $3,500–$7,500 CAD build",
         ],
       },
       {
         heading: "What it costs to set up",
-        body: "DIY email automation: 10–20 hours setup, $30–$60/month ongoing. DIY multi-channel: 30–60 hours, more complexity, higher chance of breaking. Hiring Handbuilt: Business package at $2,500–$5,000 CAD covers multi-channel setup, knowledge base build, confidence routing, complaint escalation, and a month of tuning. The math works if you're currently spending more than 30 minutes a day on routine replies — and most business owners are.",
+        body: "DIY email automation: 10–20 hours setup, $30–$60/month ongoing. DIY multi-channel: 30–60 hours, more complexity, higher chance of breaking. Hiring Handbuilt: Business package at $3,500–$7,500 CAD covers multi-channel setup, knowledge base build, confidence routing, complaint escalation, and a month of tuning. The math works if you're currently spending more than 30 minutes a day on routine replies — and most business owners are.",
       },
     ],
     packageId: "business",
@@ -301,6 +301,88 @@ export const howtos: LandingContent[] = [
     schema: "HowTo",
     icon: "Workflow",
   },
+{
+  slug: "automate-invoice-reminders",
+  eyebrow: "How-to",
+  h1: "How to Automate Invoice Reminders",
+  title: "How to Automate Invoice Reminders",
+  description: "Step-by-step guide to automating invoice payment reminders for small businesses — connect your invoicing tool, set a schedule, and stop chasing by hand.",
+  answer: "To automate invoice reminders, connect your invoicing tool (QuickBooks, Wave, FreshBooks) to an automation layer, define a reminder schedule, write escalating message templates, and set a stop trigger that fires when payment is recorded. The system checks daily and sends the next message in sequence — without you touching it.",
+  pain: "You forget to follow up on overdue invoices, or you find it awkward to chase clients for money — so late payments stay late longer than they should.",
+  steps: [
+    "Connect your invoicing tool — QuickBooks, Wave, FreshBooks, Jobber, or a spreadsheet — to the automation layer. This becomes the single source of truth for invoice status: sent, overdue, or paid.",
+    "Define your reminder schedule. A typical sequence: 3 days before due (friendly heads-up), day-of (payment due today), 3 days overdue (gentle nudge), 7 days overdue (firm follow-up), 14 days overdue (escalation or manual handoff).",
+    "Draft polite, escalating message templates. Start warm at the heads-up stage ('Just a friendly reminder — your invoice for [job] is due soon'). Get firmer at the overdue stages. Include a direct payment link in every message.",
+    "Set up the auto-send trigger and the stop condition. The automation checks invoice status daily, sends the next message in sequence if the invoice is still unpaid, and stops the moment the invoicing tool marks it paid. No over-sending.",
+    "Test with a real invoice before full rollout. Send yourself the complete sequence, confirm the payment link works, and verify the stop condition fires when you mark the invoice paid.",
+    "After the first month, review which messages get the fastest payment responses and adjust timing or tone accordingly — then leave the system running."
+  ],
+  gets: [
+    "Invoices get followed up on every time, not just when you remember.",
+    "Awkward payment chasing is handled by the system — not a personal conversation.",
+    "You see which clients are consistently late and can adjust terms proactively.",
+    "Faster average payment time with less mental overhead."
+  ],
+  sections: [
+    {
+      heading: "Why Manual Invoice Follow-Up Fails",
+      body: "Most small business owners forget to chase late invoices — not because they don't care, but because they're busy doing the actual work. The reminder falls off the to-do list, the client assumes no one noticed, and a 30-day net quietly becomes a 60-day net. Automating the sequence removes the memory dependency entirely."
+    },
+    {
+      heading: "Tools That Work for Small Businesses",
+      body: "You don't need expensive software to automate invoice reminders.",
+      bullets: [
+        "QuickBooks or FreshBooks + Zapier or Make.com: trigger messages when invoice status changes to overdue.",
+        "Wave (free invoicing) + a simple automation tool: same principle at lower cost.",
+        "Jobber (for contractors): has built-in client notification sequences that Handbuilt can extend into a full reminder system.",
+        "A Google Sheet + automation layer: works for very simple setups with low invoice volume and no dedicated accounting tool."
+      ]
+    },
+    {
+      heading: "The Handbuilt Option",
+      body: "Handbuilt builds done-for-you invoice reminder systems as part of the AI Starter System, starting at $1,500 CAD. It connects to your existing invoicing tool, writes the message sequences in your voice, configures the stop-on-payment logic, and hands over a running system. You don't configure anything — it just works."
+    },
+    {
+      heading: "What This Won't Do",
+      body: "Automated reminders work for straightforward payment situations. They don't replace a hard conversation with a client who is disputing an invoice, handle formal collections escalation, or manage any legal payment enforcement. Those situations still need a human — and possibly a lawyer."
+    }
+  ],
+  packageId: "starter",
+  ctaLabel: "Get this built",
+  keywords: ["automate invoice reminders", "invoice reminder automation small business", "automated payment reminders", "invoice follow up automation canada", "small business invoice automation"],
+  related: [
+    { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
+    { label: "What Can AI Automate for a Small Business?", href: "/resources/what-can-ai-automate-small-business" },
+    { label: "AI Lead Follow-Up Guide", href: "/resources/ai-lead-follow-up-guide" },
+    { label: "AI Email Automation", href: "/services/ai-email-automation" },
+    { label: "How to Automate Customer Replies", href: "/how-to/automate-customer-replies" },
+    { label: "AI Automation Agency", href: "/ai-automation-agency" },
+    { label: "Pricing", href: "/pricing" }
+  ],
+  faqs: [
+    {
+      q: "What if the client disputes the invoice?",
+      a: "The automation can only follow up — it cannot resolve disputes. If a client replies with a dispute, the sequence stops and you handle it manually. That is the right call — dispute resolution needs a human."
+    },
+    {
+      q: "Will automated reminders damage client relationships?",
+      a: "Not if they're written politely. Most clients appreciate a reminder — they're busy too. A friendly, clearly automated message is far less awkward than a tense personal phone call two months later. Tone matters more than the fact that it's automated."
+    },
+    {
+      q: "Can I set different schedules for different clients?",
+      a: "Yes — with a bit of setup, you can tag clients or invoice types with different sequences. New clients get a gentler sequence; repeat late-payers get a tighter one. Handbuilt can configure this logic during the build."
+    },
+    {
+      q: "What if the client pays between scheduled messages?",
+      a: "The stop condition fires the moment payment is recorded in your invoicing tool. If a client pays at 11pm on a Tuesday, the next morning's reminder does not send. The system checks status before every message goes out."
+    },
+    {
+      q: "Does this work for recurring invoices?",
+      a: "Yes — recurring invoices generate new reminder sequences each billing cycle. As long as the invoicing tool marks each invoice separately, the automation treats each one independently."
+    }
+  ],
+  schema: "HowTo"
+}
 ];
 
 export function getHowto(slug: string): LandingContent | undefined {

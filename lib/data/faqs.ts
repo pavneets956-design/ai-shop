@@ -15,7 +15,7 @@ export const faqs: FAQ[] = [
   {
     category: "general",
     q: "Can you build a custom AI app?",
-    a: "Yes. Custom AI apps are a core service — web apps, internal tools, customer portals and SaaS MVPs with AI logic, user accounts, databases and payments built in. You own the code. Custom apps start from $7,500 CAD and are scoped on a short call.",
+    a: "Yes. Custom AI apps are a core service — web apps, internal tools, customer portals and SaaS MVPs with AI logic, user accounts, databases and payments built in. You own the code. Custom apps start from $10,000 CAD and are scoped on a short call.",
   },
   {
     category: "general",
@@ -25,7 +25,7 @@ export const faqs: FAQ[] = [
   {
     category: "technical",
     q: "Can you connect AI to my existing website?",
-    a: "Yes. Handbuilt can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $1,000 CAD.",
+    a: "Yes. Handbuilt can add a chatbot, AI search, smart lead-capture forms or product recommendations to a site you already have, without rebuilding it. Adding AI to an existing website typically starts from $1,500 CAD.",
   },
   {
     category: "general",
@@ -40,12 +40,12 @@ export const faqs: FAQ[] = [
   {
     category: "pricing",
     q: "How much does it cost to build an AI tool or app?",
-    a: "Handbuilt has three clear tiers: Starter AI Setup at $1,000 CAD flat for one tool, Business AI System from $2,500 CAD for a connected system, and Custom AI App from $7,500 CAD for a full build. There's also an optional AI Care Plan at $250/month for hosting, monitoring and ongoing tweaks.",
+    a: "Handbuilt has three clear tiers: Starter AI Setup at $1,500 CAD for one tool, Business AI System from $3,500 CAD for a connected system, and Custom AI App from $10,000 CAD for a full build. There's also an optional AI Care Plan at $99/month for hosting, monitoring and ongoing tweaks.",
   },
   {
     category: "pricing",
     q: "How much does an AI receptionist cost for a small business?",
-    a: "An AI receptionist starts at $1,000 CAD as a Starter AI Setup — it answers calls and messages 24/7, books appointments and texts you the details. If you want it connected to your CRM, calendar and follow-up workflows, that's the Business AI System from $2,500 CAD.",
+    a: "An AI receptionist starts at $1,500 CAD as a Starter AI Setup — it answers calls and messages 24/7, books appointments and texts you the details. If you want it connected to your CRM, calendar and follow-up workflows, that's the Business AI System from $3,500 CAD.",
   },
   {
     category: "process",
@@ -60,7 +60,7 @@ export const faqs: FAQ[] = [
   {
     category: "process",
     q: "What happens after the build is done?",
-    a: "Every tier includes post-launch support (14–60 days depending on tier). After that, the optional AI Care Plan ($250/month) covers hosting, monitoring, monthly tweaks and priority support so your AI keeps running without you thinking about it.",
+    a: "Every tier includes post-launch support (14–60 days depending on tier). After that, the optional AI Care Plan ($99/month) covers hosting, monitoring, monthly tweaks and priority support so your AI keeps running without you thinking about it.",
   },
   {
     category: "technical",
@@ -110,7 +110,7 @@ export function pricingPageFaqs(): FAQ[] {
     {
       category: "pricing",
       q: "What's the difference between Tools Pro and done-for-you?",
-      a: "Tools Pro is a $19/mo self-serve suite you use yourself for writing tasks. Done-for-you AI systems are installed and connected to your workflow by us, starting at $1,000 — automation that runs without you.",
+      a: "Tools Pro is a $19/mo self-serve suite you use yourself for writing tasks. Done-for-you AI systems are installed and connected to your workflow by us, starting at $1,500 — automation that runs without you.",
     },
   ];
 }

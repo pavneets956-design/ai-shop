@@ -198,13 +198,18 @@ const CARE: CarePlan[] = [
 
 const INTERNAL_LINKS = [
   { label: "AI receptionist Canada", href: "/ai-receptionist" },
-  { label: "AI receptionist for contractors", href: "/use-cases/ai-receptionist-for-contractors" },
-  { label: "AI receptionist for landscapers", href: "/industries/landscaping-ai-automation" },
-  { label: "Jobber AI setup", href: "/services/ai-receptionist-setup" },
+  { label: "AI receptionist for contractors", href: "/ai-receptionist-for-contractors" },
+  { label: "AI chatbot for small business", href: "/ai-chatbot-for-small-business" },
+  { label: "AI lead follow-up agent", href: "/ai-lead-follow-up-agent" },
+  { label: "Done-for-you AI automation", href: "/done-for-you-ai-automation" },
   { label: "AI quote agent", href: "/services/ai-quote-generator" },
   { label: "AI invoice follow-up", href: "/services/ai-invoice-reminder-system" },
-  { label: "AI automation Surrey BC", href: "/ai-automation-agency" },
-  { label: "AI automation Delta BC", href: "/industries/contractor-ai-automation" },
+  { label: "AI automation agency Surrey BC", href: "/locations/ai-automation-agency-surrey-bc" },
+  { label: "AI automation Delta BC", href: "/locations/ai-automation-delta-bc" },
+  { label: "AI chatbot developer Vancouver", href: "/locations/ai-chatbot-developer-vancouver" },
+  { label: "AI for contractors", href: "/industries/contractor-ai-automation" },
+  { label: "What can AI automate?", href: "/resources/what-can-ai-automate-small-business" },
+  { label: "Fixed CAD pricing", href: "/pricing" },
 ];
 
 /* ─── css (keyframes, responsive vars, hover, reduced-motion) ── */
@@ -744,7 +749,7 @@ export default function MoltenForge() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 20, fontFamily: MONO, fontSize: 13, color: "#1D1D1F", letterSpacing: "0.05em" }}>All prices CAD, fixed before the build starts. No hourly billing.</div>
+          <div style={{ marginTop: 20, fontFamily: MONO, fontSize: 13, color: "#1D1D1F", letterSpacing: "0.05em" }}>All prices CAD (USD / AUD / NZD on request), fixed before the build starts. No hourly billing. Built remotely for businesses across Canada, the US, Australia &amp; NZ.</div>
         </div>
       </section>
 

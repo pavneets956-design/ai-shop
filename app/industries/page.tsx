@@ -15,7 +15,7 @@ export default function Page() {
       type="industry"
       eyebrow="Industries"
       title="AI Automation Built for Your Industry"
-      intro="Every trade loses money in different places. Find how AI fits the way your business actually runs — then we build it, from $1,000 CAD."
+      intro="Every trade loses money in different places. Find how AI fits the way your business actually runs — then we build it, from $1,500 CAD."
       items={industries}
     />
   );

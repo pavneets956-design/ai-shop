@@ -23,8 +23,8 @@ export const packages: ServicePackage[] = [
     id: "starter",
     name: "AI Starter System",
     tagline: "One AI worker, live in days.",
-    price: 1000,
-    priceFormat: "flat",
+    price: 1500,
+    priceFormat: "from",
     timeline: "Live in ~5 business days",
     forWho: "Best if you want to start with one focused win and test before scaling.",
     accent: "electric",
@@ -40,9 +40,9 @@ export const packages: ServicePackage[] = [
     id: "business",
     name: "AI Business System",
     tagline: "2–4 connected AI workers, one system.",
-    price: 2500,
-    priceHigh: 5000,
-    priceTypical: 3500,
+    price: 3500,
+    priceHigh: 7500,
+    priceTypical: 5000,
     priceFormat: "band",
     timeline: "Live in 2–3 weeks",
     forWho: "Best for businesses losing money to slow replies and manual admin.",
@@ -61,7 +61,7 @@ export const packages: ServicePackage[] = [
     id: "custom",
     name: "Custom AI App",
     tagline: "A full app or platform you own.",
-    price: 7500,
+    price: 10000,
     priceFormat: "from",
     timeline: "Typically 4–8 weeks, scoped on a call",
     forWho: "Best when you've outgrown off-the-shelf tools and need something custom.",
@@ -85,8 +85,8 @@ export interface CarePlan {
 
 export const carePlan: CarePlan = {
   name: "Care Plan",
-  monthly: 250,
-  annualMonthly: 200, // billed annually
+  monthly: 99, // entry "Light Care" tier; plans scale to ~$499/mo for multi-worker systems
+  annualMonthly: 79, // billed annually
   covers: [
     "Hosting & uptime monitoring",
     "Up to 1 hour of tweaks/changes per month",

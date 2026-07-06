@@ -24,7 +24,7 @@ export const useCases: UseCase[] = [
     industry: "Contractors & Trades",
     question: "How do I get an AI receptionist for my contracting business?",
     answer:
-      "An AI receptionist for contractors answers every call and text 24/7 — even while you're on a roof or under a sink — books the job, captures the details and texts them to you instantly. Handbuilt builds and trains one on your services, pricing and service area, live in about 5 business days, starting at $1,000 CAD.",
+      "An AI receptionist for contractors answers every call and text 24/7 — even while you're on a roof or under a sink — books the job, captures the details and texts them to you instantly. Handbuilt builds and trains one on your services, pricing and service area, live in about 5 business days, starting at $1,500 CAD.",
     pain: "Trades lose thousands in jobs every month to missed calls and voicemails customers never leave. The first contractor to pick up usually wins the job.",
     steps: [
       "We learn your services, pricing, hours and service area",
@@ -63,7 +63,7 @@ export const useCases: UseCase[] = [
     industry: "Real Estate",
     question: "How can a real estate agent capture and follow up on leads with AI?",
     answer:
-      "An AI lead agent for real estate replies to every inquiry within seconds, qualifies the buyer or seller, and follows up automatically until they book a viewing or call. Handbuilt builds this as a Business AI System from $2,500 CAD, connected to your CRM and calendar.",
+      "An AI lead agent for real estate replies to every inquiry within seconds, qualifies the buyer or seller, and follows up automatically until they book a viewing or call. Handbuilt builds this as a Business AI System from $3,500 CAD, connected to your CRM and calendar.",
     pain: "In real estate, the agent who replies first usually wins the client — but you can't watch your inbox during showings. Leads go cold in minutes.",
     steps: [
       "New leads from your site, portals or ads hit the agent instantly",
@@ -98,7 +98,7 @@ export const useCases: UseCase[] = [
     industry: "Restaurants",
     question: "How do I add an AI chatbot to my restaurant website?",
     answer:
-      "An AI chatbot for restaurants answers questions about hours, menu, reservations, allergens and location instantly — and takes booking or catering requests. Handbuilt trains one on your menu and details and adds it to your site, starting at $1,000 CAD.",
+      "An AI chatbot for restaurants answers questions about hours, menu, reservations, allergens and location instantly — and takes booking or catering requests. Handbuilt trains one on your menu and details and adds it to your site, starting at $1,500 CAD.",
     pain: "Restaurants get the same handful of questions all day — hours, do you take reservations, is there parking — pulling staff off the floor to answer DMs and calls.",
     steps: [
       "We train the bot on your menu, hours, location and policies",
@@ -133,7 +133,7 @@ export const useCases: UseCase[] = [
     industry: "Clinics & Health",
     question: "How can a clinic use an AI receptionist to handle calls and bookings?",
     answer:
-      "An AI receptionist for clinics answers patient calls and messages, books and reschedules appointments, sends reminders to cut no-shows, and answers routine questions about hours and services. Handbuilt builds it from $1,000 CAD, or as a connected system from $2,500 CAD.",
+      "An AI receptionist for clinics answers patient calls and messages, books and reschedules appointments, sends reminders to cut no-shows, and answers routine questions about hours and services. Handbuilt builds it from $1,500 CAD, or as a connected system from $3,500 CAD.",
     pain: "Front desks are overwhelmed — phones ringing while patients wait, no-shows eating the schedule, and after-hours calls going unanswered.",
     steps: [
       "We train it on your services, providers and policies",
@@ -168,7 +168,7 @@ export const useCases: UseCase[] = [
     industry: "Small Business",
     question: "How do I automate invoice reminders and get paid faster?",
     answer:
-      "An AI invoice reminder system tracks your unpaid invoices and automatically nudges clients — politely, on a schedule — until they pay, then stops. Handbuilt sets this up from $1,000 CAD, connected to your invoicing tool.",
+      "An AI invoice reminder system tracks your unpaid invoices and automatically nudges clients — politely, on a schedule — until they pay, then stops. Handbuilt sets this up from $1,500 CAD, connected to your invoicing tool.",
     pain: "Chasing late payments is awkward, time-consuming, and easy to forget — so invoices sit unpaid for weeks longer than they should.",
     steps: [
       "We connect it to your invoicing or accounting tool",
@@ -203,7 +203,7 @@ export const useCases: UseCase[] = [
     industry: "Startups & Founders",
     question: "How do I build a custom AI app or SaaS MVP?",
     answer:
-      "Handbuilt builds custom AI apps and SaaS MVPs end to end — user accounts, database, payments, admin panel and custom AI logic — on a modern stack you fully own. Builds start from $7,500 CAD and typically ship in 4–8 weeks, scoped on a call.",
+      "Handbuilt builds custom AI apps and SaaS MVPs end to end — user accounts, database, payments, admin panel and custom AI logic — on a modern stack you fully own. Builds start from $10,000 CAD and typically ship in 4–8 weeks, scoped on a call.",
     pain: "Founders waste months and tens of thousands hiring agencies or piecing together no-code tools that break the moment they get traction.",
     steps: [
       "We scope your idea into a buildable MVP on a call",
@@ -238,7 +238,7 @@ export const useCases: UseCase[] = [
     industry: "Dental Practices",
     question: "How can a dental practice use an AI receptionist to book patients and cut no-shows?",
     answer:
-      "An AI receptionist for dental practices answers patient calls and texts, books and reschedules cleanings and checkups, and sends automatic reminders that cut no-shows. Handbuilt trains it on your services, providers and hours, starting at $1,000 CAD, or as a connected system from $2,500 CAD.",
+      "An AI receptionist for dental practices answers patient calls and texts, books and reschedules cleanings and checkups, and sends automatic reminders that cut no-shows. Handbuilt trains it on your services, providers and hours, starting at $1,500 CAD, or as a connected system from $3,500 CAD.",
     pain: "Dental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back.",
     steps: [
       "We train it on your treatments, providers, hours and policies",
@@ -273,7 +273,7 @@ export const useCases: UseCase[] = [
     industry: "Salons & Beauty",
     question: "How do I get an AI booking assistant for my salon or spa?",
     answer:
-      "An AI booking assistant for salons answers DMs, calls and texts, books appointments into your calendar, and sends reminders so clients actually show up. Handbuilt sets one up trained on your services and stylists, starting at $1,000 CAD.",
+      "An AI booking assistant for salons answers DMs, calls and texts, books appointments into your calendar, and sends reminders so clients actually show up. Handbuilt sets one up trained on your services and stylists, starting at $1,500 CAD.",
     pain: "Salons lose bookings to missed DMs and after-hours messages, and no-shows quietly eat the schedule every week.",
     steps: [
       "We train it on your services, stylists, prices and hours",
@@ -308,7 +308,7 @@ export const useCases: UseCase[] = [
     industry: "E-commerce",
     question: "How do I add an AI chatbot to my e-commerce store?",
     answer:
-      "An AI chatbot for e-commerce answers product, sizing, shipping and returns questions instantly, recommends products, and recovers carts — trained on your catalog and policies. Handbuilt adds one to your store starting at $1,000 CAD.",
+      "An AI chatbot for e-commerce answers product, sizing, shipping and returns questions instantly, recommends products, and recovers carts — trained on your catalog and policies. Handbuilt adds one to your store starting at $1,500 CAD.",
     pain: "Online shoppers bounce when they can't get a quick answer about sizing, stock or shipping — and every unanswered question is a lost sale.",
     steps: [
       "We train it on your catalog, shipping and returns policies",
@@ -343,7 +343,7 @@ export const useCases: UseCase[] = [
     industry: "Creators & Coaches",
     question: "How do I build an AI content engine in my own brand voice?",
     answer:
-      "An AI content engine for creators writes, repurposes and schedules posts, newsletters and scripts in your exact brand voice — turning one idea into a week of content. Handbuilt builds it as a Business AI System from $2,500 CAD.",
+      "An AI content engine for creators writes, repurposes and schedules posts, newsletters and scripts in your exact brand voice — turning one idea into a week of content. Handbuilt builds it as a Business AI System from $3,500 CAD.",
     pain: "Creators burn out producing content manually, and generic AI tools spit out bland copy that sounds nothing like them.",
     steps: [
       "We train it on your voice, topics and best-performing content",
@@ -378,7 +378,7 @@ export const useCases: UseCase[] = [
     industry: "Accountants & Bookkeepers",
     question: "How can accountants automate admin and client follow-ups with AI?",
     answer:
-      "AI automation for accountants chases missing client documents, sends deadline reminders, drafts routine client emails, and keeps your data in sync — so you spend time on work that bills, not admin. Handbuilt builds this as a Business AI System from $2,500 CAD.",
+      "AI automation for accountants chases missing client documents, sends deadline reminders, drafts routine client emails, and keeps your data in sync — so you spend time on work that bills, not admin. Handbuilt builds this as a Business AI System from $3,500 CAD.",
     pain: "Tax and bookkeeping seasons drown firms in document-chasing and repetitive client emails that eat billable hours.",
     steps: [
       "We map your recurring admin and document workflows",
@@ -413,7 +413,7 @@ export const useCases: UseCase[] = [
     industry: "Law Firms",
     question: "How can a law firm use AI to analyze documents and contracts?",
     answer:
-      "An AI document analyzer for law firms reads contracts and case files, summarizes them, answers questions about their contents, and flags key clauses — securely, on your documents. Handbuilt builds this as a Custom AI App from $7,500 CAD, scoped on a call.",
+      "An AI document analyzer for law firms reads contracts and case files, summarizes them, answers questions about their contents, and flags key clauses — securely, on your documents. Handbuilt builds this as a Custom AI App from $10,000 CAD, scoped on a call.",
     pain: "Lawyers and paralegals lose hours manually reading, summarizing and searching long documents for the clauses that matter.",
     steps: [
       "We scope your document types and confidentiality needs",
@@ -448,7 +448,7 @@ export const useCases: UseCase[] = [
     industry: "Real Estate",
     question: "Can a real estate agent get an AI receptionist to answer buyer and seller calls?",
     answer:
-      "An AI receptionist for real estate answers buyer and seller calls and texts 24/7, qualifies them, books showings and valuations, and texts you the hot ones. Handbuilt builds it from $1,000 CAD, or as a full lead system from $2,500 CAD.",
+      "An AI receptionist for real estate answers buyer and seller calls and texts 24/7, qualifies them, books showings and valuations, and texts you the hot ones. Handbuilt builds it from $1,500 CAD, or as a full lead system from $3,500 CAD.",
     pain: "Agents are in showings and meetings all day — and a missed call is often a buyer or listing that goes to the next agent.",
     steps: [
       "We train it on your listings, areas and process",
@@ -483,7 +483,7 @@ export const useCases: UseCase[] = [
     industry: "SaaS & Startups",
     question: "How do I add an AI customer support bot to my SaaS product?",
     answer:
-      "An AI support bot for SaaS resolves common product questions instantly from your docs, deflects tickets, and escalates the hard ones to your team with full context. Handbuilt builds it from $2,500 CAD as a Business AI System.",
+      "An AI support bot for SaaS resolves common product questions instantly from your docs, deflects tickets, and escalates the hard ones to your team with full context. Handbuilt builds it from $3,500 CAD as a Business AI System.",
     pain: "Early SaaS teams drown in repetitive support tickets that pull engineers and founders away from building.",
     steps: [
       "We train it on your docs, help center and past tickets",
@@ -518,7 +518,7 @@ export const useCases: UseCase[] = [
     industry: "Busy Professionals",
     question: "Can you build me a personal AI assistant app for my life?",
     answer:
-      "Yes — Handbuilt builds private personal AI apps: a daily planner, finance tracker, or assistant that organizes your tasks, goals and reminders around how you actually live. Personal apps start from $7,500 CAD as a Custom AI App, scoped on a call.",
+      "Yes — Handbuilt builds private personal AI apps: a daily planner, finance tracker, or assistant that organizes your tasks, goals and reminders around how you actually live. Personal apps start from $10,000 CAD as a Custom AI App, scoped on a call.",
     pain: "Off-the-shelf productivity apps never fit how you actually work, and stitching together five tools just creates more overhead.",
     steps: [
       "We scope what you want it to do on a call",

@@ -18,9 +18,9 @@ import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Pricing — Custom AI Builds from $1,000 CAD",
+  title: "Pricing — Custom AI Builds from $1,500 CAD",
   description:
-    "Clear, fair pricing for custom AI. Starter AI Setup from $1,000 CAD, Business AI System from $2,500, Custom AI App from $7,500, plus an optional $250/mo AI Care Plan.",
+    "Clear, fair pricing for custom AI. Starter AI Setup from $1,500 CAD, Business AI System from $3,500, Custom AI App from $10,000, plus an optional $99/mo AI Care Plan.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -49,6 +49,16 @@ export default async function PricingPage() {
               Real prices in CAD — no &ldquo;contact us for everything.&rdquo; Start with one tool or
               go all the way to a custom app you own. A part-time admin costs more every month than a
               whole system costs once.
+            </p>
+          </Reveal>
+          <Reveal delay={0.14}>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-ink/45">
+              Priced in CAD — often cheaper than US rates. USD, AUD &amp; NZD invoicing on request.
+              Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.{" "}
+              <Link href="/remote-ai-development" className="text-ink/70 underline underline-offset-2 hover:text-ink">
+                How remote builds work
+              </Link>
+              .
             </p>
           </Reveal>
         </div>

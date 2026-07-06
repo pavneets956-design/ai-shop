@@ -249,6 +249,10 @@ export default function LandingTemplate({
                     <span className="text-sm text-ink/40">{site.currency}</span>
                   </div>
                   <p className="mt-1 text-sm text-ink/40">{pkg.timeline}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-ink/40">
+                    Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small
+                    businesses across Canada, the US, Australia &amp; New Zealand.
+                  </p>
                   <p className="mt-4 flex-1 text-sm text-ink/60">{pkg.tagline}</p>
                   <Link href={ctaHref} className="btn-primary mt-6 w-full">
                     {ctaLabel} <ArrowRight className="h-4 w-4" />

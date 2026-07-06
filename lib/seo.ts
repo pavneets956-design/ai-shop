@@ -12,13 +12,22 @@ export function organizationSchema() {
     "@id": `${site.url}/#organization`,
     name: site.name,
     description:
-      "Handbuilt builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
+      "Handbuilt builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies that want practical AI systems that save time and grow revenue. Based in Surrey/Delta BC, Canada; delivered remotely to small businesses across Canada, the United States, Australia, New Zealand and the United Kingdom.",
     url: site.url,
     email: site.email,
     image: `${site.url}/logo.png`,
     logo: `${site.url}/logo.png`,
     priceRange: "$$",
-    areaServed: site.serviceArea.map((name) => ({ "@type": "AdministrativeArea", name })),
+    // Local BC service area (AdministrativeArea) + explicit Countries served
+    // remotely — a strong machine-readable signal for answer engines deciding
+    // whether to cite us for a US / AU / NZ / UK query.
+    areaServed: [
+      ...site.serviceArea.map((name) => ({ "@type": "AdministrativeArea", name })),
+      ...["United States", "Australia", "New Zealand", "United Kingdom"].map((name) => ({
+        "@type": "Country",
+        name,
+      })),
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Surrey",

@@ -8,9 +8,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Landscaping Businesses",
     title: "AI Automation for Landscaping Businesses | Handbuilt",
     description:
-      "Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients — starting at $1,000 CAD.",
+      "Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients — starting at $1,500 CAD.",
     answer:
-      "AI automation for a landscaping business means every call gets answered while your crew is on-site, every seasonal quote goes out without you chasing it down, and recurring clients get reminded and rebooked automatically. Handbuilt builds a connected system — AI receptionist, quote follow-up, and recurring-schedule reminders — trained on your service zones and pricing. Most landscaping setups run as a Business AI System from $2,500 CAD, or a single tool like the AI receptionist from $1,000 CAD.",
+      "AI automation for a landscaping business means every call gets answered while your crew is on-site, every seasonal quote goes out without you chasing it down, and recurring clients get reminded and rebooked automatically. Handbuilt builds a connected system — AI receptionist, quote follow-up, and recurring-schedule reminders — trained on your service zones and pricing. Most landscaping setups run as a Business AI System from $3,500 CAD, or a single tool like the AI receptionist from $1,500 CAD.",
     pain: "Landscaping revenue is seasonal and front-loaded. Every unanswered call in April is a full-season contract handed to a competitor — and those calls rarely come back, because the caller just dials the next landscaper on the list while you're outside with the crew.",
     scenario:
       "Take a two-crew landscaping operation in Langley serving about 80 recurring residential accounts. They might be fielding calls manually and sending quotes by hand after each site visit, losing maybe 12–15 calls a week during peak spring when the crew is on-site. An AI receptionist and automated quote-follow-up could stop that leak — capturing inquiries that would otherwise go to voicemail and cutting quote turnaround from three days to same-day. The exact gain depends on call volume and how consistently quotes are currently followed up, but those are two of the most common places landscaping revenue quietly walks out.",
@@ -39,7 +39,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,000 CAD as a Starter setup. A connected system that answers, quotes, and follows up runs $2,500–5,000 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.",
+        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, quotes, and follows up runs $2,500–5,000 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.",
       },
     ],
     packageId: "business",
@@ -75,9 +75,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Lawn Care Businesses",
     title: "AI Automation for Lawn Care Businesses | Handbuilt",
     description:
-      "Missed calls and manual scheduling cost lawn care businesses real money. Handbuilt builds AI that books, follows up, and chases renewals — from $1,000 CAD.",
+      "Missed calls and manual scheduling cost lawn care businesses real money. Handbuilt builds AI that books, follows up, and chases renewals — from $1,500 CAD.",
     answer:
-      "AI automation for a lawn care business handles the repetitive side of running a route: answering new-client inquiries, booking one-time or recurring cuts, sending seasonal renewal reminders, and following up on quotes — all without you managing it manually. Handbuilt builds this as a connected system trained on your pricing, service days, and coverage area. A Business AI System typically runs $2,500–5,000 CAD; a single starting tool like automated booking runs from $1,000 CAD.",
+      "AI automation for a lawn care business handles the repetitive side of running a route: answering new-client inquiries, booking one-time or recurring cuts, sending seasonal renewal reminders, and following up on quotes — all without you managing it manually. Handbuilt builds this as a connected system trained on your pricing, service days, and coverage area. A Business AI System typically runs $2,500–5,000 CAD; a single starting tool like automated booking runs from $1,500 CAD.",
     pain: "Lawn care margins are thin and route density matters. One missed renewal call in fall means an empty slot all spring — and most operators are too busy running the route to chase renewals by hand.",
     scenario:
       "Say a solo lawn care operator running 60 weekly residential accounts is spending about four hours each week on calls, texts, and renewal follow-ups — time that comes straight out of the hours available to run the route. Automating booking and renewal reminders could pull most of that back down toward 30 minutes, and spring retention tends to improve when clients get a renewal offer in February rather than waiting until April when they've already called someone else. The exact time savings depend on how manual the current process is.",
@@ -106,7 +106,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone automated booking tool starts at $1,000 CAD. A full system — inquiry response, booking, renewals, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a 60-account route, that typically pays back in one recovered spring renewal season.",
+        body: "A standalone automated booking tool starts at $1,500 CAD. A full system — inquiry response, booking, renewals, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a 60-account route, that typically pays back in one recovered spring renewal season.",
       },
     ],
     packageId: "business",
@@ -142,9 +142,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Plumbers",
     title: "AI Automation for Plumbers | Handbuilt",
     description:
-      "Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,000 CAD.",
+      "Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,500 CAD.",
     answer:
-      "AI automation for a plumbing business means every missed call gets answered, every job request gets booked, and every quote and follow-up goes out without you touching your phone. Handbuilt connects an AI receptionist, booking, and follow-up into one system trained on your rates and service area — most plumbing setups run as a Business AI System from $2,500 CAD, or a single Starter tool from $1,000 CAD.",
+      "AI automation for a plumbing business means every missed call gets answered, every job request gets booked, and every quote and follow-up goes out without you touching your phone. Handbuilt connects an AI receptionist, booking, and follow-up into one system trained on your rates and service area — most plumbing setups run as a Business AI System from $3,500 CAD, or a single Starter tool from $1,500 CAD.",
     pain: "Plumbers lose jobs mid-job: the phone rings while both hands are under a sink and the caller books someone else within the hour. After-hours emergency calls go to voicemail and the job goes to whoever picks up first.",
     scenario:
       "Consider a two-truck plumbing shop in Surrey fielding roughly 25 inbound calls per week — maybe 8 of them going to voicemail during active jobs. An AI receptionist and after-hours booking could capture most of those missed calls and slot after-hours emergency requests without a dispatcher in the loop. Whether a caller waits for a callback or moves on depends on urgency, but emergency plumbing callers in particular tend to book with whoever picks up first.",
@@ -173,7 +173,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,000 CAD as a Starter setup. A connected system that answers, books, and follows up runs $2,500–5,000 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.",
+        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, books, and follows up runs $2,500–5,000 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.",
       },
     ],
     packageId: "business",
@@ -209,9 +209,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Electricians",
     title: "AI Automation for Electricians | Handbuilt",
     description:
-      "Electrical jobs require site visits before quoting. Handbuilt builds AI that books estimates, follows up on quotes, and handles after-hours inquiries — from $1,000 CAD.",
+      "Electrical jobs require site visits before quoting. Handbuilt builds AI that books estimates, follows up on quotes, and handles after-hours inquiries — from $1,500 CAD.",
     answer:
-      "AI automation for an electrical business handles the front end of your job pipeline: booking site-visit estimates, sending quote follow-ups, and capturing after-hours service calls — without you managing it manually between jobs. Handbuilt builds a system trained on your service types and quoting process. Most electrician setups run as a Business AI System from $2,500 CAD; a single booking or follow-up tool starts at $1,000 CAD.",
+      "AI automation for an electrical business handles the front end of your job pipeline: booking site-visit estimates, sending quote follow-ups, and capturing after-hours service calls — without you managing it manually between jobs. Handbuilt builds a system trained on your service types and quoting process. Most electrician setups run as a Business AI System from $3,500 CAD; a single booking or follow-up tool starts at $1,500 CAD.",
     pain: "Electricians run a two-stage sales process — inquiry, then site visit, then quote — and leads go cold between each stage. Most shops quote dozens of jobs per month and follow up on fewer than half of them.",
     scenario:
       "Picture a three-person electrical contracting shop quoting about 30 jobs per month but only following up on roughly 12 of them by phone — the rest go quiet because the estimator doesn't have time to chase every open quote. Automating follow-up with a 48-hour email sequence means every pending quote gets a nudge without the estimator spending extra time on the phone. The close rate improvement depends on why quotes were going cold, but for shops where the gap is simply no follow-up, consistent outreach tends to move the number.",
@@ -240,7 +240,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone quote follow-up tool starts at $1,000 CAD. A connected system — inquiry capture, estimate booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. Scope depends on your job volume and how many service categories you quote.",
+        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, estimate booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. Scope depends on your job volume and how many service categories you quote.",
       },
     ],
     packageId: "business",
@@ -276,9 +276,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for HVAC Companies",
     title: "AI Automation for HVAC Companies | Handbuilt",
     description:
-      "HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,000 CAD.",
+      "HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,500 CAD.",
     answer:
-      "AI automation for an HVAC company means your phone coverage matches your busiest day, not your average day — every emergency call gets answered and triaged, maintenance agreement renewals go out on schedule, and seasonal tune-up slots fill without manual outreach. Handbuilt builds a system trained on your service tiers, equipment types, and maintenance schedule. Most HVAC setups run as a Business AI System from $2,500 CAD; a focused Starter tool from $1,000 CAD.",
+      "AI automation for an HVAC company means your phone coverage matches your busiest day, not your average day — every emergency call gets answered and triaged, maintenance agreement renewals go out on schedule, and seasonal tune-up slots fill without manual outreach. Handbuilt builds a system trained on your service tiers, equipment types, and maintenance schedule. Most HVAC setups run as a Business AI System from $3,500 CAD; a focused Starter tool from $1,500 CAD.",
     pain: "HVAC revenue is feast-or-famine. A heat dome or cold snap floods the phone with emergency calls exactly when your techs are fully booked and your office is overwhelmed — which means callers hang up and call your competitor.",
     scenario:
       "An HVAC company in Kelowna with four technicians fielded about 90 calls during the first week of last summer's heat advisory. They estimated they lost 20–25 calls to voicemail overflow. An AI call-capture system would have logged every caller, sent an estimated callback time, and booked maintenance window slots automatically — turning overflow calls into a waitlist instead of lost revenue.",
@@ -307,7 +307,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — like AI overflow call capture — starts at $1,000 CAD. A full system covering emergency triage, scheduled booking, and maintenance renewals runs $2,500–5,000 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.",
+        body: "A single tool — like AI overflow call capture — starts at $1,500 CAD. A full system covering emergency triage, scheduled booking, and maintenance renewals runs $2,500–5,000 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.",
       },
     ],
     packageId: "business",
@@ -343,9 +343,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Roofing Companies",
     title: "AI Automation for Roofing Companies | Handbuilt",
     description:
-      "Roofing quotes are large, seasonal, and rarely followed up properly. Handbuilt builds AI that captures leads, follows up on quotes, and books inspections — from $1,000 CAD.",
+      "Roofing quotes are large, seasonal, and rarely followed up properly. Handbuilt builds AI that captures leads, follows up on quotes, and books inspections — from $1,500 CAD.",
     answer:
-      "AI automation for a roofing company means every storm-season lead gets captured, every estimate gets a follow-up sequence, and inspection bookings happen without your office chasing each client. Handbuilt builds a system around your quoting cycle — from first inquiry through signed contract — trained on your job types and pricing ranges. Most roofing setups run as a Business AI System from $2,500 CAD; a standalone quote follow-up tool from $1,000 CAD.",
+      "AI automation for a roofing company means every storm-season lead gets captured, every estimate gets a follow-up sequence, and inspection bookings happen without your office chasing each client. Handbuilt builds a system around your quoting cycle — from first inquiry through signed contract — trained on your job types and pricing ranges. Most roofing setups run as a Business AI System from $3,500 CAD; a standalone quote follow-up tool from $1,500 CAD.",
     pain: "Roofing is high-ticket and highly seasonal. A storm generates 40 inquiries in a week and most shops can only follow up on 10 of them manually — which means 30 large-ticket jobs quietly go to competitors who called back first.",
     scenario:
       "A roofing company in Coquitlam received 55 insurance-claim inquiries after a major hailstorm. They booked 14 inspections manually in the first week. An automated inquiry response and inspection-booking system would have worked through all 55 within 24 hours, booking as many inspection slots as the schedule allowed and putting the rest on a waitlist — without the owner spending a week on the phone.",
@@ -374,7 +374,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone quote follow-up tool starts at $1,000 CAD. A connected system — inquiry capture, inspection booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. On a $15,000 average job, recovering one additional close per month covers the system cost many times over.",
+        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, inspection booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. On a $15,000 average job, recovering one additional close per month covers the system cost many times over.",
       },
     ],
     packageId: "business",
@@ -410,9 +410,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Cleaning Businesses",
     title: "AI Automation for Cleaning Businesses | Handbuilt",
     description:
-      "Recurring scheduling, client communication, and review requests eat hours every week. Handbuilt automates them for cleaning businesses — from $1,000 CAD.",
+      "Recurring scheduling, client communication, and review requests eat hours every week. Handbuilt automates them for cleaning businesses — from $1,500 CAD.",
     answer:
-      "AI automation for a cleaning business handles the weekly admin that eats your time between jobs: confirming recurring schedules, rescheduling clients who need to move, sending reminders before each visit, and requesting reviews after. Handbuilt builds a connected system trained on your service types, frequency tiers, and client roster. Most cleaning operations run as a Business AI System from $2,500 CAD; a single automation like review requests starts at $1,000 CAD.",
+      "AI automation for a cleaning business handles the weekly admin that eats your time between jobs: confirming recurring schedules, rescheduling clients who need to move, sending reminders before each visit, and requesting reviews after. Handbuilt builds a connected system trained on your service types, frequency tiers, and client roster. Most cleaning operations run as a Business AI System from $3,500 CAD; a single automation like review requests starts at $1,500 CAD.",
     pain: "Cleaning businesses run on tight recurring schedules. One client reschedule triggers a cascade of manual texts and calendar updates — and most cleaning operators spend 5–8 hours per week on scheduling communication alone.",
     scenario:
       "Imagine a residential cleaning company with two teams and 45 recurring clients spending about six hours weekly on scheduling messages, reschedule coordination, and reminder texts — all structured, repeating work that follows the same pattern every week. Automating client reminders, reschedule handling, and review requests could pull that down toward 45 minutes. Review count also tends to climb when every completed job triggers a request automatically rather than relying on clients to leave one on their own.",
@@ -441,7 +441,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single automation — like review requests or reminder texts — starts at $1,000 CAD. A full system covering reminders, rescheduling, inquiry response, and review requests runs $2,500–5,000 CAD as a Business AI System. For a 45-client recurring roster, saving five hours per week is typically worth the investment in the first month.",
+        body: "A single automation — like review requests or reminder texts — starts at $1,500 CAD. A full system covering reminders, rescheduling, inquiry response, and review requests runs $2,500–5,000 CAD as a Business AI System. For a 45-client recurring roster, saving five hours per week is typically worth the investment in the first month.",
       },
     ],
     packageId: "business",
@@ -477,9 +477,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Moving Companies",
     title: "AI Automation for Moving Companies | Handbuilt",
     description:
-      "Moving quotes require volume and distance details before pricing. Handbuilt builds AI that captures job details, sends quotes, and follows up — from $1,000 CAD.",
+      "Moving quotes require volume and distance details before pricing. Handbuilt builds AI that captures job details, sends quotes, and follows up — from $1,500 CAD.",
     answer:
-      "AI automation for a moving company handles the intake work that slows down your sales cycle: collecting move details (date, origin, destination, approximate volume), sending a preliminary quote range, and following up until the job is booked. Handbuilt builds a system trained on your pricing logic, service zones, and job types — residential local moves, long-distance, commercial. Most moving operations run as a Business AI System from $2,500 CAD; a focused intake-and-quote tool from $1,000 CAD.",
+      "AI automation for a moving company handles the intake work that slows down your sales cycle: collecting move details (date, origin, destination, approximate volume), sending a preliminary quote range, and following up until the job is booked. Handbuilt builds a system trained on your pricing logic, service zones, and job types — residential local moves, long-distance, commercial. Most moving operations run as a Business AI System from $3,500 CAD; a focused intake-and-quote tool from $1,500 CAD.",
     pain: "Moving inquiries arrive in bulk around month-end and need fast responses — clients are comparing three quotes simultaneously. The company that responds with a number in under an hour usually books the job; the one that calls back the next day usually doesn't.",
     scenario:
       "Say a local moving company receives about 80 quote requests per month, most of them submitted by web form between 8 PM and midnight. If response time is next-morning by phone, those clients have often already booked elsewhere — they were comparing three companies at once and went with whoever gave them a number first. Automating intake and same-night quote response means being first with a number when the client is still actively deciding. The booking rate improvement from that speed advantage varies, but after-hours leads are typically where the biggest gap sits.",
@@ -508,7 +508,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone intake and quote tool starts at $1,000 CAD. A connected system — intake, instant quote, follow-up sequence, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a company doing 80 inquiries per month, improving conversion on after-hours leads typically recovers the cost in the first month.",
+        body: "A standalone intake and quote tool starts at $1,500 CAD. A connected system — intake, instant quote, follow-up sequence, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a company doing 80 inquiries per month, improving conversion on after-hours leads typically recovers the cost in the first month.",
       },
     ],
     packageId: "business",
@@ -544,9 +544,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Pest Control Businesses",
     title: "AI Automation for Pest Control Businesses | Handbuilt",
     description:
-      "Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals — from $1,000 CAD.",
+      "Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals — from $1,500 CAD.",
     answer:
-      "AI automation for a pest control business handles first contact and recurring account management: answering service calls, booking initial assessments, sending treatment reminders for recurring clients, and following up on annual contract renewals. Handbuilt builds a system trained on your pest types, treatment schedule, and service zone. Most pest control setups run as a Business AI System from $2,500 CAD; a Starter tool like automated renewal reminders from $1,000 CAD.",
+      "AI automation for a pest control business handles first contact and recurring account management: answering service calls, booking initial assessments, sending treatment reminders for recurring clients, and following up on annual contract renewals. Handbuilt builds a system trained on your pest types, treatment schedule, and service zone. Most pest control setups run as a Business AI System from $3,500 CAD; a Starter tool like automated renewal reminders from $1,500 CAD.",
     pain: "Pest control clients call with urgency — a wasp nest or rodent sighting is not a problem they'll put on hold. If the call goes to voicemail, they dial the next number in Google. Speed of response is often the entire sale.",
     scenario:
       "Consider a pest control operator serving residential and strata accounts where roughly 15–20% of inbound calls go unanswered during active service routes. An AI receptionist answering immediately, collecting pest type and property details, and booking the next available slot could convert most of those missed calls on the spot — pest callers are typically urgent and tend to book with whoever answers, not whoever calls back.",
@@ -575,7 +575,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — like automated renewal reminders — starts at $1,000 CAD. A connected system covering call intake, treatment booking, recurring reminders, and renewal automation runs $2,500–5,000 CAD as a Business AI System. For a business with 100+ recurring accounts, preventing even 10% annual lapse typically covers the cost.",
+        body: "A single tool — like automated renewal reminders — starts at $1,500 CAD. A connected system covering call intake, treatment booking, recurring reminders, and renewal automation runs $2,500–5,000 CAD as a Business AI System. For a business with 100+ recurring accounts, preventing even 10% annual lapse typically covers the cost.",
       },
     ],
     packageId: "business",
@@ -611,9 +611,9 @@ const industriesA: LandingContent[] = [
     h1: "AI Automation for Contractors",
     title: "AI Automation for Contractors | Handbuilt",
     description:
-      "General contractors juggle subcontractors, quotes, and client updates simultaneously. Handbuilt builds AI that handles inquiries, quotes, and project communication — from $1,000 CAD.",
+      "General contractors juggle subcontractors, quotes, and client updates simultaneously. Handbuilt builds AI that handles inquiries, quotes, and project communication — from $1,500 CAD.",
     answer:
-      "AI automation for a general contracting business handles the communication overhead that grows with every active project: responding to new project inquiries, booking estimate site visits, following up on submitted quotes, and keeping clients updated on project status without you managing every message. Handbuilt builds a system trained on your project types, quoting process, and client communication style. Most contractor setups run as a Business AI System from $2,500 CAD; a focused tool like quote follow-up from $1,000 CAD.",
+      "AI automation for a general contracting business handles the communication overhead that grows with every active project: responding to new project inquiries, booking estimate site visits, following up on submitted quotes, and keeping clients updated on project status without you managing every message. Handbuilt builds a system trained on your project types, quoting process, and client communication style. Most contractor setups run as a Business AI System from $3,500 CAD; a focused tool like quote follow-up from $1,500 CAD.",
     pain: "Contractors run three things at once — the active job, the next quote, and the client who's been waiting three days for an update. Communication overhead grows linearly with job count, and it's usually the owner who absorbs all of it.",
     scenario:
       "Picture a general contractor managing four simultaneous renovation projects, spending about two hours daily on client update messages, quote follow-ups, and subcontractor coordination. Automating client update notifications and quote follow-up sequences could pull that down toward 30 minutes — and quote close rate often improves when follow-ups go out on a consistent schedule rather than whenever the owner finds a gap. The exact gain depends on how much of that two hours is genuinely structured versus judgment calls.",
@@ -642,7 +642,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone tool — like quote follow-up automation — starts at $1,000 CAD. A connected system covering inquiry response, estimate booking, quote follow-up, and project status updates runs $2,500–5,000 CAD as a Business AI System. For a contractor managing four projects simultaneously, recovering two hours per day has measurable value in capacity for new work.",
+        body: "A standalone tool — like quote follow-up automation — starts at $1,500 CAD. A connected system covering inquiry response, estimate booking, quote follow-up, and project status updates runs $2,500–5,000 CAD as a Business AI System. For a contractor managing four projects simultaneously, recovering two hours per day has measurable value in capacity for new work.",
       },
     ],
     packageId: "business",
