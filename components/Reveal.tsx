@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const variants: Variants = {
@@ -20,6 +20,12 @@ export default function Reveal({
   as?: "div" | "section" | "li" | "span";
 }) {
   const MotionTag = motion[as];
+  const reduceMotion = useReducedMotion();
+  // Reduced-motion users get the content immediately visible — never animated,
+  // never left stuck at opacity:0 if an in-view trigger fails to fire.
+  if (reduceMotion) {
+    return <MotionTag className={className}>{children}</MotionTag>;
+  }
   return (
     <MotionTag
       className={className}

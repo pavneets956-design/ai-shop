@@ -29,7 +29,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
@@ -42,7 +42,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA — compact (not oversized) for the 72px header */}
-          <div className="hidden items-center gap-5 md:flex">
+          <div className="hidden items-center gap-5 lg:flex">
             {authed && (
               <Link
                 href="/account"
@@ -62,7 +62,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="p-2 text-ink md:hidden"
+            className="p-2 text-ink lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -72,7 +72,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-ink/10 bg-paper/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-ink/10 bg-paper/95 backdrop-blur-xl lg:hidden">
           <div className="space-y-1 px-4 pb-6 pt-4">
             {navLinks.map((l) => (
               <Link
