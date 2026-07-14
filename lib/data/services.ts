@@ -177,7 +177,7 @@ const servicesA: LandingContent[] = [
     related: [
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-      { label: "AI receptionist for contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI receptionist for contractors", href: "/ai-receptionist-for-contractors" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [

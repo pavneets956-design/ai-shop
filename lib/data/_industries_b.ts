@@ -825,7 +825,7 @@ export const industriesB: LandingContent[] = [
     { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
     { label: "Real Estate Agent AI Automation", href: "/industries/real-estate-agent-ai-automation" },
     { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-    { label: "AI Chatbot for Small Business", href: "/ai-chatbot-for-small-business" }
+    { label: "AI Chatbot Development", href: "/ai-chatbot-development" }
   ],
   faqs: [
     {

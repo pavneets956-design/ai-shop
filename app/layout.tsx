@@ -71,12 +71,14 @@ export const metadata: Metadata = {
     title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
     description:
       "Tell us what you want AI to do. We design and build the system — apps, agents, automations and dashboards, around your exact workflow.",
+    images: [{ url: `${site.url}/logo.png`, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
     description:
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
+    images: [`${site.url}/logo.png`],
   },
   robots: { index: true, follow: true },
   icons: {

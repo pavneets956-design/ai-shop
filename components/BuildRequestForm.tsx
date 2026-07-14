@@ -11,9 +11,9 @@ import { site } from "@/lib/data/site";
 import OccupationIntake from "@/components/intake/OccupationIntake";
 
 const budgets = [
-  { id: "starter", label: "~$1,000 (one tool)" },
-  { id: "business", label: "$2,500–$5,000 (a system)" },
-  { id: "custom", label: "$7,500+ (custom app)" },
+  { id: "starter", label: "~$1,500 (one tool)" },
+  { id: "business", label: "$3,500–$7,500 (a system)" },
+  { id: "custom", label: "$10,000+ (custom app)" },
   { id: "unsure", label: "Not sure yet" },
 ];
 

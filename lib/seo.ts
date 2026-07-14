@@ -219,7 +219,7 @@ export function landingSchema(
       serviceType: shortName ?? content.h1,
       description: content.answer,
       provider: { "@id": `${site.url}/#organization` },
-      areaServed: "Worldwide",
+      areaServed: content.areaServed ?? "Worldwide",
       url,
       ...(pkg && {
         offers: {
@@ -277,11 +277,13 @@ export function landingMetadata(type: PageType, content: LandingContent): Metada
       description: content.description,
       url,
       type: "article",
+      images: [{ url: `${site.url}/logo.png`, alt: site.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: content.title,
       description: content.description,
+      images: [`${site.url}/logo.png`],
     },
   };
 }

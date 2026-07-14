@@ -19,45 +19,6 @@ export interface UseCase {
 
 export const useCases: UseCase[] = [
   {
-    slug: "ai-receptionist-for-contractors",
-    solution: "AI Receptionist",
-    industry: "Contractors & Trades",
-    question: "How do I get an AI receptionist for my contracting business?",
-    answer:
-      "An AI receptionist for contractors answers every call and text 24/7 — even while you're on a roof or under a sink — books the job, captures the details and texts them to you instantly. Handbuilt builds and trains one on your services, pricing and service area, live in about 5 business days, starting at $1,500 CAD.",
-    pain: "Trades lose thousands in jobs every month to missed calls and voicemails customers never leave. The first contractor to pick up usually wins the job.",
-    steps: [
-      "We learn your services, pricing, hours and service area",
-      "We set up an AI line that answers calls and texts in your voice",
-      "It qualifies the job, books it, and texts you the details",
-      "You show up to work that's already scheduled",
-    ],
-    gets: [
-      "24/7 call & text answering",
-      "Instant job booking synced to your calendar",
-      "Lead details texted to you in real time",
-      "No more missed-call lost jobs",
-    ],
-    packageId: "starter",
-    relatedBuilds: ["ai-receptionist", "ai-lead-follow-up-agent"],
-    keywords: [
-      "ai receptionist for contractors",
-      "ai answering service for trades",
-      "missed call automation contractor",
-      "ai phone answering small business",
-    ],
-    faqs: [
-      {
-        q: "Can the AI receptionist book jobs into my calendar?",
-        a: "Yes — it can sync directly to Google Calendar or your scheduling tool and book qualified jobs automatically.",
-      },
-      {
-        q: "Does it sound robotic to my customers?",
-        a: "No. It's trained on your business and speaks naturally. Most callers can't tell, and the hard calls get routed to you.",
-      },
-    ],
-  },
-  {
     slug: "lead-capture-ai-for-real-estate",
     solution: "AI Lead Follow-Up Agent",
     industry: "Real Estate",

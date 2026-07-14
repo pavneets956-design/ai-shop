@@ -62,7 +62,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What do projects cost?",
-        a: "The Starter AI Setup is $1,500 CAD. A Business AI System (2–4 connected tools) runs $2,500–5,000 CAD, typically $7,500. Custom AI apps starts at $10,000 CAD. All prices are flat — no hourly billing.",
+        a: "The Starter AI Setup is $1,500 CAD. A Business AI System (2–4 connected tools) runs $3,500–$7,500 CAD, typically $7,500. Custom AI apps start at $10,000 CAD. All prices are flat — no hourly billing.",
       },
     ],
     schema: "Service",
@@ -138,10 +138,10 @@ export const moneyPages: LandingContent[] = [
   {
     slug: "ai-chatbot-development",
     eyebrow: "AI Build",
-    h1: "AI Chatbot Development",
-    title: "AI Chatbot Development | Handbuilt",
-    description: "Custom AI chatbots trained on your business starting at $1,500 CAD. Not a generic bot — trained on your services, your policies, your voice.",
-    answer: "Handbuilt builds custom AI chatbots for small business websites and internal tools, starting at $1,500 CAD. Each chatbot is trained on your actual business content — your services, pricing, FAQs, and policies — so it answers like someone who knows your business, not like a generic customer service bot.",
+    h1: "Custom AI Chatbot Development in Vancouver & the Lower Mainland",
+    title: "Custom AI Chatbot Development in Vancouver | Handbuilt",
+    description: "Custom AI chatbots trained on your business — built for Vancouver and Lower Mainland companies from $1,500 CAD. Not a generic bot: trained on your services, pricing, and policies.",
+    answer: "Handbuilt builds custom AI chatbots for small business websites and internal tools — based in Surrey/Delta BC and serving Vancouver and the Lower Mainland, plus remote clients across Canada. Starting at $1,500 CAD, each chatbot is trained on your actual business content — your services, pricing, FAQs, and policies — so it answers like someone who knows your business, not a generic customer-service bot.",
     pain: "Generic chatbot platforms give you a template that says \"Hi! How can I help you today?\" and then either fails to answer or routes the visitor to a contact form anyway. Your customers leave. The tool adds no value. You turn it off after 60 days.",
     scenario: "Picture a dental clinic adding an AI chatbot trained on their services, insurance FAQ, booking process, and office policies. A well-trained chatbot on a clinic site can reasonably handle the majority of incoming chat inquiries without human intervention — the questions are predictable and the answers don't change often. After-hours questions that previously went unanswered until morning get handled on the spot. The exact self-serve rate depends on how much of your chat traffic is standard FAQ versus unusual requests.",
     steps: [
@@ -160,6 +160,16 @@ export const moneyPages: LandingContent[] = [
     ],
     sections: [
       {
+        heading: "Chatbot development for Vancouver & the Lower Mainland",
+        body: "Handbuilt is a one-person studio in Surrey/Delta, BC, so a Vancouver-area build is a local one: a discovery call in Pacific Time, a fixed price in Canadian dollars, and a chatbot trained on how your business actually runs. We work with companies across Vancouver, Burnaby, Richmond, Surrey, Langley, the North Shore and the wider Fraser Valley — clinics, trades, real-estate offices, retail and professional services. Being local means the chatbot can reflect real specifics: your service area and neighbourhoods, BC-specific policies, and the questions Lower Mainland customers actually ask. The build is done remotely or in person as you prefer, and nothing about it requires you to be technical.",
+        bullets: [
+          "Installs on your existing site — WordPress, Squarespace, Wix, Shopify, Next.js, or a custom build",
+          "Fixed CAD pricing from $1,500, no per-conversation fees",
+          "Trained on your real services, pricing ranges, hours and service area",
+          "Escalates to a person or a booking link when it reaches its limit",
+        ],
+      },
+      {
         heading: "Custom chatbot vs. chatbot builder platform",
         body: "Platforms like Tidio, Intercom's Fin, or Drift's AI bots are fast to set up and fine for large companies with dedicated support teams. For a small business, they have three problems: monthly fees that stack up ($100–400/mo+), limited ability to train on your specific content without significant manual effort, and a one-size-fits-all answer style that doesn't sound like you. A Handbuilt chatbot is trained on your content specifically, priced as a flat build, and doesn't cost you a monthly platform fee to keep running.",
       },
@@ -171,12 +181,18 @@ export const moneyPages: LandingContent[] = [
         heading: "Who this is for",
         body: "Local service businesses with websites that get traffic but low conversion — dental clinics, real estate agents, contractors, legal offices, clinics, home services. Also internal-use cases: small teams who want an AI that knows the employee handbook, product catalog, or internal policies without having to call someone to ask. The $1,500 Starter package is the right fit for most single-location businesses.",
       },
+      {
+        heading: "Chatbot or AI receptionist — which does your business need?",
+        body: "A chatbot is the right call when your customers reach you online and want quick answers or to book on your website. If most of your leads come in by phone — especially in the trades — an AI receptionist that answers calls may pay back faster, and the two work well together. Not sure which fits? The fastest way to find out is a short discovery call, where we look at where your leads actually come from before recommending anything.",
+      },
     ],
     packageId: "starter",
     ctaLabel: "Get a Chatbot Quote",
-    keywords: ["AI chatbot development Canada", "custom chatbot for small business", "website chatbot Surrey BC", "AI chatbot trained on my business", "chatbot development Canada"],
+    areaServed: "Vancouver & the Lower Mainland, BC",
+    keywords: ["custom chatbot development Vancouver", "AI chatbot development Vancouver", "chatbot developer Vancouver BC", "AI chatbot development Canada", "custom chatbot for small business", "website chatbot Surrey BC", "AI chatbot trained on my business", "Lower Mainland chatbot development"],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Small Business", href: "/ai-receptionist" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
       { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
       { label: "AI Automation Agency", href: "/ai-automation-agency" },
@@ -198,6 +214,14 @@ export const moneyPages: LandingContent[] = [
         q: "Does the $1,500 price include ongoing hosting?",
         a: "The $1,500 Starter covers the build and first-month setup. Ongoing is either self-hosted (your own API keys, minimal cost) or covered under the $99/mo AI Care Plan, which includes hosting, monitoring, and updates.",
       },
+      {
+        q: "Do you work with Vancouver-area businesses in person or remotely?",
+        a: "Either. Handbuilt is based in Surrey/Delta, so Vancouver and Lower Mainland builds can include an in-person discovery call if you'd like; most of the build and testing happens remotely regardless. The process and the CAD pricing are the same wherever you are.",
+      },
+      {
+        q: "Can the chatbot answer in more than one language?",
+        a: "Yes — it can be set up to respond in multiple languages if your customers need that. Multi-language support is one of the add-ons that can move a build toward the $3,500–$7,500 range, so it's scoped on the discovery call.",
+      },
     ],
     schema: "Service",
     icon: "MessagesSquare",
@@ -205,10 +229,10 @@ export const moneyPages: LandingContent[] = [
   {
     slug: "ai-receptionist",
     eyebrow: "AI Build",
-    h1: "AI Receptionist for Local Businesses",
-    title: "AI Receptionist for Local Businesses | Handbuilt",
-    description: "Never miss a call, text, or inquiry again. A Handbuilt AI receptionist books jobs 24/7 starting at $1,500 CAD — for contractors, clinics, and local services.",
-    answer: "A Handbuilt AI receptionist answers your website chat, texts, or missed-call inquiries 24 hours a day — asking the right intake questions, booking appointments, and routing urgent issues to you. Setup starts at $1,500 CAD. Built specifically for local service businesses that lose work to unanswered after-hours contact.",
+    h1: "AI Receptionist for Small Business",
+    title: "AI Receptionist for Small Business | Handbuilt",
+    description: "A Handbuilt AI receptionist answers calls, texts, and web inquiries 24/7 and books the job — for clinics, salons, retail, and professional services. From $1,500 CAD.",
+    answer: "A Handbuilt AI receptionist answers your calls, texts, and website inquiries around the clock — asking the right intake questions, booking appointments, and routing urgent issues to you. Setup starts at $1,500 CAD, with more complex phone and CRM routing up to about $2,500. Built for small businesses — clinics, salons, retail, real estate, and professional services — that lose work to unanswered calls and after-hours contact.",
     pain: "A potential customer contacts you at 7pm on a Tuesday. If you don't answer, they move to the next search result. That's not a loyalty problem — it's a response-time problem. Hiring a human to cover after-hours costs $3,000–5,000/mo. Most small businesses just accept the lost jobs.",
     scenario: "Say a residential HVAC contractor is missing roughly 8–10 inbound inquiries per week outside business hours — each one a homeowner whose heat stopped working who will book with whoever answers first. An AI receptionist on the website and Google Business Profile answering those inquiries immediately, booking jobs, and surfacing a morning summary could recover most of that. How many of those 8–10 weekly contacts convert to booked work depends on the job type and urgency, but after-hours HVAC calls are typically high-intent.",
     steps: [
@@ -236,22 +260,22 @@ export const moneyPages: LandingContent[] = [
       },
       {
         heading: "Who this is for",
-        body: "Any local business where missing an inquiry means losing a job: plumbers, electricians, HVAC contractors, cleaning businesses, dental clinics, physiotherapy clinics, real estate agents, law offices. If you've ever said \"I lost that job because I couldn't answer fast enough\" — this solves that specific problem. The Starter AI Setup at $1,500 CAD is built for single-location businesses. Multi-location or more complex setups move into the Business AI System range.",
+        body: "Any small business where missing an inquiry means losing work: dental and physiotherapy clinics, salons and spas, retail, real estate agents, law and accounting offices, and cleaning or home-service businesses. If you've ever said \"I lost that job because I couldn't answer fast enough,\" this solves that specific problem. The Starter AI Setup at $1,500 CAD is built for single-location businesses; multi-location or more complex setups move into the Business AI System range. If you run a trade or construction business, the AI receptionist for contractors is tuned specifically for job-site call patterns.",
       },
     ],
     packageId: "starter",
     ctaLabel: "Set Up My AI Receptionist",
-    keywords: ["AI receptionist local business Canada", "after hours answering service AI", "AI receptionist for contractors", "missed call AI chatbot", "automated receptionist small business BC"],
+    keywords: ["AI receptionist for small business", "AI receptionist small business Canada", "virtual receptionist for small business", "after hours answering service AI", "automated receptionist small business BC", "missed call answering AI"],
     related: [
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
       { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
       { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
       { label: "Complete AI Business System", href: "/ai-business-system" },
     ],
     faqs: [
       {
-        q: "Does this work for phone calls or just web chat?",
-        a: "The base $1,500 setup covers web chat and text/form-based inquiries. Phone call answering (voice AI) is available as an add-on and is typically quoted as part of a Business AI System engagement.",
+        q: "Does this answer phone calls, or just web chat and text?",
+        a: "Both. The $1,500 Starter can answer your phone line, texts, and website inquiries — you choose the channels that matter for your business. More complex phone setups (multi-line routing, deep CRM or calendar integration) run up to about $2,500 or move into a Business AI System.",
       },
       {
         q: "What happens when the AI doesn't know the answer?",
@@ -274,8 +298,8 @@ export const moneyPages: LandingContent[] = [
     eyebrow: "Services",
     h1: "Complete AI Business System",
     title: "Complete AI Business System | Handbuilt",
-    description: "2–4 connected AI tools that run the repetitive parts of your business as one system. $2,500–5,000 CAD. The flagship Handbuilt package.",
-    answer: "The Handbuilt AI Business System connects 2–4 AI tools into one coherent system: inquiry handling, lead capture, appointment booking, CRM updates, and follow-up — all automated and talking to each other. Priced at $3,500–5,000 CAD (typically $7,500), it's built for small businesses ready to stop doing the same five tasks by hand every day.",
+    description: "2–4 connected AI tools that run the repetitive parts of your business as one system. $3,500–$7,500 CAD. The flagship Handbuilt package.",
+    answer: "The Handbuilt AI Business System connects 2–4 AI tools into one coherent system: inquiry handling, lead capture, appointment booking, CRM updates, and follow-up — all automated and talking to each other. Priced at $3,500–$7,500 CAD (typically $7,500), it's built for small businesses ready to stop doing the same five tasks by hand every day.",
     pain: "You've added tools over the years — a CRM here, a booking plugin there, a form tool somewhere else. None of them talk to each other. Data entry happens twice. Leads fall through gaps between tools. You spend hours a week on tasks that should run themselves.",
     scenario: "Say a real estate agent runs three separate tools: a contact form, a CRM she updates manually, and a calendar she books by email. A connected AI Business System could automatically capture new leads from the website, qualify them, add them to the CRM with a lead score, and send a personalized follow-up — all before she sees the notification. Lead response time could drop from several hours to under 3 minutes. How many additional consultations that converts depends on lead volume and source quality, but faster response on real estate leads is consistently one of the highest-leverage changes a solo agent can make.",
     steps: [
@@ -289,7 +313,7 @@ export const moneyPages: LandingContent[] = [
       "End-to-end automation from first contact to booked appointment or closed lead",
       "CRM and calendar integration so data flows without manual entry",
       "One builder accountable for the whole system, not a different vendor per tool",
-      "Flat project price of $2,500–5,000 CAD (typically $7,500)",
+      "Flat project price of $3,500–$7,500 CAD (typically $7,500)",
       "A system you own — not a subscription to someone else's platform",
     ],
     sections: [
@@ -318,7 +342,7 @@ export const moneyPages: LandingContent[] = [
     faqs: [
       {
         q: "What's the difference between this and the Starter package?",
-        a: "The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or receptionist. The Business AI System ($2,500–5,000) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.",
+        a: "The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or receptionist. The Business AI System ($3,500–$7,500) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.",
       },
       {
         q: "Do I need to replace my current tools?",
@@ -394,7 +418,8 @@ export const moneyPages: LandingContent[] = [
       "ai automation for small business",
       "custom ai automation canada",
       "small business ai setup",
-      "ai automation agency surrey bc"
+      "done for you ai setup vs diy",
+      "ai automation installed for you"
     ],
     related: [
       { label: "AI Business System", href: "/ai-business-system" },
@@ -430,7 +455,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What does the Care Plan include?",
-        a: "$250/mo CAD. Covers ongoing tuning, monitoring, bug fixes, and minor adjustments as your business changes. It’s optional — many clients run their systems independently after handoff."
+        a: "$99/mo CAD. Covers ongoing tuning, monitoring, bug fixes, and minor adjustments as your business changes. It’s optional — many clients run their systems independently after handoff."
       },
       {
         q: "What if I already tried AI tools and they didn’t work?",
@@ -444,10 +469,10 @@ export const moneyPages: LandingContent[] = [
   {
     slug: "ai-receptionist-for-contractors",
     eyebrow: "AI Build",
-    h1: "AI Receptionist for Contractors",
-    title: "AI Receptionist for Contractors and Trades",
-    description: "AI receptionist built for contractors — answers every call, books jobs, captures quotes. $1,500 CAD. Live in 5 business days. Surrey BC.",
-    answer: "An AI receptionist for contractors answers every call, books jobs, captures quote requests, and texts customers back — even while you’re on the job site. Installed and working in about 5 business days. $1,500 CAD, no monthly fee required. Built by Handbuilt in Surrey BC.",
+    h1: "AI Receptionist for Contractors & Construction Companies",
+    title: "AI Receptionist for Contractors & Construction Companies in BC | Handbuilt",
+    description: "AI receptionist built for contractors and construction companies in BC — answers every call, books jobs, captures quotes, texts callers back. $1,500 CAD, live in ~5 business days.",
+    answer: "An AI receptionist for contractors and construction companies answers every call, books jobs, captures quote requests, and texts customers back — even while you’re on the job site or your crew is in the field. It answers your existing business number, so callers reach a helpful voice instead of voicemail. Installed and working in about 5 business days. $1,500 CAD, no monthly fee required. Built by Handbuilt in Surrey/Delta BC, serving contractors across the Lower Mainland and remotely across Canada.",
     pain: "You’re on a roof, under a sink, or inside a panel box when your phone rings. You can’t answer. The caller hangs up, Googles the next contractor, and books with them instead. Voicemail doesn’t help — most callers won’t leave one. Every missed call is a lost job, and you’re losing them every day you’re out doing the actual work.",
     scenario: "Imagine a fencing contractor running a 4-person crew in the Fraser Valley. Between April and October, the phone rings 15–20 times a day. Half those calls come in while the crew is on site. The contractor’s wife handles calls when she can, but she has her own job. They’re losing an estimated 5–8 leads a week to missed calls and slow callbacks.\n\nIn this hypothetical scenario, Handbuilt would install an AI receptionist that picks up every call, asks what the caller needs, captures the job details, and books an estimate slot on the contractor’s calendar. The caller gets a confirmation text. The contractor gets a summary. No more napkin notes, no more voicemail tag.",
     steps: [
@@ -490,14 +515,21 @@ export const moneyPages: LandingContent[] = [
       {
         heading: "Built for Trades — Not a Generic Chatbot",
         body: "Generic answering services don’t know the difference between a service call and a new install. They can’t quote a ballpark for a 50-foot cedar fence or tell a caller whether you do panel upgrades. This receptionist is trained on your trade, your service list, and your area. It speaks your customers’ language because it was built around your business, not a template."
+      },
+      {
+        heading: "For construction companies and general contractors",
+        body: "Construction companies and GCs field a different mix of calls than a single-trade shop: subcontractors confirming schedules, suppliers, homeowners chasing a project update, and new-build or renovation leads worth five and six figures. The receptionist is trained to tell those apart — routing an active-project or subcontractor call appropriately, capturing a new estimate lead with the scope and timeline, and flagging anything urgent to you or your project manager. When your crews and estimators are on site all day, head-office calls still get answered without tying someone up in the trailer."
       }
     ],
     packageId: "starter" as const,
     ctaLabel: "Get your AI receptionist",
     keywords: [
       "ai receptionist for contractors",
+      "ai receptionist for construction",
+      "ai receptionist for construction companies",
       "ai answering service for trades",
       "contractor phone answering ai",
+      "general contractor answering service ai",
       "ai receptionist for plumbers",
       "ai phone answering hvac",
       "missed calls contractor"
@@ -539,8 +571,24 @@ export const moneyPages: LandingContent[] = [
         a: "A human answering service takes messages. An AI receptionist trained on your trade can qualify the call, capture job details, book the estimate, and text the caller a confirmation — all in the same call. And it costs a fraction of what you’re paying monthly."
       },
       {
-        q: "Which trades does this work for?",
-        a: "Any trade that books jobs by phone: plumbing, electrical, HVAC, roofing, fencing, landscaping, painting, general contracting. The receptionist is trained on your specific services, not a generic script."
+        q: "Which trades and construction businesses does this work for?",
+        a: "Any trade or construction business that books jobs and estimates by phone: plumbing, electrical, HVAC, roofing, fencing, landscaping, painting, general contracting, renovation, and construction companies. The receptionist is trained on your specific services and call types, not a generic script."
+      },
+      {
+        q: "Does it answer my existing business number?",
+        a: "Yes. We forward your existing business line to the receptionist, so customers keep calling the number they already have and simply stop reaching voicemail. You keep your number and your carrier."
+      },
+      {
+        q: "Can it transfer an urgent call to me or a person?",
+        a: "Yes. For emergencies or anything it isn’t trained to handle, it can transfer the call to you or a designated number, or capture the details and text you immediately so you can call straight back. You decide what counts as urgent during setup."
+      },
+      {
+        q: "What data does it keep, and is it private?",
+        a: "It stores the call details it captures — name, number, job details, booking — so you have a record and can follow up. That data is yours: it isn’t sold or shared, and it lives in your own tools (your calendar, CRM, or a simple log). We walk through exactly what’s retained and where during setup."
+      },
+      {
+        q: "Can it handle callers who speak another language?",
+        a: "It can be set up to greet and handle callers in more than one language if your customer base needs that — common in the Lower Mainland. Which languages and how it’s handled are scoped on the discovery call."
       }
     ],
     schema: "Service" as const,
@@ -650,109 +698,6 @@ export const moneyPages: LandingContent[] = [
     ],
     schema: "Service" as const,
     icon: "MessageSquare"
-  },
-
-  {
-    slug: "ai-chatbot-for-small-business",
-    eyebrow: "AI Build",
-    h1: "AI Chatbot for Small Business",
-    title: "AI Chatbot Built for Your Small Business",
-    description: "Custom AI chatbot trained on your services, pricing, and FAQs. Answers customers and captures leads 24/7. From $1,500 CAD. Handbuilt, Surrey BC.",
-    answer: "A custom AI chatbot trained on your services, pricing, hours, and FAQs answers customer questions and captures leads on your website 24/7. Not a generic widget — built around your actual business. Starts at $1,500 CAD. Built by Handbuilt in Surrey BC, serving Canada and remote clients worldwide.",
-    pain: "Your website gets traffic, but most visitors leave without reaching out. They had a question about your pricing, your hours, or whether you serve their area — and your site didn’t answer it fast enough. A contact form feels like shouting into a void. A phone call during business hours isn’t always convenient. So they bounce, and you never know they were there.",
-    scenario: "Imagine a dental clinic with a website that gets 800 visits a month. About 15 of those visitors book through the online form. The rest leave. The clinic’s FAQ page covers the basics, but patients still want to ask specific questions: “Do you take Pacific Blue Cross?” “How much is a crown without insurance?” “Can I get a same-week appointment?” Those questions go unanswered at 9 PM on a Wednesday.\n\nIn this hypothetical scenario, Handbuilt would install a chatbot trained on the clinic’s full service list, insurance policies, pricing ranges, and availability. A visitor asks a question, gets an accurate answer in seconds, and gets prompted to book. The clinic captures leads it was already paying to attract but quietly losing.",
-    steps: [
-      "Discovery call — Pavneet learns your services, pricing, common customer questions, and what your website visitors typically need. 20 minutes.",
-      "Scoped flat-price proposal — Fixed CAD price, a clear list of what the chatbot will know and do, and a go-live timeline. No hourly billing.",
-      "Build & test on your real business data — Pavneet trains the chatbot on your actual services, pricing, hours, service areas, and FAQs, then tests it against real customer questions.",
-      "Handoff + optional Care Plan — The chatbot goes live on your website. You get a walkthrough and can update its knowledge base anytime. Optional $99/mo Care Plan for ongoing tuning."
-    ],
-    gets: [
-      "AI chatbot trained on your specific services, pricing, hours, and FAQs — not generic responses",
-      "Lead capture built in — collects name, email, and what the visitor needs when they’re ready",
-      "24/7 availability on your website, answering questions when you can’t",
-      "Installed on your existing site — WordPress, Squarespace, Next.js, Wix, or custom",
-      "Honest answers only — trained to say “I don’t know, let me connect you” rather than make things up",
-      "One-time build fee starting at $1,500 CAD — no per-message charges"
-    ],
-    sections: [
-      {
-        heading: "Not a Generic Widget — Trained on Your Business",
-        body: "Most chatbot tools give you a blank box and tell you to “add your knowledge base.” That’s the whole problem. The tool is cheap — making it actually accurate about your services, your pricing, and your edge cases is the work. Handbuilt trains the chatbot on your real business data so it gives answers your staff would give, not vague auto-generated responses.",
-        bullets: [
-          "Knows your full service list, not just what’s on your homepage",
-          "Answers pricing questions with the ranges and caveats you’d give in person",
-          "Understands your service area and availability",
-          "Trained to escalate gracefully when it doesn’t know the answer"
-        ]
-      },
-      {
-        heading: "Captures Leads You’re Already Paying For",
-        body: "If you’re running Google Ads, SEO, or social media, you’re paying to get people to your website. Most of them leave without doing anything. A chatbot that answers their question in the moment and prompts them to book or leave their info converts traffic you already have. You don’t need more traffic — you need to stop losing the visitors you’ve got.",
-        bullets: [
-          "Engages visitors who won’t fill out a contact form",
-          "Captures lead info mid-conversation when the visitor is warm",
-          "Qualifies inquiries so you get context, not just a name and email",
-          "Sends lead notifications to you in real time"
-        ]
-      },
-      {
-        heading: "Chatbot or AI receptionist — which do you need?",
-        body: "A chatbot is best when your customers reach you online and want quick answers or to book on your website. If most of your leads come in by phone — especially in the trades — an AI receptionist that answers calls may pay back faster, and the two work well together. Not sure which fits? The fastest way to find out is a short discovery call, where we look at where your leads actually come from before recommending anything."
-      }
-    ],
-    packageId: "starter" as const,
-    ctaLabel: "Get your custom chatbot",
-    keywords: [
-      "ai chatbot for small business",
-      "small business chatbot",
-      "custom ai chatbot",
-      "ai chatbot for website small business",
-      "business chatbot canada"
-    ],
-    related: [
-      { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
-      { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
-      { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-      { label: "ChatGPT vs Custom AI Agent", href: "/compare/chatgpt-vs-custom-ai-agent" },
-      { label: "What Can AI Automate for Small Business?", href: "/resources/what-can-ai-automate-small-business" }
-    ],
-    faqs: [
-      {
-        q: "How is this different from ChatGPT or a free chatbot widget?",
-        a: "ChatGPT is a general-purpose AI that knows nothing about your business. Free widgets are blank templates you have to configure yourself. This chatbot is trained specifically on your services, pricing, hours, and FAQs so it gives accurate, business-specific answers from day one."
-      },
-      {
-        q: "How much does a custom AI chatbot cost?",
-        a: "$1,500 CAD for a standard small business chatbot. More complex setups with booking integrations, multi-language support, or CRM connections may fall in the $3,500–$7,500 range. You get a fixed price before work begins."
-      },
-      {
-        q: "Does it work on my existing website?",
-        a: "Yes. It installs on WordPress, Squarespace, Wix, Shopify, Next.js, or any custom site. Pavneet handles the installation — you don’t need a developer."
-      },
-      {
-        q: "What if the chatbot doesn’t know the answer?",
-        a: "It says so honestly. It’s trained to tell the visitor it doesn’t have that information and to offer to connect them with you directly. It never fabricates answers."
-      },
-      {
-        q: "Can it book appointments or capture leads?",
-        a: "Yes to both. It can collect visitor details mid-conversation and send them to you, and it can connect to your calendar or booking system to schedule directly."
-      },
-      {
-        q: "How long does it take to build?",
-        a: "About 5 business days for a standard chatbot. Pavneet trains it on your business data, tests it against real customer questions, and installs it on your site."
-      },
-      {
-        q: "Do I need to update it when my services or pricing change?",
-        a: "You can update its knowledge base yourself — the process is straightforward. Or the $99/mo Care Plan covers ongoing updates and tuning so you don’t have to think about it."
-      },
-      {
-        q: "Can the chatbot answer in more than one language?",
-        a: "Yes — it can be set up to respond in multiple languages if your customers need that. Multi-language support is one of the add-ons that can move a build toward the $3,500–$7,500 range, so it’s scoped on the discovery call."
-      }
-    ],
-    schema: "Service" as const,
-    icon: "Bot"
   },
 {
     slug: "remote-ai-development",

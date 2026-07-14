@@ -950,7 +950,7 @@ export const comparisons: LandingContent[] = [
   keywords: ["intercom fin alternative", "intercom fin small business", "ai support agent small business", "intercom fin pricing alternative"],
   related: [
     { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-    { label: "AI Chatbot for Small Business", href: "/ai-chatbot-for-small-business" },
+    { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
     { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
     { label: "AI Chatbot vs AI Receptionist", href: "/compare/ai-chatbot-vs-ai-receptionist" },
     { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" }

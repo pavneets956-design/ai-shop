@@ -67,6 +67,14 @@ const nextConfig = {
       { source: '/ai-customer-support-bot', destination: '/services/ai-customer-support-agent', permanent: true },
       { source: '/ai-voice-agent-for-business', destination: '/services/ai-voice-agent', permanent: true },
       { source: '/custom-ai-app-development-canada', destination: '/custom-ai-app-development', permanent: true },
+      // Duplicate chatbot page merged into the canonical development page (2026-07-13):
+      // /ai-chatbot-for-small-business competed with /ai-chatbot-development for the
+      // same intent (both Service, both $1,500). Unique content folded into the winner.
+      { source: '/ai-chatbot-for-small-business', destination: '/ai-chatbot-development', permanent: true },
+      // Duplicate use-case page consolidated into the canonical money page (2026-07-13):
+      // /use-cases/ai-receptionist-for-contractors competed with /ai-receptionist-for-contractors
+      // for the exact same query. The money page is the strengthened primary.
+      { source: '/use-cases/ai-receptionist-for-contractors', destination: '/ai-receptionist-for-contractors', permanent: true },
       // Resource aliases → canonical resource/how-to pages.
       { source: '/resources/how-to-automate-quote-requests', destination: '/how-to/automate-quote-requests', permanent: true },
       { source: '/resources/how-to-automate-invoice-reminders', destination: '/how-to/automate-invoice-reminders', permanent: true },

@@ -199,7 +199,7 @@ const CARE: CarePlan[] = [
 const INTERNAL_LINKS = [
   { label: "AI receptionist Canada", href: "/ai-receptionist" },
   { label: "AI receptionist for contractors", href: "/ai-receptionist-for-contractors" },
-  { label: "AI chatbot for small business", href: "/ai-chatbot-for-small-business" },
+  { label: "AI chatbot development (Vancouver)", href: "/ai-chatbot-development" },
   { label: "AI lead follow-up agent", href: "/ai-lead-follow-up-agent" },
   { label: "Done-for-you AI automation", href: "/done-for-you-ai-automation" },
   { label: "AI quote agent", href: "/services/ai-quote-generator" },

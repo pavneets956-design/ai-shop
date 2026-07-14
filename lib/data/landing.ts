@@ -62,6 +62,8 @@ export interface LandingContent {
   /** Recommended package — drives the price card + CTA target. */
   packageId?: "starter" | "business" | "custom";
   ctaLabel?: string;
+  /** Optional geographic focus for Service schema (e.g. "Vancouver & the Lower Mainland, BC"). Defaults to "Worldwide". */
+  areaServed?: string;
   keywords: string[];
   /** Internal links (hub→spoke). Enforce ≥2 to avoid orphans. */
   related: LandingLink[];

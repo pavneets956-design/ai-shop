@@ -40,7 +40,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, quotes, and follows up runs $2,500–5,000 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.",
+        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, quotes, and follows up runs $2$3,500–$7,500 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.",
       },
     ],
     packageId: "business",
@@ -78,7 +78,7 @@ const industriesA: LandingContent[] = [
     description:
       "Missed calls and manual scheduling cost lawn care businesses real money. Handbuilt builds AI that books, follows up, and chases renewals — from $1,500 CAD.",
     answer:
-      "AI automation for a lawn care business handles the repetitive side of running a route: answering new-client inquiries, booking one-time or recurring cuts, sending seasonal renewal reminders, and following up on quotes — all without you managing it manually. Handbuilt builds this as a connected system trained on your pricing, service days, and coverage area. A Business AI System typically runs $2,500–5,000 CAD; a single starting tool like automated booking runs from $1,500 CAD.",
+      "AI automation for a lawn care business handles the repetitive side of running a route: answering new-client inquiries, booking one-time or recurring cuts, sending seasonal renewal reminders, and following up on quotes — all without you managing it manually. Handbuilt builds this as a connected system trained on your pricing, service days, and coverage area. A Business AI System typically runs $2$3,500–$7,500 CAD; a single starting tool like automated booking runs from $1,500 CAD.",
     pain: "Lawn care margins are thin and route density matters. One missed renewal call in fall means an empty slot all spring — and most operators are too busy running the route to chase renewals by hand.",
     scenario:
       "Say a solo lawn care operator running 60 weekly residential accounts is spending about four hours each week on calls, texts, and renewal follow-ups — time that comes straight out of the hours available to run the route. Automating booking and renewal reminders could pull most of that back down toward 30 minutes, and spring retention tends to improve when clients get a renewal offer in February rather than waiting until April when they've already called someone else. The exact time savings depend on how manual the current process is.",
@@ -107,7 +107,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone automated booking tool starts at $1,500 CAD. A full system — inquiry response, booking, renewals, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a 60-account route, that typically pays back in one recovered spring renewal season.",
+        body: "A standalone automated booking tool starts at $1,500 CAD. A full system — inquiry response, booking, renewals, and review requests — runs $2$3,500–$7,500 CAD as a Business AI System. For a 60-account route, that typically pays back in one recovered spring renewal season.",
       },
     ],
     packageId: "business",
@@ -174,7 +174,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, books, and follows up runs $2,500–5,000 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.",
+        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, books, and follows up runs $2$3,500–$7,500 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.",
       },
     ],
     packageId: "business",
@@ -189,7 +189,7 @@ const industriesA: LandingContent[] = [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
@@ -241,7 +241,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, estimate booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. Scope depends on your job volume and how many service categories you quote.",
+        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, estimate booking, and multi-touch follow-up — runs $2$3,500–$7,500 CAD as a Business AI System. Scope depends on your job volume and how many service categories you quote.",
       },
     ],
     packageId: "business",
@@ -308,7 +308,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — like AI overflow call capture — starts at $1,500 CAD. A full system covering emergency triage, scheduled booking, and maintenance renewals runs $2,500–5,000 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.",
+        body: "A single tool — like AI overflow call capture — starts at $1,500 CAD. A full system covering emergency triage, scheduled booking, and maintenance renewals runs $2$3,500–$7,500 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.",
       },
     ],
     packageId: "business",
@@ -323,7 +323,7 @@ const industriesA: LandingContent[] = [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
@@ -375,7 +375,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, inspection booking, and multi-touch follow-up — runs $2,500–5,000 CAD as a Business AI System. On a $15,000 average job, recovering one additional close per month covers the system cost many times over.",
+        body: "A standalone quote follow-up tool starts at $1,500 CAD. A connected system — inquiry capture, inspection booking, and multi-touch follow-up — runs $2$3,500–$7,500 CAD as a Business AI System. On a $15,000 average job, recovering one additional close per month covers the system cost many times over.",
       },
     ],
     packageId: "business",
@@ -442,7 +442,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single automation — like review requests or reminder texts — starts at $1,500 CAD. A full system covering reminders, rescheduling, inquiry response, and review requests runs $2,500–5,000 CAD as a Business AI System. For a 45-client recurring roster, saving five hours per week is typically worth the investment in the first month.",
+        body: "A single automation — like review requests or reminder texts — starts at $1,500 CAD. A full system covering reminders, rescheduling, inquiry response, and review requests runs $2$3,500–$7,500 CAD as a Business AI System. For a 45-client recurring roster, saving five hours per week is typically worth the investment in the first month.",
       },
     ],
     packageId: "business",
@@ -509,7 +509,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone intake and quote tool starts at $1,500 CAD. A connected system — intake, instant quote, follow-up sequence, and review requests — runs $2,500–5,000 CAD as a Business AI System. For a company doing 80 inquiries per month, improving conversion on after-hours leads typically recovers the cost in the first month.",
+        body: "A standalone intake and quote tool starts at $1,500 CAD. A connected system — intake, instant quote, follow-up sequence, and review requests — runs $2$3,500–$7,500 CAD as a Business AI System. For a company doing 80 inquiries per month, improving conversion on after-hours leads typically recovers the cost in the first month.",
       },
     ],
     packageId: "business",
@@ -576,7 +576,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A single tool — like automated renewal reminders — starts at $1,500 CAD. A connected system covering call intake, treatment booking, recurring reminders, and renewal automation runs $2,500–5,000 CAD as a Business AI System. For a business with 100+ recurring accounts, preventing even 10% annual lapse typically covers the cost.",
+        body: "A single tool — like automated renewal reminders — starts at $1,500 CAD. A connected system covering call intake, treatment booking, recurring reminders, and renewal automation runs $2$3,500–$7,500 CAD as a Business AI System. For a business with 100+ recurring accounts, preventing even 10% annual lapse typically covers the cost.",
       },
     ],
     packageId: "business",
@@ -643,7 +643,7 @@ const industriesA: LandingContent[] = [
       },
       {
         heading: "What it costs",
-        body: "A standalone tool — like quote follow-up automation — starts at $1,500 CAD. A connected system covering inquiry response, estimate booking, quote follow-up, and project status updates runs $2,500–5,000 CAD as a Business AI System. For a contractor managing four projects simultaneously, recovering two hours per day has measurable value in capacity for new work.",
+        body: "A standalone tool — like quote follow-up automation — starts at $1,500 CAD. A connected system covering inquiry response, estimate booking, quote follow-up, and project status updates runs $2$3,500–$7,500 CAD as a Business AI System. For a contractor managing four projects simultaneously, recovering two hours per day has measurable value in capacity for new work.",
       },
     ],
     packageId: "business",
@@ -658,7 +658,7 @@ const industriesA: LandingContent[] = [
       { label: "AI Proposal Generator", href: "/services/ai-proposal-generator" },
       { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
