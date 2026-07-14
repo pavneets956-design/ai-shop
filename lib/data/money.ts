@@ -191,11 +191,11 @@ export const moneyPages: LandingContent[] = [
     areaServed: "Vancouver & the Lower Mainland, BC",
     keywords: ["custom chatbot development Vancouver", "AI chatbot development Vancouver", "chatbot developer Vancouver BC", "AI chatbot development Canada", "custom chatbot for small business", "website chatbot Surrey BC", "AI chatbot trained on my business", "Lower Mainland chatbot development"],
     related: [
+      { label: "AI Chatbot Developer in Vancouver", href: "/locations/ai-chatbot-developer-vancouver" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
       { label: "AI Receptionist for Small Business", href: "/ai-receptionist" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
       { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
-      { label: "AI Automation Agency", href: "/ai-automation-agency" },
     ],
     faqs: [
       {

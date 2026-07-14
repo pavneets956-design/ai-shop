@@ -27,10 +27,20 @@ const bandFiles = [
   "components/BuildRequestForm.tsx",
 ];
 const retiredBand = /\$2,500\s*[–—-]\s*\$?5,000/;
+// Catch backreference-mangled prices like "$2$3,500" (a botched string replace).
+const mangledPrice = /\$\d+\$\d/;
 for (const f of bandFiles) {
-  if (retiredBand.test(read(f))) {
+  const s = read(f);
+  if (retiredBand.test(s)) {
     fail.push(`${f}: retired Business band "$2,500–5,000" found (canonical is $3,500–$7,500)`);
   }
+  if (mangledPrice.test(s)) {
+    fail.push(`${f}: mangled price string (pattern $N$N — botched find/replace). Canonical Business band is $3,500–$7,500`);
+  }
+}
+// Positive assertion: the industry pages must actually carry the canonical Business band.
+if (!/\$3,500\s*[–—-]\s*\$7,500/.test(read("lib/data/industries.ts"))) {
+  fail.push('lib/data/industries.ts: canonical Business band "$3,500–$7,500" not found (expected on industry pages)');
 }
 
 // 3) Care Plan must never be priced at $250/mo in landing money/industries data
