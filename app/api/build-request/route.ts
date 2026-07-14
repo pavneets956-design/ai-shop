@@ -1,75 +1,240 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
+import type { Prisma } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
 
 /**
- * Lead capture for the Build Request form and the "email me this plan" action.
+ * Lead capture for the Build Request form, the "email me this plan" action, and
+ * the /start AI consultation.
  *
- * - Always logs the lead (visible in Vercel → Logs) so nothing is ever lost.
- * - If RESEND_API_KEY is set, sends YOU a notification email (self-notification —
- *   not outbound to the client). Sending never blocks or fails the request.
+ * TRUTHFULNESS CONTRACT: this endpoint returns `{ ok: true }` ONLY when the lead
+ * has been durably accepted — persisted to the database OR delivered by email.
+ * A lead is written to the DB *before* the notification email is attempted, so a
+ * missing/expired/rate-limited RESEND_API_KEY (or any Resend outage) can never
+ * silently lose a lead. If BOTH durable channels fail, we return a non-2xx so the
+ * form shows its retry/fallback message instead of a false "Request received".
  *
  * Env:
- *   RESEND_API_KEY     enable email delivery
+ *   RESEND_API_KEY     enable the self-notification email
  *   LEAD_NOTIFY_EMAIL  where to send notifications (default: pavneets956@gmail.com)
  *   LEAD_FROM_EMAIL    verified from address (default: Handbuilt <onboarding@resend.dev>)
  */
+
+// Require a valid email; everything else is optional and passed through, because
+// the three callers (build-request / plan / consultation) post different shapes.
+const LeadSchema = z
+  .object({ email: z.string().trim().email() })
+  .passthrough();
+
+const DEDUPE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+
 export async function POST(req: Request) {
-  let payload: Record<string, unknown>;
+  let raw: unknown;
   try {
-    payload = (await req.json()) as Record<string, unknown>;
+    raw = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const email = typeof payload.email === "string" ? payload.email.trim() : "";
-  if (!email || !email.includes("@")) {
+  const parsed = LeadSchema.safeParse(raw);
+  if (!parsed.success) {
+    // Don't echo zod internals — a single clear message is enough for the form.
     return NextResponse.json({ error: "Valid email required" }, { status: 400 });
   }
 
-  const lead = { receivedAt: new Date().toISOString(), ...payload };
+  const payload = parsed.data as Record<string, unknown>;
+  const email = String(payload.email).trim();
+  const lead = { receivedAt: new Date().toISOString(), ...payload, email };
 
-  // Structured log — always on, shows up in Vercel → Logs.
+  // Structured log — always on, visible in Vercel → Logs. NOT a durable store.
   console.log("[AI-SHOP LEAD]", JSON.stringify(lead));
 
-  // Self-notification via Resend (best-effort, never blocks the response).
-  const key = process.env.RESEND_API_KEY;
-  if (key) {
-    try {
-      const { Resend } = await import("resend");
-      const resend = new Resend(key);
-      const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
-      // From-address: Resend's shared `onboarding@resend.dev` needs NO domain
-      // verification and reliably delivers to your own Resend-account email — ideal
-      // for a self-notification (you email yourself the lead). No Handbuilt mailbox
-      // or domain required. Override LEAD_FROM_EMAIL once you verify a domain, e.g.
-      // "Handbuilt <leads@aibuiltbyhand.com>" or your existing "leads@coitracker.co".
-      const from = process.env.LEAD_FROM_EMAIL || "Handbuilt Leads <onboarding@resend.dev>";
-      // The /start AI call posts source "ai-builder"; an older flow used "consultation".
-      // Both carry the rich brief (pain, recommended build, transcript) → rich format.
-      const isConsultation =
-        payload.source === "ai-builder" || payload.source === "consultation";
-      const kind = isConsultation
-        ? "AI consultation"
-        : payload.type === "plan"
-        ? "Plan request"
-        : "Build request";
+  // NODE_ENV === "production" on Vercel covers BOTH preview and production
+  // deploys. Only true local dev (`next dev`) is non-strict.
+  const strict = process.env.NODE_ENV === "production";
 
-      await resend.emails.send({
-        from,
-        to,
-        replyTo: email,
-        subject: `New Handbuilt ${kind}: ${payload.name || email}`,
-        text: isConsultation ? formatConsultation(lead) : formatLead(lead),
-        html: isConsultation ? htmlConsultation(lead) : htmlLead(lead),
-      });
-    } catch (err) {
-      // Don't fail the user's submission if email delivery hiccups.
-      console.error("[AI-SHOP LEAD] resend error", err);
-    }
+  // 1) Durable persistence FIRST. Idempotent on rapid duplicate submits.
+  const persist = await persistLead(lead, email);
+  if (persist.deduped) {
+    // A matching lead already landed moments ago — accept idempotently, don't
+    // insert or notify twice.
+    return NextResponse.json({ ok: true, id: persist.id, deduped: true });
   }
 
-  return NextResponse.json({ ok: true });
+  // 2) Best-effort notification email. Never throws; reports true acceptance.
+  const notify = await sendNotification(lead, email);
+  if (strict && !notify.ok && notify.reason === "no_key") {
+    console.error(
+      "[AI-SHOP LEAD] RESEND_API_KEY missing in production — lead persisted to DB but NO notification email was sent."
+    );
+  }
+
+  // Best-effort: record delivery status on the persisted row (non-blocking).
+  if (persist.ok && persist.id && notify.ok) {
+    prisma.buildRequest
+      .update({ where: { id: persist.id }, data: { emailed: true } })
+      .catch(() => {
+        /* delivery flag is cosmetic — the lead is already safe */
+      });
+  }
+
+  const accepted = persist.ok || notify.ok;
+  if (accepted) {
+    return NextResponse.json({
+      ok: true,
+      id: persist.id,
+      delivery: { persisted: persist.ok, emailed: notify.ok },
+    });
+  }
+
+  // 3) Neither durable channel accepted the lead.
+  if (!strict) {
+    // LOCAL DEV ONLY: don't block the founder testing the form when there's no
+    // DB and no RESEND_API_KEY — but NEVER claim a real delivery happened.
+    console.warn(
+      "[AI-SHOP LEAD] dev mock — lead was NOT persisted and NOT emailed (no DB + no RESEND_API_KEY). Returning dev-mock acknowledgement."
+    );
+    return NextResponse.json({
+      ok: true,
+      devMock: true,
+      delivery: { persisted: false, emailed: false },
+      note: "Development mock: not persisted, not delivered.",
+    });
+  }
+
+  // PRODUCTION / PREVIEW: be truthful — reject so the UI shows retry/fallback.
+  console.error("[AI-SHOP LEAD] CRITICAL: lead not accepted — DB and email both failed.", {
+    persistOk: persist.ok,
+    notifyReason: notify.reason,
+  });
+  return NextResponse.json(
+    {
+      ok: false,
+      error:
+        "We couldn't save your request just now. Please email us and we'll jump right on it.",
+    },
+    { status: 502 }
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Durable persistence
+// ---------------------------------------------------------------------------
+
+type PersistResult = { ok: boolean; id?: string; deduped?: boolean };
+
+/**
+ * Write the lead to the BuildRequest table. Idempotent within a short window:
+ * if an identical (email + goal) lead landed in the last 10 minutes we treat a
+ * repeat as the same submission rather than inserting/notifying twice.
+ * Never throws — a DB failure returns { ok: false } so email can still accept.
+ */
+async function persistLead(
+  lead: Record<string, unknown>,
+  email: string
+): Promise<PersistResult> {
+  // Normalize the primary intent across the three payload shapes.
+  const goal = str(lead.goal) ?? str(lead.want) ?? null;
+  try {
+    const recent = await prisma.buildRequest.findFirst({
+      where: {
+        email,
+        goal,
+        createdAt: { gte: new Date(Date.now() - DEDUPE_WINDOW_MS) },
+      },
+      orderBy: { createdAt: "desc" },
+      select: { id: true },
+    });
+    if (recent) return { ok: true, id: recent.id, deduped: true };
+
+    const row = await prisma.buildRequest.create({
+      data: {
+        name: str(lead.name),
+        email,
+        phone: str(lead.phone),
+        source: str(lead.source) ?? str(lead.type),
+        kind: kindOf(lead),
+        goal,
+        payload: lead as unknown as Prisma.InputJsonValue,
+      },
+      select: { id: true },
+    });
+    return { ok: true, id: row.id };
+  } catch (err) {
+    // Log full detail server-side only; caller decides how to respond.
+    console.error("[AI-SHOP LEAD] DB persist failed", err);
+    return { ok: false };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Notification email (Resend) — best-effort, result-checked, non-throwing
+// ---------------------------------------------------------------------------
+
+type NotifyResult = {
+  ok: boolean;
+  id?: string;
+  /** Coarse, non-sensitive reason for the caller/logs. */
+  reason?: "no_key" | "provider_error" | "exception";
+};
+
+async function sendNotification(
+  lead: Record<string, unknown>,
+  email: string
+): Promise<NotifyResult> {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return { ok: false, reason: "no_key" };
+
+  try {
+    const { Resend } = await import("resend");
+    const resend = new Resend(key);
+    const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
+    // Resend's shared `onboarding@resend.dev` needs no domain verification and
+    // reliably delivers to your own Resend-account email — ideal for a
+    // self-notification. Override LEAD_FROM_EMAIL once a domain is verified.
+    const from = process.env.LEAD_FROM_EMAIL || "Handbuilt Leads <onboarding@resend.dev>";
+    const isConsultation =
+      lead.source === "ai-builder" || lead.source === "consultation";
+    const kind = kindOf(lead);
+
+    const { data, error } = await resend.emails.send({
+      from,
+      to,
+      replyTo: email,
+      subject: `New Handbuilt ${kind}: ${lead.name || email}`,
+      text: isConsultation ? formatConsultation(lead) : formatLead(lead),
+      html: isConsultation ? htmlConsultation(lead) : htmlLead(lead),
+    });
+
+    // Resend v4 does NOT throw on a non-2xx API response (invalid/expired key,
+    // rate limit, etc.) — it returns { error }. Inspect it, never assume success.
+    if (error) {
+      console.error("[AI-SHOP LEAD] Resend returned an error", error);
+      return { ok: false, reason: "provider_error" };
+    }
+    return { ok: true, id: data?.id };
+  } catch (err) {
+    // Network / SDK exception. Detail stays server-side.
+    console.error("[AI-SHOP LEAD] Resend threw", err);
+    return { ok: false, reason: "exception" };
+  }
+}
+
+/** Coerce a value to a trimmed non-empty string, or undefined. */
+function str(v: unknown): string | undefined {
+  if (typeof v !== "string") return undefined;
+  const t = v.trim();
+  return t.length ? t : undefined;
+}
+
+/** Human label for the submission type, shared by the email + DB row. */
+function kindOf(lead: Record<string, unknown>): string {
+  if (lead.source === "ai-builder" || lead.source === "consultation") {
+    return "AI consultation";
+  }
+  return lead.type === "plan" ? "Plan request" : "Build request";
 }
 
 /** Any payload keys not already shown — so a lead email never silently drops data. */
