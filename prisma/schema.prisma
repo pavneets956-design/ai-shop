@@ -195,6 +195,39 @@ model Lead {
   @@index([score])
 }
 
+// Website lead capture — the Build Request form (/create), the "email me this
+// plan" action, and the /start AI consultation all POST to /api/build-request.
+// This is the DURABLE system of record for those leads: the row is written
+// BEFORE the notification email is attempted, so a Resend outage can never lose
+// a lead. Distinct from the cold-calling `Lead` model above (which needs a
+// Contact FK). `payload` keeps the full raw submission so no field is ever
+// dropped; the top-level columns exist for querying (e.g. the /agent/leads view).
+model BuildRequest {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String
+  phone     String?
+  source    String?  // "build-request" | "plan" | "ai-builder" | "consultation"
+  kind      String?  // human label for the submission type
+  goal      String?  @db.Text // normalized primary intent (goal ?? want)
+  // Duplicate detection. `fingerprint` = content hash (email + goal/want + tasks
+  // + name + source/type). `dedupeKey` = fingerprint + 10-min bucket, UNIQUE so
+  // two simultaneous identical submits can never both insert. Both nullable so
+  // the additive migration is safe over existing rows (Postgres allows many
+  // NULLs in a unique index).
+  fingerprint String?
+  dedupeKey   String? @unique
+  payload   Json     // full raw submission — nothing is dropped
+  status    String   @default("new") // new, contacted, quoted, won, lost
+  emailed   Boolean  @default(false) // whether the notification email was delivered
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+  @@index([status])
+  @@index([fingerprint])
+}
+
 // NextAuth Models
 model Account {
   id                String  @id @default(cuid())
