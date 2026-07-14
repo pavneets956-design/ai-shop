@@ -565,7 +565,6 @@ export const locations: LandingContent[] = [
     ],
     related: [
       { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
-      { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
       { label: "AI Chatbot for Your Website", href: "/services/ai-chatbot-for-website" },
       { label: "AI Automation for Vancouver Businesses", href: "/locations/ai-automation-vancouver" },
       { label: "Pricing", href: "/pricing" },
