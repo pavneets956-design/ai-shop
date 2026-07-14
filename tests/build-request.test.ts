@@ -165,8 +165,72 @@ describe("POST /api/build-request", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body).toMatchObject({ ok: true, deduped: true, id: "lead_existing_1" });
+    // Deduped response uses the same stable shape and never claims a new insert/email.
+    expect(body.delivery).toEqual({ persisted: true, emailed: false });
     expect(db.create).not.toHaveBeenCalled();
     expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("does NOT dedupe two distinct submissions from the same email with different content", async () => {
+    // Both lack a goal; the fingerprint differs by `tasks`, so neither is treated
+    // as a duplicate of the other (guards against email-only false-positive dedupe).
+    db.findFirst.mockResolvedValue(null); // no fingerprint match in the window
+    await POST(post({ email: "same@example.com", tasks: "answer the phone" }));
+    await POST(post({ email: "same@example.com", tasks: "chase overdue invoices" }));
+    expect(db.create).toHaveBeenCalledTimes(2);
+    const k1 = db.create.mock.calls[0][0].data.dedupeKey;
+    const k2 = db.create.mock.calls[1][0].data.dedupeKey;
+    expect(k1).toBeTruthy();
+    expect(k1).not.toEqual(k2); // distinct content → distinct dedupe key
+  });
+
+  // ---- Concurrency-safe dedupe (unique-key race) -------------------------
+  it("is concurrency-safe: a unique-key race resolves to one row and sends no second email", async () => {
+    // Fast-path finds nothing, but a concurrent identical insert already won the
+    // unique dedupeKey → create throws P2002 → we resolve to the winner's row.
+    db.findFirst
+      .mockResolvedValueOnce(null) // pre-check: none yet
+      .mockResolvedValueOnce({ id: "lead_winner_1" }); // post-conflict resolve
+    const p2002 = Object.assign(new Error("Unique constraint failed"), { code: "P2002" });
+    db.create.mockRejectedValue(p2002);
+    const res = await POST(post(validLead));
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body).toMatchObject({ ok: true, deduped: true, id: "lead_winner_1" });
+    expect(body.delivery).toEqual({ persisted: true, emailed: false });
+    expect(db.create).toHaveBeenCalledTimes(1); // did not insert a second row
+    expect(sendMock).not.toHaveBeenCalled(); // did not send a second email
+  });
+
+  // ---- Partial failure: DB write fails but email is delivered -------------
+  it("returns success with truthful delivery when the DB write fails but email is delivered", async () => {
+    db.findFirst.mockResolvedValue(null);
+    db.create.mockRejectedValue(new Error("db write failed")); // NOT a P2002
+    // default sendMock resolves success
+    const res = await POST(post(validLead));
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+    expect(body.delivery).toEqual({ persisted: false, emailed: true });
+  });
+
+  // ---- Valid `type: "plan"` payload --------------------------------------
+  it('accepts a valid type:"plan" submission and persists normalized fields', async () => {
+    const res = await POST(
+      post({ type: "plan", email: "plan@example.com", goal: "Email me the plan" })
+    );
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+    expect(db.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          source: "plan",
+          kind: "Plan request",
+          goal: "Email me the plan",
+        }),
+      })
+    );
   });
 
   // ---- Development mock (never claims real delivery) ---------------------

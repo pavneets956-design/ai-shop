@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createHash } from "node:crypto";
 import { z } from "zod";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
@@ -59,8 +60,16 @@ export async function POST(req: Request) {
   const persist = await persistLead(lead, email);
   if (persist.deduped) {
     // A matching lead already landed moments ago — accept idempotently, don't
-    // insert or notify twice.
-    return NextResponse.json({ ok: true, id: persist.id, deduped: true });
+    // insert or notify twice. Same stable response shape as a fresh success:
+    // persisted:true (the lead IS durably stored), emailed:false (no NEW email
+    // was sent for this duplicate request) — never claims an insert/email that
+    // did not happen.
+    return NextResponse.json({
+      ok: true,
+      id: persist.id,
+      deduped: true,
+      delivery: { persisted: true, emailed: false },
+    });
   }
 
   // 2) Best-effort notification email. Never throws; reports true acceptance.
@@ -126,10 +135,21 @@ export async function POST(req: Request) {
 type PersistResult = { ok: boolean; id?: string; deduped?: boolean };
 
 /**
- * Write the lead to the BuildRequest table. Idempotent within a short window:
- * if an identical (email + goal) lead landed in the last 10 minutes we treat a
- * repeat as the same submission rather than inserting/notifying twice.
- * Never throws — a DB failure returns { ok: false } so email can still accept.
+ * Write the lead to the BuildRequest table. Idempotent within a ~10-minute
+ * window and CONCURRENCY-SAFE:
+ *
+ *  - Duplicate identity is a content `fingerprint` (email + goal/want + tasks +
+ *    name + source/type), NOT just email — so two genuinely different leads from
+ *    the same address (even both with no goal) are never merged.
+ *  - A sliding-window `findFirst(fingerprint, last 10 min)` fast-path avoids a
+ *    doomed insert on the common rapid-resubmit case.
+ *  - `dedupeKey` = fingerprint + 10-minute bucket has a UNIQUE index, so two
+ *    simultaneous identical requests can never both insert: one wins, the other
+ *    gets a P2002 unique violation and is resolved to the winner's row. At most
+ *    one row and (because we return `deduped` before emailing) one email.
+ *
+ * Never throws — a DB failure returns { ok: false } so email can still accept
+ * the lead. A distinct lead is never dropped (distinct content → distinct key).
  */
 async function persistLead(
   lead: Record<string, unknown>,
@@ -137,11 +157,13 @@ async function persistLead(
 ): Promise<PersistResult> {
   // Normalize the primary intent across the three payload shapes.
   const goal = str(lead.goal) ?? str(lead.want) ?? null;
+  const fingerprint = contentFingerprint(lead, email);
+  const dedupeKey = `${fingerprint}:${Math.floor(Date.now() / DEDUPE_WINDOW_MS)}`;
   try {
+    // Fast-path: an identical submission already landed in the last 10 minutes.
     const recent = await prisma.buildRequest.findFirst({
       where: {
-        email,
-        goal,
+        fingerprint,
         createdAt: { gte: new Date(Date.now() - DEDUPE_WINDOW_MS) },
       },
       orderBy: { createdAt: "desc" },
@@ -157,16 +179,63 @@ async function persistLead(
         source: str(lead.source) ?? str(lead.type),
         kind: kindOf(lead),
         goal,
+        fingerprint,
+        dedupeKey,
         payload: lead as unknown as Prisma.InputJsonValue,
       },
       select: { id: true },
     });
     return { ok: true, id: row.id };
   } catch (err) {
+    // A concurrent identical request won the unique-key race: resolve to its row
+    // rather than inserting a duplicate. This is the atomic dedupe guarantee.
+    if (isUniqueViolation(err)) {
+      try {
+        const winner = await prisma.buildRequest.findFirst({
+          where: { dedupeKey },
+          orderBy: { createdAt: "desc" },
+          select: { id: true },
+        });
+        if (winner) return { ok: true, id: winner.id, deduped: true };
+      } catch {
+        /* fall through to the failure path below */
+      }
+    }
     // Log full detail server-side only; caller decides how to respond.
     console.error("[AI-SHOP LEAD] DB persist failed", err);
     return { ok: false };
   }
+}
+
+/**
+ * Deterministic content fingerprint for duplicate detection. Built from the
+ * meaningful submitted fields (normalized: trimmed, whitespace-collapsed,
+ * lower-cased) so identical resubmits collide but distinct leads do not. Does
+ * NOT include time — the 10-minute window is layered on top via dedupeKey.
+ */
+function contentFingerprint(lead: Record<string, unknown>, email: string): string {
+  const norm = (v: unknown) =>
+    (typeof v === "string" ? v : v == null ? "" : JSON.stringify(v))
+      .trim()
+      .replace(/\s+/g, " ")
+      .toLowerCase();
+  const canonical = [
+    email.toLowerCase(),
+    norm(lead.goal) || norm(lead.want),
+    norm(lead.tasks),
+    norm(lead.name),
+    norm(lead.source) || norm(lead.type),
+  ].join("|");
+  return createHash("sha256").update(canonical).digest("hex");
+}
+
+/** True when a Prisma error is a unique-constraint violation (P2002). */
+function isUniqueViolation(err: unknown): boolean {
+  return (
+    typeof err === "object" &&
+    err !== null &&
+    (err as { code?: unknown }).code === "P2002"
+  );
 }
 
 // ---------------------------------------------------------------------------
