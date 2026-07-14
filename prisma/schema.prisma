@@ -210,6 +210,13 @@ model BuildRequest {
   source    String?  // "build-request" | "plan" | "ai-builder" | "consultation"
   kind      String?  // human label for the submission type
   goal      String?  @db.Text // normalized primary intent (goal ?? want)
+  // Duplicate detection. `fingerprint` = content hash (email + goal/want + tasks
+  // + name + source/type). `dedupeKey` = fingerprint + 10-min bucket, UNIQUE so
+  // two simultaneous identical submits can never both insert. Both nullable so
+  // the additive migration is safe over existing rows (Postgres allows many
+  // NULLs in a unique index).
+  fingerprint String?
+  dedupeKey   String? @unique
   payload   Json     // full raw submission — nothing is dropped
   status    String   @default("new") // new, contacted, quoted, won, lost
   emailed   Boolean  @default(false) // whether the notification email was delivered
@@ -218,6 +225,7 @@ model BuildRequest {
   @@index([email])
   @@index([createdAt])
   @@index([status])
+  @@index([fingerprint])
 }
 
 // NextAuth Models
