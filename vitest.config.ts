@@ -6,7 +6,9 @@ import path from "node:path";
 export default defineConfig({
   test: {
     environment: "node",
-    include: ["tests/**/*.test.ts"],
+    // tests/** = server/API route handler tests.
+    // lib/tools/** = co-located pure-calculation unit tests for the free tools.
+    include: ["tests/**/*.test.ts", "lib/**/*.test.ts"],
   },
   resolve: {
     alias: { "@": path.resolve(__dirname) },

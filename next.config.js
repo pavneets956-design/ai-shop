@@ -48,11 +48,21 @@ const nextConfig = {
       { source: '/ai-front-desk', destination: '/ai-receptionist', permanent: true },
       { source: '/forge', destination: '/', permanent: true },
 
-      // Tools Pro (the $29/mo self-serve subscription) retired 2026-07-06 — the
-      // monthly option is gone; creators now buy tools one-time (you own it).
-      // Redirect the whole /tools tree to the shop, EXCEPT the free Form Filler.
-      { source: '/tools', destination: '/shop', permanent: true },
-      { source: '/tools/:slug((?!form-filler).*)', destination: '/shop', permanent: true },
+      // /tools RECLAIMED 2026-07-15 for the FREE contractor tools suite (hub +
+      // 5 browser calculators). The old paid "Tools Pro" ($29/mo) product stays
+      // retired: its dashboard + the 9 self-serve tool slugs keep permanent
+      // redirects so no discontinued paid pages resurface. The free Form Filler
+      // (/tools/form-filler) is untouched — it keeps its own route + strict CSP.
+      { source: '/tools/pro', destination: '/pricing', permanent: true },
+      { source: '/tools/proposal-generator', destination: '/shop', permanent: true },
+      { source: '/tools/quote-estimate-generator', destination: '/shop', permanent: true },
+      { source: '/tools/review-reply-generator', destination: '/shop', permanent: true },
+      { source: '/tools/business-brief-generator', destination: '/shop', permanent: true },
+      { source: '/tools/invoice-reminder-generator', destination: '/shop', permanent: true },
+      { source: '/tools/quote-builder', destination: '/shop', permanent: true },
+      { source: '/tools/sop-builder', destination: '/shop', permanent: true },
+      { source: '/tools/hiring-assistant', destination: '/shop', permanent: true },
+      { source: '/tools/customer-reactivation', destination: '/shop', permanent: true },
 
       // SEO canonicalisation (308). These buyer-intent root/alias URLs are the
       // ones people type or link, but the ranking page already lives elsewhere.

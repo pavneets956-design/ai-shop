@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
 import Providers from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/react";
 import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
@@ -120,6 +121,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Footer />
           </ChromeGate>
         </Providers>
+        {/* Cookieless product analytics (no consent banner needed). Failure-safe:
+            never blocks rendering, the tools, or the lead flow. */}
+        <Analytics />
       </body>
     </html>
   );

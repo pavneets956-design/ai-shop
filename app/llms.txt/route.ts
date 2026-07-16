@@ -1,6 +1,7 @@
 import { site } from "@/lib/data/site";
 import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
 import { landingGroups } from "@/lib/data/registry";
+import { freeToolsByOrder, toolPath } from "@/lib/data/freeTools";
 
 // /llms.txt — a map of the site for AI search/answer engines (GEO).
 // Spec: https://llmstxt.org . Generated from the same data as the sitemap.
@@ -34,6 +35,13 @@ export function GET() {
   lines.push(`- [Start a build](${site.url}/create): Request a plan and fixed quote.`);
   lines.push(`- [Services](${site.url}/services): All AI tools and builds.`);
   lines.push(`- [Industries](${site.url}/industries): AI automation by trade.`);
+  lines.push(`- [Free contractor tools](${site.url}/tools): Free, no-signup browser tools for contractors.`);
+  lines.push("");
+
+  lines.push("## Free contractor tools (no signup, run in the browser, no AI tokens)");
+  for (const t of freeToolsByOrder) {
+    lines.push(`- [${t.name}](${site.url}${toolPath(t.slug)}): ${t.description}`);
+  }
   lines.push("");
 
   for (const g of landingGroups) {

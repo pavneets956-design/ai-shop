@@ -42,10 +42,14 @@ export default function BuildRequestForm() {
   const params = useSearchParams();
   const presetPackage = params.get("package") ?? "";
   const presetBuild = shopProducts.find((p) => p.slug === params.get("build"));
-  // ?goal= lets the homepage hero builder carry its designed system in as the goal.
+  // ?goal= lets the homepage hero builder / free tools carry the intent in as the goal.
   const presetGoal = params.get("goal") ?? "";
   // ?industry= (from the showroom "Get this installed" CTA) preselects the trade.
   const presetIndustry = tradeById(params.get("industry") ?? "")?.id ?? "";
+  // ?src= carries acquisition attribution (e.g. "tool-missed-call-revenue-calculator")
+  // from a free-tool CTA. Non-sensitive machine tag — never a customer field; passed
+  // straight through to durable storage + the lead notification, never shown as an input.
+  const presetSrc = params.get("src") ?? "";
 
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState(1);
@@ -108,6 +112,8 @@ export default function BuildRequestForm() {
           ...form,
           // Send the readable trade label + the occupation answers for the email.
           industry: trade?.label ?? form.industry,
+          // Carry free-tool attribution through to durable storage + notification.
+          ...(presetSrc ? { src: presetSrc } : {}),
           ...(Object.keys(intakeLabels).length ? { intake: intakeLabels } : {}),
         }),
       });
