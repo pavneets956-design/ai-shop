@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/data/site";
 import { allLandingEntries } from "@/lib/data/registry";
+import { freeToolsByOrder, toolPath } from "@/lib/data/freeTools";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -18,12 +19,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/compare", priority: 0.7 },
     { path: "/pricing", priority: 0.9 },
     { path: "/shop", priority: 0.7 },
+    { path: "/tools", priority: 0.8 },
     { path: "/faq", priority: 0.6 },
     { path: "/about", priority: 0.6 },
     { path: "/create", priority: 0.9 },
     { path: "/privacy", priority: 0.2 },
     { path: "/terms", priority: 0.2 },
   ];
+
+  // Free contractor tools (each a unique indexable page).
+  const toolEntries = freeToolsByOrder.map((t) => ({
+    url: `${site.url}${toolPath(t.slug)}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   const staticEntries = staticRoutes.map((r) => ({
     url: `${site.url}${r.path}`,
@@ -39,5 +49,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: e.priority,
   }));
 
-  return [...staticEntries, ...landingEntries];
+  return [...staticEntries, ...toolEntries, ...landingEntries];
 }

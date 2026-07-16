@@ -44,6 +44,7 @@ export default function Footer() {
               <FooterLink href="/remote-ai-development">Remote / international</FooterLink>
               <FooterLink href="/creators">For creators</FooterLink>
               <FooterLink href="/use-cases">Use cases</FooterLink>
+              <FooterLink href="/tools">Free tools</FooterLink>
               <FooterLink href="/compare">Compare</FooterLink>
               <FooterLink href="/pricing">Pricing</FooterLink>
               <FooterLink href="/about">About</FooterLink>
