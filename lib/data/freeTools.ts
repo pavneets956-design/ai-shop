@@ -161,7 +161,7 @@ export const freeTools: ToolRegistryEntry[] = [
         a: "Yes. It runs entirely in your browser, needs no account, and nothing you type is uploaded or saved on our servers.",
       },
     ],
-    ctaGoal: "contractor-pricing",
+    ctaGoal: "Price my jobs so every one turns a profit",
     ctaHeading: "Want your pricing to run itself?",
     ctaBody:
       "We build custom quoting and job-costing systems that price jobs consistently, so every estimate you send already protects your margin.",
@@ -254,7 +254,7 @@ export const freeTools: ToolRegistryEntry[] = [
         a: "Yes. Every step has an SMS version kept short, and the tool flags when a message would run longer than a single text so you can trim it.",
       },
     ],
-    ctaGoal: "quote-follow-up",
+    ctaGoal: "Follow up on my quotes automatically",
     ctaHeading: "Want every quote followed up automatically?",
     ctaBody:
       "We set up systems that follow up on every estimate for you — on schedule, in your voice — so quotes stop slipping through the cracks while you're on the tools.",
@@ -347,7 +347,7 @@ export const freeTools: ToolRegistryEntry[] = [
         a: "No. Everything is calculated in your browser. Nothing you enter is uploaded or saved unless you choose to contact us through the separate form.",
       },
     ],
-    ctaGoal: "missed-call-recovery",
+    ctaGoal: "Stop missing calls and losing jobs",
     ctaHeading: "Never miss a job-winning call again",
     ctaBody:
       "Our AI receptionist answers every call 24/7, texts back missed callers in seconds, and books or qualifies the job — so the revenue in this calculator stops leaking.",
@@ -440,7 +440,7 @@ export const freeTools: ToolRegistryEntry[] = [
         a: "Yes. It runs in your browser with no signup, and nothing you enter is uploaded or stored.",
       },
     ],
-    ctaGoal: "labor-costing",
+    ctaGoal: "Know my true labour cost and bill rate",
     ctaHeading: "Want your true costs built into every quote?",
     ctaBody:
       "We build custom estimating systems that bake your real labour burden and overhead into every quote automatically, so your rates are right without the spreadsheet.",
@@ -533,7 +533,7 @@ export const freeTools: ToolRegistryEntry[] = [
         a: "Only if you give it enough numbers elsewhere. We won't invent a precise dollar figure — the audit focuses on where you're leaking and what to do about it.",
       },
     ],
-    ctaGoal: "lead-recovery",
+    ctaGoal: "Stop leads slipping through the cracks",
     ctaHeading: "Plug your biggest leaks on autopilot",
     ctaBody:
       "We build the systems behind a high score — instant call answering, automatic follow-up, reminders and review requests — so leads stop slipping while you're on the job.",

@@ -266,4 +266,42 @@ describe("POST /api/build-request", () => {
       })
     );
   });
+
+  // ---- Free-tool attribution (goal + src survive to storage + notification) ----
+  it("persists free-tool src attribution and goal into durable storage", async () => {
+    const res = await POST(
+      post({
+        type: "build-request",
+        name: "Mike Roofer",
+        email: "mike@example.com",
+        goal: "Stop missing calls and losing jobs",
+        src: "tool-missed-call-revenue-calculator",
+      })
+    );
+    expect(res.status).toBe(200);
+    expect((await res.json()).ok).toBe(true);
+    const data = db.create.mock.calls[0][0].data;
+    // goal is normalized into its own column; src is preserved in the durable payload.
+    expect(data.goal).toBe("Stop missing calls and losing jobs");
+    expect(data.payload.src).toBe("tool-missed-call-revenue-calculator");
+  });
+
+  it("includes the free-tool src attribution in the notification email", async () => {
+    await POST(
+      post({
+        type: "build-request",
+        name: "Mike Roofer",
+        email: "mike@example.com",
+        goal: "Stop missing calls and losing jobs",
+        src: "tool-missed-call-revenue-calculator",
+      })
+    );
+    expect(sendMock).toHaveBeenCalledTimes(1);
+    const sent = sendMock.mock.calls[0][0];
+    // Attribution reaches the human notification in both plaintext and HTML.
+    expect(sent.text).toContain("tool-missed-call-revenue-calculator");
+    expect(sent.html).toContain("tool-missed-call-revenue-calculator");
+    // And the goal is carried through as the project intent.
+    expect(sent.text).toContain("Stop missing calls and losing jobs");
+  });
 });
