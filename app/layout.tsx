@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
 import Providers from "@/components/Providers";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
