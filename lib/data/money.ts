@@ -62,7 +62,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What do projects cost?",
-        a: "The Starter AI Setup is $1,500 CAD. A Business AI System (2–4 connected tools) runs $2,500–5,000 CAD, typically $7,500. Custom AI apps starts at $10,000 CAD. All prices are flat — no hourly billing.",
+        a: "The Starter AI Setup is $1,500 CAD. A Business AI System (2–4 connected tools) runs $3,500–$7,500 CAD. Custom AI apps starts at $10,000 CAD. All prices are flat — no hourly billing.",
       },
     ],
     schema: "Service",
@@ -274,8 +274,8 @@ export const moneyPages: LandingContent[] = [
     eyebrow: "Services",
     h1: "Complete AI Business System",
     title: "Complete AI Business System | Handbuilt",
-    description: "2–4 connected AI tools that run the repetitive parts of your business as one system. $2,500–5,000 CAD. The flagship Handbuilt package.",
-    answer: "The Handbuilt AI Business System connects 2–4 AI tools into one coherent system: inquiry handling, lead capture, appointment booking, CRM updates, and follow-up — all automated and talking to each other. Priced at $3,500–5,000 CAD (typically $7,500), it's built for small businesses ready to stop doing the same five tasks by hand every day.",
+    description: "2–4 connected AI tools that run the repetitive parts of your business as one system. $3,500–$7,500 CAD. The flagship Handbuilt package.",
+    answer: "The Handbuilt AI Business System connects 2–4 AI tools into one coherent system: inquiry handling, lead capture, appointment booking, CRM updates, and follow-up — all automated and talking to each other. Priced at $3,500–$7,500 CAD, it's built for small businesses ready to stop doing the same five tasks by hand every day.",
     pain: "You've added tools over the years — a CRM here, a booking plugin there, a form tool somewhere else. None of them talk to each other. Data entry happens twice. Leads fall through gaps between tools. You spend hours a week on tasks that should run themselves.",
     scenario: "Say a real estate agent runs three separate tools: a contact form, a CRM she updates manually, and a calendar she books by email. A connected AI Business System could automatically capture new leads from the website, qualify them, add them to the CRM with a lead score, and send a personalized follow-up — all before she sees the notification. Lead response time could drop from several hours to under 3 minutes. How many additional consultations that converts depends on lead volume and source quality, but faster response on real estate leads is consistently one of the highest-leverage changes a solo agent can make.",
     steps: [
@@ -289,7 +289,7 @@ export const moneyPages: LandingContent[] = [
       "End-to-end automation from first contact to booked appointment or closed lead",
       "CRM and calendar integration so data flows without manual entry",
       "One builder accountable for the whole system, not a different vendor per tool",
-      "Flat project price of $2,500–5,000 CAD (typically $7,500)",
+      "Flat project price of $3,500–$7,500 CAD",
       "A system you own — not a subscription to someone else's platform",
     ],
     sections: [
@@ -318,7 +318,7 @@ export const moneyPages: LandingContent[] = [
     faqs: [
       {
         q: "What's the difference between this and the Starter package?",
-        a: "The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or receptionist. The Business AI System ($2,500–5,000) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.",
+        a: "The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or receptionist. The Business AI System ($3,500–$7,500) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.",
       },
       {
         q: "Do I need to replace my current tools?",
