@@ -1,0 +1,11 @@
+{
+  "query": "ai tools for contractors",
+  "market": "CA",
+  "geo": "Canada",
+  "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+  "collectedAt": "2026-08-01T04:20:49.452Z",
+  "personalization": "suppressed (pws=0, fresh context, not signed in)",
+  "httpStatus": 200,
+  "blocked": true,
+  "note": "Google served an interstitial (captcha/consent). No data extracted."
+}

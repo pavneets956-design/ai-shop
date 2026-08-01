@@ -1,0 +1,70 @@
+{
+  "markets": {
+    "CA": {
+      "googleRequests": 1165,
+      "bingRequests": 35,
+      "uniqueSuggestions": 3660,
+      "emptyResults_trusted": 672,
+      "emptyResults_untrusted_throttleSuspect": 0,
+      "byIntent": {
+        "solution-aware": 674,
+        "problem-aware": 2269,
+        "informational": 174,
+        "price-sensitive": 147,
+        "product-aware": 211,
+        "local-commercial": 45,
+        "commercial-cost": 81,
+        "comparison": 46,
+        "objection": 13
+      },
+      "canadaSpecificCount": 31
+    },
+    "US": {
+      "googleRequests": 1165,
+      "bingRequests": 35,
+      "uniqueSuggestions": 3773,
+      "emptyResults_trusted": 672,
+      "emptyResults_untrusted_throttleSuspect": 0,
+      "byIntent": {
+        "solution-aware": 707,
+        "problem-aware": 2312,
+        "product-aware": 226,
+        "price-sensitive": 158,
+        "informational": 178,
+        "local-commercial": 49,
+        "commercial-cost": 83,
+        "comparison": 47,
+        "objection": 13
+      },
+      "canadaSpecificCount": 35
+    }
+  },
+  "serp": {
+    "collected": 48,
+    "usable": 34,
+    "failed": 14,
+    "failedQueries": [
+      "estimate follow up template",
+      "how many times should a contractor follow up",
+      "unsold estimate follow up",
+      "estimate follow up template",
+      "how many times should a contractor follow up",
+      "unsold estimate follow up",
+      "ai automation vancouver bc",
+      "ai receptionist surrey bc",
+      "ai automation langley bc",
+      "automation consultant abbotsford",
+      "ai automation for small business surrey",
+      "quote follow up software",
+      "contractor missed calls",
+      "ai automation surrey bc"
+    ],
+    "aiOverviewPresent": 32,
+    "paaPresent": 22,
+    "adsPresent": 2,
+    "redditRanking": 30,
+    "anyCanadianHost": 24,
+    "distinctHosts": 192,
+    "distinctCanadianHosts": 47
+  }
+}

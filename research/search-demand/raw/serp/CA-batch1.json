@@ -1,0 +1,844 @@
+{
+  "batch": "CA-1",
+  "n": 10,
+  "collectedAt": "2026-08-01T04:28:08.490Z",
+  "results": [
+    {
+      "query": "ai tools for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:44.375Z",
+      "httpStatus": 200,
+      "bytes": 600980,
+      "organic": [
+        {
+          "title": "Are There Any Legitimately Good AI Tools?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "10 Best AI Tools for Construction Project Management 2026",
+          "host": "thedigitalprojectmanager.com"
+        },
+        {
+          "title": "Trunk Tools - AI for Construction Project Management",
+          "host": "trunktools.com"
+        },
+        {
+          "title": "Construction Takeoff Sofware for Estimators - Togal",
+          "host": "togal.ai"
+        },
+        {
+          "title": "9 Game-Changing AI Tools for Contractors to Scale in 2026",
+          "host": "relayfi.com"
+        },
+        {
+          "title": "AI In Construction: A Few Game-Changing Tools Every ...",
+          "host": "forbes.com"
+        },
+        {
+          "title": "AI in Construction: Tools and Use Cases | Microsoft Copilot",
+          "host": "microsoft.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "ai tools for contractors",
+        "Which AI is best for contractors?",
+        "What is the best AI tool for contracts?",
+        "How can contractors use AI?",
+        "What is the best free AI for construction?"
+      ],
+      "related": [
+        "Free AI tools for construction project management",
+        "Ai for construction estimating",
+        "Trunk Tools AI",
+        "AI for construction management",
+        "Construction management tools",
+        "AI construction scheduling software",
+        "View all",
+        "Ai tools for contractors free",
+        "Ai tools for contractors reddit",
+        "Best ai tools for contractors",
+        "AI tools for construction estimating",
+        "Ai tools for contractors pdf",
+        "Free AI for construction estimating",
+        "AI for construction drawings",
+        "AI tools for construction project management"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": true,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "thedigitalprojectmanager.com": 1,
+        "trunktools.com": 1,
+        "togal.ai": 1,
+        "relayfi.com": 1,
+        "forbes.com": 1,
+        "microsoft.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "ai automation for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20automation%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:46.904Z",
+      "httpStatus": 200,
+      "bytes": 480994,
+      "organic": [
+        {
+          "title": "AI business automation for contractors: AI CONTRACTOR",
+          "host": "ai-contractor.ca"
+        },
+        {
+          "title": "Are There Any Legitimately Good AI Tools?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "8 Best AI Contractor Workflow Tools for Service Teams",
+          "host": "buildops.com"
+        },
+        {
+          "title": "9 Game-Changing AI Tools for Contractors to Scale in 2026",
+          "host": "relayfi.com"
+        },
+        {
+          "title": "How Contractors Are Using AI Assistants to Automate ...",
+          "host": "jobtread.com"
+        },
+        {
+          "title": "AI for Construction Toronto | Automated Estimating & Safety ...",
+          "host": "adivor.ca"
+        },
+        {
+          "title": "Best AI Tools and AI Agents for Contractors in 2026",
+          "host": "futureforgeaisolutions.ca"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "ai automation for contractors"
+      ],
+      "related": [
+        "View all",
+        "Free AI for construction estimating",
+        "AI construction scheduling software",
+        "Handoff AI",
+        "Construction management tools",
+        "Procore AI",
+        "OpenSpace AI",
+        "Best ai automation for contractors",
+        "Ai automation for contractors reddit",
+        "Ai automation for contractors reviews",
+        "Ai automation for contractors jobs",
+        "AI tools for construction estimating",
+        "Best AI for construction estimating",
+        "AI tools for construction project management",
+        "Claude AI"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "ai-contractor.ca": 1,
+        "reddit.com": 1,
+        "buildops.com": 1,
+        "relayfi.com": 1,
+        "jobtread.com": 1,
+        "adivor.ca": 1,
+        "futureforgeaisolutions.ca": 1
+      },
+      "canadianHosts": [
+        "ai-contractor.ca",
+        "adivor.ca",
+        "futureforgeaisolutions.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "quote follow up for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=quote%20follow%20up%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:49.260Z",
+      "httpStatus": 200,
+      "bytes": 453695,
+      "organic": [
+        {
+          "title": "How to Follow Up on a Job Quote and Close the Sale ...",
+          "host": "estimaterocket.com"
+        },
+        {
+          "title": "how do I get contractors to answer and follow up with quotes?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "How to Follow Up on Contractor Quotes: Turn Summer ...",
+          "host": "contractoraccelerator.com"
+        },
+        {
+          "title": "Follow‑Up Templates Contractors Can Use Today",
+          "host": "hookagency.com"
+        },
+        {
+          "title": "Estimate Follow-Up Email Generator | Free Contractor Scripts",
+          "host": "workquote.app"
+        },
+        {
+          "title": "Free Quote Follow-Up Templates for Contractors",
+          "host": "contractorrevenuehub.com"
+        },
+        {
+          "title": "How to follow up on old contractor quotes effectively?",
+          "host": "facebook.com"
+        },
+        {
+          "title": "The Key To Boosting Quote Approvals? Follow Up (a Lot).",
+          "host": "servicetrade.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "quote follow up for contractors",
+        "How to professionally follow up on a quote?",
+        "How long should I wait for a quote from a contractor?",
+        "How to professionally follow up on an estimate?",
+        "How to follow up after submitting a quote?"
+      ],
+      "related": [
+        "Quote follow up for contractors reddit",
+        "Quote follow up for contractors sample",
+        "Thank you quote follow up for contractors",
+        "Quote follow up for contractors examples",
+        "How to follow-up on a quote request",
+        "Follow-up email after sending quotation examples",
+        "How to follow-up on a quote request email",
+        "How to follow up a quote in an essay"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {
+        "estimaterocket.com": 1,
+        "reddit.com": 1,
+        "contractoraccelerator.com": 1,
+        "hookagency.com": 1,
+        "workquote.app": 1,
+        "contractorrevenuehub.com": 1,
+        "facebook.com": 1,
+        "servicetrade.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com",
+        "facebook.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "customer did not respond to estimate",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=customer%20did%20not%20respond%20to%20estimate&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:51.912Z",
+      "httpStatus": 200,
+      "bytes": 503381,
+      "organic": [
+        {
+          "title": "At what point do you not respond to customers who think ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "What to do after giving a quote with no response?",
+          "host": "facebook.com"
+        },
+        {
+          "title": "What to Do When a Customer Doesn't Respond to Your ...",
+          "host": "smartglazier.com"
+        },
+        {
+          "title": "Customer Didn't Respond to My Estimate — Now What?",
+          "host": "quotechaser.app"
+        },
+        {
+          "title": "How to Follow Up With Customers After an Estimate: The 3- ...",
+          "host": "pushleads.com"
+        },
+        {
+          "title": "Rejected Estimate - Newbie Questions",
+          "host": "pressurewashingresource.com"
+        },
+        {
+          "title": "How do you deal with clients who refuse to accept your ...",
+          "host": "quora.com"
+        },
+        {
+          "title": "Estimate Follow-Up After No Response - Business Fix Kits",
+          "host": "businessfixkits.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "customer did not respond to estimate",
+        "What to do if a client doesn't respond to a quote?",
+        "How to professionally follow up on an estimate?",
+        "What is an unresponsive customer?",
+        "How to respond to an estimate?"
+      ],
+      "related": [
+        "View all",
+        "Customer did not respond to estimate reddit",
+        "Customer did not respond to estimate meaning"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "facebook.com": 1,
+        "smartglazier.com": 1,
+        "quotechaser.app": 1,
+        "pushleads.com": 1,
+        "pressurewashingresource.com": 1,
+        "quora.com": 1,
+        "businessfixkits.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com",
+        "facebook.com",
+        "quora.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "ai receptionist for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20receptionist%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:54.378Z",
+      "httpStatus": 200,
+      "bytes": 578084,
+      "organic": [
+        {
+          "title": "AI Receptionist: 24/7 Intelligent Virtual Answering Service",
+          "host": "ringcentral.com"
+        },
+        {
+          "title": "AI Receptionist for Contractors | Never Miss a Lead",
+          "host": "billdr.ai"
+        },
+        {
+          "title": "7 Best AI Receptionists for Contractors 2026 Tested",
+          "host": "lunacal.ai"
+        },
+        {
+          "title": "Best AI Answering Services for Canadian Contractors (2026)",
+          "host": "heyitsclara.com"
+        },
+        {
+          "title": "AI Phone Answering for General Contractors",
+          "host": "askbenny.ca"
+        },
+        {
+          "title": "Best AI Receptionist for Contractors & Home Services ...",
+          "host": "callbirdai.com"
+        },
+        {
+          "title": "I cold called 465 contractors with an AI voice agent. Here's ...",
+          "host": "reddit.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "ai receptionist for contractors"
+      ],
+      "related": [
+        "View all",
+        "Best ai receptionist for contractors",
+        "Ai receptionist for contractors reddit",
+        "AI receptionist for small business",
+        "AI receptionist for small business Canada",
+        "Ai receptionist for contractors jobs",
+        "AI receptionist for business",
+        "Best AI receptionist for small business",
+        "RingCentral AI Receptionist pricing"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": true,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "ringcentral.com": 1,
+        "billdr.ai": 1,
+        "lunacal.ai": 1,
+        "heyitsclara.com": 1,
+        "askbenny.ca": 1,
+        "callbirdai.com": 1,
+        "reddit.com": 1
+      },
+      "canadianHosts": [
+        "askbenny.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "missed call text back",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=missed%20call%20text%20back&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:56.679Z",
+      "httpStatus": 200,
+      "bytes": 454991,
+      "organic": [
+        {
+          "title": "Where and how to configure the Missed Call Text Back ...",
+          "host": "help.gohighlevel.com"
+        },
+        {
+          "title": "Best way to set up missed call text back? : r/gohighlevel",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Missed Call Text Back Software",
+          "host": "upfirst.ai"
+        },
+        {
+          "title": "Missed-Call-Text-Back is the Key to Business Success",
+          "host": "tierpeak.com"
+        },
+        {
+          "title": "Missed-Call Text-Back | Calgary & Airdrie | SP Web Dev",
+          "host": "spwebdevdesigns.ca"
+        },
+        {
+          "title": "Missed Call Text Back for Small Business Setup Guide",
+          "host": "leadsorbit.ai"
+        },
+        {
+          "title": "Missed Call Text-Back",
+          "host": "everycatch.com"
+        },
+        {
+          "title": "Enzak: Missed Call Text Back Software | No More Missed Calls!",
+          "host": "enzak.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "missed call text back"
+      ],
+      "related": [
+        "View all",
+        "Missed call text back reddit",
+        "Missed call text back iphone",
+        "Missed call text back software free",
+        "Missed Call Text Back calculator",
+        "Missed call text back white label",
+        "GoHighLevel missed call text Back",
+        "Missed call text back AI",
+        "Best missed call text back software"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "help.gohighlevel.com": 1,
+        "reddit.com": 1,
+        "upfirst.ai": 1,
+        "tierpeak.com": 1,
+        "spwebdevdesigns.ca": 1,
+        "leadsorbit.ai": 1,
+        "everycatch.com": 1,
+        "enzak.com": 1
+      },
+      "canadianHosts": [
+        "spwebdevdesigns.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "contractor software alternatives",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20software%20alternatives&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:27:58.977Z",
+      "httpStatus": 200,
+      "bytes": 421701,
+      "organic": [
+        {
+          "title": "Alternatives to Contractors Software Group",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "What's the best construction management software ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Top 20 ContractorTools Alternatives",
+          "host": "getapp.ca"
+        },
+        {
+          "title": "Top Contractor Foreman Alternatives in 2026",
+          "host": "ingenious.build"
+        },
+        {
+          "title": "Best 15 Smart Contractor Alternatives in 2026",
+          "host": "softwareadvice.com"
+        },
+        {
+          "title": "7 Of The Best Simpro Alternatives For Contractors In 2026",
+          "host": "livecosts.com"
+        },
+        {
+          "title": "Contractor+ Alternatives: Compare Top FSM Softwares",
+          "host": "fieldcamp.ai"
+        },
+        {
+          "title": "The Best Construction Management Software for ...",
+          "host": "blog.tradetraks.ca"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "contractor software alternatives"
+      ],
+      "related": [
+        "Contractor software alternatives reddit",
+        "Free contractor software alternatives",
+        "Contractor software alternatives for small business",
+        "Best contractor software alternatives",
+        "Construction contractor software alternatives",
+        "Best software for contractors",
+        "Best software for small construction business",
+        "Contractor job tracking software"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {
+        "capterra.ca": 1,
+        "reddit.com": 1,
+        "getapp.ca": 1,
+        "ingenious.build": 1,
+        "softwareadvice.com": 1,
+        "livecosts.com": 1,
+        "fieldcamp.ai": 1,
+        "blog.tradetraks.ca": 1
+      },
+      "canadianHosts": [
+        "capterra.ca",
+        "getapp.ca",
+        "blog.tradetraks.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "jobber alternatives",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=jobber%20alternatives&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:28:01.406Z",
+      "httpStatus": 200,
+      "bytes": 732132,
+      "organic": [
+        {
+          "title": "All in one platform : r/sweatystartup",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Workever: Jobber Alternative",
+          "host": "workever.com"
+        },
+        {
+          "title": "Alternatives to Jobber",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "Top 20 Jobber Alternatives",
+          "host": "getapp.ca"
+        },
+        {
+          "title": "Comparison",
+          "host": "getjobber.com"
+        },
+        {
+          "title": "Top Jobber Alternatives for Field Service Businesses in 2026",
+          "host": "workiz.com"
+        },
+        {
+          "title": "12 Best Jobber Alternatives for Contractors (2026)",
+          "host": "simplywise.com"
+        },
+        {
+          "title": "Jobber Alternative: When You Outgrow Simple and Need ...",
+          "host": "fieldproxy.ai"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "Is there anything better than Jobber?",
+        "Is QuickBooks better than Jobber?",
+        "Is Housecall Pro better than Jobber?",
+        "Is Jobber the same as DripJobs?"
+      ],
+      "related": [
+        "Jobber alternatives for small business",
+        "Jobber alternatives reddit",
+        "Jobber alternatives free",
+        "Housecall Pro",
+        "Jobber vs Housecall Pro",
+        "QuoteIQ",
+        "Jobber clone"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "workever.com": 1,
+        "capterra.ca": 1,
+        "getapp.ca": 1,
+        "getjobber.com": 1,
+        "workiz.com": 1,
+        "simplywise.com": 1,
+        "fieldproxy.ai": 1
+      },
+      "canadianHosts": [
+        "capterra.ca",
+        "getapp.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "getjobber.com",
+        "workiz.com"
+      ]
+    },
+    {
+      "query": "contractor invoice reminders",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20invoice%20reminders&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:28:03.711Z",
+      "httpStatus": 200,
+      "bytes": 406728,
+      "organic": [
+        {
+          "title": "12 Overdue Payment Reminder Emails & Letters ...",
+          "host": "paidnice.com"
+        },
+        {
+          "title": "How to Write a Payment Reminder Message to a Client",
+          "host": "squareup.com"
+        },
+        {
+          "title": "Invoice Payment Reminder Templates for Canadian Contractors",
+          "host": "relanco.ca"
+        },
+        {
+          "title": "A Reminder for Contractors: Are Your Invoices Actually “ ...",
+          "host": "weirfoulds.com"
+        },
+        {
+          "title": "Get Paid Faster: Crafting Overdue Invoice Reminders That ...",
+          "host": "trusspayments.com"
+        },
+        {
+          "title": "a guy i talked to makes $14K/month from an app that sends ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Free Payment Reminder Templates for Contractors & Tradies",
+          "host": "contractorrevenuehub.com"
+        },
+        {
+          "title": "Invoice reminders and you, a summer love story",
+          "host": "getharvest.com"
+        },
+        {
+          "title": "7 Payment Reminder Email Templates That Get Invoices ...",
+          "host": "invoicebloom.io"
+        }
+      ],
+      "organicCount": 9,
+      "paaLevel1": [
+        "contractor invoice reminders",
+        "What is an example of a reminder on an invoice?",
+        "What should a contractor invoice include?",
+        "Are payment reminders legally required?",
+        "How often should you send invoice reminders?"
+      ],
+      "related": [
+        "Contractor invoice reminders template",
+        "Gentle reminder for payment message",
+        "Contractor invoice reminders template word",
+        "Contractor invoice reminders pdf",
+        "Contractor invoice reminders free",
+        "Contractor invoice reminders free download",
+        "Strong letter for outstanding payment email",
+        "Gentle reminder for payment message template Word"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {
+        "paidnice.com": 1,
+        "squareup.com": 1,
+        "relanco.ca": 1,
+        "weirfoulds.com": 1,
+        "trusspayments.com": 1,
+        "reddit.com": 1,
+        "contractorrevenuehub.com": 1,
+        "getharvest.com": 1,
+        "invoicebloom.io": 1
+      },
+      "canadianHosts": [
+        "relanco.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "contractor review requests",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20review%20requests&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:28:06.110Z",
+      "httpStatus": 200,
+      "bytes": 543000,
+      "organic": [
+        {
+          "title": "Write Reviews, Rate Contractors and File Complaints",
+          "host": "trustedpros.ca"
+        },
+        {
+          "title": "Finding a Renovator",
+          "host": "chba.ca"
+        },
+        {
+          "title": "15 Contractor review sites you need to know - Birdeye",
+          "host": "birdeye.com"
+        },
+        {
+          "title": "Professionals in Vancouver",
+          "host": "homestars.com"
+        },
+        {
+          "title": "How do you find a contractor you can trust if you have no ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Get a clearance letter",
+          "host": "worksafebc.com"
+        },
+        {
+          "title": "Tips on how to hire a contractor",
+          "host": "bchousing.org"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "contractor review requests",
+        "What is a contractor review?",
+        "What not to say to your contractor?",
+        "What is the most common contractor mistake?",
+        "How do I ask for a rate increase as a contractor?"
+      ],
+      "related": [
+        "View all",
+        "Contractor review requests reddit",
+        "Contractor review requests pdf",
+        "Contractor reviews examples",
+        "Contractor reviews website",
+        "Trusted Pros reviews",
+        "How to find a contractor for small jobs",
+        "How to find a good contractor for home improvement",
+        "Trusted pros reviews reddit"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "trustedpros.ca": 1,
+        "chba.ca": 1,
+        "birdeye.com": 1,
+        "homestars.com": 1,
+        "reddit.com": 1,
+        "worksafebc.com": 1,
+        "bchousing.org": 1
+      },
+      "canadianHosts": [
+        "trustedpros.ca",
+        "chba.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "birdeye.com"
+      ]
+    }
+  ]
+}

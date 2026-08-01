@@ -1,0 +1,1045 @@
+{
+  "batch": "CA-3",
+  "n": 15,
+  "collectedAt": "2026-08-01T04:30:53.381Z",
+  "results": [
+    {
+      "query": "ai automation surrey bc",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20automation%20surrey%20bc&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:16.942Z",
+      "httpStatus": 200,
+      "bytes": 478718,
+      "organic": [
+        {
+          "title": "AI Automation Services | Surrey BC | Back Office Process ...",
+          "host": "automatebc.ca"
+        },
+        {
+          "title": "Small & Medium Business AI Consulting | AdaptAI Surrey BC",
+          "host": "adaptai.ca"
+        },
+        {
+          "title": "AI Automation Services Vancouver",
+          "host": "manndigital.ca"
+        },
+        {
+          "title": "BuildGravity | AI Solutions Surrey BC | BuildGravity ...",
+          "host": "buildgravity.ca"
+        },
+        {
+          "title": "AI Automation Services for Businesses in Surrey, BC - SignalOS",
+          "host": "signalos.ca"
+        },
+        {
+          "title": "Best AI Automation & Development Company in Surrey",
+          "host": "townmedialabs.ca"
+        },
+        {
+          "title": "AI Automation, Google Ads & IT Support in Surrey, BC",
+          "host": "jazzedtechnology.com"
+        },
+        {
+          "title": "Top AI Automation Agencies in Vancouver (2026)",
+          "host": "aandhsolutions.com"
+        },
+        {
+          "title": "AI Consulting Surrey",
+          "host": "ddaiagency.com"
+        },
+        {
+          "title": "AI Automation",
+          "host": "raxxos.com"
+        }
+      ],
+      "organicCount": 10,
+      "paaLevel1": [],
+      "related": [
+        "Reviews",
+        "Address",
+        "Province",
+        "British Columbia"
+      ],
+      "features": {
+        "aiOverview": false,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "automatebc.ca": 1,
+        "adaptai.ca": 1,
+        "manndigital.ca": 1,
+        "buildgravity.ca": 1,
+        "signalos.ca": 1,
+        "townmedialabs.ca": 1,
+        "jazzedtechnology.com": 1,
+        "aandhsolutions.com": 1,
+        "ddaiagency.com": 1,
+        "raxxos.com": 1
+      },
+      "canadianHosts": [
+        "automatebc.ca",
+        "adaptai.ca",
+        "manndigital.ca",
+        "buildgravity.ca",
+        "signalos.ca",
+        "townmedialabs.ca"
+      ],
+      "forumHosts": []
+    },
+    {
+      "query": "ai consultant surrey",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20consultant%20surrey&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:19.609Z",
+      "httpStatus": 200,
+      "bytes": 488710,
+      "organic": [
+        {
+          "title": "Small & Medium Business AI Consulting | AdaptAI Surrey BC",
+          "host": "adaptai.ca"
+        },
+        {
+          "title": "Security-First AI Consulting For Surrey Businesses",
+          "host": "mspcorp.ca"
+        },
+        {
+          "title": "AI Consulting Surrey",
+          "host": "ddaiagency.com"
+        },
+        {
+          "title": "Top AI Consultants in Vancouver - Jul 2026 Rankings",
+          "host": "clutch.co"
+        },
+        {
+          "title": "Artificial Intelligence Consulting Company in Surrey, British ...",
+          "host": "zfort.com"
+        },
+        {
+          "title": "434 Artificial Intelligence Consultant jobs in Greater ...",
+          "host": "ca.linkedin.com"
+        },
+        {
+          "title": "Growth Consultant Canada | Ali Sedighi",
+          "host": "growthconsultant.ca"
+        },
+        {
+          "title": "AI Services Vancouver",
+          "host": "fusioncomputing.ca"
+        },
+        {
+          "title": "Cow-Shed Artificial Intelligence Consultancy Guildford Surrey",
+          "host": "cow-shed.com"
+        }
+      ],
+      "organicCount": 9,
+      "paaLevel1": [
+        "How much does an AI consultant cost?",
+        "What exactly does an AI consultant do?",
+        "Should I hire an AI consultant?",
+        "Who is the leader of AI in Canada?"
+      ],
+      "related": [],
+      "features": {
+        "aiOverview": false,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "adaptai.ca": 1,
+        "mspcorp.ca": 1,
+        "ddaiagency.com": 1,
+        "clutch.co": 1,
+        "zfort.com": 1,
+        "ca.linkedin.com": 1,
+        "growthconsultant.ca": 1,
+        "fusioncomputing.ca": 1,
+        "cow-shed.com": 1
+      },
+      "canadianHosts": [
+        "adaptai.ca",
+        "mspcorp.ca",
+        "growthconsultant.ca",
+        "fusioncomputing.ca"
+      ],
+      "forumHosts": []
+    },
+    {
+      "query": "business automation consultant near me",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=business%20automation%20consultant%20near%20me&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:22.314Z",
+      "httpStatus": 200,
+      "bytes": 518931,
+      "organic": [
+        {
+          "title": "Automation Consultants near Vancouver, BC",
+          "host": "bbb.org"
+        },
+        {
+          "title": "Small & Medium Business AI Consulting | AdaptAI Surrey BC",
+          "host": "adaptai.ca"
+        },
+        {
+          "title": "AI Consulting Vancouver, Automation for BC Businesses",
+          "host": "chatgpt.ca"
+        },
+        {
+          "title": "Looking for a Partner for an AI Automation Agency",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Accounting Automation Vancouver, BC",
+          "host": "accountantvancouver.net"
+        },
+        {
+          "title": "AI Services Vancouver",
+          "host": "fusioncomputing.ca"
+        },
+        {
+          "title": "AI Consulting & Automation Vancouver - Aivy",
+          "host": "aivy.ca"
+        },
+        {
+          "title": "Top Vancouver, British Columbia Automation Companies ...",
+          "host": "builtinvancouver.org"
+        },
+        {
+          "title": "Business Systems & Automation for BC Companies",
+          "host": "digitalvancouver.ca"
+        }
+      ],
+      "organicCount": 9,
+      "paaLevel1": [
+        "business automation consultant near me",
+        "What is a business automation consultant?",
+        "How much to charge for AI automation consulting?",
+        "How to do business automation?",
+        "Who is an AI automation consultant?"
+      ],
+      "related": [
+        "Online appointments",
+        "Open now",
+        "Top rated",
+        "business automation consultant near surrey, bc",
+        "business automation consultant near vancouver, bc",
+        "Business automation consultant near me hiring"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "bbb.org": 1,
+        "adaptai.ca": 1,
+        "chatgpt.ca": 1,
+        "reddit.com": 1,
+        "accountantvancouver.net": 1,
+        "fusioncomputing.ca": 1,
+        "aivy.ca": 1,
+        "builtinvancouver.org": 1,
+        "digitalvancouver.ca": 1
+      },
+      "canadianHosts": [
+        "adaptai.ca",
+        "chatgpt.ca",
+        "fusioncomputing.ca",
+        "aivy.ca",
+        "digitalvancouver.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "ai company for contractors canada",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20company%20for%20contractors%20canada&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:24.952Z",
+      "httpStatus": 200,
+      "bytes": 435398,
+      "organic": [
+        {
+          "title": "Framework AI — Construction paperwork AI assistant.",
+          "host": "frameworkai.ca"
+        },
+        {
+          "title": "How AI can help your construction business",
+          "host": "bdc.ca"
+        },
+        {
+          "title": "Construction Management Software",
+          "host": "procore.com"
+        },
+        {
+          "title": "AI-Driven Subcontractor, Labour and Equipment Management",
+          "host": "scaleai.ca"
+        },
+        {
+          "title": "List of interested Artificial Intelligence (AI) suppliers",
+          "host": "canada.ca"
+        },
+        {
+          "title": "AI Automation for Contractors in Canada",
+          "host": "barrana.ai"
+        },
+        {
+          "title": "Bridgit launches AI agents for construction planning",
+          "host": "cfotech.ca"
+        },
+        {
+          "title": "ContractorsIQ — AI Competitive Intelligence for Canadian ...",
+          "host": "contractorsiq.ca"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "ai company for contractors canada",
+        "Which AI is best for contractors?",
+        "What is the best AI company in Canada?",
+        "How are contractors using AI?",
+        "What are the top 5 AI companies right now?"
+      ],
+      "related": [
+        "Top ai company for contractors canada",
+        "Best ai company for contractors canada",
+        "Construction management software Canada",
+        "Procore Canada",
+        "Top 10 construction management software",
+        "Procore company",
+        "What is Procore in construction",
+        "Procore Toronto"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "frameworkai.ca": 1,
+        "bdc.ca": 1,
+        "procore.com": 1,
+        "scaleai.ca": 1,
+        "canada.ca": 1,
+        "barrana.ai": 1,
+        "cfotech.ca": 1,
+        "contractorsiq.ca": 1
+      },
+      "canadianHosts": [
+        "frameworkai.ca",
+        "bdc.ca",
+        "scaleai.ca",
+        "canada.ca",
+        "cfotech.ca",
+        "contractorsiq.ca"
+      ],
+      "forumHosts": []
+    },
+    {
+      "query": "jobber too expensive",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=jobber%20too%20expensive&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:27.544Z",
+      "httpStatus": 200,
+      "bytes": 554182,
+      "organic": [
+        {
+          "title": "Anyone used Jobber? : r/Construction",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Jobber Pricing: Plans Starting at $29/Month | Free Trial",
+          "host": "getjobber.com"
+        },
+        {
+          "title": "Jobber's - Biggest Problem - Exposed: Why Contractors Are",
+          "host": "myquoteiq.com"
+        },
+        {
+          "title": "Jobber Pricing & Reviews: 3 Pros & Cons for Field Service ...",
+          "host": "buildbite.com"
+        },
+        {
+          "title": "Jobber Too Expensive? Real Cost Breakdown + ... - NexJob",
+          "host": "nex-job.com"
+        },
+        {
+          "title": "Honest Jobber Review 2026: Pros, Cons, Features & Pricing",
+          "host": "connecteam.com"
+        },
+        {
+          "title": "What is the cost and efficiency of using Jobber for ...",
+          "host": "facebook.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "jobber too expensive",
+        "Is there a cheaper option than Jobber?",
+        "Is Jobber a Canadian company?",
+        "How much is the cheapest version of Jobber?",
+        "Is Jobber worth it?"
+      ],
+      "related": [
+        "View all",
+        "Jobber too expensive reddit",
+        "Jobber too expensive reviews",
+        "Jobber reviews complaints",
+        "I hate working at Jobber Reddit",
+        "How much is Jobber per month",
+        "Jobber alternatives",
+        "Jobber pros and cons",
+        "Jobber layoffs"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "getjobber.com": 1,
+        "myquoteiq.com": 1,
+        "buildbite.com": 1,
+        "nex-job.com": 1,
+        "connecteam.com": 1,
+        "facebook.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com",
+        "facebook.com"
+      ]
+    },
+    {
+      "query": "problems with jobber",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=problems%20with%20jobber&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:29.899Z",
+      "httpStatus": 200,
+      "bytes": 569871,
+      "organic": [
+        {
+          "title": "Troubleshooting Tips: How to Help Us Help You",
+          "host": "help.getjobber.com"
+        },
+        {
+          "title": "Jobber Status",
+          "host": "jobberstatus.net"
+        },
+        {
+          "title": "Jobber's - Biggest Problem - Exposed: Why Contractors Are",
+          "host": "myquoteiq.com"
+        },
+        {
+          "title": "I'm really disappointed with Jobber : r/Contractor",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Jobber | BBB Reviews | Better Business ...",
+          "host": "bbb.org"
+        },
+        {
+          "title": "Jobber - Field Service Software Reviews",
+          "host": "ca.trustpilot.com"
+        },
+        {
+          "title": "Jobber Pros and Cons | User Likes & Dislikes",
+          "host": "g2.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "problems with jobber"
+      ],
+      "related": [
+        "View all",
+        "Problems with jobber today",
+        "Problems with jobber reddit",
+        "Problems with jobber on iphone",
+        "I hate working at Jobber Reddit",
+        "Jobber Download",
+        "Jobber status",
+        "Jobber update",
+        "Get Jobber"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": true
+      },
+      "hostMix": {
+        "help.getjobber.com": 1,
+        "jobberstatus.net": 1,
+        "myquoteiq.com": 1,
+        "reddit.com": 1,
+        "bbb.org": 1,
+        "ca.trustpilot.com": 1,
+        "g2.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "contractor software data export",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20software%20data%20export&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:32.351Z",
+      "httpStatus": 200,
+      "bytes": 468626,
+      "organic": [
+        {
+          "title": "Billeasy Construction Reporting Software For Contractors",
+          "host": "billeasy.ca"
+        },
+        {
+          "title": "Construction Quantity Takeoff & Estimating Software",
+          "host": "bluebeam.com"
+        },
+        {
+          "title": "One single source of truth for your capital project",
+          "host": "checcboard.com"
+        },
+        {
+          "title": "What's the best construction management software ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Importing and Exporting Your Data",
+          "host": "support.contractoraccelerator.com"
+        },
+        {
+          "title": "16 Most Popular Construction Estimating Software",
+          "host": "nichessp.com"
+        },
+        {
+          "title": "CrewTracks Reports & Exports Offerings",
+          "host": "crewtracks.com"
+        },
+        {
+          "title": "Top Rated Electrical Contractor Software with Data import export ...",
+          "host": "getapp.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "contractor software data export"
+      ],
+      "related": [
+        "construction software data export",
+        "contractor software data export",
+        "View all",
+        "Contractor software data export pdf",
+        "Contractor software data export excel",
+        "Construction takeoff software free",
+        "Bluebeam takeoff software",
+        "AI construction takeoff software",
+        "Best construction takeoff software",
+        "Quantity takeoff software",
+        "PDF takeoff software free"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": true,
+        "video": true
+      },
+      "hostMix": {
+        "billeasy.ca": 1,
+        "bluebeam.com": 1,
+        "checcboard.com": 1,
+        "reddit.com": 1,
+        "support.contractoraccelerator.com": 1,
+        "nichessp.com": 1,
+        "crewtracks.com": 1,
+        "getapp.com": 1
+      },
+      "canadianHosts": [
+        "billeasy.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "who owns my customer data software",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=who%20owns%20my%20customer%20data%20software&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:34.865Z",
+      "httpStatus": 200,
+      "bytes": 396508,
+      "organic": [
+        {
+          "title": "Who actually owns your CRM?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Who really owns your customer data? A marketer's guide to ...",
+          "host": "ruthcheesley.co.uk"
+        },
+        {
+          "title": "Data Ownership: Who Owns Your Data? - Argyle",
+          "host": "argyle.com"
+        },
+        {
+          "title": "Mohamed El Zine's Post",
+          "host": "linkedin.com"
+        },
+        {
+          "title": "Who Really Owns SaaS Data?",
+          "host": "saasassure.com"
+        },
+        {
+          "title": "Who Really Owns Your Security Data? (And Why It Matters ...",
+          "host": "tracktik.com"
+        },
+        {
+          "title": "Your Customer's Data: Who Has the Keys?",
+          "host": "cxtoday.com"
+        },
+        {
+          "title": "Who Actually Owns Your Data?",
+          "host": "winningtech.com"
+        },
+        {
+          "title": "Who Owns a Data Product? The Data Product Owner",
+          "host": "integri.us"
+        }
+      ],
+      "organicCount": 9,
+      "paaLevel1": [
+        "who owns my customer data software",
+        "Who owns customer data?",
+        "Who owns the CRM system?",
+        "Is our data really private?",
+        "Who is the owner of software?"
+      ],
+      "related": [],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "ruthcheesley.co.uk": 1,
+        "argyle.com": 1,
+        "linkedin.com": 1,
+        "saasassure.com": 1,
+        "tracktik.com": 1,
+        "cxtoday.com": 1,
+        "winningtech.com": 1,
+        "integri.us": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "ai called my customer",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20called%20my%20customer&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:37.344Z",
+      "httpStatus": 200,
+      "bytes": 644665,
+      "organic": [
+        {
+          "title": "ULPT: If customer service call starts with AI bot, swear to ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "New AI system targets phone scammers targeting Canadians",
+          "host": "torontosun.com"
+        },
+        {
+          "title": "AI call agents were the biggest scam ever",
+          "host": "instagram.com"
+        },
+        {
+          "title": "I was duped by an AI customer service bot and I hate it",
+          "host": "pcworld.com"
+        },
+        {
+          "title": "AI Customer Service Fail: Real Call Reveals Why ...",
+          "host": "finance.yahoo.com"
+        },
+        {
+          "title": "Bell Canada rolls out AI tool flagging scam calls in real time",
+          "host": "insidehalton.com"
+        }
+      ],
+      "organicCount": 6,
+      "paaLevel1": [
+        "ai called my customer",
+        "Is it true that AI can call you?",
+        "What is the 30% rule for AI?",
+        "How do I get an AI to call me?",
+        "Can AI do customer service calls?"
+      ],
+      "related": [
+        "View all"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "torontosun.com": 1,
+        "instagram.com": 1,
+        "pcworld.com": 1,
+        "finance.yahoo.com": 1,
+        "insidehalton.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "customers hate automated messages",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=customers%20hate%20automated%20messages&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:39.848Z",
+      "httpStatus": 200,
+      "bytes": 439432,
+      "organic": [
+        {
+          "title": "Automated Customer Service. I hate it. Why do companies ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Why customers hate IVR (and how you can fix it)",
+          "host": "assembled.com"
+        },
+        {
+          "title": "Customers are losing patience with automated ...",
+          "host": "customerexperiencedive.com"
+        },
+        {
+          "title": "The Seven Deadly Sins of Automated Phone Systems",
+          "host": "akendi.com"
+        },
+        {
+          "title": "Chatbots And Automations Increase Customer Service ...",
+          "host": "forbes.com"
+        },
+        {
+          "title": "Customers Hate Robot Texts — Why automated messages ...",
+          "host": "instagram.com"
+        },
+        {
+          "title": "The Better Your Automated Customer Service Options ...",
+          "host": "linkedin.com"
+        },
+        {
+          "title": "Is anyone there? Why patience is wearing thin as customer ...",
+          "host": "cbc.ca"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "customers hate automated messages",
+        "Why are customers averse to service chatbots?",
+        "What are the 3 F's of customer service?",
+        "What not to say to customers on the phone?",
+        "What are the 7 qualities of bad customer service?"
+      ],
+      "related": [
+        "Customers hate automated messages reddit",
+        "Why do customers hate automated messages",
+        "Automated Customer service Love, Death and Robots",
+        "I hate automated phone systems reddit",
+        "Why do companies use automated phone systems"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "assembled.com": 1,
+        "customerexperiencedive.com": 1,
+        "akendi.com": 1,
+        "forbes.com": 1,
+        "instagram.com": 1,
+        "linkedin.com": 1,
+        "cbc.ca": 1
+      },
+      "canadianHosts": [
+        "cbc.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "can i keep my phone number answering service",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=can%20i%20keep%20my%20phone%20number%20answering%20service&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:42.313Z",
+      "httpStatus": 200,
+      "bytes": 447869,
+      "organic": [
+        {
+          "title": "AnswerCanada – AnswerCanada",
+          "host": "answercanada.ca"
+        },
+        {
+          "title": "AI Receptionist Using My Real Business Phone Number",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Switch providers and keep your number",
+          "host": "crtc.gc.ca"
+        },
+        {
+          "title": "24/7 AI Phone Answering Service Canada",
+          "host": "dialbox.ca"
+        },
+        {
+          "title": "Can I Keep My Phone Number with a Virtual Receptionist ...",
+          "host": "ruby.com"
+        },
+        {
+          "title": "How to port your telephone number to a new provider",
+          "host": "virtually-there.net"
+        },
+        {
+          "title": "Porting Phone Numbers to Your Answering Service",
+          "host": "answerconnect.com"
+        },
+        {
+          "title": "Want to Keep Your Existing Phone Number? No Problem.",
+          "host": "smith.ai"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "can i keep my phone number answering service",
+        "Can I still keep my phone number without service?",
+        "Can I keep my phone number if I switch provider in Canada?",
+        "Can you keep your phone number between providers?",
+        "What is the cheapest way to keep a phone number in Canada?"
+      ],
+      "related": [
+        "Can i keep my phone number answering service reddit",
+        "Can I keep my phone number if I switch carriers Canada",
+        "Answering service canada",
+        "Answering service for small business canada",
+        "Can I transfer my landline number to a cell phone in Canada",
+        "Cheapest way to keep a phone number Canada",
+        "Transfer home phone number to cell phone TELUS",
+        "How to port phone number Canada"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": false
+      },
+      "hostMix": {
+        "answercanada.ca": 1,
+        "reddit.com": 1,
+        "crtc.gc.ca": 1,
+        "dialbox.ca": 1,
+        "ruby.com": 1,
+        "virtually-there.net": 1,
+        "answerconnect.com": 1,
+        "smith.ai": 1
+      },
+      "canadianHosts": [
+        "answercanada.ca",
+        "crtc.gc.ca",
+        "dialbox.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "automated review requests for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=automated%20review%20requests%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:44.858Z",
+      "httpStatus": 200,
+      "bytes": 456994,
+      "organic": [
+        {
+          "title": "Automated Review Requests for Contractors",
+          "host": "revofield.com"
+        },
+        {
+          "title": "Review Automation for Contractors | Toronto & GTA",
+          "host": "ailocalgrowth.com"
+        },
+        {
+          "title": "Reviews AI for Contractors - PM Consulting",
+          "host": "pmconsulting.ca"
+        },
+        {
+          "title": "Review Multiplier – Automated Review Requests",
+          "host": "myquoteiq.com"
+        },
+        {
+          "title": "How to automate my review process? : r/Contractor",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Review Automation for Contractors | FFDM",
+          "host": "fightforwarddigital.com"
+        },
+        {
+          "title": "Best Review Management & Request Software for Home ...",
+          "host": "mybusinessflow.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "automated review requests for contractors"
+      ],
+      "related": [
+        "View all",
+        "Automated review requests for contractors reddit",
+        "Automated review requests for contractors google",
+        "QuoteIQ reviews",
+        "QuoteIQ Integrations"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": true,
+        "video": true
+      },
+      "hostMix": {
+        "revofield.com": 1,
+        "ailocalgrowth.com": 1,
+        "pmconsulting.ca": 1,
+        "myquoteiq.com": 1,
+        "reddit.com": 1,
+        "fightforwarddigital.com": 1,
+        "mybusinessflow.com": 1
+      },
+      "canadianHosts": [
+        "pmconsulting.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ]
+    },
+    {
+      "query": "estimate follow up template",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=estimate%20follow%20up%20template&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:47.371Z",
+      "httpStatus": 200,
+      "bytes": 91273,
+      "organic": [],
+      "organicCount": 0,
+      "paaLevel1": [],
+      "related": [
+        "click here"
+      ],
+      "features": {
+        "aiOverview": false,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {},
+      "canadianHosts": [],
+      "forumHosts": []
+    },
+    {
+      "query": "how many times should a contractor follow up",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=how%20many%20times%20should%20a%20contractor%20follow%20up&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:49.382Z",
+      "httpStatus": 200,
+      "bytes": 91193,
+      "organic": [],
+      "organicCount": 0,
+      "paaLevel1": [],
+      "related": [
+        "click here"
+      ],
+      "features": {
+        "aiOverview": false,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {},
+      "canadianHosts": [],
+      "forumHosts": []
+    },
+    {
+      "query": "unsold estimate follow up",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=unsold%20estimate%20follow%20up&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:30:51.374Z",
+      "httpStatus": 200,
+      "bytes": 91047,
+      "organic": [],
+      "organicCount": 0,
+      "paaLevel1": [],
+      "related": [
+        "click here"
+      ],
+      "features": {
+        "aiOverview": false,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {},
+      "canadianHosts": [],
+      "forumHosts": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "query": "jobber alternatives",
+  "market": "CA",
+  "geo": "Canada",
+  "requestUrl": "https://www.google.com/search?q=jobber%20alternatives&gl=ca&hl=en&pws=0&num=20",
+  "collectedAt": "2026-08-01T04:21:01.391Z",
+  "personalization": "suppressed (pws=0, fresh context, not signed in)",
+  "httpStatus": 200,
+  "blocked": true,
+  "note": "Google served an interstitial (captcha/consent). No data extracted."
+}

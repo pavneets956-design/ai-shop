@@ -1,0 +1,26 @@
+{
+  "scope": "full",
+  "startedAt": "2026-08-01T04:24:50.962Z",
+  "finishedAt": "2026-08-01T04:39:21.891Z",
+  "phraseSeeds": 35,
+  "rootSeeds": 15,
+  "plannedQueries": 1165,
+  "markets": [
+    "CA",
+    "US"
+  ],
+  "engines": [
+    "google:suggestqueries(client=firefox)",
+    "bing:osjson"
+  ],
+  "stats": {
+    "requests": 2400,
+    "ok": 2400,
+    "failed": 0,
+    "suggestions": 8822,
+    "blocked": 0,
+    "emptyResults": 1344,
+    "throttleEvents": 0
+  },
+  "note": "Autocomplete presence is a directional demand signal, not search volume. Google only suggests strings users actually type, but frequency is not exposed. Label all downstream use as [D]."
+}

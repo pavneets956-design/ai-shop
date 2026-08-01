@@ -1,0 +1,117 @@
+{
+  "batch": "CA-4",
+  "n": 10,
+  "collectedAt": "2026-08-01T04:32:28.649Z",
+  "results": [
+    {
+      "query": "estimate follow up template",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=estimate%20follow%20up%20template&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:31:45.071Z",
+      "httpStatus": 200,
+      "bytes": 91085,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "how many times should a contractor follow up",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=how%20many%20times%20should%20a%20contractor%20follow%20up&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:31:49.375Z",
+      "httpStatus": 200,
+      "bytes": 91229,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "unsold estimate follow up",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=unsold%20estimate%20follow%20up&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:31:55.862Z",
+      "httpStatus": 200,
+      "bytes": 91211,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "ai automation vancouver bc",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20automation%20vancouver%20bc&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:00.021Z",
+      "httpStatus": 200,
+      "bytes": 91143,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "ai receptionist surrey bc",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20receptionist%20surrey%20bc&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:04.120Z",
+      "httpStatus": 200,
+      "bytes": 91216,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "ai automation langley bc",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20automation%20langley%20bc&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:08.216Z",
+      "httpStatus": 200,
+      "bytes": 91178,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "automation consultant abbotsford",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=automation%20consultant%20abbotsford&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:12.300Z",
+      "httpStatus": 200,
+      "bytes": 91061,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "ai automation for small business surrey",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20automation%20for%20small%20business%20surrey&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:16.388Z",
+      "httpStatus": 200,
+      "bytes": 91154,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "quote follow up software",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=quote%20follow%20up%20software&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:20.491Z",
+      "httpStatus": 200,
+      "bytes": 91178,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    },
+    {
+      "query": "contractor missed calls",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20missed%20calls&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:32:24.578Z",
+      "httpStatus": 200,
+      "bytes": 90961,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed - suspect soft block, NOT evidence of no demand",
+      "textSample": "table,div,span,p{display:none}Please click here if you are not redirected within a few seconds.(function(){var sctm=false;(function(){sctm&&google.tick(\"load\",\""
+    }
+  ]
+}

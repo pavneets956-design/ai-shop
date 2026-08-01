@@ -1,0 +1,982 @@
+{
+  "batch": "CA-2",
+  "n": 12,
+  "collectedAt": "2026-08-01T04:29:27.746Z",
+  "results": [
+    {
+      "query": "roofing estimating software",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=roofing%20estimating%20software&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:28:58.754Z",
+      "httpStatus": 200,
+      "bytes": 459467,
+      "organic": [
+        {
+          "title": "Roofr: Best Roofing Software",
+          "host": "roofr.com"
+        },
+        {
+          "title": "Roofing Estimating & Takeoff Software | Contractor Bid ...",
+          "host": "stackct.com"
+        },
+        {
+          "title": "RoofSnap | Best Roofing Software: #1 for Measuring, Estimates+",
+          "host": "roofsnap.com"
+        },
+        {
+          "title": "Roofing Software - Prices & Reviews",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "Roofing estimating software : r/Roofing",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Roofing Estimating & Management Software",
+          "host": "buildxact.com"
+        },
+        {
+          "title": "Roofing Estimating & Takeoff Software | The EDGE®",
+          "host": "estimatingedge.com"
+        },
+        {
+          "title": "Top 10 Roofing Estimating Software In 2026",
+          "host": "myquoteiq.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "roofing estimating software",
+        "Is there a free roof estimating app?",
+        "How much does it cost to replace a 2000 sq ft roof in Ontario?",
+        "Is RoofSnap free?",
+        "Can I use Google Maps to measure my roof?"
+      ],
+      "related": [
+        "View all",
+        "Roofing estimating software free download",
+        "Residential roofing estimating software",
+        "Commercial roofing estimating software",
+        "Roof estimating software free",
+        "Best roofing estimating software",
+        "Best commercial roofing estimating software",
+        "Best roofing software"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "roofr.com": 1,
+        "stackct.com": 1,
+        "roofsnap.com": 1,
+        "capterra.ca": 1,
+        "reddit.com": 1,
+        "buildxact.com": 1,
+        "estimatingedge.com": 1,
+        "myquoteiq.com": 1
+      },
+      "canadianHosts": [
+        "capterra.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "capterra.ca"
+      ]
+    },
+    {
+      "query": "roofing quote follow up",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=roofing%20quote%20follow%20up&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:01.260Z",
+      "httpStatus": 200,
+      "bytes": 492226,
+      "organic": [
+        {
+          "title": "What do you guys do after you send an estimate and the ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "How to Follow Up on a Roofing Estimate - (Updated 2025)",
+          "host": "roofsnap.com"
+        },
+        {
+          "title": "How to follow up on quiet quotes in roofing contracts?",
+          "host": "facebook.com"
+        },
+        {
+          "title": "Roofing Email Templates for Every Follow-Up Stage",
+          "host": "ghostrep.ai"
+        },
+        {
+          "title": "Roofing Follow-Up Systems: Stop Losing Deals After the First ...",
+          "host": "smartroofing.ai"
+        },
+        {
+          "title": "How to Follow Up on Contractor Quotes: Turn Summer ...",
+          "host": "contractoraccelerator.com"
+        },
+        {
+          "title": "Instant Roof Estimate Software",
+          "host": "roofr.com"
+        },
+        {
+          "title": "How to Follow Up With Roofing Leads Without Being Annoying",
+          "host": "leadbridgesystems.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "roofing quote follow up",
+        "How to professionally follow up on an estimate?",
+        "How much does it cost to get a quote from a roofer?",
+        "How many quotes should you get for a new roof?",
+        "What is the cheapest month for roofing?"
+      ],
+      "related": [
+        "View all",
+        "Roofing quote follow up template",
+        "Roofing quote follow up reddit",
+        "Roofing quote follow up letter",
+        "Roofing quote follow up email",
+        "Roofing quote follow up cost"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "roofsnap.com": 1,
+        "facebook.com": 1,
+        "ghostrep.ai": 1,
+        "smartroofing.ai": 1,
+        "contractoraccelerator.com": 1,
+        "roofr.com": 1,
+        "leadbridgesystems.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com",
+        "facebook.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "how to automate a contracting business",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=how%20to%20automate%20a%20contracting%20business&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:03.757Z",
+      "httpStatus": 200,
+      "bytes": 530267,
+      "organic": [
+        {
+          "title": "How I automated most of my small contracting business ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "The 6 processes to automate in your construction business",
+          "host": "briq.com"
+        },
+        {
+          "title": "5 Contractor Software Tools to Save Time and Boost Profits",
+          "host": "renoquotes.com"
+        },
+        {
+          "title": "Construction Business Automation: 2026 Guide for ...",
+          "host": "bldrmate.com"
+        },
+        {
+          "title": "Unlocking millions in efficiency: How automating simple ...",
+          "host": "mnpdigital.ca"
+        },
+        {
+          "title": "Mastering Contract Automation: A Step by Step Approach",
+          "host": "contracts365.com"
+        },
+        {
+          "title": "5 Tools to Automate Business Processes for Your ...",
+          "host": "corkcrm.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "how to automate a contracting business",
+        "How to automate contract management?",
+        "What is the most profitable contracting business?",
+        "Can I use AI to automate my business?",
+        "How to get more clients as a contractor?"
+      ],
+      "related": [
+        "View all"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "briq.com": 1,
+        "renoquotes.com": 1,
+        "bldrmate.com": 1,
+        "mnpdigital.ca": 1,
+        "contracts365.com": 1,
+        "corkcrm.com": 1
+      },
+      "canadianHosts": [
+        "mnpdigital.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "contractor crm for small business",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20crm%20for%20small%20business&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:06.109Z",
+      "httpStatus": 200,
+      "bytes": 492562,
+      "organic": [
+        {
+          "title": "Best All-in-One CRM for Small Construction Crew?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Construction CRM Software - Prices & Reviews",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "Construction CRM Software",
+          "host": "buildertrend.com"
+        },
+        {
+          "title": "Top 10 Contractor CRM Tools to Boost Small Business",
+          "host": "fieldified.com"
+        },
+        {
+          "title": "Best CRM for small construction companies",
+          "host": "insightly.com"
+        },
+        {
+          "title": "Builder Prime: Contractor CRM to Manage Leads, Estimates ...",
+          "host": "builderprime.com"
+        },
+        {
+          "title": "8 Best Contractor CRMs & How to Choose the Right One",
+          "host": "buildops.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "contractor crm for small business"
+      ],
+      "related": [
+        "construction crm for small business",
+        "contractor crm for small business",
+        "View all",
+        "Contractor crm for small business reddit",
+        "Free contractor crm for small business",
+        "Best contractor crm for small business",
+        "Construction CRM platforms",
+        "Zoho CRM",
+        "Construction crm meaning",
+        "Best CRM for small construction business",
+        "CRM for subcontractors"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "capterra.ca": 1,
+        "buildertrend.com": 1,
+        "fieldified.com": 1,
+        "insightly.com": 1,
+        "builderprime.com": 1,
+        "buildops.com": 1
+      },
+      "canadianHosts": [
+        "capterra.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "capterra.ca"
+      ]
+    },
+    {
+      "query": "done for you business automation",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=done%20for%20you%20business%20automation&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:08.474Z",
+      "httpStatus": 200,
+      "bytes": 412065,
+      "organic": [
+        {
+          "title": "AI, Sales Funnels, and Automation - DONE FOR YOU!",
+          "host": "doneforyou.com"
+        },
+        {
+          "title": "Done for You Automation Small Business Solutions",
+          "host": "lamaquina.studio"
+        },
+        {
+          "title": "Done-For-You AI Automation vs DIY: An Honest Guide - Automis",
+          "host": "automis.ai"
+        },
+        {
+          "title": "The Best AI Automation Service for Small Business",
+          "host": "doneforyou.com"
+        },
+        {
+          "title": "Done-for-You vs DIY Automation for SMBs - IV Consulting",
+          "host": "ivconsulting.in"
+        },
+        {
+          "title": "US: Paid $20k for a 'done-for-you' AI agency program. No ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Done-For-You Automation vs DIY | LUNA Systems Blog",
+          "host": "lunasystems.com.au"
+        },
+        {
+          "title": "Done-For-You Services",
+          "host": "syncspider.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "done for you business automation"
+      ],
+      "related": [
+        "Done for you LinkedIn",
+        "Done for you courses",
+        "E commerce done for you",
+        "What is a done for you digital product",
+        "Done for you online course",
+        "Is for you agency legit",
+        "Social done for you",
+        "Selling done for you digital products"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": false
+      },
+      "hostMix": {
+        "doneforyou.com": 2,
+        "lamaquina.studio": 1,
+        "automis.ai": 1,
+        "ivconsulting.in": 1,
+        "reddit.com": 1,
+        "lunasystems.com.au": 1,
+        "syncspider.com": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "ai consultant for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20consultant%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:10.753Z",
+      "httpStatus": 200,
+      "bytes": 456420,
+      "organic": [
+        {
+          "title": "How AI can help your construction business",
+          "host": "bdc.ca"
+        },
+        {
+          "title": "AI for Construction Companies",
+          "host": "ascentconsults.com"
+        },
+        {
+          "title": "AI Readiness & Adoption | Everest Solutions",
+          "host": "everestsafety.ca"
+        },
+        {
+          "title": "AI Consulting for Construction: How to Choose",
+          "host": "dancumberlandlabs.com"
+        },
+        {
+          "title": "Are There Any Legitimately Good AI Tools?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Best AI Tools and AI Agents for Contractors in 2026",
+          "host": "futureforgeaisolutions.ca"
+        },
+        {
+          "title": "AI Consulting for Electrical Contractors | Vancouver & Canada",
+          "host": "signalandform.ca"
+        },
+        {
+          "title": "AI Architects & Consultants - AEC Hub",
+          "host": "aechub.org"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "ai consultant for contractors",
+        "How much does an AI consultant cost?",
+        "Which AI is best for contractors?",
+        "What is the 30% rule for AI?",
+        "How can contractors use AI?"
+      ],
+      "related": [
+        "View all",
+        "Ai consultant for contractors canada",
+        "Construction software consultant"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "bdc.ca": 1,
+        "ascentconsults.com": 1,
+        "everestsafety.ca": 1,
+        "dancumberlandlabs.com": 1,
+        "reddit.com": 1,
+        "futureforgeaisolutions.ca": 1,
+        "signalandform.ca": 1,
+        "aechub.org": 1
+      },
+      "canadianHosts": [
+        "bdc.ca",
+        "everestsafety.ca",
+        "futureforgeaisolutions.ca",
+        "signalandform.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "how much does an ai receptionist cost",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=how%20much%20does%20an%20ai%20receptionist%20cost&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:13.135Z",
+      "httpStatus": 200,
+      "bytes": 753815,
+      "organic": [
+        {
+          "title": "how much does a virtual receptionist cost, priced them all ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "AI Receptionist Cost & Pricing 2026 — Plans & Free Trial",
+          "host": "ai-receptionist.com"
+        },
+        {
+          "title": "AI Receptionist Cost in Canada: 2026 Pricing Guide",
+          "host": "mihronai.ca"
+        },
+        {
+          "title": "How much does an AI Virtual Receptionist cost?",
+          "host": "imagicle.com"
+        },
+        {
+          "title": "AI Receptionist Pricing in 2026: Plans, Costs & Best Value",
+          "host": "getnextphone.com"
+        },
+        {
+          "title": "Canadian AI Receptionist Pricing: $49-$597/mo, No Setup ...",
+          "host": "voxara.ca"
+        },
+        {
+          "title": "AI vs Human Receptionist: True Cost Comparison (2026)",
+          "host": "rasai.ca"
+        },
+        {
+          "title": "How Much Does an AI Answering Service Cost? - Allo",
+          "host": "withallo.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "Is an AI receptionist worth it?",
+        "How much should I charge for an AI receptionist?",
+        "How much does AI reception cost?",
+        "How much does AI medical receptionist cost?"
+      ],
+      "related": [
+        "How much does an ai receptionist cost reddit",
+        "How much does an ai receptionist cost in canada",
+        "Cheapest AI receptionist",
+        "AI receptionist Canada",
+        "AI receptionist free trial",
+        "AI receptionist for cell phone",
+        "AI receptionist Builder",
+        "AI receptionist demo"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "ai-receptionist.com": 1,
+        "mihronai.ca": 1,
+        "imagicle.com": 1,
+        "getnextphone.com": 1,
+        "voxara.ca": 1,
+        "rasai.ca": 1,
+        "withallo.com": 1
+      },
+      "canadianHosts": [
+        "mihronai.ca",
+        "voxara.ca",
+        "rasai.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "contractor software without subscription",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20software%20without%20subscription&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:15.847Z",
+      "httpStatus": 200,
+      "bytes": 557181,
+      "organic": [
+        {
+          "title": "Best Free Construction Management Software for 2026",
+          "host": "ingenious.build"
+        },
+        {
+          "title": "Free CRM for contractors, no credit card required, ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "The 12 Best Free Construction Estimating Software Tools ...",
+          "host": "trutec.ai"
+        },
+        {
+          "title": "Free Contractor Management Software",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "Estimate Software Without Subscription - QuoteNovo",
+          "host": "quotenovo.com"
+        },
+        {
+          "title": "OYT — Contractor Software, One-Time Payment | No Monthly ...",
+          "host": "ownyourtools.work"
+        },
+        {
+          "title": "Best Contractor Invoicing Software 2026: Top 10 Ranked",
+          "host": "myquoteiq.com"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "contractor software without subscription",
+        "Is there a free app for contractors?",
+        "What is the cheapest contractor software?",
+        "Can ChatGPT do construction estimates?",
+        "Is the contractor plus app free?"
+      ],
+      "related": [
+        "View all",
+        "Contractor software without subscription reddit",
+        "Free contractor software without subscription",
+        "Best contractor software without subscription",
+        "Construction contractor software without subscription",
+        "Contractor Foreman",
+        "Software for contractors",
+        "Best software for contractors",
+        "Top 10 construction management software"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "ingenious.build": 1,
+        "reddit.com": 1,
+        "trutec.ai": 1,
+        "capterra.ca": 1,
+        "quotenovo.com": 1,
+        "ownyourtools.work": 1,
+        "myquoteiq.com": 1
+      },
+      "canadianHosts": [
+        "capterra.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "capterra.ca"
+      ]
+    },
+    {
+      "query": "housecall pro alternatives",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=housecall%20pro%20alternatives&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:18.250Z",
+      "httpStatus": 200,
+      "bytes": 490188,
+      "organic": [
+        {
+          "title": "Housecall Pro alternatives : r/WhichCRM",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Alternatives to Housecall Pro",
+          "host": "capterra.ca"
+        },
+        {
+          "title": "The Best HouseCall Pro Alternative",
+          "host": "zenbooker.com"
+        },
+        {
+          "title": "Housecall Pro alternatives for Canadian trades - Rundo",
+          "host": "rundo.ca"
+        },
+        {
+          "title": "10 Best Housecall Pro Alternatives 2026",
+          "host": "fieldcamp.ai"
+        },
+        {
+          "title": "Housecall Pro Alternative | A Simple and Affordable Option",
+          "host": "jobtable.com"
+        },
+        {
+          "title": "8 Best Housecall Pro Alternatives & Competitors in 2026",
+          "host": "workiz.com"
+        },
+        {
+          "title": "The Best Housecall Pro Alternatives for Review Generation",
+          "host": "get.nicejob.com"
+        }
+      ],
+      "organicCount": 8,
+      "paaLevel1": [
+        "housecall pro alternatives"
+      ],
+      "related": [
+        "View all",
+        "Housecall pro alternatives reddit",
+        "Housecall pro alternatives for small business",
+        "Housecall pro alternatives free",
+        "Jobber vs Housecall Pro",
+        "FieldPulse"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": false,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "reddit.com": 1,
+        "capterra.ca": 1,
+        "zenbooker.com": 1,
+        "rundo.ca": 1,
+        "fieldcamp.ai": 1,
+        "jobtable.com": 1,
+        "workiz.com": 1,
+        "get.nicejob.com": 1
+      },
+      "canadianHosts": [
+        "capterra.ca",
+        "rundo.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": [
+        "capterra.ca",
+        "workiz.com"
+      ]
+    },
+    {
+      "query": "ai answering service for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20answering%20service%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:20.548Z",
+      "httpStatus": 200,
+      "bytes": 457867,
+      "organic": [
+        {
+          "title": "AI Receptionist: 24/7 Intelligent Virtual Answering Service",
+          "host": "ringcentral.com"
+        },
+        {
+          "title": "what's the best AI answering service for business?",
+          "host": "reddit.com"
+        },
+        {
+          "title": "Best AI Answering Services for Canadian Contractors (2026)",
+          "host": "heyitsclara.com"
+        },
+        {
+          "title": "AI Phone Answering for General Contractors",
+          "host": "askbenny.ca"
+        },
+        {
+          "title": "7 Best AI Receptionists for Contractors 2026 Tested",
+          "host": "lunacal.ai"
+        },
+        {
+          "title": "Voxs | AI Receptionist & Phone Answering Service for ...",
+          "host": "voxs.ca"
+        },
+        {
+          "title": "11 Best Answering Services for Contractors to Book More Jobs",
+          "host": "bland.ai"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "ai answering service for contractors"
+      ],
+      "related": [
+        "View all",
+        "Ai answering service for contractors reddit",
+        "Best ai answering service for contractors",
+        "Ai answering service for contractors reviews",
+        "Ai answering service for contractors cost",
+        "Best AI answering service for small business",
+        "Free AI answering service for android",
+        "AI answering service for personal use",
+        "AI answering service for iPhone"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": false,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "ringcentral.com": 1,
+        "reddit.com": 1,
+        "heyitsclara.com": 1,
+        "askbenny.ca": 1,
+        "lunacal.ai": 1,
+        "voxs.ca": 1,
+        "bland.ai": 1
+      },
+      "canadianHosts": [
+        "askbenny.ca",
+        "voxs.ca"
+      ],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "contractor office automation",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20office%20automation&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:22.823Z",
+      "httpStatus": 200,
+      "bytes": 518772,
+      "organic": [
+        {
+          "title": "Ontraccr",
+          "host": "ontraccr.com"
+        },
+        {
+          "title": "Mastering Construction Workflow Automation",
+          "host": "procore.com"
+        },
+        {
+          "title": "How Contractors Automate Office Tasks | myCT1",
+          "host": "myct1.com"
+        },
+        {
+          "title": "Automation for Trades & Contractors - LogicPros",
+          "host": "logicpros.ca"
+        },
+        {
+          "title": "Revalate: Revolutionizing Construction Office Work with AI ...",
+          "host": "canadiansme.ca"
+        },
+        {
+          "title": "Top 10 Best Construction Software Companies (2026 Guide)",
+          "host": "debutmarketing.ca"
+        },
+        {
+          "title": "Contractor Automation Pricing | AutomateLocal",
+          "host": "automatelocal.ca"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "contractor office automation",
+        "What are the 4 types of workplace automation?",
+        "What is an automation contractor?",
+        "What are examples of office automation?",
+        "What's the best office automation software?"
+      ],
+      "related": [
+        "construction office automation",
+        "contractor office automation",
+        "View all",
+        "Contractor office automation software",
+        "Ontraccr Technologies",
+        "Webir automation careers",
+        "Weber Automation",
+        "Ontraccr login",
+        "Ontraccr pricing"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "ontraccr.com": 1,
+        "procore.com": 1,
+        "myct1.com": 1,
+        "logicpros.ca": 1,
+        "canadiansme.ca": 1,
+        "debutmarketing.ca": 1,
+        "automatelocal.ca": 1
+      },
+      "canadianHosts": [
+        "logicpros.ca",
+        "canadiansme.ca",
+        "debutmarketing.ca",
+        "automatelocal.ca"
+      ],
+      "forumHosts": [],
+      "bigVendorHosts": []
+    },
+    {
+      "query": "ai for roofing companies",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20for%20roofing%20companies&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T04:29:25.387Z",
+      "httpStatus": 200,
+      "bytes": 501365,
+      "organic": [
+        {
+          "title": "10 Ways Roofing Companies Can Use ChatGPT",
+          "host": "roofr.com"
+        },
+        {
+          "title": "11 Ways to Use AI In Your Roofing Business",
+          "host": "roofingcontractor.com"
+        },
+        {
+          "title": "Okay, so AI is everywhere. How are you using AI for ...",
+          "host": "reddit.com"
+        },
+        {
+          "title": "9 Best AI Tools For Roofing Businesses In 2026 (Free Guide)",
+          "host": "myquoteiq.com"
+        },
+        {
+          "title": "AI for Roofing Businesses",
+          "host": "daltonmills.com"
+        },
+        {
+          "title": "8 Ways To Use AI Roofing Tools To Grow Your Business",
+          "host": "quo.com"
+        },
+        {
+          "title": "AI For The Next Generation of Roofing Contractors",
+          "host": "smartroofing.ai"
+        }
+      ],
+      "organicCount": 7,
+      "paaLevel1": [
+        "ai for roofing companies",
+        "How can I use AI for my roofing business?",
+        "Will AI replace roofing contractors?",
+        "Is there an AI app for contractors?",
+        "How to use AI to run a construction company?"
+      ],
+      "related": [
+        "View all",
+        "ai for roofing companies near surrey, bc",
+        "ai for roofing companies near vancouver, bc",
+        "Best ai for roofing companies",
+        "Ai for roofing companies reviews",
+        "Ai for roofing companies reddit",
+        "Ai for roofing companies near me",
+        "Ai for roofing companies legit",
+        "AI roofing robot"
+      ],
+      "features": {
+        "aiOverview": true,
+        "peopleAlsoAsk": true,
+        "ads": false,
+        "discussionsForums": true,
+        "localPack": false,
+        "video": true
+      },
+      "hostMix": {
+        "roofr.com": 1,
+        "roofingcontractor.com": 1,
+        "reddit.com": 1,
+        "myquoteiq.com": 1,
+        "daltonmills.com": 1,
+        "quo.com": 1,
+        "smartroofing.ai": 1
+      },
+      "canadianHosts": [],
+      "forumHosts": [
+        "reddit.com"
+      ],
+      "bigVendorHosts": []
+    }
+  ]
+}
