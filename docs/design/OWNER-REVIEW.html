@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handbuilt AI — Homepage Rebuild, Owner Review</title>
+<style>
+  :root{--ink:#1d1d1f;--muted:#686868;--line:rgba(29,29,31,.10);--field:#f6f6f6;--accent:#e0362c;--ok:#2f6b4f;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--field);color:var(--ink);
+       font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;}
+  .wrap{max-width:1360px;margin:0 auto;padding:40px 24px 100px}
+  h1{font-size:clamp(28px,4vw,42px);line-height:1.1;letter-spacing:-.03em;margin:0 0 8px}
+  h2{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.02em;margin:56px 0 6px;padding-top:24px;border-top:1px solid var(--line)}
+  h3{font-size:17px;margin:26px 0 8px}
+  p{margin:0 0 12px;max-width:76ch}
+  .lede{color:var(--muted);max-width:76ch}
+  .meta{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);margin:0 0 4px}
+  code,.path{font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#fff;
+       border:1px solid var(--line);border-radius:4px;padding:1px 6px;word-break:break-all}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  @media (max-width:900px){.grid2{grid-template-columns:1fr}}
+  figure{margin:0;background:#fff;border-radius:10px;overflow:hidden;
+       box-shadow:0 0 0 1px rgba(0,0,0,.04),0 12px 24px -14px rgba(0,0,0,.10)}
+  figure img{display:block;width:100%;height:auto}
+  figcaption{padding:10px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+  figcaption b{color:var(--ink)}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+       padding:3px 8px;border-radius:4px;margin-right:6px}
+  .before{background:#f1f1f3;color:#555}
+  .after{background:var(--ink);color:#fff}
+  .tall{max-height:78vh;overflow-y:auto;background:#fff}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;border-radius:8px;overflow:hidden;
+       box-shadow:0 0 0 1px var(--line)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#fafafa;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  tr:last-child td{border-bottom:0}
+  .ok{color:var(--ok);font-weight:600}
+  .warn{color:#8a6d00;font-weight:600}
+  .bad{color:var(--accent);font-weight:600}
+  .callout{background:#fff;border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0;
+       box-shadow:0 0 0 1px var(--line)}
+  ul{max-width:76ch}
+  li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Homepage rebuild — owner review</h1>
+<p class="lede">Branch <code>feat/verseo-ui-rebuild</code>. Not pushed, not merged, not deployed.
+Production is untouched and is the “before” shown throughout.</p>
+<p class="meta">Captured 2026-08-01 · before = live aibuiltbyhand.com · after = local production build on :3200 · Chromium, CSS pixels</p>
+
+<div class="callout">
+<b>What you are being asked to approve:</b> the visual direction and the homepage copy — specifically the new H1
+<em>“An AI receptionist for contractors — on the number you already own.”</em> Nothing merges or deploys on approval;
+that stays a separate decision.
+</div>
+
+<!-- ───────────────────────── above the fold ───────────────────────── -->
+<h2>1. Above the fold — desktop 1440px</h2>
+<div class="grid2">
+  <figure>
+    <img src="screenshots/before/PROD-1440-fold.jpeg" alt="Current production homepage, desktop, above the fold">
+    <figcaption><span class="tag before">Before</span><b>Live production.</b> H1 “Missed calls, late quotes, invoice chasing — handled.” Red gradient CTA, iPhone mockup, uppercase mono eyebrow.<br><span class="path">docs/design/screenshots/before/PROD-1440-fold.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/after/NEW-1440-fold.jpeg" alt="Rebuilt homepage, desktop, above the fold">
+    <figcaption><span class="tag after">After</span><b>Rebuild.</b> Names the deliverable, flat near-black CTA, real call-timeline visual labelled as an example.<br><span class="path">docs/design/screenshots/after/NEW-1440-fold.jpeg</span></figcaption>
+  </figure>
+</div>
+
+<h2>2. Above the fold — mobile 390px</h2>
+<div class="grid2">
+  <figure>
+    <img src="screenshots/before/PROD-390-fold.jpeg" alt="Current production homepage, mobile, above the fold">
+    <figcaption><span class="tag before">Before</span>Live production at 390px.<br><span class="path">docs/design/screenshots/before/PROD-390-fold.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/after/NEW-390-fold.jpeg" alt="Rebuilt homepage, mobile, above the fold">
+    <figcaption><span class="tag after">After</span>Stacked full-width CTAs, primary first. 17px body, not the reference’s 15px.<br><span class="path">docs/design/screenshots/after/NEW-390-fold.jpeg</span></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────── full page ───────────────────────── -->
+<h2>3. Full page — desktop</h2>
+<div class="grid2">
+  <figure>
+    <img class="tall" src="screenshots/before/PROD-1440-full.jpeg" alt="Full current production homepage, desktop">
+    <figcaption><span class="tag before">Before</span>Scroll inside the frame.<br><span class="path">docs/design/screenshots/before/PROD-1440-full.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img class="tall" src="screenshots/after/NEW-1440-full.jpeg" alt="Full rebuilt homepage, desktop">
+    <figcaption><span class="tag after">After</span>11 sections, 10,379px tall.<br><span class="path">docs/design/screenshots/after/NEW-1440-full.jpeg</span></figcaption>
+  </figure>
+</div>
+
+<h2>4. Full page — mobile 390px</h2>
+<p class="lede">The rebuilt mobile page is 17,119px tall, which exceeds Chromium’s single-capture limit, so it is
+in three sequential segments. The “before” fitted in one capture.</p>
+<div class="grid2">
+  <figure>
+    <img class="tall" src="screenshots/before/PROD-390-full.jpeg" alt="Full current production homepage, mobile">
+    <figcaption><span class="tag before">Before</span>Full page, one capture.<br><span class="path">docs/design/screenshots/before/PROD-390-full.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img class="tall" src="screenshots/after/NEW-390-full-part1.jpeg" alt="Rebuilt homepage mobile, segment 1">
+    <figcaption><span class="tag after">After 1 / 3</span>0 → 5,700px<br><span class="path">docs/design/screenshots/after/NEW-390-full-part1.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img class="tall" src="screenshots/after/NEW-390-full-part2.jpeg" alt="Rebuilt homepage mobile, segment 2">
+    <figcaption><span class="tag after">After 2 / 3</span>5,700 → 11,400px<br><span class="path">docs/design/screenshots/after/NEW-390-full-part2.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img class="tall" src="screenshots/after/NEW-390-full-part3.jpeg" alt="Rebuilt homepage mobile, segment 3">
+    <figcaption><span class="tag after">After 3 / 3</span>11,419 → 17,119px<br><span class="path">docs/design/screenshots/after/NEW-390-full-part3.jpeg</span></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────── section order ───────────────────────── -->
+<h2>5. Section order — measured offsets</h2>
+<p class="lede">Read off the rendered page, not estimated.</p>
+<table>
+<tr><th>#</th><th>Section</th><th>Anchor</th><th>Top (px)</th><th>Height</th><th>Why it is here</th></tr>
+<tr><td>1</td><td>Hero</td><td>—</td><td>72</td><td>676</td><td>Deliverable + differentiator + both routes</td></tr>
+<tr><td>2</td><td>Live calculator</td><td>—</td><td>748</td><td>807</td><td>Replaces the reference’s client-logo strip. No customers exist; a working tool cannot be faked</td></tr>
+<tr><td>3</td><td>Problem selector</td><td>—</td><td>1,555</td><td>813</td><td>Three symptoms, routed to a tool each</td></tr>
+<tr><td>4</td><td>Before / after</td><td>—</td><td>2,368</td><td>787</td><td>Two flat cards + one elevated — the reference’s pattern</td></tr>
+<tr><td>5</td><td>Four systems</td><td><code>#what-we-install</code></td><td>3,155</td><td>987</td><td>Named deliverables, not category language</td></tr>
+<tr><td>6</td><td>How it works</td><td><code>#how-it-works</code></td><td>4,142</td><td>1,156</td><td>Sticky panel on desktop, plain stack on mobile</td></tr>
+<tr><td>7</td><td>Free tools</td><td><code>#tools</code></td><td>5,298</td><td>969</td><td>Driven by the tool registry</td></tr>
+<tr><td>8</td><td>Pricing</td><td><code>#pricing</code></td><td>6,267</td><td>1,249</td><td>Rendered from <code>packages.ts</code>. No monthly/annual toggle</td></tr>
+<tr><td>9</td><td>Surrey / local</td><td>—</td><td>7,516</td><td>622</td><td>Only AI-Overview-free SERPs found were Surrey-local</td></tr>
+<tr><td>10</td><td>Objections FAQ</td><td><code>#faq</code></td><td>8,138</td><td>1,021</td><td>Every question is a live PAA question or a real Reddit title</td></tr>
+<tr><td>11</td><td>Final CTA</td><td>—</td><td>9,158</td><td>519</td><td>Inverted ink band, three honest actions</td></tr>
+</table>
+
+<!-- ───────────────────────── calculator ───────────────────────── -->
+<h2>6. The calculator — default and completed</h2>
+<div class="grid2">
+  <figure>
+    <img src="screenshots/after/NEW-1440-calculator-default.jpeg" alt="Calculator in its default state">
+    <figcaption><b>Default.</b> 120 calls · 25% missed · $1,200 job → <b>$120,960</b>. Both fixed assumptions are printed on screen.<br><span class="path">docs/design/screenshots/after/NEW-1440-calculator-default.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/after/NEW-1440-calculator-completed.jpeg" alt="Calculator after moving the sliders">
+    <figcaption><b>Completed.</b> 260 · 35% · $2,400 → <b>$733,824</b>, matching an independent recomputation of 260 × 0.35 × 0.70 × 0.40 × 2,400 × 12 exactly.<br><span class="path">docs/design/screenshots/after/NEW-1440-calculator-completed.jpeg</span></figcaption>
+  </figure>
+</div>
+<p class="lede">It calls the same <code>computeMissedCall</code> as <code>/tools/missed-call-revenue-calculator</code>,
+so the homepage figure cannot drift from the full tool.</p>
+
+<!-- ───────────────────────── sections ───────────────────────── -->
+<h2>7. Pricing, tools, footer</h2>
+<div class="grid2">
+  <figure>
+    <img src="screenshots/after/NEW-1440-pricing.jpeg" alt="Pricing section">
+    <figcaption><b>Pricing.</b> All figures from <code>packages.ts</code>. Middle card elevated. No subscription toggle.<br><span class="path">docs/design/screenshots/after/NEW-1440-pricing.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/after/NEW-1440-tools.jpeg" alt="Free tools section">
+    <figcaption><b>Free tools.</b> Driven by the registry — adding a tool adds a card.<br><span class="path">docs/design/screenshots/after/NEW-1440-tools.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/after/NEW-1440-cta-footer.jpeg" alt="Final CTA band and footer">
+    <figcaption><b>Final CTA + footer.</b> Shows the two weaknesses called out below: dead space under the CTA cards, and a footer still in the old design language.<br><span class="path">docs/design/screenshots/after/NEW-1440-cta-footer.jpeg</span></figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/reference/ref-1440-01-hero.jpeg" alt="Verseo reference hero for comparison">
+    <figcaption><b>The reference</b>, for comparison. Note what was deliberately NOT taken: the pastel accents, the 15px body, the cloud photograph.<br><span class="path">docs/design/screenshots/reference/ref-1440-01-hero.jpeg</span></figcaption>
+  </figure>
+</div>
+
+<!-- ───────────────────────── CTAs ───────────────────────── -->
+<h2>8. Every CTA and its destination</h2>
+<p class="lede">All 45 links on the page were requested; <span class="ok">0 returned anything other than 200</span>.</p>
+<table>
+<tr><th>Where</th><th>Label</th><th>Destination</th></tr>
+<tr><td>Header</td><td>Book a review</td><td><code>/create</code></td></tr>
+<tr><td>Hero primary</td><td>Book an AI opportunity review</td><td><code>/create</code></td></tr>
+<tr><td>Hero secondary</td><td>See what missed calls cost you</td><td><code>/tools/missed-call-revenue-calculator</code></td></tr>
+<tr><td>Calculator</td><td>Get this checked properly</td><td><code>/create</code></td></tr>
+<tr><td>Selector — calls</td><td>See what missed calls cost you</td><td><code>/tools/missed-call-revenue-calculator</code></td></tr>
+<tr><td>Selector — quotes</td><td>Write a follow-up now</td><td><code>/tools/contractor-quote-follow-up-generator</code></td></tr>
+<tr><td>Selector — admin</td><td>Find the leak</td><td><code>/tools/contractor-lead-leak-audit</code></td></tr>
+<tr><td>System cards</td><td>How it works ×4</td><td><code>/ai-receptionist-for-contractors</code>, <code>/ai-business-system</code>, <code>/services/ai-review-engine</code></td></tr>
+<tr><td>Process rail</td><td>Book an AI opportunity review</td><td><code>/create</code></td></tr>
+<tr><td>Pricing</td><td>Start with Starter</td><td><code>/create?package=starter</code></td></tr>
+<tr><td>Pricing</td><td>Build my system</td><td><code>/create?package=business</code></td></tr>
+<tr><td>Pricing</td><td>Request a quote</td><td><code>/create?package=custom</code></td></tr>
+<tr><td>Pricing</td><td>Full pricing</td><td><code>/pricing</code></td></tr>
+<tr><td>Local</td><td>AI receptionist in Surrey</td><td><code>/locations/ai-receptionist-surrey-bc</code> <span class="warn">— was a 404, fixed</span></td></tr>
+<tr><td>Final CTA</td><td>Use a free tool / Book a review / Apply as a design partner</td><td><code>/tools</code>, <code>/create</code>, <code>/create?intent=design-partner</code></td></tr>
+</table>
+
+<!-- ───────────────────────── not screenshottable ───────────────────────── -->
+<h2>9. What screenshots cannot show</h2>
+<ul>
+<li><b>Scroll reveal.</b> Sections fade up 14px over 420ms once, via IntersectionObserver. Fully disabled under <code>prefers-reduced-motion</code>, and content renders visible if JS never runs.</li>
+<li><b>Sticky process panel.</b> On desktop the left card pins at <code>top: nav + 32px</code> while the three step cards scroll past. <b>Disabled below 1024px</b> — verified: the only sticky element at 390px is the header.</li>
+<li><b>Live calculator.</b> Three sliders recompute on every input; the output is <code>aria-live="polite"</code> so screen readers hear the change.</li>
+<li><b>Problem selector.</b> Real tabs — <code>role="tab"</code>, <code>aria-selected</code>, <code>aria-controls</code>; the window-chrome label updates with the active tab.</li>
+<li><b>FAQ accordion.</b> Eight <code>aria-expanded</code> buttons, 44px toggles, one open at a time.</li>
+<li><b>Mobile menu.</b> Opens, locks body scroll, closes on Escape and restores scroll. Six 48px rows.</li>
+<li><b>Focus rings.</b> Every interactive element shows a red ring on keyboard focus. Verified on 40 elements.</li>
+<li><b>Hover.</b> Cards lift 2px with a deeper shadow; the peg icons and arrows shift on hover.</li>
+</ul>
+
+<!-- ───────────────────────── critique ───────────────────────── -->
+<h2>10. My own critique of this work</h2>
+
+<h3 class="ok">Strongest decision</h3>
+<p>Putting a <b>working calculator</b> where the template puts a customer-logo strip. It converts the biggest weakness — zero
+customers — into the one thing a brochure competitor cannot copy in an afternoon, and it does it above the fold. Across
+34 collected SERPs no competitor shipped a working tool.</p>
+
+<h3 class="bad">Weakest section</h3>
+<p><b>The final CTA band.</b> Three cards in a 519px dark band leaves visible dead space beneath them, and the three
+options are not differentiated enough visually — “Book a review” is the one that matters and it only gets a white fill.
+The band reads as filler rather than a close.</p>
+
+<h3 class="warn">Still template-like</h3>
+<p><b>The four system cards.</b> Icon → title → three labelled rows → arrow link is the most generic pattern on the page;
+swap the copy and it could be any SaaS site. The pegboard icons are the only thing rescuing it.</p>
+<p><b>The footer was never redesigned.</b> I added links to it but left the old styling — smaller type, different muted
+grey, different spacing scale. It is visibly from the previous design system and it is the last thing on the page.</p>
+
+<h3>Copied too closely from Verseo</h3>
+<p><b>The bracketed eyebrow</b> <code>[ like this ]</code> is lifted essentially verbatim — it is the template's single
+most recognisable typographic tell, and I reproduced it with only a red dot added. If Verseo is a template you have seen,
+you will recognise it. Everything else was translated (pegboard for dot-matrix, drafting sheet for sky photo, one accent
+instead of three pastels); this one was not, and it is the fair criticism to make.</p>
+<p>The <b>window chrome</b> is also close, though it at least carries an argument here — “this runs inside your own accounts”.</p>
+
+<h3>Does it read as a premium contractor-AI company, or a generic AI agency?</h3>
+<p><b>Mostly the former, and the copy is doing more of that work than the design.</b> “On the number you already own”,
+“while you’re on site”, “Cloverdale”, “gutter replacement estimate”, CAD prices on the page and the Surrey section are
+specific in a way a generic agency site is not. The restraint helps — no gradients, no glow, no stock imagery.</p>
+<p>Where it slips: the layout system itself is <em>correct</em> rather than <em>distinctive</em>. A very well-executed
+premium SaaS page. Nothing about the grid, the cards or the type says <em>trades</em>. A contractor would find it
+credible and calm; they would not find it <em>theirs</em>.</p>
+
+<h3>What one more design pass would change</h3>
+<ol>
+<li><b>Restyle the footer</b> into the new system. It is the most visible inconsistency and it is cheap to fix.</li>
+<li><b>Rebuild the final CTA</b> — kill the dead space, make “Book a review” dominant, demote the other two to text links.</li>
+<li><b>Replace the bracketed eyebrow</b> with something of our own so the strongest borrowed element stops being borrowed.</li>
+<li><b>Give the four system cards a real visual</b> — a small diagram per card instead of icon-plus-text.</li>
+<li><b>Push one genuinely trade-specific visual device</b> through the page. The drafting sheet appears once, behind
+the process section; it should be the spine of the whole design rather than a single texture.</li>
+</ol>
+
+<h2>11. Review surface</h2>
+<p><b>Screenshots in this document are the review surface.</b> Nothing has been pushed or deployed, so there is no hosted
+preview URL — creating one would require pushing the branch, which you have withheld.</p>
+<p>To see it live and clickable on your own machine, from the repository root:</p>
+<p><code>npx next build &amp;&amp; npx next start -p 3200</code> &nbsp;→&nbsp; <code>http://localhost:3200/</code></p>
+<p class="lede">Use <code>npx next build</code>, never <code>npm run build</code> — the npm script runs
+<code>prisma migrate deploy</code> first and would touch the live database.</p>
+<p class="meta">This document: docs/design/OWNER-REVIEW.html · open it directly in a browser; image paths are relative.</p>
+
+</div>
+</body>
+</html>

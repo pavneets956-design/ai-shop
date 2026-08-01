@@ -33,15 +33,22 @@ Three components, each evidenced:
 **Eyebrow:** `[ for Surrey & Metro Vancouver contractors ]`
 > Local qualifier. Only AI-Overview-free SERPs found were Surrey-local `[V]`; `ai services surrey` has first-party impressions `[V]`.
 
-**H1:**
-> # Missed calls become booked jobs.
+**H1:** *(revised — see `research/search-demand/13-hero-decision.md` for the three-way comparison)*
+> # An AI receptionist for contractors — on the number you already own.
 
-> "missed calls" is required customer language and the largest problem cluster `[D]`; "booked jobs" is the outcome, not the mechanism. Deliberately **not** "AI-powered" anything — the 111-comment thread *"Why is every construction 'AI' demo a Sci-Fi movie…"* is explicit hostility to that framing `[V]`.
+> An earlier draft read *"Missed calls become booked jobs."* It was clear and outcome-framed but **never said what was being sold**, and it abandoned the only entity association the site has. Its "missed calls" framing rested on autocomplete breadth, which YouTube data later showed to be 50% builder/agency intent bare.
+>
+> First clause: the site's **#1 first-party GSC query** (50 impr), head of the 156-impression cluster, and the only phrasing measured at **100% buyer intent** `[V]`.
+> Second clause: answers the live PAA question about number portability (`crtc.gc.ca` ranks on it), is said by **zero** competitors across 34 SERPs, and is what stops the headline reading as a generic answering service — which by definition gives you *their* number `[V]`.
+>
+> Deliberately **not** "AI-powered" anything, and no absolutes like "never" — the 111-comment thread *"Why is every construction 'AI' demo a Sci-Fi movie…"* is explicit hostility to the first, and the second would be an unsupportable claim.
 
 **Supporting copy:**
-> We install an AI receptionist into the phone number and accounts you already own — answering, booking and following up while you're on site. You keep the number, the data and the accounts. Export or cancel any time.
+> It answers the calls you miss while you're on site, books the job into your calendar, and chases the quotes that go quiet. Installed in about a week.
+>
+> Not a subscription you have to figure out. You keep the number, the data and the accounts — export or cancel any time.
 
-> "while you're on site" is contractor-situational language `[V]`. The ownership sentence pre-empts all three objection queries in one line `[V]`.
+> Problem language ("missed calls", "quotes go quiet") lives here rather than in the H1. "while you're on site" is contractor-situational `[V]`. "Installed in about a week" matches `packages.ts` (Starter: ~5 business days). "Not a subscription" answers `contractor software without subscription`, scored attack-now `[V]`.
 
 **Primary CTA:** `Book an AI opportunity review` → `/create`
 **Secondary CTA:** `See what missed calls cost you` → `/tools/missed-call-revenue-calculator`
