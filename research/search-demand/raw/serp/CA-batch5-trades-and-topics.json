@@ -1,0 +1,127 @@
+{
+  "batch": "CA-5-trades-and-topics",
+  "n": 12,
+  "collectedAt": "2026-08-01T05:56:10.159Z",
+  "results": [
+    {
+      "query": "ai tools for electricians",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20electricians&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:01.604Z",
+      "httpStatus": 200,
+      "bytes": 564786,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai tools for plumbers",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20plumbers&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:07.152Z",
+      "httpStatus": 200,
+      "bytes": 547233,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai tools for landscapers",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20landscapers&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:12.989Z",
+      "httpStatus": 200,
+      "bytes": 848937,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai tools for hvac contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20hvac%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:18.629Z",
+      "httpStatus": 200,
+      "bytes": 519260,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai tools for general contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20tools%20for%20general%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:24.106Z",
+      "httpStatus": 200,
+      "bytes": 484318,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "appointment booking for home service business",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=appointment%20booking%20for%20home%20service%20business&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:29.705Z",
+      "httpStatus": 200,
+      "bytes": 462220,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai review requests for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20review%20requests%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:35.314Z",
+      "httpStatus": 200,
+      "bytes": 472162,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai website chat for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20website%20chat%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:41.147Z",
+      "httpStatus": 200,
+      "bytes": 516270,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "surrey contractor marketing",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=surrey%20contractor%20marketing&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:46.893Z",
+      "httpStatus": 200,
+      "bytes": 416792,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "contractor lead follow up software",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=contractor%20lead%20follow%20up%20software&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:53.282Z",
+      "httpStatus": 200,
+      "bytes": 415349,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "automated estimates for contractors",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=automated%20estimates%20for%20contractors&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:55:58.841Z",
+      "httpStatus": 200,
+      "bytes": 460285,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    },
+    {
+      "query": "ai receptionist canada",
+      "market": "CA",
+      "requestUrl": "https://www.google.com/search?q=ai%20receptionist%20canada&gl=ca&hl=en&pws=0&num=20",
+      "collectedAt": "2026-08-01T05:56:04.601Z",
+      "httpStatus": 200,
+      "bytes": 729051,
+      "collectionFailed": true,
+      "failureReason": "zero organic parsed or interstitial - NOT evidence of no demand"
+    }
+  ]
+}

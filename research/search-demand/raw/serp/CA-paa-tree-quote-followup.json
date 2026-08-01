@@ -1,0 +1,53 @@
+{
+  "rootQuery": "quote follow up for contractors",
+  "market": "CA",
+  "requestUrl": "https://www.google.com/search?q=quote+follow+up+for+contractors&gl=ca&hl=en&pws=0",
+  "collectedAt": "2026-08-01T05:54:06.901Z",
+  "conclusion": "expansion yielded NO additional questions - PAA depth on this SERP is level 1 only",
+  "level1": [
+    "quote follow up for contractors",
+    "How to professionally follow up on a quote?",
+    "How long should I wait for a quote from a contractor?",
+    "How to professionally follow up on an estimate?",
+    "How to follow up after submitting a quote?"
+  ],
+  "finalAll": [
+    "quote follow up for contractors",
+    "How to professionally follow up on a quote?",
+    "How long should I wait for a quote from a contractor?",
+    "How to professionally follow up on an estimate?",
+    "How to follow up after submitting a quote?"
+  ],
+  "attemptLog": [
+    {
+      "step": "initial",
+      "count": 5,
+      "questions": [
+        "quote follow up for contractors",
+        "How to professionally follow up on a quote?",
+        "How long should I wait for a quote from a contractor?",
+        "How to professionally follow up on an estimate?",
+        "How to follow up after submitting a quote?"
+      ]
+    },
+    {
+      "step": "A: click [data-q] host",
+      "count": 5,
+      "newQuestions": []
+    },
+    {
+      "step": "B: found aria-expanded=false",
+      "count": 16
+    },
+    {
+      "step": "B: after clicking expandables",
+      "count": 5,
+      "newQuestions": []
+    },
+    {
+      "step": "C: after scroll to bottom",
+      "count": 5,
+      "newQuestions": []
+    }
+  ]
+}

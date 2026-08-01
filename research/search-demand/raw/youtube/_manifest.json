@@ -1,0 +1,20 @@
+{
+  "collectedAt": "2026-08-01T05:51:54.419Z",
+  "seeds": 20,
+  "markets": [
+    "CA",
+    "US"
+  ],
+  "uniqueSuggestions": 177,
+  "stats": {
+    "requests": 40,
+    "ok": 40,
+    "failed": 0,
+    "suggestions": 281,
+    "builder": 50,
+    "buyer": 51,
+    "neutral": 180
+  },
+  "builderShare": "17.8%",
+  "note": "Builder/agency vs buyer split is the point of this file. A term whose YouTube suggestions are dominated by n8n / GoHighLevel / 'agency' / 'tutorial' is saturated with implementers researching how to sell it, not contractors looking to buy it."
+}

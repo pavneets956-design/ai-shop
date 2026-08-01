@@ -1,0 +1,87 @@
+{
+  "rootQuery": "is an ai receptionist worth it",
+  "market": "CA",
+  "requestUrl": "https://www.google.com/search?q=is+an+ai+receptionist+worth+it&gl=ca&hl=en&pws=0",
+  "collectedAt": "2026-08-01T05:53:01.077Z",
+  "method": "live PAA click-expansion, breadth-first, depth cap 3",
+  "expansionsPerformed": 5,
+  "level1Count": 5,
+  "totalQuestions": 5,
+  "tree": [
+    {
+      "q": "is an ai receptionist worth it",
+      "depth": 1,
+      "children": []
+    },
+    {
+      "q": "Is AI receptionist legit?",
+      "depth": 1,
+      "children": []
+    },
+    {
+      "q": "Will receptionists be replaced by AI?",
+      "depth": 1,
+      "children": []
+    },
+    {
+      "q": "How much should I charge for an AI receptionist?",
+      "depth": 1,
+      "children": []
+    },
+    {
+      "q": "What does an AI receptionist do?",
+      "depth": 1,
+      "children": []
+    }
+  ],
+  "flat": [
+    "is an ai receptionist worth it",
+    "Is AI receptionist legit?",
+    "Will receptionists be replaced by AI?",
+    "How much should I charge for an AI receptionist?",
+    "What does an AI receptionist do?"
+  ],
+  "features": {
+    "aiOverview": true,
+    "ads": true,
+    "peopleAlsoAsk": true
+  },
+  "organic": [
+    {
+      "title": "is an ai receptionist for small business actually worth ...",
+      "host": "reddit.com"
+    },
+    {
+      "title": "is an ai receptionist for small business actually worth setting ...",
+      "host": "reddit.com"
+    },
+    {
+      "title": "Will AI replace receptionists? - CareerExplorer",
+      "host": "careerexplorer.com"
+    },
+    {
+      "title": "AI Receptionist Pricing in 2026: Plans, Costs & Best Value",
+      "host": "getnextphone.com"
+    },
+    {
+      "title": "AI Receptionist for Small Business | Is it worth it?",
+      "host": "imagicle.com"
+    },
+    {
+      "title": "Best AI Receptionist Canada 2026: Ranked and Compared",
+      "host": "heyjodie.com"
+    },
+    {
+      "title": "What Is an AI Receptionist? A Practical Guide for Canadian ...",
+      "host": "polarisvoice.ca"
+    },
+    {
+      "title": "AI Receptionist vs. Human Receptionist: What's Best for You?",
+      "host": "nextiva.com"
+    },
+    {
+      "title": "Is an AI Receptionist Worth It for a Canadian Small Business?",
+      "host": "therebelchick.com"
+    }
+  ]
+}

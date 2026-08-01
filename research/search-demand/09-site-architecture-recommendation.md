@@ -34,7 +34,7 @@
 |---|---|---|
 | `/faq` | Currently generic | Rebuild around the four evidenced objections: *will it annoy my customers* · *can I keep my phone number* · *who owns my data / can I export* · *what happens if I cancel*. All four are verified live PAA or Reddit threads. |
 | `/tools/contractor-quote-follow-up-generator` | Titled "estimate" language | Retarget to **"quote"** (104 variants vs 23). Answer *"How to professionally follow up on an estimate?"* verbatim — it recurs in 3 PAA trees. |
-| `/locations/surrey` | Generic location template | Make it a real local landing page: it targets the two AI-Overview-free queries and faces six named Surrey competitors. |
+| `/locations/ai-receptionist-surrey-bc` | Generic location template | Make it a real local landing page: it targets the two AI-Overview-free queries and faces six named Surrey competitors. |
 | `/industries/roofing` | Generic | Add *"Will AI replace roofing contractors?"* — surfaced by Google's own PAA. |
 | `/ai-business-system` | Positions as a system purchase | Add the "software you bought but never got set up" angle from `I'm really disappointed with Jobber` (112 comments). |
 

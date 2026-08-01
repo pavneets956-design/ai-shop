@@ -40,9 +40,9 @@
     }
   },
   "serp": {
-    "collected": 48,
+    "collected": 62,
     "usable": 34,
-    "failed": 14,
+    "failed": 28,
     "failedQueries": [
       "estimate follow up template",
       "how many times should a contractor follow up",
@@ -57,7 +57,21 @@
       "ai automation for small business surrey",
       "quote follow up software",
       "contractor missed calls",
-      "ai automation surrey bc"
+      "ai tools for electricians",
+      "ai tools for plumbers",
+      "ai tools for landscapers",
+      "ai tools for hvac contractors",
+      "ai tools for general contractors",
+      "appointment booking for home service business",
+      "ai review requests for contractors",
+      "ai website chat for contractors",
+      "surrey contractor marketing",
+      "contractor lead follow up software",
+      "automated estimates for contractors",
+      "ai receptionist canada",
+      "ai automation surrey bc",
+      null,
+      null
     ],
     "aiOverviewPresent": 32,
     "paaPresent": 22,

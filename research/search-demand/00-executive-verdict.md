@@ -2,6 +2,30 @@
 
 **Date:** 2026-08-01 · **Market:** Canada (primary), US (context) · **Collector:** Surrey, BC
 
+> ## ⚠️ Superseded in part — read `11-research-addendum.md` first
+>
+> A second pass mined the first-party GSC export already in the repo
+> (`research/gsc-baseline/raw/gsc/queries-raw.tsv`, 92 real queries) and it
+> **overturns the hero recommendation below**:
+>
+> | Cluster | First-party impressions |
+> |---|---:|
+> | AI receptionist | **168 (38.4%)** |
+> | Vancouver/Surrey local | 92 (21.1%) |
+> | Quotes / estimates | **8 (1.8%)** |
+> | Missed call | **2 (0.5%)** |
+>
+> §9 below recommends the H1 *"Quotes go quiet. Calls get missed."* on the
+> strength of autocomplete breadth. **That is wrong.** YouTube autocomplete
+> shows `missed call text back` is 50% builder/agency intent (n8n, GoHighLevel)
+> — it measured implementers, not contractors.
+>
+> The shipped H1 is **"Missed calls become booked jobs."** and the hero leads
+> with the AI receptionist. Everything else in this file stands.
+>
+> Also corrected: PAA levels 2–3 were listed as untested `[U]`. They have now
+> been tested with three techniques and **do not exist** on these SERPs.
+
 # `PARTIAL EVIDENCE — PROCEED WITH LISTED ASSUMPTIONS`
 
 Live evidence was obtained and is substantial: **2,400 autocomplete requests** (100% success, 0 throttle events, 8,822 suggestions), **34 usable live Canadian SERPs** with People Also Ask, and **334 Reddit posts** across seven contractor subreddits.
@@ -37,7 +61,7 @@ Runner-up: **quote follow-up**. *"How to professionally follow up on an estimate
 **Internal branding.** Zero occurrences across 3,660 CA suggestions, all collected PAA, and 334 Reddit titles. Keep it as a product name for sales conversations; never use it as an H1, a nav label, or an SEO target.
 
 ### 6. Which five pages should be the primary acquisition pages?
-1. `/locations/surrey` — targets the only two AI-Overview-free SERPs found
+1. `/locations/ai-receptionist-surrey-bc` — targets the only two AI-Overview-free SERPs found
 2. `/pricing` — targets the strongest commercial query
 3. `/tools` + the calculators — the one asset class no competitor on 34 SERPs shipped
 4. `/industries/roofing` — the open trade-specificity gap
@@ -130,7 +154,7 @@ Full table: `07-keyword-intent-map.tsv`. `[V]` = live SERP collected.
 5. Lead-leak audit — **shipped**, keep as composite
 
 ## Top 5 landing-page opportunities
-1. `/locations/surrey` 2. `/pricing` 3. `/industries/roofing` 4. `/ai-business-system` 5. `/tools`
+1. `/locations/ai-receptionist-surrey-bc` 2. `/pricing` 3. `/industries/roofing` 4. `/ai-business-system` 5. `/tools`
 
 ## Top 5 comparison opportunities
 All **after proof** — every one is directory- or Reddit-dominated:
