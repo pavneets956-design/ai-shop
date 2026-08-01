@@ -1,0 +1,6 @@
+source_report,dimension,filters,row_count,clicks,impressions,property_total_clicks,property_total_impressions,delta_clicks,delta_impressions,additive,explanation
+raw/gsc/countries-raw.tsv,country,none,25,3,609,3,609,0,0,yes,Property-aggregated dimension; matches the property total exactly.
+raw/gsc/devices-raw.tsv,device,none,3,3,609,3,609,0,0,yes,Property-aggregated dimension; matches the property total exactly.
+raw/gsc/queries-raw.tsv,query,none,92,0,437,3,609,-3,-172,no,Anonymised queries are omitted from the table but included in chart totals. All 3 clicks fall inside the withheld bucket so the query table shows 0 clicks.
+raw/gsc/pages-raw.tsv,page,none,81,4,803,3,609,1,194,no,Table is aggregated by page while the total is aggregated by property. One SERP showing several site URLs counts as 1 property impression but N page impressions.
+NOT_ARCHIVED,date,none,46,3,609,3,609,0,0,unverifiable,Reported reconciling at capture time but no dates-raw.tsv was archived. Provenance gap; not a verified check.

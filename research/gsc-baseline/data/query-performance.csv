@@ -1,0 +1,93 @@
+query,clicks,impressions,ctr_pct,avg_position,cluster,branded,intent_band
+"ai receptionist for contractors",0,50,0,71.9,ai-receptionist,false,pos50plus
+"custom chatbot development vancouver",0,42,0,69.0,chatbot,false,pos50plus
+"ai receptionist for construction",0,34,0,72.9,ai-receptionist,false,pos50plus
+"ai chatbot development vancouver",0,29,0,82.4,chatbot,false,pos50plus
+"ai leads for contractors",0,22,0,74.7,trades,false,pos50plus
+"ai receptionist for small business",0,19,0,84.8,ai-receptionist,false,pos50plus
+"is an ai receptionist worth it?",0,15,0,45.8,ai-receptionist,false,pos21-50
+"ai services surrey",0,11,0,88.6,other,false,pos50plus
+"virtual receptionists for contractors",0,11,0,96.0,ai-receptionist,false,pos50plus
+"handbuilt",0,9,0,41.2,other,true,pos21-50
+"custom chatbot development canada",0,9,0,89.6,chatbot,false,pos50plus
+"done for you ai automation",0,8,0,50.9,other,false,pos50plus
+"ai receptionist for trades",0,8,0,74.4,ai-receptionist,false,pos50plus
+"ai chatbot development in vancouver",0,8,0,91.9,chatbot,false,pos50plus
+"ai sales follow up system for construction company",0,6,0,78.0,quote-follow-up,false,pos50plus
+"contractor automation tools",0,6,0,83.3,trades,false,pos50plus
+"ai workers",0,5,0,67.2,other,false,pos50plus
+"ai automation for gyms",0,5,0,68.6,other,false,pos50plus
+"ai automation for contractors",0,5,0,71.2,trades,false,pos50plus
+"ai quoting software contractors",0,5,0,81.0,quote-follow-up,false,pos50plus
+"ai receptionist for carpenters",0,5,0,85.0,ai-receptionist,false,pos50plus
+"is an ai receptionist worth it",0,4,0,56.8,ai-receptionist,false,pos50plus
+"done-for-you ai systems canada",0,4,0,63.5,other,false,pos50plus
+"ai receptionist for construction companies",0,4,0,80.0,ai-receptionist,false,pos50plus
+"ai answering service for builders",0,4,0,81.2,ai-receptionist,false,pos50plus
+"automating physio clinic admin",0,4,0,87.8,other,false,pos50plus
+"ai chatbot for drywall contractors",0,4,0,95.0,chatbot,false,pos50plus
+"ai worker",0,3,0,46.3,other,false,pos21-50
+"automation for physio clinics",0,3,0,51.0,other,false,pos50plus
+"hand built",0,3,0,54.0,other,true,pos50plus
+"done-for-you ai hamilton ontario",0,3,0,72.7,other,false,pos50plus
+"ai chatbot for contractors",0,3,0,75.0,chatbot,false,pos50plus
+"expert-built workflows",0,3,0,75.0,other,false,pos50plus
+"ai chatbot calgary",0,3,0,75.7,chatbot,false,pos50plus
+"ai lead follow up",0,3,0,78.0,quote-follow-up,false,pos50plus
+"can ai auto-fill seller fields from conversations",0,3,0,87.7,other,false,pos50plus
+"ai chatbot cost",0,3,0,92.7,chatbot,false,pos50plus
+"contractor phone automation",0,3,0,98.0,ai-receptionist,false,pos50plus
+"what is the best way to automate customer support replies with ai while keeping accurate order details?",0,2,0,8.5,other,false,page1
+"is ai receptionist worth it",0,2,0,42.5,ai-receptionist,false,pos21-50
+"ai business phone",0,2,0,70.0,ai-receptionist,false,pos50plus
+"can ai follow up with old leads without my team touching them",0,2,0,71.0,quote-follow-up,false,pos50plus
+"physio clinic automation tools",0,2,0,77.0,other,false,pos50plus
+"ai integration cost",0,2,0,86.0,other,false,pos50plus
+"ai quote generation for field service",0,2,0,86.0,quote-follow-up,false,pos50plus
+"pre-built integration",0,2,0,87.5,other,false,pos50plus
+"paynudges.com",0,2,0,91.5,other,false,pos50plus
+"builder lead follow up",0,2,0,92.0,quote-follow-up,false,pos50plus
+"ai receptionist for tradespeople",0,2,0,93.0,ai-receptionist,false,pos50plus
+"builder automated follow up",0,2,0,95.0,quote-follow-up,false,pos50plus
+"painter voice assistant",0,2,0,95.5,ai-receptionist,false,pos50plus
+"prebuilt integrations",0,2,0,100.0,other,false,pos50plus
+"intercom fin site-exclusion operator query",0,1,0,9.0,other,false,page1
+"ai cold calling software for construction companies",0,1,0,18.0,ai-receptionist,false,page2
+"done-for-you ai automation",0,1,0,39.0,other,false,pos21-50
+"is ai voice cloning illegal?",0,1,0,39.0,ai-receptionist,false,pos21-50
+"best ai tools for creators",0,1,0,41.0,creators,false,pos21-50
+"facebook leads automation",0,1,0,48.0,other,false,pos21-50
+"best ai for contractors",0,1,0,57.0,trades,false,pos50plus
+"ai assistant for creators",0,1,0,62.0,creators,false,pos50plus
+"facebook lead ads automation",0,1,0,63.0,other,false,pos50plus
+"ai voice cloning consent",0,1,0,65.0,ai-receptionist,false,pos50plus
+"custom ai mobile app",0,1,0,65.0,other,false,pos50plus
+"ai receptionist for handyman services",0,1,0,67.0,ai-receptionist,false,pos50plus
+"missed call text back automation",0,1,0,68.0,missed-calls,false,pos50plus
+"automation for personal trainer",0,1,0,69.0,other,false,pos50plus
+"ai tools for tradespeople",0,1,0,70.0,trades,false,pos50plus
+"home builder automated follow up",0,1,0,72.0,quote-follow-up,false,pos50plus
+"chatbot for small business",0,1,0,73.0,chatbot,false,pos50plus
+"google business profile automation tool",0,1,0,76.0,other,false,pos50plus
+"contractor ai solutions",0,1,0,77.0,trades,false,pos50plus
+"ai services coquitlam",0,1,0,78.0,other,false,pos50plus
+"missed call automation",0,1,0,78.0,missed-calls,false,pos50plus
+"sop ai",0,1,0,81.0,other,false,pos50plus
+"pre-built integrations",0,1,0,82.0,other,false,pos50plus
+"quotes automation",0,1,0,83.0,quote-follow-up,false,pos50plus
+"ai automation toronto",0,1,0,84.0,other,false,pos50plus
+"ai custom integration pricing",0,1,0,84.0,other,false,pos50plus
+"chatbot consulting vancouver",0,1,0,84.0,chatbot,false,pos50plus
+"ai lead response hamilton",0,1,0,86.0,other,false,pos50plus
+"how much is a chatbot",0,1,0,89.0,chatbot,false,pos50plus
+"ai automation for landscaping companies",0,1,0,90.0,trades,false,pos50plus
+"automated customer call responses",0,1,0,91.0,ai-receptionist,false,pos50plus
+"ai automation for subcontractors",0,1,0,93.0,trades,false,pos50plus
+"can ai answer business phone calls",0,1,0,93.0,ai-receptionist,false,pos50plus
+"sop generator",0,1,0,94.0,other,false,pos50plus
+"ai cold calling software for contractors",0,1,0,95.0,ai-receptionist,false,pos50plus
+"ai follow up for landscapers",0,1,0,96.0,quote-follow-up,false,pos50plus
+"automation tools for landscaping businesses",0,1,0,98.0,trades,false,pos50plus
+"ai phone assistant for business",0,1,0,99.0,ai-receptionist,false,pos50plus
+"ai receptionist for building contractors",0,1,0,100.0,ai-receptionist,false,pos50plus
+"cost to build a chatbot",0,1,0,100.0,chatbot,false,pos50plus

@@ -1,0 +1,5 @@
+query,page,clicks,impressions,avg_position,note
+"ai receptionist for contractors",/ai-receptionist,0,50,71.9,"ONLY page serving this query. The exact-match page /ai-receptionist-for-contractors does NOT rank for it."
+"ai receptionist for construction",/ai-receptionist,0,34,72.9,"ONLY page serving this query. Same pattern."
+"custom chatbot development vancouver",/ai-chatbot-development,0,29,77.4,"TWO URLs serve this query — measured cannibalization."
+"custom chatbot development vancouver",/locations/ai-chatbot-developer-vancouver,0,14,52.0,"Location page ranks BETTER (52.0 vs 77.4) than the money page. Do NOT merge."

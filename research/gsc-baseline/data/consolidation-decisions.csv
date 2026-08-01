@@ -1,0 +1,219 @@
+url,clicks,impressions,avg_position,phase1_action,gsc_evidence_class,revised_decision,protected,confidence,rationale,status
+/,3,60,15.4,KEEP,HAS-CLICKS,KEEP,yes,high,"Measured clicks. Never redirect.",PROPOSED - NOT EXECUTED
+/services,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries,1,20,5.8,MERGE,HAS-CLICKS,KEEP,yes,high,"Measured clicks. Never redirect.",PROPOSED - NOT EXECUTED
+/locations,0,1,80,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/solutions,0,0,,REPURPOSE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/pricing,0,0,,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/shop,0,0,,REPURPOSE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/tools,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/faq,0,16,6.6,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/about,0,0,,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/create,0,12,4.5,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/privacy,0,0,,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/terms,0,0,,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/tools/contractor-profit-pricing-calculator,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/tools/contractor-quote-follow-up-generator,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/tools/missed-call-revenue-calculator,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/tools/contractor-labor-burden-calculator,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/tools/contractor-lead-leak-audit,0,0,,KEEP,TOO-NEW,KEEP,yes,high,"Shipped 2026-07-16; only 13 days inside the 46-day window. Zero is uninterpretable.",PROPOSED - NOT EXECUTED
+/ai-automation-agency,0,10,4.3,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/custom-ai-app-development,0,14,10.2,KEEP,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/ai-chatbot-development,0,118,68.6,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/ai-receptionist,0,146,72.5,MERGE,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/ai-business-system,0,11,4.5,KEEP,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/done-for-you-ai-automation,0,20,51,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/ai-receptionist-for-contractors,0,16,71.9,KEEP,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/ai-lead-follow-up-agent,0,10,79.6,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/ai-chatbot-for-small-business,0,3,29.7,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/remote-ai-development,0,0,,KEEP,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/ai-integration-services,0,14,48.4,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/ai-automation-canada,0,2,10.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/services/ai-chatbot-for-website,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-lead-capture-form,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-quote-generator,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-customer-support-agent,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-receptionist-setup,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-email-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-sms-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-calendar-booking-agent,0,1,8,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/services/ai-crm-automation,0,3,7.3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/services/ai-invoice-reminder-system,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-review-request-system,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-intake-form-builder,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-website-assistant,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-sales-assistant,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-admin-assistant,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-document-generator,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-proposal-generator,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-voice-agent,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-workflow-automation,0,10,27.3,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/services/custom-business-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-review-engine,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-customer-reactivation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-operations-dashboard,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-business-analyst,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/services/ai-receptionist-os,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/landscaping-ai-automation,0,15,55.2,REWRITE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/industries/lawn-care-ai-automation,0,0,,REWRITE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/plumber-ai-automation,0,0,,REWRITE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/electrician-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/hvac-ai-automation,0,0,,REWRITE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/roofing-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/cleaning-business-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/moving-company-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/pest-control-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/contractor-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/real-estate-agent-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/dental-clinic-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/salon-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/restaurant-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/auto-detailing-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/fence-company-ai-automation,0,0,,REWRITE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/deck-builder-ai-automation,0,0,,REWRITE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/painter-ai-automation,0,2,95.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/clinic-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/mortgage-broker-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/insurance-broker-ai-automation,0,1,94,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/physiotherapy-ai-automation,0,12,69.4,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/industries/chiropractor-ai-automation,0,3,36,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/barbershop-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/gym-ai-automation,0,8,45.6,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/industries/personal-trainer-ai-automation,0,1,69,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/food-truck-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/wedding-planner-ai-automation,0,1,84,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/photographer-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/videographer-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/immigration-consultant-ai-automation,0,2,6,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/law-firm-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/accountant-ai-automation,0,1,4,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/bookkeeper-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/consultant-ai-automation,0,2,3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/agency-ai-automation,0,2,36.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/industries/ecommerce-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/retail-store-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/industries/coach-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-tools-for-content-creators,0,5,88.4,PAUSE-NOINDEX,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/creators/ai-video-editing-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-tiktok-content-system,0,2,7,PAUSE-NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/creators/ai-youtube-shorts-automation,0,1,42,PAUSE-NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/creators/ai-youtube-video-workflow,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-podcast-clipping-system,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-text-to-speech-for-creators,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-voice-cloning-workflow,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-avatar-video-creation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-faceless-channel-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-script-writing-system,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-caption-subtitle-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-content-repurposing-system,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-social-media-scheduling-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-newsletter-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-fan-message-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-creator-crm,0,7,6.9,PAUSE-NOINDEX,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/creators/ai-patreon-creator-automation,0,0,,PAUSE-NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/creators/ai-course-creator-automation,0,2,10,PAUSE-NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/creators/ai-coaching-content-system,0,1,11,PAUSE-NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-agency-surrey-bc,0,5,17.2,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-delta-bc,0,3,4.3,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-vancouver,0,1,90,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-langley-bc,0,0,,NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-abbotsford,0,0,,NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/locations/ai-receptionist-surrey-bc,0,6,18.7,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/locations/ai-chatbot-developer-vancouver,0,15,54.1,MERGE,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/locations/custom-ai-apps-surrey,0,1,2,REWRITE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-burnaby-bc,0,4,13.3,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-richmond-bc,0,0,,NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-coquitlam-bc,0,2,41.5,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-new-westminster-bc,0,2,10,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-white-rock-bc,0,14,59.9,NOINDEX,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-maple-ridge-bc,0,1,4,NOINDEX,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-chilliwack-bc,0,7,6.9,NOINDEX,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-victoria-bc,0,0,,NOINDEX,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-calgary-ab,0,4,76.8,MERGE,OUT-OF-SERVICE-AREA,NOINDEX-PROPOSED,no,high,"Outside any realistic service area. Assignment forbids targeting these as local service pages. Noindex proposed - reversible, not deleted.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-edmonton-ab,0,1,7,MERGE,OUT-OF-SERVICE-AREA,NOINDEX-PROPOSED,no,high,"Outside any realistic service area. Assignment forbids targeting these as local service pages. Noindex proposed - reversible, not deleted.",PROPOSED - NOT EXECUTED
+/locations/ai-automation-toronto-on,0,1,84,MERGE,OUT-OF-SERVICE-AREA,NOINDEX-PROPOSED,no,high,"Outside any realistic service area. Assignment forbids targeting these as local service pages. Noindex proposed - reversible, not deleted.",PROPOSED - NOT EXECUTED
+/resources/how-much-does-ai-automation-cost,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/what-is-an-ai-receptionist,0,0,,KEEP,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/best-ai-tools-for-small-business,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/ai-automation-examples-for-small-business,0,0,,KEEP,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/ai-receptionist-cost,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/is-ai-receptionist-worth-it,0,25,42.4,MERGE,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/resources/can-ai-answer-business-phone-calls,0,7,68.6,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/can-ai-book-appointments,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/ai-lead-follow-up-guide,0,6,65.5,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/what-can-ai-automate-small-business,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/can-ai-edit-videos,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/can-ai-clone-my-voice-legally,0,5,39.8,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/can-ai-make-tiktok-videos,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/resources/best-ai-tools-for-content-creators,0,8,47.1,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/ai-chatbot-cost,0,5,93.4,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/custom-ai-tool-cost,0,1,3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/ai-integration-cost,0,3,85.3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/small-business-ai-setup-cost,0,1,4,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/can-ai-send-quotes-automatically,0,4,73.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/can-ai-follow-up-with-leads,0,2,71,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/can-ai-run-my-customer-support,0,1,1,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/resources/what-is-an-ai-worker,0,8,59.4,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/resources/best-ai-tools-for-contractors,0,66,72.1,KEEP,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/resources/best-ai-automations-for-service-businesses,0,2,34.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/how-to/add-ai-chatbot-to-website,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to/automate-quote-requests,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to/create-ai-receptionist-for-small-business,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to/automate-customer-replies,0,14,37.4,MERGE,LOW-IMPR,DEFER,no,medium,"5-24 impressions. Real but weak signal; revisit at 90 days.",PROPOSED - NOT EXECUTED
+/how-to/automate-invoice-reminders,0,2,17,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/how-to/automate-youtube-shorts,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to/build-faceless-content-system,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/how-to/automate-missed-calls,0,1,68,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/how-to/automate-review-requests,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/custom-ai-tool-vs-saas,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-automation-agency-vs-diy,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-receptionist-vs-human-receptionist,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-chatbot-vs-live-chat,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-automation-vs-virtual-assistant,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/custom-ai-app-vs-template,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-workflow-automation-vs-manual-admin,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/hiring-vs-ai-automation,0,1,3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/compare/ai-receptionist-vs-virtual-receptionist,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-receptionist-vs-answering-service,0,0,,KEEP,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/chatgpt-vs-custom-ai-agent,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/custom-ai-automation-vs-zapier,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/gohighlevel-ai-vs-custom-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/intercom-fin-alternative-small-business,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-chatbot-vs-ai-receptionist,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/best-ai-receptionist-small-business-canada,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-receptionist-pricing-canada,0,1,4,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/compare/ai-automation-agency-pricing,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/make-vs-zapier-vs-custom-ai-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-consultant-vs-ai-automation-agency,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/compare/ai-built-by-hand-vs-generic-ai-agency,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-receptionist-for-contractors,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/lead-capture-ai-for-real-estate,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-chatbot-for-restaurants,0,2,8,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/ai-receptionist-for-clinics,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-invoice-reminders-for-small-business,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/custom-ai-app-for-startups,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-receptionist-for-dentists,0,1,2,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/ai-booking-assistant-for-salons,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-chatbot-for-ecommerce,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-content-engine-for-creators,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/automate-admin-for-accountants,0,1,4,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/ai-document-analyzer-for-law-firms,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-receptionist-for-real-estate,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-support-bot-for-saas,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/personal-ai-assistant-app,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/missed-call-automation,0,2,89,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/estimate-follow-up-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/no-show-reminder-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/appointment-reminder-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/google-business-profile-lead-automation,0,2,57.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/instagram-dm-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/facebook-lead-automation,0,3,52.3,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/ai-operations-assistant,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/use-cases/ai-sop-generator,0,2,87.5,MERGE,TRACE-IMPR,DEFER,no,low,"1-4 impressions. Below any actionable threshold.",PROPOSED - NOT EXECUTED
+/use-cases/client-onboarding-automation,0,0,,MERGE,NO-DATA,DEFER,no,low,"Not present in retrieved dataset. NOT proof of zero lifetime impressions - 46-day window at avg position 63.9.",PROPOSED - NOT EXECUTED
+/demo,0,3,3.7,none,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED
+/creators,0,2,8,none,STRATEGIC-OR-TOP,KEEP,yes,high,"Top-impression, best-position, or core conversion/legal page.",PROPOSED - NOT EXECUTED

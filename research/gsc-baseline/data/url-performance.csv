@@ -1,0 +1,219 @@
+current_url,page_type,phase1_action,clicks,impressions,ctr_pct,avg_position,in_gsc_dataset,revised_action,confidence,reason,implementation_status
+/,home,KEEP,3,60,5.0,15.4,yes,KEEP-PROTECTED,high,"Has measured clicks — must not be redirected",BLOCKED — no redirect executed
+/services,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries,industry,MERGE,1,20,5.0,5.8,yes,KEEP-PROTECTED,high,"Has measured clicks — must not be redirected",BLOCKED — no redirect executed
+/locations,location,NOINDEX,0,1,0.0,80,yes,NOINDEX,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/solutions,hub,REPURPOSE,0,0,0.0,,no,REPURPOSE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/pricing,pricing,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/shop,hub,REPURPOSE,0,0,0.0,,no,REPURPOSE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/tools,hub,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/faq,faq,KEEP,0,16,0.0,6.6,yes,KEEP,medium,"Low but non-zero impressions (16) — preserve equity, defer",BLOCKED — no redirect executed
+/about,about,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/create,create,KEEP,0,12,0.0,4.5,yes,KEEP,medium,"Low but non-zero impressions (12) — preserve equity, defer",BLOCKED — no redirect executed
+/privacy,privacy,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/terms,terms,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/tools/contractor-profit-pricing-calculator,free-tool,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/tools/contractor-quote-follow-up-generator,free-tool,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/tools/missed-call-revenue-calculator,free-tool,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/tools/contractor-labor-burden-calculator,free-tool,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/tools/contractor-lead-leak-audit,free-tool,KEEP,0,0,0.0,,no,KEEP-PROTECTED,high,"Free tool; shipped 2026-07-16, only ~13 days inside the data window — absence is immaturity, not failure",BLOCKED — no redirect executed
+/ai-automation-agency,ai-automation-agency,MERGE,0,10,0.0,4.3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (10) — preserve equity, defer",BLOCKED — no redirect executed
+/custom-ai-app-development,custom-ai-app-development,KEEP,0,14,0.0,10.2,yes,KEEP,medium,"Low but non-zero impressions (14) — preserve equity, defer",BLOCKED — no redirect executed
+/ai-chatbot-development,ai-chatbot-development,KEEP,0,118,0.0,68.6,yes,KEEP,high,"Meaningful measured impressions (118) — do not merge blindly",BLOCKED — no redirect executed
+/ai-receptionist,money,MERGE,0,146,0.0,72.5,yes,KEEP-REVIEW,high,"Meaningful measured impressions (146) — do not merge blindly",BLOCKED — no redirect executed
+/ai-business-system,ai-business-system,KEEP,0,11,0.0,4.5,yes,KEEP,medium,"Low but non-zero impressions (11) — preserve equity, defer",BLOCKED — no redirect executed
+/done-for-you-ai-automation,done-for-you-ai-automation,MERGE,0,20,0.0,51,yes,MERGE-DEFER,medium,"Low but non-zero impressions (20) — preserve equity, defer",BLOCKED — no redirect executed
+/ai-receptionist-for-contractors,ai-receptionist-for-contractors,KEEP,0,16,0.0,71.9,yes,KEEP,medium,"Low but non-zero impressions (16) — preserve equity, defer",BLOCKED — no redirect executed
+/ai-lead-follow-up-agent,ai-lead-follow-up-agent,MERGE,0,10,0.0,79.6,yes,MERGE-DEFER,medium,"Low but non-zero impressions (10) — preserve equity, defer",BLOCKED — no redirect executed
+/ai-chatbot-for-small-business,ai-chatbot-for-small-business,MERGE,0,3,0.0,29.7,yes,MERGE-DEFER,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/remote-ai-development,remote-ai-development,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/ai-integration-services,ai-integration-services,MERGE,0,14,0.0,48.4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (14) — preserve equity, defer",BLOCKED — no redirect executed
+/ai-automation-canada,ai-automation-canada,MERGE,0,2,0.0,10.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/services/ai-chatbot-for-website,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-lead-capture-form,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-quote-generator,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-customer-support-agent,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-receptionist-setup,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-email-automation,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-sms-automation,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-calendar-booking-agent,service,MERGE,0,1,0.0,8,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/services/ai-crm-automation,service,MERGE,0,3,0.0,7.3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/services/ai-invoice-reminder-system,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-review-request-system,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-intake-form-builder,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-website-assistant,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-sales-assistant,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-admin-assistant,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-document-generator,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-proposal-generator,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-voice-agent,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-workflow-automation,service,MERGE,0,10,0.0,27.3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (10) — preserve equity, defer",BLOCKED — no redirect executed
+/services/custom-business-automation,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-review-engine,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-customer-reactivation,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-operations-dashboard,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-business-analyst,service,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/services/ai-receptionist-os,services,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/landscaping-ai-automation,industry,REWRITE,0,15,0.0,55.2,yes,REWRITE,medium,"Low but non-zero impressions (15) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/lawn-care-ai-automation,industry,REWRITE,0,0,0.0,,no,REWRITE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/plumber-ai-automation,industry,REWRITE,0,0,0.0,,no,REWRITE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/electrician-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/hvac-ai-automation,industry,REWRITE,0,0,0.0,,no,REWRITE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/roofing-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/cleaning-business-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/moving-company-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/pest-control-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/contractor-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/real-estate-agent-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/dental-clinic-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/salon-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/restaurant-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/auto-detailing-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/fence-company-ai-automation,industry,REWRITE,0,0,0.0,,no,REWRITE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/deck-builder-ai-automation,industry,REWRITE,0,0,0.0,,no,REWRITE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/painter-ai-automation,industry,MERGE,0,2,0.0,95.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/clinic-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/mortgage-broker-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/insurance-broker-ai-automation,industry,MERGE,0,1,0.0,94,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/physiotherapy-ai-automation,industry,MERGE,0,12,0.0,69.4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (12) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/chiropractor-ai-automation,industry,MERGE,0,3,0.0,36,yes,MERGE-DEFER,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/barbershop-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/gym-ai-automation,industry,MERGE,0,8,0.0,45.6,yes,MERGE-DEFER,medium,"Low but non-zero impressions (8) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/personal-trainer-ai-automation,industry,MERGE,0,1,0.0,69,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/food-truck-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/wedding-planner-ai-automation,industry,MERGE,0,1,0.0,84,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/photographer-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/videographer-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/immigration-consultant-ai-automation,industry,MERGE,0,2,0.0,6,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/law-firm-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/accountant-ai-automation,industry,MERGE,0,1,0.0,4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/bookkeeper-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/consultant-ai-automation,industry,MERGE,0,2,0.0,3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/agency-ai-automation,industry,MERGE,0,2,0.0,36.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/industries/ecommerce-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/retail-store-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/industries/coach-ai-automation,industry,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-tools-for-content-creators,creators,PAUSE-NOINDEX,0,5,0.0,88.4,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (5) — preserve equity, defer",BLOCKED — no redirect executed
+/creators/ai-video-editing-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-tiktok-content-system,creators,PAUSE-NOINDEX,0,2,0.0,7,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/creators/ai-youtube-shorts-automation,creators,PAUSE-NOINDEX,0,1,0.0,42,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/creators/ai-youtube-video-workflow,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-podcast-clipping-system,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-text-to-speech-for-creators,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-voice-cloning-workflow,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-avatar-video-creation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-faceless-channel-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-script-writing-system,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-caption-subtitle-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-content-repurposing-system,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-social-media-scheduling-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-newsletter-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-fan-message-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-creator-crm,creators,PAUSE-NOINDEX,0,7,0.0,6.9,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (7) — preserve equity, defer",BLOCKED — no redirect executed
+/creators/ai-patreon-creator-automation,creators,PAUSE-NOINDEX,0,0,0.0,,no,PAUSE-NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/creators/ai-course-creator-automation,creators,PAUSE-NOINDEX,0,2,0.0,10,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/creators/ai-coaching-content-system,creators,PAUSE-NOINDEX,0,1,0.0,11,yes,PAUSE-NOINDEX,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-agency-surrey-bc,locations,MERGE,0,5,0.0,17.2,yes,MERGE-DEFER,medium,"Low but non-zero impressions (5) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-delta-bc,location,NOINDEX,0,3,0.0,4.3,yes,NOINDEX,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-vancouver,location,NOINDEX,0,1,0.0,90,yes,NOINDEX,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-langley-bc,location,NOINDEX,0,0,0.0,,no,NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/locations/ai-automation-abbotsford,location,NOINDEX,0,0,0.0,,no,NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/locations/ai-receptionist-surrey-bc,locations,MERGE,0,6,0.0,18.7,yes,MERGE-DEFER,medium,"Low but non-zero impressions (6) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-chatbot-developer-vancouver,locations,MERGE,0,15,0.0,54.1,yes,MERGE-DEFER,medium,"Low but non-zero impressions (15) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/custom-ai-apps-surrey,location,REWRITE,0,1,0.0,2,yes,REWRITE,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-burnaby-bc,location,NOINDEX,0,4,0.0,13.3,yes,NOINDEX,medium,"Low but non-zero impressions (4) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-richmond-bc,location,NOINDEX,0,0,0.0,,no,NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/locations/ai-automation-coquitlam-bc,location,NOINDEX,0,2,0.0,41.5,yes,NOINDEX,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-new-westminster-bc,location,NOINDEX,0,2,0.0,10,yes,NOINDEX,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-white-rock-bc,location,NOINDEX,0,14,0.0,59.9,yes,NOINDEX,medium,"Low but non-zero impressions (14) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-maple-ridge-bc,location,NOINDEX,0,1,0.0,4,yes,NOINDEX,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-chilliwack-bc,location,NOINDEX,0,7,0.0,6.9,yes,NOINDEX,medium,"Low but non-zero impressions (7) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-victoria-bc,location,NOINDEX,0,0,0.0,,no,NOINDEX,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/locations/ai-automation-calgary-ab,location,MERGE,0,4,0.0,76.8,yes,MERGE-DEFER,medium,"Low but non-zero impressions (4) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-edmonton-ab,location,MERGE,0,1,0.0,7,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/locations/ai-automation-toronto-on,location,MERGE,0,1,0.0,84,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/how-much-does-ai-automation-cost,resources,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/what-is-an-ai-receptionist,resources,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/best-ai-tools-for-small-business,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/ai-automation-examples-for-small-business,resources,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/ai-receptionist-cost,resources,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/is-ai-receptionist-worth-it,resources,MERGE,0,25,0.0,42.4,yes,KEEP-REVIEW,high,"Meaningful measured impressions (25) — do not merge blindly",BLOCKED — no redirect executed
+/resources/can-ai-answer-business-phone-calls,resource,MERGE,0,7,0.0,68.6,yes,MERGE-DEFER,medium,"Low but non-zero impressions (7) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/can-ai-book-appointments,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/ai-lead-follow-up-guide,resources,MERGE,0,6,0.0,65.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (6) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/what-can-ai-automate-small-business,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/can-ai-edit-videos,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/can-ai-clone-my-voice-legally,resource,MERGE,0,5,0.0,39.8,yes,MERGE-DEFER,medium,"Low but non-zero impressions (5) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/can-ai-make-tiktok-videos,resource,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/resources/best-ai-tools-for-content-creators,resource,MERGE,0,8,0.0,47.1,yes,MERGE-DEFER,medium,"Low but non-zero impressions (8) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/ai-chatbot-cost,resources,MERGE,0,5,0.0,93.4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (5) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/custom-ai-tool-cost,resources,MERGE,0,1,0.0,3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/ai-integration-cost,resources,MERGE,0,3,0.0,85.3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/small-business-ai-setup-cost,resources,MERGE,0,1,0.0,4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/can-ai-send-quotes-automatically,resource,MERGE,0,4,0.0,73.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (4) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/can-ai-follow-up-with-leads,resources,MERGE,0,2,0.0,71,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/can-ai-run-my-customer-support,resource,MERGE,0,1,0.0,1,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/what-is-an-ai-worker,resource,MERGE,0,8,0.0,59.4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (8) — preserve equity, defer",BLOCKED — no redirect executed
+/resources/best-ai-tools-for-contractors,resources,KEEP,0,66,0.0,72.1,yes,KEEP,high,"Meaningful measured impressions (66) — do not merge blindly",BLOCKED — no redirect executed
+/resources/best-ai-automations-for-service-businesses,resource,MERGE,0,2,0.0,34.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/how-to/add-ai-chatbot-to-website,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to/automate-quote-requests,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to/create-ai-receptionist-for-small-business,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to/automate-customer-replies,how-to,MERGE,0,14,0.0,37.4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (14) — preserve equity, defer",BLOCKED — no redirect executed
+/how-to/automate-invoice-reminders,how-to,MERGE,0,2,0.0,17,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/how-to/automate-youtube-shorts,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to/build-faceless-content-system,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/how-to/automate-missed-calls,how-to,MERGE,0,1,0.0,68,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/how-to/automate-review-requests,how-to,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/custom-ai-tool-vs-saas,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-automation-agency-vs-diy,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-receptionist-vs-human-receptionist,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-chatbot-vs-live-chat,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-automation-vs-virtual-assistant,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/custom-ai-app-vs-template,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-workflow-automation-vs-manual-admin,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/hiring-vs-ai-automation,compare,MERGE,0,1,0.0,3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/compare/ai-receptionist-vs-virtual-receptionist,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-receptionist-vs-answering-service,compare,KEEP,0,0,0.0,,no,KEEP,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/chatgpt-vs-custom-ai-agent,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/custom-ai-automation-vs-zapier,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/gohighlevel-ai-vs-custom-ai-automation,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/intercom-fin-alternative-small-business,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-chatbot-vs-ai-receptionist,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/best-ai-receptionist-small-business-canada,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-receptionist-pricing-canada,compare,MERGE,0,1,0.0,4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/compare/ai-automation-agency-pricing,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/make-vs-zapier-vs-custom-ai-automation,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-consultant-vs-ai-automation-agency,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/compare/ai-built-by-hand-vs-generic-ai-agency,compare,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-receptionist-for-contractors,use-cases,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/lead-capture-ai-for-real-estate,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-chatbot-for-restaurants,use-cases,MERGE,0,2,0.0,8,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/ai-receptionist-for-clinics,use-cases,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-invoice-reminders-for-small-business,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/custom-ai-app-for-startups,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-receptionist-for-dentists,use-cases,MERGE,0,1,0.0,2,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/ai-booking-assistant-for-salons,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-chatbot-for-ecommerce,use-cases,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-content-engine-for-creators,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/automate-admin-for-accountants,use-case,MERGE,0,1,0.0,4,yes,MERGE-DEFER,medium,"Low but non-zero impressions (1) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/ai-document-analyzer-for-law-firms,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-receptionist-for-real-estate,use-cases,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-support-bot-for-saas,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/personal-ai-assistant-app,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/missed-call-automation,use-cases,MERGE,0,2,0.0,89,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/estimate-follow-up-automation,use-cases,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/no-show-reminder-automation,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/appointment-reminder-automation,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/google-business-profile-lead-automation,use-case,MERGE,0,2,0.0,57.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/instagram-dm-automation,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/facebook-lead-automation,use-case,MERGE,0,3,0.0,52.3,yes,MERGE-DEFER,medium,"Low but non-zero impressions (3) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/ai-operations-assistant,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/use-cases/ai-sop-generator,use-case,MERGE,0,2,0.0,87.5,yes,MERGE-DEFER,medium,"Low but non-zero impressions (2) — preserve equity, defer",BLOCKED — no redirect executed
+/use-cases/client-onboarding-automation,use-case,MERGE,0,0,0.0,,no,MERGE,low,"Not present in retrieved dataset (46-day window) — NOT proof of zero lifetime impressions",BLOCKED — no redirect executed
+/demo,NOT-IN-SITEMAP,none,0,3,0.0,3.7,yes,INVESTIGATE,high,"Indexed and receiving impressions but absent from sitemap.xml — orphan URL",BLOCKED
+/creators,NOT-IN-SITEMAP,none,0,2,0.0,8,yes,INVESTIGATE,high,"Indexed and receiving impressions but absent from sitemap.xml — orphan URL",BLOCKED

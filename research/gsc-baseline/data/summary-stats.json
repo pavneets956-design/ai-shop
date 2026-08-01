@@ -1,0 +1,74 @@
+{
+  "window": "2026-06-14 to 2026-07-29 (46 days, 45 with impressions)",
+  "totals": {
+    "clicks": 3,
+    "impressions": 609,
+    "ctr": "0.5%",
+    "avg_position": 63.9,
+    "aggregation": "property",
+    "note": "Authoritative property total. Do NOT derive a site total by summing the pages table or the queries table - see dimension_sums and reconciliation.csv."
+  },
+  "dimension_sums": {
+    "country": { "rows": 25, "clicks": 3, "impressions": 609, "additive": true },
+    "device": { "rows": 3, "clicks": 3, "impressions": 609, "additive": true },
+    "query": {
+      "rows": 92,
+      "clicks": 0,
+      "impressions": 437,
+      "additive": false,
+      "delta_clicks": -3,
+      "delta_impressions": -172,
+      "cause": "anonymized-queries"
+    },
+    "page": {
+      "rows": 81,
+      "clicks": 4,
+      "impressions": 803,
+      "additive": false,
+      "delta_clicks": 1,
+      "delta_impressions": 194,
+      "cause": "page-level-aggregation-vs-property-total"
+    },
+    "date": {
+      "rows": 46,
+      "clicks": 3,
+      "impressions": 609,
+      "additive": true,
+      "cause": "NOT ARCHIVED - reported reconciling at capture, cannot be re-verified"
+    }
+  },
+  "queries_shown": 92,
+  "query_impressions_shown": 437,
+  "withheld_impressions": 172,
+  "pages_with_impressions": 81,
+  "sitemap_urls": 216,
+  "sitemap_urls_in_gsc": 79,
+  "sitemap_urls_absent": 137,
+  "gsc_urls_not_in_sitemap": [
+    "/demo",
+    "/creators"
+  ],
+  "protected_page_count": 21,
+  "protected_page_count_note": "Authoritative for this phase. 22 was Phase 1's count and appears only in comparison columns. Verified against consolidation-decisions.csv: 21 KEEP/protected=yes, 194 DEFER, 3 NOINDEX-PROPOSED, 218 rows total.",
+  "consolidation_decisions": {
+    "KEEP": 21,
+    "DEFER": 194,
+    "NOINDEX-PROPOSED": 3,
+    "total_rows": 218
+  },
+  "cluster_impressions": {
+    "ai-receptionist": 174,
+    "chatbot": 105,
+    "trades": 39,
+    "other": 90,
+    "quote-follow-up": 25,
+    "creators": 2,
+    "missed-calls": 2
+  },
+  "pages_with_clicks": [
+    "/",
+    "/industries"
+  ],
+  "pages_with_clicks_note": "/ = 3 page-clicks, /industries = 1 page-click, summing to 4 under page-level aggregation against a property total of 3. Not an error - see reconciliation.csv.",
+  "tools_impressions": 0
+}
