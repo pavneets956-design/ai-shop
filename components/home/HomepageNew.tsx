@@ -116,7 +116,7 @@ function WorkerCard({ icon, name, tagline, tags, href }: (typeof WORKERS)[0]) {
 const TIERS = [
   {
     name: "AI Starter System",
-    price: "$1,000",
+    price: "$1,500",
     period: "one-time · CAD",
     description: "One focused AI worker installed into your workflow. Ideal starting point.",
     features: ["1 AI worker (receptionist, quote, follow-up, or chat)", "Connected to your existing tools", "Real demo before you pay", "1 revision round included"],
@@ -126,7 +126,7 @@ const TIERS = [
   },
   {
     name: "AI Business System",
-    price: "$2,500–5,000",
+    price: "$3,500–$7,500",
     period: "one-time · CAD",
     description: "Multiple connected workers + custom logic for your specific workflow.",
     features: ["2–4 coordinated AI workers", "Custom intake, routing & escalation", "Integrated with your CRM / invoicing", "3-month post-launch support"],
@@ -136,7 +136,7 @@ const TIERS = [
   },
   {
     name: "Custom AI App",
-    price: "$7,500+",
+    price: "From $10,000",
     period: "one-time + $250/mo care · CAD",
     description: "A fully custom AI product — dashboard, API, or internal tool.",
     features: ["Full-stack AI application", "Bespoke AI logic & data model", "Production deploy + monitoring", "Ongoing Care plan included"],

@@ -112,3 +112,19 @@ export function formatPackagePrice(
 export function getPackage(id: string): ServicePackage | undefined {
   return packages.find((p) => p.id === id);
 }
+
+/**
+ * Canonical price label per package — the single place prose/UI should pull
+ * from instead of hand-typing a range. Owner-approved 2026-07-31:
+ * Starter from $1,500 · Business $3,500–$7,500 · Custom from $10,000 (CAD).
+ * Hand-typed copies of these numbers are what produced the P0 contradiction.
+ */
+export function packagePriceLabel(id: ServicePackage["id"]): string {
+  const p = getPackage(id);
+  return p ? formatPackagePrice(p) : "Request quote";
+}
+
+/** Approved long-form wording for the Business AI System, where space permits. */
+export const BUSINESS_SYSTEM_SENTENCE =
+  `From $${nf.format(packages[1].price)} CAD. Most connected back-office systems cost ` +
+  `$${nf.format(packages[1].price)}–$${nf.format(packages[1].priceHigh!)} CAD after scope is confirmed.`;

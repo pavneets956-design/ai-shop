@@ -4,16 +4,18 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from "lucide-react";
-import { packages } from "@/lib/data/packages";
+import { packages, packagePriceLabel } from "@/lib/data/packages";
 import { shopProducts } from "@/lib/data/shopProducts";
 import { TRADES, tradeById, intakeToLabels } from "@/lib/data/intake";
 import { site } from "@/lib/data/site";
 import OccupationIntake from "@/components/intake/OccupationIntake";
 
+// Budget bands are rendered from the pricing registry so they can never drift
+// from the published package prices (they did: ~$1,000 / $2,500–$5,000 / $7,500+).
 const budgets = [
-  { id: "starter", label: "~$1,000 (one tool)" },
-  { id: "business", label: "$2,500–$5,000 (a system)" },
-  { id: "custom", label: "$7,500+ (custom app)" },
+  { id: "starter", label: `${packagePriceLabel("starter")} (one tool)` },
+  { id: "business", label: `${packagePriceLabel("business")} (a system)` },
+  { id: "custom", label: `${packagePriceLabel("custom")} (custom app)` },
   { id: "unsure", label: "Not sure yet" },
 ];
 

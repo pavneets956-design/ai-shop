@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     absolute: "AI Front Desk for Service Businesses — Handbuilt in BC | Always Answering",
   },
   description:
-    "Handbuilt builds AI front desks for service businesses in Surrey, Delta & Metro Vancouver — AI receptionists, quote responders, lead follow-up and invoice chasers that catch the calls you can't take. One-time builds from $1,000 CAD.",
+    "Handbuilt builds AI front desks for service businesses in Surrey, Delta & Metro Vancouver — AI receptionists, quote responders, lead follow-up and invoice chasers that catch the calls you can't take. One-time builds from $1,500 CAD.",
   keywords: [
     "AI receptionist",
     "AI front desk for service businesses",

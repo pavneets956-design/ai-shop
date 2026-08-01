@@ -16,7 +16,7 @@ export const WAGE = {
   partTimeReceptionistMonthly: 2000,
   fullTimeAnnual: 45000,
   answeringServiceMonthlyLow: 235,
-  starterOneTime: packages[0].price, // $1,000 — stays in sync with site pricing data
+  starterOneTime: packages[0].price, // $1,500 — stays in sync with site pricing data
   careMonthly: carePlan.monthly, // $250
 };
 
@@ -175,7 +175,7 @@ export const ACT1_CTA_SUBLINE = "Your business keeps moving even when your hands
 
 // Crawlable summary paragraph near the top (§8) — what / for whom / where / price band.
 export const SUMMARY_PARAGRAPH =
-  "Handbuilt is a one-person AI studio in Surrey & Delta, BC that builds AI front desks for service businesses — AI receptionists, quote responders, lead follow-up and invoice chasers that catch the calls and messages you can't take. Installed and wired into your tools, from $1,000 to $7,500+ CAD, one-time.";
+  "Handbuilt is a one-person AI studio in Surrey & Delta, BC that builds AI front desks for service businesses — AI receptionists, quote responders, lead follow-up and invoice chasers that catch the calls and messages you can't take. Installed and wired into your tools, from $1,500 to $10,000+ CAD, one-time.";
 
 // ---------------------------------------------------------------------------
 // Act VI — pricing cards (numbers stay in sync with lib/data/packages.ts)
@@ -254,7 +254,7 @@ export const DASHBOARD_LABEL = "AN EXAMPLE WEEK — ILLUSTRATIVE, YOUR VOLUME WI
 export const FAQ = [
   {
     q: "I miss calls while I'm on a job — what can Handbuilt build for that?",
-    a: "An AI Receptionist that answers your business line when you can't, greets the caller, captures the job details, and books or routes it — so a missed call becomes a booked job instead of a voicemail. Installed from $1,000 CAD one-time.",
+    a: "An AI Receptionist that answers your business line when you can't, greets the caller, captures the job details, and books or routes it — so a missed call becomes a booked job instead of a voicemail. Installed from $1,500 CAD one-time.",
   },
   {
     q: "People ask for quotes and I forget to reply — can AI handle that?",
@@ -270,7 +270,7 @@ export const FAQ = [
   },
   {
     q: "Is this a monthly subscription?",
-    a: `No forced subscription: builds are one-time ($1,000–$7,500+ CAD) and you own them. You cover your own low running costs, or add the optional Care Plan from $${nf.format(carePlan.monthly)}/mo for monitoring, updates, and improvements.`,
+    a: `No forced subscription: builds are one-time ($1,500–$10,000+ CAD) and you own them. You cover your own low running costs, or add the optional Care Plan from $${nf.format(carePlan.monthly)}/mo for monitoring, updates, and improvements.`,
   },
 ] as const;
 

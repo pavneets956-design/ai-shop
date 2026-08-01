@@ -14,7 +14,7 @@ export const resources: LandingContent[] = [
         body: "Most small business AI projects fall into three tiers. The tier is determined by how many systems need to connect, whether you need custom logic, and how much human oversight the workflow requires.",
         bullets: [
           "Starter ($1,500): One tool — AI intake form, chatbot on your website, or a single automated workflow. Works well for leads, FAQs, or basic scheduling.",
-          "Business ($3,500–$7,500, typically $7,500): Multi-step system — e.g. AI receptionist + CRM sync + follow-up emails. Includes integrations with your existing tools.",
+          "Business ($3,500–$7,500): Multi-step system — e.g. AI receptionist + CRM sync + follow-up emails. Includes integrations with your existing tools.",
           "Custom (from $10,000): Industry-specific builds, complex data pipelines, or tools that replace a staff function entirely.",
           "Care Plan ($99/month): Ongoing updates, prompt tuning, monitoring, and priority support after launch.",
         ],

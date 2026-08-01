@@ -43,7 +43,7 @@ export const industriesB: LandingContent[] = [
         heading: "What it costs",
         body: "Most real estate AI setups fall under the Business AI System package at CAD $3,500 (range $3,500–$7,500 depending on integrations). That covers lead response, qualification, booking, and CRM sync. A full custom buyer or listing portal starts at $10,000. There are no monthly platform fees from Handbuilt — you pay for what was built, once.",
         bullets: [
-          "Business AI System: CAD $3,500–$7,500 (typically $7,500) — lead capture, qualification, booking, CRM",
+          "Business AI System: CAD $3,500–$7,500 — lead capture, qualification, booking, CRM",
           "Custom AI App: from CAD $7,500 — full client portal, listing alerts, document generation",
           "One-time build fee; you own everything",
         ],
@@ -125,7 +125,7 @@ export const industriesB: LandingContent[] = [
         heading: "What it costs",
         body: "Most dental clinic setups land in the Business AI System range at CAD $3,500 (range $3,500–$7,500). That covers reminders, waitlist, intake, and after-hours chat. Integration with practice management software (Dentrix, Jane App) is included in scoping — some platforms charge their own API fees which we flag upfront.",
         bullets: [
-          "Business AI System: CAD $3,500–$7,500 (typically $7,500) — reminders, waitlist, intake, FAQ bot",
+          "Business AI System: CAD $3,500–$7,500 — reminders, waitlist, intake, FAQ bot",
           "Custom AI App: from CAD $7,500 — full patient portal, insurance verification workflow, multi-location",
           "One-time build fee; no ongoing Handbuilt subscription",
         ],
@@ -207,7 +207,7 @@ export const industriesB: LandingContent[] = [
         heading: "What it costs",
         body: "Most salon setups land in the Business AI System range at CAD $3,500 (range $3,500–$7,500 depending on number of stylists and integrations). We work with Square Appointments, Vagaro, Fresha, and custom setups. One-time build fee — no ongoing Handbuilt cost.",
         bullets: [
-          "Business AI System: CAD $3,500–$7,500 (typically $7,500) — booking, reminders, waitlist, FAQ bot",
+          "Business AI System: CAD $3,500–$7,500 — booking, reminders, waitlist, FAQ bot",
           "Custom AI App: from CAD $7,500 — loyalty tracking, multi-location, staff scheduling overlay",
           "One-time fee; you own the setup",
         ],
@@ -289,7 +289,7 @@ export const industriesB: LandingContent[] = [
         heading: "What it costs",
         body: "Most restaurant setups fall under the Business AI System at CAD $3,500 (range $3,500–$7,500). That covers reservation capture, confirmation, FAQ bot, and a basic dashboard. Integration with OpenTable or Resy is available and scoped upfront — those platforms charge their own fees.",
         bullets: [
-          "Business AI System: CAD $3,500–$7,500 (typically $7,500) — reservations, FAQ, confirmations",
+          "Business AI System: CAD $3,500–$7,500 — reservations, FAQ, confirmations",
           "Custom AI App: from CAD $7,500 — full ordering integration, loyalty program, multi-location",
           "One-time build fee from Handbuilt",
         ],
@@ -372,7 +372,7 @@ export const industriesB: LandingContent[] = [
         body: "Auto detailing AI setups typically fall in the Business AI System range at CAD $3,500 (range $3,500–$7,500 depending on service complexity and mobile vs. shop setup). A Starter AI Setup at CAD $1,500 covers quote form + basic booking if you want to start simple.",
         bullets: [
           "Starter AI Setup: CAD $1,500 — AI quote form + calendar booking link, no follow-up automation",
-          "Business AI System: CAD $3,500–$7,500 (typically $7,500) — quote, booking, follow-up, reminders, reviews",
+          "Business AI System: CAD $3,500–$7,500 — quote, booking, follow-up, reminders, reviews",
           "One-time build fee; you keep everything",
         ],
       },
@@ -495,7 +495,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "AI Starter System is $1,500 CAD. The AI Business System — what most fence companies use for quote intake plus follow-up — is $3,500–$7,500 CAD, typically $7,500. Optional Care Plan is $99/mo."
+      a: "AI Starter System is $1,500 CAD. The AI Business System — what most fence companies use for quote intake plus follow-up — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     }
   ]
 },
@@ -575,7 +575,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "The AI Business System — the right fit for deck builders needing intake, booking, and follow-up — is $3,500–$7,500 CAD, typically $7,500 flat. Optional Care Plan is $99/mo."
+      a: "The AI Business System — the right fit for deck builders needing intake, booking, and follow-up — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     },
     {
       q: "How long does setup take?",
@@ -663,7 +663,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "AI Starter System is $1,500 CAD. The AI Business System covering intake, follow-up, and review requests is $3,500–$7,500 CAD, typically $7,500. Optional Care Plan is $99/mo."
+      a: "AI Starter System is $1,500 CAD. The AI Business System covering intake, follow-up, and review requests is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     },
     {
       q: "How long does setup take?",
@@ -757,7 +757,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "The AI Business System for a clinic — covering booking, reminders, and after-hours intake — is $3,500–$7,500 CAD, typically $7,500 flat. Optional Care Plan is $99/mo."
+      a: "The AI Business System for a clinic — covering booking, reminders, and after-hours intake — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     },
     {
       q: "How long does setup take?",
@@ -846,7 +846,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "The AI Business System — covering lead response, intake automation, and calendar booking — is $3,500–$7,500 CAD, typically $7,500 flat. Optional Care Plan is $99/mo."
+      a: "The AI Business System — covering lead response, intake automation, and calendar booking — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     },
     {
       q: "How long does setup take?",
@@ -939,7 +939,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does it cost?",
-      a: "The AI Business System for an insurance broker — covering renewals, intake, and follow-up — is $3,500–$7,500 CAD, typically $7,500 flat. Optional Care Plan is $99/mo."
+      a: "The AI Business System for an insurance broker — covering renewals, intake, and follow-up — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
     },
     {
       q: "How long does setup take?",

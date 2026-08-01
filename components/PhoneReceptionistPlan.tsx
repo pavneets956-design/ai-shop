@@ -1,16 +1,19 @@
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
+import { packagePriceLabel } from "@/lib/data/packages";
 
 /**
  * AI Phone Receptionist — the SEPARATE plan (Phase C). Distinct from text-only
  * Tools Pro: this answers real phone calls (Twilio), so it carries setup +
- * monthly + usage. Numbers are the real anchors — Starter setup ($1,000) and
+ * monthly + usage. Numbers are the real anchors — the Starter setup floor and
  * the Care Plan ($250/mo) — and call minutes are passed through at provider
  * cost (no invented per-minute rate, no markup), with a spend cap you set.
+ * Setup tracks packages[0].price so it cannot drift below the published
+ * Starter/AI Receptionist Install floor (it had drifted to $1,000).
  */
 
 const rows: { k: string; v: string }[] = [
-  { k: "Setup", v: "from $1,000 one-time" },
+  { k: "Setup", v: `${packagePriceLabel("starter").toLowerCase()} one-time` },
   { k: "Monthly", v: "from $250 / mo" },
   { k: "Phone number", v: "Your own dedicated line, included" },
   { k: "Call minutes", v: "Billed at provider (Twilio) cost — no markup" },
