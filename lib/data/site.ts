@@ -26,12 +26,24 @@ export const site = {
   bookingUrl: "/create", // TODO: replace with Cal.com/Calendly link once set up
 };
 
+/**
+ * Primary navigation (2026-08-01 rebuild).
+ *
+ * Labels are evidence-led — see research/search-demand/10-copy-language-recommendation.md:
+ *  - "Free Tools" rather than "Tools": the "free" cluster is one of the largest measured.
+ *  - "AI Receptionist" leads because it is 38.4% of first-party GSC impressions.
+ *  - No "Proof" item: there is nothing honest to put behind it yet, and a nav
+ *    link to an empty promise is worse than no link.
+ *  - No "Get a Fit Check": "fit check" has zero search presence.
+ *
+ * Route safety: /demo, /shop, /creators and /ai-receptionist left the nav in
+ * this pass. They are NOT orphaned — every one is linked from the footer.
+ * /creators in particular currently ranks best on the site.
+ */
 export const navLinks = [
-  // "See it work" pointed at the retired /ai-front-desk cinematic showpiece;
-  // repointed to the on-brand flagship (same "never miss a call" intent).
-  { label: "See it work", href: "/ai-receptionist" },
-  { label: "Demo", href: "/demo" },
-  { label: "AI Systems", href: "/shop" },
-  { label: "For Creators", href: "/creators" },
+  { label: "AI Receptionist", href: "/ai-receptionist-for-contractors" },
+  { label: "Free Tools", href: "/tools" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "For Your Trade", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
 ] as const;

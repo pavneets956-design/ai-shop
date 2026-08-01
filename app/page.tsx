@@ -1,27 +1,58 @@
 import type { Metadata } from "next";
-import MoltenForge from "@/components/home/MoltenForge";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/data/site";
-import { HOME_FAQS } from "@/lib/data/homeFaqs";
 import { serviceSchema, faqSchema } from "@/lib/seo";
+import { HOME_OBJECTIONS } from "@/lib/data/homeFaqs";
+import Hero from "@/components/marketing/Hero";
+import LiveCalcStrip from "@/components/marketing/LiveCalcStrip";
+import { ProblemSelector, FaqSection } from "@/components/marketing/Interactive";
+import {
+  BeforeAfter,
+  SystemCards,
+  ProcessSteps,
+  ToolShowcase,
+  PricingSection,
+  LocalSection,
+  FinalCta,
+} from "@/components/marketing/HomeSections";
+
+/**
+ * Homepage.
+ *
+ * Built to docs/design/HOMEPAGE-BUILD-SPEC.md, whose every messaging decision
+ * cites research/search-demand/. The two facts that shaped it:
+ *
+ *  - 38.4% of first-party GSC impressions are the AI-receptionist cluster;
+ *    quotes/estimates earn 1.8% and missed-call terms 0.5%. The hero leads
+ *    with the receptionist, not with quote follow-up.
+ *  - The only two AI-Overview-free SERPs found in 34 were Surrey-local, so
+ *    the local qualifier is in the eyebrow and has its own section.
+ *
+ * Structural rules: no testimonials, no client logos, no invented statistics,
+ * no monthly/annual toggle. Prices render from lib/data/packages.ts.
+ */
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Receptionist & Admin Systems for BC Contractors | Handbuilt AI",
+    absolute: "AI Receptionist for Contractors in Surrey & Metro Vancouver | Handbuilt AI",
   },
   description:
-    "Done-for-you AI receptionist and admin systems for contractors and local service businesses in Surrey, Delta, and BC. Installed, tested, and tuned around your real services, prices, calendar, and workflow. One-time build from $1,500 CAD — you own it.",
+    "We install AI receptionists and quote follow-up for contractors in Surrey, Delta, Langley and Metro Vancouver — inside the phone number and accounts you already own. From $1,500 CAD. Free contractor calculators, no signup.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AI Receptionist & Admin Systems for BC Contractors | Handbuilt AI",
+    title: "AI Receptionist for Contractors in Surrey & Metro Vancouver | Handbuilt AI",
     description:
-      "The cheap AI tool is easy. Making it work correctly for your business is the hard part. Done-for-you AI workers for BC trades — from $1,500 CAD.",
+      "Missed calls become booked jobs. We install an AI receptionist into the phone number and accounts you already own — from $1,500 CAD.",
     url: site.url,
     type: "website",
   },
 };
 
-// LocalBusiness (service-area) + Offer catalogue. Region-only address (SAB business).
+/**
+ * LocalBusiness (service-area) + Offer catalogue. Region-only address (SAB).
+ * UNCHANGED from the previous homepage: the offer prices here are validated by
+ * scripts/seo-diff.js, which fails the build on any JSON-LD price movement.
+ */
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -67,8 +98,18 @@ const localBusinessSchema = {
 export default function Home() {
   return (
     <>
-      <JsonLd data={[...serviceSchema(), localBusinessSchema, faqSchema(HOME_FAQS)]} />
-      <MoltenForge />
+      <JsonLd data={[...serviceSchema(), localBusinessSchema, faqSchema(HOME_OBJECTIONS)]} />
+      <Hero />
+      <LiveCalcStrip />
+      <ProblemSelector />
+      <BeforeAfter />
+      <SystemCards />
+      <ProcessSteps />
+      <ToolShowcase />
+      <PricingSection />
+      <LocalSection />
+      <FaqSection items={HOME_OBJECTIONS} />
+      <FinalCta />
     </>
   );
 }

@@ -45,6 +45,12 @@ export default function Footer() {
               <FooterLink href="/creators">For creators</FooterLink>
               <FooterLink href="/use-cases">Use cases</FooterLink>
               <FooterLink href="/tools">Free tools</FooterLink>
+              {/* /shop, /demo and /ai-receptionist left the primary nav in the
+                  2026-08-01 rebuild. Linked here so no indexed route loses its
+                  internal links — removing a nav item must not orphan a page. */}
+              <FooterLink href="/ai-receptionist">AI receptionist</FooterLink>
+              <FooterLink href="/shop">AI systems shop</FooterLink>
+              <FooterLink href="/demo">Live demo</FooterLink>
               <FooterLink href="/compare">Compare</FooterLink>
               <FooterLink href="/pricing">Pricing</FooterLink>
               <FooterLink href="/about">About</FooterLink>
