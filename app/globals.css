@@ -18,13 +18,89 @@
     --muted-light: #a1a1a6;
     --success: #2f6b4f;
     --danger: #b42318;
-    /* Molten Forge system: ink is the workhorse text/surface, RED is the CTA spark. */
     --primary: #1d1d1f;
     --primary-hover: #2a2a2e;
     --accent: #e0362c;
     --accent-soft: #ffe9e7;
-    /* Red gradient CTA (matches the homepage). */
-    --red-grad: linear-gradient(180deg, #ff6961, #e0362c);
+    /* RETIRED 2026-08-01 (Verseo rebuild): the red vertical-gradient CTA. Kept as
+       a flat colour so any unswept `var(--red-grad)` reference degrades to a solid
+       red block rather than silently vanishing. Nothing should use it. */
+    --red-grad: #e0362c;
+
+    /* ========================================================================
+       VERSEO SYSTEM — measured from the reference, adapted for this audience.
+       Full rationale + the numbers these came from: docs/design/VERSE0-REFERENCE-AUDIT.md
+       Rule of the system: ONE ink, ONE red, no third colour. Every hairline is a
+       1px spread shadow, never a border. Nothing is blobby — 4px is the workhorse.
+       ======================================================================== */
+
+    /* Surfaces. `field` is the canvas the page sits on; `recess` is the slightly
+       darker strip that cards sit ON TOP of — that stacking is what gives the
+       reference its depth without heavy shadows. */
+    --v-surface: #ffffff;
+    --v-field: #f6f6f6;
+    --v-recess: #f9f9f9;
+    --v-ink-invert: #1d1d1f; /* full-bleed dark bands (final CTA, drafting sheet) */
+
+    /* Text. Substantive copy is `ink` (>=7:1). `muted` is for genuinely secondary
+       text only — the reference leans on it too hard and loses contrast. */
+    --v-ink: #1d1d1f;
+    --v-ink-2: #3a3a3d;
+    --v-muted: #686868;
+    --v-muted-light: #8a8a8f;
+    --v-on-dark: #f4f4f6;
+    --v-on-dark-muted: #a1a1a6;
+
+    /* The single accent. Red never fills a region larger than ~20px:
+       eyebrow dot · one peg per icon · link underline · active nav · focus ring ·
+       live-status dot. Target 3-5 red marks per viewport. */
+    --v-accent: #e0362c;
+    --v-accent-press: #b8221a;
+    --v-accent-wash: #ffe9e7;
+
+    /* Hairlines are shadows, not borders (the reference has zero CSS borders). */
+    --v-hairline: rgba(29, 29, 31, 0.08);
+    --v-hairline-strong: rgba(29, 29, 31, 0.14);
+    --v-ring: 0 0 0 1px var(--v-hairline);
+
+    /* Elevation: four layers, none above 3%. The softness is the whole effect —
+       it is precisely what a saturated glow button would destroy. */
+    --v-shadow-card:
+      0 0 0 1px rgba(29, 29, 31, 0.04),
+      0 16px 24px -12px rgba(29, 29, 31, 0.05),
+      0 32px 32px -20px rgba(29, 29, 31, 0.04),
+      0 40px 48px -20px rgba(29, 29, 31, 0.03);
+    --v-shadow-lift:
+      0 0 0 1px rgba(29, 29, 31, 0.06),
+      0 20px 28px -12px rgba(29, 29, 31, 0.08),
+      0 36px 40px -20px rgba(29, 29, 31, 0.06),
+      0 48px 56px -20px rgba(29, 29, 31, 0.04);
+
+    /* Radii — 4px controls, 12px cards. */
+    --v-r-control: 4px;
+    --v-r-card: 12px;
+    --v-r-panel: 16px;
+    --v-r-pill: 999px;
+
+    /* Layout */
+    --v-container: 1344px; /* reference measured 1345px */
+    --v-measure: 680px; /* centred headline column; reference 673px */
+    --v-gutter: 24px;
+    --v-nav-h: 72px;
+
+    /* Motion */
+    --v-dur-fast: 120ms;
+    --v-dur: 200ms;
+    --v-dur-slow: 420ms;
+    --v-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Font aliases. Archivo, Quicksand and IBM Plex Mono stopped being fetched
+       on 2026-08-01; these keep every existing `font-display` / `font-mono`
+       class and every direct var() reference resolving. Defined on :root so
+       next/font's own html-class variables always win if a face is restored. */
+    --font-display: var(--font-inter);
+    --font-quicksand: var(--font-inter);
+    --font-mono: var(--font-jbmono);
   }
 
   * {
@@ -53,19 +129,13 @@
     color: #1d1d1f;
   }
 
-  /* Brand ambient glow — soft red radial behind every page (matches the
-     homepage's Molten Forge glow). Fixed to the viewport and painted at -z-1:
-     it sits above the cream body background but behind all page content, so
-     pages with their own opaque backgrounds (e.g. the homepage) cover it while
-     the cream Blueprint pages get a subtle warm bloom top and bottom. */
+  /* RETIRED 2026-08-01 (Verseo rebuild): the site-wide red ambient glow.
+     A page-wide tinted wash is the single loudest "AI startup" tell and it
+     fights the low-opacity elevation system. The element is still rendered by
+     app/layout.tsx as an inert hook — kept so re-enabling a page-scoped
+     atmosphere later is a one-rule change rather than a layout edit. */
   .site-glow {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 78% 48% at 50% -6%, rgba(255, 69, 58, 0.1), transparent 60%),
-      radial-gradient(ellipse 68% 42% at 50% 106%, rgba(255, 69, 58, 0.07), transparent 62%);
+    display: none;
   }
 
   /* Custom scrollbar */
@@ -106,38 +176,79 @@
 }
 
 @layer components {
-  /* ---------- Buttons — exactly 3 variants (design system) ---------- */
-  /* Primary: the RED GRADIENT money CTA (Molten Forge). 56px, radius 14px.
-     One primary per viewport — everything else is secondary/ghost (ink). */
+  /* ---------- Buttons — exactly 3 variants (design system) ----------
+     REBUILT 2026-08-01. Primary is now a FLAT INK fill, not a red gradient.
+     Why: the elevation system (--v-shadow-card) tops out at 6% opacity, and a
+     saturated glowing button next to it destroys the eye's ability to resolve
+     those shadows — you keep the structure and lose the quality. Red survives
+     as a <=20px accent only. See docs/design/VERSE0-REFERENCE-AUDIT.md §5.1.
+     Geometry: 48px tall, 4px radius (was 56px / 14px). */
   .btn-primary {
-    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
-           text-btn text-white transition duration-150
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
-           disabled:opacity-50 disabled:cursor-not-allowed;
-    background-image: var(--red-grad);
-    box-shadow: 0 12px 24px rgba(255, 69, 58, 0.28);
+    @apply inline-flex items-center justify-center gap-2 px-6
+           font-medium text-white transition-colors
+           disabled:cursor-not-allowed disabled:opacity-50;
+    height: 48px;
+    border-radius: var(--v-r-control);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    background-color: var(--v-ink);
   }
   .btn-primary:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.04);
-    box-shadow: 0 16px 30px rgba(255, 69, 58, 0.4), 0 8px 24px rgba(0, 0, 0, 0.06);
+    background-color: #000;
+  }
+  .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--v-accent);
   }
 
-  /* Secondary: white surface, cool border, ink text. The workhorse button. */
+  /* Secondary: white surface, hairline via shadow (not a border), ink text. */
   .btn-secondary {
-    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-7
-           text-btn text-ink bg-white border border-line
-           transition duration-150 hover:border-line-strong hover:bg-paper-2
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/25 focus-visible:ring-offset-2 focus-visible:ring-offset-paper
-           disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 bg-white px-6
+           font-medium text-ink transition-shadow
+           disabled:cursor-not-allowed disabled:opacity-50;
+    height: 48px;
+    border-radius: var(--v-r-control);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    box-shadow: 0 0 0 1px var(--v-hairline);
+  }
+  .btn-secondary:hover {
+    box-shadow: 0 0 0 1px var(--v-hairline-strong);
+  }
+  .btn-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--v-accent);
   }
 
   /* Ghost: text-only, for low-priority links. */
   .btn-ghost {
-    @apply inline-flex h-btn items-center justify-center gap-2 rounded-btn px-4
-           text-btn font-semibold text-ink/70 transition-colors
-           hover:text-ink hover:bg-ink/[0.04]
-           focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/30;
+    @apply inline-flex items-center justify-center gap-2 px-4
+           font-medium text-ink/70 transition-colors hover:bg-ink/[0.04] hover:text-ink;
+    height: 48px;
+    border-radius: var(--v-r-control);
+    font-size: 15px;
+  }
+  .btn-ghost:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--v-accent);
+  }
+
+  /* Inverted primary — for use inside full-bleed ink bands (final CTA). */
+  .btn-invert {
+    @apply inline-flex items-center justify-center gap-2 bg-white px-6
+           font-medium transition-colors;
+    height: 48px;
+    border-radius: var(--v-r-control);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--v-ink);
+  }
+  .btn-invert:hover {
+    background-color: #ebebed;
+  }
+  .btn-invert:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--v-ink), 0 0 0 4px var(--v-accent);
   }
 
   /* ---------- Surfaces (spec-sheet cards: squared, structural) ---------- */
@@ -226,6 +337,171 @@
   .field-label {
     @apply mb-2 block text-sm font-medium text-ink/80;
   }
+
+  /* ======================================================================
+     VERSEO PRIMITIVES (`v-` prefix)
+     Opt-in. Redesigned pages compose these; the ~200 pages not yet touched
+     keep `container-page` / `section-pad` and are completely unaffected.
+     ====================================================================== */
+
+  /* -- Layout ----------------------------------------------------------- */
+  .v-container {
+    @apply mx-auto w-full;
+    max-width: var(--v-container);
+    padding-inline: var(--v-gutter);
+  }
+  @media (min-width: 768px) {
+    .v-container {
+      padding-inline: 32px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .v-container {
+      padding-inline: 40px;
+    }
+  }
+
+  /* Section rhythm: reference is a flat 120/120. We scale down on small
+     screens rather than copying its asymmetric 100/50 mobile padding. */
+  .v-section {
+    padding-block: 72px;
+  }
+  @media (min-width: 768px) {
+    .v-section {
+      padding-block: 96px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .v-section {
+      padding-block: 120px;
+    }
+  }
+  .v-section-tight {
+    padding-block: 40px;
+  }
+
+  /* Centred headline column. */
+  .v-measure {
+    @apply mx-auto text-center;
+    max-width: var(--v-measure);
+  }
+
+  /* -- Surfaces --------------------------------------------------------- */
+  /* The recessed strip that card rows sit ON TOP of. Hairlines top and
+     bottom, no side borders — it reads as a band, not a box. */
+  .v-recess {
+    background-color: var(--v-recess);
+    box-shadow:
+      inset 0 1px 0 var(--v-hairline),
+      inset 0 -1px 0 var(--v-hairline);
+  }
+
+  /* Flat card — the "problem" state. Sits ON the recess, no elevation. */
+  .v-card-flat {
+    background-color: transparent;
+    border-radius: var(--v-r-card);
+  }
+
+  /* Elevated card — the "solution"/featured state. Four-layer soft shadow. */
+  .v-card {
+    background-color: var(--v-surface);
+    border-radius: var(--v-r-card);
+    box-shadow: var(--v-shadow-card);
+    transition:
+      box-shadow var(--v-dur) var(--v-ease),
+      transform var(--v-dur) var(--v-ease);
+  }
+  .v-card-hover:hover {
+    box-shadow: var(--v-shadow-lift);
+    transform: translateY(-2px);
+  }
+
+  /* Hairline — always a shadow, never a border (the reference has zero
+     CSS borders; this is what keeps edges from going muddy at 1px). */
+  .v-hair {
+    box-shadow: 0 0 0 1px var(--v-hairline);
+  }
+  .v-hair-t {
+    box-shadow: inset 0 1px 0 var(--v-hairline);
+  }
+
+  /* -- Typography ------------------------------------------------------- */
+  /* The bracketed micro-eyebrow. Brackets are real characters, not
+     pseudo-content, so they are selectable and screen-readers announce the
+     label cleanly. The red dot is one of the accent's few permitted uses. */
+  .v-eyebrow {
+    @apply inline-flex items-center gap-2;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--v-muted);
+    letter-spacing: 0;
+  }
+  .v-eyebrow::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background-color: var(--v-accent);
+    flex: none;
+  }
+
+  /* Display sizes keep the reference's negative tracking. Body does not —
+     it is set for a contractor on a phone, often outdoors. See audit §5.3. */
+  .v-h1 {
+    font-size: clamp(38px, 6.2vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    color: var(--v-ink);
+  }
+  .v-h2 {
+    font-size: clamp(30px, 4.4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    color: var(--v-ink);
+  }
+  .v-h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    color: var(--v-ink);
+  }
+  .v-lead {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--v-muted);
+  }
+  .v-body {
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: var(--v-ink-2);
+  }
+  .v-small {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--v-muted);
+  }
+  .v-micro {
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--v-muted-light);
+  }
+
+  /* Link underline is one of red's permitted uses. */
+  .v-link {
+    color: var(--v-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--v-accent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition: text-decoration-thickness var(--v-dur-fast) var(--v-ease);
+  }
+  .v-link:hover {
+    text-decoration-thickness: 2.5px;
+  }
 }
 
 @layer utilities {
@@ -239,6 +515,65 @@
   .bg-grid-fade {
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
     mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+  }
+
+  /* Drafting sheet — our replacement for the reference's photographic sky band.
+     Graph paper: a fine 24px rule with a heavier 120px major rule over it.
+     Pure CSS, no image request. See docs/design/VERSE0-REFERENCE-AUDIT.md §5.2. */
+  .v-drafting {
+    background-color: var(--v-recess);
+    background-image:
+      repeating-linear-gradient(
+        to right,
+        rgba(29, 29, 31, 0.07) 0 1px,
+        transparent 1px 120px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(29, 29, 31, 0.07) 0 1px,
+        transparent 1px 120px
+      ),
+      repeating-linear-gradient(
+        to right,
+        rgba(29, 29, 31, 0.045) 0 1px,
+        transparent 1px 24px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(29, 29, 31, 0.045) 0 1px,
+        transparent 1px 24px
+      );
+  }
+
+  /* Dotted field — the hero's quiet backdrop. One 2px dot per 32px cell,
+     faded out toward the edges so it never competes with the headline. */
+  .v-dotfield {
+    background-image: radial-gradient(circle at 1px 1px, rgba(29, 29, 31, 0.10) 1px, transparent 0);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 78%);
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 78%);
+  }
+
+  /* Reveal-on-scroll. Paired with components/marketing/Reveal.tsx, which adds
+     `is-in` via IntersectionObserver. Falls back to fully visible with no JS. */
+  .v-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity var(--v-dur-slow) var(--v-ease),
+      transform var(--v-dur-slow) var(--v-ease);
+  }
+  .v-reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
   .perspective {

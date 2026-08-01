@@ -48,11 +48,12 @@ const config: Config = {
         gold: { soft: "#FF6961" },
       },
       fontFamily: {
+        // One text family. `display` is retained as a token (37 files use it)
+        // but now resolves to Inter — hierarchy comes from weight and tracking,
+        // not from a second face. See app/layout.tsx for why.
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        // Display face flipped to Quicksand (Molten Forge). Body stays Inter,
-        // mono stays Plex/JetBrains — rounded Quicksand is headings-only.
-        display: ["var(--font-quicksand)", "Quicksand", "ui-rounded", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+        display: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jbmono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       // Design-system type scale (Doc 2). Apply with text-hero / text-section / etc.
       // Quicksand tops out at 700, so hero titles use 700 (its boldest weight).

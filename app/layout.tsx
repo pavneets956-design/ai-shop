@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Archivo, IBM_Plex_Mono, Quicksand, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,27 +10,21 @@ import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/data/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
+/**
+ * Two families, down from five (Inter, Archivo, IBM Plex Mono, Quicksand,
+ * JetBrains Mono) as of the 2026-08-01 Verseo rebuild.
+ *
+ * Inter is a variable font, so it covers every weight the retired display
+ * faces were loaded for. Archivo/Quicksand/Plex are no longer fetched; their
+ * CSS variables are aliased onto these two in globals.css so the 37 files
+ * using `font-display`, the 14 using `font-mono`, and the direct
+ * `var(--font-display)` references in components/experience/experience.css all
+ * keep resolving without a single component edit.
+ *
+ * Quicksand in particular was working against the brief — a rounded, friendly
+ * face reads "approachable app", not "precise, built by hand".
+ */
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-// "Blueprint" type system: Archivo (engineered display) + IBM Plex Mono (spec labels).
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  weight: ["500", "600", "700", "800"],
-});
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
-// Homepage "Molten Forge" type system: Quicksand (rounded premium sans) + JetBrains Mono (spec labels).
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  variable: "--font-quicksand",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 const jbMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jbmono",
@@ -105,7 +99,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable} ${quicksand.variable} ${jbMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jbMono.variable}`}>
       <body className="font-sans antialiased">
         {/* Brand ambient glow — soft red radial behind every page (matches the
             homepage). Fixed, -z-1: paints over the cream body but behind all page
