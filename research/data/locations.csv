@@ -1,0 +1,24 @@
+market,province_state,country,drive_time_from_surrey,priority,current_page,gbp_service_area,recommendation,gate,rationale,confidence
+Surrey,BC,CA,0,1,/locations/ai-automation-agency-surrey-bc,YES,REWRITE around a real local client,GBP live + 1 named local client,Home base. Proof achievable in person. Dense trades population,INFERRED
+Delta,BC,CA,15 min,1,/locations/ai-automation-delta-bc,YES,NOINDEX until proof,1 local client,Home base secondary,INFERRED
+Langley,BC,CA,25 min,1,/locations/ai-automation-langley-bc,YES,NOINDEX until proof,1 local client,Dense trades; high fencing/landscaping density,INFERRED
+White Rock,BC,CA,20 min,1,/locations/ai-automation-white-rock-bc,YES,NOINDEX until proof,1 local client,Small market,INFERRED
+Abbotsford,BC,CA,45 min,2,/locations/ai-automation-abbotsford,YES,NOINDEX until proof,1 local client,Fraser Valley; strong trades economy,INFERRED
+Chilliwack,BC,CA,70 min,2,/locations/ai-automation-chilliwack-bc,YES,NOINDEX until proof,1 local client,Fraser Valley edge,INFERRED
+Maple Ridge,BC,CA,50 min,2,/locations/ai-automation-maple-ridge-bc,YES,NOINDEX until proof,1 local client,Fraser Valley,INFERRED
+Burnaby,BC,CA,40 min,3,/locations/ai-automation-burnaby-bc,YES,NOINDEX until proof,1 local client,Metro Vancouver; more competitive,INFERRED
+Richmond,BC,CA,40 min,3,/locations/ai-automation-richmond-bc,YES,NOINDEX until proof,1 local client,Metro Vancouver,INFERRED
+Coquitlam,BC,CA,45 min,3,/locations/ai-automation-coquitlam-bc,YES,NOINDEX until proof,1 local client,Metro Vancouver,INFERRED
+New Westminster,BC,CA,35 min,3,/locations/ai-automation-new-westminster-bc,YES,NOINDEX until proof,1 local client,Metro Vancouver,INFERRED
+Vancouver,BC,CA,50 min,3,/locations/ai-automation-vancouver,YES,NOINDEX until proof,1 local client,Largest local market; most competitive; local rivals AdaptAI BuildGravity already rank,STRONGLY-SUPPORTED
+Vancouver (chatbot),BC,CA,50 min,3,/locations/ai-chatbot-developer-vancouver,YES,MERGE,none,Duplicate local intent with the Vancouver page,VERIFIED
+Surrey (receptionist),BC,CA,0,1,/locations/ai-receptionist-surrey-bc,YES,MERGE,none,Duplicate of the Surrey page + the receptionist cluster,VERIFIED
+Surrey (custom apps),BC,CA,0,1,/locations/custom-ai-apps-surrey,YES,MERGE,none,Duplicate local intent,VERIFIED
+Victoria,BC,CA,ferry,4,/locations/ai-automation-victoria-bc,NO — outside 2h drive,NOINDEX,none,Reachable but not a genuine service area for an on-site SAB profile,INFERRED
+Calgary,AB,CA,remote,5,/locations/ai-automation-calgary-ab,NO,MERGE to /remote-ai-development,none,NOT a local market. Declaring it on a Surrey SAB profile creates relevance mismatch and flag risk,STRONGLY-SUPPORTED
+Edmonton,AB,CA,remote,5,/locations/ai-automation-edmonton-ab,NO,MERGE to /remote-ai-development,none,Same,STRONGLY-SUPPORTED
+Toronto,ON,CA,remote,6,/locations/ai-automation-toronto-on,NO,MERGE to /remote-ai-development,none,Largest Canadian market but no presence and highest competition. Remote content only,STRONGLY-SUPPORTED
+Quebec,QC,CA,remote,reject,none,NO,DO NOT BUILD,none,Requires native French delivery. Voxify holds it with Loi 25 positioning and Quebec French synthesis,STRONGLY-SUPPORTED
+California,CA,US,remote,tier2,none,NO,DO NOT BUILD,3 CA case studies,~20% of US home services market but remote-only and highest competition,MODERATE
+Texas,TX,US,remote,tier2,none,DO NOT BUILD,none,3 case studies,Second-largest; suburban growth driving HVAC/roofing,MODERATE
+Florida,FL,US,remote,tier2,none,NO,DO NOT BUILD,3 case studies,Third; aging homes and humidity-driven repair demand,MODERATE

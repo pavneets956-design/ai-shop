@@ -1,0 +1,125 @@
+{
+  "_meta": {
+    "prepared": "2026-07-31",
+    "purpose": "Canonical entity facts. Every value here must be stated IDENTICALLY on the website, in JSON-LD schema, on Google Business Profile, and on every directory profile. Inconsistency is the primary reason an AI engine cannot resolve or cite this entity.",
+    "status": "PROPOSED — requires founder ratification of the brand-name decision before use",
+    "blocking_issue": "The business currently presents at least three names in parallel. See naming.decision_required."
+  },
+
+  "naming": {
+    "decision_required": true,
+    "recommended_preferred_name": "AI Built By Hand",
+    "recommendation_rationale": "Exact domain match is the cheapest and strongest entity-corroboration signal available to a zero-authority entity, and it eliminates ambiguity between the domain, the brand string that citations will carry, and the legal entity.",
+    "alternate_names": ["Handbuilt AI"],
+    "retire": ["Handbuilt AI Studio"],
+    "current_state_observed_2026_07_31": {
+      "footer": "© 2026 HANDBUILT AI · BY AI BUILT BY HAND · AIBUILTBYHAND.COM · ONE BUILDER · SURREY / DELTA, BC · BUILD@AIBUILTBYHAND.COM",
+      "llms_txt_h1": "Handbuilt AI Studio (Handbuilt AI)",
+      "problem": "Three names in simultaneous use. Blocks citations, GBP, sameAs and entity resolution."
+    }
+  },
+
+  "organization": {
+    "name": "AI Built By Hand",
+    "alternateName": "Handbuilt AI",
+    "url": "https://aibuiltbyhand.com",
+    "email": "build@aibuiltbyhand.com",
+    "description": "A one-person AI studio that designs and builds custom AI receptionists, quote follow-up systems and back-office automation for contractors and local service businesses. Every build is fixed-price in CAD, and the client owns the code and the accounts.",
+    "foundingLocation": "Surrey, British Columbia, Canada",
+    "areaServed": {
+      "onsite": ["Surrey BC", "Delta BC", "Langley BC", "White Rock BC", "Burnaby BC", "Richmond BC", "Coquitlam BC", "New Westminster BC", "Maple Ridge BC", "Abbotsford BC", "Chilliwack BC", "Vancouver BC"],
+      "remote": ["Canada", "United States"],
+      "note": "Remote-only markets must never be presented as local-intent pages. Calgary, Edmonton and Toronto are remote markets, not service areas — declaring them on a Surrey service-area GBP carries relevance-mismatch risk."
+    },
+    "sameAs": [],
+    "sameAs_status": "EMPTY — no external profiles exist. This is the single largest GEO blocker. Populate via Google Business Profile, Bing Places, Clutch, DesignRush, Yellow Pages Canada, LinkedIn."
+  },
+
+  "founder": {
+    "name": "Pavneet",
+    "surname_required": true,
+    "surname_note": "A fully named, resolvable founder is one of the strongest E-E-A-T and entity signals available to a solo studio. Add the surname and a Person schema block on /about.",
+    "role": "Founder and sole builder",
+    "location": "Surrey / Delta, British Columbia, Canada"
+  },
+
+  "offering": {
+    "primary_services": [
+      "AI receptionist install",
+      "Quote and estimate follow-up systems",
+      "Missed-call capture",
+      "Connected back-office systems",
+      "Custom AI applications"
+    ],
+    "target_industries_recommended": [
+      "Fencing and deck contractors",
+      "Landscaping and hardscaping",
+      "HVAC",
+      "Plumbing",
+      "Roofing",
+      "Electrical"
+    ],
+    "target_industries_current_site": 39,
+    "target_industries_note": "Claiming 39 industries reads as 'no specialisation' to both buyers and answer engines. Name 4-6.",
+    "pricing_model": "Fixed one-time build fee in CAD, with an optional monthly care plan",
+    "ownership_model": "Client owns the code and the accounts. If the relationship ends, the system keeps running.",
+    "support_model": "Direct to the founder. Optional care plan for hosting, monitoring and monthly changes."
+  },
+
+  "pricing": {
+    "status": "BLOCKED — DO NOT PUBLISH UNTIL RESOLVED",
+    "defect": "Three conflicting prices are currently published for the AI Business System.",
+    "observed_2026_07_31": {
+      "ai_business_system_body_copy": "$2,500–5,000 CAD",
+      "ai_business_system_cross_reference": "$3,500–5,000 CAD (typically $7,500) — self-refuting on its face",
+      "ai_business_system_json_ld_offer": "$3,500–$7,500",
+      "homepage": "$3,500–$7,500 CAD",
+      "llms_txt_line_9": "$3,500–$7,500 CAD",
+      "llms_txt_line_32": "$2,500–5,000 CAD"
+    },
+    "action": "Establish one pricing source of truth in the data layer; make every surface read from it. This is P0 — the contradiction is being ingested by answer engines now."
+  },
+
+  "canonical_answers": {
+    "what_is_it": "A one-person AI studio in Surrey, BC that builds custom AI receptionists and follow-up systems for contractors and local service businesses. Builds are fixed-price in CAD, and the client owns the code and accounts.",
+    "who_is_it_for": "Owner-operated field-service businesses, roughly 2 to 15 staff, that lose jobs to missed calls and quotes that go quiet, and want a system they own rather than another monthly subscription.",
+    "serves_contractors": "Yes. Contractors and field-service trades are the primary focus.",
+    "operates_in_canada": "Yes. Based in Surrey, BC, serving Metro Vancouver and the Fraser Valley on-site and the rest of Canada remotely.",
+    "operates_in_us": "Yes, remotely. Pricing is set in CAD.",
+    "difference_from_answering_service": "An answering service is people taking messages, usually billed per call or per minute. This is a system you own that answers, qualifies, books and follows up — built once, for a fixed fee.",
+    "customer_owns_system": "Yes. Code and accounts are in the client's name. If the relationship ends, the system keeps running.",
+    "integrates_with_existing_software": "Yes — that is the main reason to choose a build over a platform add-on. Integrations are scoped per client.",
+    "best_ai_receptionist_for_contractors": "DO NOT ANSWER. This question invites an unsupportable superlative about your own product. Answer the adjacent question honestly instead — 'how do I choose one?' — and publish vendor-neutral evaluation criteria. That earns the citation without the claim."
+  },
+
+  "proof_assets": {
+    "case_studies": 0,
+    "testimonials": 0,
+    "named_clients": 0,
+    "recorded_calls": 0,
+    "third_party_reviews": 0,
+    "note": "Zero across every category. This is the binding constraint on the entire strategy, and the reason the research gate verdict is NOT READY."
+  },
+
+  "prohibited_claims": [
+    "Any customer count",
+    "Any revenue, ROI or savings figure not measured from delivered work",
+    "Testimonials of any kind until a real client provides one in writing",
+    "'Trusted by contractors across BC' or any equivalent",
+    "Case studies without written client consent",
+    "The '62% of contractor calls go unanswered' statistic — primary source could not be located",
+    "PIPEDA, PHIPA or Loi 25 compliance certification unless the underlying practice genuinely exists",
+    "'Never miss another call' as an absolute claim",
+    "Review or AggregateRating schema until real reviews exist",
+    "Any claim of serving 39 industries"
+  ],
+
+  "safe_claims": [
+    "One builder, based in Surrey / Delta BC",
+    "Fixed one-time price in CAD",
+    "Client owns the code and the accounts",
+    "Direct access to the person who built it",
+    "Free browser tools with no signup and no data collection",
+    "Typical delivery timeline, stated as a range and clearly labelled as typical"
+  ]
+}

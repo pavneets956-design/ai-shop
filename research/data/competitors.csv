@@ -1,0 +1,27 @@
+name,url,layer,category,country_focus,price,pricing_model,trade_focus,key_strength,key_weakness,gap_to_exploit,confidence
+Jobber,jobber.com,1,platform-bundled,CA;US,$99/mo add-on; free on Plus ($499-599/mo),subscription,all field service,Already installed; zero integration work; trusted,Confined to the platform; client owns nothing; cannot reach a second system,Cross-tool integration and ownership,STRONGLY-SUPPORTED
+Housecall Pro,housecallpro.com,1,platform-bundled,US;CA,$59-$329/mo plans; AI built in,subscription,home services,Bundled; CSR AI and Marketing AI in higher tiers,Same platform confinement,Same,STRONGLY-SUPPORTED
+ServiceTitan,servicetitan.com,1,platform,US,enterprise,subscription,HVAC plumbing electrical,Deep vertical platform,No native AI receptionist yet,Not a realistic target buyer,MODERATE
+Numa,numa.com,2,standalone SaaS,US,$49/mo,subscription,home services,Low price point,Thin feature set at entry,Price anchoring only,MODERATE
+Rosie,heyrosie.com,2,standalone SaaS,US,from $49/mo,subscription,SMB,Natural voice; simple,$49 tier EXCLUDES appointment booking,Hidden tier limits,MODERATE
+Goodcall,goodcall.com,2,standalone SaaS,US,$66-$208/mo,subscription,local SMB,Quick setup for solo owners,Generic; shallow integration,Integration depth,MODERATE
+NextPhone,getnextphone.com,2,standalone SaaS,US,$199/mo,subscription,home services,Flat rate; positioned as the sensible middle,Generic,Trade specificity,MODERATE
+Smith.ai,smith.ai,2;3,hybrid AI+human,US,$95-$300/mo,subscription,professional services,G2 4.7 AI / 4.9 human; strong brand,Trustpilot reports unauthorized transfers to live agents inflating bills,Billing transparency,STRONGLY-SUPPORTED
+Dialzara,dialzara.com,2,standalone SaaS,US,base + $0.48/min overage,usage,SMB,Natural voice praised,Steep per-minute overages,Fixed pricing,MODERATE
+Avoca,avoca.ai,2,vertical voice AI,US,not published,subscription,HVAC plumbing roofing,Venture-backed; trade-specific,Narrow trade focus; US,Quote-heavy trades they ignore,MODERATE
+Sameday,gosameday.com,2,vertical voice AI,US,not published,subscription,home services,Converts inbound to booked jobs,US only,Canadian market; ownership,MODERATE
+LeadTruffle,leadtruffle.co,2,vertical voice AI,US,not published,subscription,home services,After-hours triage and escalation,US only,Ownership; quote follow-up,MODERATE
+Ruby,ruby.com,3,human answering,US,premium,per-call/per-minute,professional services,Agent friendliness consistently praised,Most expensive; a Capterra reviewer reported $660 expected becoming $5100+,Surprise billing is the loudest complaint in this market,STRONGLY-SUPPORTED
+AnswerForce,answerforce.com,3,human answering,US;CA,base + $2/min overage,per-minute,contractors HVAC,24/7 contractor focus,$2/min overages,Fixed pricing,MODERATE
+Mihron AI,mihronai.ca,4,Canadian AI receptionist,CA,from CA$299/mo,subscription,SMB clinics,PIPEDA + PHIPA compliant; bilingual EN/FR-CA; CAD pricing,Premium price,Ownership; break-even at ~5 months vs a $1500 build,STRONGLY-SUPPORTED
+VoiceFleet,voicefleet.ai,4,Canadian AI receptionist,CA,from CA$149/mo,subscription,SMB,Bilingual; genuine 24/7; CAD,Generic,Ownership; break-even ~10 months,STRONGLY-SUPPORTED
+Voxify,voxify.ca,4,Quebec AI receptionist,CA-QC,not published,subscription,law clinics garages restaurants,Loi 25 compliant; native Quebec French; 14-day trial,Quebec only,None — do not enter Quebec,STRONGLY-SUPPORTED
+Dialbox,dialbox.ca,4,Canadian AI receptionist,CA,not published,subscription,SMB,EN/FR at no extra cost; 20+ languages; Quebec French synthesis,Generic,Ownership,MODERATE
+Polaris Voice,polarisvoice.ca,4,Canadian AI receptionist,CA,not published,subscription,SMB,Multilingual Canada,Generic,Ownership,MODERATE
+ai-receptionist.com,ai-receptionist.com/en-ca,4,Canadian AI receptionist,CA,from $14/mo,subscription,SMB,Extremely low price; Canadian French,Very thin at that price,Quality and integration,MODERATE
+AdaptAI,adaptai.ca,5,local Metro Vancouver,CA-BC,not published,consulting,SMB,Surrey based; SURFACES IN SEARCH,Consulting not build,Direct local rival — study their entity signals,VERIFIED-EXISTS
+BuildGravity,buildgravity.ca,5,local Metro Vancouver,CA-BC,not published,consulting,enterprise,Metro Vancouver; SURFACES IN SEARCH,Enterprise focus,Different buyer,VERIFIED-EXISTS
+MSP Corp,mspcorp.ca,5,local Metro Vancouver,CA-BC,not published,consulting,SMB,Surrey AI consulting; SURFACES IN SEARCH,MSP not builder,Direct local rival,VERIFIED-EXISTS
+Fusion Computing,fusioncomputing.ca,5,local Metro Vancouver,CA-BC,not published,consulting,SMB,Vancouver; SURFACES IN SEARCH,IT services,Different buyer,VERIFIED-EXISTS
+GoHighLevel,gohighlevel.com,3,DIY automation platform,US;CA,$97-$297/mo,subscription,agencies,Marketing automation depth,Agency tool not end-user,Contractors will not build it themselves,MODERATE
+Podium,podium.com,3,messaging platform,US;CA,to $399+/mo,subscription,local business,Review + messaging incumbent,Expensive,Price and ownership,MODERATE

@@ -1,0 +1,195 @@
+{
+  "archived_utc": "2026-07-31T21:31:45.188Z",
+  "host": "aibuiltbyhand.com",
+  "files": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 135336,
+      "file": "root.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::cdljc-1785533502637-66f63bbface3",
+      "cache": "HIT"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "bytes": 40257,
+      "file": "sitemap.xml",
+      "content_type": "application/xml",
+      "x_vercel_id": "pdx1::v6tss-1785533502752-6801dd30ae6c",
+      "cache": "HIT"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "bytes": 1418,
+      "file": "robots.txt",
+      "content_type": "text/plain",
+      "x_vercel_id": "pdx1::h5prr-1785533502786-cd45bc955e59",
+      "cache": "HIT"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "bytes": 47150,
+      "file": "llms.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "x_vercel_id": "pdx1::kcj5p-1785533503008-4d46f0e91d30",
+      "cache": "HIT"
+    },
+    {
+      "path": "/pricing",
+      "status": 200,
+      "bytes": 98687,
+      "file": "pricing.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::r6qr8-1785533503049-2e5dbb424f3f",
+      "cache": "HIT"
+    },
+    {
+      "path": "/shop",
+      "status": 200,
+      "bytes": 217147,
+      "file": "shop.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::gt6bm-1785533503083-35656362a946",
+      "cache": "HIT"
+    },
+    {
+      "path": "/ai-business-system",
+      "status": 200,
+      "bytes": 92187,
+      "file": "ai-business-system.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::h5prr-1785533503318-c97a1d630fcc",
+      "cache": "HIT"
+    },
+    {
+      "path": "/ai-receptionist",
+      "status": 200,
+      "bytes": 91039,
+      "file": "ai-receptionist.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::d4tr6-1785533503484-e1fd488b0f0b",
+      "cache": "HIT"
+    },
+    {
+      "path": "/ai-receptionist-for-contractors",
+      "status": 200,
+      "bytes": 108819,
+      "file": "ai-receptionist-for-contractors.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::g5ftq-1785533503519-ddea5e7fb433",
+      "cache": "HIT"
+    },
+    {
+      "path": "/ai-automation-agency",
+      "status": 200,
+      "bytes": 89696,
+      "file": "ai-automation-agency.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::k82fr-1785533503560-ac5b10afe13a",
+      "cache": "HIT"
+    },
+    {
+      "path": "/custom-ai-app-development",
+      "status": 200,
+      "bytes": 90791,
+      "file": "custom-ai-app-development.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::4vz8g-1785533503774-7876e9efcd87",
+      "cache": "HIT"
+    },
+    {
+      "path": "/ai-chatbot-development",
+      "status": 200,
+      "bytes": 91003,
+      "file": "ai-chatbot-development.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::t5t8v-1785533504021-94340df714b4",
+      "cache": "HIT"
+    },
+    {
+      "path": "/create",
+      "status": 200,
+      "bytes": 42717,
+      "file": "create.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::s754b-1785533504284-f6460e80caee",
+      "cache": "HIT"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "bytes": 72941,
+      "file": "about.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::6pskf-1785533504492-8dd9ff6709ca",
+      "cache": "HIT"
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "bytes": 72119,
+      "file": "faq.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::rlts5-1785533504797-a58b03a80250",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools",
+      "status": 200,
+      "bytes": 75492,
+      "file": "tools.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::xv4th-1785533505022-5986acefff7c",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools/contractor-profit-pricing-calculator",
+      "status": 200,
+      "bytes": 96982,
+      "file": "tools_contractor-profit-pricing-calculator.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::9lb6b-1785533505203-ce36cfbdfdf1",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools/contractor-quote-follow-up-generator",
+      "status": 200,
+      "bytes": 112854,
+      "file": "tools_contractor-quote-follow-up-generator.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::d4tr6-1785533505400-c60ed3306059",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools/missed-call-revenue-calculator",
+      "status": 200,
+      "bytes": 95721,
+      "file": "tools_missed-call-revenue-calculator.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::cf7n5-1785533505540-72ecff36ad15",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools/contractor-labor-burden-calculator",
+      "status": 200,
+      "bytes": 98424,
+      "file": "tools_contractor-labor-burden-calculator.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::4vz8g-1785533505712-ef4614495441",
+      "cache": "HIT"
+    },
+    {
+      "path": "/tools/contractor-lead-leak-audit",
+      "status": 200,
+      "bytes": 110817,
+      "file": "tools_contractor-lead-leak-audit.html",
+      "content_type": "text/html; charset=utf-8",
+      "x_vercel_id": "pdx1::d4tr6-1785533505920-9e65fcc4c38d",
+      "cache": "HIT"
+    }
+  ]
+}

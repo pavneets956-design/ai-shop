@@ -1,0 +1,90 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /agent/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /cart
+
+Host: https://aibuiltbyhand.com
+Sitemap: https://aibuiltbyhand.com/sitemap.xml

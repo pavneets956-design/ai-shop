@@ -1,0 +1,217 @@
+current_url,page_type,recommendation,destination_url,rationale,wave,preserve_equity,gate
+/,home,KEEP,/,"Rewrite with proof above the fold + ownership claim",1,301/308 — never delete,none
+/services,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/industries,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/locations,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/solutions,hub,REPURPOSE,,"Hub page — retain only if its children survive consolidation",2,301/308 — never delete,none
+/use-cases,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/resources,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/how-to,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/compare,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/pricing,pricing,KEEP,/pricing,"Core page — retain",1,301/308 — never delete,none
+/shop,hub,REPURPOSE,,"Hub page — retain only if its children survive consolidation",2,301/308 — never delete,none
+/tools,hub,KEEP,/tools,"Promote heavily; primary lead magnet hub",1,301/308 — never delete,none
+/faq,faq,KEEP,/faq,"Core page — retain",1,301/308 — never delete,none
+/about,about,KEEP,/about,"Core page — retain",1,301/308 — never delete,none
+/create,create,KEEP,/create,"Core page — retain",1,301/308 — never delete,none
+/privacy,privacy,KEEP,/privacy,"Core page — retain",1,301/308 — never delete,none
+/terms,terms,KEEP,/terms,"Core page — retain",1,301/308 — never delete,none
+/tools/contractor-profit-pricing-calculator,free-tool,KEEP,/tools/contractor-profit-pricing-calculator,"Strongest asset on the site. Add WebApplication schema; link from commercial pages",1,301/308 — never delete,none
+/tools/contractor-quote-follow-up-generator,free-tool,KEEP,/tools/contractor-quote-follow-up-generator,"Strongest asset on the site. Add WebApplication schema; link from commercial pages",1,301/308 — never delete,none
+/tools/missed-call-revenue-calculator,free-tool,KEEP,/tools/missed-call-revenue-calculator,"Strongest asset on the site. Add WebApplication schema; link from commercial pages",1,301/308 — never delete,none
+/tools/contractor-labor-burden-calculator,free-tool,KEEP,/tools/contractor-labor-burden-calculator,"Strongest asset on the site. Add WebApplication schema; link from commercial pages",1,301/308 — never delete,none
+/tools/contractor-lead-leak-audit,free-tool,KEEP,/tools/contractor-lead-leak-audit,"Strongest asset on the site. Add WebApplication schema; link from commercial pages",1,301/308 — never delete,none
+/ai-automation-agency,ai-automation-agency,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/custom-ai-app-development,custom-ai-app-development,KEEP,/custom-ai-app-development,"Core page — retain",1,301/308 — never delete,none
+/ai-chatbot-development,ai-chatbot-development,KEEP,/ai-chatbot-development,"Core page — retain",1,301/308 — never delete,none
+/ai-receptionist,money,MERGE,/resources/what-is-an-ai-receptionist,"Category explainer; demote from money page",1,301/308 — never delete,requires GSC baseline
+/ai-business-system,ai-business-system,KEEP,/ai-business-system,"Core page — retain",1,301/308 — never delete,none
+/done-for-you-ai-automation,done-for-you-ai-automation,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/ai-receptionist-for-contractors,ai-receptionist-for-contractors,KEEP,/ai-receptionist-for-contractors,"Core page — retain",1,301/308 — never delete,none
+/ai-lead-follow-up-agent,ai-lead-follow-up-agent,MERGE,/quote-follow-up,"Folds into the quote follow-up pillar",1,301/308 — never delete,requires GSC baseline
+/ai-chatbot-for-small-business,ai-chatbot-for-small-business,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/remote-ai-development,remote-ai-development,KEEP,/remote-ai-development,"Core page — retain",1,301/308 — never delete,none
+/ai-integration-services,ai-integration-services,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/ai-automation-canada,ai-automation-canada,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/services/ai-chatbot-for-website,services,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/services/ai-lead-capture-form,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-quote-generator,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-customer-support-agent,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-receptionist-setup,services,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/services/ai-email-automation,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-sms-automation,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-calendar-booking-agent,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-crm-automation,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-invoice-reminder-system,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-review-request-system,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-intake-form-builder,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-website-assistant,services,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/services/ai-sales-assistant,services,MERGE,/quote-follow-up,"Folds into the quote follow-up pillar",1,301/308 — never delete,requires GSC baseline
+/services/ai-admin-assistant,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-document-generator,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-proposal-generator,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-voice-agent,services,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/services/ai-workflow-automation,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/custom-business-automation,services,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/services/ai-review-engine,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-customer-reactivation,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-operations-dashboard,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-business-analyst,service,MERGE,/ai-business-system,"Service layer overlaps money pages",2,301/308 — never delete,requires GSC baseline
+/services/ai-receptionist-os,services,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/industries/landscaping-ai-automation,industry,REWRITE,/trades/landscaping,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/lawn-care-ai-automation,industry,REWRITE,/trades/landscaping,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/plumber-ai-automation,industry,REWRITE,/trades/plumbing,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/electrician-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/hvac-ai-automation,industry,REWRITE,/trades/hvac,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/roofing-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/cleaning-business-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/moving-company-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/pest-control-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/contractor-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/real-estate-agent-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/dental-clinic-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/salon-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/restaurant-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/auto-detailing-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/fence-company-ai-automation,industry,REWRITE,/trades/fencing-decks,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/deck-builder-ai-automation,industry,REWRITE,/trades/fencing-decks,"Tier-1 trade — rebuild around a REAL client. Gated on proof",2,301/308 — never delete,requires proof
+/industries/painter-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/clinic-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/mortgage-broker-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/insurance-broker-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/physiotherapy-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/chiropractor-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/barbershop-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/gym-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/personal-trainer-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/food-truck-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/wedding-planner-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/photographer-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/videographer-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/immigration-consultant-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/law-firm-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/accountant-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/bookkeeper-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/consultant-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/agency-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/ecommerce-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/retail-store-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/industries/coach-ai-automation,industry,MERGE,/trades,"One of 39 speculative industry pages with zero delivered work",2,301/308 — never delete,requires GSC baseline
+/creators/ai-tools-for-content-creators,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-video-editing-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-tiktok-content-system,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-youtube-shorts-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-youtube-video-workflow,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-podcast-clipping-system,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-text-to-speech-for-creators,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-voice-cloning-workflow,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-avatar-video-creation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-faceless-channel-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-script-writing-system,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-caption-subtitle-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-content-repurposing-system,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-social-media-scheduling-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-newsletter-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-fan-message-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-creator-crm,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-patreon-creator-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-course-creator-automation,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/creators/ai-coaching-content-system,creators,PAUSE-NOINDEX,,"Audience fork: noindex pending founder decision. Reversible. Do NOT redirect into the contractor funnel",3,301/308 — never delete,none
+/locations/ai-automation-agency-surrey-bc,locations,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/locations/ai-automation-delta-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-vancouver,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-langley-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-abbotsford,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-receptionist-surrey-bc,locations,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/locations/ai-chatbot-developer-vancouver,locations,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/locations/custom-ai-apps-surrey,location,REWRITE,/locations/surrey,"Gated on GBP + one real local client",3,301/308 — never delete,requires proof
+/locations/ai-automation-burnaby-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-richmond-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-coquitlam-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-new-westminster-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-white-rock-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-maple-ridge-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-chilliwack-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-victoria-bc,location,NOINDEX,,"No GBP, no local proof, no citations — doorway-page risk. Reversible",3,301/308 — never delete,none
+/locations/ai-automation-calgary-ab,location,MERGE,/remote-ai-development,"NOT a local market — remote delivery content only. SAB relevance-mismatch risk",3,301/308 — never delete,requires GSC baseline
+/locations/ai-automation-edmonton-ab,location,MERGE,/remote-ai-development,"NOT a local market — remote delivery content only. SAB relevance-mismatch risk",3,301/308 — never delete,requires GSC baseline
+/locations/ai-automation-toronto-on,location,MERGE,/remote-ai-development,"NOT a local market — remote delivery content only. SAB relevance-mismatch risk",3,301/308 — never delete,requires GSC baseline
+/resources/how-much-does-ai-automation-cost,resources,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/resources/what-is-an-ai-receptionist,resources,KEEP,/resources/what-is-an-ai-receptionist,"Core page — retain",1,301/308 — never delete,none
+/resources/best-ai-tools-for-small-business,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/ai-automation-examples-for-small-business,resources,KEEP,/resources/ai-automation-examples-for-small-business,"Core page — retain",1,301/308 — never delete,none
+/resources/ai-receptionist-cost,resources,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/resources/is-ai-receptionist-worth-it,resources,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/resources/can-ai-answer-business-phone-calls,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/can-ai-book-appointments,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/ai-lead-follow-up-guide,resources,MERGE,/quote-follow-up,"Folds into the quote follow-up pillar",1,301/308 — never delete,requires GSC baseline
+/resources/what-can-ai-automate-small-business,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/can-ai-edit-videos,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/can-ai-clone-my-voice-legally,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/can-ai-make-tiktok-videos,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/best-ai-tools-for-content-creators,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/ai-chatbot-cost,resources,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/resources/custom-ai-tool-cost,resources,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/resources/ai-integration-cost,resources,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/resources/small-business-ai-setup-cost,resources,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/resources/can-ai-send-quotes-automatically,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/can-ai-follow-up-with-leads,resources,MERGE,/quote-follow-up,"Folds into the quote follow-up pillar",1,301/308 — never delete,requires GSC baseline
+/resources/can-ai-run-my-customer-support,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/what-is-an-ai-worker,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/resources/best-ai-tools-for-contractors,resources,KEEP,/resources/best-ai-tools-for-contractors,"Core page — retain",1,301/308 — never delete,none
+/resources/best-ai-automations-for-service-businesses,resource,MERGE,/missed-calls,"Keep 3 of 24 resource pages",2,301/308 — never delete,requires GSC baseline
+/how-to/add-ai-chatbot-to-website,how-to,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/how-to/automate-quote-requests,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/how-to/create-ai-receptionist-for-small-business,how-to,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/how-to/automate-customer-replies,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/how-to/automate-invoice-reminders,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/how-to/automate-youtube-shorts,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/how-to/build-faceless-content-system,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/how-to/automate-missed-calls,how-to,MERGE,/missed-calls,"Folds into the missed-calls pillar",1,301/308 — never delete,requires GSC baseline
+/how-to/automate-review-requests,how-to,MERGE,/missed-calls,"Fold into nearest pillar",2,301/308 — never delete,requires GSC baseline
+/compare/custom-ai-tool-vs-saas,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/ai-automation-agency-vs-diy,compare,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/compare/ai-receptionist-vs-human-receptionist,compare,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/compare/ai-chatbot-vs-live-chat,compare,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/compare/ai-automation-vs-virtual-assistant,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/custom-ai-app-vs-template,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/ai-workflow-automation-vs-manual-admin,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/hiring-vs-ai-automation,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/ai-receptionist-vs-virtual-receptionist,compare,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/compare/ai-receptionist-vs-answering-service,compare,KEEP,/compare/ai-receptionist-vs-answering-service,"Core page — retain",1,301/308 — never delete,none
+/compare/chatgpt-vs-custom-ai-agent,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/custom-ai-automation-vs-zapier,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/gohighlevel-ai-vs-custom-ai-automation,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/intercom-fin-alternative-small-business,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/ai-chatbot-vs-ai-receptionist,compare,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/compare/best-ai-receptionist-small-business-canada,compare,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/compare/ai-receptionist-pricing-canada,compare,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/compare/ai-automation-agency-pricing,compare,MERGE,/pricing,"One of 7 cost pages — consolidate to a single pricing page",1,301/308 — never delete,requires GSC baseline
+/compare/make-vs-zapier-vs-custom-ai-automation,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/compare/ai-consultant-vs-ai-automation-agency,compare,MERGE,/ai-business-system,"Near-synonym of the flagship system page",2,301/308 — never delete,requires GSC baseline
+/compare/ai-built-by-hand-vs-generic-ai-agency,compare,MERGE,/compare/ai-receptionist-vs-answering-service,"Keep 1 of 21 comparison pages",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-receptionist-for-contractors,use-cases,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/use-cases/lead-capture-ai-for-real-estate,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-chatbot-for-restaurants,use-cases,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-receptionist-for-clinics,use-cases,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/use-cases/ai-invoice-reminders-for-small-business,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/custom-ai-app-for-startups,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-receptionist-for-dentists,use-cases,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/use-cases/ai-booking-assistant-for-salons,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-chatbot-for-ecommerce,use-cases,MERGE,/ai-chatbot-development,"Chatbot cannibalization — 5 URLs",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-content-engine-for-creators,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/automate-admin-for-accountants,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-document-analyzer-for-law-firms,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-receptionist-for-real-estate,use-cases,MERGE,/ai-receptionist-for-contractors,"Receptionist cannibalization — 20 URLs on one intent",1,301/308 — never delete,requires GSC baseline
+/use-cases/ai-support-bot-for-saas,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/personal-ai-assistant-app,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/missed-call-automation,use-cases,MERGE,/missed-calls,"Folds into the missed-calls pillar",1,301/308 — never delete,requires GSC baseline
+/use-cases/estimate-follow-up-automation,use-cases,MERGE,/quote-follow-up,"Folds into the quote follow-up pillar",1,301/308 — never delete,requires GSC baseline
+/use-cases/no-show-reminder-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/appointment-reminder-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/google-business-profile-lead-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/instagram-dm-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/facebook-lead-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-operations-assistant,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/ai-sop-generator,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline
+/use-cases/client-onboarding-automation,use-case,MERGE,/ai-receptionist-for-contractors,"Use-case layer overlaps services and industries",2,301/308 — never delete,requires GSC baseline

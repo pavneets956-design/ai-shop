@@ -1,0 +1,61 @@
+id,root,level,question,search_intent,funnel_stage,industry,geography,emotional_concern,objection_category,answer_format,target_page,priority,competitor_coverage,confidence
+Q001,AI receptionist,1,How does an AI receptionist work?,informational,TOF,all,both,curiosity,none,definition,/resources/what-is-an-ai-receptionist,med,saturated,verified-question
+Q002,AI receptionist,2,Will my customers know they're talking to AI?,trust,MOF,all,both,reputation risk,voice quality,recorded call,/ai-receptionist-for-contractors,HIGH,moderate,verified-question
+Q003,AI receptionist,2,Does it sound robotic?,trust,MOF,all,both,reputation risk,voice quality,recorded call,/ai-receptionist-for-contractors,HIGH,moderate,verified-question
+Q004,AI receptionist,2,Do I have to tell callers it's AI?,legal,MOF,all,both,compliance,legal,60-word answer,/trust/call-recording,med,thin,inferred
+Q005,AI receptionist,2,What happens when it can't answer a question?,risk,MOF,all,both,loss of control,failure handling,80 words + diagram,/trust/how-it-fails,HIGH,thin,verified-question
+Q006,AI receptionist,3,Can it transfer to a real person?,capability,MOF,all,both,loss of control,failure handling,60 words,/trust/how-it-fails,HIGH,moderate,verified-question
+Q007,AI receptionist,3,What if it books the wrong appointment?,risk,MOF,all,both,operational risk,failure handling,80 words,/trust/how-it-fails,med,thin,inferred
+Q008,AI receptionist,3,What if it quotes the wrong price?,risk,MOF,trades,both,financial risk,failure handling,80 words,/trust/how-it-fails,med,thin,inferred
+Q009,AI receptionist,2,Can it book appointments into my calendar?,capability,MOF,all,both,practicality,integration,60 words + screenshot,/ai-receptionist-for-contractors,HIGH,saturated,verified-question
+Q010,AI receptionist,2,Does it integrate with my CRM?,integration,MOF,all,both,practicality,integration,integration matrix,/integrations,HIGH,moderate,verified-question
+Q011,AI receptionist,3,Does it work with Jobber?,integration,BOF,trades,both,practicality,integration,60 words + screenshot,/integrations/jobber,HIGH,thin,inferred
+Q012,AI receptionist,3,Does it work with Housecall Pro?,integration,BOF,trades,US,practicality,integration,60 words + screenshot,/integrations/housecall-pro,HIGH,thin,inferred
+Q013,AI receptionist,3,Does it work with QuickBooks?,integration,BOF,all,both,practicality,integration,60 words,/integrations/quickbooks,med,thin,inferred
+Q014,AI receptionist,2,How much does an AI receptionist cost?,pricing,MOF,all,both,budget,price,comparison table,/pricing,med,SATURATED,verified-question
+Q015,AI receptionist,3,Is there a setup fee?,pricing,BOF,all,both,budget,hidden cost,40 words,/pricing,med,thin,verified-question
+Q016,AI receptionist,3,What are the overage charges?,pricing,BOF,all,both,bill shock,hidden cost,40 words,/pricing,HIGH,thin,verified-question
+Q017,AI receptionist,2,Can it handle multiple calls at once?,capability,MOF,all,both,capacity,capability,40 words,/ai-receptionist-for-contractors,low,saturated,verified-question
+Q018,AI receptionist,2,Does it work after hours and weekends?,capability,MOF,HVAC plumbing,both,coverage,capability,40 words,/ai-receptionist-for-contractors,med,saturated,verified-question
+Q019,AI receptionist,2,Is it better than an answering service?,comparison,MOF,all,both,decision,comparison,comparison table,/compare/ai-receptionist-vs-answering-service,med,SATURATED,verified-question
+Q020,AI receptionist,2,How long does setup take?,implementation,BOF,all,both,disruption,implementation,40 words,/ai-receptionist-for-contractors,med,moderate,verified-question
+Q021,Missed calls,1,Why am I losing jobs from missed calls?,problem-aware,TOF,trades,both,revenue loss,none,pillar,/missed-calls,HIGH,moderate,inferred
+Q022,Missed calls,2,How many calls do contractors actually miss?,informational,TOF,trades,both,curiosity,none,honest stat + caveat,/missed-calls,HIGH,saturated-but-dishonest,verified-question
+Q023,Missed calls,2,What does a missed call cost me?,ROI,TOF,trades,both,revenue loss,none,CALCULATOR,/tools/missed-call-revenue-calculator,HIGH,moderate,verified-question
+Q024,Missed calls,2,Do customers call back if I miss them?,problem-aware,TOF,trades,both,revenue loss,none,60 words,/missed-calls,med,moderate,inferred
+Q025,Missed calls,2,How fast do I have to call back?,informational,TOF,trades,both,urgency,none,60 words,/missed-calls,med,moderate,verified-question
+Q026,Missed calls,2,What is missed call text back?,solution-aware,MOF,trades,both,curiosity,none,definition,/missed-calls,med,saturated,verified-question
+Q027,Missed calls,3,Can I set it up myself?,implementation,MOF,trades,both,cost saving,DIY,honest answer,/missed-calls,med,thin,inferred
+Q028,Missed calls,2,Should I hire a receptionist or use a service?,commercial,MOF,trades,both,budget,build vs hire,comparison table,/pricing,HIGH,moderate,inferred
+Q029,Missed calls,3,What does a receptionist cost per year?,pricing,MOF,trades,both,budget,build vs hire,table,/pricing,med,moderate,inferred
+Q030,Quote follow-up,1,Why do customers go quiet after I send a quote?,problem-aware,TOF,trades,both,revenue loss,none,pillar,/quote-follow-up,HIGH,THIN,inferred
+Q031,Quote follow-up,2,How many times should I follow up on an estimate?,how-to,MOF,trades,both,pushiness,none,numbered steps,/quote-follow-up,HIGH,thin,verified-question
+Q032,Quote follow-up,2,When should I follow up after a quote?,how-to,MOF,trades,both,pushiness,none,numbered steps,/quote-follow-up,HIGH,thin,verified-question
+Q033,Quote follow-up,2,What do I say without being pushy?,how-to,MOF,trades,both,relationship risk,none,GENERATOR,/tools/contractor-quote-follow-up-generator,HIGH,thin,verified-question
+Q034,Quote follow-up,2,How do I automate estimate follow-up?,solution,MOF,trades,both,time,none,pillar,/quote-follow-up,HIGH,THIN,inferred
+Q035,Quote follow-up,3,Can I automate it in Jobber?,integration,BOF,trades,both,practicality,integration,60 words,/integrations/jobber,HIGH,THIN,inferred
+Q036,Quote follow-up,3,Text or email?,how-to,MOF,trades,both,effectiveness,none,60 words,/quote-follow-up,med,thin,inferred
+Q037,Quote follow-up,2,What's a normal quote close rate for contractors?,benchmark,TOF,trades,both,self-assessment,none,ORIGINAL STUDY,/proof,med,NONE,inferred
+Q038,Ownership,1,Do I own the AI system I paid for?,commercial,BOF,all,both,lock-in fear,ownership,pillar,/what-you-own,HIGHEST,NONE,verified-question
+Q039,Ownership,2,What happens if I stop paying the agency?,commercial,BOF,all,both,lock-in fear,ownership,80 words,/what-you-own,HIGHEST,NONE,verified-question
+Q040,Ownership,2,Who owns the accounts and API keys?,commercial,BOF,all,both,lock-in fear,ownership,table,/what-you-own,HIGH,NONE,verified-question
+Q041,Ownership,2,Can another developer take it over?,commercial,BOF,all,both,continuity,ownership,80 words,/what-you-own,HIGH,NONE,inferred
+Q042,Ownership,2,Am I buying software or a service?,commercial,BOF,all,both,clarity,ownership,60 words,/what-you-own,med,thin,inferred
+Q043,Ownership,2,One-time build vs monthly subscription — which is cheaper?,comparison,BOF,all,both,budget,price,CALCULATOR,/what-you-own,HIGH,thin,verified-question
+Q044,Ownership,3,How long until a build pays for itself vs $99/mo?,ROI,BOF,all,both,budget,price,CALCULATOR,/what-you-own,HIGH,NONE,inferred
+Q045,Ownership,2,What if the builder disappears?,risk,BOF,all,both,continuity,solo-founder risk,80 words honest,/what-you-own,HIGH,NONE,inferred
+Q046,Trust and legal,1,Is it legal to use AI on customer calls?,legal,MOF,all,both,compliance,legal,pillar,/trust/call-recording,med,moderate,verified-question
+Q047,Trust and legal,2,Do I need consent to record calls in Canada?,legal,MOF,all,CA,compliance,legal,80 words + PIPEDA cite,/trust/call-recording,HIGH,moderate,verified-question
+Q048,Trust and legal,2,Is it different in the US?,legal,MOF,all,US,compliance,legal,state table,/trust/call-recording,med,moderate,verified-question
+Q049,Trust and legal,2,Do I need consent to text customers?,legal,MOF,all,CA,compliance,legal,80 words + CASL cite,/trust/call-recording,HIGH,thin,verified-question
+Q050,Trust and legal,2,Where is my customer data stored?,trust,MOF,all,both,privacy,data,60 words,/trust/call-recording,med,moderate,inferred
+Q051,Platform gap,1,I already have Jobber's AI receptionist — why isn't it booking jobs?,product-aware,BOF,trades,both,frustration,platform limits,pillar,/beyond-platform-ai,HIGHEST,NONE,inferred
+Q052,Platform gap,2,What can't a platform AI receptionist do?,product-aware,BOF,trades,both,frustration,platform limits,comparison,/beyond-platform-ai,HIGH,NONE,inferred
+Q053,Platform gap,2,Can I connect Jobber to my other tools?,integration,BOF,trades,both,practicality,integration,60 words,/integrations/jobber,HIGH,thin,inferred
+Q054,Implementation,1,How do I actually get this set up?,implementation,BOF,all,both,disruption,implementation,numbered steps,/ai-receptionist-for-contractors,med,moderate,inferred
+Q055,Implementation,2,What do I need to provide?,implementation,BOF,all,both,effort,implementation,checklist,/ai-receptionist-for-contractors,med,thin,inferred
+Q056,Implementation,2,Will it break my current phone setup?,risk,BOF,all,both,disruption,implementation,60 words,/ai-receptionist-for-contractors,med,thin,inferred
+Q057,Implementation,2,Who fixes it when it breaks?,risk,BOF,all,both,abandonment fear,support,80 words,/what-you-own,HIGH,thin,inferred
+Q058,Implementation,2,Do I need to learn new software?,friction,BOF,all,both,effort,adoption,40 words,/ai-receptionist-for-contractors,med,thin,inferred
+Q059,Can AI do X,1,What can AI actually automate in a small business?,informational,TOF,all,both,curiosity,none,list,/resources/ai-automation-examples-for-small-business,low,saturated,verified-question
+Q060,Can AI do X,2,Should I build custom or buy software?,comparison,MOF,all,both,decision,build vs buy,comparison,/what-you-own,med,moderate,verified-question
