@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, X } from "lucide-react";
 import { freeTools, toolPath } from "@/lib/data/freeTools";
 import { packages, formatPackagePrice, carePlan } from "@/lib/data/packages";
-import { Eyebrow, PegIcon, Recess, SectionHeading } from "./primitives";
+import { SectionLabel, PegIcon, Recess, SectionHeading } from "./primitives";
 import Reveal from "./Reveal";
 
 /* ==========================================================================
@@ -90,103 +90,6 @@ function ProblemCard({ title, items }: { title: string; items: string[] }) {
 }
 
 /* ==========================================================================
-   WHAT GETS INSTALLED
-   Named deliverables, not category language. Each card answers: the problem,
-   what gets installed, what you own, what gets measured.
-   ========================================================================== */
-
-const SYSTEMS = [
-  {
-    glyph: "phone" as const,
-    name: "AI receptionist",
-    problem: "Calls go unanswered while you're working.",
-    installed: "Answers your existing number, takes job details, checks your calendar and books.",
-    owns: "Your phone number, in your name.",
-    measured: "Calls answered, jobs booked.",
-    href: "/ai-receptionist-for-contractors",
-  },
-  {
-    glyph: "quote" as const,
-    name: "Quote follow-up",
-    problem: "Quotes go quiet and you never chase them.",
-    installed: "Automatic follow-up on a schedule you set, stopping the moment they reply.",
-    owns: "Your email and message history.",
-    measured: "Replies, and quotes that turn into work.",
-    href: "/ai-business-system",
-  },
-  {
-    glyph: "review" as const,
-    name: "Review requests",
-    problem: "Good jobs never turn into reviews.",
-    installed: "Asks after a finished job; unhappy replies come to you privately first.",
-    owns: "Your Google profile and reply history.",
-    measured: "Requests sent, reviews landed.",
-    href: "/services/ai-review-engine",
-  },
-  {
-    glyph: "office" as const,
-    name: "Connected office",
-    problem: "The same admin, retyped in three places.",
-    installed: "Your intake, calendar, invoicing and CRM wired together so one entry updates all.",
-    owns: "Every account stays yours.",
-    measured: "Hours off the office week.",
-    href: "/ai-business-system",
-  },
-];
-
-export function SystemCards() {
-  return (
-    <section className="v-section" style={{ backgroundColor: "var(--v-field)" }} id="what-we-install">
-      <div className="v-container">
-        <Reveal>
-          <SectionHeading
-            eyebrow="what gets installed"
-            title="Four systems. Installed into what you already run."
-            lead="Not software you have to learn. Set up around your real services, prices and calendar, then tested before it goes live."
-          />
-        </Reveal>
-
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {SYSTEMS.map((s, i) => (
-            <Reveal key={s.name} delay={i * 70}>
-              <Link
-                href={s.href}
-                className="v-card v-card-hover group flex h-full flex-col p-6 focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]"
-              >
-                <PegIcon glyph={s.glyph} />
-                <h3 className="v-h3 mt-6">{s.name}</h3>
-                <p className="v-small mt-3 flex-1">{s.problem}</p>
-                <dl className="mt-5 space-y-3 border-t pt-5" style={{ borderColor: "var(--v-hairline)" }}>
-                  <Row label="Installed" value={s.installed} />
-                  <Row label="You own" value={s.owns} />
-                  <Row label="Measured" value={s.measured} />
-                </dl>
-                <span
-                  className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium"
-                  style={{ color: "var(--v-ink)" }}
-                >
-                  How it works
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                </span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="v-micro uppercase tracking-wide">{label}</dt>
-      <dd className="v-small mt-0.5" style={{ color: "var(--v-ink-2)" }}>{value}</dd>
-    </div>
-  );
-}
-
-/* ==========================================================================
    HOW IT WORKS — sticky panel on desktop, plain stack on mobile.
    The reference pins a demo panel at top:96px while step cards scroll past.
    Below lg we drop the sticky entirely: scroll-pinning on a phone is hostile
@@ -227,7 +130,7 @@ export function ProcessSteps() {
           {/* sticky rail — desktop only */}
           <div className="lg:sticky lg:top-[calc(var(--v-nav-h)+32px)] lg:self-start">
             <div className="v-card p-6 md:p-7">
-              <Eyebrow>what you actually get</Eyebrow>
+              <SectionLabel>what you actually get</SectionLabel>
               <p className="v-body mt-4">
                 A system that runs in your accounts, a number to judge it by, and a person to call
                 when it needs changing.
@@ -431,7 +334,7 @@ export function LocalSection() {
       <div className="v-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <Eyebrow>where we work</Eyebrow>
+            <SectionLabel>where we work</SectionLabel>
             <h2 className="v-h2 mt-4 text-balance">Based in Surrey. We come to the job.</h2>
             <p className="v-body mt-5">
               Setup happens in your accounts, on your phone number, with your calendar in front of
@@ -481,62 +384,103 @@ export function LocalSection() {
 }
 
 /* ==========================================================================
-   FINAL CTA — inverted ink band. Three honest actions, no fake urgency.
+   FINAL CTA — rebuilt 2026-08-01.
+
+   The previous version was three equal cards floating in a tall dark band with
+   visible dead space beneath them. It read as a banner inserted because a
+   landing page needs one.
+
+   This version is a close: it restates the problem, reinforces the
+   existing-number advantage, says what actually happens after the click, gives
+   ONE dominant action, and carries the calculator's own number through so the
+   section is visually and logically connected to it rather than free-floating.
    ========================================================================== */
+
+const AFTER_YOU_CLICK = [
+  "A 20-minute call. No deck, no discovery process.",
+  "We look at your call log, your quotes and your calendar together.",
+  "You get a number for what's leaking and a fixed price to fix it.",
+  "If there's nothing worth installing, we say so and you owe nothing.",
+];
 
 export function FinalCta() {
   return (
-    <section className="v-section" style={{ backgroundColor: "var(--v-ink-invert)" }}>
+    // Asymmetric padding on purpose: the standard 120px bottom reads much
+    // heavier on a dark band than on white, which is what made the previous
+    // version look like an empty banner. Generous above, tighter below.
+    <section
+      className="pb-16 pt-[72px] md:pb-20 md:pt-24 lg:pb-[88px] lg:pt-[120px]"
+      style={{ backgroundColor: "var(--v-ink-invert)" }}
+      id="start"
+    >
       <div className="v-container">
-        <div className="v-measure">
-          <div className="flex justify-center">
-            <p className="v-eyebrow" style={{ color: "var(--v-on-dark-muted)" }}>
-              <span aria-hidden="true">[</span>
-              <span>three ways to start</span>
-              <span aria-hidden="true">]</span>
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-16">
+          {/* ---- the close ---- */}
+          <Reveal>
+            <SectionLabel invert>the last thing on this page</SectionLabel>
+            <h2 className="v-h2 mt-5 text-balance" style={{ color: "var(--v-on-dark)" }}>
+              The calls are still going to voicemail while you read this.
+            </h2>
+            <p className="v-body mt-5 max-w-[38rem]" style={{ color: "var(--v-on-dark-muted)" }}>
+              Every one of them dials the number already on your truck, your invoices and your yard
+              signs. That number is the thing worth fixing — not replacing it, not adding a second
+              one, just making sure somebody picks it up.
             </p>
-          </div>
-          <h2 className="v-h2 mt-4 text-balance" style={{ color: "var(--v-on-dark)" }}>
-            Start with the free one.
-          </h2>
-          <p className="v-lead mt-4" style={{ color: "var(--v-on-dark-muted)" }}>
-            You don&rsquo;t have to talk to anyone to get something useful out of this site.
-          </p>
-        </div>
 
-        <div className="mx-auto mt-10 grid max-w-[900px] gap-4 sm:grid-cols-3">
-          <CtaCard href="/tools" title="Use a free tool" body="Five calculators. No signup." />
-          <CtaCard href="/create" title="Book a review" body="We find the leak and price the fix." primary />
-          <CtaCard href="/create?intent=design-partner" title="Apply as a design partner" body="Early build, lower price, honest write-up." />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/create" className="btn-invert w-full sm:w-auto">
+                Book an AI opportunity review
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/tools"
+                className="inline-flex h-12 items-center justify-center gap-1.5 rounded-[var(--v-r-control)] px-2 text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_var(--v-ink-invert),0_0_0_4px_var(--v-accent)]"
+                style={{ color: "var(--v-on-dark)", textDecoration: "underline", textDecorationColor: "var(--v-accent)", textDecorationThickness: "1.5px", textUnderlineOffset: "4px" }}
+              >
+                or just use the free calculators
+              </Link>
+            </div>
+            <p className="v-micro mt-4" style={{ color: "var(--v-on-dark-muted)" }}>
+              Surrey and Metro Vancouver. Remote everywhere else in BC.
+            </p>
+          </Reveal>
+
+          {/* ---- what actually happens next ---- */}
+          <Reveal delay={90}>
+            <div
+              className="rounded-[var(--v-r-panel)] p-6"
+              style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.13)" }}
+            >
+              <p className="v-micro uppercase tracking-wide" style={{ color: "var(--v-on-dark-muted)" }}>
+                What happens after you click
+              </p>
+              <ol className="mt-4 list-none space-y-3 p-0">
+                {AFTER_YOU_CLICK.map((t, i) => (
+                  <li key={t} className="flex gap-3">
+                    <span
+                      className="mt-[3px] font-mono text-[12px] tabular-nums"
+                      style={{ color: "var(--v-accent-on-dark)" }}
+                      aria-hidden="true"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[15px] leading-snug" style={{ color: "var(--v-on-dark)" }}>
+                      {t}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <p
+                className="mt-5 border-t pt-4 text-[13px] leading-snug"
+                style={{ borderColor: "rgba(255,255,255,0.13)", color: "var(--v-on-dark-muted)" }}
+              >
+                Not sure yet? The calculator above runs on your own numbers and asks you for
+                nothing.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
-  );
-}
-
-function CtaCard({ href, title, body, primary }: { href: string; title: string; body: string; primary?: boolean }) {
-  return (
-    <Link
-      href={href}
-      className="group block rounded-[var(--v-r-card)] p-5 transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_var(--v-ink-invert),0_0_0_4px_var(--v-accent)]"
-      style={{
-        backgroundColor: primary ? "#fff" : "rgba(255,255,255,0.06)",
-        boxShadow: primary ? "none" : "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      <span
-        className="flex items-center gap-1.5 text-[17px] font-medium"
-        style={{ color: primary ? "var(--v-ink)" : "var(--v-on-dark)" }}
-      >
-        {title}
-        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-      </span>
-      <span
-        className="mt-1.5 block text-[15px] leading-snug"
-        style={{ color: primary ? "var(--v-muted)" : "var(--v-on-dark-muted)" }}
-      >
-        {body}
-      </span>
-    </Link>
   );
 }

@@ -8,18 +8,26 @@ import type { ReactNode } from "react";
  */
 
 /* -------------------------------------------------------------------------
-   Eyebrow — the reference's signature bracketed micro-label.
-   Brackets are real characters so they stay selectable; the red dot comes
-   from the `.v-eyebrow::before` rule and is one of red's few permitted uses.
+   SectionLabel — our dimension callout.
+
+   Replaces the bracketed `[ label ]` eyebrow, which was the one element
+   reproduced from the reference essentially verbatim. This is drawn instead
+   from the drafting language already used in the process band: a red end-tick
+   and a leader rule, the way a dimension is annotated on a drawing.
+
+   Everything visual is CSS pseudo-content, so screen readers announce only the
+   label text.
    ------------------------------------------------------------------------- */
-export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <p className={`v-eyebrow ${className}`}>
-      <span aria-hidden="true">[</span>
-      <span>{children}</span>
-      <span aria-hidden="true">]</span>
-    </p>
-  );
+export function SectionLabel({
+  children,
+  invert = false,
+  className = "",
+}: {
+  children: ReactNode;
+  invert?: boolean;
+  className?: string;
+}) {
+  return <p className={`v-label ${invert ? "v-label-invert" : ""} ${className}`}>{children}</p>;
 }
 
 /* -------------------------------------------------------------------------
@@ -102,20 +110,28 @@ export function SectionHeading({
   title,
   lead,
   align = "center",
+  invert = false,
 }: {
   eyebrow: string;
   title: ReactNode;
   lead?: ReactNode;
   align?: "center" | "left";
+  invert?: boolean;
 }) {
   const centred = align === "center";
   return (
     <div className={centred ? "v-measure" : "max-w-[680px]"}>
       <div className={centred ? "flex justify-center" : ""}>
-        <Eyebrow>{eyebrow}</Eyebrow>
+        <SectionLabel invert={invert}>{eyebrow}</SectionLabel>
       </div>
-      <h2 className="v-h2 mt-4 text-balance">{title}</h2>
-      {lead ? <p className="v-lead mt-4">{lead}</p> : null}
+      <h2 className="v-h2 mt-5 text-balance" style={invert ? { color: "var(--v-on-dark)" } : undefined}>
+        {title}
+      </h2>
+      {lead ? (
+        <p className="v-lead mt-4" style={invert ? { color: "var(--v-on-dark-muted)" } : undefined}>
+          {lead}
+        </p>
+      ) : null}
     </div>
   );
 }

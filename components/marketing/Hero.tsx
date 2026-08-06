@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Eyebrow } from "./primitives";
+import { SectionLabel } from "./primitives";
 import CallTimeline from "./CallTimeline";
 
 /**
@@ -11,17 +11,20 @@ import CallTimeline from "./CallTimeline";
  * three-way comparison behind the current H1.
  *
  * Short version of that decision:
- *  - "An AI receptionist for contractors" is simultaneously the site's #1
- *    first-party GSC query (50 impressions), the head of its largest topical
- *    cluster, and the only phrasing measured at 100% buyer intent on YouTube.
- *    The bare term "ai receptionist" is 50% builder/agency intent; the
- *    "for contractors" qualifier is what flips it.
- *  - Used ALONE it would be the category label — the same words a dozen
- *    competitors lead with — so it is paired with "on the number you already
- *    own", which no competitor across 34 collected SERPs says, and which
- *    answers a verified live PAA question about number portability.
- *  - That second clause is also what stops the headline reading as a generic
- *    answering service: an answering service hands you THEIR number.
+ *  - "AI receptionist" + "contractors" must both survive: the bare term is 50%
+ *    builder/agency intent on YouTube, and the "for contractors" qualifier is
+ *    what flips it to 100% buyer. It is also the site's #1 first-party GSC
+ *    query and the head of its largest topical cluster.
+ *  - Those words used ALONE would be the category label — the same phrase a
+ *    dozen competitors lead with — so the differentiator has to be in the
+ *    headline too.
+ *  - Wording revised 2026-08-01 after owner review. The previous construction
+ *    "— on the number you already own" put the differentiator in a trailing
+ *    dependent clause and read awkwardly. Leading with "Your business number"
+ *    puts the contractor's own asset first, makes "answered" the verb, and
+ *    keeps category + audience intact. Comprehension beat keyword order.
+ *  - Factually accurate: the receptionist answers the contractor's existing
+ *    advertised business number. It is not a new line and not a number we own.
  *
  * "Missed calls" is retained as the problem framing in the support line, where
  * the customer language belongs, rather than as the whole headline.
@@ -39,14 +42,14 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:gap-16">
           {/* ---- copy ---- */}
           <div>
-            <Eyebrow>for Surrey &amp; Metro Vancouver contractors</Eyebrow>
+            <SectionLabel>for Surrey &amp; Metro Vancouver contractors</SectionLabel>
 
             {/* Capped below the 60px .v-h1 default. The reference's 60px is sized
                 for a 4-word headline; this one is 11 words and set at 60px it ran
                 to four lines and crowded out the supporting copy. Dropping the
                 ceiling to 52px brings it to three balanced lines. */}
             <h1 className="v-h1 mt-5 text-balance" style={{ fontSize: "clamp(34px, 5vw, 52px)" }}>
-              An AI receptionist for contractors — on the number you already own.
+              Your business number, answered by an AI receptionist built for contractors.
             </h1>
 
             <p className="v-body mt-5 max-w-[36rem]">

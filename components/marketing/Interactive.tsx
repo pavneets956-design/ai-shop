@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Minus, Plus } from "lucide-react";
-import { Eyebrow, WindowChrome } from "./primitives";
+import { SectionLabel, WindowChrome } from "./primitives";
 
 /* ==========================================================================
    PROBLEM SELECTOR
@@ -55,7 +55,7 @@ export function ProblemSelector() {
       <div className="v-container">
         <div className="v-measure">
           <div className="flex justify-center">
-            <Eyebrow>start where it hurts</Eyebrow>
+            <SectionLabel>start where it hurts</SectionLabel>
           </div>
           <h2 className="v-h2 mt-4 text-balance">Which one is costing you the most right now?</h2>
         </div>
@@ -192,7 +192,7 @@ export function FaqSection({ items }: { items: QA[] }) {
       <div className="v-container">
         <div className="v-measure">
           <div className="flex justify-center">
-            <Eyebrow>the questions people actually ask</Eyebrow>
+            <SectionLabel>the questions people actually ask</SectionLabel>
           </div>
           <h2 className="v-h2 mt-4 text-balance">Straight answers, before you call.</h2>
         </div>

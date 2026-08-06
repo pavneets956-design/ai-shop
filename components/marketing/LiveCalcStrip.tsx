@@ -4,7 +4,7 @@ import { useId, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { computeMissedCall } from "@/lib/tools/missedCall";
-import { Eyebrow, WindowChrome } from "./primitives";
+import { SectionLabel, WindowChrome } from "./primitives";
 
 /**
  * The trust slot.
@@ -60,7 +60,7 @@ export default function LiveCalcStrip() {
       <div className="v-container">
         <div className="v-measure">
           <div className="flex justify-center">
-            <Eyebrow>test us before you call</Eyebrow>
+            <SectionLabel>test us before you call</SectionLabel>
           </div>
           <h2 id={`${uid}-h`} className="v-h2 mt-4 text-balance">
             Work out what the missed ones are worth.

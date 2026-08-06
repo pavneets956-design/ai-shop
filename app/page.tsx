@@ -6,9 +6,9 @@ import { HOME_OBJECTIONS } from "@/lib/data/homeFaqs";
 import Hero from "@/components/marketing/Hero";
 import LiveCalcStrip from "@/components/marketing/LiveCalcStrip";
 import { ProblemSelector, FaqSection } from "@/components/marketing/Interactive";
+import WorkflowStory from "@/components/marketing/WorkflowStory";
 import {
   BeforeAfter,
-  SystemCards,
   ProcessSteps,
   ToolShowcase,
   PricingSection,
@@ -103,7 +103,7 @@ export default function Home() {
       <LiveCalcStrip />
       <ProblemSelector />
       <BeforeAfter />
-      <SystemCards />
+      <WorkflowStory />
       <ProcessSteps />
       <ToolShowcase />
       <PricingSection />
