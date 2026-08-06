@@ -45,6 +45,33 @@ export const metadata: Metadata = {
       "Missed calls become booked jobs. We install an AI receptionist into the phone number and accounts you already own — from $1,500 CAD.",
     url: site.url,
     type: "website",
+    // Declared explicitly (rather than relying purely on the opengraph-image.tsx
+    // file convention) because this page defines its own `openGraph` block, and
+    // Next only auto-merges the file-convention image's alt text onto pages that
+    // do NOT override `openGraph` themselves — verified 2026-08-05 by diffing
+    // .next/server/app/index.html (no og:image:alt) against a page with no
+    // openGraph override, e.g. about.html (has it). Keep in sync with
+    // app/opengraph-image.alt.txt if that copy ever changes.
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Handbuilt AI — AI that works for your business, built by hand, not bought off a shelf. Surrey, BC — done-for-you AI receptionist and automation.",
+      },
+    ],
+  },
+  // Same reasoning as the openGraph.images comment above: declared explicitly
+  // so the alt text actually reaches twitter:image:alt on this segment.
+  twitter: {
+    images: [
+      {
+        url: "/twitter-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Handbuilt AI — AI that works for your business, built by hand, not bought off a shelf. Surrey, BC — done-for-you AI receptionist and automation.",
+      },
+    ],
   },
 };
 
