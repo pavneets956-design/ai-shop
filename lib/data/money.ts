@@ -140,7 +140,7 @@ export const moneyPages: LandingContent[] = [
     eyebrow: "AI Build",
     h1: "Custom AI Chatbot Development",
     title: "Custom AI Chatbot Development | Vancouver & BC | Handbuilt",
-    description: "Custom AI chatbots trained on your business starting at $1,500 CAD. Not a generic bot — trained on your services, your policies, your voice.",
+    description: "Custom AI chatbot development for Vancouver and BC businesses from $1,500 CAD. Live in about 5 business days — trained on your services, your policies, your voice.",
     answer: "Handbuilt builds custom AI chatbots for small business websites and internal tools, starting at $1,500 CAD. Each chatbot is trained on your actual business content — your services, pricing, FAQs, and policies — so it answers like someone who knows your business, not like a generic customer service bot.",
     pain: "Generic chatbot platforms give you a template that says \"Hi! How can I help you today?\" and then either fails to answer or routes the visitor to a contact form anyway. Your customers leave. The tool adds no value. You turn it off after 60 days.",
     scenario: "Picture a dental clinic adding an AI chatbot trained on their services, insurance FAQ, booking process, and office policies. A well-trained chatbot on a clinic site can reasonably handle the majority of incoming chat inquiries without human intervention — the questions are predictable and the answers don't change often. After-hours questions that previously went unanswered until morning get handled on the spot. The exact self-serve rate depends on how much of your chat traffic is standard FAQ versus unusual requests.",
@@ -182,6 +182,10 @@ export const moneyPages: LandingContent[] = [
       { label: "AI Automation Agency", href: "/ai-automation-agency" },
     ],
     faqs: [
+      {
+        q: "How long does it take to build a custom AI chatbot?",
+        a: "About 5 business days for a standard chatbot. Pavneet trains it on your business data, tests it against real customer questions, and installs it on your site.",
+      },
       {
         q: "How is this different from just using ChatGPT on my website?",
         a: "ChatGPT doesn't know anything about your business unless you feed it that information carefully. A Handbuilt chatbot is built with your content embedded, your tone configured, and your specific use case in mind — plus it integrates with your site and tools, not just a generic chat interface.",
