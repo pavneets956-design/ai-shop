@@ -73,9 +73,11 @@ export default function Footer() {
                     <Github className="h-4 w-4" aria-hidden="true" />
                   </IconLink>
                 )}
-                <IconLink href={site.social.linkedin} label="LinkedIn">
-                  <Linkedin className="h-4 w-4" aria-hidden="true" />
-                </IconLink>
+                {site.social.linkedin !== "#" && (
+                  <IconLink href={site.social.linkedin} label="LinkedIn">
+                    <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  </IconLink>
+                )}
               </div>
             </div>
           </div>
