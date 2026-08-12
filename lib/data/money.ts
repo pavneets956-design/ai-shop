@@ -434,7 +434,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What does the Care Plan include?",
-        a: "$250/mo CAD. Covers ongoing tuning, monitoring, bug fixes, and minor adjustments as your business changes. It’s optional — many clients run their systems independently after handoff."
+        a: "From $99/mo CAD for a single AI worker, scaling with the size of the system. Covers hosting, uptime monitoring, usage tracking with cost alerts, and up to an hour of tweaks a month. It’s optional — many clients run their systems independently after handoff."
       },
       {
         q: "What if I already tried AI tools and they didn’t work?",

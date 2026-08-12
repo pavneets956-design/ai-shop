@@ -106,7 +106,7 @@ export const liveTools: LiveTool[] = [
         ["Recommended solution", "An AI receptionist that answers 24/7, triages, books into your calendar, and texts you every lead."],
         ["Scope", "Call/SMS answering, booking, owner notifications, CRM logging."],
         ["Timeline", "Live in ~5 business days."],
-        ["Price", "$1,500 CAD setup · $250/mo care & hosting."],
+        ["Price", "$1,500 CAD setup · optional care & hosting from $99/mo."],
         ["Next steps", "Approve → we connect your number & calendar → go live."],
       ],
     },

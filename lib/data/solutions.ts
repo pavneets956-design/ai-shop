@@ -94,7 +94,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Answers calls & messages 24/7, books appointments, and texts you the details.",
     icon: "PhoneCall",
     accent: "electric",
-    startsAt: 1000,
+    startsAt: 1500,
     packageId: "starter",
   },
   {
@@ -104,7 +104,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Instantly replies to new leads, qualifies them, and follows up until they book.",
     icon: "Magnet",
     accent: "violet",
-    startsAt: 2500,
+    startsAt: 3500,
     packageId: "business",
   },
   {
@@ -114,7 +114,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Automatically nudges clients on overdue invoices — politely, on schedule, until paid.",
     icon: "Receipt",
     accent: "cyan",
-    startsAt: 1000,
+    startsAt: 1500,
     packageId: "starter",
   },
   {
@@ -124,7 +124,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Generates and repurposes content in your brand voice, ready to schedule.",
     icon: "PenTool",
     accent: "gold",
-    startsAt: 2500,
+    startsAt: 3500,
     packageId: "business",
   },
   {
@@ -134,7 +134,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "Resolves common questions instantly and hands the hard ones to a human.",
     icon: "Headphones",
     accent: "electric",
-    startsAt: 1000,
+    startsAt: 1500,
     packageId: "starter",
   },
   {
@@ -144,7 +144,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "A private app that plans your day, tracks goals, and keeps you on top of everything.",
     icon: "CalendarCheck",
     accent: "violet",
-    startsAt: 7500,
+    startsAt: 10000,
     packageId: "custom",
   },
   {
@@ -154,7 +154,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "One screen with your real numbers, plain-language insights, and what to do next.",
     icon: "BarChart3",
     accent: "cyan",
-    startsAt: 2500,
+    startsAt: 3500,
     packageId: "business",
   },
   {
@@ -164,7 +164,7 @@ export const featuredBuilds: FeaturedBuild[] = [
     what: "A chatbot trained on your site that answers visitors and captures leads.",
     icon: "MessagesSquare",
     accent: "gold",
-    startsAt: 1000,
+    startsAt: 1500,
     packageId: "starter",
   },
 ];
