@@ -49,6 +49,11 @@ export default function Showroom() {
   const [turns, setTurns] = useState(0);
   const [limited, setLimited] = useState(false);
   const [busy, setBusy] = useState(false);
+  // True once a reply has come from the local scripted fallback rather than the
+  // live model. The demo is the site's main proof asset — letting it answer from
+  // a canned script while the visitor believes they are talking to real AI is a
+  // credibility problem, not a graceful degradation.
+  const [scripted, setScripted] = useState(false);
 
   const runId = useRef(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -121,6 +126,7 @@ export default function Showroom() {
     setSuggested([]);
 
     let data: { response?: DemoResponse; limited?: boolean } = {};
+    let usedFallback = false;
     try {
       const res = await fetch("/api/demo", {
         method: "POST",
@@ -131,11 +137,22 @@ export default function Showroom() {
           messages: history.map((m) => ({ role: m.role, content: m.content })),
         }),
       });
+      // A non-2xx that still returns JSON used to slip through and land on the
+      // `|| scriptedResponse(...)` below with no signal at all.
+      if (!res.ok) throw new Error(`/api/demo responded ${res.status}`);
       data = await res.json();
-    } catch {
+      if (!data.response) throw new Error("/api/demo returned no response");
+    } catch (err) {
+      console.error("[showroom] live demo unavailable, falling back to script", err);
       data = { response: scriptedResponse(worker, industry, history) };
+      usedFallback = true;
     }
     if (myRun !== runId.current) return;
+
+    // Announce the degradation rather than hiding it. Sticky for the session:
+    // once a visitor has seen a scripted answer, silently reverting the notice
+    // on the next successful turn would misrepresent the transcript they read.
+    if (usedFallback) setScripted(true);
 
     const r = data.response || scriptedResponse(worker, industry, history);
 
@@ -208,6 +225,7 @@ export default function Showroom() {
           ref={scrollRef}
           worker={worker} industry={industry}
           messages={messages} typing={typing} streaming={streaming}
+          scripted={scripted} onDismissScripted={() => setScripted(false)}
         />
 
         {/* RIGHT — outcome panel */}
@@ -344,8 +362,17 @@ function Section({ label, children }: { label: string; children: React.ReactNode
 // ===========================================================================
 const Phone = forwardRef<
   HTMLDivElement,
-  { worker: Worker; industry: Industry; messages: Msg[]; typing: boolean; streaming: string | null }
->(function Phone({ worker, industry, messages, typing, streaming }, ref) {
+  {
+    worker: Worker;
+    industry: Industry;
+    messages: Msg[];
+    typing: boolean;
+    streaming: string | null;
+    /** True when replies are coming from the local script, not the live model. */
+    scripted: boolean;
+    onDismissScripted: () => void;
+  }
+>(function Phone({ worker, industry, messages, typing, streaming, scripted, onDismissScripted }, ref) {
     const Icon = ICONS[worker.icon] ?? Headset;
     return (
       <div className="flex flex-col items-center">
@@ -377,9 +404,26 @@ const Phone = forwardRef<
               </div>
               {/* demo-mode footer */}
               <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#F2EFEA] via-[#F2EFEA]/90 to-transparent px-4 pb-3 pt-5 text-center">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/80 px-2.5 py-1 text-[10px] font-medium text-ink-soft">
-                  <span className="h-1 w-1 rounded-full bg-clay" /> Demo mode — no real call, text, email or booking sent
-                </span>
+                {scripted ? (
+                  <span
+                    role="status"
+                    className="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-full border border-danger/40 bg-white px-2.5 py-1 text-[10px] font-medium text-danger"
+                  >
+                    <span className="h-1 w-1 flex-none rounded-full bg-danger" />
+                    Live AI is unavailable — these replies are a scripted sample, not the real model.
+                    <button
+                      type="button"
+                      onClick={onDismissScripted}
+                      className="underline underline-offset-2 hover:no-underline"
+                    >
+                      Dismiss and retry
+                    </button>
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/80 px-2.5 py-1 text-[10px] font-medium text-ink-soft">
+                    <span className="h-1 w-1 rounded-full bg-clay" /> Demo mode — no real call, text, email or booking sent
+                  </span>
+                )}
               </div>
             </div>
           </div>
