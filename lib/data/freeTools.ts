@@ -11,7 +11,7 @@
 // quote-stage only (never "invoice"/"overdue"/"payment reminder").
 import type { Metadata } from "next";
 import { site } from "./site";
-import { faqSchema, breadcrumbSchema } from "../seo";
+import { faqSchema, breadcrumbSchema, DEFAULT_OG_IMAGE } from "../seo";
 
 export interface ToolFaq {
   q: string;
@@ -612,8 +612,19 @@ export function toolMetadata(entry: ToolRegistryEntry): Metadata {
     description: entry.description,
     keywords: entry.keywords,
     alternates: { canonical: path },
-    openGraph: { title: entry.title, description: entry.description, url, type: "website" },
-    twitter: { card: "summary_large_image", title: entry.title, description: entry.description },
+    openGraph: {
+      title: entry.title,
+      description: entry.description,
+      url,
+      type: "website",
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: entry.title,
+      description: entry.description,
+      images: [DEFAULT_OG_IMAGE.url],
+    },
   };
 }
 
@@ -624,8 +635,19 @@ export function toolsHubMetadata(): Metadata {
     description: TOOLS_HUB.description,
     keywords: TOOLS_HUB.keywords,
     alternates: { canonical: "/tools" },
-    openGraph: { title: TOOLS_HUB.title, description: TOOLS_HUB.description, url, type: "website" },
-    twitter: { card: "summary_large_image", title: TOOLS_HUB.title, description: TOOLS_HUB.description },
+    openGraph: {
+      title: TOOLS_HUB.title,
+      description: TOOLS_HUB.description,
+      url,
+      type: "website",
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: TOOLS_HUB.title,
+      description: TOOLS_HUB.description,
+      images: [DEFAULT_OG_IMAGE.url],
+    },
   };
 }
 

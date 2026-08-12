@@ -13,7 +13,7 @@ import { useCases, getUseCase, getUseCaseDemo } from "@/lib/data/useCases";
 import { getPackage, formatPackagePrice } from "@/lib/data/packages";
 import { getBuild } from "@/lib/data/solutions";
 import { site } from "@/lib/data/site";
-import { faqSchema, breadcrumbSchema } from "@/lib/seo";
+import { faqSchema, breadcrumbSchema, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export function generateStaticParams() {
   return useCases.map((u) => ({ slug: u.slug }));
@@ -31,6 +31,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       title: `${uc.solution} for ${uc.industry} | Handbuilt`,
       description: uc.answer,
       url: `${site.url}/use-cases/${uc.slug}`,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${uc.solution} for ${uc.industry} | Handbuilt`,
+      description: uc.answer,
+      images: [DEFAULT_OG_IMAGE.url],
     },
   };
 }

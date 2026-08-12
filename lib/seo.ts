@@ -4,6 +4,26 @@ import { packages, carePlan, formatPackagePrice, getPackage } from "./data/packa
 import type { LandingContent, PageType } from "./data/landing";
 import { landingPath, landingBreadcrumb } from "./data/landing";
 
+/**
+ * Shared social card, used by every page that does not ship its own.
+ *
+ * `app/opengraph-image.png` is inherited automatically ONLY by routes that never
+ * declare an `openGraph` object of their own. Every landing page does declare one
+ * (for its title/description/url), and Next replaces the inherited object rather
+ * than deep-merging it — so 202 of 237 routes were shipping no og:image at all,
+ * including all three of the highest-impression pages.
+ *
+ * One shared card is the correct fix here. Generating 200+ bespoke images would
+ * be churn for pages that are mostly text, and a wrong-but-present card is worse
+ * than a consistent brand one.
+ */
+export const DEFAULT_OG_IMAGE = {
+  url: `${site.url}/opengraph-image.png`,
+  width: 1200,
+  height: 630,
+  alt: "Handbuilt AI — AI that works for your business, built by hand, not bought off a shelf. Surrey, BC — done-for-you AI receptionist and automation.",
+} as const;
+
 // Sitewide structured data (GEO/SEO). Rendered once in the root layout.
 export function organizationSchema() {
   return {
@@ -277,11 +297,13 @@ export function landingMetadata(type: PageType, content: LandingContent): Metada
       description: content.description,
       url,
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: content.title,
       description: content.description,
+      images: [DEFAULT_OG_IMAGE.url],
     },
   };
 }
