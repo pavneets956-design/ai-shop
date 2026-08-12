@@ -75,7 +75,9 @@ export default function ShopPage() {
                   <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
                     <strong>Bespoke development</strong> scoped to your business — designed,
                     built and handed over, and you own it.{" "}
-                    <strong>From {formatPackagePrice(packages[0])} one-time.</strong>
+                    {/* formatPackagePrice already yields "From $1,500" for a
+                        "from"-format package — do not prefix it again. */}
+                    <strong>{formatPackagePrice(packages[0])} CAD, one-time.</strong>
                   </p>
                 </div>
               </div>
