@@ -30,7 +30,11 @@ export function GET() {
     "1. CUSTOM AI BUILDS (bespoke): scoped to one business, designed and built by hand, handed over and owned by the client. Priced per package below, one-time in CAD."
   );
   lines.push(
-    `2. SHOP TOOLS (productized): fixed-scope software installed into the tools a business already runs, self-serve or lightly managed. Listed individually at ${site.url}/shop with their own prices, including monthly options. A shop tool is NOT a custom build and the two prices are not alternatives for the same thing.`
+    // Do NOT describe these as "self-serve". There is no checkout: every shop CTA
+    // routes to /create?build=<slug>, i.e. a request form. Handbuilt builds and
+    // installs all of it. Claiming self-serve on the file answer engines quote
+    // would put a false capability into their descriptions of the business.
+    `2. SHOP TOOLS (productized): fixed-scope software that Handbuilt builds and installs into the tools a business already runs. Chosen off the shelf rather than scoped from scratch. Listed individually at ${site.url}/shop with their own prices, including monthly options. Every purchase starts with a request at ${site.url}/create — there is no self-serve checkout.`
   );
   lines.push("");
 

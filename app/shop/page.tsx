@@ -60,9 +60,9 @@ export default function ShopPage() {
                     Shop tools — what&rsquo;s on this page
                   </p>
                   <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
-                    Productized software with a <strong>fixed scope</strong>, self-serve or lightly
-                    managed. You pick one off the shelf and it gets installed into the tools you
-                    already run. <strong>Prices start at the figure on each card.</strong>
+                    Productized software with a <strong>fixed scope</strong>, built and installed for
+                    you into the tools you already run. You pick one off the shelf rather than
+                    scoping it from scratch. <strong>Prices start at the figure on each card.</strong>
                   </p>
                 </div>
                 <div>
@@ -82,9 +82,11 @@ export default function ShopPage() {
                 </div>
               </div>
               <p className="mt-5 border-t border-line pt-4 text-sm text-ink/55">
-                A shop tool is not a custom build, and the two prices are not alternatives for the
-                same thing. If you are unsure which you need, say what you are trying to fix and
-                you&rsquo;ll get pointed at the cheaper one that solves it.
+                These overlap: a shop tool and a Starter build can solve the same problem. The shop
+                version is cheaper because the scope is already decided. If you want it shaped around
+                how your business actually works, that&rsquo;s the custom build.{" "}
+                <strong>Say what you&rsquo;re trying to fix and you&rsquo;ll be pointed at the
+                cheaper option that solves it</strong> — including when that&rsquo;s neither.
               </p>
             </div>
           </Reveal>
