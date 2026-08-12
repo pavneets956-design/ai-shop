@@ -9,6 +9,10 @@ import {
   type IntentKey,
   type IntentRoute,
 } from "@/lib/data/builder";
+import { site } from "@/lib/data/site";
+
+/** Fallback contact shown only when a lead submission has actually failed. */
+const SUPPORT_EMAIL = site.email;
 
 /**
  * Handbuilt "AI Builder" — a voice-led, value-FIRST intake.
@@ -167,6 +171,11 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   const [voiceName, setVoiceName] = useState<string | null>(null);
   const [card, setCard] = useState<Card | null>(null);
   const [route, setRoute] = useState<IntentRoute | null>(null);
+  // Truthful lead state. The closing screen used to claim "Your plan has been
+  // sent" unconditionally, including when the POST had failed — /api/build-request
+  // deliberately returns 502 when it cannot persist AND cannot email, precisely so
+  // the UI can say so. Swallowing that made the lead disappear silently.
+  const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
 
   const briefRef = useRef<Answers>({});
   const leadSentRef = useRef(false);
@@ -404,25 +413,36 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     ].join("\n");
   }, []);
 
-  // Fire the lead exactly once (guarded), best-effort, never blocks the UI.
-  const sendLead = useCallback(() => {
+  // Fire the lead exactly once per successful send. Never blocks the UI, but the
+  // outcome is recorded so the closing screen can tell the truth about it.
+  const sendLead = useCallback(async () => {
     if (leadSentRef.current) return;
     leadSentRef.current = true;
+    setLeadStatus("sending");
     const a = briefRef.current;
-    fetch("/api/build-request", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        source: "ai-builder",
-        name: a.name || "",
-        email: a.email || "",
-        kind: a.pain || "",
-        want: a.pain || "",
-        city: "",
-        recommendedBuild: a.system || "",
-        transcript: buildTranscript(),
-      }),
-    }).catch(() => {});
+    try {
+      const res = await fetch("/api/build-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "ai-builder",
+          name: a.name || "",
+          email: a.email || "",
+          kind: a.pain || "",
+          want: a.pain || "",
+          city: "",
+          recommendedBuild: a.system || "",
+          transcript: buildTranscript(),
+        }),
+      });
+      if (!res.ok) throw new Error(`build-request responded ${res.status}`);
+      setLeadStatus("sent");
+    } catch (err) {
+      // Allow a retry — the guard is released so the button can fire again.
+      leadSentRef.current = false;
+      setLeadStatus("failed");
+      console.error("[ai-builder] lead submission failed", err);
+    }
   }, [buildTranscript]);
 
   // The value-first interview. Deterministic, zero API cost.
@@ -514,7 +534,9 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
       email = await waitForAnswer({ type: "input", ph: "you@business.com" });
     }
     briefRef.current.email = email;
-    if (validEmail(email)) sendLead();
+    // Fire-and-forget by design — the interview must not block on the network.
+    // The outcome lands in leadStatus and is reported on the closing screen.
+    if (validEmail(email)) void sendLead();
 
     await speak("Done — it's on its way. Here's where to go next.");
     setMode("done");
@@ -732,7 +754,28 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
                 Back to site
               </Link>
             )}
-            <p className="hbc-note">Your plan has been sent. I&apos;ll follow up by email shortly.</p>
+            {leadStatus === "sending" && (
+              <p className="hbc-note">Sending your plan…</p>
+            )}
+            {leadStatus === "sent" && (
+              <p className="hbc-note">
+                Your plan has been sent{briefRef.current.email ? ` to ${briefRef.current.email}` : ""}.
+                I&apos;ll follow up by email shortly.
+              </p>
+            )}
+            {leadStatus === "failed" && (
+              <p className="hbc-note hbc-note-fail" role="alert">
+                Your plan didn&apos;t send — that&apos;s a fault on our end.{" "}
+                <button type="button" className="hbc-linkbtn" onClick={() => void sendLead()}>
+                  Try again
+                </button>{" "}
+                or email{" "}
+                <a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("My AI Builder plan didn't send")}`}>
+                  {SUPPORT_EMAIL}
+                </a>{" "}
+                and I&apos;ll pick it up manually.
+              </p>
+            )}
           </div>
         )}
       </div>
@@ -828,6 +871,11 @@ const HBC_CSS = `
 .hbc-cta .ghost{color:#1d1d1f}
 .hbc-cta .ghost:hover{color:#86868b}
 .hbc-note{font-size:12px;color:#c7c7cc;text-align:center;margin-top:16px}
+/* Failure is not a footnote. Larger than .hbc-note and on the danger colour
+   (#B42318 clears 4.5:1 on white, unlike the #c7c7cc used for the quiet note). */
+.hbc-note-fail{font-size:14px;line-height:1.55;color:#B42318;max-width:38ch;margin-left:auto;margin-right:auto}
+.hbc-note-fail a{color:#B42318;text-decoration:underline;text-underline-offset:2px}
+.hbc-note-fail .hbc-linkbtn{font-size:14px;color:#B42318;text-decoration:underline;text-underline-offset:2px}
 @media (prefers-reduced-motion: reduce){
   .hbc-lines .ln,.hbc-dot,.hbc-cursor,.hbc-thinking,.hbc-card{animation:none!important}
 }
