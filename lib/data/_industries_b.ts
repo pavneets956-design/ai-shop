@@ -44,7 +44,7 @@ export const industriesB: LandingContent[] = [
         body: "Most real estate AI setups fall under the Business AI System package at CAD $3,500 (range $3,500–$7,500 depending on integrations). That covers lead response, qualification, booking, and CRM sync. A full custom buyer or listing portal starts at $10,000. There are no monthly platform fees from Handbuilt — you pay for what was built, once.",
         bullets: [
           "Business AI System: CAD $3,500–$7,500 — lead capture, qualification, booking, CRM",
-          "Custom AI App: from CAD $7,500 — full client portal, listing alerts, document generation",
+          "Custom AI App: from CAD $10,000 — full client portal, listing alerts, document generation",
           "One-time build fee; you own everything",
         ],
       },
@@ -126,7 +126,7 @@ export const industriesB: LandingContent[] = [
         body: "Most dental clinic setups land in the Business AI System range at CAD $3,500 (range $3,500–$7,500). That covers reminders, waitlist, intake, and after-hours chat. Integration with practice management software (Dentrix, Jane App) is included in scoping — some platforms charge their own API fees which we flag upfront.",
         bullets: [
           "Business AI System: CAD $3,500–$7,500 — reminders, waitlist, intake, FAQ bot",
-          "Custom AI App: from CAD $7,500 — full patient portal, insurance verification workflow, multi-location",
+          "Custom AI App: from CAD $10,000 — full patient portal, insurance verification workflow, multi-location",
           "One-time build fee; no ongoing Handbuilt subscription",
         ],
       },
@@ -208,7 +208,7 @@ export const industriesB: LandingContent[] = [
         body: "Most salon setups land in the Business AI System range at CAD $3,500 (range $3,500–$7,500 depending on number of stylists and integrations). We work with Square Appointments, Vagaro, Fresha, and custom setups. One-time build fee — no ongoing Handbuilt cost.",
         bullets: [
           "Business AI System: CAD $3,500–$7,500 — booking, reminders, waitlist, FAQ bot",
-          "Custom AI App: from CAD $7,500 — loyalty tracking, multi-location, staff scheduling overlay",
+          "Custom AI App: from CAD $10,000 — loyalty tracking, multi-location, staff scheduling overlay",
           "One-time fee; you own the setup",
         ],
       },
@@ -290,7 +290,7 @@ export const industriesB: LandingContent[] = [
         body: "Most restaurant setups fall under the Business AI System at CAD $3,500 (range $3,500–$7,500). That covers reservation capture, confirmation, FAQ bot, and a basic dashboard. Integration with OpenTable or Resy is available and scoped upfront — those platforms charge their own fees.",
         bullets: [
           "Business AI System: CAD $3,500–$7,500 — reservations, FAQ, confirmations",
-          "Custom AI App: from CAD $7,500 — full ordering integration, loyalty program, multi-location",
+          "Custom AI App: from CAD $10,000 — full ordering integration, loyalty program, multi-location",
           "One-time build fee from Handbuilt",
         ],
       },
