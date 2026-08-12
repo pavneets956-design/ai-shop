@@ -56,7 +56,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.owner }],
   creator: site.owner,
-  alternates: { canonical: "/" },
+  // NO `alternates.canonical` here, deliberately.
+  //
+  // A canonical set on the root layout is INHERITED by every route that does not
+  // declare its own, which silently told Google that 11 routes (/login, /cart,
+  // /dashboard, /products and the six /agent/* screens) were all duplicates of
+  // the homepage. It is a landmine rather than a one-off bug: any new route that
+  // forgets its own canonical inherits it too.
+  //
+  // The homepage declares its own at app/page.tsx. Every public route sets one
+  // via its `metadata` or `generateMetadata`. Routes that emit none now
+  // self-canonicalise, which is correct for app screens nobody should index.
   openGraph: {
     type: "website",
     locale: "en_CA",
