@@ -222,10 +222,13 @@ export default function ShopPage() {
                               same capability, at custom-build pricing. Without this line a
                               visitor reads the higher figure there as a contradiction of
                               the shop price above. */}
+                          {/* Do NOT interpolate p.priceLabel into a sentence — the labels
+                              are fragments like "From $129/mo · we run it" and produced
+                              "The From $129/mo · we run it above is this fixed-scope shop
+                              version." Refer to the price positionally instead. */}
                           <p className="mt-2 text-[11px] leading-relaxed text-ink/40">
-                            That page describes the bespoke custom build, which is scoped and
-                            priced separately. The {p.priceLabel} above is this fixed-scope
-                            shop version.
+                            That page describes the bespoke custom build, scoped and priced
+                            separately. The price above is for this fixed-scope shop version.
                           </p>
                         </>
                       )}

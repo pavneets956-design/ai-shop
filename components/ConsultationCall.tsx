@@ -175,7 +175,9 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   // sent" unconditionally, including when the POST had failed — /api/build-request
   // deliberately returns 502 when it cannot persist AND cannot email, precisely so
   // the UI can say so. Swallowing that made the lead disappear silently.
-  const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  const [leadStatus, setLeadStatus] = useState<
+    "idle" | "sending" | "sent" | "failed" | "no-email"
+  >("idle");
 
   const briefRef = useRef<Answers>({});
   const leadSentRef = useRef(false);
@@ -536,9 +538,21 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     briefRef.current.email = email;
     // Fire-and-forget by design — the interview must not block on the network.
     // The outcome lands in leadStatus and is reported on the closing screen.
-    if (validEmail(email)) void sendLead();
+    const willSend = validEmail(email);
+    if (willSend) void sendLead();
 
-    await speak("Done — it's on its way. Here's where to go next.");
+    // Do NOT claim delivery when there is nothing to deliver to. After two
+    // failed attempts at a valid address sendLead() never fires, leadStatus
+    // stays "idle", and saying "it's on its way" would be the same false
+    // success this component was just fixed for — spoken instead of written.
+    if (willSend) {
+      await speak("Done — it's on its way. Here's where to go next.");
+    } else {
+      setLeadStatus("no-email");
+      await speak(
+        "I couldn't read that email, so I haven't sent anything yet. Your plan is on screen — here's how to get it to me.",
+      );
+    }
     setMode("done");
   }, [speak, waitForAnswer, sendLead]);
 
@@ -761,6 +775,15 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
               <p className="hbc-note">
                 Your plan has been sent{briefRef.current.email ? ` to ${briefRef.current.email}` : ""}.
                 I&apos;ll follow up by email shortly.
+              </p>
+            )}
+            {leadStatus === "no-email" && (
+              <p className="hbc-note hbc-note-fail" role="alert">
+                No email captured, so nothing was sent. Copy your plan from the screen, or email{" "}
+                <a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("My AI Builder plan")}`}>
+                  {SUPPORT_EMAIL}
+                </a>{" "}
+                and I&apos;ll rebuild it with you.
               </p>
             )}
             {leadStatus === "failed" && (

@@ -125,7 +125,11 @@ export default function Showroom() {
     setTyping(true);
     setSuggested([]);
 
-    let data: { response?: DemoResponse; limited?: boolean } = {};
+    // `fallback` is set by /api/demo on SIX degradation paths (missing OpenAI key,
+    // spend cap, rate limit, bad JSON, model error, refusal) — every one of which
+    // returns HTTP 200. Checking res.ok alone therefore misses all of them, which
+    // made the scripted-sample notice inert for the cases it exists to catch.
+    let data: { response?: DemoResponse; limited?: boolean; fallback?: boolean } = {};
     let usedFallback = false;
     try {
       const res = await fetch("/api/demo", {
@@ -142,6 +146,8 @@ export default function Showroom() {
       if (!res.ok) throw new Error(`/api/demo responded ${res.status}`);
       data = await res.json();
       if (!data.response) throw new Error("/api/demo returned no response");
+      // The server answered, but from its own script rather than the model.
+      if (data.fallback) usedFallback = true;
     } catch (err) {
       console.error("[showroom] live demo unavailable, falling back to script", err);
       data = { response: scriptedResponse(worker, industry, history) };
