@@ -8,6 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import { shopSchema } from "@/lib/seo";
 import { getIcon } from "@/lib/icons";
 import { liveSaas, utmHref } from "@/lib/data/shop";
+import { packages, formatPackagePrice } from "@/lib/data/packages";
 import { shopProducts, shopIndustries } from "@/lib/data/shopProducts";
 
 export const metadata: Metadata = {
@@ -39,6 +40,51 @@ export default function ShopPage() {
               Pick a ready-made AI system, connect it to the tools you already use, and start
               saving time in days — not months. Built by hand, one business at a time.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- Two lines, stated plainly ----------
+          The shop and the bespoke studio work are two different products at two
+          different prices. Leaving that implicit invited the reading that a
+          $129/mo productized tool and a $1,500+ custom build were the same offer
+          quoted inconsistently. They are not. */}
+      <section className="relative pb-4 pt-6">
+        <div className="mx-auto max-w-4xl px-4">
+          <Reveal>
+            <div className="glass-card p-6 sm:p-7">
+              <span className="eyebrow">Two ways to work with Handbuilt</span>
+              <div className="mt-5 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <p className="text-[15px] font-semibold text-ink">
+                    Shop tools — what&rsquo;s on this page
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
+                    Productized software with a <strong>fixed scope</strong>, self-serve or lightly
+                    managed. You pick one off the shelf and it gets installed into the tools you
+                    already run. <strong>Prices start at the figure on each card.</strong>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[15px] font-semibold text-ink">
+                    Custom AI builds &mdash;{" "}
+                    <Link href="/pricing" className="underline underline-offset-2">
+                      see pricing
+                    </Link>
+                  </p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-ink/70">
+                    <strong>Bespoke development</strong> scoped to your business — designed,
+                    built and handed over, and you own it.{" "}
+                    <strong>From {formatPackagePrice(packages[0])} one-time.</strong>
+                  </p>
+                </div>
+              </div>
+              <p className="mt-5 border-t border-line pt-4 text-sm text-ink/55">
+                A shop tool is not a custom build, and the two prices are not alternatives for the
+                same thing. If you are unsure which you need, say what you are trying to fix and
+                you&rsquo;ll get pointed at the cheaper one that solves it.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -161,12 +207,23 @@ export default function ShopPage() {
                         )}
                       </div>
                       {p.learnHref && (
-                        <Link
-                          href={p.learnHref}
-                          className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-ink"
-                        >
-                          How it works <ArrowRight className="h-3.5 w-3.5" />
-                        </Link>
+                        <>
+                          <Link
+                            href={p.learnHref}
+                            className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-ink"
+                          >
+                            How it works <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                          {/* The linked /services page describes the BESPOKE build of the
+                              same capability, at custom-build pricing. Without this line a
+                              visitor reads the higher figure there as a contradiction of
+                              the shop price above. */}
+                          <p className="mt-2 text-[11px] leading-relaxed text-ink/40">
+                            That page describes the bespoke custom build, which is scoped and
+                            priced separately. The {p.priceLabel} above is this fixed-scope
+                            shop version.
+                          </p>
+                        </>
                       )}
                     </div>
                   </div>

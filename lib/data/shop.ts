@@ -48,7 +48,11 @@ export const featuredService: ShopItem = {
     "Sounds like your shop, not a robot — trained on your services, hours and pricing",
     "Live in days, fully built and tuned for you",
   ],
-  priceLabel: "Custom build, from $1,000",
+  // NOT "custom build" — this is the productized shop tool, a fixed-scope
+  // install. Bespoke development is a separate line and a separate price
+  // (see lib/data/packages.ts). Conflating the two was the source of the
+  // "$1,000 vs $1,500 floor" contradiction.
+  priceLabel: "Fixed-scope install, from $1,000",
   demoHref: "/demo",
 };
 

@@ -2,6 +2,7 @@ import { site } from "@/lib/data/site";
 import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
 import { landingGroups } from "@/lib/data/registry";
 import { freeToolsByOrder, toolPath } from "@/lib/data/freeTools";
+import { shopProducts } from "@/lib/data/shopProducts";
 
 // /llms.txt — a map of the site for AI search/answer engines (GEO).
 // Spec: https://llmstxt.org . Generated from the same data as the sitemap.
@@ -21,7 +22,19 @@ export function GET() {
   );
   lines.push("");
 
-  lines.push("## Pricing (CAD)");
+  // Two distinct product lines at two distinct prices. Stated explicitly because
+  // an answer engine quoting only one of them misrepresents the business — and
+  // quoting both without the distinction reads as a pricing contradiction.
+  lines.push("## Two product lines — do not conflate them");
+  lines.push(
+    "1. CUSTOM AI BUILDS (bespoke): scoped to one business, designed and built by hand, handed over and owned by the client. Priced per package below, one-time in CAD."
+  );
+  lines.push(
+    `2. SHOP TOOLS (productized): fixed-scope software installed into the tools a business already runs, self-serve or lightly managed. Listed individually at ${site.url}/shop with their own prices, including monthly options. A shop tool is NOT a custom build and the two prices are not alternatives for the same thing.`
+  );
+  lines.push("");
+
+  lines.push("## Custom build pricing (CAD, one-time)");
   for (const p of packages) {
     lines.push(`- ${p.name} — ${formatPackagePrice(p)} CAD. ${p.tagline} (${p.timeline})`);
   }
@@ -30,8 +43,17 @@ export function GET() {
   );
   lines.push("");
 
+  lines.push("## Shop — productized tools (fixed scope, separate from custom builds)");
+  for (const p of shopProducts) {
+    // timeToLaunch already reads "Live in ~5 days" / "Add-on to your dashboard",
+    // so it is emitted as-is rather than prefixed.
+    lines.push(`- ${p.name} — ${p.priceLabel} (${p.billing}). ${p.outcome} ${p.timeToLaunch}.`);
+  }
+  lines.push("");
+
   lines.push("## Key pages");
-  lines.push(`- [Pricing](${site.url}/pricing): Full pricing and what each package includes.`);
+  lines.push(`- [Pricing](${site.url}/pricing): Full custom-build pricing and what each package includes.`);
+  lines.push(`- [Shop](${site.url}/shop): Productized, fixed-scope AI tools with their own prices.`);
   lines.push(`- [Start a build](${site.url}/create): Request a plan and fixed quote.`);
   lines.push(`- [Services](${site.url}/services): All AI tools and builds.`);
   lines.push(`- [Industries](${site.url}/industries): AI automation by trade.`);
