@@ -7,13 +7,13 @@ export const servicesB: LandingContent[] = [
     h1: "AI Review Request System",
     title: "AI Review Request System | Handbuilt",
     description: "Automated review requests sent at the right moment, personalized to each job. More 5-star reviews without chasing customers manually. From $1,500 CAD.",
-    answer: "Most businesses get fewer reviews than they deserve because asking feels awkward and manual follow-up never happens. Handbuilt builds an AI review request system that fires a personalized message to each customer after their job closes — by SMS, email, or both — and routes happy customers straight to your Google Business Profile. Starts at $1,500 CAD.",
+    answer: "Most businesses get fewer reviews than they deserve because asking feels awkward and manual follow-up never happens. Handbuilt builds an AI review request system that fires a personalized message to each customer after their job closes — by SMS, email, or both — and gives every customer the same link to your Google Business Profile. Starts at $1,500 CAD.",
     pain: "You do great work, but the customers who had a bad experience are far more likely to leave a review than the happy ones — unless you ask.",
     scenario: "Picture a Burnaby window cleaning company doing roughly 15 jobs a week. Happy clients rarely think to leave a review on their own — but if they get a text within an hour or two of the job wrapping up with a direct link, a meaningful share do. A business doing 15 jobs a week could realistically go from two or three spontaneous reviews a month to something closer to eight or ten, depending on how promptly the request goes out and how satisfied the client base is. No manual follow-up required.",
     steps: [
       "We connect to your job-management or invoicing tool to detect job completion",
       "We write personalized review request messages in your brand voice",
-      "Satisfied customers are routed to Google; unhappy ones come to you privately first",
+      "Every customer gets the same Google review link — and a private way to tell you if something went wrong",
       "We monitor response rates and adjust timing or copy in the first 30 days"
     ],
     gets: [
@@ -433,19 +433,19 @@ export const servicesB: LandingContent[] = [
     "ctaLabel": "Set up my Review Engine",
     "h1": "How do I get more Google reviews without chasing customers?",
     "title": "AI Review Engine: Automatic Google Reviews on Autopilot | Handbuilt",
-    "description": "An AI Review Engine that asks every finished customer for a review, sends happy ones to Google and unhappy ones to you privately. From $1,000 to set up, then $49/mo.",
-    "answer": "An AI Review Engine is a managed system that asks every customer for a review after their job finishes, reads how they felt, and routes them accordingly: happy customers go straight to your Google Business Profile, unhappy ones come to you privately first so you can fix the problem before it lands on Google. Handbuilt builds it on your real jobs and runs it for you — connected to Google Business, Twilio SMS and Gmail. It costs from $1,000 CAD to set up, then $49/mo to run.",
-    "pain": "You ask for reviews when you remember to, which is rarely — so your happiest customers stay silent while the occasional unhappy one heads straight to Google. Your rating ends up lower than the work you actually do.",
+    "description": "An AI Review Engine that asks every finished customer for an honest review, gives everyone the same Google link, and copies you on the feedback. From $1,000 to set up, then $49/mo.",
+    "answer": "An AI Review Engine is a managed system that asks every customer for a review after their job finishes, invites all of them to review it publicly using the same link, and copies you on what they say so you can follow up on problems directly. It does not screen anyone out of reviewing. Handbuilt builds it on your real jobs and runs it for you — connected to Google Business, Twilio SMS and Gmail. It costs from $1,000 CAD to set up, then $49/mo to run.",
+    "pain": "You ask for reviews when you remember to, which is rarely — so most satisfied customers never leave one. Your rating ends up built on a handful of replies instead of the work you actually do.",
     "scenario": "Take a Langley HVAC outfit closing maybe 12 to 15 service calls a week. The owner means to ask for reviews but is on the next call before the van's even packed up, so a strong month brings in two or three. With a Review Engine, every completed call triggers a text an hour later: a quick \"how did we do?\" The customers who tap thumbs-up get a one-tap link to the Google profile; the rare thumbs-down goes to the owner's inbox instead of public. A shop in that range could plausibly move from a trickle of reviews to a steadier flow each week — the exact lift depends on job volume and how happy the customer base already is.",
     "steps": [
       "We connect the Engine to Google Business, your SMS line (Twilio) and Gmail, and to your job or invoicing tool so it knows when a job is done",
       "Each finished job triggers a short review request by text or email in your brand voice",
-      "The Engine reads the reply — happy customers get a direct Google review link, unhappy ones get routed to you privately to fix first",
+      "Every customer gets the same direct Google review link, and their reply is copied to you so problems reach you too",
       "We watch the numbers and tune timing and wording so more requests turn into posted reviews"
     ],
     "gets": [
       "A review request fired automatically after every finished job, by SMS and/or email",
-      "Sentiment routing: happy customers to Google, unhappy ones to you privately before they go public",
+      "Honest-feedback flow: one review link for everyone, plus a private channel so you hear about problems",
       "Connected to Google Business, Twilio SMS and Gmail — we set it all up",
       "A monthly report of requests sent, reviews posted and issues caught early"
     ],
@@ -477,11 +477,11 @@ export const servicesB: LandingContent[] = [
     "faqs": [
       {
         "q": "How is this different from the simpler AI Review Request System?",
-        "a": "The Review Request System sends the ask and points happy customers to Google. The Review Engine adds sentiment routing — it reads how each customer felt and quietly diverts unhappy ones to you before they reach Google — and it's a managed service we run and tune each month for $49, rather than a one-time build."
+        "a": "The Review Request System sends the ask and points every customer to your Google link. The Review Engine adds a private feedback channel alongside that same link — so you hear about a problem directly as well, not instead — and it's a managed service we run and tune each month for $49, rather than a one-time build."
       },
       {
         "q": "Can it really stop bad reviews from landing on Google?",
-        "a": "It can't block anyone from posting — nobody can. What it does is catch an unhappy customer first and route them to you privately, so you get a chance to make it right before they think to leave a public review. Most upset customers just want the problem fixed."
+        "a": "It does not, and it should not — screening who gets asked to review breaks Google's policies. Everyone gets the same review link. What it adds is a private reply channel, so an unhappy customer can tell you directly as well as publicly, and you get the chance to make it right. Most upset customers just want the problem fixed."
       },
       {
         "q": "What does it need to connect to?",

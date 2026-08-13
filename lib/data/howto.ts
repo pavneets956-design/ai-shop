@@ -521,7 +521,7 @@ export const howtos: LandingContent[] = [
       "Send a short, personalised request by text or email with a direct review link.",
       "Make it one tap — link straight to your Google (or preferred) review page.",
       "Follow up once, politely, if there's no response after a day or two.",
-      "Route any unhappy feedback to you privately before it becomes a public review.",
+      "Give every customer the same public review link, and offer a private feedback channel alongside it.",
     ],
     gets: [
       "Automatic review asks at the perfect moment",
@@ -532,7 +532,7 @@ export const howtos: LandingContent[] = [
     sections: [
       {
         heading: "Why timing and routing matter",
-        body: "Ask at the moment a customer is happiest — right after the work is done — and make leaving a review effortless. Routing unhappy feedback to you first (rather than straight to a public page) lets you fix issues privately and protects your rating. We build both into the flow.",
+        body: "Ask at the moment a customer is happiest — right after the work is done — and make leaving a review effortless. Every customer gets the same public review link. Offering a private feedback option alongside it lets you hear about problems too and protects your rating. We build both into the flow.",
       },
     ],
     keywords: ["how to automate review requests", "automate google reviews", "review request automation", "get more reviews automatically"],

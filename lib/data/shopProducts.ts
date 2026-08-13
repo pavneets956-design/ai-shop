@@ -171,9 +171,9 @@ export const shopProducts: ShopProduct[] = [
     name: "AI Review Engine",
     icon: "MessagesSquare",
     accent: "violet",
-    problem: "You don't ask for reviews consistently — and the odd unhappy one lands straight on Google.",
+    problem: "You don't ask for reviews consistently, so most happy customers never leave one and your rating under-represents the work.",
     outcome:
-      "After every finished job it asks for a review, reads the sentiment, sends happy customers to Google, and routes unhappy ones privately to you first.",
+      "After every finished job it asks every customer for an honest review, gives everyone the same Google link, and copies you on the feedback so you can follow up.",
     forWho: "Local businesses who live and die by their Google rating.",
     integrations: ["Google Business", "Twilio SMS", "Gmail"],
     delivery: "Done-for-you",
@@ -184,7 +184,7 @@ export const shopProducts: ShopProduct[] = [
     monthlyPrice: 49,
     whoPaysUsage: "customer",
     usageNote:
-      "Set up on your Google + messaging accounts; the monthly covers running the sentiment routing and keeping it tuned.",
+      "Set up on your Google + messaging accounts; the monthly covers running the request sequence and keeping it tuned.",
     packageId: "starter",
     demoHref: "/tools/review-reply-generator",
     learnHref: "/services/ai-review-engine",

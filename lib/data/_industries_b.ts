@@ -50,7 +50,7 @@ export const industriesB: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a free 20-min call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "real estate agent AI automation",
       "AI lead follow-up for realtors",
@@ -132,7 +132,7 @@ export const industriesB: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a free 20-min call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "dental clinic AI automation",
       "AI appointment reminders dental",
@@ -214,7 +214,7 @@ export const industriesB: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a free 20-min call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "salon AI automation",
       "barbershop booking AI",
@@ -296,7 +296,7 @@ export const industriesB: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a free 20-min call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "restaurant AI automation",
       "AI reservation system restaurant",
@@ -378,7 +378,7 @@ export const industriesB: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a free 20-min call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "auto detailing AI automation",
       "AI quote generator detailing",
@@ -659,7 +659,7 @@ export const industriesB: LandingContent[] = [
     },
     {
       q: "What does the review request look like?",
-      a: "A short, plain-language text or email — something like 'Thanks for having us in — if you're happy with the work, a quick Google review means a lot.' We write it to sound like you, not like a survey. You approve it before it goes out."
+      a: "A short, plain-language text or email — something like 'Thanks for having us in — if you have a minute, an honest Google review means a lot.' We write it to sound like you, not like a survey. You approve it before it goes out."
     },
     {
       q: "What does it cost?",
