@@ -159,7 +159,7 @@ export const industriesB: LandingContent[] = [
       {
         q: "Is patient data handled securely?",
         a:
-          "Handbuilt uses data flows that keep patient information within your existing systems wherever possible. We follow PIPEDA requirements and can work within your existing compliance setup. We don't store health data on Handbuilt infrastructure.",
+          "Handbuilt uses data flows that keep patient information within your existing systems wherever possible, and we don't store health data on Handbuilt infrastructure. We are not a covered entity and cannot provide compliance guarantees — we build within the constraints you define and flag anything that needs your privacy advisor's review.",
       },
     ],
     schema: "Service",

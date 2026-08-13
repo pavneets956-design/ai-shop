@@ -38,7 +38,7 @@ export const servicesB: LandingContent[] = [
     ],
     faqs: [
       { q: "Which platforms can it post reviews to?", a: "Google Business Profile is the primary target because it affects local search rank. We can also route to Facebook or Homestars depending on your industry." },
-      { q: "What if a customer had a bad experience?", a: "The system detects low sentiment or a thumbs-down response and routes that customer to you directly instead of to a public review page — giving you a chance to fix it first." },
+      { q: "What if a customer had a bad experience?", a: "They get the same review link as everyone else — screening who is asked to review breaks Google's policies. What the system adds is a private reply channel, so their feedback also reaches you directly and you get the chance to fix it." },
       { q: "Does it work with my existing booking software?", a: "We connect to most common tools — Jobber, ServiceTitan, QuickBooks, and others. We'll confirm compatibility before we start." }
     ],
     schema: "Service",

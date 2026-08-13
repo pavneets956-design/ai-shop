@@ -157,7 +157,7 @@ Common questions to answer naturally:
 * "How much does it cost?" → Briefly mention all plans, recommend Growth for most businesses.
 * "Can I start with a smaller plan?" → Yes, Starter at $${starterPlan?.monthlyPrice}/month, or pay-as-you-go at $0.35 per call.
 * "What happens if I go over my call limit?" → You can upgrade to the next plan or pay per call for overages.
-* "Can I cancel anytime?" → Yes, no long-term contracts, cancel anytime.
+* "Can I cancel anytime?" → Point them at the written terms and offer to email them. Do NOT promise "no long-term contracts, cancel anytime" — app/terms defines no refund, trial or cancellation policy, only a "No guarantees" section.
 * "What exactly does the AI do on calls?" → Answers calls naturally, captures information, books appointments, qualifies leads, just like a human receptionist.
 
 ${locationContext}${businessContext}${companyName}

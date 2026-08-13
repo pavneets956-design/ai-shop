@@ -144,7 +144,7 @@ Do you currently handle all your incoming calls manually, or do you have some au
     if (input.includes("already have") || input.includes("using") || input.includes("system") || input.includes("service")) {
       this.state.objections.push("existing-solution");
       this.state.stage = "objection-handling";
-      return `That's great that you have something in place! Many businesses we work with started with a basic system but found they needed more. What specific challenges are you still facing with your current setup?`;
+      return `That's great that you have something in place. What specific challenges are you still facing with your current setup?`;
     }
 
     // Move to pitch
@@ -169,7 +169,7 @@ Our Growth plan is ${growthPlan?.monthlyPrice ? formatPrice(growthPlan.monthlyPr
 
 And we have a Scale plan for larger businesses at ${scalePlan?.monthlyPrice ? formatPrice(scalePlan.monthlyPrice) : "$699"} per month with advanced features.
 
-The average business saves $3,000-$5,000 per month compared to hiring a full-time receptionist. Which plan sounds like it might fit your needs?`;
+For comparison, a full-time receptionist typically costs $3,000-$4,000 a month plus benefits. Which plan sounds like it might fit your needs?`;
     }
 
     // Detect objections
@@ -213,7 +213,7 @@ We also have plans starting at ${formatPrice(starterPrice)}/month. Would you lik
 
     // Try to re-engage
     this.state.stage = "pitch";
-    return `I hear you. Many of our clients felt the same way initially, but after seeing how it works, they realized it was exactly what they needed. 
+    return `That's fair — it's hard to judge from a description.
 
 Would you be open to a quick 5-minute demo? No pressure, just to see if it could work for your business.`;
   }
@@ -249,13 +249,13 @@ What's the best email to send the calendar link to?`;
 
     // Add local business context
     const localContext = this.businessContext?.location 
-      ? ` I work with several businesses in ${this.businessContext.location}, and they've seen amazing results.`
+      ? ` We're based in Surrey, BC and work with businesses in ${this.businessContext.location} remotely.`
       : "";
 
     pitch += `${localContext} Here's what makes it special:
 
 • Never miss a call - handles unlimited calls simultaneously, even during peak hours
-• Natural conversations - your customers can't tell it's AI, it sounds completely human
+• Natural conversations - it introduces itself as your AI assistant rather than pretending to be a person
 • Automatic scheduling - integrates with your calendar and books appointments automatically
 • Multi-language support - serves customers in 15+ languages, perfect for diverse communities
 • Detailed analytics - see exactly what's happening with your calls, track missed opportunities
