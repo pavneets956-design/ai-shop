@@ -15,7 +15,7 @@ export const industriesC: LandingContent[] = [
       "AI automation for a physiotherapy clinic handles the front-desk load — answering calls, booking assessments, sending intake forms, and reducing no-shows with reminders — so your therapists treat instead of chasing paperwork. Handbuilt builds it around your booking system and your treatment types, live in about a week.",
     pain: "A physio clinic loses money two ways at once: reception can't answer every call while treating patients, and empty slots from no-shows are revenue that never comes back.",
     scenario:
-      "A three-therapist clinic misses a dozen calls a day during treatment hours, and roughly 15% of booked sessions no-show. We set up an AI line that answers every call, books assessments into their system, and sends intake forms automatically — plus reminder sequences that cut no-shows. Fuller schedules and a front desk that isn't drowning.",
+      "Example scenario, not a customer result: a three-therapist clinic can miss a run of calls during treatment hours, and no-shows leave slots that never come back. We'd set up an AI line that answers every call, books assessments into their system, and sends intake forms automatically — plus reminder sequences that cut no-shows. Fuller schedules and a front desk that isn't drowning.",
     steps: [
       "We map your appointment types, therapists and booking tool",
       "AI answers calls and texts, books assessments and sends intake forms",
@@ -60,7 +60,7 @@ export const industriesC: LandingContent[] = [
       "AI automation for a chiropractic clinic captures new-patient calls, books adjustments, runs recall for lapsed patients, and reduces no-shows — so your table stays busy without the front desk chasing everyone. Handbuilt builds it around your visit types and booking system.",
     pain: "Chiropractic revenue depends on visit frequency, but reactivating patients who quietly stop coming and answering new-patient calls mid-adjustment is more than one front desk can do.",
     scenario:
-      "A solo chiropractor gets new-patient inquiries they can't answer while adjusting, and dozens of past patients who dropped off. We build AI that answers and books new patients instantly, plus a recall system that reaches lapsed patients with a friendly check-in. New bookings go up and dormant patients come back.",
+      "Example scenario, not a customer result: a solo chiropractor can't answer new-patient inquiries while adjusting, and past patients quietly drop off. We'd build AI that answers and books new patients instantly, plus a recall system that reaches lapsed patients with a friendly check-in. New bookings go up and dormant patients come back.",
     steps: [
       "We set up AI call and text answering that books new patients fast",
       "We build recall sequences for patients who've lapsed",
@@ -104,7 +104,7 @@ export const industriesC: LandingContent[] = [
       "AI automation for a barbershop handles bookings, reminders and rebooking so every chair stays full and no inquiry goes to voicemail. Handbuilt builds it around your barbers, services and booking app, so clients book themselves while you keep cutting.",
     pain: "A barber with clippers in hand can't answer the phone or DMs — so booking requests slip away, and no-shows leave expensive gaps between cuts.",
     scenario:
-      "A four-chair shop gets booking requests by call and Instagram DM all day, but the barbers are cutting, not typing. We set up AI that answers and books across call and DM, sends reminders to cut no-shows, and nudges clients to rebook their next cut. Chairs stay full without anyone stopping mid-fade.",
+      "Example scenario, not a customer result: a four-chair shop can field booking requests by call and Instagram DM all day while the barbers are cutting, not typing. We'd set up AI that answers and books across call and DM, sends reminders to cut no-shows, and nudges clients to rebook their next cut. Chairs stay full without anyone stopping mid-fade.",
     steps: [
       "We connect your booking app and each barber's schedule",
       "AI books across phone and Instagram/Facebook DMs",

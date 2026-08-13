@@ -178,9 +178,12 @@ The average business saves $3,000-$5,000 per month compared to hiring a full-tim
       return this.handleObjection(input);
     }
 
-    return `I understand. Let me share a quick example: one of our clients, a medical practice, was missing 30% of their calls during peak hours. After implementing our AI receptionist, they now capture every call and have increased appointments by 25%. 
+    // NO invented client stories. There is no customer whose results can be
+    // cited, so nothing past-tense may be claimed here. Describe the mechanism
+    // and let the prospect supply their own numbers.
+    return `I understand. Here's the shape of it: calls that come in while you're working normally go to voicemail, and most callers don't leave one — they ring the next business instead. An AI receptionist answers those, captures the job details, and books what it can.
 
-Would this kind of improvement be valuable for your business?`;
+Roughly how many calls a week do you think you're missing right now?`;
   }
 
   private handleObjection(input: string): string {
@@ -192,7 +195,10 @@ Would this kind of improvement be valuable for your business?`;
       
       return `I completely understand cost is a concern. Let me put this in perspective: a full-time receptionist costs $3,000-$4,000 per month, plus benefits. Our Starter plan is ${formatPrice(starterPrice)}/month - that's about ${Math.round((savings / 3000) * 100)}% less expensive, and it works 24/7 without breaks, sick days, or training time.
 
-We also have plans starting at ${formatPrice(starterPrice)}/month that include everything you need. Plus, you can try it risk-free for 30 days. Would you like to hear about our different plans?`;
+We also have plans starting at ${formatPrice(starterPrice)}/month. Would you like to hear about the different plans?`;
+    // NO "risk-free for 30 days". There is no refund or trial policy: app/terms
+    // carries only a "No guarantees" section and defines no refund terms. Do not
+    // reintroduce a guarantee here unless one exists in Terms first.
     }
 
     if (input.includes("don't need") || input.includes("not interested") || input.includes("happy with")) {

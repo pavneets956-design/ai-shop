@@ -269,7 +269,7 @@ const servicesA: LandingContent[] = [
     description: "An AI agent that checks your availability and books appointments directly into your calendar — so customers self-schedule without a back-and-forth. From $1,500 CAD.",
     answer: "Handbuilt builds a booking agent that reads your live calendar availability, lets prospects pick a time that works, confirms the appointment and adds it to your calendar — all without you involved. It works on your website, in your chatbot or via a link you can text to prospects. Starts at $1,500 CAD.",
     pain: "The 'let's find a time' back-and-forth — two emails, a voicemail, a reschedule — takes longer than the appointment itself and stalls deals in the meantime.",
-    scenario: "A Port Moody business consultant books discovery calls manually, spending about 20 minutes per prospect coordinating times. After deploying a booking agent linked to Google Calendar, a prospect clicks 'Book a Call' on the website, sees real availability and confirms a slot in under 90 seconds. The consultant's week gets structured without any scheduling work.",
+    scenario: "Example scenario, not a customer result: say a consultant books discovery calls by hand, losing time to back-and-forth on times. With a booking agent linked to Google Calendar, a prospect clicks 'Book a Call' on the website, sees real availability and confirms a slot in under 90 seconds — the week gets structured without any scheduling work.",
     steps: [
       "We connect to your calendar (Google, Outlook, Calendly or similar)",
       "We configure availability windows, buffer times and appointment types",
