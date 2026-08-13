@@ -222,13 +222,15 @@ export default function ShopPage() {
                               same capability, at custom-build pricing. Without this line a
                               visitor reads the higher figure there as a contradiction of
                               the shop price above. */}
-                          {/* Do NOT interpolate p.priceLabel into a sentence — the labels
-                              are fragments like "From $129/mo · we run it" and produced
-                              "The From $129/mo · we run it above is this fixed-scope shop
-                              version." Refer to the price positionally instead. */}
+                          {/* Deliberately makes NO claim about the linked page's price.
+                              An earlier draft said it "describes the bespoke build, priced
+                              separately" — false on 5 of 10 cards, because pages like
+                              /services/ai-review-engine quote the identical figure. It also
+                              interpolated p.priceLabel into a sentence, producing "The From
+                              $129/mo · we run it above is this fixed-scope shop version."
+                              Describe what the link IS; assert nothing about its pricing. */}
                           <p className="mt-2 text-[11px] leading-relaxed text-ink/40">
-                            That page describes the bespoke custom build, scoped and priced
-                            separately. The price above is for this fixed-scope shop version.
+                            Longer write-up of how this works, including the custom-build version.
                           </p>
                         </>
                       )}

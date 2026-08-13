@@ -106,7 +106,10 @@ const localBusinessSchema = {
     "AI automation for contractors",
   ],
   makesOffer: [
-    { name: "AI Workflow Audit", price: "99", desc: "15-minute workflow audit, credited toward the build." },
+    // NO "AI Workflow Audit" at $99. The old homepage sold it visibly
+    // (MoltenForge.tsx:769); the rebuild deleted the copy and left the Offer
+    // behind, so structured data was advertising a $99 product that appears
+    // nowhere on the site. Schema must describe visible content.
     { name: "AI Starter Worker", price: "1500", desc: "One AI worker installed, wired in, and tested." },
     { name: "AI Receptionist Install", price: "1500", desc: "AI receptionist set up around your services, prices, and calendar." },
     { name: "AI Business System", price: "3500", desc: "2–4 connected workers plus an owner dashboard." },
