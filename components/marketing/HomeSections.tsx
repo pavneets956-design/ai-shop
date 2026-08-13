@@ -149,7 +149,7 @@ export function ProcessSteps() {
                 ))}
               </ul>
               <Link href="/create" className="btn-primary mt-7 w-full">
-                Book an AI opportunity review
+                Request a free AI opportunity review
               </Link>
             </div>
           </div>
@@ -346,7 +346,7 @@ export function LocalSection() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/create" className="btn-primary">
-                Book an AI opportunity review
+                Request a free AI opportunity review
               </Link>
               {/* Real slug verified against lib/data/locations.ts — "/locations/surrey"
                   does not exist and 404s. Route names here must come from the
@@ -397,7 +397,7 @@ export function LocalSection() {
    ========================================================================== */
 
 const AFTER_YOU_CLICK = [
-  "A 20-minute call. No deck, no discovery process.",
+  "We read it the same day and reply by email — no deck, no discovery process.",
   "We look at your call log, your quotes and your calendar together.",
   "You get a number for what's leaking and a fixed price to fix it.",
   "If there's nothing worth installing, we say so and you owe nothing.",
@@ -429,7 +429,7 @@ export function FinalCta() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/create" className="btn-invert w-full sm:w-auto">
-                Book an AI opportunity review
+                Request a free AI opportunity review
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link

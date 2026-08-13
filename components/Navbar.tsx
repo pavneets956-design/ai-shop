@@ -96,7 +96,7 @@ export default function Navbar() {
               </Link>
             )}
             <Link href="/create" className="btn-primary !h-10 !px-4 !text-[14px]">
-              Book a review
+              Request a review
             </Link>
           </div>
 
@@ -150,7 +150,7 @@ export default function Navbar() {
               )}
             </ul>
             <Link href="/create" onClick={() => setOpen(false)} className="btn-primary mt-4 w-full">
-              Book an AI opportunity review
+              Request a free AI opportunity review
             </Link>
           </div>
         </div>

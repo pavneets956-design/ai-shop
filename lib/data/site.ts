@@ -22,8 +22,15 @@ export const site = {
     linkedin: "#",
     github: "https://github.com/pavneets956-design/ai-shop",
   },
-  // Booking link for the "Book a call" CTA. Drop in a Cal.com / Calendly URL.
-  bookingUrl: "/create", // TODO: replace with Cal.com/Calendly link once set up
+  // Where the primary CTA sends people. There is NO calendar booking product:
+  // /create is a request form and the site's copy says so ("Request a free AI
+  // opportunity review", "reply within one business day"). Do not reintroduce
+  // "Book a call" language against this value — it promises a scheduled call
+  // the site cannot deliver. If a Cal.com/Calendly link is ever added, change
+  // the CTA copy in the same commit.
+  //
+  // NOTE: currently referenced by nothing; the CTAs link to /create directly.
+  bookingUrl: "/create",
 };
 
 /**

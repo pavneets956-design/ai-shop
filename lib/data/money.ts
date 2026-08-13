@@ -39,7 +39,7 @@ export const moneyPages: LandingContent[] = [
       },
     ],
     packageId: "business",
-    ctaLabel: "Book a Discovery Call",
+    ctaLabel: "Request a Free AI Opportunity Review",
     keywords: ["AI automation agency Canada", "small business AI tools", "AI automation Surrey BC", "custom AI for small business", "AI workflow automation Canada"],
     related: [
       { label: "AI Business System", href: "/ai-business-system" },
@@ -58,7 +58,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What if I don't know what I need — just that I'm wasting time?",
-        a: "That's actually the most common starting point. Book a discovery call and describe the time drain. Part of the engagement is figuring out which AI approach has the fastest payback for your specific situation.",
+        a: "That's actually the most common starting point. Send a request describing the time drain and you'll get a reply by email. Part of the engagement is figuring out which AI approach has the fastest payback for your specific situation.",
       },
       {
         q: "What do projects cost?",
@@ -392,7 +392,7 @@ export const moneyPages: LandingContent[] = [
       }
     ],
     packageId: "business" as const,
-    ctaLabel: "Book a discovery call",
+    ctaLabel: "Request a free AI opportunity review",
     keywords: [
       "done for you ai automation",
       "ai automation for small business",

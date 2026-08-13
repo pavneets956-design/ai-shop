@@ -64,7 +64,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/create" className="btn-primary w-full sm:w-auto">
-                Book an AI opportunity review
+                Request a free AI opportunity review
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link href="/tools/missed-call-revenue-calculator" className="btn-secondary w-full sm:w-auto">

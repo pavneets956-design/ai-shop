@@ -97,7 +97,7 @@ export default function Footer() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <Link href="/create" className="btn-secondary mt-2.5 w-full">
-              Book a review
+              Request a review
             </Link>
           </div>
         </div>
