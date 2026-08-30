@@ -3,99 +3,292 @@ import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: `How ${site.name} collects, uses, and protects the information you share.`,
+  description: `What ${site.name} collects on this website, which services that information reaches, how long it is kept, and how to have it deleted.`,
   alternates: { canonical: "/privacy" },
 };
 
-const updated = "June 6, 2026";
+/**
+ * Rewritten 2026-08-30. The previous version was dated June 6, 2026 and predated
+ * the durable lead database, Vercel Web Analytics, every AI endpoint on the site,
+ * and the first-touch attribution store. It disclosed two processors (Vercel,
+ * Resend) out of the five that actually receive data.
+ *
+ * RULE FOR ANY FUTURE EDIT: this page describes what the code does, not what we
+ * would like it to do. Before changing a sentence here, check the file it
+ * describes. Before adding a processor to the codebase, add it here in the same
+ * commit. The mapping today:
+ *   - OpenAI              app/api/{demo,consultation,tts,recommend,tools-demo,tools}/route.ts via lib/ai/core.ts
+ *   - Vercel Analytics    app/layout.tsx (<Analytics />), lib/track.ts
+ *   - Neon Postgres       prisma/schema.prisma (model BuildRequest), app/api/build-request/route.ts
+ *   - Resend              app/api/build-request/route.ts (lead notification)
+ *   - Google / NextAuth   lib/auth.ts, app/login/page.tsx
+ *   - Stripe              lib/stripe.ts, app/api/stripe/* (no reachable checkout today)
+ *   - Browser storage     lib/attribution.ts (sessionStorage key hb_attr_v1)
+ */
+const updated = "August 30, 2026";
 
 export default function PrivacyPage() {
   return (
     <section className="relative pb-24 pt-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <span className="eyebrow">Legal</span>
-        <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-          Privacy Policy
-        </h1>
-        <p className="mt-4 text-sm text-ink/40">Last updated: {updated}</p>
+        <span className="v-label">Legal</span>
+        <h1 className="v-h1 mt-5 font-display">Privacy Policy</h1>
+        <p className="v-small mt-4">Last updated: {updated}</p>
 
-        <div className="legal-prose mt-10 space-y-8 text-ink/70">
-          <p>
-            {site.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;) builds custom AI software for businesses
-            and individuals. This policy explains what information we collect through this website and
-            how we use it. We keep it short and plain.
+        <div className="mt-10 space-y-10">
+          <p className="v-lead">
+            {site.name} is a one-person studio in {site.region}, Canada. This policy describes what
+            this website actually collects, which companies that information reaches, how long it is
+            kept, and how to have it deleted. It is written against the code, not against a template.
           </p>
 
-          <Section title="What we collect">
+          <div className="v-card v-hair p-6">
+            <p className="v-small">
+              <strong className="text-ink">The short version.</strong> Browse the site and nothing
+              about you is stored beyond anonymous, cookieless traffic counts. Use one of the free
+              calculators and the numbers you type stay in your browser. Use the demo or the AI
+              interview and what you type is sent to OpenAI to produce a reply. Submit the contact
+              form and your details are stored in our database and emailed to us. We do not sell
+              anything to anyone, we run no advertising trackers, and we do not send marketing email.
+            </p>
+          </div>
+
+          <Section title="What you give us directly">
             <ul>
               <li>
-                <strong>Information you give us.</strong> When you submit the build-request form or
-                email us, we collect your name, email, phone (if provided), and the project details
-                you share (goal, industry, budget, timeline, current tools, website).
+                <strong>The build-request form</strong> (<code>/create</code>) &mdash; your name,
+                email, phone if you enter one, and the project details you fill in: goal, industry,
+                current tools, budget band, timeline, website.
               </li>
               <li>
-                <strong>Basic technical data.</strong> Our host (Vercel) records standard request logs
-                such as IP address and browser type for security and reliability.
+                <strong>The AI interview</strong> (<code>/start</code>) &mdash; the same contact
+                details plus the full text of the conversation you have with it, which is sent to us
+                with your enquiry so we can read what you asked for.
+              </li>
+              <li>
+                <strong>Email</strong> &mdash; anything you choose to put in a message to{" "}
+                <a href={`mailto:${site.email}`} className="v-link">
+                  {site.email}
+                </a>
+                .
+              </li>
+            </ul>
+            <p>
+              We use it to reply to you, to scope and quote the work, and to deliver and support what
+              you ask us to build. Nothing else.
+            </p>
+          </Section>
+
+          <Section title="The AI features, and what they send to OpenAI">
+            <p>
+              Several parts of this site are powered by a language model from <strong>OpenAI</strong>,
+              a company in the United States. When you type into any of them, the text you type is
+              sent to OpenAI so it can generate a reply. This applies to:
+            </p>
+            <ul>
+              <li>the AI Worker Showroom demo at <code>/demo</code>;</li>
+              <li>
+                the AI interview at <code>/start</code>, including the spoken audio, which is
+                generated by sending the reply text to OpenAI&apos;s text-to-speech service;
+              </li>
+              <li>the solution finder and the product demos on the shop pages.</li>
+            </ul>
+            <p>
+              <strong>One thing worth calling out.</strong> The showroom demo asks the model to pull a
+              name, phone number, email, service and location out of whatever you type, because that
+              is what a real receptionist would capture &mdash; that is the thing being demonstrated.
+              So if you type a real phone number into the demo, a real phone number is what gets sent
+              to OpenAI and shown back to you on screen. It is a demonstration: it never places a
+              call, sends a text, sends an email, or books anything, and the details it extracts are
+              not saved to our database unless you separately submit the contact form.
+            </p>
+            <p>
+              We do not use anything you type to train a model. OpenAI states in its API data policy
+              that content sent through its API is not used to train its models; their terms govern
+              that, not ours. Demo conversations are held in your browser for the length of the
+              session and are not stored on our side.
+            </p>
+          </Section>
+
+          <Section title="The free tools">
+            <p>
+              The calculators under <code>/tools</code> run entirely in your browser. The numbers you
+              enter &mdash; your rates, your costs, your revenue &mdash; are never sent to us or to
+              anyone else. The only thing recorded is an anonymous count that a tool was used, which
+              tells us the tool is worth keeping. Your figures are not part of that count.
+            </p>
+          </Section>
+
+          <Section title="Analytics">
+            <p>
+              We use <strong>Vercel Web Analytics</strong>. It is cookieless and does not follow you
+              across other websites, which is why this site shows no cookie-consent banner. It records
+              aggregate traffic: which pages were viewed, the country, the coarse device type, and the
+              site that referred you.
+            </p>
+            <p>
+              On top of that we record a small number of named events so we can see which parts of the
+              site work: a tool being used, a call-to-action being clicked, a form being started or
+              submitted. Each event carries only machine tags &mdash; a page path, a button
+              identifier, a package name, a budget band.{" "}
+              <strong>
+                No event ever carries a name, an email address, a phone number, or anything you typed
+                in free text.
+              </strong>
+            </p>
+          </Section>
+
+          <Section title="Storage in your browser">
+            <p>
+              On your first page view we store a small record in your browser&apos;s{" "}
+              <code>sessionStorage</code> under the key <code>hb_attr_v1</code>. It holds only how you
+              arrived: campaign tags from the link you clicked (<code>utm_*</code>,{" "}
+              <code>gclid</code>), the hostname of the site that referred you, the path of the page
+              you landed on, a coarse device class, and the date. It contains no personal information
+              and no part of any URL query you typed. It is not a cookie, it is never read by anyone
+              else, and your browser deletes it when you close the tab.
+            </p>
+            <p>
+              If you submit the contact form, that record is attached to your enquiry so we know which
+              page or campaign brought you in.
+            </p>
+          </Section>
+
+          <Section title="Cookies">
+            <p>
+              This site sets no advertising, marketing, or cross-site tracking cookies. The only
+              cookies that can be set are the session cookies from <strong>Google sign-in</strong>,
+              and only if you actually sign in. Sign-in exists for a limited, non-public area of the
+              site; almost every visitor never touches it. If you do sign in, Google confirms your
+              identity to us and we store the email address, name and profile image Google returns, so
+              the session works.
+            </p>
+          </Section>
+
+          <Section title="Server logs">
+            <p>
+              Our host, <strong>Vercel</strong>, records standard request logs &mdash; IP address,
+              browser type, the URL requested &mdash; for security and reliability, as every web host
+              does.
+            </p>
+            <p>
+              When you submit the contact form we also write one line to those logs so we can tell a
+              healthy submission from a broken one. That line deliberately carries only coarse facts:
+              which form it came from, whether a phone number was present, how many characters long
+              the goal was, and a one-way hash of the IP address used for abuse limits.{" "}
+              <strong>
+                Your name, email, phone number and the text of your enquiry are not written to the
+                logs.
+              </strong>
+            </p>
+          </Section>
+
+          <Section title="Who else receives your information">
+            <ul>
+              <li>
+                <strong>Vercel</strong> &mdash; hosting, the functions that run this site, request
+                logs, and analytics.
+              </li>
+              <li>
+                <strong>Neon</strong> &mdash; the PostgreSQL database where a submitted enquiry is
+                stored so it cannot be lost if the email fails.
+              </li>
+              <li>
+                <strong>Resend</strong> &mdash; delivers the notification email that tells us an
+                enquiry has arrived. That email goes to us, not to a mailing list.
+              </li>
+              <li>
+                <strong>OpenAI</strong> &mdash; receives the text you type into an AI feature, as
+                described above.
+              </li>
+              <li>
+                <strong>Google</strong> &mdash; only if you use Google sign-in.
+              </li>
+              <li>
+                <strong>Stripe</strong> &mdash; payment code exists in this project but{" "}
+                <strong>no payment is taken through this website today</strong>. There is no reachable
+                checkout. If that changes, this policy changes in the same release.
+              </li>
+            </ul>
+            <p>
+              These providers are based in the United States, so information you send through this
+              site is processed outside Canada. We share only what each one needs to do its job. We do
+              not sell your information, we do not trade it, and we never show one client&apos;s
+              project details to another. We would disclose information if the law required it.
+            </p>
+          </Section>
+
+          <Section title="How long it is kept">
+            <ul>
+              <li>
+                <strong>Enquiries</strong> &mdash; kept in the database until you ask us to delete
+                them, or until they are no longer needed for our business and tax records. There is no
+                automatic deletion schedule today; ask and we will remove yours.
+              </li>
+              <li>
+                <strong>Server logs</strong> &mdash; kept by Vercel for the retention window of our
+                hosting plan, which is short and set by them, not by us.
+              </li>
+              <li>
+                <strong>Analytics</strong> &mdash; aggregate only, retained by Vercel; there is no
+                record tied to you to delete.
+              </li>
+              <li>
+                <strong>The browser record</strong> &mdash; deleted by your browser when you close the
+                tab.
+              </li>
+              <li>
+                <strong>Text sent to AI providers</strong> &mdash; held under those providers&apos;
+                own data policies.
               </li>
             </ul>
           </Section>
 
-          <Section title="How we use it">
-            <ul>
-              <li>To reply to your inquiry with a plan and a quote.</li>
-              <li>To scope, deliver, and support work you ask us to build.</li>
-              <li>To keep the site secure and working.</li>
-            </ul>
+          <Section title="Your choices, and how to have your information deleted">
             <p>
-              We do <strong>not</strong> sell your information, and we do not send marketing email
-              unless you ask us to.
-            </p>
-          </Section>
-
-          <Section title="Who we share it with">
-            <p>
-              We use a small number of service providers to run the business, and share only what each
-              needs:
-            </p>
-            <ul>
-              <li>
-                <strong>Vercel</strong> — website hosting and request logs.
-              </li>
-              <li>
-                <strong>Resend</strong> — to deliver the notification email when you submit the form.
-              </li>
-            </ul>
-            <p>
-              We may disclose information if required by law. We never share your project details with
-              other clients.
-            </p>
-          </Section>
-
-          <Section title="How long we keep it">
-            <p>
-              We keep inquiry and project information for as long as needed to serve you and to keep
-              business records. You can ask us to delete your information at any time.
-            </p>
-          </Section>
-
-          <Section title="Your choices">
-            <p>
-              You can request a copy of the information we hold about you, ask us to correct it, or ask
-              us to delete it. Email{" "}
-              <a href={`mailto:${site.email}`} className="text-ink hover:underline">
+              You can ask for a copy of what we hold about you, ask us to correct it, or ask us to
+              delete it. Email{" "}
+              <a href={`mailto:${site.email}`} className="v-link">
                 {site.email}
               </a>{" "}
-              and we&apos;ll handle it.
+              from the address you contacted us with, or tell us which address to look for. We will
+              confirm when it is done, normally within a few days and always within 30 days.
+            </p>
+            <p>
+              We do not send marketing email. If we ever do, it will be because you asked for it and
+              every message will carry an unsubscribe link.
+            </p>
+            <p>
+              Under Canada&apos;s Personal Information Protection and Electronic Documents Act
+              (PIPEDA) you may also complain to the Office of the Privacy Commissioner of Canada if
+              you are not satisfied with how we handle a request. We would rather you told us first.
+            </p>
+          </Section>
+
+          <Section title="Children">
+            <p>
+              This site is for businesses. It is not directed at children and we do not knowingly
+              collect information from anyone under 13. If you believe a child has sent us
+              information, email us and we will delete it.
+            </p>
+          </Section>
+
+          <Section title="Changes to this policy">
+            <p>
+              When the site starts using a new service that receives your information, this page is
+              updated in the same release and the date at the top changes. The date above is the date
+              it was last checked against the code.
             </p>
           </Section>
 
           <Section title="Contact">
             <p>
-              Questions about this policy? Email{" "}
-              <a href={`mailto:${site.email}`} className="text-ink hover:underline">
+              {site.name} is operated by {site.founder} in {site.region}, Canada. Questions about this
+              policy, or a request about your information, go to{" "}
+              <a href={`mailto:${site.email}`} className="v-link">
                 {site.email}
               </a>
-              . {site.name} is based in {site.region}, Canada.
+              .
             </p>
           </Section>
         </div>
@@ -107,8 +300,8 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
-      <div className="mt-3 space-y-3 leading-relaxed [&_a]:font-medium [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink/90 [&_ul]:space-y-2">
+      <h2 className="v-h3 font-display">{title}</h2>
+      <div className="v-body mt-3 space-y-3 [&_a]:font-medium [&_code]:text-[0.95em] [&_code]:text-ink [&_li]:ml-5 [&_li]:list-disc [&_strong]:text-ink [&_ul]:space-y-2">
         {children}
       </div>
     </div>
