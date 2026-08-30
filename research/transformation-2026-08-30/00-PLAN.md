@@ -47,3 +47,14 @@ Gate before commit: tsc 0 · vitest green · `next build` 0 · crawl of local bu
 
 ## Log
 - 2026-08-30 10:25 baseline tsc/vitest green; branch created; 11 agents launched; origin/main merged (empty tree diff).
+- 2026-08-30 wave 1 complete — all 11 reports on disk. 4 agents reported "failed" on a Fable rate limit but
+  HAD written their files first; verified on disk rather than trusting the notification, and stopped 2
+  needless reruns. Only A5 genuinely died and was relaunched.
+- 2026-08-30 wave 2 — 6 implementation lanes (design by me; SEO, lead, content, security/tests, docs by
+  agent), disjoint file ownership, integrator commits by path because all lanes share one working tree.
+- 2026-08-30 wave 2 complete, 50 commits. FINAL GATE, all measured on the local production build:
+  tsc 0 · vitest 232/232 · next build exit 0 (214 pages) · Playwright 89/89 across desktop Chromium and
+  mobile WebKit · scripts/smoke.mjs 158/158 · zero horizontal overflow at 7 widths ·
+  Lighthouse a11y 87-96 -> 100 everywhere, /ai-receptionist mobile perf 82 -> 96 (LCP 4.1s -> 2.7s).
+- ⛔ STOPPED AT THE RELEASE GATE. Push, merge and deploy are owner-approval-only (global CLAUDE.md §4).
+  Nothing has been pushed. Production still runs 3031d36.
