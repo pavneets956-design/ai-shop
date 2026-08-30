@@ -28,10 +28,20 @@ const db = prisma.buildRequest as unknown as {
   update: Mock;
 };
 
-function post(body: unknown): Request {
+// The route now applies a per-IP rate limit whose buckets are module state and
+// therefore shared by every test in this file. Give each request its own IP so
+// the limiter is exercised deliberately (tests/lead-guards.test.ts) and never
+// accidentally — an 18-case suite from one IP would trip a 5/min cap.
+let ipSeq = 0;
+function post(body: unknown, init: { headers?: Record<string, string> } = {}): Request {
+  ipSeq += 1;
   return new Request("http://localhost/api/build-request", {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: {
+      "content-type": "application/json",
+      "x-forwarded-for": `10.0.0.${ipSeq}`,
+      ...(init.headers ?? {}),
+    },
     body: typeof body === "string" ? body : JSON.stringify(body),
   });
 }
@@ -69,10 +79,12 @@ describe("POST /api/build-request", () => {
     expect(sendMock).not.toHaveBeenCalled();
   });
 
-  it("rejects a missing email with 400 (invalid form data)", async () => {
-    const res = await POST(post({ name: "No Email" }));
+  it("rejects a submission with neither email nor phone (400)", async () => {
+    const res = await POST(post({ name: "No Contact" }));
     expect(res.status).toBe(400);
-    await expect(res.json()).resolves.toEqual({ error: "Valid email required" });
+    await expect(res.json()).resolves.toEqual({
+      error: "Enter an email or a phone number so we can reply",
+    });
     expect(db.create).not.toHaveBeenCalled();
   });
 

@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { createHash } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
+import { checkLeadPerDay, checkLeadPerMinute, clientIp } from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 
@@ -17,47 +18,168 @@ export const runtime = "nodejs";
  * silently lose a lead. If BOTH durable channels fail, we return a non-2xx so the
  * form shows its retry/fallback message instead of a false "Request received".
  *
+ * NO EMAIL IS EVER SENT TO THE LEAD. The only message this endpoint sends goes to
+ * the owner, with the visitor as `replyTo`. Any UI that says otherwise is lying —
+ * see `delivery.emailed`, which reports the OWNER notification, never a
+ * visitor-facing confirmation. A visitor confirmation is blocked on Resend domain
+ * verification (the site domain has no MX record today).
+ *
+ * Guards (2026-08-30): per-IP rate limit, 32 KB body cap, honeypot, cross-origin
+ * rejection, and a request-level test mode. Logs carry an id + coarse metadata —
+ * never the lead body, which used to be JSON.stringify'd into Vercel logs on
+ * every submission.
+ *
  * Env:
- *   RESEND_API_KEY     enable the self-notification email
- *   LEAD_NOTIFY_EMAIL  where to send notifications (default: pavneets956@gmail.com)
- *   LEAD_FROM_EMAIL    verified from address (default: Handbuilt <onboarding@resend.dev>)
+ *   RESEND_API_KEY          enable the self-notification email
+ *   LEAD_NOTIFY_EMAIL       where to send notifications (default: pavneets956@gmail.com)
+ *   LEAD_FROM_EMAIL         verified from address (default: Handbuilt <onboarding@resend.dev>)
+ *   LEAD_TEST_SECRET        value of the `x-lead-test` header that marks a test submission
+ *   LEAD_TEST_NOTIFY_EMAIL  optional inbox for test submissions (default: send nothing)
+ *   LEAD_MAX_PER_IP_MIN     per-IP submissions per minute (default 5)
+ *   LEAD_MAX_PER_IP_DAY     per-IP submissions per day (default 20)
  */
 
-// Require a valid email; everything else is optional and passed through, because
-// the three callers (build-request / plan / consultation) post different shapes.
+/** Hard body cap. A real lead is ~1–3 KB; the /start transcript is under 1 KB. */
+const MAX_BODY_BYTES = 32 * 1024;
+/** Longest value we keep for any single field. Longer values are truncated, never dropped silently. */
+const MAX_FIELD_CHARS = 4000;
+/** Most keys we keep off one submission — stops a payload-stuffing bot. */
+const MAX_FIELDS = 80;
+/**
+ * Honeypot. Rendered visually hidden (`display:none`) with `autocomplete="off"`
+ * and `tabindex="-1"` so neither a human nor a password manager can fill it.
+ * A non-empty value means a bot: we return a normal-looking success and store
+ * nothing. It is logged loudly so a false positive can never be silent.
+ */
+const HONEYPOT_FIELD = "company_website";
+/**
+ * RFC 2606 reserved TLD — can never resolve, so a value in this domain is
+ * self-documenting as "not a real address". Used only when a visitor gives a
+ * phone and no email: the `BuildRequest.email` column is NOT NULL and changing
+ * the schema is out of scope, so the column carries a deterministic sentinel
+ * while the real phone lives in `phone` + `payload`. Nothing is ever addressed
+ * to it — `replyTo` is omitted entirely on a phone-only lead.
+ */
+const NO_EMAIL_DOMAIN = "lead.invalid";
+
+// At least one of email / phone. Everything else is optional and passed through,
+// because the callers (build-request / plan / consultation) post different shapes.
 const LeadSchema = z
-  .object({ email: z.string().trim().email() })
-  .passthrough();
+  .object({
+    email: z.string().trim().email().optional(),
+    phone: z.string().trim().min(5).max(40).optional(),
+  })
+  .passthrough()
+  .refine((v) => Boolean(v.email) || Boolean(v.phone), {
+    message: "email or phone required",
+  });
 
 const DEDUPE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 
 export async function POST(req: Request) {
-  let raw: unknown;
+  // 0a) Cross-origin rejection. A same-origin `fetch` POST always carries
+  //     `Origin` (the Fetch spec sets it for every non-GET/HEAD request), so a
+  //     MISMATCH is a cross-site post and is refused. A MISSING origin is
+  //     allowed: privacy tooling and server-side test scripts strip it, and
+  //     dropping a real lead is worse than accepting an unattributed one. The
+  //     rate limit + honeypot carry the anti-script load.
+  if (originMismatch(req)) {
+    return NextResponse.json({ ok: false, error: "Invalid request" }, { status: 403 });
+  }
+
+  // 0b) Per-IP rate limit. Applied BEFORE parsing so a malformed flood is cheap.
+  const ip = clientIp(req);
+  const minute = checkLeadPerMinute(ip);
+  const day = minute.ok ? checkLeadPerDay(ip) : minute;
+  if (!minute.ok || !day.ok) {
+    const retryAfter = minute.ok ? day.retryAfter : minute.retryAfter;
+    console.warn("[AI-SHOP LEAD] rate limited", { ipHash: hashIp(ip), retryAfter });
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Too many requests from this connection. Try again shortly, or email us directly.",
+        retryAfter,
+      },
+      { status: 429, headers: { "Retry-After": String(retryAfter) } }
+    );
+  }
+
+  // 0c) Body size cap — header first (cheap), then the real byte length.
+  const declared = Number(req.headers.get("content-length") || 0);
+  if (declared > MAX_BODY_BYTES) return tooLarge();
+  let bodyText: string;
   try {
-    raw = await req.json();
+    bodyText = await req.text();
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+  if (Buffer.byteLength(bodyText, "utf8") > MAX_BODY_BYTES) return tooLarge();
+
+  let raw: unknown;
+  try {
+    raw = JSON.parse(bodyText);
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+
+  // 0d) Honeypot. Only a bot can reach this field. Answer like a success so the
+  //     bot has nothing to tune against, persist nothing, send nothing — and log
+  //     it, because a false positive here silently eats a real lead.
+  if (isRecord(raw) && str(raw[HONEYPOT_FIELD])) {
+    console.warn("[AI-SHOP LEAD] honeypot tripped — nothing stored, nothing sent", {
+      ipHash: hashIp(ip),
+      fields: Object.keys(raw).length,
+    });
+    return NextResponse.json({ ok: true, delivery: { persisted: false, emailed: false } });
   }
 
   const parsed = LeadSchema.safeParse(raw);
   if (!parsed.success) {
     // Don't echo zod internals — a single clear message is enough for the form.
-    return NextResponse.json({ error: "Valid email required" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Enter an email or a phone number so we can reply" },
+      { status: 400 }
+    );
   }
 
-  const payload = parsed.data as Record<string, unknown>;
-  const email = String(payload.email).trim();
-  const lead = { receivedAt: new Date().toISOString(), ...payload, email };
+  // Trim the payload to a sane shape before anything touches storage or email.
+  const payload = sanitizePayload(parsed.data as Record<string, unknown>);
+  const realEmail = str(payload.email);
+  const phone = str(payload.phone);
+  // `email` is the DB column value; `realEmail` is what a human can actually be
+  // reached at. They differ only on a phone-only lead.
+  const email = realEmail ?? sentinelEmail(phone as string);
+
+  // 0e) Test mode: `x-lead-test: <LEAD_TEST_SECRET>`, constant-time compared. A
+  //     wrong or absent secret is treated as an ordinary lead — never an error,
+  //     never a hint that the mechanism exists.
+  const isTest = isTestRequest(req);
+
+  const lead: Record<string, unknown> = {
+    receivedAt: new Date().toISOString(),
+    ...payload,
+  };
 
   // Structured log — always on, visible in Vercel → Logs. NOT a durable store.
-  console.log("[AI-SHOP LEAD]", JSON.stringify(lead));
+  // Coarse metadata ONLY: this used to log the entire lead (email, phone, the
+  // full /start transcript) on every request, which put PII in the log drain.
+  console.log("[AI-SHOP LEAD] received", {
+    source: str(lead.source) ?? str(lead.type) ?? "unknown",
+    kind: kindOf(lead),
+    test: isTest,
+    contact: realEmail ? "email" : "phone",
+    hasPhone: Boolean(phone),
+    goalChars: (str(lead.goal) ?? str(lead.want) ?? "").length,
+    fields: Object.keys(payload).length,
+    ipHash: hashIp(ip),
+  });
 
   // NODE_ENV === "production" on Vercel covers BOTH preview and production
   // deploys. Only true local dev (`next dev`) is non-strict.
   const strict = process.env.NODE_ENV === "production";
 
   // 1) Durable persistence FIRST. Idempotent on rapid duplicate submits.
-  const persist = await persistLead(lead, email);
+  const persist = await persistLead(lead, email, isTest);
   if (persist.deduped) {
     // A matching lead already landed moments ago — accept idempotently, don't
     // insert or notify twice. Same stable response shape as a fresh success:
@@ -68,12 +190,14 @@ export async function POST(req: Request) {
       ok: true,
       id: persist.id,
       deduped: true,
+      contact: realEmail ? "email" : "phone",
+      ...(isTest ? { test: true } : {}),
       delivery: { persisted: true, emailed: false },
     });
   }
 
   // 2) Best-effort notification email. Never throws; reports true acceptance.
-  const notify = await sendNotification(lead, email);
+  const notify = await sendNotification(lead, realEmail, isTest);
   if (strict && !notify.ok && notify.reason === "no_key") {
     console.error(
       "[AI-SHOP LEAD] RESEND_API_KEY missing in production — lead persisted to DB but NO notification email was sent."
@@ -91,9 +215,17 @@ export async function POST(req: Request) {
 
   const accepted = persist.ok || notify.ok;
   if (accepted) {
+    console.log("[AI-SHOP LEAD] accepted", {
+      id: persist.id ?? null,
+      persisted: persist.ok,
+      emailed: notify.ok,
+      test: isTest,
+    });
     return NextResponse.json({
       ok: true,
       id: persist.id,
+      contact: realEmail ? "email" : "phone",
+      ...(isTest ? { test: true } : {}),
       delivery: { persisted: persist.ok, emailed: notify.ok },
     });
   }
@@ -153,7 +285,8 @@ type PersistResult = { ok: boolean; id?: string; deduped?: boolean };
  */
 async function persistLead(
   lead: Record<string, unknown>,
-  email: string
+  email: string,
+  isTest = false
 ): Promise<PersistResult> {
   // Normalize the primary intent across the three payload shapes.
   const goal = str(lead.goal) ?? str(lead.want) ?? null;
@@ -171,17 +304,21 @@ async function persistLead(
     });
     if (recent) return { ok: true, id: recent.id, deduped: true };
 
+    const source = str(lead.source) ?? str(lead.type);
     const row = await prisma.buildRequest.create({
       data: {
         name: str(lead.name),
         email,
         phone: str(lead.phone),
-        source: str(lead.source) ?? str(lead.type),
+        // A test submission is marked in BOTH columns so it can never be mistaken
+        // for a real lead and is trivially purgeable: WHERE status = 'test'.
+        source: isTest ? `test:${source ?? "unknown"}` : source,
         kind: kindOf(lead),
         goal,
         fingerprint,
         dedupeKey,
         payload: lead as unknown as Prisma.InputJsonValue,
+        ...(isTest ? { status: "test" } : {}),
       },
       select: { id: true },
     });
@@ -201,8 +338,9 @@ async function persistLead(
         /* fall through to the failure path below */
       }
     }
-    // Log full detail server-side only; caller decides how to respond.
-    console.error("[AI-SHOP LEAD] DB persist failed", err);
+    // Coarse error identity only — a raw Prisma error can echo submitted values
+    // back into the log drain, which is the PII leak this pass is closing.
+    console.error("[AI-SHOP LEAD] DB persist failed", errorShape(err));
     return { ok: false };
   }
 }
@@ -246,20 +384,31 @@ type NotifyResult = {
   ok: boolean;
   id?: string;
   /** Coarse, non-sensitive reason for the caller/logs. */
-  reason?: "no_key" | "provider_error" | "exception";
+  reason?: "no_key" | "provider_error" | "exception" | "test_skipped";
 };
 
+/**
+ * The OWNER notification. Nothing here is addressed to the lead — `replyTo` is
+ * the only place their address appears, and on a phone-only lead it is omitted
+ * entirely rather than pointed at the `lead.invalid` sentinel.
+ */
 async function sendNotification(
   lead: Record<string, unknown>,
-  email: string
+  replyToEmail: string | undefined,
+  isTest = false
 ): Promise<NotifyResult> {
+  // Test submissions never touch the real inbox. Set LEAD_TEST_NOTIFY_EMAIL to
+  // route them to a throwaway address instead of dropping them.
+  const testInbox = isTest ? process.env.LEAD_TEST_NOTIFY_EMAIL : undefined;
+  if (isTest && !testInbox) return { ok: false, reason: "test_skipped" };
+
   const key = process.env.RESEND_API_KEY;
   if (!key) return { ok: false, reason: "no_key" };
 
   try {
     const { Resend } = await import("resend");
     const resend = new Resend(key);
-    const to = process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
+    const to = testInbox || process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
     // Resend's shared `onboarding@resend.dev` needs no domain verification and
     // reliably delivers to your own Resend-account email — ideal for a
     // self-notification. Override LEAD_FROM_EMAIL once a domain is verified.
@@ -267,12 +416,17 @@ async function sendNotification(
     const isConsultation =
       lead.source === "ai-builder" || lead.source === "consultation";
     const kind = kindOf(lead);
+    const who = str(lead.name) || replyToEmail || str(lead.phone) || "no contact given";
+    const prefix = isTest ? "[TEST] " : "";
+    const suffix = replyToEmail ? "" : " (phone only — no email given)";
 
     const { data, error } = await resend.emails.send({
       from,
       to,
-      replyTo: email,
-      subject: `New Handbuilt ${kind}: ${lead.name || email}`,
+      // Never reply-to the phone-only sentinel: it is an RFC 2606 `.invalid`
+      // address and a reply would bounce. The phone is in the body.
+      ...(replyToEmail ? { replyTo: replyToEmail } : {}),
+      subject: `${prefix}New Handbuilt ${kind}: ${who}${suffix}`,
       text: isConsultation ? formatConsultation(lead) : formatLead(lead),
       html: isConsultation ? htmlConsultation(lead) : htmlLead(lead),
     });
@@ -280,15 +434,133 @@ async function sendNotification(
     // Resend v4 does NOT throw on a non-2xx API response (invalid/expired key,
     // rate limit, etc.) — it returns { error }. Inspect it, never assume success.
     if (error) {
-      console.error("[AI-SHOP LEAD] Resend returned an error", error);
+      console.error("[AI-SHOP LEAD] Resend returned an error", errorShape(error));
       return { ok: false, reason: "provider_error" };
     }
     return { ok: true, id: data?.id };
   } catch (err) {
     // Network / SDK exception. Detail stays server-side.
-    console.error("[AI-SHOP LEAD] Resend threw", err);
+    console.error("[AI-SHOP LEAD] Resend threw", errorShape(err));
     return { ok: false, reason: "exception" };
   }
+}
+
+// ---------------------------------------------------------------------------
+// Request guards + payload hygiene
+// ---------------------------------------------------------------------------
+
+function tooLarge() {
+  return NextResponse.json(
+    {
+      ok: false,
+      error: "That request is too long to send. Trim it down, or email us the detail directly.",
+    },
+    { status: 413 }
+  );
+}
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+/**
+ * True only when the request declares an origin that is NOT this host. A missing
+ * origin is deliberately allowed — see the note at the top of POST.
+ */
+function originMismatch(req: Request): boolean {
+  const host = req.headers.get("host");
+  const src = req.headers.get("origin") || req.headers.get("referer");
+  if (!host || !src) return false;
+  try {
+    return new URL(src).host !== host;
+  } catch {
+    return true; // an unparseable origin header is not a browser we trust
+  }
+}
+
+/** Non-reversible, salted IP tag for abuse correlation. Never log the raw IP. */
+function hashIp(ip: string): string {
+  return createHash("sha256")
+    .update(`${process.env.LEAD_IP_SALT ?? "handbuilt-lead"}:${ip}`)
+    .digest("hex")
+    .slice(0, 12);
+}
+
+/**
+ * `x-lead-test: <LEAD_TEST_SECRET>`, constant-time compared. A wrong or absent
+ * secret returns false — the submission is then handled as an ordinary lead, so
+ * probing the header can never reveal that the mechanism exists.
+ */
+function isTestRequest(req: Request): boolean {
+  const provided = req.headers.get("x-lead-test");
+  const secret = process.env.LEAD_TEST_SECRET;
+  if (!provided || !secret) return false;
+  const a = Buffer.from(provided, "utf8");
+  const b = Buffer.from(secret, "utf8");
+  if (a.length !== b.length) return false;
+  try {
+    return timingSafeEqual(a, b);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Bound the shape of an arbitrary passthrough payload: cap the key count, drop
+ * the honeypot, and truncate any oversized string with a visible marker so the
+ * owner can see that something was cut rather than wonder why a sentence stops.
+ */
+function sanitizePayload(input: Record<string, unknown>): Record<string, unknown> {
+  const out: Record<string, unknown> = {};
+  let kept = 0;
+  for (const [k, v] of Object.entries(input)) {
+    if (k === HONEYPOT_FIELD) continue;
+    if (kept >= MAX_FIELDS) break;
+    kept++;
+    if (typeof v === "string") {
+      out[k] = v.length > MAX_FIELD_CHARS ? `${v.slice(0, MAX_FIELD_CHARS)}… [truncated]` : v;
+    } else if (isRecord(v)) {
+      // One level of nesting only (the trade `intake` object).
+      const nested: Record<string, unknown> = {};
+      let n = 0;
+      for (const [nk, nv] of Object.entries(v)) {
+        if (n >= MAX_FIELDS) break;
+        n++;
+        nested[nk] =
+          typeof nv === "string" && nv.length > MAX_FIELD_CHARS
+            ? `${nv.slice(0, MAX_FIELD_CHARS)}… [truncated]`
+            : nv;
+      }
+      out[k] = nested;
+    } else {
+      out[k] = v;
+    }
+  }
+  return out;
+}
+
+/**
+ * Deterministic non-deliverable stand-in for the NOT NULL `email` column on a
+ * phone-only lead. Deterministic so the dedupe fingerprint still collides on a
+ * repeat submission from the same number.
+ */
+function sentinelEmail(phone: string): string {
+  const digits = String(phone).replace(/[^\d]/g, "");
+  const h = createHash("sha256").update(digits || String(phone)).digest("hex").slice(0, 12);
+  return `no-email+${h}@${NO_EMAIL_DOMAIN}`;
+}
+
+/** Coarse, non-sensitive error identity for logs. Never the raw error object. */
+function errorShape(err: unknown): { name: string; code?: string; message: string } {
+  if (typeof err !== "object" || err === null) {
+    return { name: "unknown", message: String(err).slice(0, 200) };
+  }
+  const e = err as { name?: unknown; code?: unknown; message?: unknown };
+  return {
+    name: typeof e.name === "string" ? e.name : "Error",
+    ...(typeof e.code === "string" ? { code: e.code } : {}),
+    message: typeof e.message === "string" ? e.message.slice(0, 200) : "",
+  };
 }
 
 /** Coerce a value to a trimmed non-empty string, or undefined. */
@@ -362,7 +634,7 @@ function formatLead(lead: Record<string, unknown>): string {
     "",
     "— Contact —",
     `Name:      ${g("name")}`,
-    `Email:     ${g("email")}`,
+    `Email:     ${has(lead, "email") ? g("email") : "— none given (phone only)"}`,
     `Phone:     ${g("phone")}`,
     `Website:   ${g("website")}`,
     "",
@@ -543,7 +815,9 @@ function htmlLead(lead: Record<string, unknown>): string {
 
   const contact = section("Contact", [
     has(lead, "name") ? row("Name", lead.name) : "",
-    has(lead, "email") ? row("Email", lead.email) : "",
+    has(lead, "email")
+      ? row("Email", lead.email)
+      : row("Email", "none given — reply by phone"),
     has(lead, "phone") ? row("Phone", lead.phone) : "",
     has(lead, "website") ? row("Website", lead.website) : "",
   ]);

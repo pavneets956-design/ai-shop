@@ -3,7 +3,21 @@
 // tailored system blueprint + an ESTIMATE RANGE (never an exact auto-quote, so
 // there's no scope/pricing liability). Zero API cost — runs fully client-side.
 //
+// `priceRange` MUST come from lib/data/packages.ts. `impact` MUST be a
+// describable outcome, never a figure we cannot evidence — the old "~12 hrs/week
+// saved" numbers were invented and were read aloud to visitors on /start.
+//
 // EDIT the templates here to change what each system shows. No component changes.
+
+import { packagePriceLabel } from "@/lib/data/packages";
+
+// Every price the AI Builder shows or speaks comes from the pricing registry.
+// It used to hand-type "$1,500-$2,500" and "$1,500-$3,000" here; neither band
+// existed in packages.ts, and /start read them ALOUD as the headline number on
+// the diagnosis card. Single-worker builds are the Starter package; the
+// everything-connected build is the Business package.
+const STARTER_PRICE = packagePriceLabel("starter");   // "From $1,500"
+const BUSINESS_PRICE = packagePriceLabel("business"); // "$3,500-$7,500"
 
 export type BlueprintStep = { label: string; sub?: string };
 
@@ -14,9 +28,9 @@ export type BuildPlan = {
   system: string;     // e.g. "AI Receptionist + Booking"
   tagline: string;    // one warm line, business-flavored
   steps: BlueprintStep[];
-  priceRange: string; // ALWAYS a range — clearly an estimate, not a quote
+  priceRange: string; // ALWAYS from packagePriceLabel() — an estimate, never a quote
   timeline: string;
-  impact: string;     // benefit label (hours saved / jobs closed / cash flow)
+  impact: string;     // outcome in words — never an unevidenced figure
   connects: string;
   workingLabels: string[]; // staged "designing…" lines
 };
@@ -65,9 +79,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "Books into your calendar", sub: "Real-time availability, no double-booking" },
       { label: "Texts you the lead", sub: "Full details, the moment it happens" },
     ],
-    priceRange: "$1,500–$2,500",
+    priceRange: STARTER_PRICE,
     timeline: "≈ 5 business days",
-    impact: "~12 hrs/week saved",
+    impact: "Every call answered, day or night",
     connects: "Phone · SMS · Google Calendar · your CRM",
     workingLabels: ["Mapping your call flow…", "Matching AI workers…", "Estimating scope…"],
   }),
@@ -81,9 +95,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "Sends it for your OK", sub: "You approve, AI delivers" },
       { label: "Schedules the follow-up", sub: "So no quote goes cold" },
     ],
-    priceRange: "$1,500–$2,500",
+    priceRange: STARTER_PRICE,
     timeline: "≈ 5 business days",
-    impact: "~8 hrs/week saved",
+    impact: "Quotes out the same day, not next week",
     connects: "Website form · email · CRM · Google Sheets",
     workingLabels: ["Reading your quote process…", "Building the intake…", "Estimating scope…"],
   }),
@@ -97,9 +111,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "Pushes toward booking", sub: "Sends a link, holds a time" },
       { label: "Notifies you", sub: "With the full conversation" },
     ],
-    priceRange: "$1,500–$3,000",
+    priceRange: STARTER_PRICE,
     timeline: "1–2 weeks",
-    impact: "Replies in under 60 seconds",
+    impact: "New leads get a reply straight away",
     connects: "Website chat · SMS · email · CRM · calendar",
     workingLabels: ["Mapping your lead flow…", "Wiring the follow-ups…", "Estimating scope…"],
   }),
@@ -112,9 +126,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "You approve in one tap", sub: "Or let it auto-post" },
       { label: "Asks happy customers", sub: "To leave a review, at the right moment" },
     ],
-    priceRange: "$1,500–$2,500",
+    priceRange: STARTER_PRICE,
     timeline: "≈ 5 business days",
-    impact: "More reviews from happy customers",
+    impact: "Every review answered in your voice",
     connects: "Google Business · email · SMS",
     workingLabels: ["Reading your brand voice…", "Setting up replies…", "Estimating scope…"],
   }),
@@ -128,9 +142,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "Escalates gently", sub: "Until it's paid — never rude" },
       { label: "Marks it paid", sub: "And stops automatically" },
     ],
-    priceRange: "$1,500–$3,000",
+    priceRange: STARTER_PRICE,
     timeline: "1–2 weeks",
-    impact: "Faster cash flow",
+    impact: "Overdue invoices chased without you",
     connects: "QuickBooks · Stripe · Square · SMS · email",
     workingLabels: ["Reading your billing flow…", "Writing the reminders…", "Estimating scope…"],
   }),
@@ -144,9 +158,9 @@ const TEMPLATES: Record<IntentKey, Template> = {
       { label: "Chases unpaid invoices", sub: "Politely, automatically" },
       { label: "Reports to you weekly", sub: "What happened, what's next" },
     ],
-    priceRange: "$3,500–$7,500",
+    priceRange: BUSINESS_PRICE,
     timeline: "2–3 weeks",
-    impact: "~15 hrs/week saved",
+    impact: "The front desk runs without you in it",
     connects: "Phone · CRM · calendar · payments · email",
     workingLabels: ["Mapping your whole workflow…", "Connecting the AI workers…", "Estimating scope…"],
   }),

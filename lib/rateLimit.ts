@@ -103,6 +103,32 @@ export function checkDemoGlobalDaily(): RateResult {
   return { ok: true, retryAfter: 0 };
 }
 
+// ---------------------------------------------------------------------------
+// Lead capture (/api/build-request). Mirrors the demo limiter's shape but with
+// LOOSER caps on purpose: a throttled demo message costs a visitor nothing, a
+// throttled lead costs the business the lead. These numbers stop a script from
+// filling the inbox and the leads table without ever standing in the way of a
+// real person who resubmits after a typo, retries a 502, or shares an office IP.
+//
+// Per-instance and reset on cold start, like every other bucket in this file —
+// a FLOOR, not a fortress. The honeypot, the origin check and the content
+// fingerprint dedupe carry the rest of the load.
+// ---------------------------------------------------------------------------
+const leadIpMinute = new Map<string, Bucket>();
+const leadIpDay = new Map<string, Bucket>();
+
+/** 5 lead submissions per minute per IP (LEAD_MAX_PER_IP_MIN). */
+export function checkLeadPerMinute(ip: string): RateResult {
+  const max = Number(process.env.LEAD_MAX_PER_IP_MIN || 5);
+  return take(leadIpMinute, ip, max, 60_000);
+}
+
+/** 20 lead submissions per IP per day (LEAD_MAX_PER_IP_DAY). */
+export function checkLeadPerDay(ip: string): RateResult {
+  const max = Number(process.env.LEAD_MAX_PER_IP_DAY || 20);
+  return take(leadIpDay, ip, max, DAY);
+}
+
 /** Best-effort client IP from proxy headers. */
 export function clientIp(req: Request): string {
   const xff = req.headers.get("x-forwarded-for");

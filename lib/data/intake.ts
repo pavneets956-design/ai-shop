@@ -1,12 +1,20 @@
 // ============================================================================
-// Occupation-specific intake (Phase D).
+// Trade context for the build-request form.
 //
-// When a visitor picks their trade, the build-request form asks the RIGHT
-// questions for that trade instead of a generic "what industry" chip. Trade ids
-// match the showroom INDUSTRIES (lib/data/showroom.ts) so the showroom's
-// "Get this installed" CTA can deep-link: /create?industry=<id>.
+// These questions are about the VISITOR'S OWN BUSINESS. That is the whole point
+// of the 2026-08-30 rewrite: this file used to hold the *customer-side* intake
+// schema borrowed from the showroom demo, so a plumber filling in a B2B lead
+// form was asked "What's the issue — Leak / water", "Service address", and
+// "Active water or gas issue?" — i.e. we asked the plumber whether HE had a gas
+// leak. Nothing here may ask a question that only makes sense if the person
+// filling the form is the customer rather than the owner.
 //
-// Keep field sets tight (3-5) — this sits inside an existing multi-step form.
+// Two questions per trade, both OPTIONAL, both chips (no typing on a phone).
+// They exist because they change what gets built: what the business actually
+// sells, and which channel the work arrives on.
+//
+// Trade ids still match the showroom INDUSTRIES (lib/data/showroom.ts) so the
+// showroom's "Get this installed" CTA can deep-link: /create?industry=<id>.
 // ============================================================================
 
 export type IntakeFieldType = "text" | "chips";
@@ -27,16 +35,32 @@ export interface Trade {
   fields: IntakeField[];
 }
 
+/**
+ * Asked of every trade in the same words — the answer decides which channel the
+ * AI worker has to live on, which is the single biggest scoping input there is.
+ */
+const ENQUIRY_CHANNEL: IntakeField = {
+  key: "enquiries",
+  label: "How do new enquiries reach you today?",
+  type: "chips",
+  options: ["Phone calls", "Website form", "Text / WhatsApp", "Email", "Social DMs"],
+};
+
+const work = (options: string[]): IntakeField => ({
+  key: "work",
+  label: "What kind of work do you take on?",
+  type: "chips",
+  options,
+});
+
 export const TRADES: Trade[] = [
   {
     id: "landscaping",
     label: "Landscaping",
     noun: "lawn & garden business",
     fields: [
-      { key: "city", label: "City / service area", type: "text", placeholder: "e.g. Delta, BC" },
-      { key: "services", label: "Services needed", type: "chips", options: ["Mowing", "Yard cleanup", "Hedges / trees", "Garden beds", "Snow removal", "Other"] },
-      { key: "property", label: "Property type", type: "chips", options: ["Residential", "Commercial"] },
-      { key: "frequency", label: "One-time or recurring", type: "chips", options: ["One-time", "Recurring"] },
+      work(["Maintenance contracts", "One-off jobs", "Design / installs", "Snow & seasonal"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -44,11 +68,8 @@ export const TRADES: Trade[] = [
     label: "Plumbing",
     noun: "plumbing business",
     fields: [
-      { key: "issue", label: "What's the issue", type: "chips", options: ["Leak / water", "No hot water", "Blocked drain", "Install / replace", "Other"] },
-      { key: "urgency", label: "Urgency", type: "chips", options: ["Emergency / today", "This week", "Flexible"] },
-      { key: "address", label: "Service address / area", type: "text", placeholder: "Street + city" },
-      { key: "safety", label: "Active water or gas issue?", type: "chips", options: ["Yes", "No"] },
-      { key: "callback", label: "Best callback number", type: "text", placeholder: "Phone" },
+      work(["Emergency callouts", "Service & repair", "Renos / installs", "New construction"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -56,11 +77,8 @@ export const TRADES: Trade[] = [
     label: "Electrical",
     noun: "electrical business",
     fields: [
-      { key: "issue", label: "What's the issue", type: "chips", options: ["No power", "Panel upgrade", "New install", "Sparking / fault", "Other"] },
-      { key: "urgency", label: "Urgency", type: "chips", options: ["Emergency / today", "This week", "Flexible"] },
-      { key: "address", label: "Service address / area", type: "text", placeholder: "Street + city" },
-      { key: "safety", label: "Any safety concern (smoke, sparks)?", type: "chips", options: ["Yes", "No"] },
-      { key: "callback", label: "Best callback number", type: "text", placeholder: "Phone" },
+      work(["Service calls", "Panel & rewires", "Renos / installs", "Commercial contracts"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -68,10 +86,8 @@ export const TRADES: Trade[] = [
     label: "Cleaning",
     noun: "cleaning business",
     fields: [
-      { key: "service", label: "Type of clean", type: "chips", options: ["Home", "Office", "Move-in / out", "Deep clean"] },
-      { key: "size", label: "Size", type: "text", placeholder: "e.g. 3 bed / 2 bath, or sq ft" },
-      { key: "frequency", label: "How often", type: "chips", options: ["One-time", "Weekly", "Biweekly", "Monthly"] },
-      { key: "city", label: "City / area", type: "text", placeholder: "City" },
+      work(["Recurring residential", "Commercial / offices", "Move-in / move-out", "Deep cleans"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -79,10 +95,8 @@ export const TRADES: Trade[] = [
     label: "Dental / Clinic",
     noun: "dental clinic",
     fields: [
-      { key: "service", label: "Reason for visit", type: "chips", options: ["Cleaning / checkup", "Pain / emergency", "Cosmetic", "Treatment"] },
-      { key: "patient", label: "Patient", type: "chips", options: ["New patient", "Existing patient"] },
-      { key: "preferred", label: "Preferred date / time", type: "text", placeholder: "e.g. next week, mornings" },
-      { key: "insurance", label: "Insurance", type: "chips", options: ["Have insurance", "Paying directly", "Not sure"] },
+      work(["General practice", "Specialist referrals", "Cosmetic", "Walk-in / urgent"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -90,10 +104,8 @@ export const TRADES: Trade[] = [
     label: "Salon",
     noun: "salon or spa",
     fields: [
-      { key: "service", label: "Service", type: "chips", options: ["Cut", "Colour", "Styling", "Spa / other"] },
-      { key: "datetime", label: "Preferred date / time", type: "text", placeholder: "e.g. Saturday afternoon" },
-      { key: "stylist", label: "Stylist preference", type: "text", placeholder: "Anyone, or a name" },
-      { key: "client", label: "New or returning", type: "chips", options: ["New client", "Returning client"] },
+      work(["Hair", "Nails / beauty", "Spa treatments", "Barbering"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -101,10 +113,8 @@ export const TRADES: Trade[] = [
     label: "Restaurant",
     noun: "restaurant",
     fields: [
-      { key: "request", label: "What for", type: "chips", options: ["Reservation", "Catering", "Private event", "Question"] },
-      { key: "party", label: "Party size", type: "text", placeholder: "e.g. 6 people" },
-      { key: "datetime", label: "Date / time", type: "text", placeholder: "e.g. Friday 7pm" },
-      { key: "dietary", label: "Dietary notes", type: "text", placeholder: "Allergies / preferences" },
+      work(["Dine-in & reservations", "Takeout / delivery", "Catering", "Private events"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -112,10 +122,8 @@ export const TRADES: Trade[] = [
     label: "Real Estate",
     noun: "real estate business",
     fields: [
-      { key: "intent", label: "Looking to", type: "chips", options: ["Buy", "Sell", "Rent", "Get a valuation"] },
-      { key: "area", label: "Area / neighbourhood", type: "text", placeholder: "City / area" },
-      { key: "timeframe", label: "Timeframe", type: "chips", options: ["ASAP", "1-3 months", "Just exploring"] },
-      { key: "callback", label: "Best callback number", type: "text", placeholder: "Phone" },
+      work(["Residential sales", "Rentals / property management", "Commercial", "New developments"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -123,10 +131,8 @@ export const TRADES: Trade[] = [
     label: "Moving",
     noun: "moving business",
     fields: [
-      { key: "type", label: "Type of move", type: "chips", options: ["Local", "Long-distance", "Storage"] },
-      { key: "route", label: "From → to", type: "text", placeholder: "e.g. Surrey → Vancouver" },
-      { key: "date", label: "Move date", type: "text", placeholder: "e.g. end of month" },
-      { key: "size", label: "Home size", type: "chips", options: ["Studio / 1BR", "2-3BR", "4BR+", "Office"] },
+      work(["Local moves", "Long-distance", "Office / commercial", "Storage"]),
+      ENQUIRY_CHANNEL,
     ],
   },
   {
@@ -134,8 +140,8 @@ export const TRADES: Trade[] = [
     label: "Something else",
     noun: "business",
     fields: [
-      { key: "about", label: "Tell us about the work", type: "text", placeholder: "What the job involves" },
-      { key: "area", label: "City / area", type: "text", placeholder: "City" },
+      work(["Services", "Retail / e-commerce", "Trades / field work", "Professional services"]),
+      ENQUIRY_CHANNEL,
     ],
   },
 ];

@@ -106,42 +106,42 @@ const DIAG: Record<
     volQ: "Roughly how many calls do you miss in a week?",
     volOpts: ["A few", "5–15", "15–30", "30+"],
     problem: (v) => `You're missing around ${v.toLowerCase()} calls a week — and most callers never try again.`,
-    impact: "Even 2–3 missed jobs a week can mean thousands in lost revenue a month.",
+    impact: "Every call that rings out is a job the next contractor picks up.",
     includes: ["AI Receptionist", "SMS follow-up", "Appointment booking", "Lead tracking"],
   },
   leads: {
     volQ: "How many new leads come in each week?",
     volOpts: ["Under 10", "10–25", "25–50", "50+"],
     problem: (v) => `You're getting ${v.toLowerCase()} leads a week, but slow replies let too many go cold.`,
-    impact: "Replying in under a minute can double the leads you actually close.",
+    impact: "A lead left waiting is a lead someone else answers first.",
     includes: ["AI lead follow-up", "Instant first reply", "Booking link", "Lead tracking"],
   },
   quotes: {
     volQ: "How many quotes do you send in a week?",
     volOpts: ["Under 5", "5–15", "15–30", "30+"],
     problem: (v) => `You're writing ${v.toLowerCase()} quotes a week by hand — slow, and some never go out.`,
-    impact: "Faster quotes win the job before a competitor even replies.",
+    impact: "A quote that goes out the same day is still in the running.",
     includes: ["AI Quote Agent", "Detail intake", "Auto-drafted estimate", "Follow-up reminder"],
   },
   invoices: {
     volQ: "Roughly how much is usually sitting unpaid?",
     volOpts: ["Under $2k", "$2k–$10k", "$10k–$25k", "$25k+"],
     problem: (v) => `You've got around ${v} in unpaid invoices, and chasing it eats your evenings.`,
-    impact: "Polite automatic reminders get you paid days — sometimes weeks — faster.",
+    impact: "Reminders go out on schedule, so you are not the one chasing.",
     includes: ["AI invoice reminders", "One-tap pay link", "Gentle escalation", "Auto mark-paid"],
   },
   reviews: {
     volQ: "How many reviews do you get in a month?",
     volOpts: ["Barely any", "A handful", "10–25", "25+"],
     problem: (v) => `You're getting ${v.toLowerCase()} reviews — not enough to win the search game.`,
-    impact: "More 5-star reviews puts you above competitors when locals search.",
+    impact: "Reviews are what locals read before they decide who to call.",
     includes: ["AI Review Manager", "Auto reply drafts", "Review requests", "Reputation alerts"],
   },
   admin: {
     volQ: "How many hours a week disappear into admin and follow-up?",
     volOpts: ["Under 5", "5–10", "10–20", "20+"],
     problem: (v) => `You're losing ${v.toLowerCase()} hours a week to admin that an AI system can run for you.`,
-    impact: "One connected system hands those hours back to you every single week.",
+    impact: "One connected system runs the admin you just described.",
     includes: ["AI Receptionist", "Lead follow-up", "Quote generator", "Invoice reminders"],
   },
 };
@@ -168,7 +168,6 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
   const [chips, setChips] = useState<string[]>([]);
   const [inputPh, setInputPh] = useState("");
   const [inputVal, setInputVal] = useState("");
-  const [voiceName, setVoiceName] = useState<string | null>(null);
   const [card, setCard] = useState<Card | null>(null);
   const [route, setRoute] = useState<IntentRoute | null>(null);
   // Truthful lead state. The closing screen used to claim "Your plan has been
@@ -199,7 +198,6 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         vs.find((x) => /^en/i.test(x.lang)) ||
         vs[0];
       voiceRef.current = v || null;
-      setVoiceName(v ? v.name : null);
     };
     pick();
     window.speechSynthesis.onvoiceschanged = pick;
@@ -430,9 +428,12 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
           source: "ai-builder",
           name: a.name || "",
           email: a.email || "",
-          kind: a.pain || "",
+          // `kind` used to duplicate `pain`, so the owner's email read
+          // "Type: Answering calls". It now carries the recommended system.
+          // `city` was always "" and is not asked — don't send an empty field
+          // that reads like a question we asked and they skipped.
+          kind: a.system || "",
           want: a.pain || "",
-          city: "",
           recommendedBuild: a.system || "",
           transcript: buildTranscript(),
         }),
@@ -529,10 +530,17 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     await speak(`Your AI build plan is ready, ${name}.`);
 
     // 8) Email — LAST. Now there's a reason to give it.
-    await speak("Where should I send it?");
+    //
+    // TRUTHFULNESS: this used to ask "Where should I send it?" and then say
+    // "Done — it's on its way", but /api/build-request emails the OWNER, never
+    // the visitor (route.ts sendNotification: `to` is LEAD_NOTIFY_EMAIL, the
+    // visitor is only `replyTo`). The ask and the close now describe what the
+    // system actually does. Do not restore the old wording until a
+    // visitor-facing confirmation email exists AND the domain has an MX record.
+    await speak("What email should Pavneet reply to?");
     let email = await waitForAnswer({ type: "input", ph: "you@business.com" });
     if (!validEmail(email)) {
-      await speak("That email looks off — what's the best one to send your plan to?");
+      await speak("That email looks off — what's the best address to reach you on?");
       email = await waitForAnswer({ type: "input", ph: "you@business.com" });
     }
     briefRef.current.email = email;
@@ -546,11 +554,13 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     // stays "idle", and saying "it's on its way" would be the same false
     // success this component was just fixed for — spoken instead of written.
     if (willSend) {
-      await speak("Done — it's on its way. Here's where to go next.");
+      await speak(
+        "Done — your plan and answers are with Pavneet. He'll reply to that address within one business day. Here's where to go next.",
+      );
     } else {
       setLeadStatus("no-email");
       await speak(
-        "I couldn't read that email, so I haven't sent anything yet. Your plan is on screen — here's how to get it to me.",
+        "I couldn't read that email, so nothing has gone to Pavneet yet. Your plan is on screen — here's how to get it to him.",
       );
     }
     setMode("done");
@@ -600,14 +610,36 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
           ← Handbuilt
         </Link>
       )}
-      {voiceName && <span className="hbc-voice">voice: {voiceName}</span>}
 
       {!started && (
         <div className="hbc-gate">
-          <button className="hbc-gate-tap" onClick={start} aria-label="Start the AI Builder">
-            <span className="hbc-dot" />
-            <span className="hbc-gate-title">Tap to start the AI Builder</span>
-            <span className="hbc-gate-sub">turn your sound on · it talks you through it</span>
+          {/* The page used to be near-blank before the tap: a dot, six words and
+              nothing else (A10 production screenshots, every viewport). Say what
+              this is, honestly, before asking for a tap — it is a fixed script,
+              not a language model, and it emails the visitor nothing. */}
+          <div className="hbc-gate-copy">
+            <h2 className="hbc-gate-h">The AI Builder</h2>
+            <p className="hbc-gate-lede">
+              Six questions about your business, then your email at the end. You get the
+              workflow and a costed plan on screen, plus the right page to go to next.
+            </p>
+            <ul className="hbc-gate-list">
+              <li>About a minute: four taps and four short typed answers.</li>
+              <li>It speaks, but every word is also on screen — sound is optional.</li>
+              <li>
+                A fixed script, not a chatbot: the same questions every time, and the same
+                pricing the rest of the site quotes.
+              </li>
+              <li>
+                Nothing is emailed to you. At the end you can send your answers to Pavneet, and
+                he replies within one business day.
+              </li>
+            </ul>
+          </div>
+          <button className="hbc-gate-tap" onClick={start}>
+            <span className="hbc-dot" aria-hidden="true" />
+            <span className="hbc-gate-title">Start the AI Builder</span>
+            <span className="hbc-gate-sub">turn your sound on for the full thing</span>
           </button>
           {onHomepage && (
             <button className="hbc-gate-skip" onClick={dismiss}>
@@ -629,7 +661,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
           <span className="ln" />
         </div>
 
-        <div className="hbc-q" aria-live="polite">
+        <div className="hbc-q" id="hbc-question" aria-live="polite">
           {shown}
           {speaking && <span className="hbc-cursor" />}
         </div>
@@ -701,7 +733,7 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
               </span>
             </div>
             <div className="hbc-row">
-              <span>Estimated time saved</span>
+              <span>What changes</span>
               <span>{card.timeSaved}</span>
             </div>
             <div className="hbc-row">
@@ -716,7 +748,12 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
         )}
 
         <div className="hbc-answers">
-          {thinking && <span className="hbc-thinking" aria-label="designing" />}
+          {thinking && (
+            <span role="status">
+              <span className="hbc-thinking" aria-hidden="true" />
+              <span className="hbc-sr">Designing your plan…</span>
+            </span>
+          )}
 
           {!thinking && mode === "chips" && (
             <div className="hbc-chips">
@@ -736,8 +773,13 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
                 submitAnswer(inputVal);
               }}
             >
+              {/* The question is spoken and typed into #hbc-question; bind the
+                  input to it so a screen reader announces what is being asked
+                  instead of reading a bare placeholder. */}
               <input
                 ref={inputRef}
+                id="hbc-answer"
+                aria-labelledby="hbc-question"
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 placeholder={inputPh}
@@ -769,12 +811,15 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
               </Link>
             )}
             {leadStatus === "sending" && (
-              <p className="hbc-note">Sending your plan…</p>
+              <p className="hbc-note" role="status">
+                Sending your answers…
+              </p>
             )}
             {leadStatus === "sent" && (
-              <p className="hbc-note">
-                Your plan has been sent{briefRef.current.email ? ` to ${briefRef.current.email}` : ""}.
-                I&apos;ll follow up by email shortly.
+              <p className="hbc-note hbc-note-ok" role="status">
+                Your plan and answers are with Pavneet. He&apos;ll reply
+                {briefRef.current.email ? ` to ${briefRef.current.email}` : ""} within one business
+                day. Nothing was emailed to you automatically — this screen is the plan.
               </p>
             )}
             {leadStatus === "no-email" && (
@@ -810,18 +855,26 @@ const HBC_CSS = `
 .hbc-root{position:fixed;inset:0;z-index:100;background:#fff;color:#1d1d1f;
   display:flex;align-items:center;justify-content:center;padding:24px;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;-webkit-font-smoothing:antialiased;overflow-y:auto}
-.hbc-exit{position:fixed;top:18px;left:20px;font-size:13px;color:#a1a1a6;text-decoration:none;z-index:120}
+.hbc-exit{position:fixed;top:12px;left:12px;font-size:14px;color:#686868;text-decoration:none;z-index:120;
+  min-height:44px;display:inline-flex;align-items:center;padding:0 10px;border-radius:8px}
 .hbc-exit:hover{color:#1d1d1f}
-.hbc-voice{position:fixed;top:20px;right:20px;font-size:11px;color:#d2d2d7;z-index:120}
-.hbc-gate{position:fixed;inset:0;z-index:110;background:#fff;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.hbc-gate{position:fixed;inset:0;z-index:110;background:#fff;overflow-y:auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:28px;padding:76px 24px 96px}
+.hbc-gate-copy{width:100%;max-width:520px;text-align:left}
+.hbc-gate-h{font-size:26px;font-weight:600;letter-spacing:-.01em;color:#1d1d1f;margin:0 0 10px}
+.hbc-gate-lede{font-size:17px;line-height:1.55;color:#1d1d1f;margin:0 0 18px}
+.hbc-gate-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.hbc-gate-list li{position:relative;padding-left:18px;font-size:15px;line-height:1.55;color:#3a3a3d}
+.hbc-gate-list li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#E0362C}
 .hbc-gate-tap{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:24px}
-.hbc-gate-skip{border:none;background:none;cursor:pointer;color:#a1a1a6;font-size:13px;position:absolute;bottom:36px}
+.hbc-gate-skip{border:none;background:none;cursor:pointer;color:#686868;font-size:14px;position:absolute;bottom:24px;
+  min-height:44px;padding:0 12px}
 .hbc-gate-skip:hover{color:#1d1d1f}
 .hbc-dot{width:14px;height:14px;border-radius:50%;background:#E0362C;animation:hbc-pulse 1.8s ease-in-out infinite}
 @keyframes hbc-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.4}}
-.hbc-gate-title{font-size:17px;color:#1d1d1f}
-.hbc-gate-sub{font-size:12px;color:#a1a1a6}
+.hbc-gate-tap{min-height:44px}
+.hbc-gate-title{font-size:18px;font-weight:600;color:#1d1d1f}
+.hbc-gate-sub{font-size:14px;color:#686868}
 .hbc-stage{width:100%;max-width:600px;display:flex;flex-direction:column;align-items:center;gap:32px;padding:40px 0}
 .hbc-lines{display:flex;flex-direction:column;gap:10px;width:160px}
 .hbc-lines .ln{height:2px;border-radius:2px;background:#c7c7cc;transform-origin:center}
@@ -852,19 +905,19 @@ const HBC_CSS = `
   box-shadow:14px 0 #c7c7cc,28px 0 #c7c7cc;animation:hbc-dots 1s ease-in-out infinite}
 @keyframes hbc-dots{0%,100%{opacity:.25}50%{opacity:.7}}
 .hbc-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.hbc-chip{border:1px solid #d2d2d7;background:#fff;border-radius:999px;padding:11px 22px;font-size:16px;cursor:pointer;transition:all .18s;color:#1d1d1f}
+.hbc-chip{border:1px solid #8e8e8f;background:#fff;border-radius:999px;padding:11px 22px;font-size:16px;cursor:pointer;transition:all .18s;color:#1d1d1f;min-height:44px}
 .hbc-chip:hover{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
 .hbc-inputrow{display:flex;gap:8px;width:100%;max-width:420px}
-.hbc-inputrow input{flex:1;border:none;border-bottom:1.5px solid #d2d2d7;background:none;padding:12px 4px;font-size:19px;outline:none;text-align:center;color:#1d1d1f}
+.hbc-inputrow input{flex:1;border:none;border-bottom:1.5px solid #8e8e8f;background:none;padding:12px 4px;font-size:19px;outline:none;text-align:center;color:#1d1d1f;min-height:44px}
 .hbc-inputrow input:focus{border-color:#1d1d1f}
-.hbc-inputrow button{border:none;background:none;color:#86868b;font-size:22px;cursor:pointer;padding:0 8px}
+.hbc-inputrow button{border:none;background:none;color:#686868;font-size:22px;cursor:pointer;padding:0 12px;min-height:44px;min-width:44px}
 .hbc-inputrow button:hover{color:#1d1d1f}
 
 /* ---- cards ---- */
 .hbc-card{width:100%;max-width:480px;text-align:left;border:1px solid #ececef;border-radius:16px;padding:22px;background:#fafafa;animation:hbc-rise .4s ease both}
 @keyframes hbc-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .hbc-diag-row{padding:12px 0;border-bottom:1px solid #f0f0f2;display:flex;flex-direction:column;gap:5px}
-.hbc-diag-k{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#a1a1a6}
+.hbc-diag-k{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#5f5f5f}
 .hbc-diag-v{font-size:16px;color:#1d1d1f;line-height:1.4}
 .hbc-chips-inline{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
 .hbc-chips-inline span{font-size:13px;color:#1d1d1f;font-weight:600}
@@ -877,12 +930,12 @@ const HBC_CSS = `
 .hbc-flow-step{display:flex;flex-direction:column;align-items:center;width:100%}
 .hbc-flow-node{width:100%;text-align:center;border:1px solid #e6e6ea;border-radius:12px;padding:11px 14px;background:#fff;display:flex;flex-direction:column;gap:2px}
 .hbc-flow-label{font-size:15px;font-weight:600;color:#1d1d1f}
-.hbc-flow-sub{font-size:12px;color:#a1a1a6}
-.hbc-flow-arrow{color:#86868b;font-size:16px;line-height:1;padding:5px 0}
+.hbc-flow-sub{font-size:12px;color:#686868}
+.hbc-flow-arrow{color:#686868;font-size:16px;line-height:1;padding:5px 0}
 
 .hbc-plan-head{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d1d1f;margin-bottom:8px}
 .hbc-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f2;font-size:15px}
-.hbc-row span:first-child{color:#86868b;white-space:nowrap}
+.hbc-row span:first-child{color:#5f5f5f;white-space:nowrap}
 .hbc-row span:last-child{font-weight:500;text-align:right}
 .hbc-row-top{align-items:flex-start}
 .hbc-plan-sys{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
@@ -892,10 +945,14 @@ const HBC_CSS = `
 .hbc-cta a,.hbc-cta button{text-align:center;text-decoration:none;font-size:16px;padding:15px;border-radius:12px;border:none;background:none;cursor:pointer;width:100%;font-family:inherit}
 .hbc-cta .primary{background:#1d1d1f;color:#fff;font-weight:600}
 .hbc-cta .ghost{color:#1d1d1f}
-.hbc-cta .ghost:hover{color:#86868b}
-.hbc-note{font-size:12px;color:#c7c7cc;text-align:center;margin-top:16px}
-/* Failure is not a footnote. Larger than .hbc-note and on the danger colour
-   (#B42318 clears 4.5:1 on white, unlike the #c7c7cc used for the quiet note). */
+.hbc-cta .ghost:hover{color:#5f5f5f}
+/* The confirmation used to be #c7c7cc at 12px — 1.68:1, effectively invisible.
+   A message about what did or did not happen to someone's lead is not decoration. */
+.hbc-note{font-size:14px;line-height:1.55;color:#686868;text-align:center;margin-top:16px;max-width:44ch;margin-left:auto;margin-right:auto}
+.hbc-note-ok{color:#1d1d1f}
+.hbc-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Failure is not a footnote. Same size as .hbc-note, on the danger colour
+   (#B42318 = 6.57:1 on white; the note's #686868 = 5.57:1). */
 .hbc-note-fail{font-size:14px;line-height:1.55;color:#B42318;max-width:38ch;margin-left:auto;margin-right:auto}
 .hbc-note-fail a{color:#B42318;text-decoration:underline;text-underline-offset:2px}
 .hbc-note-fail .hbc-linkbtn{font-size:14px;color:#B42318;text-decoration:underline;text-underline-offset:2px}

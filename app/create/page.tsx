@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Start a Build — Request Your Custom AI System",
   description:
-    "Tell us what you want to build and get a plan and quote within one business day. Custom AI apps, agents, automations and business tools from Handbuilt.",
+    "Four questions, then a real reply with a plan and a quote within one business day. Custom AI apps, agents, automations and business tools from Handbuilt.",
   alternates: { canonical: "/create" },
 };
 
@@ -26,9 +26,10 @@ export default function CreatePage() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">
-              Answer a few quick questions. You&apos;ll get a real reply with a plan and a quote
-              within one business day — no obligation.
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink">
+              Four questions — about a minute. You&apos;ll get a real reply from a real person
+              with a plan and a quote within one business day. No obligation, no automated
+              follow-up sequence.
             </p>
           </Reveal>
         </div>

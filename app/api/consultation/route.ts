@@ -4,11 +4,25 @@ import { modelFor } from "@/lib/ai/core";
 export const runtime = "nodejs";
 
 /**
- * Live LLM intake for the /start "AI call".
+ * Live LLM intake — CURRENTLY DISABLED AND UNUSED.
  *
- * Powers the cinematic voice-led consultation: the model plays a warm Handbuilt
- * intake consultant, conducts a free-form interview that handles ANY typed
- * answer, and returns the next spoken line plus an incrementally-extracted brief.
+ * ⚠️ 2026-08-30: this endpoint has NO CALLER. `/start` (components/
+ * ConsultationCall.tsx) is a fully deterministic script driven by
+ * lib/data/builder.ts and calls only `/api/tts` and `/api/build-request`. A
+ * public, unauthenticated endpoint that spends OpenAI credits with nothing on
+ * the other end is pure downside, so it is now OFF by default: it returns 404
+ * unless `CONSULTATION_API_ENABLED === "true"`, and it rejects cross-origin
+ * posts.
+ *
+ * It is switched off rather than deleted because turning it back on is a
+ * one-line env change if the live-model interview is ever revived. If /start
+ * stays scripted, DELETE this file — an off endpoint is still a file to keep
+ * reviewing.
+ *
+ * Powers (when enabled) the cinematic voice-led consultation: the model plays a
+ * warm Handbuilt intake consultant, conducts a free-form interview that handles
+ * ANY typed answer, and returns the next spoken line plus an incrementally-
+ * extracted brief.
  *
  * Contract (mirrors /api/demo's fallback shape so the client can branch):
  *   IN : { messages: {role:"user"|"assistant", content}[], brief?: Partial<Brief> }
@@ -20,6 +34,7 @@ export const runtime = "nodejs";
  * NEVER breaks in prod, with or without the key.
  *
  * Env:
+ *   CONSULTATION_API_ENABLED  must be exactly "true" or this endpoint 404s
  *   OPENAI_API_KEY   required for live conversation (else graceful fallback)
  *   OPENAI_MODEL     optional, defaults to gpt-4o-mini (cheap + fast)
  *
@@ -121,7 +136,28 @@ const RESPONSE_FORMAT = {
   },
 };
 
+/** Reject a post that declares an origin other than this host. */
+function crossOrigin(req: Request): boolean {
+  const host = req.headers.get("host");
+  const src = req.headers.get("origin") || req.headers.get("referer");
+  if (!host || !src) return false;
+  try {
+    return new URL(src).host !== host;
+  } catch {
+    return true;
+  }
+}
+
 export async function POST(req: Request) {
+  // Off by default — see the header note. Nothing on this site calls it, and an
+  // open endpoint that spends model credits is a bill waiting to happen.
+  if (process.env.CONSULTATION_API_ENABLED !== "true") {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+  if (crossOrigin(req)) {
+    return NextResponse.json({ error: "Invalid request" }, { status: 403 });
+  }
+
   let body: { messages?: ChatMessage[]; brief?: Partial<Brief> };
   try {
     body = await req.json();

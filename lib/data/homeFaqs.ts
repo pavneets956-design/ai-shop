@@ -1,4 +1,15 @@
-import { packagePriceLabel, carePlan } from "./packages";
+import { packagePriceLabel, carePlan, getPackage, packages } from "./packages";
+
+/**
+ * `packagePriceLabel("starter")` renders "From $1,500", which reads correctly
+ * on a pricing card and ungrammatically mid-sentence — the FAQ answer below was
+ * shipping "One AI worker is From $1,500 CAD" into both the visible copy and
+ * the FAQPage JSON-LD. These render the same numbers, still sourced from
+ * packages.ts, in a shape that survives being put in a sentence.
+ */
+const nf = new Intl.NumberFormat("en-CA");
+const STARTER = `$${nf.format(getPackage("starter")?.price ?? packages[0].price)}`;
+const BUSINESS_BAND = packagePriceLabel("business"); // "$3,500–$7,500"
 
 /**
  * Homepage objection FAQ (2026-08-01 rebuild).
@@ -24,7 +35,7 @@ export const HOME_OBJECTIONS = [
   },
   {
     q: "How much does an AI receptionist cost in Canada?",
-    a: `A one-time install, not a subscription that runs forever. One AI worker is ${packagePriceLabel("starter")} CAD; a connected system of two to four is ${packagePriceLabel("business")} CAD. The care plan is optional, starts at $${carePlan.monthly}/mo, and only exists once something is installed.`,
+    a: `A one-time install, not a subscription that runs forever. One AI worker starts at ${STARTER} CAD; a connected system of two to four is ${BUSINESS_BAND} CAD. The care plan is optional, starts at $${carePlan.monthly}/mo, and only exists once something is installed.`,
   },
   {
     q: "Do I keep my phone number?",
