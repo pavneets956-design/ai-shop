@@ -2,6 +2,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionLabel } from "./primitives";
 import CallTimeline from "./CallTimeline";
+import { carePlan, getPackage, packages } from "@/lib/data/packages";
+
+/** Rendered from packages.ts, never hand-typed — hand-typed copies are what
+ *  produced the price contradictions this release is fixing. */
+const nf = new Intl.NumberFormat("en-CA");
+const STARTER_PRICE = `$${nf.format(getPackage("starter")?.price ?? packages[0].price)}`;
+const CARE_PRICE = `$${nf.format(carePlan.monthly)}`;
 
 /**
  * Homepage hero.
@@ -57,23 +64,35 @@ export default function Hero() {
               calendar, and chases the quotes that go quiet. Installed in about a week.
             </p>
 
-            <p className="v-small mt-3 max-w-[36rem]">
-              Not a subscription you have to figure out. You keep the number, the data and the
-              accounts — export or cancel any time.
+            {/* Price and timeline belong above the fold. They were previously
+                eight sections down, so the two questions every contractor asks
+                first ("what does it cost" / "how long") went unanswered until
+                the visitor had scrolled most of the page. */}
+            <p className="v-small mt-4 max-w-[36rem]" style={{ color: "var(--v-ink-2)" }}>
+              <strong style={{ color: "var(--v-ink)", fontWeight: 600 }}>
+                From {STARTER_PRICE} CAD, one time
+              </strong>{" "}
+              · live in about a week · optional care plan from {CARE_PRICE}/month. You keep the
+              number, the data and the accounts — cancel any time.
             </p>
 
+            {/* Exactly two CTAs, site-wide policy. The demo leads because it is
+                the only thing here that proves the claim without a conversation.
+                The second is deliberately NOT "Book a call": there is no calendar
+                integration, so the site must not imply a time is being reserved. */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/create" className="btn-primary w-full sm:w-auto">
-                Request a free AI opportunity review
+              <Link href="/demo" className="btn-primary w-full sm:w-auto">
+                Try the live AI demo
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href="/tools/missed-call-revenue-calculator" className="btn-secondary w-full sm:w-auto">
-                See what missed calls cost you
+              <Link href="/create" className="btn-secondary w-full sm:w-auto">
+                Request a free 10-minute fit check
               </Link>
             </div>
 
             <p className="v-micro mt-5">
-              Free calculators below — no signup, no email, nothing gated.
+              The demo needs no signup. The fit check is a short form — I read it myself and reply
+              within one business day.
             </p>
           </div>
 

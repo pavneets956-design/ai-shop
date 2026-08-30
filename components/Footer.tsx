@@ -68,12 +68,15 @@ export default function Footer() {
                 <IconLink href={`mailto:${site.email}`} label="Email">
                   <Mail className="h-4 w-4" aria-hidden="true" />
                 </IconLink>
-                {site.social.github !== "#" && (
+                {/* Driven by site.social, which now contains only profiles that
+                    exist. The old `!== "#"` guards rendered a LinkedIn icon
+                    linking to "#" on every internal page. */}
+                {site.social.github && (
                   <IconLink href={site.social.github} label="GitHub">
                     <Github className="h-4 w-4" aria-hidden="true" />
                   </IconLink>
                 )}
-                {site.social.linkedin !== "#" && (
+                {site.social.linkedin && (
                   <IconLink href={site.social.linkedin} label="LinkedIn">
                     <Linkedin className="h-4 w-4" aria-hidden="true" />
                   </IconLink>

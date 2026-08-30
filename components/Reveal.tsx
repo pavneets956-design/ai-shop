@@ -1,35 +1,14 @@
-"use client";
-
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
-
-const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
-
-export default function Reveal({
-  children,
-  delay = 0,
-  className,
-  as = "div",
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-  as?: "div" | "section" | "li" | "span";
-}) {
-  const MotionTag = motion[as];
-  return (
-    <MotionTag
-      className={className}
-      variants={variants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-    >
-      {children}
-    </MotionTag>
-  );
-}
+/**
+ * The site-wide Reveal.
+ *
+ * This used to be a framer-motion component with `initial="hidden"`, which put
+ * `opacity: 0` into the server-rendered HTML of roughly 210 landing routes —
+ * H1, lead and CTA included — and had no `prefers-reduced-motion` handling. It
+ * is now a thin re-export of the CSS reveal, which renders visible and only
+ * animates below-the-fold content after hydration.
+ *
+ * Keeping the module path means the 13 importing files did not have to change,
+ * and framer-motion is no longer pulled into pages that only faded content in.
+ */
+export { default } from "@/components/marketing/Reveal";
+export type { RevealTag } from "@/components/marketing/Reveal";

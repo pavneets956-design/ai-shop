@@ -98,20 +98,36 @@
     /* Motion */
     --v-dur-fast: 120ms;
     --v-dur: 200ms;
-    --v-dur-slow: 420ms;
+    /* 420ms read as sluggish and broke the "animations enhance comprehension,
+       never delay content" rule. 280ms is the top of the useful band. */
+    --v-dur-slow: 280ms;
     --v-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-    /* Font aliases. Archivo, Quicksand and IBM Plex Mono stopped being fetched
-       on 2026-08-01; these keep every existing `font-display` / `font-mono`
-       class and every direct var() reference resolving. Defined on :root so
-       next/font's own html-class variables always win if a face is restored. */
-    --font-display: var(--font-inter);
+    /* Three faces, each with one job.
+       Display = Archivo. Inter at 52px with tight tracking is the single most
+       recognisable AI-startup signature; Archivo has a squarer, signage-like
+       skeleton that reads as a stencilled shop label — a different typeface,
+       not just a different weight. Restored 2026-08-30 (it was dropped on
+       2026-08-01 when five families were cut to two; cutting four was right,
+       cutting the display face with them was not).
+       Text = Inter. Annotation/numerals = JetBrains Mono.
+       Quicksand stays aliased so no unswept reference breaks. */
+    --font-display: var(--font-archivo);
     --font-quicksand: var(--font-inter);
     --font-mono: var(--font-jbmono);
   }
 
   * {
     border-color: var(--border);
+  }
+
+  /* Smooth scrolling is motion too — honour the OS setting.
+     (Top-level rule: this build has no CSS-nesting plugin, only tailwindcss +
+     autoprefixer, so a nested @media here would be emitted verbatim and ignored.) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   html {
@@ -143,6 +159,38 @@
      atmosphere later is a one-rule change rather than a layout edit. */
   .site-glow {
     display: none;
+  }
+
+  /* Skip link — visually hidden until it takes focus, then a real, high-contrast
+     control at the top-left. WCAG 2.4.1 Bypass Blocks. */
+  .skip-link {
+    position: absolute;
+    left: 12px;
+    top: -100px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background-color: var(--v-ink);
+    color: var(--v-on-dark);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: top var(--v-dur-fast) var(--v-ease);
+  }
+  .skip-link:focus-visible {
+    top: 12px;
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--v-surface),
+      0 0 0 4px var(--v-accent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skip-link {
+      transition: none;
+    }
   }
 
   /* Custom scrollbar */
@@ -686,20 +734,25 @@
 
   /* Reveal-on-scroll. Paired with components/marketing/Reveal.tsx, which adds
      `is-in` via IntersectionObserver. Falls back to fully visible with no JS. */
-  .v-reveal {
+  /* Reveal is an enhancement, not a precondition for reading the page.
+     The base class does NOTHING — the server-rendered HTML is always visible.
+     Only components/marketing/Reveal.tsx can add [data-armed], and it does so
+     exclusively for elements that are below the fold at hydration, never under
+     reduced motion. First paint is therefore never opacity:0. */
+  .v-reveal[data-armed] {
     opacity: 0;
     transform: translateY(14px);
     transition:
       opacity var(--v-dur-slow) var(--v-ease),
       transform var(--v-dur-slow) var(--v-ease);
   }
-  .v-reveal.is-in {
+  .v-reveal[data-armed].is-in {
     opacity: 1;
     transform: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .v-reveal {
+    .v-reveal[data-armed] {
       opacity: 1;
       transform: none;
       transition: none;

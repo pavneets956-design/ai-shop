@@ -15,6 +15,12 @@ import {
   LocalSection,
   FinalCta,
 } from "@/components/marketing/HomeSections";
+import {
+  TrustStrip,
+  DemoSection,
+  ProofSection,
+  FounderSection,
+} from "@/components/marketing/ProofFounder";
 
 /**
  * Homepage.
@@ -76,67 +82,39 @@ export const metadata: Metadata = {
 };
 
 /**
- * LocalBusiness (service-area) + Offer catalogue. Region-only address (SAB).
- * UNCHANGED from the previous homepage: the offer prices here are validated by
- * scripts/seo-diff.js, which fails the build on any JSON-LD price movement.
+ * The homepage used to emit a SECOND identity node here — a `ProfessionalService`
+ * at `#localbusiness` named "Handbuilt AI Studio" — while the root layout already
+ * ships `#organization` named "Handbuilt AI" on all ~237 routes. Two schema
+ * entities for one business is a split-identity signal, and it was the only page
+ * on the site doing it.
+ *
+ * Deleted 2026-08-30. Everything it carried now lives on the single
+ * `#organization` node in lib/seo.ts: the service-area address, the areaServed
+ * list, and the offer catalogue (`packageOffers()`, priced from packages.ts
+ * rather than from the hand-typed copy that used to sit here).
  */
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${site.url}/#localbusiness`,
-  name: site.legalName,
-  alternateName: site.name,
-  url: site.url,
-  email: site.email,
-  description:
-    "Done-for-you AI receptionist and business automation for contractors and local service businesses in BC.",
-  areaServed: [
-    { "@type": "City", name: "Surrey" },
-    { "@type": "City", name: "Delta" },
-    { "@type": "AdministrativeArea", name: "British Columbia" },
-    { "@type": "Country", name: "Canada" },
-  ],
-  address: { "@type": "PostalAddress", addressRegion: "BC", addressCountry: "CA" },
-  priceRange: "$99–$10,000+ CAD",
-  knowsAbout: [
-    "AI receptionist",
-    "AI quote agent",
-    "AI invoice follow-up",
-    "Jobber AI setup",
-    "AI automation for contractors",
-  ],
-  makesOffer: [
-    // NO "AI Workflow Audit" at $99. The old homepage sold it visibly
-    // (MoltenForge.tsx:769); the rebuild deleted the copy and left the Offer
-    // behind, so structured data was advertising a $99 product that appears
-    // nowhere on the site. Schema must describe visible content.
-    { name: "AI Starter Worker", price: "1500", desc: "One AI worker installed, wired in, and tested." },
-    { name: "AI Receptionist Install", price: "1500", desc: "AI receptionist set up around your services, prices, and calendar." },
-    { name: "AI Business System", price: "3500", desc: "2–4 connected workers plus an owner dashboard." },
-    { name: "Custom AI App", price: "10000", desc: "A full custom app or customer portal — you own the code." },
-  ].map((o) => ({
-    "@type": "Offer",
-    name: o.name,
-    price: o.price,
-    priceCurrency: "CAD",
-    description: o.desc,
-    availability: "https://schema.org/InStock",
-    itemOffered: { "@type": "Service", name: o.name, serviceType: "AI automation for local service businesses" },
-  })),
-};
 
 export default function Home() {
   return (
     <>
-      <JsonLd data={[...serviceSchema(), localBusinessSchema, faqSchema(HOME_OBJECTIONS)]} />
+      <JsonLd data={[...serviceSchema(), faqSchema(HOME_OBJECTIONS)]} />
+      {/* Order is the conversion journey, not a component inventory:
+          promise → what you can count on → prove it → the offer → who built it
+          → what it costs → how it runs → objections → one decision.
+          The demo sits third because it is the only proof that needs no trust
+          to evaluate, and it was previously not linked from this page at all. */}
       <Hero />
+      <TrustStrip />
+      <DemoSection />
       <LiveCalcStrip />
       <ProblemSelector />
       <BeforeAfter />
       <WorkflowStory />
+      <ProofSection />
+      <FounderSection />
       <ProcessSteps />
-      <ToolShowcase />
       <PricingSection />
+      <ToolShowcase />
       <LocalSection />
       <FaqSection items={HOME_OBJECTIONS} />
       <FinalCta />

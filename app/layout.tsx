@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,6 +25,20 @@ import { organizationSchema, websiteSchema } from "@/lib/seo";
  * face reads "approachable app", not "precise, built by hand".
  */
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+/**
+ * Display face, restored 2026-08-30. Inter is an excellent text face and a
+ * generic display face — at 52px with tight tracking it is the most
+ * recognisable AI-startup signature there is. Archivo's squarer terminals and
+ * larger x-height give headings the signage/industrial register the brand
+ * claims ("handbuilt, practical, technically excellent"). One extra variable
+ * woff2, latin subset; still three families against production's five.
+ */
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+  weight: ["600", "700"],
+});
 const jbMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jbmono",
@@ -109,18 +123,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jbMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable} ${jbMono.variable}`}>
       <body className="font-sans antialiased">
-        {/* Brand ambient glow — soft red radial behind every page (matches the
-            homepage). Fixed, -z-1: paints over the cream body but behind all page
-            content, so opaque pages (e.g. the homepage) simply cover it. */}
-        <div className="site-glow" aria-hidden />
+        {/* Skip link. Without it a keyboard or screen-reader user tabbed the
+            entire navigation on every one of ~235 routes before reaching any
+            content (WCAG 2.4.1). Visually hidden until focused. */}
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
+        {/* The `site-glow` div was removed 2026-08-30. Its CSS rule had already
+            been reduced to `display: none` (globals.css), so this is dead markup
+            being deleted, not a visual change. Depth comes from the
+            surface/recess stacking and 1px hairline shadows instead of a
+            blurred brand-coloured blob. */}
         <Providers>
           <JsonLd data={[organizationSchema(), websiteSchema()]} />
           <ChromeGate>
             <Navbar />
           </ChromeGate>
-          <main className="min-h-screen">{children}</main>
+          <main id="main" className="min-h-screen">
+            {children}
+          </main>
           <ChromeGate>
             <Footer />
           </ChromeGate>

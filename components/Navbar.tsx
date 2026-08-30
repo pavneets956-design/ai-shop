@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
-import { Menu, X, UserRound } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data/site";
 import { LogoMark } from "@/components/Logo";
 
@@ -18,11 +17,14 @@ import { LogoMark } from "@/components/Logo";
  * The CTA is flat near-black, not the retired red gradient — a saturated
  * button destroys the low-opacity elevation system the rest of the page uses.
  * The hairline under the bar is a shadow, not a border, matching the reference.
+ *
+ * 2026-08-30: dropped `useSession`. The only thing it drove was an "Account"
+ * link for the retired Tools Pro backend, and it forced next-auth into the
+ * client bundle of every route on the site. The CTA also grew from 40px to
+ * 44px — it was the one control in the header below the minimum touch target.
  */
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { status } = useSession();
-  const authed = status === "authenticated";
 
   // Lock body scroll while the mobile sheet is open so the page behind it
   // doesn't scroll under the user's thumb.
@@ -86,17 +88,8 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden flex-none items-center gap-5 lg:flex">
-            {authed && (
-              <Link
-                href="/account"
-                className="inline-flex items-center gap-1.5 text-[15px]"
-                style={{ color: "var(--v-ink-2)" }}
-              >
-                <UserRound className="h-4 w-4" aria-hidden="true" /> Account
-              </Link>
-            )}
-            <Link href="/create" className="btn-primary !h-10 !px-4 !text-[14px]">
-              Request a review
+            <Link href="/create" className="btn-primary !h-11 !px-5 !text-[14px]">
+              Start a project
             </Link>
           </div>
 
@@ -136,21 +129,9 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
-              {authed && (
-                <li>
-                  <Link
-                    href="/account"
-                    onClick={() => setOpen(false)}
-                    className="flex min-h-[48px] items-center rounded-[var(--v-r-control)] px-3 text-[17px]"
-                    style={{ color: "var(--v-ink)" }}
-                  >
-                    Account
-                  </Link>
-                </li>
-              )}
             </ul>
             <Link href="/create" onClick={() => setOpen(false)} className="btn-primary mt-4 w-full">
-              Request a free AI opportunity review
+              Start a project
             </Link>
           </div>
         </div>
