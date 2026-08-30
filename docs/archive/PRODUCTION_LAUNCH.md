@@ -1,3 +1,8 @@
+> **Redacted 2026-08-30:** a real Twilio number previously appeared in this file.
+> This repository is public. The number itself has NOT been released or rotated —
+> that is the owner's call. Git history still contains it; history was deliberately
+> not rewritten.
+
 # 🚀 Production Launch Checklist
 
 Complete step-by-step guide to launch your AI Shop + AI Agent to production.
@@ -71,7 +76,7 @@ DATABASE_URL=postgresql://REDACTED
 
 TWILIO_ACCOUNT_SID=YOUR_TWILIO_ACCOUNT_SID
 TWILIO_AUTH_TOKEN=YOUR_TWILIO_AUTH_TOKEN
-TWILIO_PHONE_NUMBER=+16592223313
+TWILIO_PHONE_NUMBER=YOUR_TWILIO_PHONE_NUMBER
 TWILIO_WEBHOOK_URL=https://YOUR_VERCEL_DOMAIN.vercel.app/api/agent/call/webhook
 
 NEXTAUTH_URL=https://YOUR_VERCEL_DOMAIN.vercel.app
@@ -101,7 +106,7 @@ After deployment, update these environment variables in Vercel with your actual 
 ### Step 6: Configure Twilio Webhook
 
 1. Go to: https://console.twilio.com
-2. Phone Numbers → Your number (`+16592223313`)
+2. Phone Numbers → Your number (`YOUR_TWILIO_PHONE_NUMBER`)
 3. Configure → Voice Configuration
 4. Set "A call comes in" to: `https://your-actual-domain.vercel.app/api/agent/call/webhook`
 5. Method: `HTTP POST`

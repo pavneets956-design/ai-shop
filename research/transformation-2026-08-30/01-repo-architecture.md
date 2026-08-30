@@ -125,7 +125,7 @@ Net: **the only real public contact address is a personal Gmail, on 13 mailto li
 
 ### c.3 Phone numbers
 
-**No business phone number exists anywhere in shipped code.** All matches are fictional demo numbers: `components/marketing/CallTimeline.tsx:18` "604-555-0117", `lib/data/liveTools.ts:42,46` "778-555-0190" (dead file), `lib/data/showroom.ts:358` "604-555-0142", `app/agent/leads/*` "+1 (555) …". The Twilio number **`+16592223313` appears only in `DEPLOYMENT.md:41,64`, `PRODUCTION_LAUNCH.md:74,104`, `QUICK_DEPLOY.md:47,71`** — never in `app/`, `components/`, `lib/`; code reads `process.env.TWILIO_PHONE_NUMBER` (`app/api/agent/call/route.ts:39,61`; `lib/agent/campaignManager.ts:244`). (Those three docs also list the names of `TWILIO_ACCOUNT_SID`/`TWILIO_AUTH_TOKEN`; values were not read.)
+**No business phone number exists anywhere in shipped code.** All matches are fictional demo numbers: `components/marketing/CallTimeline.tsx:18` "604-555-0117", `lib/data/liveTools.ts:42,46` "778-555-0190" (dead file), `lib/data/showroom.ts:358` "604-555-0142", `app/agent/leads/*` "+1 (555) …". The Twilio number **`<redacted — see git history>` appears only in `DEPLOYMENT.md:41,64`, `PRODUCTION_LAUNCH.md:74,104`, `QUICK_DEPLOY.md:47,71`** — never in `app/`, `components/`, `lib/`; code reads `process.env.TWILIO_PHONE_NUMBER` (`app/api/agent/call/route.ts:39,61`; `lib/agent/campaignManager.ts:244`). (Those three docs also list the names of `TWILIO_ACCOUNT_SID`/`TWILIO_AUTH_TOKEN`; values were not read.)
 
 ### c.4 `href="#"`, dead social links, `mailto:`
 
