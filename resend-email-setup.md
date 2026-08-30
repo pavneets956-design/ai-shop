@@ -6,9 +6,25 @@ Gmail won't bounce mail you send to yourself — but a cross-brand SPF/DKIM mism
 will land it in spam the moment deliverability tightens or you forward a thread.
 Fix = verify your own domain + flip one env var. **No code change needed.**
 
-The code is already solid: `replyTo` is the lead's address (hit Reply → you're
-talking to them), and every lead is also `console.log`'d (Vercel → Logs) so nothing
-is ever lost even if email hiccups.
+`replyTo` is the lead's address, so hitting Reply talks to them.
+
+> **Corrected 2026-08-30.** This paragraph used to say "every lead is also
+> `console.log`'d (Vercel → Logs) so nothing is ever lost even if email hiccups."
+> **That is no longer true and must not be relied on.** The log line was cut back
+> to coarse metadata (`app/api/build-request/route.ts`) to keep names, emails,
+> phone numbers and the visitor's own words out of the log drain. The Vercel log
+> is no longer a recovery channel.
+>
+> What actually protects a lead now is the database: every submission is written
+> to the Neon `BuildRequest` table, with the full raw submission in `payload`,
+> **before** any email is attempted. A Resend outage cannot lose a lead.
+>
+> The gap is the other half — **notification**. If the email fails, the visitor
+> still correctly sees "request received" (it was), and nothing tells you it
+> arrived. Nothing in the codebase reads `BuildRequest` back out: no admin page,
+> no digest, no alert. Until this domain is verified, a lead can sit in the
+> database with no one aware of it. That is the reason to do this now, not the
+> spam-folder risk.
 
 ---
 

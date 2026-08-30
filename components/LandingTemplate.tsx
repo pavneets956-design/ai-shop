@@ -91,8 +91,8 @@ export default function LandingTemplate({
               <MagneticButton href={ctaHref}>
                 {ctaLabel} <ArrowRight className="h-4 w-4" />
               </MagneticButton>
-              <Link href="/#finder" className="btn-ghost">
-                Not sure what you need? Use the finder
+              <Link href="/demo" className="btn-ghost">
+                Not sure what you need? Try it yourself first
               </Link>
             </div>
           </Reveal>

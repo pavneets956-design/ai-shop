@@ -541,65 +541,6 @@ describe("/api/tools-demo", () => {
 // ===========================================================================
 // 6. /api/recommend — validation + rate limit (was unmetered OpenAI)
 // ===========================================================================
-describe("/api/recommend", () => {
-  it("400s on invalid JSON", async () => {
-    const { POST } = await import("@/app/api/recommend/route");
-    const res = await POST(req("http://localhost/api/recommend", { method: "POST", body: "not json", ip: "10.1.0.1" }));
-    expect(res.status).toBe(400);
-  });
-
-  it("400s when `outcome` is missing", async () => {
-    const { POST } = await import("@/app/api/recommend/route");
-    const res = await POST(req("http://localhost/api/recommend", { method: "POST", body: json({}), ip: "10.1.0.2" }));
-    expect(res.status).toBe(400);
-  });
-
-  it("413s an oversized body before parsing it", async () => {
-    const { POST } = await import("@/app/api/recommend/route");
-    const res = await POST(
-      req("http://localhost/api/recommend", {
-        method: "POST",
-        body: json({ outcome: "x".repeat(10_000) }),
-        ip: "10.1.0.3",
-      }),
-    );
-    expect(res.status).toBe(413);
-  });
-
-  it("rate-limits per IP once a key is configured, still returning the rules answer", async () => {
-    vi.stubEnv("OPENAI_API_KEY", "sk-test-not-real");
-    const { POST } = await import("@/app/api/recommend/route");
-    const ip = "10.1.0.10";
-    const call = () =>
-      POST(req("http://localhost/api/recommend", { method: "POST", body: json({ outcome: "more-leads" }), ip }));
-
-    for (let i = 0; i < 3; i++) {
-      const ok = await call();
-      expect(ok.status).toBe(200);
-      expect((await ok.json()).limited).toBeUndefined();
-    }
-
-    const limited = await call();
-    expect(limited.status).toBe(200);
-    const body = await limited.json();
-    expect(body.limited).toBe(true);
-    // The package/price come from rules, so a limited caller still gets a real answer.
-    expect(body.packageId).toBeTruthy();
-  });
-
-  it("does not rate-limit (or spend) when no key is configured", async () => {
-    vi.stubEnv("OPENAI_API_KEY", "");
-    const { POST } = await import("@/app/api/recommend/route");
-    const ip = "10.1.0.20";
-    for (let i = 0; i < 5; i++) {
-      const res = await POST(
-        req("http://localhost/api/recommend", { method: "POST", body: json({ outcome: "more-leads" }), ip }),
-      );
-      expect(res.status).toBe(200);
-      expect((await res.json()).limited).toBeUndefined();
-    }
-  });
-});
 
 // ===========================================================================
 // 7. /api/tts — same-origin guard (regression pin, unchanged this wave)

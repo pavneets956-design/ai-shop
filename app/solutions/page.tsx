@@ -42,8 +42,8 @@ export default function SolutionsPage() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="mt-8 flex justify-center">
-              <MagneticButton href="/#finder">
-                Find my AI solution <ArrowRight className="h-4 w-4" />
+              <MagneticButton href="/demo">
+                Try the live AI demo <ArrowRight className="h-4 w-4" />
               </MagneticButton>
             </div>
           </Reveal>
@@ -85,7 +85,7 @@ export default function SolutionsPage() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <MagneticButton href="/#finder">Find my solution</MagneticButton>
+              <MagneticButton href="/demo">Try the live AI demo</MagneticButton>
               <Link href="/pricing" className="btn-ghost">
                 See pricing <ArrowRight className="h-4 w-4" />
               </Link>

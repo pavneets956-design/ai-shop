@@ -115,8 +115,8 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
               <MagneticButton href={`/create?package=${uc.packageId}`}>
                 Request this build <ArrowRight className="h-4 w-4" />
               </MagneticButton>
-              <Link href="/#finder" className="btn-ghost">
-                Not sure? Use the finder
+              <Link href="/demo" className="btn-ghost">
+                Not sure? Try it yourself first
               </Link>
             </div>
           </Reveal>

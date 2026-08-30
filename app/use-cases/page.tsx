@@ -66,7 +66,7 @@ export default function UseCasesIndex() {
           </div>
 
           <div className="mt-16 text-center">
-            <MagneticButton href="/#finder">Find my AI solution</MagneticButton>
+            <MagneticButton href="/demo">Try the live AI demo</MagneticButton>
           </div>
         </div>
       </section>
