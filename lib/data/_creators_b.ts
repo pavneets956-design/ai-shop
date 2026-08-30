@@ -1,12 +1,15 @@
 import type { LandingContent } from "./landing";
 
 // Creator-economy landing pages, batch B (11–20). Concatenated into `creators`
-// by creators.ts. Global/remote framing — creators are served worldwide, so
+// by creators.ts. Global/remote framing — creator work is delivered remotely, so
 // these pages carry no local geo modifiers. Voice, avatar and fan-messaging
 // pages are written for legal, consensual, non-deceptive use only.
 export const creatorsB: LandingContent[] = [
   {
     slug: "ai-script-writing-system",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Script Writing System for Creators",
     title: "AI Script Writing System for Creators | Handbuilt",
@@ -58,6 +61,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-caption-subtitle-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Caption & Subtitle Automation",
     title: "AI Caption & Subtitle Automation for Video | Handbuilt",
@@ -108,6 +114,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-content-repurposing-system",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Content Repurposing System",
     title: "AI Content Repurposing System for Creators | Handbuilt",
@@ -159,6 +168,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-social-media-scheduling-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Social Media Scheduling Automation",
     title: "AI Social Media Scheduling Automation | Handbuilt",
@@ -209,6 +221,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-newsletter-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Newsletter Automation for Creators",
     title: "AI Newsletter Automation for Creators | Handbuilt",
@@ -259,6 +274,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-fan-message-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Fan Message & DM Automation",
     title: "AI Fan Message & DM Automation for Creators | Handbuilt",
@@ -360,6 +378,9 @@ export const creatorsB: LandingContent[] = [
   },
   {
     slug: "ai-patreon-creator-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Patreon & Membership Automation",
     title: "AI Patreon & Membership Automation | Handbuilt",

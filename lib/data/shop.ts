@@ -43,7 +43,7 @@ export const featuredService: ShopItem = {
   tagline: "An AI that answers every call and message — and books the job.",
   forWho: "Local service businesses losing leads to missed calls and slow replies.",
   outcomes: [
-    "Never miss a lead — it answers 24/7, even when you're on a job",
+    "Answers around the clock, so a call at 7pm gets a reply instead of voicemail",
     "Books appointments and captures details straight into your day",
     "Sounds like your shop, not a robot — trained on your services, hours and pricing",
     "Live in days, fully built and tuned for you",

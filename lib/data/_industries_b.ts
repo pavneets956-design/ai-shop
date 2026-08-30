@@ -58,7 +58,6 @@ export const industriesB: LandingContent[] = [
       "automated showing booking AI",
     ],
     related: [
-      { label: "Lead Capture AI for Real Estate", href: "/use-cases/lead-capture-ai-for-real-estate" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
       { label: "Pricing", href: "/pricing" },
@@ -224,7 +223,7 @@ export const industriesB: LandingContent[] = [
     related: [
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -388,7 +387,7 @@ export const industriesB: LandingContent[] = [
     related: [
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -437,6 +436,14 @@ export const industriesB: LandingContent[] = [
     "A system you own outright — no ongoing platform fees unless you want the Care Plan"
   ],
   sections: [
+      {
+        heading: "Written from running a fence company, not from a case study",
+        body: "Plain disclosure, because it changes how you should read this page: the person who builds these also runs a cedar-fence contracting business in South Surrey, White Rock and Delta. There is no client fencing company behind this page — the experience is first-person, and that cuts both ways.\n\nWhat that means in practice. The intake questions on this page are the ones actually needed to price a fence: linear footage, whether it is a replacement or a new run, panel style, post material, number and width of gates, slope, and access for a truck. Miss the slope and the access and you will quote a job you lose money on, which is exactly why a generic chatbot asking \"how can I help?\" produces leads you cannot use.\n\nAlso first-person: an AI answering service was built and put on that real business line through July and August 2026, and as of late August the line rings a person first instead. Not because the concept failed, but because on a business where one call is a several-thousand-dollar quote, a silent failure costs more than a missed call does — and the failure that forced it was the model provider retiring a model underneath a running agent. If a page selling you an AI receptionist has never mentioned a failure mode, that is the one to ask about."
+      },
+      {
+        heading: "What an answering service does and does not solve here",
+        body: "Fencing is a long-quote-cycle trade, so the phone is only half the leak. An AI receptionist catches the call you miss on a post-hole day. It does not make somebody choose you over the two other quotes on their kitchen table — that is the follow-up worker's job, and in this trade it is usually the higher-value of the two.\n\nAn honest ranking for a fence company: if you are missing calls, fix the phone first. If you are answering the phone but quotes go quiet, the receptionist will not help you and the follow-up sequence will."
+      },
     {
       heading: "What an AI worker does for a fence company",
       body: "A fence company AI setup typically runs two or three workers: one answers the phone and collects lead details, one handles quote intake questions (footage, materials, gates, site type), and one follows up with prospects who went quiet after receiving a quote. None of these require you to be near your phone.",
@@ -642,7 +649,7 @@ export const industriesB: LandingContent[] = [
   ],
   related: [
     { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-    { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+    { label: "AI Review Engine", href: "/services/ai-review-engine" },
     { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
     { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },
     { label: "Contractor AI Automation", href: "/industries/contractor-ai-automation" },
@@ -736,7 +743,6 @@ export const industriesB: LandingContent[] = [
     { label: "AI Intake Form Builder", href: "/services/ai-intake-form-builder" },
     { label: "Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
     { label: "AI Admin Assistant", href: "/services/ai-admin-assistant" },
-    { label: "What Is an AI Receptionist", href: "/resources/what-is-an-ai-receptionist" }
   ],
   faqs: [
     {
@@ -917,7 +923,7 @@ export const industriesB: LandingContent[] = [
     { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
     { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
     { label: "Mortgage Broker AI Automation", href: "/industries/mortgage-broker-ai-automation" },
-    { label: "AI Website Assistant", href: "/services/ai-website-assistant" },
+    { label: "AI Chatbot for Your Website", href: "/services/ai-chatbot-for-website" },
     { label: "AI Lead Follow-Up Guide", href: "/resources/ai-lead-follow-up-guide" }
   ],
   faqs: [

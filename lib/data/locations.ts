@@ -178,7 +178,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-vancouver",
     eyebrow: "Location",
     h1: "AI Automation for Vancouver Businesses",
-    title: "AI Automation for Vancouver Businesses | Handbuilt",
+    title: "AI Chatbots & Answering Services for Vancouver Businesses | Handbuilt",
     description:
       "Custom AI receptionists, chatbots, and automations for Vancouver small businesses. Lower Mainland builder, fixed CAD pricing from $1,500, remote or in person.",
     answer:
@@ -262,7 +262,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-langley-bc",
     eyebrow: "Location",
     h1: "AI Automation in Langley, BC",
-    title: "AI Automation for Langley, BC Businesses | Handbuilt",
+    title: "AI Answering Service & Automation in Langley, BC | Handbuilt",
     description:
       "AI receptionists, quote agents, and automations for Langley small businesses and trades. Local Lower Mainland builder, fixed CAD pricing from $1,500.",
     answer:
@@ -346,7 +346,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-abbotsford",
     eyebrow: "Location",
     h1: "AI Automation in Abbotsford",
-    title: "AI Automation for Abbotsford Businesses | Handbuilt",
+    title: "AI Answering Service & Automation in Abbotsford, BC | Handbuilt",
     description:
       "AI receptionists, quote agents, and automations for Abbotsford and Fraser Valley businesses. Fixed CAD pricing from $1,500, remote or in person.",
     answer:
@@ -515,7 +515,7 @@ export const locations: LandingContent[] = [
     slug: "ai-chatbot-developer-vancouver",
     eyebrow: "Location",
     h1: "AI Chatbot Developer in Vancouver",
-    title: "AI Chatbot Developer in Vancouver | Handbuilt",
+    title: "Custom AI Chatbot Development in Vancouver, BC | Handbuilt",
     description:
       "Custom AI chatbots for Vancouver businesses — trained on your services to answer customers and capture leads 24/7. Fixed CAD pricing from $1,500.",
     answer:
@@ -649,7 +649,7 @@ export const locations: LandingContent[] = [
     ],
     related: [
       { label: "Custom AI App Development", href: "/custom-ai-app-development" },
-      { label: "Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "AI Automation Agency in Surrey, BC", href: "/locations/ai-automation-agency-surrey-bc" },
       { label: "Custom AI Tool vs Off-the-Shelf SaaS", href: "/compare/custom-ai-tool-vs-saas" },
       { label: "Pricing", href: "/pricing" },
@@ -745,7 +745,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-richmond-bc",
     eyebrow: "Location",
     h1: "AI Automation in Richmond, BC",
-    title: "AI Automation in Richmond, BC | Handbuilt",
+    title: "AI Answering Service & Automation in Richmond, BC | Handbuilt",
     description:
       "AI receptionists, chatbots and automations for Richmond businesses — retail, restaurants, real estate and import/export. Multilingual-capable, fixed CAD pricing.",
     answer:
@@ -796,9 +796,9 @@ export const locations: LandingContent[] = [
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
-      { q: "Can the AI handle other languages?", a: "Yes — AI assistants can converse and book in multiple languages. We set up the mix that matches your Richmond customer base." },
+      { q: "Can the AI handle other languages?", a: "English is what it handles reliably today. It can take a booking in another language, but we do not promise the same quality — accents, code-switching and trade vocabulary are where it slips. If a large share of your Richmond customers call in Cantonese, Mandarin or Punjabi, tell us during scoping and we will test it against real calls before you commit rather than after." },
       { q: "Are you local to Richmond?", a: "Handbuilt is run from nearby Surrey/Delta. Most work is remote, and an in-person meeting is easy to arrange for Richmond businesses." },
-      { q: "What does it cost to start?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days; larger systems run $3,500–$7,500." },
+      { q: "What does it cost to start?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. One Richmond-specific thing worth raising before you buy: a large share of Richmond businesses serve customers who prefer Cantonese or Mandarin, and English is what this handles reliably. That is a real constraint, not a hedge — if a meaningful share of your calls are not in English, it needs testing against your actual calls during scoping rather than after handover; larger systems run $3,500–$7,500." },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -807,7 +807,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-coquitlam-bc",
     eyebrow: "Location",
     h1: "AI Automation in Coquitlam, BC",
-    title: "AI Automation in Coquitlam, BC | Handbuilt",
+    title: "AI Answering Service & Automation in Coquitlam, BC | Handbuilt",
     description:
       "AI receptionists, chatbots and automations for Coquitlam and the Tri-Cities — trades, clinics, and family-run service businesses. Local builder, fixed CAD pricing.",
     answer:
@@ -860,7 +860,7 @@ export const locations: LandingContent[] = [
     faqs: [
       { q: "Do you cover the whole Tri-Cities?", a: "Yes — Coquitlam, Port Coquitlam and Port Moody. Handbuilt is run from nearby Surrey/Delta, with in-person meetings easy to arrange." },
       { q: "I'm a solo tradesperson — is this worth it?", a: "Often especially so — when you're the one on the tools, an AI receptionist that answers and books while you work usually pays for itself in recovered jobs." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. Coquitlam skews toward trades working the newer residential builds up Burke Mountain and the renovation work around Austin Heights and Maillardville, which usually means the leak is quote follow-up rather than the phone — a long quote cycle with two or three competing bids on the same kitchen table." },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -931,7 +931,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-white-rock-bc",
     eyebrow: "Location",
     h1: "AI Automation in White Rock, BC",
-    title: "AI Automation in White Rock, BC | Handbuilt",
+    title: "AI Answering Service & Automation in White Rock, BC | Handbuilt",
     description:
       "AI receptionists, chatbots and automations for White Rock and South Surrey — wellness, hospitality, real estate and local retail. Right next door, fixed CAD pricing.",
     answer:
@@ -978,13 +978,13 @@ export const locations: LandingContent[] = [
     related: [
       { label: "AI Automation Agency in Surrey, BC", href: "/locations/ai-automation-agency-surrey-bc" },
       { label: "AI Automation in Delta, BC", href: "/locations/ai-automation-delta-bc" },
-      { label: "No-Show Reminder Automation", href: "/use-cases/no-show-reminder-automation" },
+      { label: "Appointment & No-Show Reminder Automation", href: "/use-cases/appointment-reminder-automation" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
       { q: "Are you actually near White Rock?", a: "Yes — home base is right next door in Surrey/Delta, so in-person discovery and handoff are easy. This is as local as it gets." },
       { q: "Good fit for a wellness clinic or restaurant?", a: "Very — booking, reminders and after-hours inquiry capture are among the highest-payback automations for appointment- and reservation-driven businesses." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. White Rock and South Surrey are the one part of Metro Vancouver where an in-person meeting is genuinely easy — this studio is run from Surrey/Delta and works in this catchment directly, so scoping does not have to happen over video." },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -1040,7 +1040,7 @@ export const locations: LandingContent[] = [
     related: [
       { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-coquitlam-bc" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-      { label: "Estimate Follow-Up Automation", href: "/use-cases/estimate-follow-up-automation" },
+      { label: "AI Lead Follow-Up for Contractors", href: "/ai-lead-follow-up-agent" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -1117,7 +1117,7 @@ export const locations: LandingContent[] = [
     slug: "ai-automation-victoria-bc",
     eyebrow: "Location",
     h1: "AI Automation in Victoria, BC",
-    title: "AI Automation in Victoria, BC | Handbuilt",
+    title: "AI Answering Service & Automation in Victoria, BC | Handbuilt",
     description:
       "AI receptionists, chatbots and automations for Victoria and Vancouver Island businesses — hospitality, professional services and clinics. Delivered remotely, fixed CAD pricing.",
     answer:
@@ -1170,69 +1170,7 @@ export const locations: LandingContent[] = [
     faqs: [
       { q: "Do you have anyone on the Island?", a: "Handbuilt is run from the mainland (Surrey/Delta) and delivers to Victoria fully remotely. Discovery is over video and the build is identical to a local one." },
       { q: "Good fit for a seasonal tourism business?", a: "Yes — an AI worker absorbs peak-season inquiry spikes without seasonal hiring, then keeps working through the quiet months." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
-    ],
-    schema: "Service",
-    icon: "MapPin",
-  },
-  {
-    slug: "ai-automation-calgary-ab",
-    eyebrow: "Location",
-    h1: "AI Automation in Calgary, AB",
-    title: "AI Automation in Calgary, AB | Handbuilt",
-    description:
-      "AI receptionists, chatbots and automations for Calgary businesses — trades, professional services and SMBs. Delivered remotely from BC, fixed CAD pricing from $1,500.",
-    answer:
-      "Handbuilt builds custom AI receptionists, chatbots, quote agents and automations for Calgary businesses — trades and home services, professional firms, and growing SMBs. Delivered remotely from British Columbia, with the same hands-on build and fixed CAD pricing from $1,500.",
-    pain: "Calgary businesses compete hard for every lead — and a missed call or a slow response during a busy day is a customer who's already dialing the next name on the list.",
-    scenario:
-      "A Calgary home-services company loses after-hours calls and doesn't follow up on quotes fast enough. An AI receptionist answers every call and books the job; a follow-up agent chases quiet estimates. Being built from BC changes nothing — the system runs on Calgary time, around this business.",
-    steps: [
-      "Discovery call — over video; map where leads and time leak.",
-      "Scoped proposal — flat CAD price, clear outcome.",
-      "Build & test — around your real services, prices and hours.",
-      "Handoff & support — working system plus optional $99/mo Care Plan.",
-    ],
-    gets: [
-      "Every call and quote captured, on Calgary time",
-      "A custom worker built around your business",
-      "One accountable builder, delivered remotely",
-      "Fixed CAD pricing, no surprise invoices",
-    ],
-    sections: [
-      {
-        heading: "Who we build for in Calgary",
-        body: "Calgary's SMB base spans trades and home services, professional and energy-adjacent firms, clinics and local service businesses. Where the same calls, quotes and follow-ups repeat daily, an AI worker pays for itself quickly.",
-        bullets: [
-          "Trades and home services",
-          "Professional and B2B service firms",
-          "Clinics, salons and appointment-based businesses",
-          "Growing SMBs that need to scale without headcount",
-        ],
-      },
-      {
-        heading: "Remote delivery, identical build",
-        body: "We're based in BC and build for Calgary businesses remotely — discovery over video, the system built around your real operation, support a message away. Same process, same accountability as a local build.",
-      },
-    ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
-      "ai automation calgary",
-      "ai receptionist calgary",
-      "ai for small business calgary ab",
-      "calgary ai developer",
-    ],
-    related: [
-      { label: "AI Automation in Edmonton, AB", href: "/locations/ai-automation-edmonton-ab" },
-      { label: "Remote AI Development", href: "/remote-ai-development" },
-      { label: "AI Automation Canada", href: "/ai-automation-canada" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "You're in BC — can you really serve Calgary?", a: "Yes. The build is remote by design: discovery over video, the system built around your real business, and support always a message away. The process is identical to a local one." },
-      { q: "Is pricing in CAD?", a: "Yes — fixed CAD pricing. A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
-      { q: "Which worker should I start with?", a: "Usually the one tied to lost revenue — an AI receptionist or a follow-up agent. The discovery call finds your fastest payback." },
+      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. Being straight about geography: Victoria is across the water, so this is remote delivery — scoping, build and handover all happen over video and email. Everything about the system is identical; what you do not get is somebody who can drive over. If that matters for your build, say so early." },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -1286,8 +1224,7 @@ export const locations: LandingContent[] = [
       "edmonton ai developer",
     ],
     related: [
-      { label: "AI Automation in Calgary, AB", href: "/locations/ai-automation-calgary-ab" },
-      { label: "Remote AI Development", href: "/remote-ai-development" },
+      { label: "Remote AI Development Across Canada", href: "/remote-ai-development" },
       { label: "AI Automation Canada", href: "/ai-automation-canada" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -1295,68 +1232,6 @@ export const locations: LandingContent[] = [
       { q: "Can a BC builder serve an Edmonton business?", a: "Yes — the build is remote by design and identical to a local one: discovery over video, built around your real business, support always reachable." },
       { q: "Is everything in CAD?", a: "Yes — fixed CAD pricing. A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
       { q: "Where should I start?", a: "Usually with the automation tied to lost revenue — a receptionist or follow-up agent. The discovery call pinpoints it." },
-    ],
-    schema: "Service",
-    icon: "MapPin",
-  },
-  {
-    slug: "ai-automation-toronto-on",
-    eyebrow: "Location",
-    h1: "AI Automation in Toronto, ON",
-    title: "AI Automation in Toronto, ON | Handbuilt",
-    description:
-      "AI receptionists, chatbots and automations for Toronto and GTA businesses — service firms, agencies, clinics and SMBs. Delivered remotely from BC, fixed CAD pricing.",
-    answer:
-      "Handbuilt builds custom AI receptionists, chatbots, quote agents and automations for Toronto and GTA businesses — service firms, agencies, clinics and growing SMBs. Delivered remotely from British Columbia, with the same hands-on build and fixed CAD pricing from $1,500.",
-    pain: "In a market as competitive as Toronto, response speed is everything — a lead that waits even an hour for a reply has usually already engaged with a competitor who answered instantly.",
-    scenario:
-      "A Toronto service business and a GTA clinic both lose inquiries that arrive faster than the team can answer. An AI assistant answers and books instantly, qualifies leads, and captures after-hours inquiries — so in a crowded market, this business is the one that responds first.",
-    steps: [
-      "Discovery call — over video; map where leads and time leak.",
-      "Scoped proposal — flat CAD price, clear outcome.",
-      "Build & test — around your real services and hours.",
-      "Handoff & support — working system plus optional $99/mo Care Plan.",
-    ],
-    gets: [
-      "Instant response in a market where speed wins",
-      "A custom worker built around your Toronto business",
-      "One accountable builder, delivered remotely",
-      "Fixed CAD pricing, no surprise invoices",
-    ],
-    sections: [
-      {
-        heading: "Who we build for in Toronto & the GTA",
-        body: "Toronto's SMB and service economy is vast — professional firms, agencies, clinics, trades and local service businesses. In a market this competitive, the fastest, most consistent responder wins, and that's exactly what an AI worker delivers.",
-        bullets: [
-          "Service and professional firms",
-          "Agencies (including white-label AI to resell)",
-          "Clinics and appointment-based businesses",
-          "Trades and local service businesses across the GTA",
-        ],
-      },
-      {
-        heading: "Remote delivery, identical build",
-        body: "Based in BC and building for Toronto remotely — discovery over video, the system built around your real business, support a message away. In a fast market, being remote is no disadvantage: the AI responds instantly, 24/7.",
-      },
-    ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
-      "ai automation toronto",
-      "ai receptionist toronto",
-      "ai for small business toronto gta",
-      "toronto ai developer",
-    ],
-    related: [
-      { label: "AI Automation Canada", href: "/ai-automation-canada" },
-      { label: "Remote AI Development", href: "/remote-ai-development" },
-      { label: "AI Automation for Agencies", href: "/industries/agency-ai-automation" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "Can a BC studio serve Toronto?", a: "Yes — the build is remote by design and identical to a local one. In Toronto's fast market, the AI's instant 24/7 response is the real advantage, wherever the builder sits." },
-      { q: "Do you work with GTA agencies?", a: "Yes — including white-label AI systems agencies resell to their own clients. See our agency automation page." },
-      { q: "Is pricing in CAD?", a: "Yes — fixed CAD pricing. A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
     ],
     schema: "Service",
     icon: "MapPin",

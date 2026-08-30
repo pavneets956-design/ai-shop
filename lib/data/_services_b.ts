@@ -2,49 +2,6 @@ import type { LandingContent } from "./landing";
 
 export const servicesB: LandingContent[] = [
   {
-    slug: "ai-review-request-system",
-    eyebrow: "AI Service",
-    h1: "AI Review Request System",
-    title: "AI Review Request System | Handbuilt",
-    description: "Automated review requests sent at the right moment, personalized to each job. More 5-star reviews without chasing customers manually. From $1,500 CAD.",
-    answer: "Most businesses get fewer reviews than they deserve because asking feels awkward and manual follow-up never happens. Handbuilt builds an AI review request system that fires a personalized message to each customer after their job closes — by SMS, email, or both — and gives every customer the same link to your Google Business Profile. Starts at $1,500 CAD.",
-    pain: "You do great work, but the customers who had a bad experience are far more likely to leave a review than the happy ones — unless you ask.",
-    scenario: "Picture a Burnaby window cleaning company doing roughly 15 jobs a week. Happy clients rarely think to leave a review on their own — but if they get a text within an hour or two of the job wrapping up with a direct link, a meaningful share do. A business doing 15 jobs a week could realistically go from two or three spontaneous reviews a month to something closer to eight or ten, depending on how promptly the request goes out and how satisfied the client base is. No manual follow-up required.",
-    steps: [
-      "We connect to your job-management or invoicing tool to detect job completion",
-      "We write personalized review request messages in your brand voice",
-      "Every customer gets the same Google review link — and a private way to tell you if something went wrong",
-      "We monitor response rates and adjust timing or copy in the first 30 days"
-    ],
-    gets: [
-      "Automated review requests triggered by job close or invoice",
-      "Personalized SMS and/or email in your voice",
-      "Private feedback capture before a bad review goes public",
-      "Monthly review count report"
-    ],
-    packageId: "starter",
-    ctaLabel: "Get more reviews",
-    keywords: [
-      "ai review request system",
-      "automated google review requests",
-      "review generation small business",
-      "ai customer review follow up"
-    ],
-    related: [
-      { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
-      { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "Cleaning Business AI Automation", href: "/industries/cleaning-business-ai-automation" },
-      { label: "Pricing", href: "/pricing" }
-    ],
-    faqs: [
-      { q: "Which platforms can it post reviews to?", a: "Google Business Profile is the primary target because it affects local search rank. We can also route to Facebook or Homestars depending on your industry." },
-      { q: "What if a customer had a bad experience?", a: "They get the same review link as everyone else — screening who is asked to review breaks Google's policies. What the system adds is a private reply channel, so their feedback also reaches you directly and you get the chance to fix it." },
-      { q: "Does it work with my existing booking software?", a: "We connect to most common tools — Jobber, ServiceTitan, QuickBooks, and others. We'll confirm compatibility before we start." }
-    ],
-    schema: "Service",
-    icon: "Sparkles",
-  },
-  {
     slug: "ai-intake-form-builder",
     eyebrow: "AI Service",
     h1: "AI Intake Form Builder",
@@ -85,48 +42,6 @@ export const servicesB: LandingContent[] = [
     ],
     schema: "Service",
     icon: "FileSearch",
-  },
-  {
-    slug: "ai-website-assistant",
-    eyebrow: "AI Service",
-    h1: "AI Website Assistant",
-    title: "AI Website Assistant | Handbuilt",
-    description: "An AI assistant embedded in your site that guides visitors, answers questions, and collects leads — trained on your exact content. From $1,500 CAD.",
-    answer: "Your website has the answers visitors need, but most people won't read five pages to find them. Handbuilt builds an AI website assistant trained on your pages, services, and FAQs that surfaces the right answer instantly and nudges visitors toward booking or calling. Live in about 5 days, starting at $1,500 CAD.",
-    pain: "Visitors who can't find what they need in 30 seconds leave — and they rarely come back.",
-    scenario: "Consider a Richmond physiotherapy clinic with decent website traffic but a low new-patient conversion rate. A lot of that friction is visitors who can't find answers to specific questions — insurance billing, which practitioner treats what, whether they need a referral — and leave rather than call. An AI assistant trained on those FAQs, service types, and practitioner bios lets visitors get answers at any hour. How much that lifts appointment requests depends on where the drop-off is happening, but reducing unanswered questions is typically where the conversion gain sits.",
-    steps: [
-      "We crawl your existing site content and extract the knowledge base",
-      "We train the assistant on your services, policies, and common questions",
-      "We match the widget design to your brand and embed it site-wide",
-      "We review conversation logs at day 14 and fill any knowledge gaps"
-    ],
-    gets: [
-      "AI assistant trained on your live website content",
-      "Branded widget that matches your site design",
-      "Lead capture when the assistant can't fully answer",
-      "Conversation log review and knowledge update at day 14"
-    ],
-    packageId: "starter",
-    ctaLabel: "Add an AI assistant",
-    keywords: [
-      "ai website assistant",
-      "ai site guide for small business",
-      "website ai helper",
-      "ai faq assistant for website"
-    ],
-    related: [
-      { label: "AI Chatbot for Your Website", href: "/services/ai-chatbot-for-website" },
-      { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-      { label: "Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
-      { label: "Pricing", href: "/pricing" }
-    ],
-    faqs: [
-      { q: "Does it need to be rebuilt every time I update my website?", a: "No. We set up a re-crawl schedule so the assistant's knowledge base stays current with your site automatically." },
-      { q: "What languages can it handle?", a: "English by default. If your customers write in French, Punjabi, Mandarin, or another language, the underlying model handles those too — just let us know at the start." }
-    ],
-    schema: "Service",
-    icon: "Globe",
   },
   {
     slug: "ai-sales-assistant",
@@ -243,7 +158,7 @@ export const servicesB: LandingContent[] = [
       "auto generate business documents"
     ],
     related: [
-      { label: "AI Proposal Generator", href: "/services/ai-proposal-generator" },
+      { label: "AI Quote & Proposal Generator", href: "/services/ai-quote-generator" },
       { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
       { label: "HVAC AI Automation", href: "/industries/hvac-ai-automation" },
       { label: "Pricing", href: "/pricing" }
@@ -251,48 +166,6 @@ export const servicesB: LandingContent[] = [
     faqs: [
       { q: "Can it handle different contract types?", a: "Yes. We build one template per document type you need — service agreement, change order, scope letter, whatever you use most. Each has its own input form." },
       { q: "Does it support e-signatures?", a: "We can connect to DocuSign, HelloSign, or Adobe Sign to send the document for signature immediately after generation — no downloading and re-uploading." }
-    ],
-    schema: "Service",
-    icon: "PenTool",
-  },
-  {
-    slug: "ai-proposal-generator",
-    eyebrow: "AI Service",
-    h1: "AI Proposal Generator",
-    title: "AI Proposal Generator | Handbuilt",
-    description: "Turn intake notes into a polished, branded proposal in minutes — not hours. Win more jobs with faster, more consistent quotes. From $1,500 CAD.",
-    answer: "A slow proposal is a lost proposal. Handbuilt builds an AI proposal generator that takes the details from your intake form or discovery call notes and produces a branded, itemized proposal ready to send — in minutes instead of hours. Starts at $1,500 CAD.",
-    pain: "When you're busy on site, proposals stack up — and while you're writing last week's quote, someone else is already in front of this week's prospect.",
-    scenario: "Consider a North Delta landscaping company averaging two hours to produce each written proposal after a site visit, with maybe 30% of quotes going out more than three days later. An AI proposal generator trained on their service packages and pricing tiers could turn that around in 20–30 minutes — same day, often before the prospect has had time to start comparing. The faster a proposal arrives after a site visit, the less time a competitor has to get theirs in first.",
-    steps: [
-      "We build a proposal template from your existing best-performing quotes",
-      "We map your service packages, line items, and pricing logic into the generator",
-      "You fill in a short post-visit form and the generator outputs the full proposal",
-      "The proposal is branded, itemized, and ready to email or e-sign"
-    ],
-    gets: [
-      "AI proposal generator trained on your services and pricing",
-      "Branded, itemized proposal output in minutes",
-      "Short post-visit input form (mobile-friendly)",
-      "E-sign integration available"
-    ],
-    packageId: "starter",
-    ctaLabel: "Send proposals faster",
-    keywords: [
-      "ai proposal generator small business",
-      "automated quote generator",
-      "ai estimate creator for contractors",
-      "fast proposal software small business"
-    ],
-    related: [
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "AI Document Generator", href: "/services/ai-document-generator" },
-      { label: "Landscaping AI Automation", href: "/industries/landscaping-ai-automation" },
-      { label: "Pricing", href: "/pricing" }
-    ],
-    faqs: [
-      { q: "Can it handle variable scopes — like different package tiers?", a: "Yes. The generator uses conditional logic so a 'basic' scope produces a different line-item breakdown than a 'premium' scope, without you manually adjusting each one." },
-      { q: "How long does it take to get up and running?", a: "About 5 business days from the intake call to your first generated proposal." }
     ],
     schema: "Service",
     icon: "PenTool",
@@ -319,7 +192,7 @@ export const servicesB: LandingContent[] = [
       "Escalation to your mobile for urgent situations"
     ],
     packageId: "business",
-    ctaLabel: "Never miss a call",
+    ctaLabel: "Get my calls answered",
     keywords: [
       "ai voice agent small business",
       "ai phone answering service",
@@ -383,49 +256,6 @@ export const servicesB: LandingContent[] = [
     icon: "Workflow",
   },
   {
-    slug: "custom-business-automation",
-    eyebrow: "AI Service",
-    h1: "Custom Business Automation",
-    title: "Custom Business Automation | Handbuilt",
-    description: "A fully scoped AI automation system built around your exact operations — not a template. For businesses that have outgrown off-the-shelf tools. From $3,500 CAD.",
-    answer: "When your operation is specific enough that no pre-built tool fits, you need something built for you. Handbuilt scopes, builds, and deploys a custom AI automation system around your actual processes — your tools, your team structure, your edge cases. Typically $3,500 CAD, scaling with complexity.",
-    pain: "Off-the-shelf automation tools solve generic problems. Your business isn't generic.",
-    scenario: "Picture a Port Moody moving company with a multi-step intake process — online quote request, manual phone confirmation, truck scheduling, crew assignment, post-move invoicing — all running in different systems with no connection between them. A custom automation tying that flow together could mean: quote triggers a scheduling availability check, confirmed bookings auto-assign crew based on job size, invoice generates at job close. For a company doing 10–15 moves a week, the admin hours currently spent bridging those gaps manually could realistically run 3–5 hours a day.",
-    steps: [
-      "We run a deep-dive operations audit to map every process and handoff",
-      "We design a custom automation architecture for your specific workflow",
-      "We build, test, and deploy in phases so you can see progress at each step",
-      "We hand off documentation and train your team on the system"
-    ],
-    gets: [
-      "Custom-scoped automation system built for your exact workflow",
-      "Phased build with review checkpoints",
-      "Full documentation and team handoff",
-      "Post-launch support and iteration"
-    ],
-    packageId: "business",
-    ctaLabel: "Scope my custom system",
-    keywords: [
-      "custom business automation canada",
-      "bespoke ai automation small business",
-      "custom ai system for service business",
-      "ai operations automation bc"
-    ],
-    related: [
-      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
-      { label: "AI Business System", href: "/ai-business-system" },
-      { label: "Moving Company AI Automation", href: "/industries/moving-company-ai-automation" },
-      { label: "Pricing", href: "/pricing" }
-    ],
-    faqs: [
-      { q: "How is this different from the Business AI System package?", a: "The Business AI System is a defined set of components — chatbot, CRM automation, follow-up sequences — assembled for a typical service business. Custom Business Automation starts from your workflow with no predetermined structure. It's the right fit when your operation has unusual complexity or specific requirements a package can't cover." },
-      { q: "What's the typical timeline?", a: "Four to eight weeks depending on scope, built in phases. You see working automations before we build the next layer — nothing is delivered as one big reveal at the end." },
-      { q: "Do I need a technical team to maintain it?", a: "No. We build for maintainability and document everything. Most clients manage day-to-day without technical help; we're available for changes and additions on retainer." }
-    ],
-    schema: "Service",
-    icon: "Layers",
-  },
-  {
     "slug": "ai-review-engine",
     "eyebrow": "AI Service",
     "icon": "MessagesSquare",
@@ -459,7 +289,7 @@ export const servicesB: LandingContent[] = [
     "related": [
       {
         "label": "AI Review Request System",
-        "href": "/services/ai-review-request-system"
+        "href": "/services/ai-review-engine"
       },
       {
         "label": "Free review reply generator",
@@ -485,7 +315,7 @@ export const servicesB: LandingContent[] = [
       },
       {
         "q": "What does it need to connect to?",
-        "a": "Google Business for posting reviews, Twilio for the text messages, and Gmail for email requests and your private alerts. We set up every connection during the build — you don't touch any technical settings."
+        "a": "Google Business — to pull your profile's review link, not to post anything; only a customer can post a review, and no tool can do it for them. Then Twilio for the text messages and Gmail for the email requests and your private alerts. We set up every connection during the build, so you don't touch any technical settings."
       }
     ],
   },
@@ -689,7 +519,7 @@ export const servicesB: LandingContent[] = [
     "h1": "What is an AI Receptionist OS for a local business?",
     "title": "AI Receptionist OS — Your Whole Front Desk on Autopilot | Handbuilt",
     "description": "One hosted system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — on one dashboard. $1,500 onboarding, then from $349/mo, calls included.",
-    "answer": "AI Receptionist OS is Handbuilt's flagship: one hosted system that runs your entire front desk so you never lose a lead in the gaps. It answers calls and texts, books jobs into your calendar, sends quotes, chases reviews, and follows up with every lead automatically — all on one dashboard, with nothing for you to stitch together. It's meant to cover the kind of front-desk work you'd otherwise hand to a part-time receptionist or a patchwork of separate apps. Pricing is $1,500 onboarding, then from $349/mo, fully hosted with calls and AI usage included.",
+    "answer": "AI Receptionist OS is Handbuilt's flagship: one hosted system that runs your front desk, so leads stop falling into the gaps between five separate tools. It answers calls and texts, books jobs into your calendar, sends quotes, chases reviews, and follows up with every lead automatically — all on one dashboard, with nothing for you to stitch together. It's meant to cover the kind of front-desk work you'd otherwise hand to a part-time receptionist or a patchwork of separate apps. Pricing is $1,500 onboarding, then from $349/mo, fully hosted with calls and AI usage included.",
     "pain": "You've patched together a receptionist, a texting app, a booking link, a review tool and a follow-up reminder — and leads still slip through the cracks between them because nothing talks to anything else.",
     "scenario": "Take a busy Surrey HVAC company fielding maybe 40–50 calls and a dozen website and text inquiries a week, with one person trying to answer the phone, send quotes and remember to follow up — usually while on a job. A few calls a week go to voicemail, a couple of quotes never get sent, and review requests almost never happen. Running it all through one Receptionist OS means the calls get answered and booked, the quote goes out the same day, every closed job triggers a review ask, and any lead that goes quiet gets a follow-up text — all visible on one screen instead of five apps. The exact lift depends on how many leads are currently falling through the gaps, but closing those gaps is usually where the recovered revenue sits.",
     "steps": [

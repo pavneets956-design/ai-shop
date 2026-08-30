@@ -39,7 +39,7 @@ export const industriesC: LandingContent[] = [
     related: [
       { label: "AI Automation for Clinics", href: "/industries/clinic-ai-automation" },
       { label: "AI Automation for Chiropractors", href: "/industries/chiropractor-ai-automation" },
-      { label: "No-Show Reminder Automation", href: "/use-cases/no-show-reminder-automation" },
+      { label: "Appointment & No-Show Reminder Automation", href: "/use-cases/appointment-reminder-automation" },
       { label: "AI Receptionist", href: "/ai-receptionist" },
     ],
     faqs: [
@@ -87,55 +87,11 @@ export const industriesC: LandingContent[] = [
       { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },
     ],
     faqs: [
-      { q: "Can it help bring back patients who stopped coming?", a: "Yes — recall sequences reach lapsed patients with a friendly, on-brand check-in that's proven to reactivate a share of them without your front desk making calls all day." },
+      { q: "Can it help bring back patients who stopped coming?", a: "Yes — a recall sequence reaches lapsed patients with a friendly, on-brand check-in so your front desk isn't making those calls by hand. How many come back depends entirely on why they stopped: a patient who moved away will not return no matter how good the message is, and we have no reactivation rate to quote you. What the system guarantees is that the ask actually goes out, which is the part that usually doesn't happen." },
       { q: "Will it fit how my clinic books?", a: "We build around your visit types and booking tool so it books the right appointment length into the right slot." },
     ],
     schema: "Service",
     icon: "Stethoscope",
-  },
-  {
-    slug: "barbershop-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Barbershops",
-    title: "AI Automation for Barbershops & Barbers | Handbuilt",
-    description:
-      "AI booking, reminders and no-show protection for barbershops — keep every chair full and stop losing walk-in inquiries to voicemail. Built for you from $1,500.",
-    answer:
-      "AI automation for a barbershop handles bookings, reminders and rebooking so every chair stays full and no inquiry goes to voicemail. Handbuilt builds it around your barbers, services and booking app, so clients book themselves while you keep cutting.",
-    pain: "A barber with clippers in hand can't answer the phone or DMs — so booking requests slip away, and no-shows leave expensive gaps between cuts.",
-    scenario:
-      "Example scenario, not a customer result: a four-chair shop can field booking requests by call and Instagram DM all day while the barbers are cutting, not typing. We'd set up AI that answers and books across call and DM, sends reminders to cut no-shows, and nudges clients to rebook their next cut. Chairs stay full without anyone stopping mid-fade.",
-    steps: [
-      "We connect your booking app and each barber's schedule",
-      "AI books across phone and Instagram/Facebook DMs",
-      "Reminders reduce no-shows; rebooking nudges keep clients on cycle",
-      "Walk-in and waitlist requests are captured, not lost",
-    ],
-    gets: [
-      "Bookings answered across phone and social DMs",
-      "No-show reminders that protect your chair time",
-      "Automatic rebooking nudges",
-      "Per-barber scheduling",
-    ],
-    packageId: "starter",
-    ctaLabel: "Fill my chairs",
-    keywords: [
-      "ai automation for barbershops",
-      "barber booking automation",
-      "barbershop ai receptionist",
-      "reduce no shows barber",
-    ],
-    related: [
-      { label: "AI Automation for Salons", href: "/industries/salon-ai-automation" },
-      { label: "AI Booking Assistant for Salons", href: "/use-cases/ai-booking-assistant-for-salons" },
-      { label: "Instagram DM Automation", href: "/use-cases/instagram-dm-automation" },
-    ],
-    faqs: [
-      { q: "Can it book from Instagram DMs?", a: "Yes — a lot of barber bookings start in DMs, so we can handle Instagram and Facebook messages alongside calls, subject to each platform's rules." },
-      { q: "Does each barber get their own schedule?", a: "Yes. It books the right client with the right barber into the right slot, respecting each barber's hours and services." },
-    ],
-    schema: "Service",
-    icon: "Scissors",
   },
   {
     slug: "gym-ai-automation",
@@ -216,7 +172,7 @@ export const industriesC: LandingContent[] = [
     related: [
       { label: "AI Automation for Gyms", href: "/industries/gym-ai-automation" },
       { label: "AI Coaching Content System", href: "/creators/ai-coaching-content-system" },
-      { label: "Instagram DM Automation", href: "/use-cases/instagram-dm-automation" },
+      { label: "Facebook & Instagram Lead Automation", href: "/use-cases/facebook-lead-automation" },
     ],
     faqs: [
       { q: "I'm an online coach — does this still fit?", a: "Yes. Whether you train in person, online or both, it captures inquiries and books consults so your DMs stop being a bottleneck." },
@@ -224,50 +180,6 @@ export const industriesC: LandingContent[] = [
     ],
     schema: "Service",
     icon: "TrendingUp",
-  },
-  {
-    slug: "food-truck-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Food Trucks",
-    title: "AI Automation for Food Trucks & Caterers | Handbuilt",
-    description:
-      "AI that handles catering inquiries, event bookings and location updates for food trucks — so you don't lose bookings while you're slammed at the window. From $1,500.",
-    answer:
-      "AI automation for a food truck handles catering and event inquiries, books gigs, and keeps customers updated on your location — so you don't lose bookings while you're slammed at the service window. Handbuilt builds it around your menu, service area and calendar.",
-    pain: "The most profitable food-truck bookings — catering and events — come in by call and DM while you're busy serving, and a slow reply loses the gig to the next truck.",
-    scenario:
-      "A truck doing lunch service can't answer catering calls mid-rush, and event inquiries in the DMs sit for hours. We build AI that answers catering and event questions, captures the details, and books available dates — plus quick answers on today's location. Big-ticket bookings stop slipping away.",
-    steps: [
-      "We set up AI to answer catering and event inquiries",
-      "It captures event details and checks your available dates",
-      "It handles FAQs — menu, pricing range, service area, today's spot",
-      "Booking requests come to you organised and ready to confirm",
-    ],
-    gets: [
-      "Catering and event inquiries answered during service",
-      "Event details captured and dates checked",
-      "Menu, location and pricing FAQs handled",
-      "More high-value bookings, fewer lost to slow replies",
-    ],
-    packageId: "starter",
-    ctaLabel: "Catch more bookings",
-    keywords: [
-      "ai automation for food trucks",
-      "food truck catering inquiry automation",
-      "food truck booking automation",
-      "ai for food truck business",
-    ],
-    related: [
-      { label: "AI Automation for Restaurants", href: "/industries/restaurant-ai-automation" },
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
-    ],
-    faqs: [
-      { q: "Can it handle catering quotes?", a: "It captures the event details and can give a pricing range or route a full quote to you fast, so you never lose a catering lead to a slow reply." },
-      { q: "Can customers ask where the truck is today?", a: "Yes — it can answer location and hours questions so you're not fielding the same message all day." },
-    ],
-    schema: "Service",
-    icon: "Receipt",
   },
   {
     slug: "wedding-planner-ai-automation",
@@ -302,7 +214,7 @@ export const industriesC: LandingContent[] = [
       "wedding planner booking automation",
     ],
     related: [
-      { label: "AI Automation for Photographers", href: "/industries/photographer-ai-automation" },
+      { label: "AI Automation by Industry", href: "/industries" },
       { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },
       { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
     ],
@@ -312,94 +224,6 @@ export const industriesC: LandingContent[] = [
     ],
     schema: "Service",
     icon: "CalendarCheck",
-  },
-  {
-    slug: "photographer-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Photographers",
-    title: "AI Automation for Photographers | Handbuilt",
-    description:
-      "AI that answers shoot inquiries, sends pricing, books sessions and follows up for photographers — so you shoot and edit instead of living in your inbox. From $1,500.",
-    answer:
-      "AI automation for a photographer answers inquiries, sends pricing and packages, books sessions, and follows up with leads — so you spend your time shooting and editing, not replying to the same questions. Handbuilt builds it around your packages and booking flow.",
-    pain: "Photographers lose bookings in the gap between an inquiry and a reply — you're shooting or deep in edits, and by the time you answer, the client booked someone faster.",
-    scenario:
-      "A portrait and events photographer gets inquiries daily but only replies between shoots and edits. We build AI that answers instantly, sends the right package and pricing, books sessions, and follows up with people who don't book right away. Speed-to-reply goes up and so do bookings.",
-    steps: [
-      "We load your packages, pricing and availability",
-      "AI answers inquiries and sends the right package instantly",
-      "It books sessions into your calendar",
-      "Follow-up sequences chase leads who go quiet",
-    ],
-    gets: [
-      "Instant replies with the right package and pricing",
-      "Sessions booked into your calendar",
-      "Lead follow-up so slow replies stop costing bookings",
-      "Less time in your inbox, more behind the camera",
-    ],
-    packageId: "starter",
-    ctaLabel: "Book more shoots",
-    keywords: [
-      "ai automation for photographers",
-      "photographer inquiry automation",
-      "photography booking automation",
-      "photographer lead follow up ai",
-    ],
-    related: [
-      { label: "AI Automation for Videographers", href: "/industries/videographer-ai-automation" },
-      { label: "AI Automation for Wedding Planners", href: "/industries/wedding-planner-ai-automation" },
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-    ],
-    faqs: [
-      { q: "Can it send my pricing automatically?", a: "Yes — it sends the right package and pricing based on what the client asks for, so you're not copy-pasting the same rates all week." },
-      { q: "Will it match my brand voice?", a: "We train it on your tone so replies feel like you, not a generic auto-responder." },
-    ],
-    schema: "Service",
-    icon: "Star",
-  },
-  {
-    slug: "videographer-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Videographers",
-    title: "AI Automation for Videographers | Handbuilt",
-    description:
-      "AI that handles project inquiries, quotes and booking for videographers — plus optional editing automation. Spend time on the craft, not the admin. From $1,500.",
-    answer:
-      "AI automation for a videographer handles project inquiries, sends quotes, books shoots, and follows up — and can extend into editing automation like clipping and captions. Handbuilt builds it around your services so admin stops eating your production time.",
-    pain: "Videographers are buried in long edits, so inquiries and quote requests wait — and clients who need a fast answer book a competitor while you're in the timeline.",
-    scenario:
-      "A commercial and event videographer loses inquiries while deep in edits. We build AI that answers project questions, captures scope, sends a quote or books a call, and follows up. Optionally we automate the repetitive edit work — clips and captions — so both ends of the business speed up.",
-    steps: [
-      "We map your services, scope questions and pricing",
-      "AI answers inquiries, captures project scope and quotes",
-      "It books shoots and follows up with quiet leads",
-      "Optional: automate clipping and captions for deliverables",
-    ],
-    gets: [
-      "Project inquiries answered while you're editing",
-      "Scope captured and quotes sent fast",
-      "Shoots booked and leads followed up",
-      "Optional editing automation for clips and captions",
-    ],
-    packageId: "business",
-    ctaLabel: "Automate my studio",
-    keywords: [
-      "ai automation for videographers",
-      "videographer inquiry automation",
-      "video production booking ai",
-      "videographer quote automation",
-    ],
-    related: [
-      { label: "AI Automation for Photographers", href: "/industries/photographer-ai-automation" },
-      { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-    ],
-    faqs: [
-      { q: "Can you automate my editing too?", a: "Yes — beyond the client-facing admin, we can automate repetitive edit steps like clipping, silence removal and captions. See our video editing automation build." },
-      { q: "Does it handle custom project scoping?", a: "It captures the key scope details and either quotes from your ranges or books a call for bigger jobs, so nothing complex gets mis-quoted." },
-    ],
-    schema: "Service",
-    icon: "Video",
   },
   {
     slug: "immigration-consultant-ai-automation",
@@ -479,7 +303,6 @@ export const industriesC: LandingContent[] = [
     ],
     related: [
       { label: "AI Automation for Accountants", href: "/industries/accountant-ai-automation" },
-      { label: "AI Document Analyzer for Law Firms", href: "/use-cases/ai-document-analyzer-for-law-firms" },
       { label: "AI Intake Form Builder", href: "/services/ai-intake-form-builder" },
     ],
     faqs: [
@@ -522,57 +345,12 @@ export const industriesC: LandingContent[] = [
       "cpa ai assistant",
     ],
     related: [
-      { label: "AI Automation for Bookkeepers", href: "/industries/bookkeeper-ai-automation" },
       { label: "Automate Admin for Accountants", href: "/use-cases/automate-admin-for-accountants" },
       { label: "AI Document Generator", href: "/services/ai-document-generator" },
     ],
     faqs: [
       { q: "Can it chase clients for missing documents?", a: "Yes — it sends a personalised checklist and follows up on what's outstanding, so your team stops spending tax season hunting paperwork." },
       { q: "Is client financial data kept secure?", a: "We design intake and messaging to handle sensitive data securely and collect only what your workflow needs, aligned to your firm's requirements." },
-    ],
-    schema: "Service",
-    icon: "Receipt",
-  },
-  {
-    slug: "bookkeeper-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Bookkeepers",
-    title: "AI Automation for Bookkeepers | Handbuilt",
-    description:
-      "AI that handles client onboarding, document chasing and routine questions for bookkeepers — so you keep books, not inboxes. Built for you from $1,500.",
-    answer:
-      "AI automation for a bookkeeper handles client onboarding, chases receipts and statements, and answers routine questions — so your time goes to the books instead of the back-and-forth. Handbuilt builds it around your client workflow and tools.",
-    pain: "Bookkeepers lose billable hours to chasing clients for receipts and statements and answering the same questions every month — admin that scales badly as you add clients.",
-    scenario:
-      "A solo bookkeeper adds clients but drowns in month-end chasing for missing documents. We build AI that onboards new clients cleanly, requests and chases monthly documents, and answers routine questions. Adding clients stops meaning adding admin.",
-    steps: [
-      "We map your onboarding and monthly document workflow",
-      "AI onboards new clients and sets expectations",
-      "It requests and chases receipts and statements each period",
-      "Routine client questions are answered automatically",
-    ],
-    gets: [
-      "Clean, automated client onboarding",
-      "Monthly document requests and chasing",
-      "Routine questions handled",
-      "More clients without more admin",
-    ],
-    packageId: "starter",
-    ctaLabel: "Automate my bookkeeping admin",
-    keywords: [
-      "ai automation for bookkeepers",
-      "bookkeeping client onboarding automation",
-      "receipt chasing automation",
-      "bookkeeper ai assistant",
-    ],
-    related: [
-      { label: "AI Automation for Accountants", href: "/industries/accountant-ai-automation" },
-      { label: "Client Onboarding Automation", href: "/use-cases/client-onboarding-automation" },
-      { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
-    ],
-    faqs: [
-      { q: "Can it handle month-end document chasing?", a: "Yes — that's one of the biggest wins. It requests the right documents each period and follows up on what's missing without you sending manual reminders." },
-      { q: "Does it work with my accounting software?", a: "We build around common bookkeeping and accounting tools and confirm your exact stack before starting." },
     ],
     schema: "Service",
     icon: "Receipt",
@@ -611,7 +389,7 @@ export const industriesC: LandingContent[] = [
     ],
     related: [
       { label: "AI Automation for Agencies", href: "/industries/agency-ai-automation" },
-      { label: "AI Proposal Generator", href: "/services/ai-proposal-generator" },
+      { label: "AI Quote & Proposal Generator", href: "/services/ai-quote-generator" },
       { label: "AI Sales Assistant", href: "/services/ai-sales-assistant" },
     ],
     faqs: [
@@ -656,7 +434,7 @@ export const industriesC: LandingContent[] = [
     related: [
       { label: "AI Automation for Consultants", href: "/industries/consultant-ai-automation" },
       { label: "AI for Content Creators", href: "/creators/ai-tools-for-content-creators" },
-      { label: "Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
     ],
     faqs: [
       { q: "Can I resell what you build under my brand?", a: "Yes — we can build white-label AI systems you deliver to your clients as your own, so AI becomes a new revenue line for your agency." },
@@ -664,137 +442,5 @@ export const industriesC: LandingContent[] = [
     ],
     schema: "Service",
     icon: "Megaphone",
-  },
-  {
-    slug: "ecommerce-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for E-commerce Stores",
-    title: "AI Automation for E-commerce Stores | Handbuilt",
-    description:
-      "AI that handles support, order questions, and abandoned-cart recovery for online stores — cut support load and recover lost sales. Built around your store.",
-    answer:
-      "AI automation for an e-commerce store answers support and order questions instantly, recovers abandoned carts, and handles returns and FAQs — so support load drops and lost sales come back. Handbuilt builds it around your store, catalog and policies.",
-    pain: "Online stores lose sales two ways: shoppers with an unanswered question abandon the cart, and support tickets pile up faster than a small team can clear them.",
-    scenario:
-      "A store gets repetitive \"where's my order\" and sizing questions plus a stack of abandoned carts. We build AI trained on their catalog and policies that answers instantly on-site, recovers carts with timely nudges, and handles returns and FAQs. Support shrinks and recovered carts add real revenue.",
-    steps: [
-      "We train AI on your catalog, policies and common questions",
-      "It answers support and product questions instantly on your store",
-      "Abandoned-cart recovery brings shoppers back",
-      "Returns and order-status questions are handled automatically",
-    ],
-    gets: [
-      "Instant support trained on your store",
-      "Abandoned-cart recovery",
-      "Order-status and returns handled",
-      "Lower support load, recovered sales",
-    ],
-    packageId: "business",
-    ctaLabel: "Automate my store",
-    keywords: [
-      "ai automation for ecommerce",
-      "ecommerce support automation",
-      "abandoned cart recovery ai",
-      "online store ai chatbot",
-    ],
-    related: [
-      { label: "AI Chatbot for E-commerce", href: "/use-cases/ai-chatbot-for-ecommerce" },
-      { label: "AI Automation for Retail Stores", href: "/industries/retail-store-ai-automation" },
-      { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-    ],
-    faqs: [
-      { q: "Which platforms do you support?", a: "Shopify, WooCommerce, and other major carts with an API or integration. We confirm yours before building." },
-      { q: "Can it actually recover abandoned carts?", a: "Yes — timely, relevant nudges recover a meaningful share of carts that would otherwise be lost, on top of cutting your support load." },
-    ],
-    schema: "Service",
-    icon: "Boxes",
-  },
-  {
-    slug: "retail-store-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Retail Stores",
-    title: "AI Automation for Local Retail Stores | Handbuilt",
-    description:
-      "AI that answers product and hours questions, handles reservations and follows up with customers for local retail — capture the sales you're missing after hours.",
-    answer:
-      "AI automation for a local retail store answers product, stock and hours questions, handles holds and reservations, and follows up with customers — so you capture inquiries even when the shop is busy or closed. Handbuilt builds it around your inventory and hours.",
-    pain: "Local shops lose sales to unanswered questions — \"do you have this in stock?\", \"are you open Sunday?\" — that come in when staff are with customers or after close.",
-    scenario:
-      "A retail store gets calls and messages about stock and hours all day, plus after-hours inquiries that go unanswered. We build AI that answers product and hours questions, places holds, and follows up with interested customers. Inquiries convert instead of walking to a competitor.",
-    steps: [
-      "We load your product info, stock approach and hours",
-      "AI answers product, stock and hours questions across channels",
-      "It handles holds, reservations and simple requests",
-      "Follow-up brings interested customers back in",
-    ],
-    gets: [
-      "Product and hours questions answered anytime",
-      "Holds and reservations handled",
-      "After-hours inquiries captured",
-      "Customer follow-up that drives visits",
-    ],
-    packageId: "starter",
-    ctaLabel: "Capture more sales",
-    keywords: [
-      "ai automation for retail stores",
-      "retail store ai assistant",
-      "local shop ai chatbot",
-      "retail customer inquiry automation",
-    ],
-    related: [
-      { label: "AI Automation for E-commerce", href: "/industries/ecommerce-ai-automation" },
-      { label: "AI Website Assistant", href: "/services/ai-website-assistant" },
-      { label: "Google Business Profile Lead Automation", href: "/use-cases/google-business-profile-lead-automation" },
-    ],
-    faqs: [
-      { q: "Can it tell customers if something's in stock?", a: "It can answer based on how you manage stock — from a synced feed if available, or your general availability rules — and place holds for interested customers." },
-      { q: "Does it work for a single-location shop?", a: "Yes. It's built for local retail specifically, focused on capturing the calls, messages and after-hours questions a busy shop misses." },
-    ],
-    schema: "Service",
-    icon: "Building2",
-  },
-  {
-    slug: "coach-ai-automation",
-    eyebrow: "Industry",
-    h1: "AI Automation for Coaches",
-    title: "AI Automation for Coaches (Business Ops) | Handbuilt",
-    description:
-      "AI that captures leads, books discovery calls, and runs client admin for coaches — the operations side, so you coach instead of chasing. Built for you from $1,500.",
-    answer:
-      "AI automation for a coach handles the business operations — capturing leads, booking discovery calls, following up, and running client admin and onboarding — so your energy goes into coaching, not chasing. Handbuilt builds it around how you enroll and deliver.",
-    pain: "Coaches are great at coaching and stretched thin on operations — leads slip, discovery calls don't get booked, and onboarding admin piles up between sessions.",
-    scenario:
-      "A coach gets inquiries from content and referrals but can't follow up fast enough while delivering sessions. We build AI that captures leads, books discovery calls, follows up with the undecided, and automates client onboarding. Enrollment gets smoother without stealing coaching time. (For the content and marketing side, our creator coaching content system pairs with this.)",
-    steps: [
-      "We map your enrollment and client-delivery process",
-      "AI captures leads and books discovery calls",
-      "Follow-up nurtures prospects toward enrolling",
-      "Client onboarding and admin are automated",
-    ],
-    gets: [
-      "Leads captured and discovery calls booked",
-      "Follow-up that converts more inquiries",
-      "Automated client onboarding",
-      "Operations off your plate so you can coach",
-    ],
-    packageId: "starter",
-    ctaLabel: "Automate my coaching business",
-    keywords: [
-      "ai automation for coaches",
-      "coaching business automation",
-      "coach lead and booking automation",
-      "coach client onboarding automation",
-    ],
-    related: [
-      { label: "AI Coaching Content System", href: "/creators/ai-coaching-content-system" },
-      { label: "AI Automation for Consultants", href: "/industries/consultant-ai-automation" },
-      { label: "Client Onboarding Automation", href: "/use-cases/client-onboarding-automation" },
-    ],
-    faqs: [
-      { q: "How is this different from the coaching content system?", a: "This is the operations side — leads, booking, follow-up and onboarding. The creator coaching content system handles content, lead magnets and nurture. Many coaches want both; they connect cleanly." },
-      { q: "I run group and 1:1 — does it handle both?", a: "Yes. We build around your specific offers and enrollment flow, whether that's 1:1, group programs or a mix." },
-    ],
-    schema: "Service",
-    icon: "GraduationCap",
   },
 ];

@@ -69,6 +69,20 @@ export interface LandingContent {
   schema: SchemaKind;
   /** lucide icon key from lib/icons.ts. */
   icon?: string;
+  /**
+   * Keep the URL alive but out of the index. `lib/seo.ts` reads this in
+   * `isNoindexEntry()` → `landingMetadata()` emits `robots: { index: false,
+   * follow: true }`, and `app/sitemap.ts` + `app/llms.txt` skip the row.
+   *
+   * Set on the 14 creator pages with no measured impression (disposition doc
+   * §1.6, Gate G2 — owner-reversible: delete the flag and the page is back).
+   * Nothing is deleted and no redirect is involved, so the decision costs one
+   * line to undo.
+   *
+   * NOTE for hub templates: a hub that lists registry rows must filter these
+   * out itself — `isNoindexEntry` only controls metadata and the sitemap.
+   */
+  noindex?: boolean;
 }
 
 /** Path prefix per page type. */

@@ -27,7 +27,7 @@ export const howtos: LandingContent[] = [
         body: "Most small businesses handle website inquiries through a contact form that routes to an email inbox. Someone checks it once or twice a day. By the time you reply, the lead has moved on. After-hours? Nothing. The visitor bounces. You never knew they were there.",
         bullets: [
           "Average contact form response time: 24–48 hours",
-          "Leads who get a reply within 5 minutes are 9× more likely to convert (Harvard Business Review, 2011 — still holds)",
+          "Leads answered within five minutes convert far better than leads answered the next day — the widely-cited figure is 9× from the Harvard Business Review lead-response study (2011). It is an old study and the exact multiple is worth treating as directional, not gospel; the direction has never been in dispute",
           "No record of what questions came in, so you can't improve",
         ],
       },
@@ -70,7 +70,7 @@ export const howtos: LandingContent[] = [
       },
       {
         q: "What happens when the chatbot doesn't know the answer?",
-        a: "You configure a fallback: typically the bot asks for the visitor's name and email, or shows your phone number. The goal is to never lose a lead just because the bot hit a gap.",
+        a: "You configure a fallback: typically the bot asks for the visitor's name and email, or shows your phone number. A gap in the bot's knowledge should cost you a slower reply, not the lead.",
       },
     ],
     schema: "HowTo",
@@ -176,7 +176,7 @@ export const howtos: LandingContent[] = [
         heading: "The manual way (and why it breaks)",
         body: "The alternative to an AI receptionist is you — or a human you pay. You're on a job site, phone rings, you ignore it. Or you answer, drop what you're doing, and give a rushed response. After 5pm or on weekends, nobody answers at all. The caller books somewhere else within 10 minutes.",
         bullets: [
-          "BC minimum wage 2024: $17.40/hour — a part-time receptionist (20 hrs/week) costs $1,400+/month",
+          "Part-time cover is not cheap: 20 hrs/week at BC's current minimum wage is over $1,000/month in gross wages alone, before payroll costs, holiday pay or cover for sick days — look up today's rate on the BC government's Employment Standards page and do the multiplication for your own hours",
           "Human receptionists can't work 24/7 without shift premiums",
           "Every missed call is a missed revenue opportunity — most callers do not leave voicemails",
         ],
@@ -191,8 +191,16 @@ export const howtos: LandingContent[] = [
         ],
       },
       {
+        heading: "How to actually test it before it touches a customer",
+        body: "Step 7 says run 20 test calls. Here is what those calls should be, because testing the happy path proves almost nothing.\n\nCall it from a cell phone with one bar, not from your desk. Call it from a truck with the window down. Interrupt it mid-sentence. Ask something it has no answer for and watch whether it says so or improvises — improvising is the failure you are looking for. Ask for a service you do not offer and check that it declines rather than agreeing. Name a suburb just outside your service area. Trigger the emergency phrase and confirm the transfer actually reaches a ringing phone. Then hang up during the greeting and confirm the call is still logged.\n\nWrite the expected outcome for each of those before you dial, and treat a wrong answer as a config gap rather than a model problem — it almost always is.",
+      },
+      {
+        heading: "What goes wrong once it is live",
+        body: "From running one of these on a live trades line through July and August 2026, in order of how much damage each did.\n\nThe phone layer failed while the agent was healthy: calls arrived as zero-second no-answers for several days, and one caller tried fourteen times without ever getting through. Nothing in the AI stack reported it — only the carrier's call detail records showed it. Whatever you run, watch the call records, not just the application.\n\nThe model provider retired the default model mid-August, and the agent began answering, delivering its greeting, then falling silent mid-call. A caller who reaches a greeting believes they have reached a business, which makes a silent agent worse than an offline one. Monitor for calls that connect but produce no transcript.\n\nAnd some callers simply will not speak to a machine and hang up during the greeting. That is a normal share of traffic, not a defect.",
+      },
+      {
         heading: "What it costs to set up",
-        body: "DIY: 15–30 hours to build the script, configure the platform, connect the calendar, and test. Ongoing: $50–$200/month in platform fees. Hiring Handbuilt: Starter package at $1,500 CAD — script, platform setup, calendar integration, escalation routing, and one round of live testing. You get a working receptionist faster than you'd finish reading the platform docs.",
+        body: "DIY: 15–30 hours to build the script, configure the platform, connect the calendar and test it properly. Ongoing: $50–$200/month in platform fees. Done-for-you from Handbuilt: the Starter package at $1,500 CAD covers the script, platform setup, calendar integration, escalation routing and a round of live testing. The honest case for DIY is that the platform documentation is good and this is a learnable weekend project. The honest case against it is the testing section above — most DIY builds ship the happy path and discover the rest from a customer.",
       },
     ],
     packageId: "starter",
@@ -206,7 +214,7 @@ export const howtos: LandingContent[] = [
     related: [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
-      { label: "What Is an AI Receptionist", href: "/resources/what-is-an-ai-receptionist" },
+      { label: "What an AI Receptionist Is", href: "/ai-receptionist" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -220,7 +228,7 @@ export const howtos: LandingContent[] = [
       },
       {
         q: "Will it sound robotic?",
-        a: "Current voice AI (ElevenLabs, PlayHT voices) sounds close to human in normal conversation. Callers sometimes can't tell. The bigger factor is the script — a natural, conversational script matters more than the voice model.",
+        a: "Current voice models (ElevenLabs, PlayHT and similar) are clearly intelligible and sound professional. They are not indistinguishable from a person, and building toward that is the wrong goal — open with \"I'm the AI assistant for…\" instead. The script matters far more than the voice model: a natural, well-scoped script with honest limits beats a better voice reading a worse one.",
       },
     ],
     schema: "HowTo",
@@ -295,7 +303,7 @@ export const howtos: LandingContent[] = [
       },
       {
         q: "Will customers know they're talking to AI?",
-        a: "That depends on your policy. In Canada there's no legal requirement to disclose AI in customer service emails (as of 2024), but being transparent builds more trust than trying to hide it. Most of our clients use a light footer note: 'This reply was drafted with AI assistance.' Customers rarely object.",
+        a: "That depends on your policy. Canada has no blanket rule forcing you to label AI in a customer-service email, but the rules move — check the current position before you rely on it. Our recommendation is to disclose anyway, because getting caught hiding it costs more trust than declaring it ever does. A one-line footer such as 'This reply was drafted with AI assistance' is enough, and it also gives the customer an obvious reason to ask for a human."
       },
     ],
     schema: "HowTo",
@@ -352,7 +360,7 @@ export const howtos: LandingContent[] = [
   keywords: ["automate invoice reminders", "invoice reminder automation small business", "automated payment reminders", "invoice follow up automation canada", "small business invoice automation"],
   related: [
     { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
-    { label: "What Can AI Automate for a Small Business?", href: "/resources/what-can-ai-automate-small-business" },
+    { label: "AI Automation Examples for Small Business", href: "/resources/ai-automation-examples-for-small-business" },
     { label: "AI Lead Follow-Up Guide", href: "/resources/ai-lead-follow-up-guide" },
     { label: "AI Email Automation", href: "/services/ai-email-automation" },
     { label: "How to Automate Customer Replies", href: "/how-to/automate-customer-replies" },
@@ -384,166 +392,56 @@ export const howtos: LandingContent[] = [
   schema: "HowTo"
 },
   {
-    slug: "automate-youtube-shorts",
-    eyebrow: "How-to",
-    h1: "How to Automate YouTube Shorts From Your Long Videos",
-    title: "How to Automate YouTube Shorts (Step by Step) | Handbuilt",
-    description:
-      "Turn every long video into a week of Shorts automatically. A step-by-step way to clip, caption, reframe and schedule Shorts from your existing content.",
-    answer:
-      "To automate YouTube Shorts, set up a pipeline that scans each long video for high-retention, self-contained moments, clips them, adds captions, reframes them to vertical, and queues them as Shorts for review. Done right, one long upload becomes 5–10 Shorts a week with only a quick approval step from you.",
-    steps: [
-      "Define what makes a strong clip for your channel — a hook, a payoff, a self-contained point.",
-      "Use a clip-detection tool (or a built pipeline) to scan each long video for those moments.",
-      "Auto-caption each clip and reframe it from horizontal to vertical 9:16.",
-      "Draft a short title and hook for each clip so it stands alone in the feed.",
-      "Queue the clips as Shorts on a schedule and review them before they publish.",
-    ],
-    gets: [
-      "5–10 Shorts from every long video",
-      "Captions and vertical reframing done automatically",
-      "A steady discovery feed without extra filming",
-    ],
-    sections: [
-      {
-        heading: "Do it with tools, or have it built",
-        body: "You can stitch this together with off-the-shelf clip tools if you're comfortable maintaining them. If you'd rather it just run, Handbuilt builds the whole pipeline around your channel and clip style so you only approve the output.",
-      },
-    ],
-    keywords: ["how to automate youtube shorts", "automate shorts from long videos", "youtube shorts automation", "repurpose long video to shorts"],
-    related: [
-      { label: "AI YouTube Shorts Automation", href: "/creators/ai-youtube-shorts-automation" },
-      { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
-    ],
-    faqs: [
-      { q: "How many Shorts can one long video make?", a: "Typically 5–10, depending on length and how many self-contained moments it has. A 20-minute video usually yields a week's worth." },
-      { q: "Will this hurt my long-form views?", a: "Used well, Shorts drive new viewers to your long-form. Queue clips that tease the full video rather than give everything away." },
-    ],
-    ctaLabel: "Automate my Shorts",
-    schema: "HowTo",
-    icon: "Youtube"
-  },
-  {
-    slug: "build-faceless-content-system",
-    eyebrow: "How-to",
-    h1: "How to Build a Faceless Content System",
-    title: "How to Build a Faceless Content System (Step by Step) | Handbuilt",
-    description:
-      "A step-by-step blueprint for a faceless channel that produces at volume — research, scripts, licensed voiceover, visuals, editing and publishing, safely monetisable.",
-    answer:
-      "To build a faceless content system, connect five stages into one pipeline: topic research, scripting, licensed voiceover, visual assembly, and editing plus publishing. The key to lasting is using original scripts and licensed voices and assets so the channel stays monetisation-safe, and keeping a human approval step on quality.",
-    steps: [
-      "Pick a defined niche and format so every video follows a repeatable template.",
-      "Set up topic research that feeds a scripting step in a consistent voice.",
-      "Convert scripts to voiceover using a properly licensed voice (or a consented clone of your own).",
-      "Assemble visuals and b-roll from licensed or original sources to match the script.",
-      "Automate the edit, then queue finished videos for your review and scheduled upload.",
-    ],
-    gets: [
-      "A repeatable research → script → voice → visuals → edit pipeline",
-      "Licensed voice and assets so the channel is safe to monetise",
-      "Volume without doing every step by hand",
-    ],
-    sections: [
-      {
-        heading: "Staying monetisable",
-        body: "Faceless channels get demonetised when they rely on reused content, unlicensed assets or low-effort mass production. Original scripting, licensed voices and assets, and a human quality check are what keep a faceless channel eligible and growing. Handbuilt builds the full system with those guardrails in place.",
-      },
-    ],
-    keywords: ["how to build a faceless content system", "faceless youtube channel automation", "faceless content system", "automate faceless channel"],
-    related: [
-      { label: "AI Faceless Channel Automation", href: "/creators/ai-faceless-channel-automation" },
-      { label: "AI Text-to-Speech for Creators", href: "/creators/ai-text-to-speech-for-creators" },
-      { label: "AI Script Writing System", href: "/creators/ai-script-writing-system" },
-    ],
-    faqs: [
-      { q: "Are faceless channels allowed to monetise?", a: "Yes, when the content is original and adds value. Platforms penalise reused or low-effort mass-produced content, not faceless formats themselves." },
-      { q: "Do I need to be technical to run one?", a: "To build and maintain the pipeline, usually yes. Handbuilt builds it for you so you direct the channel and approve videos without wiring the tools yourself." },
-    ],
-    ctaLabel: "Build my faceless system",
-    schema: "HowTo",
-    icon: "Film"
-  },
-  {
-    slug: "automate-missed-calls",
-    eyebrow: "How-to",
-    h1: "How to Automate Missed Calls for Your Business",
-    title: "How to Automate Missed Calls (Step by Step) | Handbuilt",
-    description:
-      "Stop losing jobs to voicemail. A step-by-step way to automatically text back every missed call and turn it into a booked lead instead of a lost one.",
-    answer:
-      "To automate missed calls, set up a system that instantly texts back anyone whose call you couldn't answer, then uses AI to answer their questions, qualify them, and book or route the lead. Done right, a missed call becomes a live conversation within seconds instead of a lost customer who never leaves a voicemail.",
-    steps: [
-      "Connect a missed-call trigger to your business phone number.",
-      "Set an instant, on-brand text-back — \"Sorry we missed you, how can we help?\"",
-      "Add an AI assistant to answer questions and qualify the lead in the text thread.",
-      "Let it book the job into your calendar, or route hot leads to you.",
-      "Track recovered leads so you can see the missed-call revenue you're now keeping.",
-    ],
-    gets: [
-      "Instant text-back on every missed call",
-      "Leads engaged before they call a competitor",
-      "Booking or routing built in",
-      "Visibility into recovered revenue",
-    ],
-    sections: [
-      {
-        heading: "DIY or done-for-you",
-        body: "Some phone systems and CRMs offer basic missed-call text-back you can set up yourself. For AI that actually answers, qualifies and books — trained on your business — Handbuilt builds the full system on your number so nothing falls through.",
-      },
-    ],
-    keywords: ["how to automate missed calls", "missed call text back setup", "automate missed call follow up", "stop losing missed calls"],
-    related: [
-      { label: "Missed-Call Automation", href: "/use-cases/missed-call-automation" },
-      { label: "AI Receptionist", href: "/ai-receptionist" },
-      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-    ],
-    faqs: [
-      { q: "How fast does the text go out?", a: "Within seconds of the missed call, while the caller still has their phone in hand — which is exactly why it recovers so many leads." },
-      { q: "Can it book the job, not just text?", a: "Yes — with an AI assistant in the thread, it can qualify the lead and book directly into your calendar, or hand complex cases to you." },
-    ],
-    ctaLabel: "Automate my missed calls",
-    schema: "HowTo",
-    icon: "Phone"
-  },
-  {
     slug: "automate-review-requests",
     eyebrow: "How-to",
     h1: "How to Automate Review Requests",
     title: "How to Automate Review Requests (Step by Step) | Handbuilt",
     description:
-      "Get more 5-star reviews on autopilot. A step-by-step way to automatically ask happy customers for reviews at the right moment and grow your local reputation.",
+      "How to ask every finished customer for a review automatically, and how to do it without breaking Google's rules — the compliance line, the timing, and what actually lifts response rates.",
     answer:
-      "To automate review requests, trigger a personalised ask right after a job is completed or an appointment ends, send it by text or email with a direct link to your review page, and follow up once if there's no response. Timing and a one-tap link are what turn happy customers into the reviews that win local search.",
+      "To automate review requests, fire a short personalised ask as soon as a job closes, send it by text or email with a one-tap link to your review page, and follow up once if nobody responds. The rule that matters more than any of the mechanics: send the same link to every customer. Filtering who gets asked based on how happy you think they are is review gating, it breaks Google's policies, and it can cost you the reviews you already have.",
+    pain:
+      "You do good work and have a handful of reviews, because asking feels awkward and you are onto the next job before you remember. Meanwhile the one unhappy customer you ever had found the review page without any prompting at all.",
     steps: [
-      "Pick the trigger — job completed, invoice paid, or appointment finished.",
-      "Send a short, personalised request by text or email with a direct review link.",
-      "Make it one tap — link straight to your Google (or preferred) review page.",
-      "Follow up once, politely, if there's no response after a day or two.",
-      "Give every customer the same public review link, and offer a private feedback channel alongside it.",
+      "Pick the trigger — job completed, invoice paid, or appointment finished. Closest to the moment of satisfaction wins.",
+      "Wait a short, deliberate delay — long enough that the crew has left, short enough that the job is still fresh. An hour or two suits most trades.",
+      "Send a short, personalised request by text or email that references the actual job, not a generic template.",
+      "Link straight to your Google review page so it is one tap, not a search.",
+      "Send the same link to everyone. No screening, no satisfaction question deciding who gets asked.",
+      "Offer a private feedback channel alongside the public link, so an unhappy customer can reach you directly as well — not instead.",
+      "Follow up once, politely, after a day or two. Then stop.",
     ],
     gets: [
-      "Automatic review asks at the perfect moment",
-      "One-tap links that lift response rates",
-      "A gentle follow-up that catches non-responders",
-      "Private routing for unhappy feedback",
+      "An automatic ask after every finished job, by SMS and/or email",
+      "One-tap links that remove the friction most people never get past",
+      "A single gentle follow-up that catches the non-responders",
+      "A private channel so problems reach you directly as well as publicly",
     ],
     sections: [
       {
+        heading: "The compliance line, stated plainly",
+        body: "This is the part most review-automation marketing gets wrong, so here it is directly.\n\nAsking every customer for an honest review is fine and encouraged. Asking only the customers you predict will say something nice is review gating. Google's policies prohibit it, and the enforcement risk is not theoretical — it can affect the reviews already on your profile, which is a far worse outcome than having fewer reviews.\n\nThe common dressed-up version is a tool that asks 'how did we do?' first and only shows the Google link to people who answer positively, routing everyone else to a private form. That is gating with an extra step. If a product sells you 'sentiment routing' or 'catch the unhappy ones before they post', that is what it means.\n\nThe compliant pattern is genuinely simple: everyone gets the same link, and you additionally give them a private way to tell you if something went wrong. Both, not either.",
+      },
+      {
         heading: "Why timing and routing matter",
-        body: "Ask at the moment a customer is happiest — right after the work is done — and make leaving a review effortless. Every customer gets the same public review link. Offering a private feedback option alongside it lets you hear about problems too and protects your rating. We build both into the flow.",
+        body: "Ask when the customer is happiest — right after the work is done — and make leaving the review effortless. Most review requests fail on friction rather than goodwill: a customer who has to open Google, search your business name and find the review button will not do it from a job site parking lot, no matter how pleased they are.\n\nThe private channel is worth as much as the public one. It is how you hear about a problem while you can still fix it, and a customer who feels heard privately often posts publicly anyway.",
+      },
+      {
+        heading: "What no tool can do for you",
+        body: "No system can post a review on a customer's behalf. Only the customer can, from their own account — that is enforced by the platform, not a limitation of the software. Any product implying otherwise is describing something that does not exist, or something you do not want any part of.\n\nWhat automation actually does is narrow: it makes sure the ask goes out every single time, worded well, at the right moment, with the friction removed. That is the entire mechanism. It is also, in practice, the thing that never happens manually.",
       },
     ],
-    keywords: ["how to automate review requests", "automate google reviews", "review request automation", "get more reviews automatically"],
+    keywords: ["how to automate review requests", "automate google reviews", "review request automation", "get more reviews automatically", "review gating google policy"],
     related: [
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Google Business Profile Lead Automation", href: "/use-cases/google-business-profile-lead-automation" },
       { label: "Best AI Automations for Service Businesses", href: "/resources/best-ai-automations-for-service-businesses" },
     ],
     faqs: [
-      { q: "Does automating reviews violate Google's rules?", a: "Asking all customers for honest reviews is fine; selectively soliciting only positive ones or gating reviews can violate platform policies. We build a compliant flow that asks everyone and routes concerns to you privately." },
-      { q: "Which platforms can it request reviews on?", a: "Most commonly Google, plus others like Facebook or industry sites. We point the flow at wherever reviews matter most for your business." },
+      { q: "Does automating reviews violate Google's rules?", a: "Automating the ask does not. Filtering who gets asked does. Send every customer the same link and you are inside the rules; screen for likely-positive customers first and you are not, however the tool describes it." },
+      { q: "What about the customer who is going to leave one star?", a: "They get the same link as everyone else, and they also get a private channel that reaches you directly. You lose the ability to suppress them and gain the ability to hear about the problem early. That trade is both the compliant option and, over a year of reviews, the better one." },
+      { q: "Which platforms can it request reviews on?", a: "Most commonly Google, since that is what affects local search. Facebook or an industry site can be added where they matter for your trade. Note the wording: it requests reviews and directs customers to the right page — it cannot post them." },
+      { q: "How many requests should I send?", a: "The initial ask and one follow-up. Beyond that the return collapses and you start annoying people who already decided. Stop after two." },
     ],
     ctaLabel: "Automate my reviews",
     schema: "HowTo",

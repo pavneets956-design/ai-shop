@@ -261,7 +261,7 @@ export const shopProducts: ShopProduct[] = [
     accent: "electric",
     problem: "You're stitching together a receptionist, texting, booking, reviews and follow-ups — and still losing leads in the gaps.",
     outcome:
-      "One system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — run for you, on one dashboard. Never lose a lead again.",
+      "One system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — run for you, on one dashboard, instead of five tools that don't talk to each other.",
     forWho: "Busy local businesses ready to run the whole front desk on autopilot.",
     integrations: ["Twilio", "Google Calendar", "Your CRM", "Stripe", "Google Business"],
     delivery: "Done-for-you",

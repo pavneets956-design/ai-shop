@@ -48,7 +48,7 @@ export const comparisons: LandingContent[] = [
     related: [
       { label: "Custom AI App Development", href: "/custom-ai-app-development" },
       { label: "Compare: Custom AI App vs Template", href: "/compare/custom-ai-app-vs-template" },
-      { label: "Services: Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -104,7 +104,7 @@ export const comparisons: LandingContent[] = [
     comparison: {
       alternativeLabel: "DIY (build it yourself)",
       rows: [
-        { factor: "Cash cost", handbuilt: "CAD $1,500–$3,500", alternative: "Tool subscriptions: $0–$100/mo" },
+        { factor: "Cash cost", handbuilt: "CAD $1,500 (one worker) to $3,500–$7,500 (connected system)", alternative: "Tool subscriptions: $0–$100/mo" },
         { factor: "Time cost", handbuilt: "1–3 weeks, minimal from you", alternative: "40–100+ hours of your own time" },
         { factor: "Technical skill needed", handbuilt: "None", alternative: "Medium to high depending on complexity" },
         { factor: "Reliability", handbuilt: "Tested, monitored, maintained", alternative: "Depends entirely on your skill and time" },
@@ -135,75 +135,6 @@ export const comparisons: LandingContent[] = [
     ],
     schema: "Comparison",
     icon: "Workflow",
-  },
-  {
-    slug: "ai-receptionist-vs-human-receptionist",
-    eyebrow: "Compare",
-    h1: "AI Receptionist vs Hiring a Human Receptionist",
-    title: "AI Receptionist vs Human Receptionist | Handbuilt",
-    description: "A human receptionist handles nuance better. An AI receptionist works 24/7 for a fraction of the cost. Here is the honest trade-off.",
-    answer:
-      "A human receptionist is genuinely better at complex, emotional, or unusual situations. If your front desk handles sensitive conversations daily, do not replace that role with AI. But for routine call answering, booking, FAQs, and after-hours coverage, an AI receptionist from Handbuilt (CAD $1,500 setup) covers the predictable 80% at a cost no hire can match.",
-    sections: [
-      {
-        heading: "When a human receptionist is the right call",
-        body: "Some front-desk work requires human judgment. AI is not the answer for every scenario.",
-        bullets: [
-          "Calls regularly involve emotionally sensitive topics",
-          "Your clients expect and value a personal relationship with staff",
-          "Calls are highly varied and unpredictable in nature",
-          "You operate in a regulated environment requiring human accountability",
-        ],
-      },
-      {
-        heading: "When an AI receptionist wins",
-        body: "For the predictable, repeatable part of your call volume, AI is faster, cheaper, and always available.",
-        bullets: [
-          "High call volume of routine questions, bookings, or confirmations",
-          "You are missing calls after hours or during busy periods",
-          "You want to reduce front-desk cost without reducing coverage",
-          "Your call types are consistent enough to script well",
-        ],
-      },
-    ],
-    comparison: {
-      alternativeLabel: "Hiring a human receptionist",
-      rows: [
-        { factor: "Setup cost", handbuilt: "CAD $1,500 one-time", alternative: "Recruiting, onboarding: $500–$2,000+" },
-        { factor: "Monthly cost", handbuilt: "Optional Care Plan $99/mo", alternative: "CAD $3,000–$4,500/mo salary + benefits" },
-        { factor: "Availability", handbuilt: "24/7, including weekends and holidays", alternative: "Business hours, with sick days and turnover" },
-        { factor: "Complex call handling", handbuilt: "Limited — handles scripted scenarios well", alternative: "Excellent — human judgment and empathy" },
-        { factor: "Consistency", handbuilt: "Same answer every time", alternative: "Varies by staff and day" },
-        { factor: "Scalability", handbuilt: "Handles volume spikes without extra cost", alternative: "Requires hiring during busy periods" },
-      ],
-    },
-    packageId: "starter",
-    ctaLabel: "See the AI receptionist setup",
-    keywords: ["ai receptionist", "virtual receptionist small business", "ai vs human receptionist", "automated phone answering"],
-    related: [
-      { label: "AI Receptionist", href: "/ai-receptionist" },
-      { label: "Services: AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
-      { label: "Industries: Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
-      { label: "Compare: AI Automation vs Virtual Assistant", href: "/compare/ai-automation-vs-virtual-assistant" },
-    ],
-    faqs: [
-      {
-        q: "What happens when a caller asks something the AI cannot handle?",
-        a:
-          "The AI can be configured to escalate — transfer to a human, take a message, or book a callback. It does not leave callers stranded.",
-      },
-      {
-        q: "How long does it take to set up?",
-        a: "Typically one week from kickoff to live. Handbuilt handles the configuration, scripting, and testing.",
-      },
-      {
-        q: "Will callers know they are talking to an AI?",
-        a:
-          "That depends on your preference. Handbuilt can configure either — a disclosed AI assistant or a more natural-sounding voice. Disclosure is generally the more trusted approach.",
-      },
-    ],
-    schema: "Comparison",
-    icon: "PhoneCall",
   },
   {
     slug: "ai-chatbot-vs-live-chat",
@@ -303,7 +234,7 @@ export const comparisons: LandingContent[] = [
     comparison: {
       alternativeLabel: "Hiring a virtual assistant",
       rows: [
-        { factor: "Setup cost", handbuilt: "CAD $1,500–$3,500 one-time", alternative: "Onboarding: $0–$500" },
+        { factor: "Setup cost", handbuilt: "CAD $1,500 (one worker) to $3,500–$7,500 (connected system), one-time", alternative: "Onboarding: $0–$500" },
         { factor: "Monthly cost", handbuilt: "Optional Care Plan $99/mo", alternative: "CAD $400–$2,500/mo depending on hours" },
         { factor: "Task flexibility", handbuilt: "Fixed to the automated workflow", alternative: "High — can handle varied, unscripted work" },
         { factor: "Speed of execution", handbuilt: "Instant, runs on schedule", alternative: "During their working hours" },
@@ -342,7 +273,7 @@ export const comparisons: LandingContent[] = [
     title: "Custom AI App vs Template or No-Code Builder | Handbuilt",
     description: "No-code templates are fast and cheap to start. Custom AI apps handle complexity and ownership that templates cannot. Here is when each fits.",
     answer:
-      "Templates and no-code builders are excellent for standard use cases — landing pages, simple forms, basic chatbots. When your requirements include proprietary logic, sensitive data handling, or deep integration with your own systems, a custom build from Handbuilt (from CAD $7,500) is the only route that gives you real ownership and control.",
+      "Templates and no-code builders are excellent for standard use cases — landing pages, simple forms, basic chatbots. When your requirements include proprietary logic, sensitive data handling, or deep integration with your own systems, a custom build from Handbuilt (from CAD $10,000) is the only route that gives you real ownership and control.",
     sections: [
       {
         heading: "When a template or no-code builder is fine",
@@ -382,7 +313,7 @@ export const comparisons: LandingContent[] = [
     related: [
       { label: "Custom AI App Development", href: "/custom-ai-app-development" },
       { label: "Compare: Custom AI Tool vs SaaS", href: "/compare/custom-ai-tool-vs-saas" },
-      { label: "Services: Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -438,7 +369,7 @@ export const comparisons: LandingContent[] = [
     comparison: {
       alternativeLabel: "Doing admin manually",
       rows: [
-        { factor: "Setup cost", handbuilt: "CAD $1,500–$3,500 one-time", alternative: "$0" },
+        { factor: "Setup cost", handbuilt: "CAD $1,500 (one worker) to $3,500–$7,500 (connected system), one-time", alternative: "$0" },
         { factor: "Ongoing time cost", handbuilt: "Near zero after launch", alternative: "5–15 hrs/week depending on volume" },
         { factor: "Error rate", handbuilt: "Consistent once tested", alternative: "Human error increases with fatigue and volume" },
         { factor: "After-hours coverage", handbuilt: "Runs on schedule, any time", alternative: "Only during working hours" },
@@ -503,7 +434,7 @@ export const comparisons: LandingContent[] = [
     comparison: {
       alternativeLabel: "Hiring another employee",
       rows: [
-        { factor: "Upfront cost", handbuilt: "CAD $1,500–$3,500 one-time", alternative: "Recruiting + onboarding: $2,000–$8,000+" },
+        { factor: "Upfront cost", handbuilt: "CAD $1,500 (one worker) to $3,500–$7,500 (connected system), one-time", alternative: "Recruiting + onboarding: $2,000–$8,000+" },
         { factor: "Ongoing cost", handbuilt: "Optional Care Plan $99/mo", alternative: "CAD $3,500–$6,000+/mo salary + benefits" },
         { factor: "Task flexibility", handbuilt: "Fixed to defined workflows", alternative: "High — adapts to new tasks and situations" },
         { factor: "Availability", handbuilt: "24/7, no holidays or sick days", alternative: "Business hours, with PTO and turnover risk" },
@@ -517,7 +448,7 @@ export const comparisons: LandingContent[] = [
     related: [
       { label: "AI Automation Agency", href: "/ai-automation-agency" },
       { label: "Compare: AI Automation vs Virtual Assistant", href: "/compare/ai-automation-vs-virtual-assistant" },
-      { label: "Services: Custom Business Automation", href: "/services/custom-business-automation" },
+      { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "Solutions", href: "/solutions" },
     ],
     faqs: [
@@ -546,7 +477,7 @@ export const comparisons: LandingContent[] = [
   h1: "AI Receptionist or Virtual Receptionist — Which Fits Your Business?",
   title: "AI Receptionist vs Virtual Receptionist",
   description: "Honest comparison of AI receptionists and virtual receptionist services for Canadian small businesses. Fixed pricing, no lock-in, real trade-offs.",
-  answer: "A virtual receptionist is a real person answering remotely — warm, flexible, proven. An AI receptionist is software that picks up instantly, 24/7, at lower ongoing cost. If your calls follow predictable patterns, AI handles them well. If every call is unique and emotional, a human wins. Handbuilt installs a custom AI receptionist from CAD $1,500.",
+  answer: "A virtual receptionist is a real person answering remotely — warm, flexible, and long-established. An AI receptionist is software that picks up instantly, 24/7, at lower ongoing cost. If your calls follow predictable patterns, AI handles them well. If every call is unique and emotional, a human wins. Handbuilt installs a custom AI receptionist from CAD $1,500.",
   pain: "You are paying hundreds a month for a virtual receptionist and wondering whether AI could handle the same calls for less.",
   sections: [
     {
@@ -580,7 +511,7 @@ export const comparisons: LandingContent[] = [
   ctaLabel: "Get a fixed quote",
   keywords: ["ai receptionist vs virtual receptionist", "virtual receptionist alternative", "ai phone answering canada", "ai receptionist cost"],
   related: [
-    { label: "What Is an AI Receptionist?", href: "/resources/what-is-an-ai-receptionist" },
+    { label: "What an AI Receptionist Is", href: "/ai-receptionist" },
     { label: "AI Receptionist Cost in Canada", href: "/resources/ai-receptionist-cost" },
     { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
@@ -626,7 +557,7 @@ export const comparisons: LandingContent[] = [
     },
     {
       heading: "When Handbuilt wins",
-      body: "If your call volume fluctuates — seasonal spikes, marketing campaigns, unpredictable busy days — per-minute billing punishes growth. An AI receptionist handles unlimited calls for a fixed build cost. You also get consistency: the AI never has an off day, never paraphrases your script wrong, and never puts a caller on hold because another line is ringing.",
+      body: "If your call volume fluctuates — seasonal spikes, marketing campaigns, unpredictable busy days — per-minute billing punishes growth, because the months you most want coverage are the months it costs most. A one-time build does not move with volume.\n\nThe second difference is consistency of a specific kind: it delivers the same script every time and takes several calls at once without a hold queue. That is a genuine advantage over a small answering service with two operators on a Monday morning. It is not an advantage over a human on the calls that need judgment, and it is worth being clear about which of your calls are which before choosing.",
       bullets: [
         "Unlimited calls at no per-minute cost",
         "Consistent delivery of your exact script every time",
@@ -672,7 +603,7 @@ export const comparisons: LandingContent[] = [
     },
     {
       q: "What happens during a service outage?",
-      a: "AI receptionists run on cloud infrastructure with high uptime — typically above 99.9%. If there is an outage, calls can be configured to fall back to your voicemail or a cell phone, just like you would configure with any answering service."
+      a: "The honest answer is that both models fail sometimes and the thing that matters is what happens next. No specific uptime figure is quoted here, because the number depends on the telephony carrier, the model provider and the hosting — three parties, none of them this studio. What is configurable, and what you should insist on, is the fallback: calls roll to a cell or to voicemail when the agent is unreachable, and somebody is alerted. Worth asking any vendor specifically about the silent-failure case — an agent that answers, greets the caller and then stops responding, which is the failure that actually costs you a customer."
     }
   ],
   schema: "Comparison",
@@ -721,7 +652,7 @@ export const comparisons: LandingContent[] = [
     { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
     { label: "Custom AI App Development", href: "/custom-ai-app-development" },
     { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
-    { label: "Best AI Tools for Small Business", href: "/resources/best-ai-tools-for-small-business" },
+    { label: "Best AI Automations for Service Businesses", href: "/resources/best-ai-automations-for-service-businesses" },
     { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" }
   ],
   faqs: [
@@ -748,83 +679,6 @@ export const comparisons: LandingContent[] = [
   ],
   schema: "Comparison",
   icon: "Bot"
-},
-{
-  slug: "custom-ai-automation-vs-zapier",
-  eyebrow: "Compare",
-  h1: "Custom AI Automation vs Zapier — Build It or Wire It?",
-  title: "Custom AI Automation vs Zapier Workflows",
-  description: "Zapier handles simple automations fast. When workflows get complex, a custom-built system owns the process. Honest comparison with fixed pricing.",
-  answer: "If your automation is a simple linear trigger — new row, send email, update spreadsheet — Zapier does it faster and cheaper than anything custom. When the logic branches, needs database lookups, or has to talk to systems Zapier does not support, a custom build owns the workflow. Handbuilt builds custom automations from CAD $3,500.",
-  pain: "Your Zapier workflows are getting complex, brittle, and expensive — and you still cannot do the one thing you actually need.",
-  sections: [
-    {
-      heading: "When Zapier is the right call",
-      body: "Zapier is excellent for quick, linear automations between popular apps. If your workflow is 'when X happens in App A, do Y in App B,' Zapier sets it up in minutes with no code. At low task volumes, the free or starter tiers are genuinely cheap. For teams that need dozens of simple automations fast, it is hard to beat.",
-      bullets: [
-        "Minutes to set up a basic trigger-action workflow",
-        "Thousands of pre-built app integrations",
-        "No developer needed for simple automations",
-        "Free tier available for low-volume use"
-      ]
-    },
-    {
-      heading: "When Handbuilt wins",
-      body: "When workflows branch — if this, check that, look up a database, apply business logic, then decide — Zapier's linear model gets painful. Multi-step Zaps with filters and paths become fragile, hard to debug, and expensive at scale. A custom automation runs your exact logic, connects to any system including internal tools, and has no per-task ceiling.",
-      bullets: [
-        "Complex branching logic that Zapier paths cannot express cleanly",
-        "Connections to internal databases, APIs, or legacy systems",
-        "No per-task pricing — runs as much as it needs to",
-        "Full ownership: no vendor lock-in, no surprise price hikes"
-      ]
-    }
-  ],
-  comparison: {
-    alternativeLabel: "Zapier",
-    rows: [
-      { factor: "Upfront cost", handbuilt: "From CAD $3,500 one-time build", alternative: "Typically $0 setup (self-serve)" },
-      { factor: "Ongoing cost", handbuilt: "Optional Care Plan CAD $99/mo", alternative: "Around $20–$750+/mo depending on plan and task volume" },
-      { factor: "Complex logic", handbuilt: "Any branching, loops, or conditional logic you need", alternative: "Linear paths and filters; complex logic gets brittle" },
-      { factor: "Integrations", handbuilt: "Any system with an API, including internal tools", alternative: "Thousands of pre-built connectors; custom connections limited" },
-      { factor: "Time to live", handbuilt: "Typically 1–3 weeks for a custom build", alternative: "Minutes for simple workflows" },
-      { factor: "Ownership", handbuilt: "You own the code — runs on your infrastructure", alternative: "Platform-dependent; workflows locked inside Zapier" },
-      { factor: "Who controls pricing", handbuilt: "You — fixed quote, no per-task fees", alternative: "Zapier — pricing tied to task volume and plan tier" }
-    ]
-  },
-  packageId: "business",
-  ctaLabel: "Get a fixed quote",
-  keywords: ["custom ai automation vs zapier", "zapier alternative", "zapier too expensive", "custom workflow automation canada"],
-  related: [
-    { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
-    { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
-    { label: "AI Automation Agency", href: "/ai-automation-agency" },
-    { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" },
-    { label: "Custom Business Automation", href: "/services/custom-business-automation" }
-  ],
-  faqs: [
-    {
-      q: "Should I try Zapier first before going custom?",
-      a: "If your workflow is simple and fits Zapier's model, yes — start there. Many businesses only discover they need custom automation after hitting Zapier's limits on logic, volume, or integrations. That is a perfectly reasonable path."
-    },
-    {
-      q: "Can Handbuilt replace all my Zapier workflows?",
-      a: "It can, but it does not always make sense to. Simple trigger-action automations are often cheaper to leave on Zapier. The value of custom automation is in the complex workflows Zapier cannot handle well, or where per-task pricing is eating your budget."
-    },
-    {
-      q: "How long does a custom automation take to build?",
-      a: "A typical Business-tier automation (CAD $3,500–$7,500) takes two to three weeks. Simpler single-workflow builds can be faster. Handbuilt gives you a fixed timeline in the quote."
-    },
-    {
-      q: "What if I need to change the automation later?",
-      a: "You own the code, so you or any developer can modify it. The optional Care Plan (CAD $99/mo) covers ongoing adjustments, monitoring, and updates if you prefer Handbuilt to maintain it."
-    },
-    {
-      q: "Is Zapier really that expensive at scale?",
-      a: "It can be. Zapier's pricing is tied to task volume — the number of individual actions your automations run. A workflow that fires hundreds of times a day can push you into higher tiers quickly. Check your current task usage against their pricing tiers to see where you land."
-    }
-  ],
-  schema: "Comparison",
-  icon: "Zap"
 },
 {
   slug: "gohighlevel-ai-vs-custom-ai-automation",
@@ -1064,7 +918,6 @@ export const comparisons: LandingContent[] = [
       { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
       { label: "Website Chatbot Service", href: "/services/ai-chatbot-for-website" },
       { label: "AI Voice Agent", href: "/services/ai-voice-agent" },
-      { label: "What Is an AI Receptionist?", href: "/resources/what-is-an-ai-receptionist" },
     ],
     faqs: [
       {
@@ -1073,7 +926,7 @@ export const comparisons: LandingContent[] = [
       },
       {
         q: "Which one is cheaper to build?",
-        a: "They are comparable. A basic chatbot starts at $1,500 CAD; a basic receptionist also starts around $1,500. More complex receptionist builds with multi-line routing and CRM integration run up to $2,500.",
+        a: "They are comparable. A basic chatbot starts at $1,500 CAD; a basic receptionist also starts around $1,500. More complex receptionist builds — multi-line routing, CRM writes, calendar booking — are scoped as a Business AI System at $3,500–$7,500 CAD.",
       },
       {
         q: "Do I need both?",
@@ -1095,11 +948,11 @@ export const comparisons: LandingContent[] = [
     slug: "best-ai-receptionist-small-business-canada",
     eyebrow: "Compare",
     h1: "Finding the Right AI Receptionist for Your Small Business",
-    title: "Best AI Receptionist for Small Business Canada",
+    title: "Best AI Answering Service for a Canadian Small Business",
     description:
       "What to look for in an AI receptionist for a Canadian small business. Honest comparison of monthly SaaS apps versus custom-built solutions like Handbuilt.",
     answer:
-      "The best AI receptionist for a small business in Canada depends on your call volume, booking complexity, and budget. Monthly SaaS apps typically run around $50–$500+/mo and work for simple call routing. A custom build like Handbuilt ($1,500–$3,500 CAD, one-time) is trained on your specific services and booking logic, and you own it outright.",
+      "The best AI receptionist for a small business in Canada depends on your call volume, booking complexity, and budget. Monthly SaaS apps typically run around $50–$500+/mo and work for simple call routing. A custom build like Handbuilt — from $1,500 CAD for a single worker, or $3,500–$7,500 for a connected system, one-time — is trained on your specific services and booking logic, and you own it outright. Named Canadian options worth pricing against each other include Benny (from about $99/mo), VoiceFleet (about CA$149/mo) and Mihron AI (about CA$299/mo); Jobber bundles one at $99/mo if you already pay for Jobber.",
     pain: "You are missing calls and losing jobs, but the AI receptionist market is confusing — dozens of apps, wildly different pricing, and no clear way to compare.",
     sections: [
       {
@@ -1150,7 +1003,6 @@ export const comparisons: LandingContent[] = [
     related: [
       { label: "AI Receptionist", href: "/ai-receptionist" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-      { label: "What Is an AI Receptionist?", href: "/resources/what-is-an-ai-receptionist" },
       { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
       { label: "AI Receptionist vs Answering Service", href: "/compare/ai-receptionist-vs-answering-service" },
       { label: "AI Receptionist Cost", href: "/resources/ai-receptionist-cost" },
@@ -1192,7 +1044,7 @@ export const comparisons: LandingContent[] = [
     description:
       "AI receptionist pricing in Canada: monthly SaaS apps, custom builds, and human answering services compared. Handbuilt custom builds start at $1,500 CAD.",
     answer:
-      "AI receptionist pricing in Canada typically falls into three categories: monthly SaaS apps (around $50–$500+/mo at time of writing), custom one-time builds ($1,500–$2,500 at Handbuilt), and traditional human answering services ($200–$1,500+/mo). The right choice depends on your call complexity, integration needs, and whether you prefer ongoing fees or a one-time build cost.",
+      "AI receptionist pricing in Canada typically falls into three categories: monthly SaaS apps (around $50–$500+/mo at time of writing), custom one-time builds ($1,500 for a single worker up to $3,500–$7,500 for a connected system, at Handbuilt), and traditional human answering services ($200–$1,500+/mo). The right choice depends on your call complexity, integration needs, and whether you prefer ongoing fees or a one-time build cost.",
     pain: "You have seen AI receptionist prices ranging from $30/mo to $10,000+ and have no idea what is normal or what you are actually paying for.",
     sections: [
       {
@@ -1254,7 +1106,7 @@ export const comparisons: LandingContent[] = [
       { label: "AI Receptionist", href: "/ai-receptionist" },
       { label: "AI Receptionist Cost", href: "/resources/ai-receptionist-cost" },
       { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
-      { label: "AI Receptionist vs Human Receptionist", href: "/compare/ai-receptionist-vs-human-receptionist" },
+      { label: "AI Receptionist vs Virtual Receptionist", href: "/compare/ai-receptionist-vs-virtual-receptionist" },
       { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -1468,11 +1320,9 @@ export const comparisons: LandingContent[] = [
       "make vs zapier for small business",
     ],
     related: [
-      { label: "Custom AI vs Zapier", href: "/compare/custom-ai-automation-vs-zapier" },
       { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
       { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
-      { label: "Custom Business Automation", href: "/services/custom-business-automation" },
-      { label: "What Can AI Automate?", href: "/resources/what-can-ai-automate-small-business" },
+      { label: "AI Automation Examples for Small Business", href: "/resources/ai-automation-examples-for-small-business" },
     ],
     faqs: [
       {
@@ -1481,7 +1331,7 @@ export const comparisons: LandingContent[] = [
       },
       {
         q: "When does custom become cheaper than Zapier or Make?",
-        a: "When your monthly platform bill consistently exceeds the one-time build cost divided over your expected usage period. If you are paying $200/mo on Zapier and a custom build costs $2,000, the build pays for itself in about 10 months.",
+        a: "When your monthly platform bill consistently exceeds the one-time build cost divided over your expected usage period. If you are paying $200/mo on Zapier, a $1,500 Starter build pays for itself in about eight months and a $3,500 Business build in about eighteen.",
       },
       {
         q: "Can a custom build do everything Zapier does?",
@@ -1502,130 +1352,6 @@ export const comparisons: LandingContent[] = [
     ],
     schema: "Comparison" as const,
   },
-  {
-    slug: "ai-consultant-vs-ai-automation-agency",
-    eyebrow: "Compare",
-    h1: "AI Consultant vs AI Automation Agency",
-    title: "AI Consultant vs AI Automation Agency | Handbuilt",
-    description:
-      "A consultant advises; an automation agency builds. Here's when you need strategy, when you need something installed, and how to avoid paying for advice you can't use.",
-    answer:
-      "An AI consultant gives you advice, a strategy and a roadmap — you (or someone else) still have to build it. An AI automation agency scopes, builds and installs the working system. If you have a team who can execute, a consultant may be enough; if you want the outcome without hiring developers, a done-for-you builder like Handbuilt is usually the better spend, starting at $1,500 CAD.",
-    sections: [
-      {
-        heading: "When a consultant makes sense",
-        body: "Consulting is worth it when the gap is knowledge, not execution — you have people who can build, they just need direction.",
-        bullets: [
-          "You have in-house developers or a technical team",
-          "You need an AI strategy or roadmap across a larger org",
-          "You want a second opinion before committing budget",
-          "The main risk is choosing the wrong direction, not building",
-        ],
-      },
-      {
-        heading: "When you want it built and installed",
-        body: "For most small businesses the gap is execution — you don't want a slide deck, you want the AI receptionist answering calls next week.",
-        bullets: [
-          "You want the working system, not a plan to build one",
-          "You don't have developers to hand a roadmap to",
-          "You'd rather pay once for an outcome than by the hour for advice",
-          "You want one person accountable for the result",
-        ],
-      },
-    ],
-    comparison: {
-      alternativeLabel: "AI Consultant",
-      rows: [
-        { factor: "What you get", handbuilt: "A built, installed, working AI system", alternative: "Advice, strategy and a roadmap" },
-        { factor: "Who executes", handbuilt: "We build it for you", alternative: "You or a separate dev team" },
-        { factor: "Pricing", handbuilt: "Flat CAD price per build, from $1,500", alternative: "Hourly or retainer, output not guaranteed" },
-        { factor: "Time to a working result", handbuilt: "Days to weeks", alternative: "You still have to build after the advice" },
-        { factor: "Accountability", handbuilt: "One builder owns the outcome", alternative: "Advisor isn't on the hook for the build" },
-        { factor: "Best for", handbuilt: "SMBs who want the outcome done", alternative: "Teams that can execute themselves" },
-      ],
-    },
-    packageId: "starter",
-    ctaLabel: "Get it built, not just advised",
-    keywords: [
-      "ai consultant vs ai automation agency",
-      "ai consultant or agency",
-      "ai consulting vs done for you",
-      "hire ai consultant or builder",
-    ],
-    related: [
-      { label: "AI Automation Agency", href: "/ai-automation-agency" },
-      { label: "AI Built By Hand vs Generic AI Agency", href: "/compare/ai-built-by-hand-vs-generic-ai-agency" },
-      { label: "Done-for-You AI Automation", href: "/done-for-you-ai-automation" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "Can't I just get advice and build it myself?", a: "If you have the technical team, yes. Most small businesses don't — so a roadmap becomes shelfware. Done-for-you gets you the working result without hiring developers." },
-      { q: "Do you also advise, or only build?", a: "The discovery call includes the strategy — which automation pays back fastest — but you don't pay for advice you then have to execute. The plan comes with the build." },
-    ],
-    schema: "Comparison" as const,
-  },
-  {
-    slug: "ai-built-by-hand-vs-generic-ai-agency",
-    eyebrow: "Compare",
-    h1: "Handbuilt vs a Generic AI Agency",
-    title: "Handbuilt vs a Generic AI Agency | Handbuilt",
-    description:
-      "Most AI agencies resell the same templated funnel to everyone. Handbuilt builds one system, by hand, around your real business — and one person owns the result.",
-    answer:
-      "A generic AI agency typically resells a templated, one-size-fits-all setup, hands you off between sales and support, and locks you into monthly fees. Handbuilt is one builder who scopes and builds a custom system around your real business, at a fixed CAD price, that you own. You trade agency scale for a build that actually fits and one person who's accountable.",
-    sections: [
-      {
-        heading: "What 'generic agency' usually means",
-        body: "Not always, but often, the model is volume: sell the same package widely, deliver a template, and monetise the monthly.",
-        bullets: [
-          "The same templated funnel resold to every client",
-          "Sales rep, then account manager, then support queue",
-          "Monthly fees you can't cancel without losing everything",
-          "Little understanding of your specific operation",
-        ],
-      },
-      {
-        heading: "What handbuilt means here",
-        body: "One builder, fewer clients at once, each system built around the real business — intentionally the opposite of the volume model.",
-        bullets: [
-          "A system scoped and built around how you actually work",
-          "One person from discovery to handoff, reachable directly",
-          "A fixed CAD price and a build you own outright",
-          "Optional Care Plan for upkeep — not a lock-in",
-        ],
-      },
-    ],
-    comparison: {
-      alternativeLabel: "Generic AI agency",
-      rows: [
-        { factor: "The build", handbuilt: "Custom, built around your business", alternative: "Templated, resold to everyone" },
-        { factor: "Who you deal with", handbuilt: "One builder, start to finish", alternative: "Sales → account manager → support" },
-        { factor: "Pricing", handbuilt: "Fixed CAD price, you own it", alternative: "Recurring fees, often locked in" },
-        { factor: "Ownership", handbuilt: "You own the system", alternative: "Stops working if you stop paying" },
-        { factor: "Fit to your business", handbuilt: "Built around your real workflow", alternative: "You adapt to their template" },
-        { factor: "Capacity", handbuilt: "Fewer clients, done properly", alternative: "High volume, thin attention" },
-      ],
-    },
-    packageId: "starter",
-    ctaLabel: "Get a build that fits",
-    keywords: [
-      "custom ai vs generic ai agency",
-      "handbuilt ai vs agency",
-      "bespoke ai build vs template",
-      "ai agency alternative small business",
-    ],
-    related: [
-      { label: "AI Consultant vs AI Automation Agency", href: "/compare/ai-consultant-vs-ai-automation-agency" },
-      { label: "AI Automation Agency vs DIY", href: "/compare/ai-automation-agency-vs-diy" },
-      { label: "Custom AI Tool vs SaaS", href: "/compare/custom-ai-tool-vs-saas" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "Aren't agencies more reliable than one person?", a: "Agencies offer scale, but for a small business that often means being one templated client of hundreds. Handbuilt takes on fewer projects so each is built properly — the trade-off is intentional." },
-      { q: "What if I need ongoing help after launch?", a: "There's an optional $99/mo Care Plan for monitoring and tweaks — but you own the system either way, so it keeps working whether or not you subscribe." },
-    ],
-    schema: "Comparison" as const,
-  }
 ];
 
 export function getComparison(slug: string): LandingContent | undefined {

@@ -2,7 +2,7 @@ import type { LandingContent } from "./landing";
 import { creatorsB } from "./_creators_b";
 
 // Creator-economy landing pages (the /creators page type). Global/remote
-// framing — no local geo modifiers, since creator work is delivered worldwide.
+// framing — no local geo modifiers, since creator work is delivered remotely.
 // Voice, avatar and fan-messaging pages are written strictly for legal,
 // consensual, non-deceptive use, with consent / likeness / platform-rules
 // language baked in. batch A (1–10) here; batch B in _creators_b.ts.
@@ -56,7 +56,7 @@ const creatorsA: LandingContent[] = [
       },
       {
         q: "Do you work with creators outside Canada?",
-        a: "Yes — creator work is fully remote and we build for creators worldwide. Pricing is in CAD with USD and other quotes on request.",
+        a: "Yes — creator work is fully remote, so where you are is not a constraint. Pricing is quoted in CAD, with USD or another currency on request. Time-zone overlap for calls is the only practical limit; Handbuilt works Pacific time.",
       },
     ],
     schema: "Service",
@@ -64,6 +64,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-video-editing-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Video Editing Automation",
     title: "AI Video Editing Automation for Creators | Handbuilt",
@@ -159,6 +162,10 @@ const creatorsA: LandingContent[] = [
         q: "Does it post automatically?",
         a: "It can, at peak times — or leave you a queue to approve. Most creators start with approval and move to scheduled once they trust it.",
       },
+      {
+        q: "Will AI-assisted TikToks get flagged or throttled?",
+        a: "Low-effort, obviously synthetic spam can be — that is what the unoriginal-content rules target. Original ideas produced with AI assistance, in your voice, are not treated differently from anything else you post. The line platforms draw is effort and originality, not which tools touched the file. If a system is producing videos you would not put your own name on, that is the signal to slow it down.",
+      },
     ],
     schema: "Service",
     icon: "Video",
@@ -215,6 +222,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-youtube-video-workflow",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI YouTube Video Workflow",
     title: "AI YouTube Video Workflow — End to End | Handbuilt",
@@ -266,6 +276,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-podcast-clipping-system",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Podcast Clipping System",
     title: "AI Podcast Clipping System for Creators | Handbuilt",
@@ -316,6 +329,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-text-to-speech-for-creators",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Text-to-Speech for Creators",
     title: "AI Text-to-Speech Workflow for Creators | Handbuilt",
@@ -366,6 +382,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-voice-cloning-workflow",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Voice Cloning Workflow (Consent-First)",
     title: "AI Voice Cloning Workflow for Creators | Handbuilt",
@@ -420,6 +439,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-avatar-video-creation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Avatar Video Creation",
     title: "AI Avatar Video Creation for Creators | Handbuilt",
@@ -470,6 +492,9 @@ const creatorsA: LandingContent[] = [
   },
   {
     slug: "ai-faceless-channel-automation",
+    // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
+    // URL and content preserved; delete this flag to re-index (disposition §1.6, G2).
+    noindex: true,
     eyebrow: "For Creators",
     h1: "AI Faceless Channel Automation",
     title: "AI Faceless Channel Automation | Handbuilt",

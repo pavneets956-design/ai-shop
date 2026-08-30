@@ -29,6 +29,14 @@ const industriesA: LandingContent[] = [
     ],
     sections: [
       {
+        heading: "What an AI receptionist has to know about a landscaping business",
+        body: "The failure mode with a generic answering service on a landscaping line is that it takes a message. A message is not a lead — it is homework for you at 8pm.\n\nWhat it needs configured to be useful: your service zones by neighbourhood, not by city, because half of what you decline is a job forty minutes the wrong way. Which services you actually offer and, just as important, the ones you do not — an agent that cheerfully agrees to tree removal you do not do creates a worse call than voicemail. Your recurring-versus-one-off split, since those are completely different conversations. And a rough price band per service, so a caller gets a real answer rather than \"someone will get back to you\".\n\nThat last one is where owners hesitate, and the honest advice is to give a band rather than nothing. A caller who hears \"spring cleanups typically run in this range\" self-selects. A caller who hears nothing calls the next landscaper."
+      },
+      {
+        heading: "Where this fails on a landscaping line",
+        body: "Two failure modes worth knowing before you buy anything. Job-site audio: a caller phoning you from beside a running mower is genuinely hard for speech recognition, and so is you calling in from a truck. And seasonality — April call volume can be several times January's, which is precisely the month a per-minute answering plan hurts. If you are pricing a subscription, ask what a month at triple your normal volume costs, not what the plan costs."
+      },
+      {
         heading: "Where AI helps a landscaping business",
         body: "Most of a landscaper's lost revenue sits in three gaps: calls that go to voicemail during busy season, quotes that never get followed up, and recurring clients who quietly stop booking because nobody reached out. AI closes all three without adding headcount.",
         bullets: [
@@ -54,7 +62,7 @@ const industriesA: LandingContent[] = [
     related: [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -121,7 +129,7 @@ const industriesA: LandingContent[] = [
     related: [
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -141,7 +149,7 @@ const industriesA: LandingContent[] = [
     slug: "plumber-ai-automation",
     eyebrow: "Industry",
     h1: "AI Automation for Plumbers",
-    title: "AI Automation for Plumbers | Handbuilt",
+    title: "AI Answering Service for Plumbers | Handbuilt",
     description:
       "Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,500 CAD.",
     answer:
@@ -162,6 +170,10 @@ const industriesA: LandingContent[] = [
       "Review requests sent after each completed job",
     ],
     sections: [
+      {
+        heading: "What an answering service has to get right on a plumbing line",
+        body: "Plumbing inbound is unusually bimodal: a large share of calls are genuine emergencies, and most of the rest are entirely routine.\n\nThe emergency half — a burst line, an overflowing toilet, no hot water, water coming through a ceiling — needs recognising in the first sentence and transferring immediately. Not a callback, not a booking, a transfer. The routine half — quotes, fixture swaps, drain cleaning, permits — is exactly the repetitive question set an AI handles well at 9pm.\n\nThe configuration detail that matters most: your after-hours rate. Callers ask, and an agent that dodges the question wastes an emergency call for both of you. Give it the number and let it say the number.\n\nThe other thing worth building in is a plain triage instruction the caller can act on before anyone arrives — where the main shutoff usually is. It costs nothing and it is the single most useful sentence anybody can say to a person standing in water."
+      },
       {
         heading: "Where AI helps a plumbing business",
         body: "Most of a plumber's lost revenue comes from three gaps: unanswered calls during active jobs, missed after-hours emergencies, and quotes that never get followed up. AI closes all three without adding office staff.",
@@ -189,7 +201,7 @@ const industriesA: LandingContent[] = [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
@@ -229,6 +241,14 @@ const industriesA: LandingContent[] = [
       "Review requests sent after permit sign-off or job completion",
     ],
     sections: [
+      {
+        heading: "An answering service for a trade that is often on call",
+        body: "Electrical work splits into two inbound streams that want completely different handling, and this is the thing most AI receptionist setups get wrong on an electrical line.\n\nThe first is the after-hours emergency: no power to half the house, a burning smell, a panel that tripped and will not reset. Those calls must not be handled by an AI at all beyond recognising the intent and transferring immediately to a real phone. Configure the emergency phrases explicitly, test that the transfer reaches somebody, and tell the caller in the greeting that emergencies go straight through.\n\nThe second is everything else — quotes, panel upgrades, EV charger installs, commercial inquiries, the service call that can wait until Tuesday. That stream is where an AI receptionist earns its money, because it is high-volume, repetitive, and mostly asking the same six questions.\n\nAn agent that cannot tell the two apart is worse than voicemail. Voicemail at least does not reassure someone with a burning smell that a technician will call them back on Thursday."
+      },
+      {
+        heading: "The quoting gap, and what it actually costs to close",
+        body: "Electrical has more stages than most trades — inquiry, site visit, quote, then silence — and the drop-off is at the last step rather than the first. Automating the follow-up is the cheaper of the two fixes: a standalone quote follow-up worker starts at $1,500 CAD, against $3,500–$7,500 for a connected system that also answers the phone and books the site visit.\n\nIf the estimator is already chasing quotes reliably, do not buy the follow-up worker. Buy the answering service instead, or nothing. The honest test is which of the two you can name a lost job against."
+      },
       {
         heading: "Where AI helps an electrical business",
         body: "The electrician's sales cycle has more steps than most trades — and leads drop off at every gap. AI keeps the pipeline moving between estimate, quote, and close without the estimator making manual follow-up calls.",
@@ -275,7 +295,7 @@ const industriesA: LandingContent[] = [
     slug: "hvac-ai-automation",
     eyebrow: "Industry",
     h1: "AI Automation for HVAC Companies",
-    title: "AI Automation for HVAC Companies | Handbuilt",
+    title: "AI Answering Service for HVAC Companies | Handbuilt",
     description:
       "HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,500 CAD.",
     answer:
@@ -296,6 +316,10 @@ const industriesA: LandingContent[] = [
       "Post-service review requests sent automatically after each completed call",
     ],
     sections: [
+      {
+        heading: "Why HVAC is the hardest answering-service problem in the trades",
+        body: "Two things make an HVAC line different from every other trade on this site, and both are seasonal.\n\nThe first heat wave and the first hard freeze produce call volumes several times normal, on the same days, for every HVAC company in the region at once. That is exactly when an answering plan with included minutes and per-minute overages becomes expensive, and exactly when a human answering service puts you in a queue. Ask any vendor what a month at four times your normal volume costs before you sign anything.\n\nThe second is that a no-heat call in January is a genuine emergency for the person making it, particularly for an elderly customer or a family with an infant. Emergency intent has to be configured explicitly and it has to transfer to a ringing phone, not to a queue and not to a promise. The greeting should say so in the first sentence.\n\nAn AI receptionist on an HVAC line is worth the most of any trade because of the volume, and carries the most risk because of the emergencies. Both are true and any vendor mentioning only the first is selling."
+      },
       {
         heading: "Where AI helps an HVAC company",
         body: "HVAC businesses lose the most money during their busiest periods — when call volume exceeds what the front desk can handle. AI acts as overflow coverage that never drops a call, and handles the slow season by keeping maintenance agreements and renewals active.",
@@ -323,7 +347,7 @@ const industriesA: LandingContent[] = [
       { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
       { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
@@ -455,7 +479,7 @@ const industriesA: LandingContent[] = [
     ],
     related: [
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Review Request System", href: "/services/ai-review-request-system" },
+      { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -655,10 +679,10 @@ const industriesA: LandingContent[] = [
       "contractor client communication automation",
     ],
     related: [
-      { label: "AI Proposal Generator", href: "/services/ai-proposal-generator" },
+      { label: "AI Quote & Proposal Generator", href: "/services/ai-quote-generator" },
       { label: "AI Workflow Automation", href: "/services/ai-workflow-automation" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
+      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     ],
     faqs: [
       {
