@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { CallManager } from "@/lib/agent/callManager";
 import { ConversationEngine } from "@/lib/agent/conversationEngine";
+import { guardAgentApi } from "@/lib/agent/guard";
 
 // This endpoint handles Twilio webhooks for incoming call responses
 export async function POST(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { callId, userInput, callSid } = body;
@@ -31,6 +36,10 @@ export async function POST(request: NextRequest) {
 
 // Initiate a new call
 export async function PUT(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { toNumber, contactId, businessContext } = body;

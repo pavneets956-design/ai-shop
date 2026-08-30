@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { guardAgentApi } from "@/lib/agent/guard";
 
 // GET - Fetch all contacts
 export async function GET() {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const contacts = await prisma.contact.findMany({
       orderBy: { createdAt: "desc" },
@@ -20,6 +25,10 @@ export async function GET() {
 
 // POST - Create a new contact
 export async function POST(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { company, contactName, phone, email, industry } = body;

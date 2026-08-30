@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { BusinessDiscovery, BusinessSearchParams } from "@/lib/agent/businessDiscovery";
+import { guardAgentApi } from "@/lib/agent/guard";
 
 const businessDiscovery = new BusinessDiscovery();
 
 // Search for local businesses
 export async function POST(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { location, industry, radius, limit } = body;
@@ -42,6 +47,10 @@ export async function POST(request: NextRequest) {
 
 // Import businesses from CSV
 export async function PUT(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { csvContent } = body;
