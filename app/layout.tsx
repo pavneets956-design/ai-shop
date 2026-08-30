@@ -8,21 +8,17 @@ import JsonLd from "@/components/JsonLd";
 import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/data/site";
-import { organizationSchema, websiteSchema } from "@/lib/seo";
+import { identityGraph } from "@/lib/seo";
 
 /**
- * Two families, down from five (Inter, Archivo, IBM Plex Mono, Quicksand,
- * JetBrains Mono) as of the 2026-08-01 Verseo rebuild.
+ * Three families, each with one job — down from the five (Inter, Archivo,
+ * IBM Plex Mono, Quicksand, JetBrains Mono) that production still ships.
  *
- * Inter is a variable font, so it covers every weight the retired display
- * faces were loaded for. Archivo/Quicksand/Plex are no longer fetched; their
- * CSS variables are aliased onto these two in globals.css so the 37 files
- * using `font-display`, the 14 using `font-mono`, and the direct
- * `var(--font-display)` references in components/experience/experience.css all
- * keep resolving without a single component edit.
- *
- * Quicksand in particular was working against the brief — a rounded, friendly
- * face reads "approachable app", not "precise, built by hand".
+ * Inter = text. Archivo = display. JetBrains Mono = annotation and numerals.
+ * Quicksand and IBM Plex are gone for good; `--font-quicksand` stays aliased in
+ * globals.css so no unswept reference breaks. Quicksand in particular worked
+ * against the brief — a rounded, friendly face reads "approachable app", not
+ * "precise, built by hand".
  */
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 /**
@@ -85,7 +81,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     alternateLocale: ["en_US", "en_AU", "en_NZ", "en_GB"],
-    url: site.url,
+    // No `url` here, deliberately. A root-layout og:url is INHERITED by every
+    // page that does not declare its own openGraph block, so 24 static routes
+    // were telling every scraper their canonical social URL was the homepage.
+    // Pages that need one set it via staticMetadata()/landingMetadata().
     siteName: site.name,
     title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
     description:
@@ -137,7 +136,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             surface/recess stacking and 1px hairline shadows instead of a
             blurred brand-coloured blob. */}
         <Providers>
-          <JsonLd data={[organizationSchema(), websiteSchema()]} />
+          <JsonLd data={identityGraph()} />
           <ChromeGate>
             <Navbar />
           </ChromeGate>

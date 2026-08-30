@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
 
+// Central redirect registry (Lane D owns its contents; see lib/redirects.js for
+// the contract). Merged FIRST in redirects() so a row added there always wins
+// over the long-standing entries below. Required with a defensive fallback so a
+// malformed/absent file can never break the build.
+let registryRedirects = [];
+try {
+  // eslint-disable-next-line global-require
+  const mod = require('./lib/redirects.js');
+  if (Array.isArray(mod && mod.redirects)) registryRedirects = mod.redirects;
+} catch (err) {
+  console.warn('[next.config] lib/redirects.js not loaded:', err && err.message);
+}
+
 // Security headers. The strict CSP is scoped to the Form Filler route so it can't
 // break the rest of the site. It allows the in-browser WASM engines (MuPDF + the
 // Tesseract OCR worker) and the one-time engine-asset download, but blocks any
@@ -40,7 +53,27 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    return [
+    const base = [
+      // ---------------------------------------------------------------------
+      // /products — was a Server Component `redirect("/solutions")` inside
+      // app/products/page.tsx. On production that answered **307 with NO
+      // `Location` header** (verified 2026-08-30, research/…/06-technical-seo.md
+      // "Read this first" #3): an indexable, non-disallowed URL that redirects
+      // nowhere. A next.config rule runs BEFORE the filesystem/app router, so
+      // this is authoritative regardless of whether app/products/** still
+      // exists — deleting those files is another lane's job.
+      // `:path*` matches zero segments too, but /products is listed explicitly
+      // so the intent survives any path-to-regexp change.
+      { source: '/products', destination: '/solutions', permanent: true },
+      { source: '/products/:path*', destination: '/solutions', permanent: true },
+
+      // /v2 — public/v2/index.html is a 610 KB stray "Bundled Page" that is
+      // live, 200, with no canonical and no robots directive (06-technical-seo
+      // defect #11). Redirects are evaluated before public/ is served, so this
+      // takes it off the index today; deleting the file is a separate lane's.
+      { source: '/v2', destination: '/', permanent: true },
+      { source: '/v2/:path*', destination: '/', permanent: true },
+
       // Legacy cinematic showpieces retired in favour of the Molten Forge site.
       // Point straight at the on-brand equivalents (no redirect chains).
       // Permanent (308) — retirement confirmed for production.
@@ -85,6 +118,12 @@ const nextConfig = {
       // Comparison alias.
       { source: '/compare/custom-ai-app-vs-saas-tool', destination: '/compare/custom-ai-tool-vs-saas', permanent: true },
     ];
+
+    // Registry first, then the base list minus anything the registry already
+    // claims — one source can only redirect to one destination, and Next takes
+    // the first match, so de-duplicating here keeps the map single-valued.
+    const claimed = new Set(registryRedirects.map((r) => r.source));
+    return [...registryRedirects, ...base.filter((r) => !claimed.has(r.source))];
   },
   async headers() {
     return [
