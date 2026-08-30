@@ -16,12 +16,34 @@ These are off-site actions. No amount of work in this repository can substitute 
 - The **lead confirmation email to the visitor is blocked entirely.** Someone submits the form, sees a success screen, and never receives anything.
 - Outreach from a personal Gmail costs credibility with exactly the buyer he wants.
 
+**Where the DNS actually lives — this changes the options.** Verified 2026-08-30:
+`aibuiltbyhand.com` NS = `ns1.vercel-dns.com` / `ns2.vercel-dns.com`. **Vercel is the
+authoritative DNS provider**, and the apex A records point at Vercel (216.150.1.65 /
+216.150.1.129). That rules out the obvious cheap answer: **Cloudflare Email Routing
+requires Cloudflare to run your DNS**, so taking it would mean migrating the whole
+domain's DNS off Vercel — a change that also moves the records serving the live site.
+That is a much bigger decision than "add a free mailbox", and it is not recommended
+just to get email working.
+
 **What he must do.**
-1. Choose a mailbox provider. **Cloudflare Email Routing** is free and forwards `@aibuiltbyhand.com` into his Gmail — about 20 minutes, and enough to stop the black hole. **Google Workspace** (~$8/month) gives a real mailbox he can send from and looks materially more professional.
-2. Add the MX records the provider gives him, plus SPF.
-3. Verify `aibuiltbyhand.com` in Resend and add the DKIM records it issues.
-4. Set `LEAD_FROM_EMAIL` in the Vercel **Production** environment to the verified address.
-5. Send one test to the new address and confirm it lands. Then submit the site's own form and confirm both emails arrive.
+1. Choose a mailbox provider whose records can simply be **added at Vercel DNS**, so the
+   website's DNS never moves. Google Workspace (paid, a real mailbox he can send from)
+   and comparable hosted-mailbox providers all work this way. Only consider Cloudflare
+   Email Routing if he separately wants to move DNS to Cloudflare for other reasons.
+2. Add the provider's MX records in the Vercel dashboard, plus **one** SPF TXT record.
+3. Verify `aibuiltbyhand.com` in Resend and add the DKIM records it issues. ⚠️ Resend's
+   SPF include must be **merged into the single existing SPF record** — two separate SPF
+   TXT records on one domain is a permanent-error condition and breaks both senders.
+4. Set `LEAD_FROM_EMAIL` in the Vercel **Production** environment to the verified address,
+   then redeploy (env vars only apply to new deployments).
+5. Send one test to the new address and confirm it lands. Then submit the site's own form
+   and confirm the notification arrives from the domain, not from `onboarding@resend.dev`.
+
+**Costs money and needs approval before anyone clicks buy.** No provider has been chosen,
+nothing has been purchased, and no DNS record has been created.
+
+> The full record-by-record runbook, with both options costed and the exact order the
+> records must be applied in, is in `research/transformation-2026-08-30/qa/S5-lead-delivery-and-email.md`.
 
 **Unblocks:** the branded contact address, the visitor confirmation email, credible outreach, and the removal of a personal Gmail from the site's structured data.
 
