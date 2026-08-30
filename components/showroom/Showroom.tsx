@@ -357,7 +357,7 @@ function ControlRoom(props: {
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div className="mb-2.5 text-tiny-label font-semibold uppercase tracking-[0.08em] text-muted-light">{label}</div>
+      <div className="mb-2.5 text-tiny-label font-semibold uppercase tracking-[0.08em] text-ink-soft">{label}</div>
       {children}
     </div>
   );
@@ -495,7 +495,7 @@ function OutcomePanel(props: {
       {/* captured */}
       <div className="rounded-card border border-line bg-white p-5 shadow-card">
         <div className="flex items-center justify-between">
-          <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-muted-light">What the AI captured</div>
+          <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-ink-soft">What the AI captured</div>
           {captured?.urgency && (
             <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-ink">
               <span className={`h-1.5 w-1.5 rounded-full ${high ? "bg-clay" : "bg-success"}`} />
@@ -534,9 +534,9 @@ function OutcomePanel(props: {
 
       {/* lead summary + next actions */}
       <div className="rounded-card border border-line bg-white p-5 shadow-card">
-        <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-muted-light">Lead / job summary</div>
+        <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-ink-soft">Lead / job summary</div>
         <p className="mt-2 text-small leading-relaxed text-ink">{leadSummary}</p>
-        <div className="mt-4 text-tiny-label font-semibold uppercase tracking-[0.08em] text-muted-light">What happens next</div>
+        <div className="mt-4 text-tiny-label font-semibold uppercase tracking-[0.08em] text-ink-soft">What happens next</div>
         <ul className="mt-2 space-y-2">
           {nextActions.map((a, i) => (
             <li key={`${a}-${i}`} className="flex items-start gap-2.5 text-small text-ink">
@@ -551,7 +551,7 @@ function OutcomePanel(props: {
 
       {/* simulated system events feed */}
       <div className="rounded-card border border-line bg-white p-5 shadow-card">
-        <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-muted-light">Simulated business updates</div>
+        <div className="text-tiny-label font-semibold uppercase tracking-[0.08em] text-ink-soft">Simulated business updates</div>
         <div className="mt-3 flex flex-col gap-2">
           <AnimatePresence initial={false}>
             {events.map((e) => (

@@ -56,7 +56,7 @@ function FieldFrame({
 
 const inputBase =
   "h-input w-full rounded-input border border-line bg-white px-3.5 text-body text-ink " +
-  "placeholder:text-muted-light transition-colors " +
+  "placeholder:text-ink-soft transition-colors " +
   "focus:outline-none focus-visible:border-clay focus-visible:ring-2 focus-visible:ring-clay/25 " +
   "aria-[invalid=true]:border-danger";
 

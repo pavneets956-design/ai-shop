@@ -20,6 +20,16 @@ const STALE_PRICE_PATTERNS: RegExp[] = [
 
 const PRICE_PAGES = ["/pricing", "/", "/ai-business-system", "/create"];
 
+/**
+ * Build a matcher from a canonical price label. Numbers are required and in
+ * order; currency symbols, "CAD", and the dash style are not.
+ */
+function priceRegex(label: string): RegExp {
+  const numbers = label.match(/[\d,]+/g) ?? [];
+  const body = numbers.map((n) => `\\$?${n}`).join("\\s*[\u2013\u2014-]\\s*");
+  return new RegExp(body);
+}
+
 test.describe("pricing", () => {
   test("/pricing shows the canonical label for every package", async ({ page }) => {
     await page.goto("/pricing");
@@ -27,10 +37,13 @@ test.describe("pricing", () => {
 
     for (const pkg of packages) {
       const label = packagePriceLabel(pkg.id);
-      // Compare on digits so "From $1,500" vs "from $1,500 CAD" both pass but a
-      // different NUMBER does not.
-      const digits = label.replace(/[^\d,–-]/g, "");
-      expect(body, `${pkg.name} (${label}) missing from /pricing`).toContain(digits);
+      // Match on the NUMBERS, tolerating currency symbols and dash style, so
+      // "From $1,500" / "from $1,500 CAD" / "$3,500–$7,500" all pass but a
+      // different figure does not. (Stripping "$" and comparing as a substring
+      // was wrong for band labels: it produced "3,500-7,500" while the page
+      // correctly renders "$3,500–$7,500".)
+      const re = priceRegex(label);
+      expect(body, `${pkg.name} (${label}) missing from /pricing`).toMatch(re);
       expect(body, `${pkg.name} name missing from /pricing`).toContain(pkg.name);
     }
   });
@@ -56,8 +69,8 @@ test.describe("pricing", () => {
       expect(pattern.test(body), `/llms.txt matches ${pattern}`).toBe(false);
     }
     for (const pkg of packages) {
-      const digits = packagePriceLabel(pkg.id).replace(/[^\d,–-]/g, "");
-      expect(body, `/llms.txt is missing ${pkg.id} (${digits})`).toContain(digits);
+      const label = packagePriceLabel(pkg.id);
+      expect(body, `/llms.txt is missing ${pkg.id} (${label})`).toMatch(priceRegex(label));
     }
   });
 

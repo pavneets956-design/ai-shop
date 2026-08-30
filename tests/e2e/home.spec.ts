@@ -59,7 +59,10 @@ test.describe("homepage", () => {
 
   test("the primary CTA leads to /create and the form is there", async ({ page }) => {
     await page.goto("/");
-    const cta = page.locator('a[href^="/create"]').first();
+    // `.first()` alone picks the header CTA, which lives inside the collapsed
+    // mobile sheet and is correctly hidden at phone widths. Take the first
+    // VISIBLE one so this asserts what a real visitor can actually click.
+    const cta = page.locator('a[href^="/create"]:visible').first();
     await expect(cta).toBeVisible();
     await cta.click();
     await expect(page).toHaveURL(/\/create/);

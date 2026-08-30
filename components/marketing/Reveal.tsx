@@ -18,6 +18,10 @@ export type RevealTag = "div" | "section" | "li" | "span" | "ul";
  * How this version avoids it:
  *  1. SSR output is visible. `.v-reveal` has no hiding styles until it is
  *     armed, and only client JS can arm it.
+ *  1b. Even when armed, the animation is TRANSFORM ONLY — never opacity. Text
+ *     that fades from 0 is unreadable until an observer fires, and axe reports
+ *     every such element as a serious contrast failure because at 0 alpha the
+ *     foreground and background are literally the same colour.
  *  2. It arms only elements that are BELOW the fold at hydration time
  *     (`rect.top > innerHeight`), so nothing the visitor is already looking at
  *     can flash or animate.

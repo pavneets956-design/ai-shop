@@ -807,21 +807,24 @@
      Only components/marketing/Reveal.tsx can add [data-armed], and it does so
      exclusively for elements that are below the fold at hydration, never under
      reduced motion. First paint is therefore never opacity:0. */
+  /* TRANSFORM ONLY — never opacity.
+     A reveal that fades from opacity:0 leaves real text invisible until an
+     IntersectionObserver fires. axe correctly reports every armed element as a
+     serious colour-contrast failure (foreground and background are identical
+     at 0 alpha), and if the observer never runs — a broken bundle, a partial
+     hydration, an unusual browser — that content is gone for good. A slide is
+     the same amount of motion with none of the risk: the words are readable at
+     every frame, including frame zero. */
   .v-reveal[data-armed] {
-    opacity: 0;
     transform: translateY(14px);
-    transition:
-      opacity var(--v-dur-slow) var(--v-ease),
-      transform var(--v-dur-slow) var(--v-ease);
+    transition: transform var(--v-dur-slow) var(--v-ease);
   }
   .v-reveal[data-armed].is-in {
-    opacity: 1;
     transform: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .v-reveal[data-armed] {
-      opacity: 1;
       transform: none;
       transition: none;
     }

@@ -95,7 +95,11 @@ export const metadata: Metadata = {
     description:
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
   },
-  robots: { index: true, follow: true },
+  // NO `robots` here, deliberately — same trap as `alternates.canonical` above.
+  // `index, follow` is the crawler default, so the tag added nothing on 214
+  // pages, but it was INHERITED by app/not-found.tsx, which meant every 404
+  // shipped two robots tags: Next's own `noindex` and this `index, follow`.
+  // Pages that genuinely need a directive declare their own.
   icons: {
     icon: [
       { url: "/logo-mark.svg", type: "image/svg+xml" },
