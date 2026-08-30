@@ -1,0 +1,288 @@
+############ Q4b — /demo SHOWROOM ############
+
+-- INITIAL STATE (nothing typed by the visitor yet) --
+LIVE AI WORKER SHOWROOM
+Test a real AI worker.
+
+Pretend you’re a customer. Ask for a quote, request an appointment, chase an invoice, or reply to a review — and watch the AI turn the conversation into business work.
+
+PICK AN AI WORKER
+AI Receptionist
+Answers, books jobs, captures every lead
+Quote Agent
+Qualifies the job and preps a rough quote
+Lead Follow-Up
+Re-engages quiet leads and books the next step
+Invoice Nudge
+Drafts polite, effective payment reminders
+Review Reply
+Writes on-brand replies to customer reviews
+Proposal Builder
+Turns a request into a clean proposal outline
+PICK AN INDUSTRY
+Landscaping
+Plumbing
+Electrical
+Cleaning
+Dental / Clinic
+Salon
+Restaurant
+Real Estate
+Moving
+QUICK TEST PROMPTS
+Hi, can I book lawn mowing this week?
+Do you have any availability tomorrow morning?
+It's urgent — can someone come today?
+What are your hours?
+Reset conversation
+9:41
+5G  100%
+Greenline Landscaping
+AI receptionist online
+AI WORKER
+Thanks for contacting Greenline Landscaping! This is the ai receptionist — how can I help today?
+YOU (CUSTOMER)
+Hi, can I book lawn mowing this week?
+AI WORKER
+Happy to help with that! Can I get your name and the best number to reach you, so I can line it up?
+Demo mode — no real call, text, email or booking sent
+WHAT THE AI CAPTURED
+Normal
+Name
+—
+Phone
+—
+Service
+Lawn mowing
+Location
+—
+Preferred time
+this week
+Budget
+—
+Still needed: Best contact number · Service address
+LEAD / JOB SUMMARY
+
+New lawn mowing lead — contact still needed.
+
+WHAT HAPPENS NEXT
+Send the owner a job summary
+Draft a booking confirmation for the customer
+Suggest the next open slot
+Save the lead to the CRM
+SIMULATED BUSINESS UPDATES
+Owner notification drafted
+Calendar slot suggested
+I'm Sarah
+It's pretty urgent
+Do you have anything tomorrow?
+
+analytics events on /demo load: []
+composer textarea accessible name: {"id":null,"ariaLabel":null,"ariaLabelledby":null,"label":null,"placeholder":"Type as the customer…"}
+
+-- AFTER picking 'Quote Agent' + 'Plumbing' --
+pressed: ["Quote Agent | Qualifies the job and preps a rough quote","Plumbing"]
+phone header: "Summit Plumbing & Heating"
+re-seeded transcript:
+[
+ "Thanks for contacting Summit Plumbing & Heating! This is the quote agent — how can I help today?",
+ "How much for leak repair?",
+ "Happy to prep a rough range for leak repair. To get it close, what's the size/scope, and is access easy? I'll prepare a range — the owner confirms the final price."
+]
+
+-- MID-FLIGHT (450ms) --
+live/status regions: [{"role":"status","live":null,"text":"Live AI is unavailable — these replies are a scripted sample, not the real model.\nDismiss and retry"}]
+send button disabled while busy: true
+any 'responding/typing/thinking' text on screen: false
+
+-- AFTER REPLY (real, un-intercepted call) --
+LIVE AI WORKER SHOWROOM
+Test a real AI worker.
+
+Pretend you’re a customer. Ask for a quote, request an appointment, chase an invoice, or reply to a review — and watch the AI turn the conversation into business work.
+
+PICK AN AI WORKER
+AI Receptionist
+Answers, books jobs, captures every lead
+Quote Agent
+Qualifies the job and preps a rough quote
+Lead Follow-Up
+Re-engages quiet leads and books the next step
+Invoice Nudge
+Drafts polite, effective payment reminders
+Review Reply
+Writes on-brand replies to customer reviews
+Proposal Builder
+Turns a request into a clean proposal outline
+PICK AN INDUSTRY
+Landscaping
+Plumbing
+Electrical
+Cleaning
+Dental / Clinic
+Salon
+Restaurant
+Real Estate
+Moving
+QUICK TEST PROMPTS
+How much for leak repair?
+Can I get a rough price for a bigger job?
+What would a monthly plan cost?
+Do you charge for a quote visit?
+Reset conversation
+9:41
+5G  100%
+Summit Plumbing & Heating
+AI quote agent online
+AI WORKER
+Thanks for contacting Summit Plumbing & Heating! This is the quote agent — how can I help today?
+YOU (CUSTOMER)
+How much for leak repair?
+AI WORKER
+Happy to prep a rough range for leak repair. To get it close, what's the size/scope, and is access easy? I'll prepare a range — the owner confirms the final price.
+YOU (CUSTOMER)
+My kitchen sink is leaking badly, how much to fix it today?
+AI WORKER
+Happy to prep a rough range for leak repair. To get it close, what's the size/scope, and is access easy? I'll prepare a range — the owner confirms the final price.
+Live AI is unavailable — these replies are a scripted sample, not the real model.
+Dismiss and retry
+WHAT THE AI CAPTURED
+Urgent
+Name
+—
+Phone
+—
+Service
+Leak repair
+Location
+—
+Preferred time
+today
+Budget
+—
+Still needed: Best contact number · Service address
+LEAD / JOB SUMMARY
+
+New leak repair lead, urgent — contact still needed.
+
+WHAT HAPPENS NEXT
+Collect size, scope and access details
+Prepare a rough quote range
+Draft a quote-visit suggestion
+Save the opportunity to the CRM
+SIMULATED BUSINESS UPDATES
+Quote-visit suggested
+CRM opportunity created
+CRM opportunity created
+Quote-visit suggested
+It's a medium-size job
+Access is easy
+When could you visit?
+Want this trained on your business?
+
+We customize this exact worker on your business, connect it to your tools, and launch in days.
+
+Get this installed
+See pricing
+
+analytics events fired by the demo turn: []
+
+-- FORCED { fallback: true } --
+LIVE AI WORKER SHOWROOM
+Test a real AI worker.
+
+Pretend you’re a customer. Ask for a quote, request an appointment, chase an invoice, or reply to a review — and watch the AI turn the conversation into business work.
+
+PICK AN AI WORKER
+AI Receptionist
+Answers, books jobs, captures every lead
+Quote Agent
+Qualifies the job and preps a rough quote
+Lead Follow-Up
+Re-engages quiet leads and books the next step
+Invoice Nudge
+Drafts polite, effective payment reminders
+Review Reply
+Writes on-brand replies to customer reviews
+Proposal Builder
+Turns a request into a clean proposal outline
+PICK AN INDUSTRY
+Landscaping
+Plumbing
+Electrical
+Cleaning
+Dental / Clinic
+Salon
+Restaurant
+Real Estate
+Moving
+QUICK TEST PROMPTS
+How much for leak repair?
+Can I get a rough price for a bigger job?
+What would a monthly plan cost?
+Do you charge for a quote visit?
+Reset conversation
+9:41
+5G  100%
+Summit Plumbing & Heating
+AI quote agent online
+AI WORKER
+Thanks for contacting Summit Plumbing & Heating! This is the quote agent — how can I help today?
+YOU (CUSTOMER)
+How much for leak repair?
+AI WORKER
+Happy to prep a rough range for leak repair. To get it close, what's the size/scope, and is access easy? I'll prepare a range — the owner confirms the final price.
+YOU (CUSTOMER)
+My kitchen sink is leaking badly, how much to fix it today?
+AI WORKER
+Happy to prep a rough range for leak repair. To get it close, what's the size/scope, and is access easy? I'll prepare a range — the owner confirms the final price.
+YOU (CUSTOMER)
+Can you send someone this afternoon?
+AI WORKER
+FORCED-FALLBACK reply injected by the QA harness.
+Live AI is unavailable — these replies are a scripted sample, not the real model.
+Dismiss and retry
+WHAT THE AI CAPTURED
+Urgent
+Name
+Dana
+Phone
+604 555 0142
+Service
+Leak repair
+Location
+Surrey
+Preferred time
+today
+Budget
+—
+Still needed: Service address
+LEAD / JOB SUMMARY
+
+Urgent leak repair in Surrey — callback number captured.
+
+WHAT HAPPENS NEXT
+Send the owner a job summary
+Draft a booking confirmation
+SIMULATED BUSINESS UPDATES
+SMS confirmation queued
+CRM lead created
+Quote-visit suggested
+CRM opportunity created
+CRM opportunity created
+Quote-visit suggested
+What time?
+How much?
+Want this trained on your business?
+
+We customize this exact worker on your business, connect it to your tools, and launch in days.
+
+Get this installed
+See pricing
+scripted-sample notice count: 1
+demo-mode pill count: 0
+
+console errors: ["Failed to load resource: the server responded with a status of 404 (Not Found)","Refused to execute script from 'http://localhost:3200/_vercel/insights/script.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."]
+
+
+############ Q4c — EMBEDDED USE-CASE CHAT ############

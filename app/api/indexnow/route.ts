@@ -32,8 +32,12 @@ export async function GET(req: Request) {
       {
         ok: false,
         error: "not_configured",
+        // Deliberately does not name the environment variable. An
+        // unauthenticated caller learning the exact config key is free
+        // reconnaissance; the variable name is documented in AGENTS.md and in
+        // this file's header comment, where the person who needs it will look.
         message:
-          "IndexNow is not configured on this deployment. Set INDEXNOW_PING_SECRET in the Vercel project's environment variables, redeploy, then retry.",
+          "IndexNow is not configured on this deployment. See the route's header comment for the variable to set, then redeploy and retry.",
       },
       { status: 503 }
     );

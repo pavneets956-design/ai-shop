@@ -1,0 +1,17 @@
+GET	trailing slash                                      	308	15	text/plain	Redirecting... 
+GET	query string                                        	404	21	application/json	{"error":"Not found"}
+GET	nextDataReq                                         	404	21	application/json	{"error":"Not found"}
+GET	rsc param                                           	404	21	application/json	{"error":"Not found"}
+GET	RSC header                                          	404	21	application/json	{"error":"Not found"}
+GET	case /API/Agent                                     	404	42834	text/html; charset=utf-8	<!DOCTYPE html><html lang="en" class="__variable_f367f3 __variable_ef95b1 __variable_59532
+GET	case /api/Agent                                     	404	42834	text/html; charset=utf-8	<!DOCTYPE html><html lang="en" class="__variable_f367f3 __variable_ef95b1 __variable_59532
+GET	case all upper                                      	404	42834	text/html; charset=utf-8	<!DOCTYPE html><html lang="en" class="__variable_f367f3 __variable_ef95b1 __variable_59532
+GET	%2e single                                          	404	21	application/json	{"error":"Not found"}
+GET	%2e%2e traversal                                    	404	21	application/json	{"error":"Not found"}
+GET	%2f sep                                             	404	42258	text/html; charset=utf-8	<!DOCTYPE html><html lang="en" class="__variable_f367f3 __variable_ef95b1 __variable_59532
+GET	double slash                                        	308	15	text/plain	Redirecting... 
+GET	dot-slash prefix                                    	404	42834	text/html; charset=utf-8	<!DOCTYPE html><html lang="en" class="__variable_f367f3 __variable_ef95b1 __variable_59532
+GET	null byte                                           	400	33	text/plain; charset=utf-8	Bad request BAD_REQUEST pdx1:: 
+GET	fragment                                            	404	21	application/json	{"error":"Not found"}
+GET	.json suffix                                        	404	21	application/json	{"error":"Not found"}
+GET	dotdot same                                         	404	21	application/json	{"error":"Not found"}

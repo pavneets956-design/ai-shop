@@ -1,0 +1,12 @@
+PUT	PUT call (dial)                              	404	21	application/json	{"error":"Not found"}
+POST	POST contacts (create)                       	404	21	application/json	{"error":"Not found"}
+PUT	PUT contacts/1 (mass-assign)                 	404	21	application/json	{"error":"Not found"}
+DELETE	DELETE contacts/1                            	404	21	application/json	{"error":"Not found"}
+PUT	PUT campaigns (autodial)                     	404	21	application/json	{"error":"Not found"}
+POST	POST campaigns                               	404	21	application/json	{"error":"Not found"}
+POST	POST voice webhook (no sig)                  	404	21	application/json	{"error":"Not found"}
+POST	POST status cb (no sig)                      	404	21	application/json	{"error":"Not found"}
+POST	POST businesses/search                       	404	21	application/json	{"error":"Not found"}
+GET	CVE hdr x-middleware-subrequest              	404	21	application/json	{"error":"Not found"}
+GET	CVE hdr chained                              	404	21	application/json	{"error":"Not found"}
+GET	CVE hdr src/middleware                       	404	21	application/json	{"error":"Not found"}

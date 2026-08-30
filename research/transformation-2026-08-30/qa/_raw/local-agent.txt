@@ -1,0 +1,14 @@
+GET	/api/agent/contacts                     	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/calls                        	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/campaigns                    	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/businesses/search            	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/call                         	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/call/webhook                 	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/call/webhook/status          	404	21	application/json	{"error":"Not found"}
+PUT	/api/agent/call                         	404	21	application/json	{"error":"Not found"}
+POST	/api/agent/contacts                     	404	21	application/json	{"error":"Not found"}
+PUT	/api/agent/contacts/1                   	404	21	application/json	{"error":"Not found"}
+POST	/api/agent/call/webhook                 	404	21	application/json	{"error":"Not found"}
+GET	/api/agent/contacts                     	404	21	application/json	{"error":"Not found"}
+GET	/agent                                  	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initia
+GET	/agent/settings                         	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initia

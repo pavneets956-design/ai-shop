@@ -1,0 +1,6263 @@
+[
+  {
+    "path": "/",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Try the live AI demo",
+        "selector": "a.btn-primary.w-full",
+        "x": 24,
+        "y": 588.9375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a free 10-minute fit check",
+        "selector": "a.btn-secondary.w-full",
+        "x": 24,
+        "y": 648.9375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Try the live AI demo",
+        "selector": "a.btn-primary",
+        "x": 24,
+        "y": 2316.25,
+        "width": 211.453125,
+        "height": 48
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#:R1cv4q:-calls",
+        "x": 44,
+        "y": 3291.21875,
+        "width": 302,
+        "height": 44
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#:R1cv4q:-missed",
+        "x": 44,
+        "y": 3399.71875,
+        "width": 302,
+        "height": 44
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#:R1cv4q:-value",
+        "x": 44,
+        "y": 3508.21875,
+        "width": 302,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Change those assumptions",
+        "selector": "a.v-link",
+        "x": 185.15625,
+        "y": 3603.71875,
+        "width": 154.15625,
+        "height": 15
+      },
+      {
+        "tag": "a",
+        "text": "Get this checked properly",
+        "selector": "a.btn-primary.mt-6",
+        "x": 44,
+        "y": 3811.5625,
+        "width": 302,
+        "height": 48
+      },
+      {
+        "tag": "button",
+        "text": "I'm missing calls while I'm on site",
+        "selector": "button#:R1kv4q:-tab-0",
+        "x": 24,
+        "y": 4209.9375,
+        "width": 342,
+        "height": 54.5
+      },
+      {
+        "tag": "button",
+        "text": "My quotes go quiet",
+        "selector": "button#:R1kv4q:-tab-1",
+        "x": 24,
+        "y": 4264.4375,
+        "width": 342,
+        "height": 54.5
+      },
+      {
+        "tag": "button",
+        "text": "I'm doing admin at 9pm",
+        "selector": "button#:R1kv4q:-tab-2",
+        "x": 24,
+        "y": 4318.9375,
+        "width": 342,
+        "height": 54.5
+      },
+      {
+        "tag": "a",
+        "text": "See what missed calls cost you",
+        "selector": "a.btn-primary",
+        "x": 48,
+        "y": 4719.78125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "How the install works",
+        "selector": "a.btn-secondary",
+        "x": 48,
+        "y": 4779.78125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Open Ironwood Grounds",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 9189.4375,
+        "width": 195.59375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Open COITracker",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 9915.796875,
+        "width": 144.703125,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Open PayNudge",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 10529.65625,
+        "width": 138.078125,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "COITracker",
+        "selector": "a.v-link",
+        "x": 104.953125,
+        "y": 11614.875,
+        "width": 90.921875,
+        "height": 20
+      },
+      {
+        "tag": "a",
+        "text": "PayNudge",
+        "selector": "a.v-link",
+        "x": 235.4375,
+        "y": 11614.875,
+        "width": 83.40625,
+        "height": 20
+      },
+      {
+        "tag": "a",
+        "text": "More about how I work",
+        "selector": "a.btn-secondary",
+        "x": 24,
+        "y": 11935.3125,
+        "width": 208.9375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.inline-flex",
+        "x": 24,
+        "y": 11995.3125,
+        "width": 180.046875,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Request a free AI opportunity review",
+        "selector": "a.btn-primary.mt-7",
+        "x": 48,
+        "y": 12787.46875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Start with Starter",
+        "selector": "a.btn-secondary.mt-6",
+        "x": 48,
+        "y": 14298.90625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Build my system",
+        "selector": "a.btn-primary.mt-6",
+        "x": 48,
+        "y": 14954.875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a quote",
+        "selector": "a.btn-secondary.mt-6",
+        "x": 48,
+        "y": 15588.34375,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Full pricing",
+        "selector": "a.btn-secondary.flex-none",
+        "x": 48,
+        "y": 16125.03125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Pricing & profitContractor Profit & Pric",
+        "selector": "a.v-card.v-card-hover",
+        "x": 24,
+        "y": 16633.21875,
+        "width": 342,
+        "height": 223.09375
+      },
+      {
+        "tag": "a",
+        "text": "Sales & follow-upContractor Quote Follow",
+        "selector": "a.v-card.v-card-hover",
+        "x": 24,
+        "y": 16876.3125,
+        "width": 342,
+        "height": 223.09375
+      },
+      {
+        "tag": "a",
+        "text": "Lead recovery & growthMissed-Call Revenu",
+        "selector": "a.v-card.v-card-hover",
+        "x": 24,
+        "y": 17119.40625,
+        "width": 342,
+        "height": 221.59375
+      },
+      {
+        "tag": "a",
+        "text": "Pricing & profitContractor Labor Burden ",
+        "selector": "a.v-card.v-card-hover",
+        "x": 24,
+        "y": 17361,
+        "width": 342,
+        "height": 245.59375
+      },
+      {
+        "tag": "a",
+        "text": "Lead recovery & growthContractor Lead-Le",
+        "selector": "a.v-card.v-card-hover",
+        "x": 24,
+        "y": 17626.59375,
+        "width": 342,
+        "height": 221.59375
+      },
+      {
+        "tag": "a",
+        "text": "See all free tools",
+        "selector": "a.v-link.text-[15px]",
+        "x": 135.890625,
+        "y": 17869.1875,
+        "width": 118.203125,
+        "height": 19
+      },
+      {
+        "tag": "a",
+        "text": "Request a free AI opportunity review",
+        "selector": "a.btn-primary",
+        "x": 24,
+        "y": 18391.65625,
+        "width": 304.40625,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist in Surrey",
+        "selector": "a.btn-secondary",
+        "x": 24,
+        "y": 18451.65625,
+        "width": 216.140625,
+        "height": 48
+      },
+      {
+        "tag": "button",
+        "text": "Will this annoy my customers?",
+        "selector": "button#:R3sv4q:-q-0",
+        "x": 24,
+        "y": 19158.9375,
+        "width": 342,
+        "height": 91
+      },
+      {
+        "tag": "button",
+        "text": "Do I keep my phone number?",
+        "selector": "button#:R3sv4q:-q-2",
+        "x": 24,
+        "y": 19492.6875,
+        "width": 342,
+        "height": 84
+      },
+      {
+        "tag": "button",
+        "text": "What happens if I cancel?",
+        "selector": "button#:R3sv4q:-q-4",
+        "x": 24,
+        "y": 19588.6875,
+        "width": 342,
+        "height": 84
+      },
+      {
+        "tag": "button",
+        "text": "How long does installation take?",
+        "selector": "button#:R3sv4q:-q-6",
+        "x": 24,
+        "y": 19684.6875,
+        "width": 342,
+        "height": 91
+      },
+      {
+        "tag": "button",
+        "text": "How much does an AI receptionist cost in",
+        "selector": "button#:R3sv4q:-q-1",
+        "x": 24,
+        "y": 19787.6875,
+        "width": 342,
+        "height": 91
+      },
+      {
+        "tag": "button",
+        "text": "Who owns the system and the data?",
+        "selector": "button#:R3sv4q:-q-3",
+        "x": 24,
+        "y": 19890.6875,
+        "width": 342,
+        "height": 91
+      },
+      {
+        "tag": "button",
+        "text": "Does this work with the tools I already ",
+        "selector": "button#:R3sv4q:-q-5",
+        "x": 24,
+        "y": 19993.6875,
+        "width": 342,
+        "height": 91
+      },
+      {
+        "tag": "a",
+        "text": "Read the full FAQ",
+        "selector": "a.v-link",
+        "x": 222.46875,
+        "y": 20117.6875,
+        "width": 121.609375,
+        "height": 19
+      },
+      {
+        "tag": "a",
+        "text": "Request a free AI opportunity review",
+        "selector": "a.btn-invert.w-full",
+        "x": 24,
+        "y": 20650.34375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "or just use the free calculators",
+        "selector": "a.inline-flex.h-12",
+        "x": 24,
+        "y": 20710.34375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 21333.5,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 21625.625,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 21618.875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 21618.875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 21878.71875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 21936.71875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22158.8125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22194.4375,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22230.0625,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22265.6875,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22301.3125,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22336.9375,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22446.65625,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22482.28125,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22517.90625,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22553.53125,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22589.15625,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22624.78125,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22660.40625,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22696.03125,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22731.65625,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22841.375,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22877,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22912.625,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22948.25,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 22983.875,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23019.5,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23055.125,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23090.75,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23200.46875,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23236.09375,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23271.71875,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23307.34375,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23342.96875,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23378.59375,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23414.21875,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23449.84375,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 23485.46875,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 23634.28125,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 23634.28125,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/demo",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "AI ReceptionistAnswers, books jobs, capt",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 454.96875,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Quote AgentQualifies the job and preps a",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 523.09375,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Lead Follow-UpRe-engages quiet leads and",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 591.21875,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Invoice NudgeDrafts polite, effective pa",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 659.34375,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Review ReplyWrites on-brand replies to c",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 727.46875,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Proposal BuilderTurns a request into a c",
+        "selector": "button.relative.flex",
+        "x": 20,
+        "y": 795.59375,
+        "width": 350,
+        "height": 60.125
+      },
+      {
+        "tag": "button",
+        "text": "Landscaping",
+        "selector": "button.rounded-full.border",
+        "x": 20,
+        "y": 898.90625,
+        "width": 102.734375,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Plumbing",
+        "selector": "button.rounded-full.border",
+        "x": 130.734375,
+        "y": 898.90625,
+        "width": 81.9375,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Electrical",
+        "selector": "button.rounded-full.border",
+        "x": 220.671875,
+        "y": 898.90625,
+        "width": 81.171875,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Cleaning",
+        "selector": "button.rounded-full.border",
+        "x": 20,
+        "y": 939.65625,
+        "width": 78.828125,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Dental / Clinic",
+        "selector": "button.rounded-full.border",
+        "x": 106.828125,
+        "y": 939.65625,
+        "width": 109.09375,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Salon",
+        "selector": "button.rounded-full.border",
+        "x": 223.921875,
+        "y": 939.65625,
+        "width": 59.40625,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Restaurant",
+        "selector": "button.rounded-full.border",
+        "x": 20,
+        "y": 980.40625,
+        "width": 90.59375,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Real Estate",
+        "selector": "button.rounded-full.border",
+        "x": 118.59375,
+        "y": 980.40625,
+        "width": 92.140625,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Moving",
+        "selector": "button.rounded-full.border",
+        "x": 218.734375,
+        "y": 980.40625,
+        "width": 70.328125,
+        "height": 32.75
+      },
+      {
+        "tag": "button",
+        "text": "Hi, can I book lawn mowing this week?",
+        "selector": "button.group.flex",
+        "x": 20,
+        "y": 1056.34375,
+        "width": 350,
+        "height": 42
+      },
+      {
+        "tag": "button",
+        "text": "Do you have any availability tomorrow mo",
+        "selector": "button.group.flex",
+        "x": 20,
+        "y": 1106.34375,
+        "width": 350,
+        "height": 42
+      },
+      {
+        "tag": "button",
+        "text": "It's urgent — can someone come today?",
+        "selector": "button.group.flex",
+        "x": 20,
+        "y": 1156.34375,
+        "width": 350,
+        "height": 42
+      },
+      {
+        "tag": "button",
+        "text": "What are your hours?",
+        "selector": "button.group.flex",
+        "x": 20,
+        "y": 1206.34375,
+        "width": 350,
+        "height": 42
+      },
+      {
+        "tag": "textarea",
+        "text": "",
+        "selector": "textarea.max-h-28.min-h-[44px]",
+        "x": 31,
+        "y": 1279.34375,
+        "width": 280,
+        "height": 51
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.grid.h-10",
+        "x": 319,
+        "y": 1290.34375,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "tag": "button",
+        "text": "Reset conversation",
+        "selector": "button.inline-flex.items-center",
+        "x": 20,
+        "y": 1361.34375,
+        "width": 137.390625,
+        "height": 18.1875
+      },
+      {
+        "tag": "button",
+        "text": "I'm Sarah",
+        "selector": "button.rounded-full.border",
+        "x": 20,
+        "y": 2828.84375,
+        "width": 79.5,
+        "height": 32
+      },
+      {
+        "tag": "button",
+        "text": "It's pretty urgent",
+        "selector": "button.rounded-full.border",
+        "x": 107.5,
+        "y": 2828.84375,
+        "width": 120.296875,
+        "height": 32
+      },
+      {
+        "tag": "button",
+        "text": "Do you have anything tomorrow?",
+        "selector": "button.rounded-full.border",
+        "x": 20,
+        "y": 2868.84375,
+        "width": 212.9375,
+        "height": 32
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 3060.84375,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 3352.96875,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 3346.21875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 3346.21875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 3606.0625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 3664.0625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3886.15625,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3921.78125,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3957.40625,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3993.03125,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4028.65625,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4064.28125,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4174,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4209.625,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4245.25,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4280.875,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4316.5,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4352.125,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4387.75,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4423.375,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4459,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4568.71875,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4604.34375,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4639.96875,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4675.59375,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4711.21875,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4746.84375,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4782.46875,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4818.09375,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4927.8125,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4963.4375,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4999.0625,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5034.6875,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5070.3125,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5105.9375,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5141.5625,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5177.1875,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5212.8125,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 5361.625,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 5361.625,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/pricing",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "How remote builds work",
+        "selector": "a.text-ink/70.underline",
+        "x": 160.09375,
+        "y": 565.1875,
+        "width": 160.65625,
+        "height": 17
+      },
+      {
+        "tag": "a",
+        "text": "Start with Starter",
+        "selector": "a.mt-7.btn-secondary",
+        "x": 41,
+        "y": 1213.1875,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Build my system",
+        "selector": "a.mt-7.btn-primary",
+        "x": 41,
+        "y": 1821.1875,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a quote",
+        "selector": "a.mt-7.btn-secondary",
+        "x": 41,
+        "y": 2375.1875,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Add a Care Plan",
+        "selector": "a.btn-secondary.whitespace-nowrap",
+        "x": 41,
+        "y": 2681.1875,
+        "width": 160.125,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Book a setup call",
+        "selector": "a.btn-primary.mt-5",
+        "x": 45,
+        "y": 3770.875,
+        "width": 300,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Start a build",
+        "selector": "a.btn-primary",
+        "x": 128.875,
+        "y": 4973.28125,
+        "width": 132.25,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 5151.28125,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 5443.40625,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 5436.65625,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 5436.65625,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 5696.5,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 5754.5,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5976.59375,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6012.21875,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6047.84375,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6083.46875,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6119.09375,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6154.71875,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6264.4375,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6300.0625,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6335.6875,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6371.3125,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6406.9375,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6442.5625,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6478.1875,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6513.8125,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6549.4375,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6659.15625,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6694.78125,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6730.40625,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6766.03125,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6801.65625,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6837.28125,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6872.90625,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6908.53125,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7018.25,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7053.875,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7089.5,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7125.125,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7160.75,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7196.375,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7232,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7267.625,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7303.25,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 7452.0625,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 7452.0625,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/create",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "1What you need (current step)",
+        "selector": "button.flex.min-h-[44px]",
+        "x": 37,
+        "y": 545.1875,
+        "width": 135.59375,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "2Detail (optional)",
+        "selector": "button.flex.min-h-[44px]",
+        "x": 204.59375,
+        "y": 545.1875,
+        "width": 148.40625,
+        "height": 44
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#br-name",
+        "x": 37,
+        "y": 641.1875,
+        "width": 316,
+        "height": 46
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#br-contact",
+        "x": 37,
+        "y": 787.1875,
+        "width": 316,
+        "height": 46
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "selector": "input#br-business",
+        "x": 37,
+        "y": 885.1875,
+        "width": 316,
+        "height": 46
+      },
+      {
+        "tag": "textarea",
+        "text": "",
+        "selector": "textarea#br-goal",
+        "x": 37,
+        "y": 1031.1875,
+        "width": 316,
+        "height": 86
+      },
+      {
+        "tag": "a",
+        "text": "privacy",
+        "selector": "a.underline.decoration-1",
+        "x": 37,
+        "y": 1188.1875,
+        "width": 48.015625,
+        "height": 17
+      },
+      {
+        "tag": "button",
+        "text": "Send my request",
+        "selector": "button.btn-primary.ml-auto",
+        "x": 162.109375,
+        "y": 1291.1875,
+        "width": 190.890625,
+        "height": 48
+      },
+      {
+        "tag": "button",
+        "text": "Add detail first",
+        "selector": "button.btn-ghost",
+        "x": 37,
+        "y": 1231.1875,
+        "width": 160.90625,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 1532.1875,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 1824.3125,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 1817.5625,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 1817.5625,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 2077.40625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 2135.40625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2357.5,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2393.125,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2428.75,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2464.375,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2500,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2535.625,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2645.34375,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2680.96875,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2716.59375,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2752.21875,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2787.84375,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2823.46875,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2859.09375,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2894.71875,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2930.34375,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3040.0625,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3075.6875,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3111.3125,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3146.9375,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3182.5625,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3218.1875,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3253.8125,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3289.4375,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3399.15625,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3434.78125,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3470.40625,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3506.03125,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3541.65625,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3577.28125,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3612.90625,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3648.53125,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3684.15625,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 3832.96875,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 3832.96875,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/start",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "← Handbuilt",
+        "selector": "a.hbc-exit",
+        "x": 12,
+        "y": 12,
+        "width": 96.828125,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "Start the AI Builderturn your sound on f",
+        "selector": "button.hbc-gate-tap",
+        "x": 83.40625,
+        "y": 538.875,
+        "width": 223.1875,
+        "height": 110
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 1408,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 1700.125,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 1693.375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 1693.375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 1953.21875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 2011.21875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2233.3125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2268.9375,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2304.5625,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2340.1875,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2375.8125,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2411.4375,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2521.15625,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2556.78125,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2592.40625,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2628.03125,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2663.65625,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2699.28125,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2734.90625,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2770.53125,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2806.15625,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2915.875,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2951.5,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 2987.125,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3022.75,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3058.375,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3094,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3129.625,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3165.25,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3274.96875,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3310.59375,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3346.21875,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3381.84375,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3417.46875,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3453.09375,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3488.71875,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3524.34375,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 3559.96875,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 3708.78125,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 3708.78125,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Try the live AI demo",
+        "selector": "a.btn-primary.w-full",
+        "x": 24,
+        "y": 904.09375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a free 10-minute fit check",
+        "selector": "a.btn-secondary.w-full",
+        "x": 24,
+        "y": 964.09375,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link",
+        "x": 100.765625,
+        "y": 395.59375,
+        "width": 144.03125,
+        "height": 15
+      },
+      {
+        "tag": "a",
+        "text": "Open Ironwood Grounds",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 2807.609375,
+        "width": 195.59375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Open COITracker",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 3533.96875,
+        "width": 144.703125,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Open PayNudge",
+        "selector": "a.v-link.mt-6",
+        "x": 48,
+        "y": 4147.828125,
+        "width": 138.078125,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Request a free AI opportunity review",
+        "selector": "a.btn-primary.mt-7",
+        "x": 48,
+        "y": 6727.578125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Try the live AI demo",
+        "selector": "a.btn-primary.w-full",
+        "x": 24,
+        "y": 8053.640625,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a free 10-minute fit check",
+        "selector": "a.btn-secondary.w-full",
+        "x": 24,
+        "y": 8113.640625,
+        "width": 342,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 8364.421875,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 8656.546875,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 8649.796875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 8649.796875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 8909.640625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 8967.640625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9189.734375,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9225.359375,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9260.984375,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9296.609375,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9332.234375,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9367.859375,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9477.578125,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9513.203125,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9548.828125,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9584.453125,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9620.078125,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9655.703125,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9691.328125,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9726.953125,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9762.578125,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9872.296875,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9907.921875,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9943.546875,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9979.171875,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10014.796875,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10050.421875,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10086.046875,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10121.671875,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10231.390625,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10267.015625,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10302.640625,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10338.265625,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10373.890625,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10409.515625,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10445.140625,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10480.765625,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10516.390625,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 10665.203125,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 10665.203125,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Home",
+        "selector": "a.inline-flex.min-h-[44px]",
+        "x": 16,
+        "y": 112,
+        "width": 39.234375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Set Up My AI Receptionist",
+        "selector": "a.btn-primary",
+        "x": 16,
+        "y": 630.25,
+        "width": 254.375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Not sure what you need? Use the finder",
+        "selector": "a.btn-ghost",
+        "x": 16,
+        "y": 690.25,
+        "width": 358,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Set Up My AI Receptionist",
+        "selector": "a.btn-primary.mt-6",
+        "x": 41,
+        "y": 4435,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "AI Receptionist for Contractors",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4660,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Website",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4750,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4840,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "Complete AI Business System",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4930,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "Set Up My AI Receptionist",
+        "selector": "a.btn-primary",
+        "x": 67.8125,
+        "y": 5977.5625,
+        "width": 254.375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 6155.5625,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 6447.6875,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 6440.9375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 6440.9375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 6700.78125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 6758.78125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6980.875,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7016.5,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7052.125,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7087.75,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7123.375,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7159,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7268.71875,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7304.34375,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7339.96875,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7375.59375,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7411.21875,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7446.84375,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7482.46875,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7518.09375,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7553.71875,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7663.4375,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7699.0625,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7734.6875,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7770.3125,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7805.9375,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7841.5625,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7877.1875,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7912.8125,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8022.53125,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8058.15625,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8093.78125,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8129.40625,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8165.03125,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8200.65625,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8236.28125,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8271.90625,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8307.53125,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 8456.34375,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 8456.34375,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist-for-contractors",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Home",
+        "selector": "a.inline-flex.min-h-[44px]",
+        "x": 16,
+        "y": 112,
+        "width": 39.234375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary",
+        "x": 16,
+        "y": 571.75,
+        "width": 237.484375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Not sure what you need? Use the finder",
+        "selector": "a.btn-ghost",
+        "x": 16,
+        "y": 631.75,
+        "width": 358,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary.mt-6",
+        "x": 41,
+        "y": 4933.75,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "AI Receptionist",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5158.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "Plumber AI Automation",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5248.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "HVAC AI Automation",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5338.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "What Is an AI Receptionist?",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5428.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "AI Receptionist vs Human Receptionist",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5518.75,
+        "width": 358,
+        "height": 98
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary",
+        "x": 76.25,
+        "y": 6870.46875,
+        "width": 237.484375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 7048.46875,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 7340.59375,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 7333.84375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 7333.84375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 7593.6875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 7651.6875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7873.78125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7909.40625,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7945.03125,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7980.65625,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8016.28125,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8051.90625,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8161.625,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8197.25,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8232.875,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8268.5,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8304.125,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8339.75,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8375.375,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8411,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8446.625,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8556.34375,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8591.96875,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8627.59375,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8663.21875,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8698.84375,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8734.46875,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8770.09375,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8805.71875,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8915.4375,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8951.0625,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8986.6875,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9022.3125,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9057.9375,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9093.5625,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9129.1875,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9164.8125,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9200.4375,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 9349.25,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 9349.25,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/industries",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Landscaping Businesses",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 541.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Lawn Care BusinessesMi",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 818.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for PlumbersEvery missed c",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 1109.1875,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for ElectriciansElectrical",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 1358.1875,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for HVAC CompaniesHVAC cal",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 1607.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Roofing CompaniesRoofi",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 1884.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Cleaning BusinessesRec",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 2161.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Moving CompaniesMoving",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 2438.1875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Pest Control Businesse",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 2715.1875,
+        "width": 358,
+        "height": 283.75
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for ContractorsGeneral con",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 3014.9375,
+        "width": 358,
+        "height": 255.75
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Real Estate AgentsResp",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 3286.6875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Dental ClinicsCut no-s",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 3563.6875,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Salons & BarbershopsLe",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 3812.6875,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for RestaurantsHandle rese",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4089.6875,
+        "width": 358,
+        "height": 255.75
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Auto Detailing ShopsQu",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4361.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Fence CompaniesAn AI w",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4638.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Deck BuildersAn AI sys",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 4915.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for PaintersAI workers for",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5164.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Clinics & Medical Offi",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5413.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Mortgage BrokersAI too",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5690.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Insurance BrokersAI wo",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5967.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Physiotherapy ClinicsA",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 6244.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for ChiropractorsAI recept",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 6521.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Gyms & Fitness Studios",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 6770.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Personal TrainersAI th",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 7047.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Wedding PlannersAI tha",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 7324.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Immigration Consultant",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 7601.4375,
+        "width": 358,
+        "height": 261
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for Law FirmsAI intake, cl",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 7878.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for AccountantsAI that han",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 8127.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for ConsultantsAI that qua",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 8376.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "AI Automation for AgenciesAI that handle",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 8625.4375,
+        "width": 358,
+        "height": 233
+      },
+      {
+        "tag": "a",
+        "text": "Start a build",
+        "selector": "a.btn-primary",
+        "x": 128.875,
+        "y": 9170.4375,
+        "width": 132.25,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 9348.4375,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 9640.5625,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 9633.8125,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 9633.8125,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 9893.65625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 9951.65625,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10173.75,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10209.375,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10245,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10280.625,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10316.25,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10351.875,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10461.59375,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10497.21875,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10532.84375,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10568.46875,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10604.09375,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10639.71875,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10675.34375,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10710.96875,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10746.59375,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10856.3125,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10891.9375,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10927.5625,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10963.1875,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 10998.8125,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11034.4375,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11070.0625,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11105.6875,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11215.40625,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11251.03125,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11286.65625,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11322.28125,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11357.90625,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11393.53125,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11429.15625,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11464.78125,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 11500.40625,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 11649.21875,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 11649.21875,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/tools",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "→“You're not sure what to charge, or you",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 583.375,
+        "width": 358,
+        "height": 100.390625
+      },
+      {
+        "tag": "a",
+        "text": "→“You send quotes and then they go quiet",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 695.765625,
+        "width": 358,
+        "height": 125.1875
+      },
+      {
+        "tag": "a",
+        "text": "→“You miss calls when you're on the tool",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 832.953125,
+        "width": 358,
+        "height": 125.1875
+      },
+      {
+        "tag": "a",
+        "text": "→“You bill a wage-based rate and wonder ",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 970.140625,
+        "width": 358,
+        "height": 125.1875
+      },
+      {
+        "tag": "a",
+        "text": "→“Leads come in but not enough turn into",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 1107.328125,
+        "width": 358,
+        "height": 125.1875
+      },
+      {
+        "tag": "a",
+        "text": "Contractor Profit & Pricing CalculatorPr",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 1345.25,
+        "width": 358,
+        "height": 249.34375
+      },
+      {
+        "tag": "a",
+        "text": "Contractor Labor Burden CalculatorFind w",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 1610.59375,
+        "width": 358,
+        "height": 231.15625
+      },
+      {
+        "tag": "a",
+        "text": "Contractor Quote Follow-Up GeneratorGene",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 1930.484375,
+        "width": 358,
+        "height": 249.34375
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue CalculatorSee the re",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 2303.109375,
+        "width": 358,
+        "height": 249.34375
+      },
+      {
+        "tag": "a",
+        "text": "Contractor Lead-Leak AuditA 12-point sel",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 2568.453125,
+        "width": 358,
+        "height": 205.859375
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionists",
+        "selector": "a.font-semibold.text-clay-dark",
+        "x": 87.03125,
+        "y": 3263.765625,
+        "width": 120.984375,
+        "height": 20
+      },
+      {
+        "tag": "a",
+        "text": "follow-up automation",
+        "selector": "a.font-semibold.text-clay-dark",
+        "x": 16,
+        "y": 3263.765625,
+        "width": 275.234375,
+        "height": 44.796875
+      },
+      {
+        "tag": "a",
+        "text": "custom business systems",
+        "selector": "a.font-semibold.text-clay-dark",
+        "x": 145.03125,
+        "y": 3288.5625,
+        "width": 200.34375,
+        "height": 20
+      },
+      {
+        "tag": "a",
+        "text": "Find Expired COIs — vendor insurance spr",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 3506.828125,
+        "width": 358,
+        "height": 98.75
+      },
+      {
+        "tag": "a",
+        "text": "Payment Reminder Generator — chase an un",
+        "selector": "a.group.flex",
+        "x": 16,
+        "y": 3617.578125,
+        "width": 358,
+        "height": 98.75
+      },
+      {
+        "tag": "a",
+        "text": "Get a free workflow fit check",
+        "selector": "a.btn-primary",
+        "x": 69.65625,
+        "y": 3984.8125,
+        "width": 250.671875,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 4144.8125,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 4436.9375,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 4430.1875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 4430.1875,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 4690.03125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 4748.03125,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4970.125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5005.75,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5041.375,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5077,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5112.625,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5148.25,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5257.96875,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5293.59375,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5329.21875,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5364.84375,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5400.46875,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5436.09375,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5471.71875,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5507.34375,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5542.96875,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5652.6875,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5688.3125,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5723.9375,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5759.5625,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5795.1875,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5830.8125,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5866.4375,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5902.0625,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6011.78125,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6047.40625,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6083.03125,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6118.65625,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6154.28125,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6189.90625,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6225.53125,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6261.15625,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 6296.78125,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 6445.59375,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 6445.59375,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/faq",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Start a build",
+        "selector": "a.btn-primary",
+        "x": 128.875,
+        "y": 3004,
+        "width": 132.25,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 3182,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 3474.125,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 3467.375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 3467.375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 3727.21875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 3785.21875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4007.3125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4042.9375,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4078.5625,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4114.1875,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4149.8125,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4185.4375,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4295.15625,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4330.78125,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4366.40625,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4402.03125,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4437.65625,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4473.28125,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4508.90625,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4544.53125,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4580.15625,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4689.875,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4725.5,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4761.125,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4796.75,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4832.375,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4868,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4903.625,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 4939.25,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5048.96875,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5084.59375,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5120.21875,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5155.84375,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5191.46875,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5227.09375,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5262.71875,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5298.34375,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 5333.96875,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 5482.78125,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 5482.78125,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  },
+  {
+    "path": "/use-cases/ai-receptionist-for-contractors",
+    "items": [
+      {
+        "tag": "a",
+        "text": "Skip to main content",
+        "selector": "a.skip-link",
+        "x": 12,
+        "y": -100,
+        "width": 178.4375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.group.flex",
+        "x": 24,
+        "y": 14,
+        "width": 134.90625,
+        "height": 44
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "selector": "button.-mr-2.inline-flex",
+        "x": 330,
+        "y": 14,
+        "width": 44,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Home",
+        "selector": "a.inline-flex.min-h-[44px]",
+        "x": 16,
+        "y": 112,
+        "width": 39.234375,
+        "height": 44
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary",
+        "x": 16,
+        "y": 571.75,
+        "width": 237.484375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Not sure what you need? Use the finder",
+        "selector": "a.btn-ghost",
+        "x": 16,
+        "y": 631.75,
+        "width": 358,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary.mt-6",
+        "x": 41,
+        "y": 4933.75,
+        "width": 308,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "AI Receptionist",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5158.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "Plumber AI Automation",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5248.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "HVAC AI Automation",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5338.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "What Is an AI Receptionist?",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5428.75,
+        "width": 358,
+        "height": 74
+      },
+      {
+        "tag": "a",
+        "text": "AI Receptionist vs Human Receptionist",
+        "selector": "a.border-glow.glass-card",
+        "x": 16,
+        "y": 5518.75,
+        "width": 358,
+        "height": 98
+      },
+      {
+        "tag": "a",
+        "text": "Get your AI receptionist",
+        "selector": "a.btn-primary",
+        "x": 76.25,
+        "y": 6870.46875,
+        "width": 237.484375,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Handbuilt AI",
+        "selector": "a.inline-flex.items-center",
+        "x": 24,
+        "y": 7048.46875,
+        "width": 134.90625,
+        "height": 28
+      },
+      {
+        "tag": "a",
+        "text": "pavneets956@gmail.com",
+        "selector": "a.v-link.text-[15px]",
+        "x": 24,
+        "y": 7340.59375,
+        "width": 180.046875,
+        "height": 22.5
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 231.515625,
+        "y": 7333.84375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "",
+        "selector": "a.inline-flex.h-9",
+        "x": 275.515625,
+        "y": 7333.84375,
+        "width": 36,
+        "height": 36
+      },
+      {
+        "tag": "a",
+        "text": "Open the calculator",
+        "selector": "a.btn-primary.mt-5",
+        "x": 48,
+        "y": 7593.6875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Request a review",
+        "selector": "a.btn-secondary.mt-2.5",
+        "x": 48,
+        "y": 7651.6875,
+        "width": 294,
+        "height": 48
+      },
+      {
+        "tag": "a",
+        "text": "Profit & Pricing Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7873.78125,
+        "width": 181.5625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Quote Follow-Up Generator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7909.40625,
+        "width": 195.0625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Missed-Call Revenue Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7945.03125,
+        "width": 226.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Labor Burden Calculator",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 7980.65625,
+        "width": 171.953125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lead-Leak Audit",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8016.28125,
+        "width": 117.078125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All free tools",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8051.90625,
+        "width": 88.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist for contractors",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8161.625,
+        "width": 211.578125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8197.25,
+        "width": 102.09375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI business system",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8232.875,
+        "width": 136.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI review engine",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8268.5,
+        "width": 117.53125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Chatbot for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8304.125,
+        "width": 196.796875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Lead Capture Form for Your Website",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8339.75,
+        "width": 276.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Quote Generator for Your Business",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8375.375,
+        "width": 265.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI Customer Support Agent",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8411,
+        "width": 194.78125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All services",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8446.625,
+        "width": 81.6875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Landscaping Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8556.34375,
+        "width": 175.453125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Lawn Care Businesses",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8591.96875,
+        "width": 160.34375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Plumbers",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8627.59375,
+        "width": 66.71875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Electricians",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8663.21875,
+        "width": 81.703125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "HVAC Companies",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8698.84375,
+        "width": 125.5,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI receptionist, Surrey",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8734.46875,
+        "width": 157.296875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All trades",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8770.09375,
+        "width": 66.671875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "All locations",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8805.71875,
+        "width": 85.921875,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Pricing",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8915.4375,
+        "width": 49.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "FAQ",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8951.0625,
+        "width": 28.8125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "About",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 8986.6875,
+        "width": 42.3125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Compare",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9022.3125,
+        "width": 65,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Use cases",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9057.9375,
+        "width": 73.765625,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "For creators",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9093.5625,
+        "width": 85.734375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "AI systems shop",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9129.1875,
+        "width": 116.609375,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Live demo",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9164.8125,
+        "width": 73.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Remote / international",
+        "selector": "a.inline-block.rounded-[2px]",
+        "x": 24,
+        "y": 9200.4375,
+        "width": 155.28125,
+        "height": 24.625
+      },
+      {
+        "tag": "a",
+        "text": "Privacy",
+        "selector": "a.v-micro.transition-colors",
+        "x": 24,
+        "y": 9349.25,
+        "width": 42,
+        "height": 15.59375
+      },
+      {
+        "tag": "a",
+        "text": "Terms",
+        "selector": "a.v-micro.transition-colors",
+        "x": 86,
+        "y": 9349.25,
+        "width": 35.359375,
+        "height": 15.59375
+      }
+    ]
+  }
+]

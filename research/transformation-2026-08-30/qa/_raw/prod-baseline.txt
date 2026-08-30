@@ -1,0 +1,39 @@
+### BASE=https://aibuiltbyhand.com  2026-08-30T19:52:29Z
+-- API --
+GET	/api/agent	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:31 GMT Permissions-Policy
+GET	/api/agent/businesses/search	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/businesses/search	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:31 GMT Permissions-Policy
+GET	/api/agent/call	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/call	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:32 GMT Permissions-Policy
+GET	/api/agent/call/webhook	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/call/webhook	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:33 GMT Permissions-Policy
+GET	/api/agent/call/webhook/status	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/call/webhook/status	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:35 GMT Permissions-Policy
+GET	/api/agent/calls	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/calls	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:36 GMT Permissions-Policy
+GET	/api/agent/campaigns	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/campaigns	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:36 GMT Permissions-Policy
+GET	/api/agent/contacts	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/contacts	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:36 GMT Permissions-Policy
+GET	/api/agent/contacts/1	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/contacts/1	404	0		HTTP/1.1 404 Not Found Cache-Control: public, max-age=0, must-revalidate Date: Sun, 30 Aug 2026 19:52:37 GMT Permissions-Policy
+-- PAGES --
+GET	/agent	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:37 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/calls	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/calls	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:38 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/campaigns	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/campaigns	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:38 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/contacts	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/contacts	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:38 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/leads	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/leads	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:39 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/leads/1	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/leads/1	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:39 GMT Permissions-Policy: camera=(), microphone=()
+GET	/agent/settings	404	852	text/html; charset=utf-8	<!doctype html><html lang="en-CA"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"
+HEAD	/agent/settings	404	0		HTTP/1.1 404 Not Found Cache-Control: no-store Date: Sun, 30 Aug 2026 19:52:40 GMT Permissions-Policy: camera=(), microphone=()
+HEAD	/api/agent	404	0		
+GET	/api/agent/businesses/search	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/businesses/search	404	0		
+GET	/api/agent/call	404	21	application/json	{"error":"Not found"}

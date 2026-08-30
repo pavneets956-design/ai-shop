@@ -1,0 +1,3698 @@
+[
+  {
+    "path": "/",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/",
+    "violations": [],
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-12 > div:nth-child(1) > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">for Surrey &amp; Metro Vancouver contractors</p>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"v-h1 mt-5 text-balance\" style=\"font-size:clamp(34px, 5vw, 52px)\">Your business number, answered by an AI receptionist built for contractors.</h1>"
+          },
+          {
+            "target": [
+              ".max-w-\\[36rem\\].v-body.mt-5"
+            ],
+            "html": "<p class=\"v-body mt-5 max-w-[36rem]\">It answers the calls you miss while you’re on site, books the job into your calendar, and chases the quotes that go quiet. Installed in about a week.</p>"
+          },
+          {
+            "target": [
+              ".max-w-\\[36rem\\].mt-4.v-small"
+            ],
+            "html": "<p class=\"v-small mt-4 max-w-[36rem]\" style=\"color:var(--v-ink-2)\">"
+          },
+          {
+            "target": [
+              "strong"
+            ],
+            "html": "<strong style=\"color:var(--v-ink);font-weight:600\">From <!-- -->$1,500<!-- --> CAD, one time</strong>"
+          },
+          {
+            "target": [
+              ".gap-12 > div:nth-child(1) > .mt-5.v-micro"
+            ],
+            "html": "<p class=\"v-micro mt-5\">The demo needs no signup. The fit check is a short form — I read it myself and reply within one business day.</p>"
+          },
+          {
+            "target": [
+              "figcaption"
+            ],
+            "html": "<figcaption class=\"v-micro mt-3 text-center\">Illustrative example using made-up details — not a customer result.</figcaption>"
+          },
+          {
+            "target": [
+              ".v-section:nth-child(7) > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">Neither is a skills problem. Both are what happens when a two-person office is also a full-time trade.</p>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .justify-center.flex > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">how it works</p>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > h2"
+            ],
+            "html": "<h2 class=\"v-h2 mt-5 text-balance\">Three steps. Usually live in about a week.</h2>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">No new platform for your crew to learn. Nothing changes hands except the work coming off your plate.</p>"
+          },
+          {
+            "target": [
+              "#pricing > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">One-time build. The care plan is optional and only exists once something is installed.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/demo",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/demo",
+    "violations": [],
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".left-0 > span:nth-child(1)"
+            ],
+            "html": "<span>9:41</span>"
+          },
+          {
+            "target": [
+              ".left-0 > span:nth-child(2)"
+            ],
+            "html": "<span>5G&nbsp;&nbsp;100%</span>"
+          },
+          {
+            "target": [
+              ".text-\\[13px\\].font-bold.truncate"
+            ],
+            "html": "<div class=\"truncate text-[13px] font-bold text-ink\">Greenline Landscaping</div>"
+          },
+          {
+            "target": [
+              ".text-\\[10px\\].gap-1\\.5.font-semibold"
+            ],
+            "html": "<div class=\"flex items-center gap-1.5 text-[10px] font-semibold text-ink-soft\"><span class=\"h-1.5 w-1.5 rounded-full bg-clay\"></span> <!-- -->AI receptionist online</div>"
+          },
+          {
+            "target": [
+              ".max-w-\\[86\\%\\].self-start.leading-relaxed:nth-child(1) > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft\">AI worker</div>"
+          },
+          {
+            "target": [
+              ".self-end > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-right text-ink-soft\">You (customer)</div>"
+          },
+          {
+            "target": [
+              ".max-w-\\[86\\%\\].self-start.leading-relaxed:nth-child(3) > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft\">AI worker</div>"
+          },
+          {
+            "target": [
+              ".bg-white\\/80"
+            ],
+            "html": "<span class=\"inline-flex items-center gap-1.5 rounded-full border border-line bg-white/80 px-2.5 py-1 text-[10px] font-medium text-ink-soft\"><span class=\"h-1 w-1 rounded-full bg-clay\"></span> Demo mode — no real call, text, email or booking sent</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/pricing",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/pricing",
+    "violations": [],
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].transition-colors.text-\\[15px\\]:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].transition-colors[href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].transition-colors[href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].transition-colors[href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].transition-colors[href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl\">Pricing that's easy to <span class=\"text-gradient-brand\">say yes</span> to</h1>"
+          },
+          {
+            "target": [
+              "h1 > .text-gradient-brand"
+            ],
+            "html": "<span class=\"text-gradient-brand\">say yes</span>"
+          },
+          {
+            "target": [
+              ".text-lg.max-w-xl.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-5 max-w-xl text-lg text-ink-soft\">Real prices in CAD — no “contact us for everything.” Start with one tool or go all the way to a custom app you own. A part-time admin costs more every month than a whole system costs once.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(4) > .max-w-xl.mt-4.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-sm text-ink-soft\">"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<a class=\"text-ink/70 underline underline-offset-2 hover:text-ink\" href=\"/remote-ai-development\">How remote builds work</a>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-1.text-ink-soft:nth-child(2)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best if you want to start with one focused win and test before scaling.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>One focused AI worker (receptionist, chatbot, quote intake, or review replies)</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Trained on your services, pricing, hours &amp; FAQs</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Connected to one channel (website, SMS, email, or WhatsApp)</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>~5 business days to launch + 14 days of tweaks</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-secondary w-full\" href=\"/create?package=starter\">Start with Starter</a>"
+          },
+          {
+            "target": [
+              ".mb-4"
+            ],
+            "html": "<span class=\"mb-4 inline-flex w-fit items-center rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold text-white\">Most popular</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">AI Business System</h3>"
+          },
+          {
+            "target": [
+              ".mt-1.text-ink-soft:nth-child(3)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">2–4 connected AI workers, one system.</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">$3,500–$7,500</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Live in 2–3 weeks<!-- --> · most land around $5,000</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best for businesses losing money to slow replies and manual admin.</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>2–4 connected AI workers running as one system</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Integrates with your CRM, calendar, email, payments</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Automated workflows: call handling, quotes, lead follow-up</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>Simple dashboard + 30 days of hands-on tuning</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=business\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-primary w-full\" href=\"/create?package=business\">Build my system</a>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">Custom AI App</h3>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .mt-1.text-ink-soft:nth-child(2)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">A full app or platform you own.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">From $10,000</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Typically 4–8 weeks, scoped on a call</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best when you've outgrown off-the-shelf tools and need something custom.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>Full custom app, portal, internal tool, or SaaS MVP</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Custom AI logic built around your data &amp; rules</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Accounts, database, admin, integrations as needed</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>Built on a modern stack you own — 60 days support</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=custom\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-secondary w-full\" href=\"/create?package=custom\">Request a quote</a>"
+          },
+          {
+            "target": [
+              ".flex-wrap.gap-2.items-baseline > .text-lg"
+            ],
+            "html": "<h3 class=\"text-lg font-semibold text-ink\">Care Plan</h3>"
+          },
+          {
+            "target": [
+              ".text-2xl.text-gradient-brand.font-display"
+            ],
+            "html": "<span class=\"font-display text-2xl font-semibold text-gradient-brand\">$<!-- -->99<span class=\"text-sm font-normal text-ink-soft\">/mo</span></span>"
+          },
+          {
+            "target": [
+              ".font-normal"
+            ],
+            "html": "<span class=\"text-sm font-normal text-ink-soft\">/mo</span>"
+          },
+          {
+            "target": [
+              ".flex-wrap.gap-2.items-baseline > .text-xs.text-ink-soft"
+            ],
+            "html": "<span class=\"text-xs text-ink-soft\">(or $<!-- -->79<!-- -->/mo billed annually)</span>"
+          },
+          {
+            "target": [
+              ".mt-2.max-w-2xl.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-2 max-w-2xl text-sm text-ink-soft\">Hosting &amp; uptime monitoring · Up to 1 hour of tweaks/changes per month · API usage tracking with cost alerts · Priority support (same/next business day) · Monthly performance summary</p>"
+          },
+          {
+            "target": [
+              ".whitespace-nowrap"
+            ],
+            "html": "<a class=\"btn-secondary whitespace-nowrap\" href=\"/create?package=care\">Add a Care Plan</a>"
+          },
+          {
+            "target": [
+              ".max-w-7xl.mx-auto.px-4 > .max-w-2xl.text-center.mx-auto > .v-reveal[data-armed=\"\"]:nth-child(2) > .md\\:text-5xl"
+            ],
+            "html": "<h2 class=\"mt-5 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl\">Pricing &amp; process questions</h2>"
+          },
+          {
+            "target": [
+              "details[open=\"\"] > .px-5.pb-5.v-body"
+            ],
+            "html": "<p class=\"v-body px-5 pb-5\" style=\"color:var(--v-ink-2)\">Yes. For a Custom AI App you own the code, on a modern stack with no lock-in. For Starter/Business systems you own your data and accounts and can migrate anytime. You're never trapped.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/create",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/create",
+    "violations": [],
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">Tell us what you want to build</h1>"
+          },
+          {
+            "target": [
+              ".max-w-xl"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-lg text-ink\">Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.</p>"
+          },
+          {
+            "target": [
+              ".border-ink"
+            ],
+            "html": "<span class=\"flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold border-ink bg-ink text-white\">1</span>"
+          },
+          {
+            "target": [
+              "button[aria-current=\"step\"] > .text-ink"
+            ],
+            "html": "<span class=\"text-ink\">What you need<span class=\"sr-only\"> (current step)</span></span>"
+          },
+          {
+            "target": [
+              "label[for=\"br-name\"]"
+            ],
+            "html": "<label for=\"br-name\" class=\"mb-1 block text-sm font-medium text-ink\">Your name <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-name\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-name"
+            ],
+            "html": "<input id=\"br-name\" aria-required=\"true\" autocomplete=\"name\" placeholder=\"Your name\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-contact\"]"
+            ],
+            "html": "<label for=\"br-contact\" class=\"mb-1 block text-sm font-medium text-ink\">Email or phone <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-contact\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-contact-hint"
+            ],
+            "html": "<p id=\"br-contact-hint\" class=\"mb-2 text-sm text-ink-soft\">Whichever you'd rather be reached on. One is enough.</p>"
+          },
+          {
+            "target": [
+              "#br-contact"
+            ],
+            "html": "<input id=\"br-contact\" aria-describedby=\"br-contact-hint\" aria-required=\"true\" inputmode=\"email\" autocomplete=\"email\" placeholder=\"you@business.com or 604 555 0100\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-business\"]"
+            ],
+            "html": "<label for=\"br-business\" class=\"mb-1 block text-sm font-medium text-ink\">Business name, or what you do <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-business\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-business"
+            ],
+            "html": "<input id=\"br-business\" aria-required=\"true\" autocomplete=\"organization\" placeholder=\"e.g. Delta Plumbing, or 'I run a two-van plumbing crew'\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-goal\"]"
+            ],
+            "html": "<label for=\"br-goal\" class=\"mb-1 block text-sm font-medium text-ink\">What are you trying to automate? <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-goal\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-goal-hint"
+            ],
+            "html": "<p id=\"br-goal-hint\" class=\"mb-2 text-sm text-ink-soft\">Plain words are fine — the problem, not the solution.</p>"
+          },
+          {
+            "target": [
+              "#br-goal"
+            ],
+            "html": "<textarea id=\"br-goal\" aria-describedby=\"br-goal-hint\" aria-required=\"true\" rows=\"3\" placeholder=\"e.g. Something that answers my phone and books jobs while I'm on site\" class=\"field resize-none border-ink/50\"></textarea>"
+          },
+          {
+            "target": [
+              ".mt-6.text-sm.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-6 text-sm text-ink-soft\">No spam, no obligation. Your answers are stored so we can reply, and nothing else — <a href=\"/privacy\" class=\"underline decoration-1 underline-offset-2 hover:text-ink\">privacy</a>.</p>"
+          },
+          {
+            "target": [
+              ".underline"
+            ],
+            "html": "<a href=\"/privacy\" class=\"underline decoration-1 underline-offset-2 hover:text-ink\">privacy</a>"
+          },
+          {
+            "target": [
+              ".ml-auto"
+            ],
+            "html": "<button type=\"submit\" class=\"btn-primary ml-auto order-last\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<button type=\"button\" class=\"btn-ghost\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/start",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/start",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".hbc-gate-list > li:nth-child(3)"
+            ],
+            "html": "<li>A fixed script, not a chatbot: the same questions every time, and the same pricing the rest of the site quotes.</li>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/about",
+    "violations": [],
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".justify-center.flex > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">how it works</p>"
+          },
+          {
+            "target": [
+              ".v-measure > h2"
+            ],
+            "html": "<h2 class=\"v-h2 mt-5 text-balance\">Three steps. Usually live in about a week.</h2>"
+          },
+          {
+            "target": [
+              ".v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">No new platform for your crew to learn. Nothing changes hands except the work coming off your plate.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/ai-receptionist",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Local Businesses</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Local Businesses</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Go live + monitoring — You flip it on. We monitor the first two weeks for edge cases. You get a daily summary of what the AI handled.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Chatbot for Website</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"ai-lead-capture-form\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Lead Capture Form</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"ai-business-system\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Complete AI Business System</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mt-4.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist-for-contractors",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/ai-receptionist-for-contractors",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Contractors</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Handoff + optional Care Plan — The receptionist goes live on your phone line. You get a walkthrough. Optional $99/mo Care Plan if you want ongoing tuning as your services change.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between[href$=\"ai-receptionist\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Plumber AI Automation</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"hvac-ai-automation\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">HVAC AI Automation</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">What Is an AI Receptionist?</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(5) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist vs Human Receptionist</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mx-auto.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/industries",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/industries",
+    "violations": [],
+    "passes": 21,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">AI Automation Built for Your Industry</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/65"
+            ],
+            "html": "<p class=\"mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-ink/65\">Every trade loses money in different places. Find how AI fits the way your business actually runs — then we build it, from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Landscaping Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients — starting at $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(2) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Lawn Care Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(2) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Missed calls and manual scheduling cost lawn care businesses real money. Handbuilt builds AI that books, follows up, and chases renewals — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Plumbers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(4) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Electricians</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(4) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Electrical jobs require site visits before quoting. Handbuilt builds AI that books estimates, follows up on quotes, and handles after-hours inquiries — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".border-glow.glass-card[href$=\"hvac-ai-automation\"] > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for HVAC Companies</h2>"
+          },
+          {
+            "target": [
+              ".border-glow.glass-card[href$=\"hvac-ai-automation\"] > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(6) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Roofing Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(6) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Roofing quotes are large, seasonal, and rarely followed up properly. Handbuilt builds AI that captures leads, follows up on quotes, and books inspections — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(7) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Cleaning Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(7) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Recurring scheduling, client communication, and review requests eat hours every week. Handbuilt automates them for cleaning businesses — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(8) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Moving Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(8) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Moving quotes require volume and distance details before pricing. Handbuilt builds AI that captures job details, sends quotes, and follows up — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(9) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Pest Control Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(9) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(10) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Contractors</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(10) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">General contractors juggle subcontractors, quotes, and client updates simultaneously. Handbuilt builds AI that handles inquiries, quotes, and project communication — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(11) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Real Estate Agents</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(11) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Respond to buyer and seller leads in seconds, auto-qualify inquiries, and book showings — all without hiring an assistant. Built for Canadian realtors.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(12) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Dental Clinics</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(12) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Cut no-shows, fill last-minute cancellations, and handle after-hours booking requests — without adding front-desk headcount. Built for Canadian dental practices.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(13) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Salons &amp; Barbershops</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(13) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Let clients book their preferred stylist, get reminded automatically, and join a waitlist when you're full — without tying up the phone. Built for Canadian salons.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(14) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Restaurants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(14) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Handle reservation requests, answer menu and allergen questions, and confirm large-party bookings automatically — without putting customers on hold. For Canadian restaurants.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(15) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Auto Detailing Shops</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(15) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Quote by vehicle type automatically, fill your booking calendar without back-and-forth texts, and follow up on estimates that never converted. For Canadian detailers.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(16) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Fence Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(16) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">An AI worker for your fence company handles quote requests, missed calls, and follow-ups while you're on site. Fixed CAD pricing, built in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(17) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Deck Builders</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(17) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">An AI system for deck builders handles detailed quote intake, site-visit booking, and long-cycle follow-ups. Fixed CAD pricing, built by Handbuilt AI in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(18) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Painters</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(18) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI workers for painters handle quote intake, call overflow, follow-up on cold estimates, and review requests. Fixed CAD pricing, built by Handbuilt AI in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(19) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Clinics &amp; Medical Offices</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(19) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI front-desk automation for clinics: appointment booking, reminders, after-hours intake, and patient admin. Front-desk scope only — no medical advice. Fixed CAD pricing.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(20) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Mortgage Brokers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(20) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI tools for mortgage brokers handle lead follow-up, document intake, and call booking. Admin and lead handling only — not financial advice. Fixed CAD pricing, Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(21) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Insurance Brokers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(21) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI workers for insurance brokers handle quote intake, renewal reminders, and lead follow-up. Front-desk and lead scope only. Fixed CAD pricing, built in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(22) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Physiotherapy Clinics</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(22) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that answers calls, books assessments, and chases no-shows for physio clinics — so your front desk isn't buried and your schedule stays full. From $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(23) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Chiropractors</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(23) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI reception, booking and recall for chiropractic clinics — capture new patients, keep adjustment schedules full, and cut no-shows. Built for you from $1,500.</p>"
+          },
+          {
+            "target": [
+              "a[href$=\"gym-ai-automation\"] > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Gyms &amp; Fitness Studios</h2>"
+          },
+          {
+            "target": [
+              "a[href$=\"gym-ai-automation\"] > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that answers membership inquiries, books trials, and wins back cancelling members for gyms and studios — 24/7. Built around your funnel from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(25) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Personal Trainers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(25) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that captures leads, books consults, and follows up for personal trainers — so you coach instead of chasing DMs. Built around your business from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(26) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Wedding Planners</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(26) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies wedding inquiries, books discovery calls and nurtures couples for planners — so no dream booking slips through your inbox. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(27) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Immigration Consultants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(27) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies inquiries, books consults, and handles document intake for immigration consultants — so you focus on cases, not repetitive questions. From $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(28) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Law Firms</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(28) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI intake, client screening and booking for law firms — capture every potential client and qualify matters before they reach your desk. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(29) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Accountants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(29) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that handles client questions, document collection and deadline reminders for accounting firms — reclaim time during tax season. Built for you from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(30) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Consultants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(30) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies leads, books discovery calls and handles proposals for independent consultants — so you spend time on clients, not admin. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(31) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Agencies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(31) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that handles lead intake, client reporting and internal ops for agencies — plus white-label AI builds you can resell. Built around your workflow.</p>"
+          },
+          {
+            "target": [
+              ".text-3xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Not sure which one you need?</h2>"
+          },
+          {
+            "target": [
+              ".mx-auto.text-ink-soft.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us what you want AI to do for your business and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/tools",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/tools",
+    "violations": [],
+    "passes": 22,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              "li:nth-child(1) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(2) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(3) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(4) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(5) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(4) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(1) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(4) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(2) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(5) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(6) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(1) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(6) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(2) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/faq",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/faq",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">Everything you might ask</h1>"
+          },
+          {
+            "target": [
+              ".max-w-xl"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-lg text-ink-soft\">Straight answers about what we build, what it costs, and how it works.</p>"
+          },
+          {
+            "target": [
+              "div:nth-child(1) > .max-w-2xl > .v-reveal > .sm\\:text-4xl.md\\:text-5xl"
+            ],
+            "html": "<h2 class=\"mt-5 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl\">General</h2>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/use-cases/ai-receptionist-for-contractors",
+    "viewport": "desktop",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/use-cases/ai-receptionist-for-contractors",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\].transition-colors:nth-child(1)"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/ai-receptionist-for-contractors\">AI Receptionist</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"demo\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/demo\">Demo</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"tools\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/tools\">Free Tools</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"pricing\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/pricing\">Pricing</a>"
+          },
+          {
+            "target": [
+              ".gap-7 > .rounded-\\[2px\\].text-\\[15px\\][href$=\"about\"]"
+            ],
+            "html": "<a class=\"rounded-[2px] text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]\" style=\"color:var(--v-ink-2)\" href=\"/about\">About</a>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Contractors</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Handoff + optional Care Plan — The receptionist goes live on your phone line. You get a walkthrough. Optional $99/mo Care Plan if you want ongoing tuning as your services change.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between[href$=\"ai-receptionist\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Plumber AI Automation</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"hvac-ai-automation\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">HVAC AI Automation</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">What Is an AI Receptionist?</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(5) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist vs Human Receptionist</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mx-auto.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/definitely-not-real",
+    "viewport": "desktop",
+    "httpStatus": 404,
+    "url": "http://localhost:3200/definitely-not-real",
+    "violations": [],
+    "passes": 22,
+    "incomplete": []
+  },
+  {
+    "path": "/",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/",
+    "violations": [],
+    "passes": 32,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".gap-12 > div:nth-child(1) > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">for Surrey &amp; Metro Vancouver contractors</p>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"v-h1 mt-5 text-balance\" style=\"font-size:clamp(34px, 5vw, 52px)\">Your business number, answered by an AI receptionist built for contractors.</h1>"
+          },
+          {
+            "target": [
+              ".max-w-\\[36rem\\].v-body.mt-5"
+            ],
+            "html": "<p class=\"v-body mt-5 max-w-[36rem]\">It answers the calls you miss while you’re on site, books the job into your calendar, and chases the quotes that go quiet. Installed in about a week.</p>"
+          },
+          {
+            "target": [
+              ".max-w-\\[36rem\\].mt-4.v-small"
+            ],
+            "html": "<p class=\"v-small mt-4 max-w-[36rem]\" style=\"color:var(--v-ink-2)\">"
+          },
+          {
+            "target": [
+              "strong"
+            ],
+            "html": "<strong style=\"color:var(--v-ink);font-weight:600\">From <!-- -->$1,500<!-- --> CAD, one time</strong>"
+          },
+          {
+            "target": [
+              ".gap-12 > div:nth-child(1) > .mt-5.v-micro"
+            ],
+            "html": "<p class=\"v-micro mt-5\">The demo needs no signup. The fit check is a short form — I read it myself and reply within one business day.</p>"
+          },
+          {
+            "target": [
+              "figcaption"
+            ],
+            "html": "<figcaption class=\"v-micro mt-3 text-center\">Illustrative example using made-up details — not a customer result.</figcaption>"
+          },
+          {
+            "target": [
+              ".v-section:nth-child(7) > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">Neither is a skills problem. Both are what happens when a two-person office is also a full-time trade.</p>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .justify-center.flex > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">how it works</p>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > h2"
+            ],
+            "html": "<h2 class=\"v-h2 mt-5 text-balance\">Three steps. Usually live in about a week.</h2>"
+          },
+          {
+            "target": [
+              "#how-it-works > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">No new platform for your crew to learn. Nothing changes hands except the work coming off your plate.</p>"
+          },
+          {
+            "target": [
+              "#pricing > .v-container > .v-reveal[data-armed=\"\"] > .v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">One-time build. The care plan is optional and only exists once something is installed.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/demo",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/demo",
+    "violations": [],
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".left-0 > span:nth-child(1)"
+            ],
+            "html": "<span>9:41</span>"
+          },
+          {
+            "target": [
+              ".left-0 > span:nth-child(2)"
+            ],
+            "html": "<span>5G&nbsp;&nbsp;100%</span>"
+          },
+          {
+            "target": [
+              ".text-\\[13px\\].font-bold.truncate"
+            ],
+            "html": "<div class=\"truncate text-[13px] font-bold text-ink\">Greenline Landscaping</div>"
+          },
+          {
+            "target": [
+              ".text-\\[10px\\].gap-1\\.5.font-semibold"
+            ],
+            "html": "<div class=\"flex items-center gap-1.5 text-[10px] font-semibold text-ink-soft\"><span class=\"h-1.5 w-1.5 rounded-full bg-clay\"></span> <!-- -->AI receptionist online</div>"
+          },
+          {
+            "target": [
+              ".max-w-\\[86\\%\\].self-start.leading-relaxed:nth-child(1) > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft\">AI worker</div>"
+          },
+          {
+            "target": [
+              ".self-end > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-right text-ink-soft\">You (customer)</div>"
+          },
+          {
+            "target": [
+              ".max-w-\\[86\\%\\].self-start.leading-relaxed:nth-child(3) > .mb-1.text-\\[8\\.5px\\].tracking-\\[0\\.05em\\]"
+            ],
+            "html": "<div class=\"mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft\">AI worker</div>"
+          },
+          {
+            "target": [
+              ".bg-white\\/80"
+            ],
+            "html": "<span class=\"inline-flex items-center gap-1.5 rounded-full border border-line bg-white/80 px-2.5 py-1 text-[10px] font-medium text-ink-soft\"><span class=\"h-1 w-1 rounded-full bg-clay\"></span> Demo mode — no real call, text, email or booking sent</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/pricing",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/pricing",
+    "violations": [],
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\] > .tracking-tight.text-\\[17px\\].font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl\">Pricing that's easy to <span class=\"text-gradient-brand\">say yes</span> to</h1>"
+          },
+          {
+            "target": [
+              "h1 > .text-gradient-brand"
+            ],
+            "html": "<span class=\"text-gradient-brand\">say yes</span>"
+          },
+          {
+            "target": [
+              ".text-lg.max-w-xl.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-5 max-w-xl text-lg text-ink-soft\">Real prices in CAD — no “contact us for everything.” Start with one tool or go all the way to a custom app you own. A part-time admin costs more every month than a whole system costs once.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(4) > .max-w-xl.mt-4.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-sm text-ink-soft\">"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<a class=\"text-ink/70 underline underline-offset-2 hover:text-ink\" href=\"/remote-ai-development\">How remote builds work</a>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-1.text-ink-soft:nth-child(2)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best if you want to start with one focused win and test before scaling.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>One focused AI worker (receptionist, chatbot, quote intake, or review replies)</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Trained on your services, pricing, hours &amp; FAQs</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Connected to one channel (website, SMS, email, or WhatsApp)</span>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>~5 business days to launch + 14 days of tweaks</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-secondary w-full\" href=\"/create?package=starter\">Start with Starter</a>"
+          },
+          {
+            "target": [
+              ".mb-4"
+            ],
+            "html": "<span class=\"mb-4 inline-flex w-fit items-center rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold text-white\">Most popular</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">AI Business System</h3>"
+          },
+          {
+            "target": [
+              ".mt-1.text-ink-soft:nth-child(3)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">2–4 connected AI workers, one system.</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">$3,500–$7,500</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Live in 2–3 weeks<!-- --> · most land around $5,000</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best for businesses losing money to slow replies and manual admin.</p>"
+          },
+          {
+            "target": [
+              ".border-ink > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>2–4 connected AI workers running as one system</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Integrates with your CRM, calendar, email, payments</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Automated workflows: call handling, quotes, lead follow-up</span>"
+          },
+          {
+            "target": [
+              ".border-ink > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>Simple dashboard + 30 days of hands-on tuning</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=business\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-primary w-full\" href=\"/create?package=business\">Build my system</a>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .text-xl"
+            ],
+            "html": "<h3 class=\"text-xl font-semibold text-ink\">Custom AI App</h3>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .mt-1.text-ink-soft:nth-child(2)"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">A full app or platform you own.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-4xl.font-display.font-semibold"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-ink\">From $10,000</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .gap-1.items-baseline.mt-5 > .text-ink-soft.text-sm"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .mt-1.text-xs.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-1 text-xs text-ink-soft\">Typically 4–8 weeks, scoped on a call</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-4 text-sm text-ink-soft\"><span class=\"text-ink-soft\">For:</span> <!-- -->Best when you've outgrown off-the-shelf tools and need something custom.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .mt-4.text-ink-soft > .text-ink-soft"
+            ],
+            "html": "<span class=\"text-ink-soft\">For:</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(1) > span"
+            ],
+            "html": "<span>Full custom app, portal, internal tool, or SaaS MVP</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(2) > span"
+            ],
+            "html": "<span>Custom AI logic built around your data &amp; rules</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(3) > span"
+            ],
+            "html": "<span>Accounts, database, admin, integrations as needed</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.space-y-3 > .text-ink\\/75.gap-3.items-start:nth-child(4) > span"
+            ],
+            "html": "<span>Built on a modern stack you own — 60 days support</span>"
+          },
+          {
+            "target": [
+              "a[href=\"/create?package=custom\"]"
+            ],
+            "html": "<a class=\"mt-7 btn-secondary w-full\" href=\"/create?package=custom\">Request a quote</a>"
+          },
+          {
+            "target": [
+              ".flex-wrap.gap-2.items-baseline > .text-lg"
+            ],
+            "html": "<h3 class=\"text-lg font-semibold text-ink\">Care Plan</h3>"
+          },
+          {
+            "target": [
+              ".text-2xl.text-gradient-brand.font-display"
+            ],
+            "html": "<span class=\"font-display text-2xl font-semibold text-gradient-brand\">$<!-- -->99<span class=\"text-sm font-normal text-ink-soft\">/mo</span></span>"
+          },
+          {
+            "target": [
+              ".font-normal"
+            ],
+            "html": "<span class=\"text-sm font-normal text-ink-soft\">/mo</span>"
+          },
+          {
+            "target": [
+              ".flex-wrap.gap-2.items-baseline > .text-xs.text-ink-soft"
+            ],
+            "html": "<span class=\"text-xs text-ink-soft\">(or $<!-- -->79<!-- -->/mo billed annually)</span>"
+          },
+          {
+            "target": [
+              ".mt-2.max-w-2xl.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-2 max-w-2xl text-sm text-ink-soft\">Hosting &amp; uptime monitoring · Up to 1 hour of tweaks/changes per month · API usage tracking with cost alerts · Priority support (same/next business day) · Monthly performance summary</p>"
+          },
+          {
+            "target": [
+              ".whitespace-nowrap"
+            ],
+            "html": "<a class=\"btn-secondary whitespace-nowrap\" href=\"/create?package=care\">Add a Care Plan</a>"
+          },
+          {
+            "target": [
+              ".max-w-7xl.mx-auto.px-4 > .max-w-2xl.text-center.mx-auto > .v-reveal[data-armed=\"\"]:nth-child(2) > .md\\:text-5xl"
+            ],
+            "html": "<h2 class=\"mt-5 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl\">Pricing &amp; process questions</h2>"
+          },
+          {
+            "target": [
+              "details[open=\"\"] > .px-5.pb-5.v-body"
+            ],
+            "html": "<p class=\"v-body px-5 pb-5\" style=\"color:var(--v-ink-2)\">Yes. For a Custom AI App you own the code, on a modern stack with no lock-in. For Starter/Business systems you own your data and accounts and can migrate anytime. You're never trapped.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/create",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/create",
+    "violations": [],
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".group > .text-\\[17px\\].tracking-tight.font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">Tell us what you want to build</h1>"
+          },
+          {
+            "target": [
+              ".max-w-xl"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-lg text-ink\">Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.</p>"
+          },
+          {
+            "target": [
+              ".border-ink"
+            ],
+            "html": "<span class=\"flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold border-ink bg-ink text-white\">1</span>"
+          },
+          {
+            "target": [
+              "button[aria-current=\"step\"] > .text-ink"
+            ],
+            "html": "<span class=\"text-ink\">What you need<span class=\"sr-only\"> (current step)</span></span>"
+          },
+          {
+            "target": [
+              "label[for=\"br-name\"]"
+            ],
+            "html": "<label for=\"br-name\" class=\"mb-1 block text-sm font-medium text-ink\">Your name <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-name\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-name"
+            ],
+            "html": "<input id=\"br-name\" aria-required=\"true\" autocomplete=\"name\" placeholder=\"Your name\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-contact\"]"
+            ],
+            "html": "<label for=\"br-contact\" class=\"mb-1 block text-sm font-medium text-ink\">Email or phone <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-contact\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-contact-hint"
+            ],
+            "html": "<p id=\"br-contact-hint\" class=\"mb-2 text-sm text-ink-soft\">Whichever you'd rather be reached on. One is enough.</p>"
+          },
+          {
+            "target": [
+              "#br-contact"
+            ],
+            "html": "<input id=\"br-contact\" aria-describedby=\"br-contact-hint\" aria-required=\"true\" inputmode=\"email\" autocomplete=\"email\" placeholder=\"you@business.com or 604 555 0100\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-business\"]"
+            ],
+            "html": "<label for=\"br-business\" class=\"mb-1 block text-sm font-medium text-ink\">Business name, or what you do <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-business\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-business"
+            ],
+            "html": "<input id=\"br-business\" aria-required=\"true\" autocomplete=\"organization\" placeholder=\"e.g. Delta Plumbing, or 'I run a two-van plumbing crew'\" class=\"field min-h-[44px] border-ink/50\" value=\"\">"
+          },
+          {
+            "target": [
+              "label[for=\"br-goal\"]"
+            ],
+            "html": "<label for=\"br-goal\" class=\"mb-1 block text-sm font-medium text-ink\">What are you trying to automate? <span class=\"font-normal text-ink-soft\">(required)</span></label>"
+          },
+          {
+            "target": [
+              "label[for=\"br-goal\"] > .font-normal.text-ink-soft"
+            ],
+            "html": "<span class=\"font-normal text-ink-soft\">(required)</span>"
+          },
+          {
+            "target": [
+              "#br-goal-hint"
+            ],
+            "html": "<p id=\"br-goal-hint\" class=\"mb-2 text-sm text-ink-soft\">Plain words are fine — the problem, not the solution.</p>"
+          },
+          {
+            "target": [
+              "#br-goal"
+            ],
+            "html": "<textarea id=\"br-goal\" aria-describedby=\"br-goal-hint\" aria-required=\"true\" rows=\"3\" placeholder=\"e.g. Something that answers my phone and books jobs while I'm on site\" class=\"field resize-none border-ink/50\"></textarea>"
+          },
+          {
+            "target": [
+              ".mt-6.text-sm.text-ink-soft"
+            ],
+            "html": "<p class=\"mt-6 text-sm text-ink-soft\">No spam, no obligation. Your answers are stored so we can reply, and nothing else — <a href=\"/privacy\" class=\"underline decoration-1 underline-offset-2 hover:text-ink\">privacy</a>.</p>"
+          },
+          {
+            "target": [
+              ".underline"
+            ],
+            "html": "<a href=\"/privacy\" class=\"underline decoration-1 underline-offset-2 hover:text-ink\">privacy</a>"
+          },
+          {
+            "target": [
+              ".ml-auto"
+            ],
+            "html": "<button type=\"submit\" class=\"btn-primary ml-auto order-last\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<button type=\"button\" class=\"btn-ghost\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/start",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/start",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".hbc-gate-lede"
+            ],
+            "html": "<p class=\"hbc-gate-lede\">Six questions about your business, then your email at the end. You get the workflow and a costed plan on screen, plus the right page to go to next.</p>"
+          },
+          {
+            "target": [
+              ".hbc-gate-list > li:nth-child(1)"
+            ],
+            "html": "<li>About a minute: four taps and four short typed answers.</li>"
+          },
+          {
+            "target": [
+              ".hbc-gate-list > li:nth-child(2)"
+            ],
+            "html": "<li>It speaks, but every word is also on screen — sound is optional.</li>"
+          },
+          {
+            "target": [
+              ".hbc-gate-list > li:nth-child(4)"
+            ],
+            "html": "<li>Nothing is emailed to you. At the end you can send your answers to Pavneet, and he replies within one business day.</li>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/about",
+    "violations": [],
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".justify-center.flex > .v-label"
+            ],
+            "html": "<p class=\"v-label  \">how it works</p>"
+          },
+          {
+            "target": [
+              ".v-measure > h2"
+            ],
+            "html": "<h2 class=\"v-h2 mt-5 text-balance\">Three steps. Usually live in about a week.</h2>"
+          },
+          {
+            "target": [
+              ".v-measure > .v-lead.mt-4"
+            ],
+            "html": "<p class=\"v-lead mt-4\">No new platform for your crew to learn. Nothing changes hands except the work coming off your plate.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/ai-receptionist",
+    "violations": [],
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\].flex-none.gap-2\\.5 > .tracking-tight.text-\\[17px\\].font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Local Businesses</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Local Businesses</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Go live + monitoring — You flip it on. We monitor the first two weeks for edge cases. You get a daily summary of what the AI handled.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Chatbot for Website</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"ai-lead-capture-form\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Lead Capture Form</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"ai-business-system\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Complete AI Business System</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mt-4.mx-auto"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/ai-receptionist-for-contractors",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/ai-receptionist-for-contractors",
+    "violations": [],
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\].flex-none.gap-2\\.5 > .tracking-tight.text-\\[17px\\].font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Contractors</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Handoff + optional Care Plan — The receptionist goes live on your phone line. You get a walkthrough. Optional $99/mo Care Plan if you want ongoing tuning as your services change.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between[href$=\"ai-receptionist\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Plumber AI Automation</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"hvac-ai-automation\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">HVAC AI Automation</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">What Is an AI Receptionist?</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(5) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist vs Human Receptionist</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mx-auto.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/industries",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/industries",
+    "violations": [],
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\] > .text-\\[17px\\].tracking-tight.font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">AI Automation Built for Your Industry</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/65"
+            ],
+            "html": "<p class=\"mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-ink/65\">Every trade loses money in different places. Find how AI fits the way your business actually runs — then we build it, from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Landscaping Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(1) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients — starting at $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(2) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Lawn Care Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal:nth-child(2) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Missed calls and manual scheduling cost lawn care businesses real money. Handbuilt builds AI that books, follows up, and chases renewals — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Plumbers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Electricians</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Electrical jobs require site visits before quoting. Handbuilt builds AI that books estimates, follows up on quotes, and handles after-hours inquiries — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".border-glow.glass-card[href$=\"hvac-ai-automation\"] > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for HVAC Companies</h2>"
+          },
+          {
+            "target": [
+              ".border-glow.glass-card[href$=\"hvac-ai-automation\"] > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(6) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Roofing Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(6) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Roofing quotes are large, seasonal, and rarely followed up properly. Handbuilt builds AI that captures leads, follows up on quotes, and books inspections — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(7) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Cleaning Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(7) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Recurring scheduling, client communication, and review requests eat hours every week. Handbuilt automates them for cleaning businesses — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(8) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Moving Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(8) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Moving quotes require volume and distance details before pricing. Handbuilt builds AI that captures job details, sends quotes, and follows up — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(9) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Pest Control Businesses</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(9) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(10) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Contractors</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(10) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">General contractors juggle subcontractors, quotes, and client updates simultaneously. Handbuilt builds AI that handles inquiries, quotes, and project communication — from $1,500 CAD.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(11) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Real Estate Agents</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(11) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Respond to buyer and seller leads in seconds, auto-qualify inquiries, and book showings — all without hiring an assistant. Built for Canadian realtors.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(12) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Dental Clinics</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(12) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Cut no-shows, fill last-minute cancellations, and handle after-hours booking requests — without adding front-desk headcount. Built for Canadian dental practices.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(13) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Salons &amp; Barbershops</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(13) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Let clients book their preferred stylist, get reminded automatically, and join a waitlist when you're full — without tying up the phone. Built for Canadian salons.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(14) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Restaurants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(14) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Handle reservation requests, answer menu and allergen questions, and confirm large-party bookings automatically — without putting customers on hold. For Canadian restaurants.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(15) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Auto Detailing Shops</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(15) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">Quote by vehicle type automatically, fill your booking calendar without back-and-forth texts, and follow up on estimates that never converted. For Canadian detailers.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(16) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Fence Companies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(16) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">An AI worker for your fence company handles quote requests, missed calls, and follow-ups while you're on site. Fixed CAD pricing, built in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(17) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Deck Builders</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(17) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">An AI system for deck builders handles detailed quote intake, site-visit booking, and long-cycle follow-ups. Fixed CAD pricing, built by Handbuilt AI in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(18) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Painters</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(18) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI workers for painters handle quote intake, call overflow, follow-up on cold estimates, and review requests. Fixed CAD pricing, built by Handbuilt AI in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(19) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Clinics &amp; Medical Offices</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(19) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI front-desk automation for clinics: appointment booking, reminders, after-hours intake, and patient admin. Front-desk scope only — no medical advice. Fixed CAD pricing.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(20) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Mortgage Brokers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(20) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI tools for mortgage brokers handle lead follow-up, document intake, and call booking. Admin and lead handling only — not financial advice. Fixed CAD pricing, Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(21) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Insurance Brokers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(21) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI workers for insurance brokers handle quote intake, renewal reminders, and lead follow-up. Front-desk and lead scope only. Fixed CAD pricing, built in Surrey BC.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(22) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Physiotherapy Clinics</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(22) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that answers calls, books assessments, and chases no-shows for physio clinics — so your front desk isn't buried and your schedule stays full. From $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(23) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Chiropractors</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(23) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI reception, booking and recall for chiropractic clinics — capture new patients, keep adjustment schedules full, and cut no-shows. Built for you from $1,500.</p>"
+          },
+          {
+            "target": [
+              "a[href$=\"gym-ai-automation\"] > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Gyms &amp; Fitness Studios</h2>"
+          },
+          {
+            "target": [
+              "a[href$=\"gym-ai-automation\"] > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that answers membership inquiries, books trials, and wins back cancelling members for gyms and studios — 24/7. Built around your funnel from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(25) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Personal Trainers</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(25) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that captures leads, books consults, and follows up for personal trainers — so you coach instead of chasing DMs. Built around your business from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(26) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Wedding Planners</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(26) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies wedding inquiries, books discovery calls and nurtures couples for planners — so no dream booking slips through your inbox. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(27) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Immigration Consultants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(27) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies inquiries, books consults, and handles document intake for immigration consultants — so you focus on cases, not repetitive questions. From $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(28) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Law Firms</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(28) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI intake, client screening and booking for law firms — capture every potential client and qualify matters before they reach your desk. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(29) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Accountants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(29) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that handles client questions, document collection and deadline reminders for accounting firms — reclaim time during tax season. Built for you from $1,500.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(30) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Consultants</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(30) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that qualifies leads, books discovery calls and handles proposals for independent consultants — so you spend time on clients, not admin. Built for you.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(31) > .border-glow.glass-card.h-full > h2"
+            ],
+            "html": "<h2 class=\"mt-4 font-display text-lg font-semibold text-ink\">AI Automation for Agencies</h2>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(31) > .border-glow.glass-card.h-full > .flex-1.text-sm.mt-2"
+            ],
+            "html": "<p class=\"mt-2 flex-1 text-sm leading-relaxed text-ink-soft\">AI that handles lead intake, client reporting and internal ops for agencies — plus white-label AI builds you can resell. Built around your workflow.</p>"
+          },
+          {
+            "target": [
+              ".text-3xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Not sure which one you need?</h2>"
+          },
+          {
+            "target": [
+              ".mx-auto.text-ink-soft.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us what you want AI to do for your business and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/tools",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/tools",
+    "violations": [],
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              "li:nth-child(1) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(2) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(3) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(4) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              "li:nth-child(5) > .hover\\:bg-clay-soft\\/30.gap-2.items-start > .text-clay"
+            ],
+            "html": "<span class=\"text-clay\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(4) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(1) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(4) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(2) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(5) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(6) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(1) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          },
+          {
+            "target": [
+              ".pb-4:nth-child(6) > .gap-4.lg\\:grid-cols-3.sm\\:grid-cols-2 > .rounded-card.p-5.shadow-card:nth-child(2) > .gap-1.inline-flex.text-clay-dark > span[aria-hidden=\"true\"]"
+            ],
+            "html": "<span aria-hidden=\"true\">→</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/faq",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/faq",
+    "violations": [],
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\] > .tracking-tight.font-semibold.text-\\[17px\\]"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl\">Everything you might ask</h1>"
+          },
+          {
+            "target": [
+              ".max-w-xl"
+            ],
+            "html": "<p class=\"mx-auto mt-4 max-w-xl text-lg text-ink-soft\">Straight answers about what we build, what it costs, and how it works.</p>"
+          },
+          {
+            "target": [
+              "div:nth-child(1) > .max-w-2xl > .v-reveal > .sm\\:text-4xl.md\\:text-5xl"
+            ],
+            "html": "<h2 class=\"mt-5 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl\">General</h2>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/use-cases/ai-receptionist-for-contractors",
+    "viewport": "mobile",
+    "httpStatus": 200,
+    "url": "http://localhost:3200/use-cases/ai-receptionist-for-contractors",
+    "violations": [],
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".min-h-\\[44px\\].flex-none.gap-2\\.5 > .tracking-tight.text-\\[17px\\].font-semibold"
+            ],
+            "html": "<span class=\"text-[17px] font-semibold tracking-tight\" style=\"color:var(--v-ink);letter-spacing:-0.02em\">Handbuilt&nbsp;AI</span>"
+          },
+          {
+            "target": [
+              ".hover\\:text-ink"
+            ],
+            "html": "<a class=\"inline-flex min-h-[44px] items-center hover:text-ink\" href=\"/\">Home</a>"
+          },
+          {
+            "target": [
+              "span[aria-current=\"page\"]"
+            ],
+            "html": "<span aria-current=\"page\" style=\"color:var(--v-ink-2)\">AI Receptionist for Contractors</span>"
+          },
+          {
+            "target": [
+              "h1"
+            ],
+            "html": "<h1 class=\"mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl\">AI Receptionist for Contractors</h1>"
+          },
+          {
+            "target": [
+              ".text-ink\\/70"
+            ],
+            "html": "<p class=\"mt-6 text-lg leading-relaxed text-ink/70\">"
+          },
+          {
+            "target": [
+              ".btn-ghost"
+            ],
+            "html": "<a class=\"btn-ghost\" href=\"/#finder\">Not sure what you need? Use the finder</a>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(1) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">1</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(2) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">2</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(3) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">3</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .h-8.w-8.font-bold"
+            ],
+            "html": "<span class=\"flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white\">4</span>"
+          },
+          {
+            "target": [
+              ".gap-4.v-reveal[data-armed=\"\"]:nth-child(4) > .pt-1.text-ink\\/75"
+            ],
+            "html": "<p class=\"pt-1 text-ink/75\">Handoff + optional Care Plan — The receptionist goes live on your phone line. You get a walkthrough. Optional $99/mo Care Plan if you want ongoing tuning as your services change.</p>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(3) > div > .space-y-4.leading-relaxed.text-ink\\/75 > p"
+            ],
+            "html": "<p>"
+          },
+          {
+            "target": [
+              ".h-full.flex-col.border-glow > .uppercase.tracking-\\[0\\.18em\\].text-xs"
+            ],
+            "html": "<p class=\"text-xs uppercase tracking-[0.18em] text-ink-soft\">Recommended package</p>"
+          },
+          {
+            "target": [
+              "h3"
+            ],
+            "html": "<h3 class=\"mt-2 text-xl font-semibold text-ink\">AI Starter System</h3>"
+          },
+          {
+            "target": [
+              ".text-4xl"
+            ],
+            "html": "<span class=\"font-display text-4xl font-semibold text-gradient-brand\">From $1,500</span>"
+          },
+          {
+            "target": [
+              ".items-baseline > .text-sm.text-ink-soft"
+            ],
+            "html": "<span class=\"text-sm text-ink-soft\">CAD</span>"
+          },
+          {
+            "target": [
+              ".mt-1"
+            ],
+            "html": "<p class=\"mt-1 text-sm text-ink-soft\">Live in ~5 business days</p>"
+          },
+          {
+            "target": [
+              ".mt-2.text-xs.leading-relaxed"
+            ],
+            "html": "<p class=\"mt-2 text-xs leading-relaxed text-ink-soft\">Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.</p>"
+          },
+          {
+            "target": [
+              ".flex-1"
+            ],
+            "html": "<p class=\"mt-4 flex-1 text-sm text-ink-soft\">One AI worker, live in days.</p>"
+          },
+          {
+            "target": [
+              ".w-full.mt-6[href=\"/create?package=starter\"]"
+            ],
+            "html": "<a class=\"btn-primary mt-6 w-full\" href=\"/create?package=starter\">"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(1) > .border-glow.justify-between[href$=\"ai-receptionist\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(2) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">Plumber AI Automation</span>"
+          },
+          {
+            "target": [
+              ".border-glow.justify-between[href$=\"hvac-ai-automation\"] > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">HVAC AI Automation</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(4) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">What Is an AI Receptionist?</span>"
+          },
+          {
+            "target": [
+              ".v-reveal[data-armed=\"\"]:nth-child(5) > .border-glow.justify-between.glass-card > .font-medium.text-ink"
+            ],
+            "html": "<span class=\"font-medium text-ink\">AI Receptionist vs Human Receptionist</span>"
+          },
+          {
+            "target": [
+              ".sm\\:text-4xl"
+            ],
+            "html": "<h2 class=\"font-display text-3xl font-semibold text-ink sm:text-4xl\">Want this built for your business?</h2>"
+          },
+          {
+            "target": [
+              ".text-ink-soft.mx-auto.mt-4"
+            ],
+            "html": "<p class=\"mx-auto mt-4 text-ink-soft\">Tell us about your setup and we'll send a plan and a fixed quote within one business day.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/definitely-not-real",
+    "viewport": "mobile",
+    "httpStatus": 404,
+    "url": "http://localhost:3200/definitely-not-real",
+    "violations": [],
+    "passes": 24,
+    "incomplete": []
+  }
+]

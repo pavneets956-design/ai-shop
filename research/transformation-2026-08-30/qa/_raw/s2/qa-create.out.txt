@@ -1,0 +1,549 @@
+
+############ Q2 — /create RESPONSE-SHAPE MATRIX ############
+
+--- 01-ok-persisted-emailed (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+POST BODY SENT: {"type":"build-request","name":"Pav QA","email":"qa-noreply@example.invalid","business":"QA Plumbing","goal":"Answer my phone and book jobs","landing_path":"/create","device":"desktop","first_seen":"2026-08-30","company_website":""}
+
+--- 02-ok-persisted-only (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 03-ok-emailed-only (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 04-ok-neither-honeypot (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 05-ok-devmock (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 06-duplicate (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Already received.
+
+We already have this one, Pav — no need to send it twice. I'll reply to qa-noreply@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":true,"contact":"email","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 07-phone-contact (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Pav — I'll read what you want to build and call or text 604 555 0100 within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"ok","status":200,"deduped":false,"contact":"phone","budget":null,"timeline":null,"industry":null,"page":"/create","device":"desktop"}}]]
+
+--- 08-400 (HTTP 400) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Enter an email or a phone number so we can reply
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":400,"page":"/create","device":"desktop"}}]]
+
+--- 09-403 (HTTP 403) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Invalid request
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":403,"page":"/create","device":"desktop"}}]]
+
+--- 10-413 (HTTP 413) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+That request is too long to send. Trim it down, or email us the detail directly.
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":413,"page":"/create","device":"desktop"}}]]
+
+--- 11-429 (HTTP 429) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Too many requests from this connection. Try again shortly, or email us directly.
+
+Try again in about 42s, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":429,"page":"/create","device":"desktop"}}]]
+
+--- 12-502 (HTTP 502) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+We couldn't save your request just now. Please email us and we'll jump right on it.
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":502,"page":"/create","device":"desktop"}}]]
+
+--- 13-500-bodyless (HTTP 500) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Something went wrong on our end and your request wasn't saved.
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":500,"page":"/create","device":"desktop"}}]]
+
+--- 14-network-abort (HTTP ABORT) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+We couldn't reach the server. Check your connection and try again — everything you typed is still here.
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":0,"page":"/create","device":"desktop"}}]]
+
+--- 15-200-html-not-json (HTTP 200) ---
+USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+Your name (required)
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Business name, or what you do (required)
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Something went wrong on our end and your request wasn't saved.
+
+Your answers are still on this page — press Send again, or email pavneets956@gmail.com.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+TRACK: [["pageview",{"route":"/create","path":"/create"}],["event",{"name":"form_started","data":{"form":"build_request","preset_src":null,"preset_package":null,"preset_industry":null,"page":"/create","device":"desktop"}}],["event",{"name":"form_submitted","data":{"form":"build_request","result":"error","status":200,"page":"/create","device":"desktop"}}]]
+
+
+############ Q4 — /create FORM FUNCTIONAL ############
+
+--- FIELD/LABEL MAP (step 1) ---
+{
+ "rows": [
+  {
+   "id": "company_website",
+   "tag": "input",
+   "type": "text",
+   "labelText": "Company website (leave this empty)",
+   "ariaRequired": null,
+   "ariaDescribedby": null,
+   "autocomplete": "off",
+   "hiddenByCss": true
+  },
+  {
+   "id": "br-name",
+   "tag": "input",
+   "type": "text",
+   "labelText": "Your name (required)",
+   "ariaRequired": "true",
+   "ariaDescribedby": null,
+   "autocomplete": "name",
+   "hiddenByCss": false
+  },
+  {
+   "id": "br-contact",
+   "tag": "input",
+   "type": "text",
+   "labelText": "Email or phone (required)",
+   "ariaRequired": "true",
+   "ariaDescribedby": "br-contact-hint",
+   "autocomplete": "email",
+   "hiddenByCss": false
+  },
+  {
+   "id": "br-business",
+   "tag": "input",
+   "type": "text",
+   "labelText": "Business name, or what you do (required)",
+   "ariaRequired": "true",
+   "ariaDescribedby": null,
+   "autocomplete": "organization",
+   "hiddenByCss": false
+  },
+  {
+   "id": "br-goal",
+   "tag": "textarea",
+   "type": "textarea",
+   "labelText": "What are you trying to automate? (required)",
+   "ariaRequired": "true",
+   "ariaDescribedby": "br-goal-hint",
+   "autocomplete": null,
+   "hiddenByCss": false
+  }
+ ],
+ "fieldsets": []
+}
+
+--- HONEYPOT ---
+{"name":"company_website","tabIndex":-1,"autocomplete":"off","wrapperAriaHidden":"true","computedDisplay":"none","visible":false}
+
+--- EMPTY SUBMIT: visible errors ---
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+1
+What you need
+(current step)
+2
+Detail (optional)
+4 answers need fixing before this can send.
+
+4 answers need fixing before this can send — they're marked below.
+
+Your name (required)
+
+Tell us your name so we know who we're replying to.
+
+Email or phone (required)
+
+Whichever you'd rather be reached on. One is enough.
+
+Add an email or a phone number — either one is fine.
+
+Business name, or what you do (required)
+
+What's the business called, or what do you do?
+
+What are you trying to automate? (required)
+
+Plain words are fine — the problem, not the solution.
+
+Tell us what you'd like the AI to take off your plate.
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Send my request
+Add detail first
+SUBMIT DISABLED AFTER INVALID? false
+FOCUSED ELEMENT: br-name
+LIVE REGION (assertive): "4 answers need fixing before this can send."
+aria-invalid set on: ["br-name","br-contact","br-business","br-goal"]
+
+--- BAD EMAIL 'pav@' -> "That email doesn't look complete — check for a typo."
+--- SHORT NUMBER '12345' -> "That doesn't look like an email or a phone number."
+--- error cleared on typing? contact-error present: 0
+
+--- STEP 2 (optional) ---
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+What you need
+(completed)
+2
+Detail (optional)
+(current step)
+
+All optional. Skip straight to sending if you'd rather — it doesn't change the reply you get.
+
+What's your trade or industry? (optional)
+Landscaping
+Plumbing
+Electrical
+Cleaning
+Dental / Clinic
+Salon
+Restaurant
+Real Estate
+Moving
+Something else
+Budget range (optional)
+From $1,500 (one tool)
+$3,500–$7,500 (a system)
+From $10,000 (custom app)
+Not sure yet
+Timeline (optional)
+ASAP
+Within a month
+This quarter
+Just exploring
+
+No spam, no obligation. Your answers are stored so we can reply, and nothing else — privacy.
+
+Back
+Send my request
+REQUIRED MARKERS ON STEP 2: []
+
+--- AFTER 502, step index / typed values retained ---
+{"name":"(step0 not mounted)","contact":"(step0 not mounted)","timelineChipPressed":["Within a month"],"alert":"We couldn't save your request just now. Please email us and we'll jump right on it.\n\nYour answers are still on this page — press Send again, or email pavneets956@gmail.com."}
+
+--- DOUBLE-SUBMIT ---
+in-flight button label: "Sending…" disabled=true form[aria-busy]=true
+in-flight polite status: "Sending your request…"
+POST count after 5 extra clicks + 5 Enters: 1
+
+--- KEYBOARD-ONLY ---
+TAB ORDER: ["br-contact","br-business","br-goal","privacy","Send my request"]
+POST fired from keyboard only: true
+RESULT SCREEN:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Keyboard — I'll read what you want to build and reply to kb@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com

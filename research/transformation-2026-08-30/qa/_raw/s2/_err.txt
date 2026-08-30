@@ -1,0 +1,16 @@
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*=\'customer\']').first()[22m
+
+    at C:\Users\gillp\Documents\Claude\Projects\AI Shop\research\transformation-2026-08-30\qa\_qa-demo-analytics.mjs:192:15 {
+  log: [
+    "  - waiting for locator('input[placeholder*=\\'customer\\']').first()"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.21.0

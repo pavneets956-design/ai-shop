@@ -1,0 +1,43 @@
+### USE-CASE CHAT, 3s delayed LIVE reply (fallback:false) ###
+visible 'AI is responding…' mid-flight: 2
+status-region text mid-flight: ["AI is responding"]
+sr-only announcement mid-flight: ["AI is responding","Type a message to the AI receptionist"]
+send button disabled mid-flight: true
+
+TRANSCRIPT after live reply:
+[
+ "THE PROBLEM\n\nDental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back.",
+ "Thanks for calling Brightsmile Dental! This is the AI receptionist — how can I help you today?",
+ "I chipped a front tooth this morning, can I get in today?",
+ "Absolutely — I can get you in this afternoon. What's the best number to text the confirmation to?"
+]
+scripted-sample notice shown on a LIVE (fallback:false) reply? 0
+demo-mode footer still shown: 1
+
+
+### /demo SHOWROOM, 3s delayed LIVE reply (fallback:false) ###
+any 'responding/typing/thinking/loading' TEXT mid-flight: false
+status/aria-live regions mid-flight: []
+animated typing-dot node present: true
+scripted notice after a LIVE reply: 0
+demo-mode pill after a LIVE reply: 1
+captured Service value: "Emergency chipped tooth"
+
+
+### END-TO-END HONEYPOT (real server, no intercept) ###
+server responded: 200 {"ok":true,"delivery":{"persisted":false,"emailed":false}}
+WHAT THE USER SEES:
+START A BUILD
+Tell us what you want to build
+
+Four questions — about a minute. You'll get a real reply from a real person with a plan and a quote within one business day. No obligation, no automated follow-up sequence.
+
+Request received.
+
+Thanks, Honeypot — I'll read what you want to build and reply to honeypot-qa@example.invalid within one business day with a plan and a quote.
+
+There's no automatic confirmation email — this screen is your receipt.
+
+Need it sooner? Email pavneets956@gmail.com
+
+DONE

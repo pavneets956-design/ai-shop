@@ -1,0 +1,50 @@
+=========== homepage  (https://aibuiltbyhand.com/) ===========
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: text/html; charset=utf-8
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: HIT
+X-Vercel-Id: pdx1::wl6bp-1788119844618-8e28ee265fad
+
+=========== 404 page  (https://aibuiltbyhand.com/this-does-not-exist-zzz) ===========
+HTTP/1.1 404 Not Found
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: text/html; charset=utf-8
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: HIT
+X-Vercel-Id: pdx1::nzgbf-1788119844817-a051ec183388
+
+=========== agent API 404  (https://aibuiltbyhand.com/api/agent/contacts) ===========
+HTTP/1.1 404 Not Found
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: application/json
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Id: pdx1::nxqj7-1788119845031-40f7073de5ae
+
+=========== public API (tools 405)  (https://aibuiltbyhand.com/api/tools) ===========
+HTTP/1.1 405 Method Not Allowed
+Cache-Control: public, max-age=0, must-revalidate
+Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: MISS
+X-Vercel-Id: pdx1::iad1::gm64z-1788119845265-86e6f4a8ffbd
+

@@ -1,0 +1,162 @@
+
+
+############ Q4c — EMBEDDED USE-CASE CHAT ############
+
+-- /use-cases/ai-receptionist-for-contractors -> final URL http://localhost:3200/ai-receptionist-for-contractors (status 200)
+   embedded chat present here? 0
+   h1: "AI Receptionist for Contractors"
+
+-- chat presence across every /use-cases/* page --
+   ai-chatbot-for-restaurants: chat=YES | greeting: "THE PROBLEM\n\nRestaurants get the same handful of questions all day — hours, do you take reservations, is there parking — pulling staff off the floor to answer DMs and calls."
+   ai-receptionist-for-dentists: chat=YES | greeting: "THE PROBLEM\n\nDental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back."
+   automate-admin-for-accountants: chat=no 
+   missed-call-automation: chat=no 
+   appointment-reminder-automation: chat=no 
+   google-business-profile-lead-automation: chat=no 
+   facebook-lead-automation: chat=no 
+   ai-sop-generator: chat=no 
+
+-- DRIVING /use-cases/ai-receptionist-for-dentists --
+chat header: "AI Receptionist — live"
+mid-flight status regions: ["Live AI is unavailable right now — these replies are a scripted sample, not the real model."]
+'AI is responding…' visible mid-flight: 0
+
+TRANSCRIPT:
+[
+ "THE PROBLEM\n\nDental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back.",
+ "Thanks for calling Brightsmile Dental! This is the AI receptionist — how can I help you today?",
+ "I chipped a front tooth this morning, can I get in today?",
+ "Sorry to hear that — let's get someone on it quickly. Can I grab your name and the best callback number?"
+]
+POSTs to /api/demo: ["{\"workerId\":\"receptionist\",\"industryId\":\"dental\",\"messages\":[{\"role\":\"assistant\",\"content\":\"Thanks for calling Brightsmile Dental! This is the AI receptionist — how can I help you today?\"},{\"role\":\"user\",\"content\":\"I chipped a front tooth this morning, can I get in today?\"}]}"]
+renders 'Sorry, could you say that again'? false
+leaks landscaping persona (landscap|lawn|yard|mow|Greenline)? false
+scripted-sample notice: "Live AI is unavailable right now — these replies are a scripted sample, not the real model."
+demo-mode footer: "Demo mode — no real call, text, email or booking is sent."
+
+-- /api/demo 500 --
+error text: "The demo didn't answer that one. Try again, or tell Pavneet what you were testing and he'll look at it."
+did the user's message stay in the transcript? 1
+
+
+############ Q4d — /start ############
+
+-- VISIBLE COPY --
+Skip to main content
+Handbuilt AI
+AI Receptionist
+Demo
+Free Tools
+Pricing
+About
+Start a project
+The AI Builder — a one-minute plan for your business
+
+Six questions about how your business runs, then your email at the end. The AI Builder puts the workflow and a costed plan on screen, then points you at the right page to go to next.
+
+What this actually is
+A fixed script, not a chatbot — the same questions every time, and the same pricing quoted on the pricing page.
+It reads the questions aloud, but every word is also on screen. Sound is optional.
+About a minute: four taps and four short typed answers.
+Nothing is emailed to you. At the end you can send your answers to Pavneet, and he replies within one business day.
+What it can recommend
+AI receptionist that answers every call and books jobs, day or night.
+Website chat agent that talks to visitors 24/7 and turns them into bookings.
+Lead follow-up that replies to a new enquiry before it goes cold.
+Quote agent and invoice reminders that run without you.
+
+Serving local businesses in Surrey, BC and beyond.
+
+← Handbuilt
+The AI Builder
+
+Six questions about your business, then your email at the end. You get the workflow and a costed plan on screen, plus the right page to go to next.
+
+About a minute: four taps and four short typed answers.
+It speaks, but every word is also on screen — sound is optional.
+A fixed script, not a chatbot: the same questions every time, and the same pricing the rest of the site quotes.
+Nothing is emailed to you. At the end you can send your answers to Pavneet, and he replies within one business day.
+Start the AI Builder
+turn your sound on for the full thing
+Handbuilt AI
+
+We install AI receptionists and follow-up for contractors — on the business number, calendar and accounts you already own.
+
+Based in Surrey, BC. Surrey · Delta · Langley · White Rock · Burnaby · New Westminster · Coquitlam · Richmond · Abbotsford. Remote elsewhere in BC.
+
+pavneets956@gmail.com
+·
+
+START HERE
+
+Find out what the missed calls are costing you.
+
+Free, runs in your browser, asks you for nothing.
+
+Open the calculator
+Request a review
+
+FREE CONTRACTOR TOOLS
+
+Profit & Pricing Calculator
+Quote Follow-Up Generator
+Missed-Call Revenue Calculator
+Labor Burden Calculator
+Lead-Leak Audit
+All free tools
+
+WHAT WE INSTALL
+
+AI receptionist for contractors
+AI receptionist
+AI business system
+AI review engine
+AI Chatbot for Your Website
+AI Lead Capture Form for Your Website
+AI Quote Generator for Your Business
+AI Customer Support Agent
+All services
+
+TRADES AND AREAS
+
+Landscaping Businesses
+Lawn Care Businesses
+Plumbers
+Electricians
+HVAC Companies
+AI receptionist, Surrey
+All trades
+All locations
+
+COMPANY
+
+Pricing
+FAQ
+About
+Compare
+Use cases
+For creators
+AI systems shop
+Live demo
+Remote / international
+
+© 2026 Handbuilt AI. Handbuilt AI Studio, Surrey, British Columbia. Prices in CAD.
+
+Privacy
+Terms
+
+-- FALSE-EMAIL CLAIM SCAN (server HTML) --
+  "check your inbox": absent
+  "sent to you": absent
+  "emailed to you": PRESENT
+  "we've emailed": absent
+  "on its way": absent
+  "check your email": absent
+  "has been sent": absent
+  "your plan has been sent": absent
+  "we'll email": absent
+  honest disclaimer 'Nothing is emailed to you': true
+  honest disclaimer 'Nothing was emailed to you automatically': false
+  analytics events on /start load: []
+
+DONE

@@ -1,0 +1,2512 @@
+[
+  {
+    "path": "/",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Your business number, answered by an AI receptionist built for contractors.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Talk to the receptionist yourself. No form first.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Work out what the missed ones are worth.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Which one is costing you the most right now?",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Two things quietly cost you the most work.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "The phone",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "The quote",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Once it’s installed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What happens while you’re on the roof.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three systems I run myself.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Ironwood Grounds",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "COITracker",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "PayNudge",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built by Pavneet Singh, in Surrey, BC.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three steps. Usually live in about a week.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Find the leak",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Install the workflow",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Measure what changed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Project pricing, in Canadian dollars, on the page.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Business System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Custom AI App",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Care Plan — from $99/mo CAD",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Use these whether you ever hire us or not.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Profit & Pricing Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Quote Follow-Up Generator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Missed-Call Revenue Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Labor Burden Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Lead-Leak Audit",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Based in Surrey. We come to the job.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Straight answers, before you call.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Will this annoy my customers?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Do I keep my phone number?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "What happens if I cancel?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "How long does installation take?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "How much does an AI receptionist cost in Canada?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Who owns the system and the data?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Does this work with the tools I already use?",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "The calls are still going to voicemail while you read this.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Ffounder.jpg&w=3840&q=75",
+        "alt": "Pavneet Singh, founder of Handbuilt AI",
+        "hasAlt": true,
+        "ariaHidden": null,
+        "role": null
+      }
+    ],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors in Surrey & Metro Vancouver | Handbuilt AI"
+  },
+  {
+    "path": "/",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Your business number, answered by an AI receptionist built for contractors.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Talk to the receptionist yourself. No form first.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Work out what the missed ones are worth.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Which one is costing you the most right now?",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Two things quietly cost you the most work.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "The phone",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "The quote",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Once it’s installed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What happens while you’re on the roof.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three systems I run myself.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Ironwood Grounds",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "COITracker",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "PayNudge",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built by Pavneet Singh, in Surrey, BC.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three steps. Usually live in about a week.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Find the leak",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Install the workflow",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Measure what changed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Project pricing, in Canadian dollars, on the page.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Business System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Custom AI App",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Care Plan — from $99/mo CAD",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Use these whether you ever hire us or not.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Profit & Pricing Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Quote Follow-Up Generator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Missed-Call Revenue Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Labor Burden Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Lead-Leak Audit",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Based in Surrey. We come to the job.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Straight answers, before you call.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Will this annoy my customers?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Do I keep my phone number?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "What happens if I cancel?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "How long does installation take?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "How much does an AI receptionist cost in Canada?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Who owns the system and the data?",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Does this work with the tools I already use?",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "The calls are still going to voicemail while you read this.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Ffounder.jpg&w=3840&q=75",
+        "alt": "Pavneet Singh, founder of Handbuilt AI",
+        "hasAlt": true,
+        "ariaHidden": null,
+        "role": null
+      }
+    ],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors in Surrey & Metro Vancouver | Handbuilt AI"
+  },
+  {
+    "path": "/demo",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Test a real AI worker.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Send",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button disabled=\"\" aria-label=\"Send\" class=\"grid h-10 w-10 flex-none place-items-center rounded-btn bg-ink text-white transition hover:bg-ink-hover d"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Worker Showroom — Test a Real AI Worker | Handbuilt AI"
+  },
+  {
+    "path": "/demo",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Test a real AI worker.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "button",
+        "ariaLabel": "Send",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button disabled=\"\" aria-label=\"Send\" class=\"grid h-10 w-10 flex-none place-items-center rounded-btn bg-ink text-white transition hover:bg-ink-hover d"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Worker Showroom — Test a Real AI Worker | Handbuilt AI"
+  },
+  {
+    "path": "/pricing",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Pricing that's easy to say yes to",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three ways to start",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Business System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Custom AI App",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Care Plan",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Phone Receptionist",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Phone Receptionist",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing & process questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Get a fixed quote, free",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Pricing — Custom AI Builds from $1,500 CAD | Handbuilt AI"
+  },
+  {
+    "path": "/pricing",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Pricing that's easy to say yes to",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three ways to start",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Business System",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Custom AI App",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Care Plan",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Phone Receptionist",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Phone Receptionist",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing & process questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Get a fixed quote, free",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Pricing — Custom AI Builds from $1,500 CAD | Handbuilt AI"
+  },
+  {
+    "path": "/create",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Tell us what you want to build",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Start a Build — Request Your Custom AI System | Handbuilt AI"
+  },
+  {
+    "path": "/create",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Tell us what you want to build",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Start a Build — Request Your Custom AI System | Handbuilt AI"
+  },
+  {
+    "path": "/start",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "The AI Builder — a one-minute plan for your business",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What this actually is",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What it can recommend",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "The AI Builder",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "The AI Builder — a one-minute guided plan for your business | Handbuilt AI"
+  },
+  {
+    "path": "/start",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "The AI Builder — a one-minute plan for your business",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What this actually is",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What it can recommend",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "The AI Builder",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "The AI Builder — a one-minute guided plan for your business | Handbuilt AI"
+  },
+  {
+    "path": "/about",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Handbuilt AI is one person. This is him.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "I don’t have client case studies yet. Here’s what I do have.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three systems I run myself.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Ironwood Grounds",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "COITracker",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "PayNudge",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Six things you can hold me to.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "You talk to the person building it",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "A fixed CAD quote before any work starts",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "It runs inside the accounts you already have",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Tested on real calls before you rely on it",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "I tell you what it can't do",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "No invented proof, ever",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three steps. Usually live in about a week.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Find the leak",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Install the workflow",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Measure what changed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Try it first. Talk to me second.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Ffounder.jpg&w=3840&q=75",
+        "alt": "Pavneet Singh, founder of Handbuilt AI",
+        "hasAlt": true,
+        "ariaHidden": null,
+        "role": null
+      }
+    ],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "About Pavneet Singh — the one builder behind Handbuilt AI | Handbuilt AI"
+  },
+  {
+    "path": "/about",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Handbuilt AI is one person. This is him.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "I don’t have client case studies yet. Here’s what I do have.",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three systems I run myself.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Ironwood Grounds",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "COITracker",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "PayNudge",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Six things you can hold me to.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "You talk to the person building it",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "A fixed CAD quote before any work starts",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "It runs inside the accounts you already have",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Tested on real calls before you rely on it",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "I tell you what it can't do",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "No invented proof, ever",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Three steps. Usually live in about a week.",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Find the leak",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Install the workflow",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Measure what changed",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Try it first. Talk to me second.",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Ffounder.jpg&w=3840&q=75",
+        "alt": "Pavneet Singh, founder of Handbuilt AI",
+        "hasAlt": true,
+        "ariaHidden": null,
+        "role": null
+      }
+    ],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "About Pavneet Singh — the one builder behind Handbuilt AI | Handbuilt AI"
+  },
+  {
+    "path": "/ai-receptionist",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Local Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What's included in the setup",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it handles different types of inquiries",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Who this is for",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Local Businesses | Handbuilt AI"
+  },
+  {
+    "path": "/ai-receptionist",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Local Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What's included in the setup",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it handles different types of inquiries",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Who this is for",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Local Businesses | Handbuilt AI"
+  },
+  {
+    "path": "/ai-receptionist-for-contractors",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Why Contractors Lose Jobs to Missed Calls",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What the AI Receptionist Actually Does",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built for Trades — Not a Generic Chatbot",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors | Handbuilt AI"
+  },
+  {
+    "path": "/ai-receptionist-for-contractors",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Why Contractors Lose Jobs to Missed Calls",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What the AI Receptionist Actually Does",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built for Trades — Not a Generic Chatbot",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors | Handbuilt AI"
+  },
+  {
+    "path": "/industries",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Automation Built for Your Industry",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Landscaping Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Lawn Care Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Plumbers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Electricians",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for HVAC Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Roofing Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Cleaning Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Moving Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Pest Control Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Real Estate Agents",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Dental Clinics",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Salons & Barbershops",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Restaurants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Auto Detailing Shops",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Fence Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Deck Builders",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Painters",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Clinics & Medical Offices",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Mortgage Brokers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Insurance Brokers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Physiotherapy Clinics",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Chiropractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Gyms & Fitness Studios",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Personal Trainers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Wedding Planners",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Immigration Consultants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Law Firms",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Accountants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Consultants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Agencies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Not sure which one you need?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Automation by Industry | Handbuilt AI"
+  },
+  {
+    "path": "/industries",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Automation Built for Your Industry",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Landscaping Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Lawn Care Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Plumbers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Electricians",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for HVAC Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Roofing Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Cleaning Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Moving Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Pest Control Businesses",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Real Estate Agents",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Dental Clinics",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Salons & Barbershops",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Restaurants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Auto Detailing Shops",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Fence Companies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Deck Builders",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Painters",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Clinics & Medical Offices",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Mortgage Brokers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Insurance Brokers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Physiotherapy Clinics",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Chiropractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Gyms & Fitness Studios",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Personal Trainers",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Wedding Planners",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Immigration Consultants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Law Firms",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Accountants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Consultants",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "AI Automation for Agencies",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Not sure which one you need?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Automation by Industry | Handbuilt AI"
+  },
+  {
+    "path": "/tools",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Free Contractor Business Tools",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Start with your problem",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing & profit",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Profit & Pricing Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Labor Burden Calculator",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Sales & follow-up",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Quote Follow-Up Generator",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Lead recovery & growth",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Missed-Call Revenue Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Lead-Leak Audit",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Genuinely free tools, built for contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "More free business tools",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Rather have this handled for you?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 2,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Free Contractor Business Tools | Handbuilt AI"
+  },
+  {
+    "path": "/tools",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Free Contractor Business Tools",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Start with your problem",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing & profit",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Profit & Pricing Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Labor Burden Calculator",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Sales & follow-up",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Quote Follow-Up Generator",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Lead recovery & growth",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Missed-Call Revenue Calculator",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "Contractor Lead-Leak Audit",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Genuinely free tools, built for contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "More free business tools",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Rather have this handled for you?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 2,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "Free Contractor Business Tools | Handbuilt AI"
+  },
+  {
+    "path": "/faq",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Everything you might ask",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "General",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Process",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Technical",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Still have a question?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "FAQ — Custom AI Apps, Agents & Automation | Handbuilt AI"
+  },
+  {
+    "path": "/faq",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "Everything you might ask",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "General",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Pricing",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Process",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Technical",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Still have a question?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 1
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "FAQ — Custom AI Apps, Agents & Automation | Handbuilt AI"
+  },
+  {
+    "path": "/use-cases/ai-receptionist-for-contractors",
+    "viewport": "desktop",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Why Contractors Lose Jobs to Missed Calls",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What the AI Receptionist Actually Does",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built for Trades — Not a Generic Chatbot",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors | Handbuilt AI"
+  },
+  {
+    "path": "/use-cases/ai-receptionist-for-contractors",
+    "viewport": "mobile",
+    "h1Count": 1,
+    "headings": [
+      {
+        "level": 1,
+        "text": "AI Receptionist for Contractors",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "How it works",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Why Contractors Lose Jobs to Missed Calls",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What the AI Receptionist Actually Does",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Built for Trades — Not a Generic Chatbot",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "What you get",
+        "visible": true
+      },
+      {
+        "level": 3,
+        "text": "AI Starter System",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Related",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Common questions",
+        "visible": true
+      },
+      {
+        "level": 2,
+        "text": "Want this built for your business?",
+        "visible": true
+      }
+    ],
+    "landmarks": {
+      "banner": 1,
+      "main": 1,
+      "contentinfo": 1,
+      "navigation": 2
+    },
+    "lang": "en",
+    "imgs": [],
+    "iconButtons": [
+      {
+        "tag": "button",
+        "ariaLabel": "Open menu",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<button type=\"button\" class=\"-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-[var(--v-r-control)] lg:hidden focus:outline-none focus-v"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "Email",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"mailto:pavneets956@gmail.com\" aria-label=\"Email\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)] transiti"
+      },
+      {
+        "tag": "a",
+        "ariaLabel": "GitHub",
+        "ariaLabelledby": null,
+        "title": null,
+        "hasSvgTitle": false,
+        "outerHTMLSnippet": "<a href=\"https://github.com/pavneets956-design/ai-shop\" aria-label=\"GitHub\" class=\"inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-"
+      }
+    ],
+    "title": "AI Receptionist for Contractors | Handbuilt AI"
+  }
+]

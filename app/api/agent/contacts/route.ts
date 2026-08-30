@@ -61,12 +61,14 @@ export async function POST(request: NextRequest) {
       meta: error?.meta,
     });
     
-    // Return more detailed error
-    const errorMessage = error?.message || "Failed to create contact";
+    // The client gets a fixed string. This used to return `error.message`
+    // straight from Prisma, which discloses column names, constraint names and
+    // sometimes the conflicting VALUE to whoever made the request. The detail
+    // is already in the server log above, where it belongs.
     return NextResponse.json(
-      { 
-        error: errorMessage,
-        details: process.env.NODE_ENV === "development" ? error : undefined
+      {
+        error: "Failed to create contact",
+        details: process.env.NODE_ENV === "development" ? error?.message : undefined,
       },
       { status: 500 }
     );
