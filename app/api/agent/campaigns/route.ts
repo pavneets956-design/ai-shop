@@ -1,12 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { CampaignManager } from "@/lib/agent/campaignManager";
 import { LocalBusiness } from "@/lib/agent/businessDiscovery";
+import { guardAgentApi } from "@/lib/agent/guard";
 
 // Singleton instance
 const campaignManager = new CampaignManager();
 
 // Get all campaigns
 export async function GET(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const campaigns = campaignManager.getAllCampaigns();
     return NextResponse.json({ campaigns });
@@ -21,6 +26,10 @@ export async function GET(request: NextRequest) {
 
 // Create a new campaign
 export async function POST(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { name, targetBusinesses, settings } = body;
@@ -50,6 +59,10 @@ export async function POST(request: NextRequest) {
 
 // Update campaign (start, pause, stop)
 export async function PUT(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { campaignId, action } = body;
