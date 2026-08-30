@@ -174,10 +174,18 @@ export default function Footer() {
             Columbia. Prices in CAD.
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="v-micro transition-colors hover:text-[color:var(--v-ink)]">
+            {/* min-h/inline-flex: these were ~16px tall, under the 24x24 WCAG 2.2
+                AA target-size minimum. */}
+            <Link
+              href="/privacy"
+              className="v-micro inline-flex min-h-[24px] items-center transition-colors hover:text-[color:var(--v-ink)]"
+            >
               Privacy
             </Link>
-            <Link href="/terms" className="v-micro transition-colors hover:text-[color:var(--v-ink)]">
+            <Link
+              href="/terms"
+              className="v-micro inline-flex min-h-[24px] items-center transition-colors hover:text-[color:var(--v-ink)]"
+            >
               Terms
             </Link>
           </div>

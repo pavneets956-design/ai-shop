@@ -43,3 +43,5 @@ HEAD	/api/agent/call/webhook	404	0
 GET	/api/agent/call/webhook/status	404	21	application/json	{"error":"Not found"}
 HEAD	/api/agent/call/webhook/status	404	0		
 GET	/api/agent/calls	404	21	application/json	{"error":"Not found"}
+HEAD	/api/agent/calls	404	0		
+GET	/api/agent/campaigns	404	21	application/json	{"error":"Not found"}

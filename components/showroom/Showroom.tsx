@@ -356,7 +356,7 @@ function ControlRoom(props: {
             rows={2}
             disabled={atLimit}
             placeholder={atLimit ? "Free demo limit reached" : "Type as the customer…"}
-            className="max-h-28 min-h-[44px] w-full resize-none bg-transparent px-2 py-1.5 text-[13px] text-ink placeholder-ink/35 focus:outline-none disabled:opacity-60"
+            className="max-h-28 min-h-[44px] w-full resize-none rounded-[4px] bg-transparent px-2 py-1.5 text-[13px] text-ink placeholder-ink-soft focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)] focus-visible:shadow-[0_0_0_2px_var(--v-surface),0_0_0_4px_var(--v-accent)] disabled:opacity-60"
           />
           <button
             onClick={onSend}

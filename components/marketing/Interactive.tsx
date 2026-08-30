@@ -74,7 +74,7 @@ export function ProblemSelector() {
                     aria-selected={selected}
                     aria-controls={`${uid}-panel-${i}`}
                     onClick={() => setActive(i)}
-                    className="flex-1 px-5 py-4 text-left text-[15px] font-medium transition-colors focus:outline-none focus-visible:shadow-[inset_0_0_0_2px_var(--v-accent)]"
+                    className="flex-1 px-5 py-4 text-left text-[15px] font-medium transition-colors focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)]"
                     style={{
                       color: selected ? "var(--v-ink)" : "var(--v-muted)",
                       backgroundColor: selected ? "var(--v-surface)" : "transparent",
@@ -158,7 +158,7 @@ export function FaqSection({ items }: { items: QA[] }) {
                 aria-controls={`${uid}-a-${i}`}
                 id={`${uid}-q-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:shadow-[inset_0_0_0_2px_var(--v-accent)]"
+                className="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)]"
               >
                 <span className="text-[17px] font-medium" style={{ color: "var(--v-ink)" }}>
                   {item.q}

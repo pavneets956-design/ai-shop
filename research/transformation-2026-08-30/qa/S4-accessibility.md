@@ -22,7 +22,7 @@ All raw JSON/scripts backing every number below are in `research/transformation-
 | Total violations (any impact) | **0** |
 | Serious/critical violations | **0** |
 | Passing rules per page | 21–32 (confirms axe genuinely ran, not a silent no-op) |
-| `incomplete` (needs-manual-review) items | 1 per page except the 404 (0) — all were `color-contrast`, resolved manually in §4 |
+| `incomplete` (needs-manual-review) items | 1 per page except the 404 (0) — all were `color-contrast`, resolved manually in §2 |
 
 Pages scanned: `/`, `/demo`, `/pricing`, `/create`, `/start`, `/about`, `/ai-receptionist`, `/ai-receptionist-for-contractors`, `/industries`, `/tools`, `/faq`, `/use-cases/ai-receptionist-for-contractors`, `/definitely-not-real` (404, confirmed HTTP 404).
 
@@ -103,16 +103,18 @@ Raw: `_raw/s4/touch-results.json` (689 rows with full rects).
 
 ---
 
-## 4. Reduced motion — **NOT LIVE-VERIFIED** (server went down before this check ran)
+## 4. Reduced motion — live-verified with `prefers-reduced-motion: reduce` emulated (Playwright `reducedMotion: "reduce"`), screenshot pixel-diffs, not just CSS inspection
 
-I got through axe, contrast, touch targets, structure, keyboard, and forms before `localhost:3200` stopped responding (`curl` → connection refused; `netstat -ano` shows nothing listening on port 3200, confirmed on 3 retries over ~30s). I did not rebuild or restart it, per the absolute rules. This section is **source-code analysis only** — treat it as a hypothesis to re-verify in the browser once the server is back, not a pass/fail result.
+| Check | Result |
+|---|---|
+| Homepage `.v-reveal` elements (33 found) | **0 armed** (`data-armed` never set — matches `Reveal.tsx:54`'s `matchMedia` guard), 0 with `opacity:0`, 0 invisible. Below-fold section screenshotted twice 400ms apart: **0.0% pixel difference** — completely static. |
+| `.v-live-dot` (homepage, `#how-it-works`) | Computed `animation: none / 1e-06s` (the global override neutralizes it). Screenshot 500ms apart: **0.0% pixel difference** — no pulsing. |
+| `.faq-marker` (`/faq`) | Computed `transition-duration: 1e-06s`. Clicking the accordion open **did** change content instantly (97.9% pixel diff at the moment of click — correct, the state change itself must still happen), then **0.0% diff** over the following 400ms — no lingering/animated settle. This is exactly the right reduced-motion behavior: state changes still happen, they're just not animated. |
+| Spinners (`Loader2`/`.animate-spin`, e.g. the `/create` "Sending…" button state) | Confirmed generically: any `.animate-spin` element gets `animation-duration: 1e-06s` and `animation-iteration-count: 1` from the same global override (tested directly rather than triggering a real form submission, to avoid hitting `/api/build-request`). |
 
-What the source shows (`app/globals.css`, `components/marketing/Reveal.tsx`):
-- A blanket override at `app/globals.css:855-861` forces `animation-duration`/`transition-duration` to `0.001ms !important` on `*, *::before, *::after` under `prefers-reduced-motion: reduce` — this alone should neutralize Tailwind's `animate-pulse`/`animate-ping` utilities everywhere, including `components/ToolChat.tsx:85`'s ping dot which has no explicit `motion-reduce:` modifier (unlike `components/ReceptionistChat.tsx:105`, which does) — the global rule should cover the gap, but **this needs a real browser check**, not just CSS-cascade reasoning.
-- `Reveal.tsx:54` explicitly checks `matchMedia("(prefers-reduced-motion: reduce)")` and never arms (`.v-reveal[data-armed]` never gets set), and per the component's own header comment the animation is transform-only (never opacity), so content is never hidden pre-hydration or under reduced motion.
-- `.v-live-dot`, `.v-ring-bar`, `.faq-marker`, `.skip-link` transitions all have explicit `@media (prefers-reduced-motion: reduce)` overrides (`app/globals.css:224-230, 258-262, 793-799, 826-831`).
+**Fully compliant, verified live.** Root mechanism: `app/globals.css:855-861` forces `animation-duration`/`transition-duration` to `0.001ms !important` on `*, *::before, *::after` under `prefers-reduced-motion: reduce`, which covers every Tailwind `animate-*` utility site-wide — including `components/ToolChat.tsx:85`'s ping dot, which has no explicit `motion-reduce:` modifier (unlike `components/ReceptionistChat.tsx:105`, which does) but is still caught by the blanket rule, confirmed by the direct test above. `Reveal.tsx`'s own `matchMedia` check and the component-specific overrides at `app/globals.css:224-230, 258-262, 793-799, 826-831` are redundant-but-correct belt-and-suspenders on top of the global rule. No content is hidden by turning motion off — the opposite failure mode (also checked) does not occur.
 
-**Action needed**: once the server is back, emulate `prefers-reduced-motion: reduce` and re-run the visual check this section was supposed to be (screenshot diff over ~1s on `/`, `/faq`, `/demo` for the reveal, live dot, FAQ marker, and any spinner). I did not fabricate a pass here — this is explicitly incomplete.
+Raw: `_raw/s4/reduced-motion-results.json`, script `_raw/s4/reduced-motion.mjs`.
 
 ---
 
@@ -231,9 +233,9 @@ One thing I flagged, checked, and **ruled out**: my own crude selector-based sca
 | 10 | **Low** | `.text-clay` arrow glyph on `/tools`: 4.44:1, a 0.06 near-miss | `app/tools/page.tsx:44` — nudge to `text-clay-dark` or bump opacity |
 | 11 | **Low** | Footer "Privacy"/"Terms"/email links under the 24×24 AA minimum, sitewide | `components/Footer.tsx:63-65, 177-182` — small padding bump |
 | 12 | **Low** | "Reset conversation" button on `/demo` under 24×24 | `components/showroom/Showroom.tsx:350-352` |
-| 13 | **Not verified** | Reduced motion — source strongly suggests compliant (global `!important` override + component-level checks) but the server went down before I could confirm in-browser | Re-run once `localhost:3200` is back: emulate `prefers-reduced-motion: reduce`, screenshot-diff `.v-reveal`, `.v-live-dot`, `.faq-marker`, any spinner on `/`, `/faq`, `/demo` |
+None of the above are axe-reported serious/critical violations — axe's rule set doesn't cover most of them (focus-ring contrast, focus-target semantics, DOM-vs-visual order, `inert` usage). That's the point of the manual pass. Reduced motion (§4) is fully verified live and compliant — no defect to list.
 
-None of the above are axe-reported serious/critical violations — axe's rule set doesn't cover most of them (focus-ring contrast, focus-target semantics, DOM-vs-visual order, `inert` usage). That's the point of the manual pass.
+**A note on the mid-audit restart**: while `localhost:3200` was down, the working tree picked up uncommitted edits from other parallel agent activity (`app/api/build-request/route.ts`, `app/layout.tsx`, `components/BuildRequestForm.tsx`, `components/marketing/Hero.tsx`, `components/marketing/HomeSections.tsx`, `components/showroom/Showroom.tsx`). I diffed each against the exact lines this report cites (`app/layout.tsx:154`'s `<main id="main">`, `Showroom.tsx:522`'s `text-ink/30` em-dash) after the server came back — none of the cited lines changed, so nothing here is stale. I did not audit those other agents' in-flight changes; that's outside this task's scope.
 
 ---
 
@@ -243,6 +245,6 @@ None of the above are axe-reported serious/critical violations — axe's rule se
 
 Two confirmed WCAG failures: the skip link scrolls to `#main` but never actually moves focus there (`<main>` has no `tabindex="-1"`, so `document.activeElement` stays `<body>` — verified live), and several focus indicators fail the 3:1 non-text-contrast requirement, including two controls (a homepage tab group, the `/demo` textarea) with **zero** visible focus indicator at all — confirmed by literal 0.0%-pixel-diff screenshots, not just CSS inspection. A dark-on-dark focus ring on `/demo`'s chip buttons (1.1:1) is effectively invisible too. Separately, `/start`'s full-screen consultation gate leaves the site header still focusable behind it with no `inert`/`aria-hidden`, so keyboard/AT users can reach two completely hidden controls before reaching the real exit button.
 
-Contrast is otherwise excellent: only 2 real failures out of 3,338 measurements (a 1.93:1 placeholder dash on `/demo`, a 4.44:1 near-miss arrow glyph on `/tools`) — every eyebrow label, body/secondary text, link, and button passes at ≥5.2:1. Touch targets: the true WCAG 2.2 AA minimum (24×24, not 44×44) is missed by only 4 real, non-exempt controls (footer legal links + a reset button), all sitewide/easy fixes. The `/create` form's error handling (assertive live-region, per-field `aria-invalid`/`aria-describedby`, focus-to-first-error, submit never disabled) is excellent and was verified live end-to-end.
+Contrast is otherwise excellent: only 2 real failures out of 3,338 measurements (a 1.93:1 placeholder dash on `/demo`, a 4.44:1 near-miss arrow glyph on `/tools`) — every eyebrow label, body/secondary text, link, and button passes at ≥5.2:1. Touch targets: the true WCAG 2.2 AA minimum (24×24, not 44×44) is missed by only 4 real, non-exempt controls (footer legal links + a reset button), all sitewide/easy fixes. The `/create` form's error handling (assertive live-region, per-field `aria-invalid`/`aria-describedby`, focus-to-first-error, submit never disabled) is excellent and was verified live end-to-end. Reduced motion is fully compliant, confirmed with real screenshot pixel-diffs (0.0% change on the reveal system and live dot; instant, non-animated state changes on the FAQ accordion; spinners forced to a single near-zero-duration frame) — nothing animates, and nothing is hidden by turning motion off.
 
-**One incomplete item**: reduced-motion could not be live-verified — the local server went down mid-audit (confirmed via `netstat`, not stopped by me) before I reached that check.
+The local server went down for several minutes mid-audit (confirmed via `netstat`, not stopped by me) and came back on its own; I verified the specific lines every finding cites were unchanged before and after, so nothing here is stale.
