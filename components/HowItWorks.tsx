@@ -26,7 +26,7 @@ export default function HowItWorks() {
                   </span>
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/55">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.body}</p>
               </div>
             </Reveal>
           );

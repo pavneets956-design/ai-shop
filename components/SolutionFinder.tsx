@@ -88,7 +88,7 @@ export default function SolutionFinder() {
         {/* ---------- Outcomes ---------- */}
         {step === "outcome" && (
           <motion.div key="outcome" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35 }}>
-            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink/40">
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink-soft">
               Step 1 — Pick your goal
             </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -105,7 +105,7 @@ export default function SolutionFinder() {
                     </span>
                     <span className="min-w-0">
                       <span className="block font-medium text-ink">{o.label}</span>
-                      <span className="block truncate text-sm text-ink/45">{o.blurb}</span>
+                      <span className="block truncate text-sm text-ink-soft">{o.blurb}</span>
                     </span>
                     <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-ink/20 transition group-hover:translate-x-1 group-hover:text-ink" />
                   </button>
@@ -118,7 +118,7 @@ export default function SolutionFinder() {
         {/* ---------- Questions ---------- */}
         {step === "questions" && (
           <motion.div key="questions" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35 }}>
-            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink/40">
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.18em] text-ink-soft">
               Step 2 — Two quick questions
             </p>
 
@@ -173,7 +173,7 @@ export default function SolutionFinder() {
           <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col items-center justify-center py-20 text-center">
             <Loader2 className="h-8 w-8 animate-spin text-ink" />
             <p className="mt-4 text-ink/70">Designing your AI system…</p>
-            <p className="mt-1 text-sm text-ink/40">Matching your goal to the right build</p>
+            <p className="mt-1 text-sm text-ink-soft">Matching your goal to the right build</p>
           </motion.div>
         )}
 
@@ -241,7 +241,7 @@ export default function SolutionFinder() {
             </button>
             <p className="mt-2 text-center text-xs text-ink/30">
               Prefer to talk? Email{" "}
-              <a href={`mailto:${site.email}`} className="underline hover:text-ink/60">
+              <a href={`mailto:${site.email}`} className="underline hover:text-ink-soft">
                 {site.email}
               </a>
             </p>
@@ -260,7 +260,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
       className={`rounded-full border px-4 py-2 text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
         active
           ? "border-ink bg-ink text-white"
-          : "border-ink/10 bg-ink/[0.03] text-ink/60 hover:border-ink/25 hover:text-ink"
+          : "border-ink/10 bg-ink/[0.03] text-ink-soft hover:border-ink/25 hover:text-ink"
       }`}
     >
       {children}
@@ -271,7 +271,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
 function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-ink/10 bg-ink/[0.03] p-4">
-      <div className="flex items-center gap-2 text-ink/40">
+      <div className="flex items-center gap-2 text-ink-soft">
         {icon}
         <span className="text-xs uppercase tracking-wide">{label}</span>
       </div>

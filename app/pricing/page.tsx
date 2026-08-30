@@ -37,14 +37,14 @@ export default async function PricingPage() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink/60">
+            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-soft">
               Real prices in CAD — no &ldquo;contact us for everything.&rdquo; Start with one tool or
               go all the way to a custom app you own. A part-time admin costs more every month than a
               whole system costs once.
             </p>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mx-auto mt-4 max-w-xl text-sm text-ink/45">
+            <p className="mx-auto mt-4 max-w-xl text-sm text-ink-soft">
               Priced in CAD — often cheaper than US rates. USD, AUD &amp; NZD invoicing on request.
               Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.{" "}
               <Link href="/remote-ai-development" className="text-ink/70 underline underline-offset-2 hover:text-ink">
@@ -90,7 +90,7 @@ export default async function PricingPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 max-w-xl text-ink/60">
+            <p className="mx-auto mt-4 max-w-xl text-ink-soft">
               Tell us what you want built and we&apos;ll send a clear plan and price within one
               business day.
             </p>

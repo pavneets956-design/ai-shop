@@ -86,12 +86,12 @@ export default function ToolChat({
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#E0362C]" />
           </span>
           <span className="text-sm font-semibold text-ink">{label}</span>
-          {sub && <span className="hidden text-xs text-ink/40 sm:inline">· {sub}</span>}
+          {sub && <span className="hidden text-xs text-ink-soft sm:inline">· {sub}</span>}
         </div>
         <button
           type="button"
           onClick={reset}
-          className="flex items-center gap-1.5 text-xs text-ink/40 transition hover:text-ink/70"
+          className="flex items-center gap-1.5 text-xs text-ink-soft transition hover:text-ink/70"
         >
           <RotateCcw className="h-3.5 w-3.5" /> Restart
         </button>

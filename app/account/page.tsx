@@ -69,7 +69,7 @@ export default async function AccountPage({
                   <CheckCircle2 className="h-5 w-5" />
                   <span className="font-semibold">Tools Pro — active</span>
                 </div>
-                <p className="mt-2 text-sm text-ink/60">
+                <p className="mt-2 text-sm text-ink-soft">
                   Every tool is unlocked.{renews ? ` Renews ${renews}.` : ""}
                 </p>
                 <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -81,11 +81,11 @@ export default async function AccountPage({
               </>
             ) : (
               <>
-                <div className="flex items-center gap-2 text-ink/60">
+                <div className="flex items-center gap-2 text-ink-soft">
                   <Clock className="h-5 w-5" />
                   <span className="font-semibold text-ink">No active subscription</span>
                 </div>
-                <p className="mt-2 text-sm text-ink/60">
+                <p className="mt-2 text-sm text-ink-soft">
                   Browse ready-to-install AI systems, or get a custom build.
                 </p>
                 <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -104,7 +104,7 @@ export default async function AccountPage({
           <div className="mt-10">
             <h2 className="font-display text-xl font-semibold text-ink">Recent generations</h2>
             {runs.length === 0 ? (
-              <p className="mt-3 text-sm text-ink/50">
+              <p className="mt-3 text-sm text-ink-soft">
                 Nothing yet — anything you generate in the tools shows up here.
               </p>
             ) : (
@@ -113,9 +113,9 @@ export default async function AccountPage({
                   <li key={r.id} className="flex items-center justify-between gap-4 px-4 py-3">
                     <div className="min-w-0">
                       <p className="truncate text-sm font-medium text-ink">{r.title || r.tool}</p>
-                      <p className="text-xs text-ink/45">{r.tool}</p>
+                      <p className="text-xs text-ink-soft">{r.tool}</p>
                     </div>
-                    <span className="flex-none text-xs text-ink/40">
+                    <span className="flex-none text-xs text-ink-soft">
                       {r.createdAt.toLocaleDateString("en-CA", { month: "short", day: "numeric" })}
                     </span>
                   </li>

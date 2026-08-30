@@ -28,21 +28,21 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
                 </span>
               )}
               <h3 className="text-xl font-semibold text-ink">{p.name}</h3>
-              <p className="mt-1 text-sm text-ink/50">{p.tagline}</p>
+              <p className="mt-1 text-sm text-ink-soft">{p.tagline}</p>
 
               <div className="mt-5 flex items-baseline gap-1">
                 <span className="font-display text-4xl font-semibold text-ink">
                   {formatPackagePrice(p)}
                 </span>
-                {p.priceFormat !== "quote" && <span className="text-sm text-ink/40">CAD</span>}
+                {p.priceFormat !== "quote" && <span className="text-sm text-ink-soft">CAD</span>}
               </div>
-              <p className="mt-1 text-xs text-ink/40">
+              <p className="mt-1 text-xs text-ink-soft">
                 {p.timeline}
                 {p.priceTypical ? ` · most land around $${formatNum(p.priceTypical)}` : ""}
               </p>
 
-              <p className="mt-4 text-sm text-ink/60">
-                <span className="text-ink/40">For:</span> {p.forWho}
+              <p className="mt-4 text-sm text-ink-soft">
+                <span className="text-ink-soft">For:</span> {p.forWho}
               </p>
 
               <ul className="mt-5 flex-1 space-y-3">
@@ -73,13 +73,13 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
                 <h3 className="text-lg font-semibold text-ink">{carePlan.name}</h3>
                 <span className="font-display text-2xl font-semibold text-gradient-brand">
                   ${carePlan.monthly}
-                  <span className="text-sm font-normal text-ink/40">/mo</span>
+                  <span className="text-sm font-normal text-ink-soft">/mo</span>
                 </span>
-                <span className="text-xs text-ink/40">
+                <span className="text-xs text-ink-soft">
                   (or ${carePlan.annualMonthly}/mo billed annually)
                 </span>
               </div>
-              <p className="mt-2 max-w-2xl text-sm text-ink/55">
+              <p className="mt-2 max-w-2xl text-sm text-ink-soft">
                 {carePlan.covers.join(" · ")}
               </p>
             </div>

@@ -1,135 +1,75 @@
-# AI Shop - Automated Systems Marketplace
+# aibuiltbyhand.com
 
-A modern marketplace platform for creating, selling, and purchasing AI automated systems. Build profitable AI businesses with tools like AI receptionists, content creators, customer support bots, and more.
+The marketing and lead-generation site for **Handbuilt AI**, a one-person AI studio in Surrey, BC that builds AI receptionists, quote follow-up and back-office automation for trades and small businesses.
 
-## Features
+It is a website, not a product. There is no customer dashboard, no marketplace, and nothing is sold through it. It exists to explain the work, demonstrate it, and capture one enquiry.
 
-- 🛍️ **Browse & Discover**: Explore hundreds of AI automation systems across multiple categories
-- 🎨 **Create & Sell**: Easy-to-use interface for creators to build and monetize their AI systems
-- 💰 **Monetization Ready**: Built-in payment processing and subscription management
-- 📊 **Dashboard**: Track sales, revenue, and analytics for your AI systems
-- 🔍 **Advanced Search**: Find the perfect AI system with category filters and search
-- ⭐ **Reviews & Ratings**: Social proof system for all products
-- 📱 **Responsive Design**: Beautiful, modern UI that works on all devices
+**Working in this repo with an AI assistant? Read [`AGENTS.md`](./AGENTS.md) first** — it holds the traps that have already cost a release.
 
-## Tech Stack
+## What is on the site
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: NextAuth.js (ready for integration)
-- **Payments**: Stripe (ready for integration)
+- **~240 pages**, almost all generated from data files in `lib/data/` rather than hand-written routes.
+- **Five free calculators** at `/tools` — missed-call cost, profit pricing, labour burden, quote follow-up, lead-leak audit. They run entirely in the browser; the numbers a visitor types never leave their machine.
+- **An AI Worker Showroom** at `/demo` — pick a worker and a trade, type as the customer, see what it says. It is a simulation and it says so: no real call, text, email or booking.
+- **One enquiry path** at `/create`, which persists to Postgres *before* it emails, so a mail failure cannot lose a lead.
 
-## Getting Started
+## Stack
 
-### Prerequisites
+Next.js 14 (App Router) · TypeScript · Tailwind · Prisma → Neon Postgres · Resend · OpenAI · NextAuth (Google) · Vercel Web Analytics · Vitest · Playwright · deployed on Vercel.
 
-- Node.js 18+ installed
-- PostgreSQL database (or use a cloud provider like Supabase, Railway, etc.)
-- npm or yarn package manager
+## Running it locally
 
-### Installation
-
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Set up environment variables**:
-   Create a `.env.local` file in the root directory:
-   ```env
-   DATABASE_URL="postgresql://REDACTED"
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET=REDACTED"
-   STRIPE_SECRET_KEY="your-stripe-secret-key"
-   STRIPE_PUBLIC_KEY="your-stripe-public-key"
-   ```
-
-3. **Set up the database**:
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-
-4. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## Project Structure
-
-```
-ai-shop/
-├── app/                    # Next.js app directory
-│   ├── page.tsx           # Homepage
-│   ├── products/          # Product browsing
-│   ├── create/            # Create new AI system
-│   ├── dashboard/         # Creator dashboard
-│   └── about/             # About page
-├── components/            # Reusable React components
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── ProductCard.tsx
-│   └── ...
-├── prisma/               # Database schema
-│   └── schema.prisma
-└── public/               # Static assets
+```bash
+npm install
+npm run dev            # http://localhost:3000
 ```
 
-## Key Features Explained
+Everything renders without a database except the enquiry form, which needs `DATABASE_URL`.
 
-### For Buyers
+Environment variables live in `.env.local` (git-ignored). The names you may need:
 
-- Browse AI systems by category (Communication, Content, Support, Marketing, etc.)
-- Search and filter products
-- View detailed product pages with features and descriptions
-- Purchase and download AI systems
-- Leave reviews and ratings
+| Variable | What it does | Needed for |
+|---|---|---|
+| `DATABASE_URL` | Neon Postgres connection | the enquiry form, any build via `npm run build` |
+| `OPENAI_API_KEY` | powers the demo, the interview and the finder | live AI output — without it they fall back to canned copy |
+| `RESEND_API_KEY` | lead notification email | production only |
+| `LEAD_NOTIFY_EMAIL`, `LEAD_FROM_EMAIL` | who the lead email goes to and from | production only |
+| `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Google sign-in | the non-public signed-in area |
 
-### For Creators
+**Never commit a `.env` file, and never read one to retrieve a value.** Grep for the variable name instead.
 
-- Create and publish AI automation systems
-- Set pricing and manage inventory
-- Track sales and revenue in dashboard
-- View analytics and performance metrics
-- Manage product listings
+### Commands
 
-## Example AI Systems
+| Command | What it does |
+|---|---|
+| `npm run dev` | dev server |
+| `npx tsc --noEmit` | type check |
+| `npm test` | unit tests (vitest) |
+| `npm run test:e2e` | end-to-end tests (Playwright) |
+| `npx next build` | **build locally without touching a database** |
+| `npm run build` | `prisma migrate deploy && next build` — **runs migrations.** This is the production build. |
+| `npm run smoke` | smoke check against a running site |
 
-The platform supports various types of AI automation systems:
+> ⚠️ `npm run build` runs database migrations before it compiles. Use `npx next build` locally. A change under `prisma/migrations/` executes against the production database on the next production deploy — see [`docs/ROLLBACK.md`](./docs/ROLLBACK.md).
 
-- **AI Receptionist**: 24/7 call handling and appointment scheduling
-- **Content Creator AI**: Automated blog posts, social media content
-- **Customer Support Bot**: Automated support ticket resolution
-- **Email Marketing Automation**: Intelligent campaign management
-- **Social Media Scheduler**: Optimal posting time optimization
-- **Inventory Management AI**: Automated tracking and reordering
+## Adding a page
 
-## Next Steps
+You almost never add a route. Landing pages come from the data files in `lib/data/`, which feed `lib/data/registry.ts`, which feeds `app/sitemap.ts` and `app/llms.txt/route.ts`. Add an entry to the right data file and the page, the sitemap and the internal links follow.
 
-1. **Set up authentication**: Implement NextAuth.js with your preferred provider
-2. **Configure payments**: Add Stripe keys and set up payment processing
-3. **Add file upload**: Implement storage for AI system files (AWS S3, Cloudinary, etc.)
-4. **Set up email**: Configure email service for notifications
-5. **Deploy**: Deploy to Vercel, Railway, or your preferred platform
+Prices are the exception to nothing: **`lib/data/packages.ts` is the only place a price may be defined.** Hand-typed copies elsewhere are what produced a page that once displayed three different prices for one package.
 
-## Contributing
+## Documentation
 
-This is a starting template. Feel free to customize and extend it for your needs!
+| | |
+|---|---|
+| [`AGENTS.md`](./AGENTS.md) | How this repo works and what will bite you. Read before any broad scan. |
+| [`docs/ROLLBACK.md`](./docs/ROLLBACK.md) | How to undo a bad production deploy, and how to verify it took. |
+| [`docs/launch/`](./docs/launch/) | Marketing launch package — **all drafts, nothing sent or published.** |
+| [`docs/archive/`](./docs/archive/) | Superseded setup and deployment guides. Historical only; do not follow them. |
+| `research/transformation-2026-08-30/` | Evidence reports behind the current rebuild, every claim carrying a `file:line`. |
+| `resend-email-setup.md` | Getting `aibuiltbyhand.com` able to send and receive mail. It currently cannot do either. |
 
-## License
+## Two things to know before writing copy
 
-MIT License - feel free to use this project for your own purposes.
-
-## Support
-
-For questions or issues, please open an issue on the repository.
-
----
-
-Built with ❤️ for creators and entrepreneurs who want to monetize AI automation.
-
+1. **Nothing may be claimed that is not in `research/transformation-2026-08-30/09-proof-founder-positioning.md`.** No customer, testimonial, count, outcome, review or logo. There are no clients yet, the site says so, and an invented review has shipped here once already.
+2. **There is no calendar.** The primary call to action is a request form. Copy says "Request", never "Book a call".

@@ -447,7 +447,7 @@ function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
       transition={{ type: "spring", stiffness: 420, damping: 32 }}
       className={`max-w-[86%] text-[12.5px] leading-relaxed ${me ? "self-end" : "self-start"}`}
     >
-      <div className={`mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] ${me ? "text-right text-ink/40" : "text-ink/40"}`}>{me ? "You (customer)" : "AI worker"}</div>
+      <div className={`mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] ${me ? "text-right text-ink-soft" : "text-ink-soft"}`}>{me ? "You (customer)" : "AI worker"}</div>
       <div className={me
         ? "rounded-2xl rounded-br-sm bg-ink px-3.5 py-2.5 text-white"
         : "rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-3.5 py-2.5 text-ink"}>
@@ -460,7 +460,7 @@ function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
 function Typing() {
   return (
     <div className="self-start">
-      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink/40">AI worker</div>
+      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft">AI worker</div>
       <div className="inline-flex items-center gap-1 rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-4 py-3">
         {[0, 1, 2].map((i) => (
           <motion.span key={i} className="h-1.5 w-1.5 rounded-full bg-ink/40"

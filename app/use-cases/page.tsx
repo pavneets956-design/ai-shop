@@ -37,7 +37,7 @@ export default function UseCasesIndex() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/60">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-ink-soft">
               Practical guides on exactly what we&apos;d build for your kind of business — what it
               does, how it works, and what it costs.
             </p>
@@ -56,7 +56,7 @@ export default function UseCasesIndex() {
                     {u.solution}
                     <ArrowUpRight className="h-4 w-4 text-ink/20 transition group-hover:text-ink" />
                   </h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/55">{u.answer.split(". ")[0]}.</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{u.answer.split(". ")[0]}.</p>
                   <span className="mt-4 text-sm font-medium text-ink/70 group-hover:text-ink">
                     Read the guide →
                   </span>

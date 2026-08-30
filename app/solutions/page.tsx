@@ -35,7 +35,7 @@ export default function SolutionsPage() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink/60">
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
               Stop guessing which AI tool to use. Pick the outcome you want and we&apos;ll build the
               exact system for it — from a single automation to a full custom app.
             </p>
@@ -78,7 +78,7 @@ export default function SolutionsPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 max-w-xl text-ink/60">
+            <p className="mx-auto mt-4 max-w-xl text-ink-soft">
               Use the AI Solution Finder or just tell us your goal — we&apos;ll map it to the right
               build and give you a price.
             </p>

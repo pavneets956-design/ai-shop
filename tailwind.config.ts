@@ -14,14 +14,14 @@ const config: Config = {
         // ink, a single RED action color (red gradient CTA). Token NAMES kept so all
         // existing classes inherit the new palette automatically.
         paper: {
-          DEFAULT: "#FBFBFD", // base background (cool near-white)
+          DEFAULT: "#FAF9F7", // base background (cool near-white)
           2: "#F5F5F7", // soft cool surface (alternating sections / soft fills)
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#1D1D1F", // near-black text
-          hover: "#2A2A2E", // ink-surface hover
-          soft: "#6E6E73", // muted cool gray
+          DEFAULT: "#1C1A19", // near-black text
+          hover: "#2B2724", // ink-surface hover
+          soft: "#6B6663", // muted cool gray
         },
         // "clay" token name kept (used site-wide) — now holds the PRIMARY RED.
         clay: {
@@ -36,12 +36,12 @@ const config: Config = {
           soft: "#FFE9E7",
         },
         // Cool muted text + borders + semantic accents (used sparingly per the system).
-        muted: { DEFAULT: "#6E6E73", light: "#A1A1A6" },
-        line: { DEFAULT: "#D2D2D7", strong: "#C7C7CC" },
+        muted: { DEFAULT: "#6B6663", light: "#A39E9A" },
+        line: { DEFAULT: "#D8D4D1", strong: "#CCC7C3" },
         success: "#2F6B4F", // only for "captured / complete"
         danger: "#B42318", // only for urgent jobs
         // Legacy tokens remapped to the cool/red palette so any unswept refs stay coherent.
-        obsidian: { DEFAULT: "#FBFBFD", 50: "#F5F5F7", 100: "#F5F5F7", 200: "#D2D2D7" },
+        obsidian: { DEFAULT: "#FAF9F7", 50: "#F5F5F7", 100: "#F5F5F7", 200: "#D8D4D1" },
         electric: "#E0362C",
         violet: { glow: "#E0362C" },
         cyan: { glow: "#FF6961" },

@@ -25,7 +25,7 @@ export default function SectionHeading({
       </Reveal>
       {subtitle && (
         <Reveal delay={0.1}>
-          <p className="mt-4 text-base leading-relaxed text-ink/55 sm:text-lg">{subtitle}</p>
+          <p className="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">{subtitle}</p>
         </Reveal>
       )}
     </div>

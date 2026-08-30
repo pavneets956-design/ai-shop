@@ -59,7 +59,7 @@ export default function LandingHub({
                       <ArrowUpRight className="h-4 w-4 text-ink/20 transition group-hover:text-ink" />
                     </div>
                     <h2 className="mt-4 font-display text-lg font-semibold text-ink">{item.h1}</h2>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/55">
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
                       {item.description}
                     </p>
                   </Link>
@@ -79,7 +79,7 @@ export default function LandingHub({
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 text-ink/60">
+            <p className="mx-auto mt-4 text-ink-soft">
               Tell us what you want AI to do for your business and we&apos;ll send a plan and a fixed
               quote within one business day.
             </p>

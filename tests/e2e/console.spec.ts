@@ -43,7 +43,12 @@ for (const path of PAGES) {
     page.on("console", (msg) => {
       if (msg.type() !== "error") return;
       const text = msg.text();
-      if (!ignored(text)) consoleErrors.push(text);
+      // A failed subresource logs the generic "Failed to load resource: the
+      // server responded with a status of 404" with NO url in the text — the
+      // url is only on msg.location(). Matching the text alone made every
+      // entry in IGNORED unreachable for exactly the case it was written for.
+      const url = msg.location()?.url ?? "";
+      if (!ignored(text) && !ignored(url)) consoleErrors.push(url ? `${text} (${url})` : text);
     });
     page.on("pageerror", (err) => {
       if (!ignored(err.message)) consoleErrors.push(`pageerror: ${err.message}`);

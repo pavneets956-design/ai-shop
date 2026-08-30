@@ -37,7 +37,7 @@ export default function PhoneReceptionistPlan() {
         </span>
         <div>
           <h3 className="font-display text-2xl font-semibold text-ink">AI Phone Receptionist</h3>
-          <p className="text-sm text-ink/55">Live call answering — its own plan, with setup + minutes.</p>
+          <p className="text-sm text-ink-soft">Live call answering — its own plan, with setup + minutes.</p>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export default function PhoneReceptionistPlan() {
         ))}
       </ul>
 
-      <p className="mt-5 text-xs text-ink/40">
+      <p className="mt-5 text-xs text-ink-soft">
         Twilio passthrough means you only pay for what you use. Exact setup is scoped on a quick call —
         no surprise minute charges, ever.
       </p>

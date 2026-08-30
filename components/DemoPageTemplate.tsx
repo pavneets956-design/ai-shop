@@ -39,13 +39,13 @@ export default function DemoPageTemplate({
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">{description}</p>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink-soft">{description}</p>
           </Reveal>
         </div>
 
         <Reveal delay={0.15}>{children}</Reveal>
 
-        {hint ? <p className="mt-3 text-center text-xs text-ink/40">{hint}</p> : null}
+        {hint ? <p className="mt-3 text-center text-xs text-ink-soft">{hint}</p> : null}
 
         <Reveal delay={0.2}>
           <div className="mt-10">

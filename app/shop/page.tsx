@@ -36,7 +36,7 @@ export default function ShopPage() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink/60">
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
               Pick a ready-made AI system, connect it to the tools you already use, and start
               saving time in days — not months. Built by hand, one business at a time.
             </p>
@@ -81,7 +81,7 @@ export default function ShopPage() {
                   </p>
                 </div>
               </div>
-              <p className="mt-5 border-t border-line pt-4 text-sm text-ink/55">
+              <p className="mt-5 border-t border-line pt-4 text-sm text-ink-soft">
                 These overlap: a shop tool and a Starter build can solve the same problem. The shop
                 version is cheaper because the scope is already decided. If you want it shaped around
                 how your business actually works, that&rsquo;s the custom build.{" "}
@@ -121,7 +121,7 @@ export default function ShopPage() {
             <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               Systems that pay for themselves
             </h2>
-            <p className="mt-2 max-w-xl text-ink/55">
+            <p className="mt-2 max-w-xl text-ink-soft">
               Each one solves a specific, expensive problem. Some are a one-time build you own and
               run on your own accounts; the always-on ones we host and run for a flat monthly — no
               API keys, no surprise bills.
@@ -154,23 +154,23 @@ export default function ShopPage() {
                             </span>
                           )}
                         </div>
-                        <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-ink/40">
+                        <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-ink-soft">
                           {p.delivery} · {billingLabel}
                         </p>
                       </div>
                     </div>
 
                     {/* Problem → outcome */}
-                    <p className="mt-5 text-sm text-ink/55">
+                    <p className="mt-5 text-sm text-ink-soft">
                       <span className="font-semibold text-ink/70">The problem: </span>
                       {p.problem}
                     </p>
                     <p className="mt-2 text-[15px] text-ink/80">{p.outcome}</p>
-                    <p className="mt-3 text-sm text-ink/45">{p.forWho}</p>
+                    <p className="mt-3 text-sm text-ink-soft">{p.forWho}</p>
 
                     {/* Integrations */}
                     <div className="mt-5">
-                      <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink/40">
+                      <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
                         <Plug className="h-3.5 w-3.5" /> Connects with
                       </div>
                       <div className="mt-2 flex flex-wrap gap-1.5">
@@ -189,11 +189,11 @@ export default function ShopPage() {
                     <div className="mt-auto pt-6">
                       <div className="mb-4 flex items-start gap-2 rounded-xl border border-ink/[0.06] bg-paper-2/40 px-3 py-2.5">
                         <Wallet className="mt-0.5 h-3.5 w-3.5 flex-none text-ink/35" aria-hidden="true" />
-                        <p className="text-xs leading-relaxed text-ink/55">{p.usageNote}</p>
+                        <p className="text-xs leading-relaxed text-ink-soft">{p.usageNote}</p>
                       </div>
                       <div className="flex items-center justify-between border-t border-ink/[0.06] pt-5">
                         <span className="text-sm font-semibold text-ink/75">{p.priceLabel}</span>
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-ink/45">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-ink-soft">
                           <Clock className="h-3.5 w-3.5" /> {p.timeToLaunch}
                         </span>
                       </div>
@@ -214,7 +214,7 @@ export default function ShopPage() {
                         <>
                           <Link
                             href={p.learnHref}
-                            className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink/45 transition hover:text-ink"
+                            className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-ink-soft transition hover:text-ink"
                           >
                             How it works <ArrowRight className="h-3.5 w-3.5" />
                           </Link>
@@ -229,7 +229,7 @@ export default function ShopPage() {
                               interpolated p.priceLabel into a sentence, producing "The From
                               $129/mo · we run it above is this fixed-scope shop version."
                               Describe what the link IS; assert nothing about its pricing. */}
-                          <p className="mt-2 text-[11px] leading-relaxed text-ink/40">
+                          <p className="mt-2 text-[11px] leading-relaxed text-ink-soft">
                             Longer write-up of how this works, including the custom-build version.
                           </p>
                         </>
@@ -242,7 +242,7 @@ export default function ShopPage() {
           </div>
 
           <Reveal delay={0.1}>
-            <p className="mt-6 text-center text-sm text-ink/50">
+            <p className="mt-6 text-center text-sm text-ink-soft">
               One-time builds run on your own accounts — you own them outright. Managed systems are
               hosted and run by us, AI usage included.{" "}
               <Link href="/pricing" className="font-semibold text-ink hover:text-ink">
@@ -262,7 +262,7 @@ export default function ShopPage() {
             <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               Tuned for how your trade actually works
             </h2>
-            <p className="mt-2 max-w-xl text-ink/55">
+            <p className="mt-2 max-w-xl text-ink-soft">
               Same tools, configured around your jobs, pricing and busy season.
             </p>
           </Reveal>
@@ -291,7 +291,7 @@ export default function ShopPage() {
             <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
               Real SaaS, running in production
             </h2>
-            <p className="mt-2 max-w-xl text-ink/55">
+            <p className="mt-2 max-w-xl text-ink-soft">
               Not the things you buy here — the proof the same studio ships and runs real software.
             </p>
           </Reveal>
@@ -301,13 +301,13 @@ export default function ShopPage() {
               <Reveal key={item.id} delay={0.05 * i}>
                 <div className="glass-card border-glow flex h-full flex-col p-7">
                   {item.eyebrow && (
-                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/40">
+                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
                       {item.eyebrow}
                     </span>
                   )}
                   <h3 className="mt-3 font-display text-2xl font-semibold text-ink">{item.name}</h3>
                   <p className="mt-2 text-[15px] text-ink/70">{item.tagline}</p>
-                  <p className="mt-1 text-sm text-ink/45">{item.forWho}</p>
+                  <p className="mt-1 text-sm text-ink-soft">{item.forWho}</p>
 
                   <ul className="mt-5 space-y-2">
                     {item.outcomes.map((o) => (
@@ -319,7 +319,7 @@ export default function ShopPage() {
                   </ul>
 
                   <div className="mt-6 flex items-center justify-between border-t border-ink/[0.06] pt-5">
-                    <span className="text-sm font-medium text-ink/60">{item.priceLabel}</span>
+                    <span className="text-sm font-medium text-ink-soft">{item.priceLabel}</span>
                     {item.href ? (
                       <a
                         href={utmHref(item.href, item.id)}
@@ -360,7 +360,7 @@ export default function ShopPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-ink/60">
+            <p className="mx-auto mt-4 max-w-xl text-ink-soft">
               Answer a couple of questions and I&apos;ll map the exact system for your business —
               what to build, what it connects to, and what it costs.
             </p>

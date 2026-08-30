@@ -26,7 +26,7 @@ function LoginInner() {
           <h1 className="mt-6 font-display text-3xl font-semibold tracking-tight text-ink">
             Sign in to your account
           </h1>
-          <p className="mt-2 text-ink/55">
+          <p className="mt-2 text-ink-soft">
             Access your Handbuilt account and saved work.
           </p>
         </div>
@@ -39,7 +39,7 @@ function LoginInner() {
             <Chrome className="h-5 w-5 text-ink" />
             Continue with Google
           </button>
-          <p className="mt-5 text-center text-xs text-ink/40">
+          <p className="mt-5 text-center text-xs text-ink-soft">
             Secure sign-in. We only use your email to manage your account and subscription.
           </p>
         </div>
@@ -47,7 +47,7 @@ function LoginInner() {
         <div className="mt-6 text-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink/50 transition hover:text-ink"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft transition hover:text-ink"
           >
             <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>

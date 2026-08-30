@@ -47,7 +47,7 @@ export default function FAQPage() {
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-ink/60">
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink-soft">
               Straight answers about what we build, what it costs, and how it works.
             </p>
           </Reveal>
@@ -77,7 +77,7 @@ export default function FAQPage() {
             <h2 className="font-display text-3xl font-semibold text-ink">Still have a question?</h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 text-ink/60">
+            <p className="mx-auto mt-4 text-ink-soft">
               Ask it directly — start a build request and tell us what you&apos;re thinking.
             </p>
           </Reveal>

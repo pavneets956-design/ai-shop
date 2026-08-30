@@ -33,7 +33,7 @@ export default function FeaturedBuilds() {
                 <ArrowUpRight className="h-4 w-4 text-ink/20 transition group-hover:text-ink" />
               </h3>
               <p className="mt-1 text-xs uppercase tracking-wide text-ink/35">{b.forWho}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/60">{b.what}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{b.what}</p>
               <p className="mt-4 text-sm font-medium text-ink/80">From ${nf.format(b.startsAt)} CAD</p>
             </Link>
           </Reveal>

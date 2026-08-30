@@ -105,7 +105,7 @@ export default function LandingTemplate({
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
               <div className="glass rounded-2xl border-l-2 border-l-electric/60 p-6">
-                <p className="text-xs uppercase tracking-[0.18em] text-ink/40">The problem</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">The problem</p>
                 <p className="mt-3 text-lg leading-relaxed text-ink/80">{content.pain}</p>
               </div>
             </Reveal>
@@ -119,7 +119,7 @@ export default function LandingTemplate({
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
               <div className="glass-card">
-                <p className="text-xs uppercase tracking-[0.18em] text-ink/40">
+                <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">
                   What this looks like in practice
                 </p>
                 <div className="mt-3 space-y-4 text-ink/75 leading-relaxed">
@@ -140,15 +140,16 @@ export default function LandingTemplate({
                 How it works
               </h2>
             </Reveal>
+            {/* `as="li"` matters: an <ol> whose direct children are <div>
+                wrappers fails the axe `list` AND `listitem` rules, and a screen
+                reader stops announcing it as a numbered list. */}
             <ol className="mt-8 space-y-4">
               {content.steps.map((s, i) => (
-                <Reveal key={s} delay={i * 0.05}>
-                  <li className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white">
-                      {i + 1}
-                    </span>
-                    <p className="pt-1 text-ink/75">{s}</p>
-                  </li>
+                <Reveal key={s} delay={i * 0.05} as="li" className="flex gap-4">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <p className="pt-1 text-ink/75">{s}</p>
                 </Reveal>
               ))}
             </ol>
@@ -274,7 +275,7 @@ export default function LandingTemplate({
             {pkg && (
               <Reveal delay={0.08}>
                 <div className="border-glow glass-card flex h-full flex-col">
-                  <p className="text-xs uppercase tracking-[0.18em] text-ink/40">
+                  <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">
                     Recommended package
                   </p>
                   <h3 className="mt-2 text-xl font-semibold text-ink">{pkg.name}</h3>
@@ -282,14 +283,14 @@ export default function LandingTemplate({
                     <span className="font-display text-4xl font-semibold text-gradient-brand">
                       {formatPackagePrice(pkg)}
                     </span>
-                    <span className="text-sm text-ink/40">{site.currency}</span>
+                    <span className="text-sm text-ink-soft">{site.currency}</span>
                   </div>
-                  <p className="mt-1 text-sm text-ink/40">{pkg.timeline}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-ink/40">
+                  <p className="mt-1 text-sm text-ink-soft">{pkg.timeline}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-ink-soft">
                     Fixed price in CAD · USD / AUD / NZD quotes on request. Built remotely for small
                     businesses across Canada, the US, Australia &amp; New Zealand.
                   </p>
-                  <p className="mt-4 flex-1 text-sm text-ink/60">{pkg.tagline}</p>
+                  <p className="mt-4 flex-1 text-sm text-ink-soft">{pkg.tagline}</p>
                   <Link href={ctaHref} className="btn-primary mt-6 w-full">
                     {ctaLabel} <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -348,7 +349,7 @@ export default function LandingTemplate({
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 text-ink/60">
+            <p className="mx-auto mt-4 text-ink-soft">
               Tell us about your setup and we&apos;ll send a plan and a fixed quote within one
               business day.
             </p>

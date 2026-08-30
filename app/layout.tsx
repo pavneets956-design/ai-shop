@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
-import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/data/site";
 import { identityGraph } from "@/lib/seo";
@@ -135,18 +134,24 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             being deleted, not a visual change. Depth comes from the
             surface/recess stacking and 1px hairline shadows instead of a
             blurred brand-coloured blob. */}
-        <Providers>
-          <JsonLd data={identityGraph()} />
-          <ChromeGate>
-            <Navbar />
-          </ChromeGate>
-          <main id="main" className="min-h-screen">
-            {children}
-          </main>
-          <ChromeGate>
-            <Footer />
-          </ChromeGate>
-        </Providers>
+        {/* No <SessionProvider> here.
+            It wrapped every route on the site and its only job was to serve
+            `useSession()`, which after this release has zero live call sites —
+            the Navbar dropped it, and the last consumer (ProCheckout, behind
+            the unreferenced ToolPaywall) was dead code from the retired Tools
+            Pro product. Mounting it cost every page load two requests to
+            /api/auth/session plus the next-auth client bundle. `signIn()` and
+            `signOut()` on /login and /account do not need the provider. */}
+        <JsonLd data={identityGraph()} />
+        <ChromeGate>
+          <Navbar />
+        </ChromeGate>
+        <main id="main" className="min-h-screen">
+          {children}
+        </main>
+        <ChromeGate>
+          <Footer />
+        </ChromeGate>
         {/* Cookieless product analytics (no consent banner needed). Failure-safe:
             never blocks rendering, the tools, or the lead flow. */}
         <Analytics />

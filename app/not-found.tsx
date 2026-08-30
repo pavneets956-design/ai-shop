@@ -13,7 +13,11 @@ import { site } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Page not found",
   description: "That page doesn't exist. Here's where to go instead.",
-  robots: { index: false, follow: true },
+  // No `robots` key. Next emits `<meta name="robots" content="noindex">` for
+  // the not-found route itself, so declaring one here produced TWO robots tags
+  // on every 404 (`noindex` and `noindex, follow`). They agreed, so nothing was
+  // mis-indexed — but duplicate directives are exactly how a later edit ends up
+  // shipping two that DON'T agree.
 };
 
 const DESTINATIONS = [
