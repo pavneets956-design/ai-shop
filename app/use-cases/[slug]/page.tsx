@@ -153,7 +153,8 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
             </Reveal>
             <Reveal delay={0.1}>
               <ReceptionistChat
-                business={demo.business}
+                workerId={demo.workerId}
+                industryId={demo.industryId}
                 greeting={demo.greeting}
                 suggestions={demo.suggestions}
                 sub={demo.business.split(",")[0]}

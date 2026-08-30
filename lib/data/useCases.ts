@@ -2,6 +2,8 @@
 // Each renders answer-first content + FAQPage + Service schema at /use-cases/[slug].
 // Add rows here to expand surface area — the page template handles the rest.
 
+import type { IndustryId, WorkerId } from "@/lib/data/showroom";
+
 export interface UseCase {
   slug: string;
   solution: string;
@@ -887,7 +889,9 @@ export function getUseCase(slug: string): UseCase | undefined {
 // Conversational use cases get an embedded, working AI-receptionist demo.
 // Derived from solution + industry so we don't hand-author every entry.
 export interface UseCaseDemo {
-  business: string; // persona string passed to /api/demo
+  business: string; // sample-business label shown in the chat header
+  workerId: WorkerId; // persona sent to /api/demo
+  industryId: IndustryId; // persona sent to /api/demo
   greeting: string; // first assistant line
   suggestions: string[]; // quick-prompt chips
 }
@@ -898,6 +902,30 @@ const CONVERSATIONAL: Record<string, "receptionist" | "booking" | "chatbot" | "l
   "AI Website Chatbot": "chatbot",
   "AI Lead Follow-Up Agent": "lead",
   "AI Customer Support Bot": "support",
+};
+
+/**
+ * The showroom is the only demo persona engine we have, and it only knows the
+ * nine industries in `lib/data/showroom.ts`. A use case whose industry is not
+ * in this map gets NO embedded chat — previously every one of them silently
+ * ran as the default landscaping receptionist while the page claimed it was
+ * "a real, working AI for a sample <industry> business".
+ */
+const DEMO_INDUSTRY: Record<string, IndustryId> = {
+  "Contractors & Trades": "plumbing",
+  "Real Estate": "realestate",
+  Restaurants: "restaurant",
+  "Clinics & Health": "dental",
+  "Dental Practices": "dental",
+  "Salons & Beauty": "salon",
+};
+
+const DEMO_WORKER: Record<string, WorkerId> = {
+  receptionist: "receptionist",
+  booking: "receptionist",
+  chatbot: "receptionist",
+  support: "receptionist",
+  lead: "followup",
 };
 
 const SAMPLE_BUSINESS: Record<string, string> = {
@@ -914,6 +942,9 @@ const SAMPLE_BUSINESS: Record<string, string> = {
 export function getUseCaseDemo(uc: UseCase): UseCaseDemo | null {
   const kind = CONVERSATIONAL[uc.solution];
   if (!kind) return null;
+
+  const industryId = DEMO_INDUSTRY[uc.industry];
+  if (!industryId) return null; // no honest persona for this industry — show no demo
 
   const business = SAMPLE_BUSINESS[uc.industry] ?? `a ${uc.industry.toLowerCase()} business`;
   const name = business.split(",")[0];
@@ -947,5 +978,5 @@ export function getUseCaseDemo(uc: UseCase): UseCaseDemo | null {
     },
   };
 
-  return { business, ...presets[kind] };
+  return { business, workerId: DEMO_WORKER[kind], industryId, ...presets[kind] };
 }
