@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { CallStorage } from "@/lib/agent/callStorage";
+import { guardAgentApi } from "@/lib/agent/guard";
 
 // Get all calls from database
 export async function GET(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const callStorage = new CallStorage();
     const { searchParams } = new URL(request.url);
@@ -22,6 +27,10 @@ export async function GET(request: NextRequest) {
 
 // Get single call by ID
 export async function POST(request: NextRequest) {
+  // Owner-only + kill-switched. See lib/agent/guard.ts.
+  const denied = await guardAgentApi();
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { callId } = body;

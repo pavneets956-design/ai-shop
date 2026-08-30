@@ -60,3 +60,34 @@ graphify-out/
 
 # local agent config / transcripts (never commit — may contain secrets)
 .claude/
+
+# ---------------------------------------------------------------------------
+# Deploy hygiene (added 2026-08-30). 148 untracked files sat one `git add -A`
+# away from production: 15 MB of research screenshots, 3.9 MB of logo PNGs and
+# 2.7 MB of standalone design HTML. Explicit-path staging is still the rule —
+# these patterns are the seatbelt, not the brake.
+#
+# DELIBERATELY NOT IGNORED:
+#   public/founder.jpg      — the owner's real portrait, used by /about
+#   research/**/*.md        — 124 research files are already TRACKED
+#   docs/design/screenshots — 40 jpegs, deliberately committed as design record
+# ---------------------------------------------------------------------------
+
+# Root-level design exports and archives (local working files, never shipped)
+/*.html
+/*.zip
+/*.jpg
+
+# Brand source PNGs kept locally; the shipped logos live in public/ and brand/
+/logos/
+
+# Research screenshots — the prose in research/ IS tracked, the images are not
+research/**/screenshots/
+research/**/*.png
+research/**/*.jpeg
+
+# Playwright / e2e artifacts
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/

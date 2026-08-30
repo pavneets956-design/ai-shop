@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import { getOpenAI, modelFor, DEMO_SAFETY, DEMO_REFUSAL, looksLikeInjection } from "@/lib/ai/core";
+import {
+  clientIp,
+  checkDemoPerMinute,
+  checkDemoPerDay,
+  checkDemoGlobalDaily,
+} from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 
@@ -21,6 +27,18 @@ export const runtime = "nodejs";
  *
  * Cost/abuse guards: caps history + per-message/field length so a public
  * endpoint can't run up an unbounded bill.
+ *
+ * RATE LIMITS (added 2026-08-30). This route called OpenAI on the owner's key
+ * with NO limit of any kind — four public pages (/demo/assistant, /demo/lead,
+ * /demo/nudge, /demo/quote) posted straight through to the model. It now uses
+ * the same three-layer guard as /api/demo: per-minute per IP, per-day per IP,
+ * and a global daily backstop checked immediately before the paid call.
+ *
+ * NOTE — SHARED BUDGET. These limiters are the same buckets /api/demo uses, so
+ * a visitor's /demo turns and /demo/* turns come out of one allowance. That is
+ * deliberate for now (it is a spend cap, and `lib/rateLimit.ts` belongs to
+ * another lane this wave). The handoff proposes dedicated `checkToolsDemo*`
+ * buckets so the two surfaces stop competing.
  */
 
 const MAX_MESSAGES = 24;
@@ -68,6 +86,20 @@ function chatFallback(kind: Kind, messages: ChatMessage[]): string {
     return "Great question — I can help with that. Want me to grab your details and have someone send the specifics?";
   }
   return "Thanks for reaching out! Tell me a bit about what you need and the best way to reach you.";
+}
+
+/**
+ * What a rate-limited visitor reads. Says what happened, whose fault it is
+ * (ours — it is a cap we set), and the one action worth taking next.
+ */
+function limitedReply(retryAfterSeconds: number): string {
+  const mins = Math.max(1, Math.ceil(retryAfterSeconds / 60));
+  const when = mins <= 1 ? "in about a minute" : mins < 60 ? `in about ${mins} minutes` : "tomorrow";
+  return (
+    `That's the free demo limit for now — this demo runs on a metered AI account, ` +
+    `so it's capped per visitor. It opens back up ${when}. ` +
+    `If you'd rather see one built on your own business, start a build request at /create.`
+  );
 }
 
 function generatorFallback(kind: Kind, fields: Record<string, string>): string {
@@ -147,7 +179,35 @@ export async function POST(req: Request) {
     }
   }
 
+  // --- Visitor-facing rate limit ------------------------------------------
+  // The clients on /demo/* read `reply` and do not check res.ok, so a bare 429
+  // would render as "Sorry, could you say that again?" — a silent state that
+  // blames the model for a limit we imposed. Answer 200 with a reply that SAYS
+  // the limit was hit, plus machine-readable `limited` + `retryAfter`.
+  const ip = clientIp(req);
+  const perMin = checkDemoPerMinute(ip);
+  const perDay = checkDemoPerDay(ip);
+  if (!perMin.ok || !perDay.ok) {
+    const retryAfter = Math.max(perMin.retryAfter, perDay.retryAfter);
+    return NextResponse.json(
+      {
+        reply: limitedReply(retryAfter),
+        limited: true,
+        retryAfter,
+      },
+      { headers: { "Retry-After": String(retryAfter) } },
+    );
+  }
+
   const openai = await getOpenAI();
+  // Global daily spend backstop — checked right before the paid call, exactly
+  // where /api/demo checks it.
+  if (openai && !checkDemoGlobalDaily().ok) {
+    const reply = isChatKind(kind)
+      ? chatFallback(kind, modelMessages)
+      : generatorFallback(kind, fields);
+    return NextResponse.json({ reply, fallback: true, limited: true });
+  }
   if (!openai) {
     const reply = isChatKind(kind)
       ? chatFallback(kind, modelMessages)

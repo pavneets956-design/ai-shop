@@ -1,3 +1,58 @@
+// ============================================================================
+// ⚠️  OWNER DECISION REQUIRED — DO NOT ENABLE THIS SUBSYSTEM AS WRITTEN
+// ============================================================================
+//
+// This file is the script for an OUTBOUND AI COLD-CALLER that dials Canadian
+// businesses through Twilio. As written it breaks Canadian telemarketing law in
+// at least three ways. The whole subsystem is currently shipped dark behind
+// `AGENT_SUBSYSTEM_ENABLED` (see `lib/agent/guard.ts` and `middleware.ts`).
+// Nothing here has been deleted — the fixes below are Pavneet's call, not the
+// implementer's.
+//
+// 1. IT DOES NOT DISCLOSE THAT IT IS AN AI.
+//    `:163` and `:174` below both open with `"My name is Sarah"`. A human name,
+//    a human voice, no statement that the caller is automated. Two problems:
+//      - CRTC Unsolicited Telecommunications Rules require a telemarketing call
+//        to identify, at the START of the call, the person on whose behalf the
+//        call is made, with a mailing address and a working contact number.
+//        "Sarah" is not an identification; it is a disguise.
+//      - It contradicts our own pitch. `:313` of this file sells the product on
+//        the grounds that it "introduces itself as your AI assistant rather than
+//        pretending to be a person", while this caller does exactly that.
+//    REQUIRED BEFORE ENABLING: the first sentence must state that the caller is
+//    an automated AI assistant calling on behalf of <legal name>, and give the
+//    business name and a callback number.
+//
+// 2. IT DOES NOT HONOUR A DO-NOT-CALL ON FIRST REFUSAL.
+//    `:152-154`: on "not interested", "don't call", or "remove" it does NOT end
+//    the call — it asks another question ("are you the person who handles
+//    customer inquiries…?"). A stated refusal is a do-not-call request. Under
+//    the CRTC rules it must be honoured immediately, the number added to the
+//    internal DNCL, and the call terminated. This behaviour is the single most
+//    likely thing here to generate a complaint.
+//    REQUIRED BEFORE ENABLING: any refusal → confirm removal, state it, hang up,
+//    and persist the number to an internal do-not-call list that is checked
+//    before every dial. There is currently no such list anywhere in the repo.
+//
+// 3. NO NATIONAL DNCL SCRUB, NO CALLING-HOURS ENFORCEMENT, NO REGISTRATION.
+//    Telemarketers must be registered with the National DNCL operator, must
+//    subscribe to and scrub against the National DNCL, must keep records, and
+//    must observe permitted calling hours. `lib/agent/campaignManager.ts` dials
+//    from a target list with no DNCL check at all. CASL applies too the moment
+//    a call is followed by an email/SMS — that leg needs express or implied
+//    consent, sender identification, and a working unsubscribe.
+//
+// ALSO UNVERIFIED (fabrication risk): the pitch at `:310-317` claims "15+
+// languages" and "unlimited calls simultaneously", and prices from
+// `lib/agent/pricebook.ts` are monthly plans that contradict the site's
+// one-time pricing in `lib/data/packages.ts`. Saying any of that on a live call
+// is a misrepresentation.
+//
+// Penalties are per-violation and administrative — this is not a
+// theoretical risk. Until items 1–3 are fixed AND an internal DNCL exists AND
+// registration is in place, `AGENT_SUBSYSTEM_ENABLED` must stay unset.
+// ============================================================================
+
 // AI Conversation Engine for Sales Agent - Enhanced for Cold Calling Local Businesses
 // This handles the conversation flow and responses
 
