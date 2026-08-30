@@ -1,3 +1,22 @@
+// ⚠️ PRICE FLOORS — owner rule, 2026-08-30. Every one-time / setup price here
+// must clear the tier floor in lib/data/packages.ts:
+//     starter (a single done-for-you AI worker)  >= $1,500
+//     business (a connected system)              >= $3,500
+//     custom  (a full app)                       >= $10,000
+// This file hand-types `priceLabel` and `setupPrice`, which is how five SKUs
+// drifted under the floor AND under their own /services/<slug> page — and those
+// figures are published to Google as JSON-LD `Offer` prices, not merely shown as
+// prose. `tests/shop-pricing.test.ts` fails the build if any row drops below its
+// floor again.
+//
+// STILL OPEN, owner decision — deliberately NOT changed here:
+//   - `ai-customer-reactivation` is "From $500 · per campaign", tagged `starter`.
+//     It is a ~3-day one-off campaign run on the customer's own list, not an
+//     installed worker. Either it takes the $1,500 floor or it stops being
+//     tagged `starter`. Tripling a product's price is the owner's call.
+//   - The `managed` monthly SKUs ($99–$349/mo) are subscriptions, not builds, so
+//     the build floors arguably should not apply to them at all.
+//
 // Shop storefront catalog — the "ready-to-install" lead products.
 // Each maps to an existing /services/<slug> detail page (the SEO engine) where
 // one exists, and to a live /demo or /tools page where available.
@@ -90,8 +109,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in ~5 days",
     billing: "one-time",
-    priceLabel: "$1,000 · built for you",
-    setupPrice: 1000,
+    priceLabel: "$1,500 · built for you",
+    setupPrice: 1500,
     whoPaysUsage: "customer",
     usageNote:
       "Installed on your own website + accounts — you own it outright and pay any usage directly (usually a few dollars a month).",
@@ -112,8 +131,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in 2–3 weeks",
     billing: "hybrid",
-    priceLabel: "From $2,500 + $99/mo",
-    setupPrice: 2500,
+    priceLabel: "From $3,500 + $99/mo",
+    setupPrice: 3500,
     monthlyPrice: 99,
     whoPaysUsage: "customer",
     usageNote:
@@ -135,8 +154,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in ~5 days",
     billing: "one-time",
-    priceLabel: "$1,000 · built for you",
-    setupPrice: 1000,
+    priceLabel: "$1,500 · built for you",
+    setupPrice: 1500,
     whoPaysUsage: "customer",
     usageNote:
       "Installed on your site and your own OpenAI key — you own it; usage (typically a few dollars a month) is billed to you directly.",
@@ -157,8 +176,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in ~5 days",
     billing: "one-time",
-    priceLabel: "$1,000 · built for you",
-    setupPrice: 1000,
+    priceLabel: "$1,500 · built for you",
+    setupPrice: 1500,
     whoPaysUsage: "customer",
     usageNote:
       "Runs on your own Stripe/QuickBooks + email — you own it outright; usage is negligible and billed to you directly.",
@@ -179,8 +198,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in ~1 week",
     billing: "hybrid",
-    priceLabel: "$1,000 + $49/mo",
-    setupPrice: 1000,
+    priceLabel: "$1,500 + $49/mo",
+    setupPrice: 1500,
     monthlyPrice: 49,
     whoPaysUsage: "customer",
     usageNote:

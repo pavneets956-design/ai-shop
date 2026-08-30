@@ -83,9 +83,12 @@ afterEach(() => {
 });
 
 // ---------------------------------------------------------------- honeypot --
+// The field was renamed off "company_website" on 2026-08-30: that name is
+// exactly what browser autofill and password managers reach for, and a tripped
+// honeypot makes the API discard the lead — so the trap caught real customers.
 describe("honeypot", () => {
   it("stores nothing and sends nothing when the hidden field is filled", async () => {
-    const res = await POST(post({ ...validLead, company_website: "http://spam.example" }));
+    const res = await POST(post({ ...validLead, hb_form_token: "http://spam.example" }));
     expect(res.status).toBe(200);
     const body = await res.json();
     // Looks like a success to the bot, but reports honestly that nothing landed.
@@ -96,11 +99,11 @@ describe("honeypot", () => {
   });
 
   it("treats an empty honeypot as a normal submission and never persists the field", async () => {
-    const res = await POST(post({ ...validLead, company_website: "" }));
+    const res = await POST(post({ ...validLead, hb_form_token: "" }));
     expect(res.status).toBe(200);
     expect(db.create).toHaveBeenCalledTimes(1);
     const data = db.create.mock.calls[0][0].data;
-    expect(data.payload).not.toHaveProperty("company_website");
+    expect(data.payload).not.toHaveProperty("hb_form_token");
   });
 });
 

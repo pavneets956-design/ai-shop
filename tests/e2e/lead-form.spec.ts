@@ -150,7 +150,9 @@ test.describe("/create build request form", () => {
 
   test("the honeypot field is present and hidden from real users", async ({ page }) => {
     await page.goto("/create");
-    const pot = page.locator("#company_website");
+    // Renamed off "company_website" — that name is exactly what browser autofill
+    // reaches for, and a tripped honeypot makes the API discard the lead.
+    const pot = page.locator("#hb_form_token");
     await expect(pot).toHaveCount(1);
     await expect(pot).not.toBeVisible();
   });

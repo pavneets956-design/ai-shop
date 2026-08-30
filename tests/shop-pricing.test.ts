@@ -1,0 +1,74 @@
+import { describe, it, expect } from "vitest";
+import { shopProducts } from "@/lib/data/shopProducts";
+import { getPackage } from "@/lib/data/packages";
+
+/**
+ * Price floors, enforced.
+ *
+ * `lib/data/shopProducts.ts` hand-types `priceLabel` and `setupPrice` per SKU
+ * instead of deriving them from `packages.ts`. That is how five products ended
+ * up BELOW their own tier floor and, worse, below the price their own
+ * `/services/<slug>` page quotes for the same slug:
+ *
+ *   ai-quote-generator / ai-chatbot-for-website / ai-invoice-reminder-system
+ *     $1,000 on the shop card vs $1,500 on the service page
+ *   ai-review-engine        $1,000 + $49/mo, while packages.ts names
+ *                           "review replies" as a Starter worker
+ *   ai-lead-capture-form    $2,500 for reply + qualify + multi-channel
+ *                           follow-up wired into a CRM — a connected system
+ *
+ * These are not just prose. `shopSchema()` publishes them to Google as
+ * `Offer.price`, so an under-floor number is a structured-data claim.
+ *
+ * The owner's rule, 2026-08-30: a single done-for-you AI worker is at least
+ * $1,500 CAD, a connected business system at least $3,500, a custom app at
+ * least $10,000.
+ */
+
+/** Only builds have a floor. A monthly subscription is a different axis. */
+const BUILD_BILLING = new Set(["one-time", "hybrid"]);
+
+/**
+ * Known, documented exception awaiting an owner decision — see the banner in
+ * shopProducts.ts. It is a ~3-day one-off campaign, not an installed worker.
+ * Listed explicitly so it cannot be forgotten, and so any NEW under-floor SKU
+ * still fails.
+ */
+const PENDING_OWNER_DECISION = new Set(["ai-customer-reactivation"]);
+
+describe("shop pricing never drops below its tier floor", () => {
+  for (const product of shopProducts) {
+    if (!BUILD_BILLING.has(product.billing)) continue;
+    if (PENDING_OWNER_DECISION.has(product.slug)) continue;
+
+    it(`${product.slug} (${product.packageId}) clears its floor`, () => {
+      const floor = getPackage(product.packageId)?.price;
+      expect(floor, `${product.packageId} must exist in packages.ts`).toBeDefined();
+      expect(
+        product.setupPrice,
+        `${product.slug} is billed "${product.billing}" so it needs a setupPrice`,
+      ).toBeGreaterThan(0);
+      expect(
+        product.setupPrice!,
+        `${product.slug} is $${product.setupPrice} but the ${product.packageId} floor is $${floor}`,
+      ).toBeGreaterThanOrEqual(floor!);
+    });
+
+    it(`${product.slug} label agrees with its setupPrice`, () => {
+      // The label is what a human reads and what ends up quoted back at him on
+      // a call; the number is what schema publishes. They must not disagree.
+      const digits = String(product.setupPrice).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      expect(
+        product.priceLabel.includes(digits),
+        `${product.slug}: label "${product.priceLabel}" does not contain setupPrice ${digits}`,
+      ).toBe(true);
+    });
+  }
+
+  it("every pending-exception slug still exists (so the list cannot go stale)", () => {
+    const slugs = new Set(shopProducts.map((p) => p.slug));
+    for (const slug of PENDING_OWNER_DECISION) {
+      expect(slugs.has(slug), `${slug} is exempted but no longer exists`).toBe(true);
+    }
+  });
+});

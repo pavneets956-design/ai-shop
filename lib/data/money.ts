@@ -192,7 +192,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         q: "What if my information changes — new services, updated pricing?",
-        a: "Updates are part of the AI Care Plan at $99/mo. If you're not on a care plan, updates are billed at a flat rate per update session. Most clients update their chatbot 2–4 times per year.",
+        a: "Updates are part of the AI Care Plan at $99/mo. If you're not on a care plan, updates are billed at a flat rate per update session. How often you need one depends on how much your prices, services or hours change.",
       },
       {
         q: "Will the chatbot ever give wrong answers?",
@@ -307,7 +307,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         heading: "Why this is the flagship package",
-        body: "Single AI tools are useful. A system of connected AI tools compounds. When your receptionist, your CRM automation, and your follow-up tool all know about the same lead and share the same data, the time savings are multiplicative — not additive. Most clients who start with a Starter chatbot or receptionist upgrade to the Business AI System within 90 days because they see the gap clearly once the first tool is running. Starting at the system level gets you there faster.",
+        body: "Single AI tools are useful. A system of connected AI tools compounds. When your receptionist, your CRM automation, and your follow-up tool all know about the same lead and share the same data, the time savings are multiplicative — not additive. The trade-off is real either way: starting with one worker is cheaper and proves the idea on your own phone; starting at the system level costs more up front and skips a second setup later.",
       },
     ],
     packageId: "business",

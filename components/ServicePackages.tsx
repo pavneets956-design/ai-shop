@@ -57,6 +57,8 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
               <Link
                 href={p.cta.href}
                 className={`mt-7 ${p.highlight ? "btn-primary" : "btn-secondary"} w-full`}
+                data-track="pricing_cta_click"
+                data-track-id={p.id}
               >
                 {p.cta.label}
               </Link>

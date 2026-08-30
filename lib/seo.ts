@@ -77,43 +77,43 @@ export const DEFAULT_OG_IMAGE = {
 /** Last real change to the data file that generates each page type. */
 export const REGISTRY_LASTMOD: Record<string, string> = {
   money: "2026-08-12", // lib/data/money.ts
-  service: "2026-08-12", // lib/data/services.ts + _services_b.ts
-  industry: "2026-08-12", // lib/data/industries.ts + _industries_b.ts + _industries_c.ts
-  creators: "2026-07-06", // lib/data/creators.ts + _creators_b.ts
-  location: "2026-07-06", // lib/data/locations.ts
-  resource: "2026-07-31", // lib/data/resources.ts
-  howto: "2026-08-12", // lib/data/howto.ts
-  compare: "2026-07-06", // lib/data/compare.ts
+  service: "2026-08-30", // lib/data/services.ts + _services_b.ts
+  industry: "2026-08-30", // lib/data/industries.ts + _industries_b.ts + _industries_c.ts
+  creators: "2026-08-30", // lib/data/creators.ts + _creators_b.ts
+  location: "2026-08-30", // lib/data/locations.ts
+  resource: "2026-08-30", // lib/data/resources.ts
+  howto: "2026-08-30", // lib/data/howto.ts
+  compare: "2026-08-30", // lib/data/compare.ts
   usecase: "2026-08-30", // lib/data/useCases.ts
   tool: "2026-08-12", // lib/data/freeTools.ts
 };
 
 /** Last real change to each hand-routed page file. */
 export const STATIC_LASTMOD: Record<string, string> = {
-  "": "2026-08-12",
+  "": "2026-08-30",
   "/services": "2026-07-06",
   "/industries": "2026-07-06",
   "/locations": "2026-07-06",
-  "/solutions": "2026-06-14",
-  "/use-cases": "2026-06-19",
+  "/solutions": "2026-08-30",
+  "/use-cases": "2026-08-30",
   "/resources": "2026-06-14",
   "/how-to": "2026-06-14",
   "/compare": "2026-06-14",
-  "/pricing": "2026-07-06",
-  "/shop": "2026-08-12",
+  "/pricing": "2026-08-30",
+  "/shop": "2026-08-30",
   "/tools": "2026-07-15",
-  "/faq": "2026-06-14",
-  "/about": "2026-06-14",
-  "/create": "2026-06-14",
-  "/privacy": "2026-06-19",
-  "/terms": "2026-06-19",
+  "/faq": "2026-08-30",
+  "/about": "2026-08-30",
+  "/create": "2026-08-30",
+  "/privacy": "2026-08-30",
+  "/terms": "2026-08-30",
   "/creators": "2026-07-06",
   "/demo": "2026-06-19",
   "/demo/assistant": "2026-06-17",
   "/demo/lead": "2026-06-17",
   "/demo/nudge": "2026-06-17",
   "/demo/quote": "2026-06-17",
-  "/start": "2026-06-07",
+  "/start": "2026-08-30",
 };
 
 /** ISO date (YYYY-MM-DD) for a page type, or undefined — never a guess. */

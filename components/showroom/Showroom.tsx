@@ -3,6 +3,7 @@
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { trackEvent } from "@/lib/track";
 import {
   Headset, Calculator, Send, Receipt, Star, FileText,
   ArrowRight, RefreshCw, Check, Sparkles,
@@ -41,6 +42,8 @@ export default function Showroom() {
 
   const [captured, setCaptured] = useState<CapturedFields | null>(null);
   const [leadSummary, setLeadSummary] = useState("");
+  /** demo_completed fires at most once per session. */
+  const completedRef = useRef(false);
   const [nextActions, setNextActions] = useState<string[]>([]);
   const [events, setEvents] = useState<Event[]>([]);
   const [suggested, setSuggested] = useState<string[]>([]);
@@ -116,6 +119,11 @@ export default function Showroom() {
     if (!text || busy || limited) return;
     if (turns >= MAX_SESSION_TURNS) { setLimited(true); return; }
 
+    // Declared in lib/track.ts and never fired until now. Slugs only — the
+    // visitor's prompt text is never sent anywhere.
+    if (turns === 0) trackEvent("demo_started", { worker: worker.id, industry: industry.id });
+    trackEvent("demo_prompt_used", { worker: worker.id, industry: industry.id, turn: turns + 1 });
+
     const myRun = runId.current;
     const userMsg: Msg = { role: "user", content: text.slice(0, 1000), id: nextId() };
     const history = [...messages, userMsg];
@@ -188,6 +196,19 @@ export default function Showroom() {
     setCta(r.cta);
     setTurns((t) => t + 1);
     if (data.limited) setLimited(true);
+
+    // "Completed" = the demo produced the thing it promises on the homepage:
+    // a lead summary the owner would receive. Fires once per session, on the
+    // first turn that yields one, so it measures the funnel rather than turns.
+    if (r.leadSummary && !completedRef.current) {
+      completedRef.current = true;
+      trackEvent("demo_completed", {
+        worker: worker.id,
+        industry: industry.id,
+        turns: turns + 1,
+        fallback: usedFallback,
+      });
+    }
     setBusy(false);
   }, [busy, limited, turns, messages, worker, industry, reduce]);
 
@@ -328,6 +349,7 @@ function ControlRoom(props: {
       <div className="rounded-card-sm border border-line bg-white p-2.5 shadow-card">
         <div className="flex items-end gap-2">
           <textarea
+            aria-label="Type a message to the AI worker, as one of your customers would"
             value={input}
             onChange={(e) => setInput(e.target.value.slice(0, 1000))}
             onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); onSend(); } }}
@@ -459,9 +481,13 @@ function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
 
 function Typing() {
   return (
-    <div className="self-start">
-      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft">AI worker</div>
-      <div className="inline-flex items-center gap-1 rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-4 py-3">
+    // role="status" + aria-live: the three bouncing dots are invisible to a
+    // screen reader, and this wait can run for seconds. The visible text is
+    // sr-only so the design is unchanged.
+    <div className="self-start" role="status" aria-live="polite">
+      <span className="sr-only">AI is responding…</span>
+      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft" aria-hidden="true">AI worker</div>
+      <div className="inline-flex items-center gap-1 rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-4 py-3" aria-hidden="true">
         {[0, 1, 2].map((i) => (
           <motion.span key={i} className="h-1.5 w-1.5 rounded-full bg-ink/40"
             animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.12 }} />

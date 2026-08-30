@@ -30,7 +30,7 @@ export const faqs: FAQ[] = [
   {
     category: "general",
     q: "Can AI help local service businesses like trades, clinics and salons?",
-    a: "Absolutely — local service businesses are a primary focus. The highest-impact builds are an AI receptionist (so you never miss a call on a job), automated booking and no-show reminders, and instant lead follow-up. Most local businesses start seeing time savings within the first week.",
+    a: "Absolutely — local service businesses are a primary focus. The highest-impact builds are an AI receptionist that answers while you’re on a job, automated booking and no-show reminders, and instant lead follow-up. How much time that gives back depends on your call volume and how much of your admin is repeatable — the free calculators will give you a number from your own figures.",
   },
   {
     category: "general",

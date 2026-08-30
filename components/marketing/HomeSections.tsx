@@ -280,6 +280,8 @@ export function PricingSection() {
                     <Link
                       href={p.cta.href}
                       className={`${featured ? "btn-primary" : "btn-secondary"} mt-6 w-full`}
+                      data-track="pricing_cta_click"
+                      data-track-id={p.id}
                     >
                       {p.cta.label}
                     </Link>

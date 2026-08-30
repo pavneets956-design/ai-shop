@@ -53,8 +53,17 @@ const timelines = [
 
 const STEPS = ["What you need", "Detail (optional)"] as const;
 
-/** Honeypot field name — mirrored in app/api/build-request/route.ts. */
-const HONEYPOT = "company_website";
+/**
+ * Honeypot field name — mirrored in app/api/build-request/route.ts.
+ *
+ * Renamed from "company_website" 2026-08-30. That name is exactly what a
+ * password manager or browser autofill reaches for, and a filled honeypot makes
+ * the API discard the lead — so the trap was as likely to catch a real customer
+ * as a bot. This name matches no autofill heuristic. The client also refuses to
+ * render success when the API reports it stored and sent nothing, so even if
+ * something does fill this, the visitor is told rather than quietly dropped.
+ */
+const HONEYPOT = "hb_form_token";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -297,6 +306,35 @@ export default function BuildRequestForm() {
         return;
       }
 
+      // ── Never render success unless something actually happened. ──────────
+      // The API answers 200 {ok:true, delivery:{persisted:false, emailed:false}}
+      // when the honeypot trips — it stores nothing and sends nothing. Branching
+      // on `res.ok`/`data.ok` alone showed a real person the full "Request
+      // received" screen while their enquiry was discarded. A browser autofill
+      // or password manager touching the hidden field is enough to trigger it.
+      // `delivery` is the API's own description of what it did; trust that.
+      const delivery = (data as { delivery?: { persisted?: boolean; emailed?: boolean } })
+        .delivery;
+      const nothingHappened =
+        delivery !== undefined && delivery.persisted !== true && delivery.emailed !== true;
+      if (nothingHappened) {
+        setResult({
+          kind: "error",
+          variant: "rejected",
+          message:
+            "That didn't go through — the form flagged the submission and nothing was saved. " +
+            "It may have been a browser autofill filling a hidden field. Email me directly and " +
+            "I'll pick it up from there.",
+        });
+        setStatus("error");
+        trackEvent("form_submitted", {
+          form: "build_request",
+          result: "rejected_no_delivery",
+          status: res.status,
+        });
+        return;
+      }
+
       const contact = data.contact === "phone" ? "phone" : "email";
       setResult({ kind: "ok", contact, deduped: data.deduped === true });
       setStatus("done");
@@ -403,6 +441,7 @@ export default function BuildRequestForm() {
           type="text"
           tabIndex={-1}
           autoComplete="off"
+          aria-hidden="true"
           value={honeypot}
           onChange={(e) => setHoneypot(e.target.value)}
         />

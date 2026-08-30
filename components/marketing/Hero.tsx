@@ -81,11 +81,21 @@ export default function Hero() {
                 The second is deliberately NOT "Book a call": there is no calendar
                 integration, so the site must not imply a time is being reserved. */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/demo" className="btn-primary w-full sm:w-auto">
+              <Link
+                href="/demo"
+                className="btn-primary w-full sm:w-auto"
+                data-track="hero_demo_click"
+                data-track-id="hero_primary"
+              >
                 Try the live AI demo
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href="/create" className="btn-secondary w-full sm:w-auto">
+              <Link
+                href="/create"
+                className="btn-secondary w-full sm:w-auto"
+                data-track="hero_contact_click"
+                data-track-id="hero_secondary"
+              >
                 Request a free 10-minute fit check
               </Link>
             </div>

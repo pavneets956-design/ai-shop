@@ -117,7 +117,7 @@ export const howtos: LandingContent[] = [
       },
       {
         heading: "What it costs to set up",
-        body: "DIY: 10–20 hours to map your pricing, build the form, wire the automation, and test edge cases. Tools cost $0–$70/month ongoing. Hiring Handbuilt: Starter package at $1,500 CAD covers the full quote automation — form, pricing logic, email template, and CRM logging. Most clients recover the cost within the first month from leads they would have lost overnight.",
+        body: "DIY: 10–20 hours to map your pricing, build the form, wire the automation, and test edge cases. Tools cost $0–$70/month ongoing. Hiring Handbuilt: Starter package at $1,500 CAD covers the full quote automation — form, pricing logic, email template, and CRM logging. Whether that pays for itself in a month or a quarter depends on your job value and how many quotes currently go quiet — the missed-call calculator will tell you from your own numbers.",
       },
     ],
     packageId: "starter",
@@ -374,7 +374,7 @@ export const howtos: LandingContent[] = [
     },
     {
       q: "Will automated reminders damage client relationships?",
-      a: "Not if they're written politely. Most clients appreciate a reminder — they're busy too. A friendly, clearly automated message is far less awkward than a tense personal phone call two months later. Tone matters more than the fact that it's automated."
+      a: "Not if they're written politely. Most people appreciate a polite reminder — they're busy too. A friendly, clearly automated message is far less awkward than a tense personal phone call two months later. Tone matters more than the fact that it's automated."
     },
     {
       q: "Can I set different schedules for different clients?",

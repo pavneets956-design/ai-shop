@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
 import { Analytics } from "@vercel/analytics/next";
+import AnalyticsBridge from "@/components/AnalyticsBridge";
 import { site } from "@/lib/data/site";
 import { identityGraph } from "@/lib/seo";
 
@@ -159,6 +160,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Cookieless product analytics (no consent banner needed). Failure-safe:
             never blocks rendering, the tools, or the lead flow. */}
         <Analytics />
+        {/* Captures first-touch attribution and delegates every [data-track]
+            click, so CTAs stay server components. See components/AnalyticsBridge.tsx. */}
+        <AnalyticsBridge />
       </body>
     </html>
   );

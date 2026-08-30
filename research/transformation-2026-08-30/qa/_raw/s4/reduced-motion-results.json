@@ -1,0 +1,39 @@
+{
+  "homepageReveal": {
+    "total": 33,
+    "armed": 0,
+    "anyOpacityZero": false,
+    "anyInvisible": false
+  },
+  "homepageBelowFoldStatic": {
+    "pct": 0,
+    "diff": 0,
+    "total": 1024000
+  },
+  "liveDot": {
+    "found": true,
+    "computedAnimation": "none / 1e-06s",
+    "diff": {
+      "pct": 0,
+      "diff": 0,
+      "total": 729
+    }
+  },
+  "faqMarker": {
+    "found": true,
+    "before": {
+      "transitionDuration": "1e-06s"
+    },
+    "diffImmediate": {
+      "pct": 97.92387543252595,
+      "diff": 1132,
+      "total": 1156
+    },
+    "diffAfterSettle": {
+      "pct": 0,
+      "diff": 0,
+      "total": 1156
+    }
+  },
+  "createSpinnerCandidates": []
+}

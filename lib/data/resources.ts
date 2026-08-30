@@ -75,7 +75,7 @@ export const resources: LandingContent[] = [
       },
       {
         q: "Can I start small and expand later?",
-        a: "Yes. Most clients start with one tool — a chatbot or intake form — and add automations over time. It's usually cheaper to build the foundation right the first time, but starting small is a reasonable way to test before committing to a larger system.",
+        a: "Yes. Most people start with one tool — a chatbot or intake form — and add automations over time. It's usually cheaper to build the foundation right the first time, but starting small is a reasonable way to test before committing to a larger system.",
       },
     ],
     schema: "Article",

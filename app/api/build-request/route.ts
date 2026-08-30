@@ -51,7 +51,10 @@ const MAX_FIELDS = 80;
  * A non-empty value means a bot: we return a normal-looking success and store
  * nothing. It is logged loudly so a false positive can never be silent.
  */
-const HONEYPOT_FIELD = "company_website";
+// Must match HONEYPOT in components/BuildRequestForm.tsx. Renamed off
+// "company_website" because browser autofill targets that name, and a
+// tripped honeypot discards the lead.
+const HONEYPOT_FIELD = "hb_form_token";
 /**
  * RFC 2606 reserved TLD — can never resolve, so a value in this domain is
  * self-documenting as "not a real address". Used only when a visitor gives a
