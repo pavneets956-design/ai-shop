@@ -56,8 +56,17 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      <section className="relative py-12 sm:py-16">
+      <section className="relative py-12 sm:py-16" aria-labelledby="packages-heading">
         <div className="mx-auto max-w-7xl px-4">
+          {/* The package cards are h3s. Without this h2 the page jumped h1 → h3,
+              which axe reports as `heading-order` and which leaves a screen-reader
+              user with three unlabelled headings under no section at all. */}
+          <h2
+            id="packages-heading"
+            className="mb-10 text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+          >
+            Three ways to start
+          </h2>
           <ServicePackages />
         </div>
       </section>
