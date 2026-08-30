@@ -49,20 +49,23 @@ export default function LandingTemplate({
       <JsonLd data={landingSchema(type, content, shortName)} />
 
       {/* HERO — answer-first */}
-      <section className="relative overflow-hidden pb-12 pt-32">
+      <section className="relative overflow-hidden pb-12 pt-10 md:pt-14">
         <GlowBackground variant="hero" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-ink/40">
+            <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm" style={{ color: "var(--v-muted)" }}>
               {crumbs.slice(0, -1).map((c) => (
                 <span key={c.path} className="flex items-center gap-2">
-                  <Link href={c.path} className="hover:text-ink">
+                  <Link
+                    href={c.path}
+                    className="inline-flex min-h-[44px] items-center hover:text-ink"
+                  >
                     {c.name}
                   </Link>
                   <span>/</span>
                 </span>
               ))}
-              <span className="text-ink/60">{crumbs[crumbs.length - 1].name}</span>
+              <span aria-current="page" style={{ color: "var(--v-ink-2)" }}>{crumbs[crumbs.length - 1].name}</span>
             </nav>
           </Reveal>
           <Reveal delay={0.05}>
@@ -189,24 +192,57 @@ export default function LandingTemplate({
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
               <div className="glass-card overflow-hidden p-0">
-                <div className="grid grid-cols-3 border-b border-ink/10 text-sm font-semibold text-ink">
-                  <div className="p-4 text-ink/50">&nbsp;</div>
+                <div className="grid grid-cols-[1fr] border-b border-ink/10 text-sm font-semibold text-ink sm:grid-cols-3">
+                  <div className="hidden p-4 sm:block" style={{ color: "var(--v-muted)" }}>
+                    &nbsp;
+                  </div>
                   <div className="p-4">Handbuilt</div>
-                  <div className="p-4 text-ink/60">{content.comparison.alternativeLabel}</div>
+                  <div className="hidden p-4 sm:block" style={{ color: "var(--v-ink-2)" }}>
+                    {content.comparison.alternativeLabel}
+                  </div>
                 </div>
                 {content.comparison.rows.map((r) => (
                   <div
                     key={r.factor}
-                    className="grid grid-cols-3 border-b border-ink/[0.06] text-sm last:border-0"
+                    className="grid grid-cols-[1fr] border-b border-ink/[0.06] text-sm last:border-0 sm:grid-cols-3"
                   >
-                    <div className="p-4 font-medium text-ink/70">{r.factor}</div>
-                    <div className="flex items-start gap-2 p-4 text-ink/80">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
-                      <span>{r.handbuilt}</span>
+                    <div className="px-4 pb-1 pt-4 font-medium sm:p-4" style={{ color: "var(--v-ink)" }}>
+                      {r.factor}
                     </div>
-                    <div className="flex items-start gap-2 p-4 text-ink/55">
-                      <X className="mt-0.5 h-4 w-4 shrink-0 text-ink/30" />
-                      <span>{r.alternative}</span>
+                    <div
+                      className="flex items-start gap-2 px-4 py-2 sm:p-4"
+                      style={{ color: "var(--v-ink-2)" }}
+                    >
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0"
+                        style={{ color: "var(--v-accent)" }}
+                        aria-hidden="true"
+                      />
+                      <span>
+                        {/* The column headers are hidden below 640px, so each cell
+                            names its own side — otherwise the two answers stack
+                            with nothing to say which is which. */}
+                        <span className="v-micro mr-1.5 font-semibold sm:hidden" style={{ color: "var(--v-ink)" }}>
+                          Handbuilt:
+                        </span>
+                        {r.handbuilt}
+                      </span>
+                    </div>
+                    <div
+                      className="flex items-start gap-2 px-4 pb-4 pt-2 sm:p-4"
+                      style={{ color: "var(--v-muted)" }}
+                    >
+                      <X
+                        className="mt-0.5 h-4 w-4 shrink-0"
+                        style={{ color: "var(--v-muted)" }}
+                        aria-hidden="true"
+                      />
+                      <span>
+                        <span className="v-micro mr-1.5 font-semibold sm:hidden" style={{ color: "var(--v-ink)" }}>
+                          {content.comparison!.alternativeLabel}:
+                        </span>
+                        {r.alternative}
+                      </span>
                     </div>
                   </div>
                 ))}
