@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    --bg: #fbfbfd; /* cool near-white */
+    --bg: #faf9f7; /* warm near-white */
     --surface: #ffffff;
-    --surface-soft: #f5f5f7;
-    --border: #d2d2d7; /* cool border */
-    --border-strong: #c7c7cc;
+    --surface-soft: #f6f4f3;
+    --border: #d8d4d1; /* warm border */
+    --border-strong: #ccc7c3;
     --clay: #e0362c; /* primary red (token name kept site-wide) */
     --clay-dark: #b8221a;
     --amber: #e0362c; /* CTA spark (same red ramp) */
     --amber-dark: #b8221a;
-    --ink: #1d1d1f; /* near-black text */
-    --muted: #6e6e73;
-    --muted-light: #a1a1a6;
+    --ink: #1c1a19; /* warm near-black text */
+    --muted: #6b6663;
+    --muted-light: #a39e9a;
     --success: #2f6b4f;
     --danger: #b42318;
-    --primary: #1d1d1f;
-    --primary-hover: #2a2a2e;
+    --primary: #1c1a19;
+    --primary-hover: #2b2724;
     --accent: #e0362c;
     --accent-soft: #ffe9e7;
     /* RETIRED 2026-08-01 (Verseo rebuild): the red vertical-gradient CTA. Kept as
@@ -36,20 +36,26 @@
 
     /* Surfaces. `field` is the canvas the page sits on; `recess` is the slightly
        darker strip that cards sit ON TOP of — that stacking is what gives the
-       reference its depth without heavy shadows. */
+       reference its depth without heavy shadows.
+
+       WARMED 2026-08-30 (R > G > B by 3-6 points). The greys were blue-leaning
+       — #f6f6f6 / #3a3a3d / #686868 — which is the stock-Tailwind-gray tell,
+       and they sat under a warm coral accent, so the page read as a screenshot
+       of a dashboard rather than paper under shop light. Warming changes no
+       contrast tier: every pair still clears the ratio it cleared before. */
     --v-surface: #ffffff;
-    --v-field: #f6f6f6;
-    --v-recess: #f9f9f9;
-    --v-ink-invert: #1d1d1f; /* full-bleed dark bands (final CTA, drafting sheet) */
+    --v-field: #f7f5f4;
+    --v-recess: #faf8f7;
+    --v-ink-invert: #1c1a19; /* full-bleed dark bands (final CTA, drafting sheet) */
 
     /* Text. Substantive copy is `ink` (>=7:1). `muted` is for genuinely secondary
        text only — the reference leans on it too hard and loses contrast. */
-    --v-ink: #1d1d1f;
-    --v-ink-2: #3a3a3d;
-    --v-muted: #686868;
-    --v-muted-light: #8a8a8f;
-    --v-on-dark: #f4f4f6;
-    --v-on-dark-muted: #a1a1a6;
+    --v-ink: #1c1a19;
+    --v-ink-2: #3b3735;
+    --v-muted: #6b6663;
+    --v-muted-light: #8c8783;
+    --v-on-dark: #f5f3f1;
+    --v-on-dark-muted: #a39e9a;
 
     /* The single accent. Red never fills a region larger than ~20px:
        eyebrow dot · one peg per icon · link underline · active nav · focus ring ·
@@ -62,26 +68,31 @@
                      #ff7a70 is ~6.2:1.  -> use --v-accent-on-dark
        --v-accent itself stays the mark/fill colour, where 3:1 applies. */
     --v-accent-press: #b8221a;
+    /* Solid red FILL that can carry a white label at any size: white on
+       #d22e24 is 5.05:1, where white on #e0362c is only 4.44:1 and fails AA
+       for normal-weight text. This is what lets the brand use a big red
+       button honestly instead of confining red to <=20px marks. */
+    --v-accent-fill: #d22e24;
     --v-accent-on-dark: #ff7a70;
     --v-accent-wash: #ffe9e7;
 
     /* Hairlines are shadows, not borders (the reference has zero CSS borders). */
-    --v-hairline: rgba(29, 29, 31, 0.08);
-    --v-hairline-strong: rgba(29, 29, 31, 0.14);
+    --v-hairline: rgba(28, 26, 25, 0.08);
+    --v-hairline-strong: rgba(28, 26, 25, 0.14);
     --v-ring: 0 0 0 1px var(--v-hairline);
 
     /* Elevation: four layers, none above 3%. The softness is the whole effect —
        it is precisely what a saturated glow button would destroy. */
     --v-shadow-card:
-      0 0 0 1px rgba(29, 29, 31, 0.04),
-      0 16px 24px -12px rgba(29, 29, 31, 0.05),
-      0 32px 32px -20px rgba(29, 29, 31, 0.04),
-      0 40px 48px -20px rgba(29, 29, 31, 0.03);
+      0 0 0 1px rgba(28, 26, 25, 0.04),
+      0 16px 24px -12px rgba(28, 26, 25, 0.05),
+      0 32px 32px -20px rgba(28, 26, 25, 0.04),
+      0 40px 48px -20px rgba(28, 26, 25, 0.03);
     --v-shadow-lift:
-      0 0 0 1px rgba(29, 29, 31, 0.06),
-      0 20px 28px -12px rgba(29, 29, 31, 0.08),
-      0 36px 40px -20px rgba(29, 29, 31, 0.06),
-      0 48px 56px -20px rgba(29, 29, 31, 0.04);
+      0 0 0 1px rgba(28, 26, 25, 0.06),
+      0 20px 28px -12px rgba(28, 26, 25, 0.08),
+      0 36px 40px -20px rgba(28, 26, 25, 0.06),
+      0 48px 56px -20px rgba(28, 26, 25, 0.04);
 
     /* Radii — 4px controls, 12px cards. */
     --v-r-control: 4px;
@@ -139,8 +150,8 @@
 
   body {
     @apply bg-paper text-ink antialiased;
-    background-color: #fbfbfd;
-    color: #1d1d1f;
+    background-color: #faf9f7;
+    color: #1c1a19;
     font-feature-settings: "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -149,7 +160,7 @@
 
   ::selection {
     background: rgba(224, 54, 44, 0.16);
-    color: #1d1d1f;
+    color: #1c1a19;
   }
 
   /* RETIRED 2026-08-01 (Verseo rebuild): the site-wide red ambient glow.
@@ -159,6 +170,63 @@
      atmosphere later is a one-rule change rather than a layout edit. */
   .site-glow {
     display: none;
+  }
+
+  /* ── FAQ (native details/summary; zero JS) ──────────────────────────────
+     Every answer is in the server-rendered HTML so the FAQPage JSON-LD
+     describes content that is genuinely on the page. */
+  .faq-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 56px;
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color var(--v-dur-fast) var(--v-ease);
+  }
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-summary:hover {
+    background-color: var(--v-recess);
+  }
+  .faq-summary:focus-visible {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 2px var(--v-surface),
+      inset 0 0 0 4px var(--v-accent);
+  }
+  .faq-marker {
+    position: relative;
+    flex: none;
+    width: 14px;
+    height: 14px;
+  }
+  .faq-marker::before,
+  .faq-marker::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto 0;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--v-ink);
+    transform: translateY(-50%);
+    transition: transform var(--v-dur) var(--v-ease);
+  }
+  .faq-marker::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .faq-item[open] .faq-marker::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-summary,
+    .faq-marker::before,
+    .faq-marker::after {
+      transition: none;
+    }
   }
 
   /* Skip link — visually hidden until it takes focus, then a real, high-contrast

@@ -1,47 +1,48 @@
-"use client";
-
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Plus } from "lucide-react";
 import type { FAQ } from "@/lib/data/faqs";
 
+/**
+ * FAQ accordion — native `<details>`/`<summary>`, no JavaScript.
+ *
+ * Rewritten 2026-08-30 to fix a structured-data honesty problem. The previous
+ * version was a client component that kept exactly ONE answer mounted at a time
+ * (framer `AnimatePresence` unmounted the rest), while roughly 200 pages emitted
+ * `FAQPage` JSON-LD listing every question and answer. Structured data must
+ * describe content that is actually on the page; measured on production,
+ * `/pricing` shipped 1 of its 6 answers in the HTML and claimed all 6 in schema.
+ *
+ * `<details>` puts every answer in the server-rendered HTML — visible to Google,
+ * to answer engines, to Reader mode, and to anyone with JS disabled — while
+ * still collapsing visually. It is also keyboard-operable and screen-reader
+ * announced for free, which the custom button was not, and it removes
+ * framer-motion from every page that renders an FAQ.
+ *
+ * The first item stays open so the section never reads as an empty stack.
+ */
 export default function FAQSection({ items }: { items: Pick<FAQ, "q" | "a">[] }) {
-  const [open, setOpen] = useState<number | null>(0);
-
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-ink/10 overflow-hidden rounded-2xl border border-ink/10 bg-ink/[0.02]">
-      {items.map((f, idx) => {
-        const isOpen = open === idx;
-        return (
-          <div key={f.q}>
-            <button
-              onClick={() => setOpen(isOpen ? null : idx)}
-              className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition hover:bg-ink/[0.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-clay/40"
-              aria-expanded={isOpen}
-            >
-              <span className="font-medium text-ink">{f.q}</span>
-              <Plus
-                className={`h-5 w-5 shrink-0 text-ink/40 transition-transform duration-300 ${
-                  isOpen ? "rotate-45 text-ink" : ""
-                }`}
-              />
-            </button>
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <p className="px-5 pb-5 text-sm leading-relaxed text-ink/60">{f.a}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        );
-      })}
+    <div
+      className="mx-auto max-w-3xl overflow-hidden rounded-[var(--v-r-panel)]"
+      style={{ backgroundColor: "var(--v-surface)", boxShadow: "var(--v-shadow-card)" }}
+    >
+      {items.map((f, idx) => (
+        <details
+          key={f.q}
+          open={idx === 0}
+          className="faq-item group"
+          style={idx > 0 ? { boxShadow: "inset 0 1px 0 var(--v-hairline)" } : undefined}
+        >
+          <summary className="faq-summary">
+            <span className="text-[17px] font-medium" style={{ color: "var(--v-ink)" }}>
+              {f.q}
+            </span>
+            {/* Plus/minus drawn in CSS so there is no icon component and no JS. */}
+            <span className="faq-marker" aria-hidden="true" />
+          </summary>
+          <p className="v-body px-5 pb-5" style={{ color: "var(--v-ink-2)" }}>
+            {f.a}
+          </p>
+        </details>
+      ))}
     </div>
   );
 }
