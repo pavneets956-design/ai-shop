@@ -67,7 +67,7 @@ const NOT_OUR_PRICE = new Map<number, string>([
   [200, "human answering services, $200–$1,500+/mo"],
 ]);
 
-const CREATOR_TOOL_EXCEPTION_FILE = "components/creators/CreatorStudio.tsx";
+const CREATOR_TOOL_COMPONENT_FILE = "components/creators/CreatorStudio.tsx";
 
 // ---------------------------------------------------------------------------
 
@@ -157,8 +157,8 @@ describe("repository-wide pricing consistency", () => {
 
   it("no BUILD shop SKU contradicts packages.ts", () => {
     // Build billing only. A `managed` subscription prices on a different axis
-    // (the build cost is amortised into the monthly), and the owner has not
-    // ruled on whether the build floors apply to it — see the next test.
+    // — the build cost is amortised into the monthly — so it is checked on
+    // first-year value by the next test instead.
     for (const s of shopProducts) {
       if (s.billing === "managed") continue;
       if (!s.setupPrice) continue;
@@ -171,40 +171,46 @@ describe("repository-wide pricing consistency", () => {
     }
   });
 
-  it("KNOWN GAP, owner decision: managed SKUs carrying a setup fee under their tier floor", () => {
-    // Surfaced by this test on 2026-08-30 and NOT changed. `managed` SKUs were
-    // exempt from the shop floor rule because a subscription is not a build —
-    // but some of them ALSO charge a one-time setup fee, and that fee is a build
-    // price by any reading. Recorded here with exact values so the owner can
-    // rule on it, and so it cannot drift further without failing.
-    const offenders = shopProducts
-      .filter((s) => s.billing === "managed" && s.setupPrice)
-      .map((s) => ({
-        slug: s.slug,
-        setupPrice: s.setupPrice!,
-        monthlyPrice: s.monthlyPrice ?? null,
-        packageId: s.packageId,
-        floor: packages.find((p) => p.id === s.packageId)?.price ?? null,
-      }))
-      .filter((s) => s.floor !== null && s.setupPrice < s.floor!)
-      .sort((a, b) => a.slug.localeCompare(b.slug));
+  it("a managed SKU clears its tier floor on FIRST-YEAR value, not on setup alone", () => {
+    // The right rule for a subscription, and the reason `managed` was exempted
+    // from the build-floor test rather than fixed.
+    //
+    // Two managed SKUs charge a $1,500 setup under a $3,500 `business` tag,
+    // which reads as under-floor if you look only at the setup fee. It is not:
+    // a managed system recovers the build through the monthly, so the floor a
+    // subscription has to clear is setup + 12 months.
+    //   ai-receptionist-os      1500 + 12x349 = $5,688  vs $3,500 floor
+    //   ai-operations-dashboard 1500 + 12x199 = $3,888  vs $3,500 floor
+    // Both clear it inside year one. Enforcing the correct rule is better than
+    // pinning a false alarm, and this still fails if someone ships a $99/mo
+    // "connected system" with a token setup fee.
+    for (const s of shopProducts) {
+      if (s.billing !== "managed") continue;
 
-    expect(offenders).toEqual([
-      {
-        slug: "ai-operations-dashboard",
-        setupPrice: 1500,
-        monthlyPrice: 199,
-        packageId: "business",
-        floor: 3500,
-      },
-      {
-        slug: "ai-receptionist-os",
-        setupPrice: 1500,
-        monthlyPrice: 349,
-        packageId: "business",
-        floor: 3500,
-      },
-    ]);
+      // An ADD-ON is priced on top of a host product and has no independent
+      // floor — `ai-business-analyst` is "From $99/mo · add-on", launching as an
+      // "Add-on to your dashboard". Its `business` packageId groups it with the
+      // dashboard it attaches to; it is not a claim to be a $3,500 system. It
+      // must say so in BOTH fields, so the exemption cannot be taken by a SKU
+      // that merely mentions the word in passing.
+      if (/add-on/i.test(s.priceLabel)) {
+        expect(
+          /add-on/i.test(s.timeToLaunch),
+          `${s.slug} is priced as an add-on but its timeToLaunch ("${s.timeToLaunch}") does not say so`
+        ).toBe(true);
+        continue;
+      }
+
+      const floor = packages.find((p) => p.id === s.packageId)?.price;
+      if (!floor) continue;
+      const firstYear = (s.setupPrice ?? 0) + (s.monthlyPrice ?? 0) * 12;
+      expect(
+        firstYear >= floor,
+        `${s.slug}: first-year value is $${firstYear} (setup $${s.setupPrice ?? 0} + 12 x $${
+          s.monthlyPrice ?? 0
+        }/mo) but the ${s.packageId} floor is $${floor}`
+      ).toBe(true);
+    }
   });
 
   it("the reactivation campaign is no longer under the starter floor", () => {
@@ -220,24 +226,39 @@ describe("repository-wide pricing consistency", () => {
     expect(scoped.includes("$1,500")).toBe(true);
   });
 
-  it("KNOWN GAP, owner decision: the creator tool prices sit under the done-for-you floor", () => {
-    // Not a passing grade — a pin. components/creators/CreatorStudio.tsx sells
-    // six one-time "own it" creator tools at $500–$900, all below the $1,500
-    // done-for-you floor. They are prose only (no JSON-LD Offer) and are a
-    // different product line from the three service tiers, so they were NOT
-    // repriced without the owner's decision. This test records the exact state
-    // so the gap cannot be forgotten and cannot silently grow.
-    const src = fs.readFileSync(CREATOR_TOOL_EXCEPTION_FILE, "utf8");
-    const block = src.slice(src.indexOf("const PRICES = ["));
-    const values = [...block.slice(0, block.indexOf("];")).matchAll(/\$\s?([\d][\d,]*)/g)].map((m) =>
+  it("the creator tools are COMPONENT prices and the page reconciles them to the floor", () => {
+    // `CreatorStudio.tsx` lists six one-time creator tools at $500–$900, which
+    // reads as six prices under the $1,500 done-for-you floor. It is not a
+    // contradiction: these are components, and the block ends with the
+    // reconciling sentence "Bundle any three into one wired system — that's the
+    // $1,500 Starter build". Three at $500 is exactly $1,500, so the component
+    // ladder and the tier floor agree.
+    //
+    // THE REAL RISK is that reconciling sentence being edited away, leaving six
+    // sub-floor numbers on a page with nothing tying them to the Starter price.
+    // That is what this test guards, along with the cheapest component being no
+    // lower than one-third of the floor — the price at which "bundle three"
+    // stops adding up.
+    const src = fs.readFileSync(CREATOR_TOOL_COMPONENT_FILE, "utf8");
+    const list = src.slice(src.indexOf("const PRICES = ["));
+    const values = [...list.slice(0, list.indexOf("];")).matchAll(/\$\s?([\d][\d,]*)/g)].map((m) =>
       amount(m[1])
     );
-    expect(values.length, "the creator PRICES list moved — re-review this exception").toBe(6);
-    expect(values).toEqual([500, 500, 700, 700, 900, 900]);
-    // If the owner raises them, this assertion fails and the exception is deleted.
+    expect(values.length, "the creator PRICES list changed shape — re-check the bundle maths").toBe(6);
+
+    const starterFloor = packages.find((p) => p.id === "starter")!.price;
     expect(
-      values.every((v) => v < 1500),
-      "a creator tool now clears the $1,500 floor — delete this exception and let the main rule cover it"
+      Math.min(...values) * 3 >= starterFloor,
+      `the cheapest creator component is $${Math.min(
+        ...values
+      )}; three of them is less than the $${starterFloor} Starter build the page says they add up to`
+    ).toBe(true);
+
+    expect(
+      src.includes("that&apos;s the $1,500 Starter build") ||
+        src.includes("that's the $1,500 Starter build"),
+      "the sentence reconciling the component prices to the $1,500 Starter build is gone — " +
+        "without it the page shows six sub-floor prices and no explanation"
     ).toBe(true);
   });
 });

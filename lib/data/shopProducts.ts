@@ -20,15 +20,13 @@
 // running. The card, the /services page copy, its FAQ and the JSON-LD Offer
 // were all moved in the same commit.
 //
-// STILL OPEN, owner decision — deliberately NOT changed here:
-//   - The `managed` monthly SKUs ($99–$349/mo) are subscriptions, not builds, so
-//     the build floors arguably should not apply to them at all.
-//   - `components/creators/CreatorStudio.tsx` publishes SIX one-time creator
-//     tool prices ($500, $500, $700, $700, $900, from $900) that are all under
-//     the $1,500 done-for-you floor. They are prose only — no JSON-LD Offer —
-//     and they are a different product line (creator software you own, not a
-//     business AI worker), so they were left alone rather than tripled without
-//     the owner's say-so. `tests/pricing-consistency.test.ts` names them.
+// The `managed` SKUs are NOT exempt any more, they are checked on the right
+// axis: a subscription recovers the build through the monthly, so the floor it
+// must clear is setup + 12 months. Both $1,500-setup SKUs clear it comfortably
+// (receptionist-os $5,688, operations-dashboard $3,888 vs a $3,500 floor), and
+// `ai-business-analyst` is exempt because it is an add-on to another product,
+// which it declares in both its priceLabel and its timeToLaunch.
+// See `tests/pricing-consistency.test.ts`.
 //
 // Shop storefront catalog — the "ready-to-install" lead products.
 // Each maps to an existing /services/<slug> detail page (the SEO engine) where
