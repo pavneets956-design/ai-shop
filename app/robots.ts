@@ -28,6 +28,10 @@ export default function robots(): MetadataRoute.Robots {
   const disallow = [
     "/api/",
     "/agent/",
+    // The owner's lead inbox. Already unreachable without an allowlisted
+    // session, and it carries robots: { index: false } — this is belt and
+    // braces so a crawler never spends a request on it.
+    "/admin",
     "/dashboard",
     "/login",
     "/cart",

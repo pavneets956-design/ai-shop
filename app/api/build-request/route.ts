@@ -4,6 +4,17 @@ import { z } from "zod";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { checkLeadPerDay, checkLeadPerMinute, clientIp } from "@/lib/rateLimit";
+// The send, the templates and the delivery-state machine live in one module so
+// the retry worker can produce a byte-identical email. See lib/leadNotify.ts.
+import {
+  NOTIFY,
+  claimLeadForNotify,
+  errorShape,
+  kindOf,
+  recordNotifyResult,
+  sendOwnerNotification,
+  str,
+} from "@/lib/leadNotify";
 
 export const runtime = "nodejs";
 
@@ -199,21 +210,46 @@ export async function POST(req: Request) {
     });
   }
 
-  // 2) Best-effort notification email. Never throws; reports true acceptance.
-  const notify = await sendNotification(lead, realEmail, isTest);
-  if (strict && !notify.ok && notify.reason === "no_key") {
-    console.error(
-      "[AI-SHOP LEAD] RESEND_API_KEY missing in production — lead persisted to DB but NO notification email was sent."
-    );
+  // 2) Owner notification. Never throws; reports true acceptance.
+  //
+  //    When the lead was persisted we CLAIM the row first. The claim is an
+  //    atomic conditional UPDATE (pending|failed → sending), so this request and
+  //    the retry cron can never both mail the owner about the same submission.
+  //    Losing the claim means another worker already owns it — that is a success
+  //    for the visitor (the lead is safe and someone is sending), so we do not
+  //    send again and we do not report a new email.
+  let notify: Awaited<ReturnType<typeof sendOwnerNotification>>;
+  if (persist.ok && persist.id) {
+    const owned = await claimLeadForNotify(persist.id);
+    if (owned) {
+      notify = await sendOwnerNotification(lead, realEmail, isTest);
+      // Awaited, not fire-and-forget: the row must not be left in `sending`
+      // after we answer, and `delivery.emailed` below must match what the
+      // database says. The old code wrote `emailed` without awaiting, so a
+      // cold-start teardown could drop the write and strand a delivered lead.
+      await recordNotifyResult(persist.id, notify);
+    } else {
+      notify = {
+        ok: false,
+        reason: "provider_error",
+        detail: "another worker already owns this notification",
+      };
+      console.log("[AI-SHOP LEAD] notification already claimed elsewhere", { id: persist.id });
+    }
+  } else {
+    // No durable row to attach state to (DB unreachable). Still try the email —
+    // it is the only remaining channel that can save this lead.
+    notify = await sendOwnerNotification(lead, realEmail, isTest);
   }
 
-  // Best-effort: record delivery status on the persisted row (non-blocking).
-  if (persist.ok && persist.id && notify.ok) {
-    prisma.buildRequest
-      .update({ where: { id: persist.id }, data: { emailed: true } })
-      .catch(() => {
-        /* delivery flag is cosmetic — the lead is already safe */
-      });
+  if (strict && !notify.ok && notify.reason === "no_key") {
+    // A backend-only failure a human must still see. The lead is safe in the
+    // database; nobody has been told about it. `notifyStatus` is now `failed`,
+    // so /admin/leads, the CLI report and the retry worker all surface it.
+    console.error(
+      "[AI-SHOP LEAD] RESEND_API_KEY missing in this environment — lead persisted to DB but NO notification email was sent.",
+      { id: persist.id ?? null, notifyStatus: NOTIFY.FAILED }
+    );
   }
 
   const accepted = persist.ok || notify.ok;
@@ -380,75 +416,6 @@ function isUniqueViolation(err: unknown): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Notification email (Resend) — best-effort, result-checked, non-throwing
-// ---------------------------------------------------------------------------
-
-type NotifyResult = {
-  ok: boolean;
-  id?: string;
-  /** Coarse, non-sensitive reason for the caller/logs. */
-  reason?: "no_key" | "provider_error" | "exception" | "test_skipped";
-};
-
-/**
- * The OWNER notification. Nothing here is addressed to the lead — `replyTo` is
- * the only place their address appears, and on a phone-only lead it is omitted
- * entirely rather than pointed at the `lead.invalid` sentinel.
- */
-async function sendNotification(
-  lead: Record<string, unknown>,
-  replyToEmail: string | undefined,
-  isTest = false
-): Promise<NotifyResult> {
-  // Test submissions never touch the real inbox. Set LEAD_TEST_NOTIFY_EMAIL to
-  // route them to a throwaway address instead of dropping them.
-  const testInbox = isTest ? process.env.LEAD_TEST_NOTIFY_EMAIL : undefined;
-  if (isTest && !testInbox) return { ok: false, reason: "test_skipped" };
-
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return { ok: false, reason: "no_key" };
-
-  try {
-    const { Resend } = await import("resend");
-    const resend = new Resend(key);
-    const to = testInbox || process.env.LEAD_NOTIFY_EMAIL || "pavneets956@gmail.com";
-    // Resend's shared `onboarding@resend.dev` needs no domain verification and
-    // reliably delivers to your own Resend-account email — ideal for a
-    // self-notification. Override LEAD_FROM_EMAIL once a domain is verified.
-    const from = process.env.LEAD_FROM_EMAIL || "Handbuilt Leads <onboarding@resend.dev>";
-    const isConsultation =
-      lead.source === "ai-builder" || lead.source === "consultation";
-    const kind = kindOf(lead);
-    const who = str(lead.name) || replyToEmail || str(lead.phone) || "no contact given";
-    const prefix = isTest ? "[TEST] " : "";
-    const suffix = replyToEmail ? "" : " (phone only — no email given)";
-
-    const { data, error } = await resend.emails.send({
-      from,
-      to,
-      // Never reply-to the phone-only sentinel: it is an RFC 2606 `.invalid`
-      // address and a reply would bounce. The phone is in the body.
-      ...(replyToEmail ? { replyTo: replyToEmail } : {}),
-      subject: `${prefix}New Handbuilt ${kind}: ${who}${suffix}`,
-      text: isConsultation ? formatConsultation(lead) : formatLead(lead),
-      html: isConsultation ? htmlConsultation(lead) : htmlLead(lead),
-    });
-
-    // Resend v4 does NOT throw on a non-2xx API response (invalid/expired key,
-    // rate limit, etc.) — it returns { error }. Inspect it, never assume success.
-    if (error) {
-      console.error("[AI-SHOP LEAD] Resend returned an error", errorShape(error));
-      return { ok: false, reason: "provider_error" };
-    }
-    return { ok: true, id: data?.id };
-  } catch (err) {
-    // Network / SDK exception. Detail stays server-side.
-    console.error("[AI-SHOP LEAD] Resend threw", errorShape(err));
-    return { ok: false, reason: "exception" };
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Request guards + payload hygiene
 // ---------------------------------------------------------------------------
 
@@ -553,339 +520,3 @@ function sentinelEmail(phone: string): string {
   return `no-email+${h}@${NO_EMAIL_DOMAIN}`;
 }
 
-/** Coarse, non-sensitive error identity for logs. Never the raw error object. */
-function errorShape(err: unknown): { name: string; code?: string; message: string } {
-  if (typeof err !== "object" || err === null) {
-    return { name: "unknown", message: String(err).slice(0, 200) };
-  }
-  const e = err as { name?: unknown; code?: unknown; message?: unknown };
-  return {
-    name: typeof e.name === "string" ? e.name : "Error",
-    ...(typeof e.code === "string" ? { code: e.code } : {}),
-    message: typeof e.message === "string" ? e.message.slice(0, 200) : "",
-  };
-}
-
-/** Coerce a value to a trimmed non-empty string, or undefined. */
-function str(v: unknown): string | undefined {
-  if (typeof v !== "string") return undefined;
-  const t = v.trim();
-  return t.length ? t : undefined;
-}
-
-/** Human label for the submission type, shared by the email + DB row. */
-function kindOf(lead: Record<string, unknown>): string {
-  if (lead.source === "ai-builder" || lead.source === "consultation") {
-    return "AI consultation";
-  }
-  return lead.type === "plan" ? "Plan request" : "Build request";
-}
-
-/** Any payload keys not already shown — so a lead email never silently drops data. */
-function extraLines(lead: Record<string, unknown>, shown: string[]): string[] {
-  const skip = new Set([...shown, "type", "source", "receivedAt"]);
-  const rows = Object.entries(lead)
-    .filter(([k, v]) => !skip.has(k) && v !== undefined && v !== null && v !== "")
-    .map(([k, v]) => `${k}: ${typeof v === "object" ? JSON.stringify(v) : String(v)}`);
-  return rows.length ? ["", "— Other details —", ...rows] : [];
-}
-
-function formatConsultation(lead: Record<string, unknown>): string {
-  const g = (k: string) => {
-    const v = lead[k];
-    if (v === undefined || v === null || v === "") return "—";
-    return typeof v === "object" ? JSON.stringify(v) : String(v);
-  };
-  const shown = ["name", "email", "kind", "want", "city", "recommendedBuild", "transcript"];
-  return [
-    "NEW AI CONSULTATION — Handbuilt (/start)",
-    "",
-    "— Lead —",
-    `Business:  ${g("name")}`,
-    `Email:     ${g("email")}`,
-    `Type:      ${g("kind")}`,
-    `AI should: ${g("want")}`,
-    `City:      ${g("city")}`,
-    `Suggested: ${g("recommendedBuild")}`,
-    "",
-    "— Transcript —",
-    g("transcript"),
-    ...extraLines(lead, shown),
-    "",
-    `Received:  ${g("receivedAt")}`,
-  ].join("\n");
-}
-
-function formatLead(lead: Record<string, unknown>): string {
-  const g = (k: string) => {
-    const v = lead[k];
-    if (v === undefined || v === null || v === "") return "—";
-    return typeof v === "object" ? JSON.stringify(v) : String(v);
-  };
-  const shown = [
-    "name", "email", "phone", "website", "goal", "tasks",
-    "useType", "industry", "existing", "tools", "budget", "timeline", "intake",
-  ];
-  const jobLines =
-    lead.intake && typeof lead.intake === "object"
-      ? ["", "— Job details —", ...Object.entries(lead.intake as Record<string, unknown>)
-          .filter(([, v]) => v !== undefined && v !== null && v !== "")
-          .map(([k, v]) => `${k}: ${String(v)}`)]
-      : [];
-  return [
-    "NEW BUILD REQUEST — Handbuilt",
-    "",
-    "— Contact —",
-    `Name:      ${g("name")}`,
-    `Email:     ${has(lead, "email") ? g("email") : "— none given (phone only)"}`,
-    `Phone:     ${g("phone")}`,
-    `Website:   ${g("website")}`,
-    "",
-    "— Project —",
-    `Goal:      ${g("goal")}`,
-    `AI should: ${g("tasks")}`,
-    `Use for:   ${g("useType")}`,
-    `Industry:  ${g("industry")}`,
-    `Has now:   ${g("existing")}`,
-    `Tools:     ${g("tools")}`,
-    `Budget:    ${g("budget")}`,
-    `Timeline:  ${g("timeline")}`,
-    ...jobLines,
-    ...extraLines(lead, shown),
-    "",
-    `Received:  ${g("receivedAt")}`,
-  ].join("\n");
-}
-
-// ---------------------------------------------------------------------------
-// Branded HTML email (cream/white, warm border, table-based for email clients).
-// Only renders a row when the underlying field actually exists in the payload —
-// no invented data. The plaintext versions above remain the fallback.
-// ---------------------------------------------------------------------------
-
-const BRAND = {
-  page: "#FAF7F2", // warm cream page background
-  card: "#FFFFFF", // white card
-  ink: "#191716", // near-black text
-  border: "#E8DED3", // thin warm border
-  muted: "#6F675E", // muted label / meta
-  accent: "#C2651B", // warm amber accent (matches site brand)
-} as const;
-
-const FONT =
-  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
-
-/** Escape a value for safe inline HTML. */
-function esc(v: unknown): string {
-  const s = typeof v === "object" && v !== null ? JSON.stringify(v) : String(v);
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-/** True only when a lead field is present and non-empty. */
-function has(lead: Record<string, unknown>, k: string): boolean {
-  const v = lead[k];
-  return v !== undefined && v !== null && v !== "";
-}
-
-/** A label/value table row — caller guards with has() so this never invents data. */
-function row(label: string, value: unknown): string {
-  return `<tr>
-  <td style="padding:7px 0;vertical-align:top;width:120px;color:${BRAND.muted};font-size:13px;font-weight:600;letter-spacing:.01em;">${esc(
-    label
-  )}</td>
-  <td style="padding:7px 0;vertical-align:top;color:${BRAND.ink};font-size:14px;line-height:1.5;">${esc(
-    value
-  )}</td>
-</tr>`;
-}
-
-/** A titled section card; returns "" when it has no rows so empty sections vanish. */
-function section(title: string, rows: string[]): string {
-  const inner = rows.filter(Boolean).join("\n");
-  if (!inner) return "";
-  return `<tr><td style="padding:0 28px;">
-  <div style="margin:22px 0 4px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${BRAND.accent};">${esc(
-    title
-  )}</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-${inner}
-  </table>
-</td></tr>`;
-}
-
-/** Wrap section markup in the branded outer shell. */
-function shell(opts: {
-  kicker: string;
-  heading: string;
-  sections: string;
-  receivedAt: unknown;
-}): string {
-  const meta = opts.receivedAt
-    ? `<tr><td style="padding:18px 28px 28px;color:${BRAND.muted};font-size:12px;line-height:1.5;border-top:1px solid ${BRAND.border};">Received ${esc(
-        opts.receivedAt
-      )}</td></tr>`
-    : "";
-  return `<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:${BRAND.page};">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${BRAND.page};">
-  <tr><td align="center" style="padding:28px 16px;">
-    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:${BRAND.card};border:1px solid ${BRAND.border};border-radius:14px;overflow:hidden;font-family:${FONT};">
-      <tr><td style="padding:26px 28px 18px;border-bottom:1px solid ${BRAND.border};">
-        <div style="font-size:18px;font-weight:800;letter-spacing:-.01em;color:${BRAND.ink};">Handbuilt</div>
-        <div style="margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${BRAND.accent};">${esc(
-          opts.kicker
-        )}</div>
-        <div style="margin-top:4px;font-size:20px;font-weight:700;line-height:1.25;color:${BRAND.ink};">${esc(
-          opts.heading
-        )}</div>
-      </td></tr>
-${opts.sections}
-${meta}
-    </table>
-  </td></tr>
-</table>
-</body></html>`;
-}
-
-function htmlConsultation(lead: Record<string, unknown>): string {
-  const heading =
-    (typeof lead.name === "string" && lead.name.trim()) ||
-    (typeof lead.email === "string" && lead.email.trim()) ||
-    "New AI consultation";
-
-  const contact = section("Contact", [
-    has(lead, "email") ? row("Email", lead.email) : "",
-    has(lead, "city") ? row("City", lead.city) : "",
-  ]);
-
-  const business = section("Business", [
-    has(lead, "name") ? row("Business", lead.name) : "",
-    has(lead, "kind") ? row("Type", lead.kind) : "",
-  ]);
-
-  const project = section("Project", [
-    has(lead, "want") ? row("AI should", lead.want) : "",
-  ]);
-
-  const recommended = section("Recommended build", [
-    has(lead, "recommendedBuild") ? row("Suggested", lead.recommendedBuild) : "",
-  ]);
-
-  const transcript = has(lead, "transcript")
-    ? `<tr><td style="padding:0 28px;">
-  <div style="margin:22px 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${BRAND.accent};">Transcript</div>
-  <div style="white-space:pre-wrap;background:${BRAND.page};border:1px solid ${BRAND.border};border-radius:10px;padding:14px 16px;color:${BRAND.ink};font-size:13px;line-height:1.6;">${esc(
-        lead.transcript
-      )}</div>
-</td></tr>`
-    : "";
-
-  const shownExtra = [
-    "name",
-    "email",
-    "kind",
-    "want",
-    "city",
-    "recommendedBuild",
-    "transcript",
-  ];
-  const admin = section("Admin", [
-    has(lead, "source") ? row("Source", lead.source) : "",
-    ...adminExtraRows(lead, shownExtra),
-  ]);
-
-  return shell({
-    kicker: "New AI consultation",
-    heading,
-    sections: [contact, business, project, recommended, transcript, admin].join(
-      "\n"
-    ),
-    receivedAt: lead.receivedAt,
-  });
-}
-
-function htmlLead(lead: Record<string, unknown>): string {
-  const heading =
-    (typeof lead.name === "string" && lead.name.trim()) ||
-    (typeof lead.email === "string" && lead.email.trim()) ||
-    "New build request";
-
-  const contact = section("Contact", [
-    has(lead, "name") ? row("Name", lead.name) : "",
-    has(lead, "email")
-      ? row("Email", lead.email)
-      : row("Email", "none given — reply by phone"),
-    has(lead, "phone") ? row("Phone", lead.phone) : "",
-    has(lead, "website") ? row("Website", lead.website) : "",
-  ]);
-
-  const business = section("Business", [
-    has(lead, "useType") ? row("Use for", lead.useType) : "",
-    has(lead, "industry") ? row("Industry", lead.industry) : "",
-  ]);
-
-  const project = section("Project", [
-    has(lead, "goal") ? row("Goal", lead.goal) : "",
-    has(lead, "tasks") ? row("AI should", lead.tasks) : "",
-    has(lead, "existing") ? row("Has now", lead.existing) : "",
-    has(lead, "tools") ? row("Tools", lead.tools) : "",
-    has(lead, "budget") ? row("Budget", lead.budget) : "",
-    has(lead, "timeline") ? row("Timeline", lead.timeline) : "",
-  ]);
-
-  // Occupation-specific intake (Phase D): an object of { "City": "Delta", ... }.
-  const jobDetails =
-    lead.intake && typeof lead.intake === "object"
-      ? section(
-          "Job details",
-          Object.entries(lead.intake as Record<string, unknown>)
-            .filter(([, v]) => v !== undefined && v !== null && v !== "")
-            .map(([k, v]) => row(k, v)),
-        )
-      : "";
-
-  const shownExtra = [
-    "name",
-    "email",
-    "phone",
-    "website",
-    "goal",
-    "tasks",
-    "useType",
-    "industry",
-    "existing",
-    "tools",
-    "budget",
-    "timeline",
-    "intake",
-  ];
-  const admin = section("Admin", [
-    has(lead, "source") ? row("Source", lead.source) : "",
-    has(lead, "type") ? row("Type", lead.type) : "",
-    ...adminExtraRows(lead, shownExtra),
-  ]);
-
-  return shell({
-    kicker: "New build request",
-    heading,
-    sections: [contact, business, project, jobDetails, admin].join("\n"),
-    receivedAt: lead.receivedAt,
-  });
-}
-
-/** Any payload keys not already rendered — mirrors extraLines() so nothing drops. */
-function adminExtraRows(
-  lead: Record<string, unknown>,
-  shown: string[]
-): string[] {
-  const skip = new Set([...shown, "type", "source", "receivedAt"]);
-  return Object.entries(lead)
-    .filter(([k, v]) => !skip.has(k) && v !== undefined && v !== null && v !== "")
-    .map(([k, v]) => row(k, v));
-}

@@ -13,8 +13,14 @@ vi.mock("@/lib/prisma", () => ({
   prisma: {
     buildRequest: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
       create: vi.fn(),
       update: vi.fn(),
+      // The notification is now claimed with an atomic conditional UPDATE
+      // before it is sent, so `updateMany` is on the hot path of every
+      // submission — see lib/leadNotify.ts.
+      updateMany: vi.fn(),
+      count: vi.fn(),
     },
   },
 }));
@@ -24,8 +30,11 @@ import { prisma } from "@/lib/prisma";
 
 const db = prisma.buildRequest as unknown as {
   findFirst: Mock;
+  findMany: Mock;
   create: Mock;
   update: Mock;
+  updateMany: Mock;
+  count: Mock;
 };
 
 // The route now applies a per-IP rate limit whose buckets are module state and
@@ -61,6 +70,10 @@ beforeEach(() => {
   db.findFirst.mockResolvedValue(null); // no recent duplicate
   db.create.mockResolvedValue({ id: "lead_test_1" });
   db.update.mockResolvedValue({});
+  // Default: this request wins the notification claim (count === 1).
+  db.updateMany.mockResolvedValue({ count: 1 });
+  db.findMany.mockResolvedValue([]);
+  db.count.mockResolvedValue(0);
   sendMock.mockResolvedValue({ data: { id: "email_test_1" }, error: null });
 });
 
@@ -116,9 +129,26 @@ describe("POST /api/build-request", () => {
     expect(body.ok).toBe(true);
     expect(body.delivery).toEqual({ persisted: true, emailed: true });
     expect(sendMock).toHaveBeenCalledTimes(1);
-    // Delivery flag recorded on the persisted row.
+    // The row is CLAIMED before the send — the atomic conditional update that
+    // makes a duplicate notification impossible.
+    expect(db.updateMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          id: "lead_test_1",
+          notifyStatus: { in: ["pending", "failed"] },
+        }),
+      })
+    );
+    // Delivery state recorded on the persisted row, with the provider's receipt.
     expect(db.update).toHaveBeenCalledWith(
-      expect.objectContaining({ data: { emailed: true } })
+      expect.objectContaining({
+        where: { id: "lead_test_1" },
+        data: expect.objectContaining({
+          notifyStatus: "delivered",
+          notifyMessageId: "email_test_1",
+          emailed: true,
+        }),
+      })
     );
   });
 
@@ -133,8 +163,19 @@ describe("POST /api/build-request", () => {
     const body = await res.json();
     expect(body.ok).toBe(true);
     expect(body.delivery).toEqual({ persisted: true, emailed: false });
-    // Never falsely records delivery.
-    expect(db.update).not.toHaveBeenCalled();
+    // Never falsely records delivery — and, unlike the old boolean-only
+    // behaviour, the failure IS written down so the retry worker and
+    // /admin/leads can both see that nobody was told about this lead.
+    expect(db.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: { id: "lead_test_1" },
+        data: expect.objectContaining({ notifyStatus: "failed", emailed: false }),
+      })
+    );
+    const recorded = db.update.mock.calls[0][0].data;
+    expect(recorded.notifyLastError).toContain("rate_limit_exceeded");
+    expect(recorded).not.toHaveProperty("notifiedAt");
+    expect(recorded).not.toHaveProperty("notifyMessageId");
   });
 
   // ---- Provider / network exception --------------------------------------

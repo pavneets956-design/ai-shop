@@ -20,7 +20,8 @@ export const metadata: Metadata = {
  *   - OpenAI              app/api/{demo,consultation,tts,recommend,tools-demo,tools}/route.ts via lib/ai/core.ts
  *   - Vercel Analytics    app/layout.tsx (<Analytics />), lib/track.ts
  *   - Neon Postgres       prisma/schema.prisma (model BuildRequest), app/api/build-request/route.ts
- *   - Resend              app/api/build-request/route.ts (lead notification)
+ *   - Resend              lib/leadNotify.ts, called by app/api/build-request/route.ts and by
+ *                         app/api/internal/lead-notify-retry/route.ts (the hourly retry worker)
  *   - Google / NextAuth   lib/auth.ts, app/login/page.tsx
  *   - Stripe              lib/stripe.ts, app/api/stripe/* (no reachable checkout today)
  *   - Browser storage     lib/attribution.ts (sessionStorage key hb_attr_v1)
@@ -195,7 +196,10 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Resend</strong> &mdash; delivers the notification email that tells us an
-                enquiry has arrived. That email goes to us, not to a mailing list.
+                enquiry has arrived. That email goes to us, not to a mailing list. If it fails to
+                send, the attempt is recorded against your stored enquiry and retried automatically
+                until it succeeds, so a delivery problem on our side never means your message goes
+                unread. We do not send you an email; we reply to yours.
               </li>
               <li>
                 <strong>OpenAI</strong> &mdash; receives the text you type into an AI feature, as

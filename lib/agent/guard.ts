@@ -32,6 +32,7 @@
  * itself calls with no session — see `lib/agent/twilioSignature.ts`.
  */
 import { NextResponse } from "next/server";
+import { ownerEmails } from "@/lib/ownerAuth";
 
 /** Env var names (exported so tests and docs cannot drift from the code). */
 export const AGENT_ENABLED_ENV = "AGENT_SUBSYSTEM_ENABLED";
@@ -42,12 +43,16 @@ export function agentSubsystemEnabled(): boolean {
   return process.env[AGENT_ENABLED_ENV] === "true";
 }
 
-/** Owner allowlist, lower-cased. Empty array = nobody is allowed in. */
+/**
+ * Owner allowlist, lower-cased. Empty array = nobody is allowed in.
+ *
+ * Delegates to `lib/ownerAuth.ts` so the agent subsystem and the lead inbox
+ * cannot drift apart into two lists of "the owner". `AGENT_OWNER_EMAILS` still
+ * works — it is the documented fallback there — so nothing has to be renamed in
+ * Vercel for this to keep behaving exactly as before.
+ */
 export function agentOwnerEmails(): string[] {
-  return (process.env[AGENT_OWNERS_ENV] || "")
-    .split(",")
-    .map((s) => s.trim().toLowerCase())
-    .filter(Boolean);
+  return ownerEmails();
 }
 
 /** The 404 the subsystem shows the world while the kill switch is off. */

@@ -219,13 +219,39 @@ model BuildRequest {
   dedupeKey   String? @unique
   payload   Json     // full raw submission — nothing is dropped
   status    String   @default("new") // new, contacted, quoted, won, lost
-  emailed   Boolean  @default(false) // whether the notification email was delivered
+  emailed   Boolean  @default(false) // legacy mirror of notifyStatus == "delivered"
+
+  // OWNER-NOTIFICATION DELIVERY STATE.
+  // `emailed` was a single boolean, so "we never tried" and "we tried and Resend
+  // rejected it" were the same value — a lead could sit unseen forever with no
+  // way to tell the two apart and nothing to retry from. These columns make the
+  // notification a first-class, retryable, idempotent piece of state.
+  //
+  //   pending    written, notification not yet attempted (or awaiting a retry)
+  //   sending    a worker has CLAIMED this row and is calling Resend right now
+  //   delivered  Resend accepted it; `notifyMessageId` is the provider's receipt
+  //   failed     the attempt failed; `notifyLastError` says how (never PII)
+  //   skipped    deliberately not sent (a test submission with no test inbox)
+  //
+  // `sending` is the idempotency lock: a claim is an atomic conditional UPDATE
+  // (`updateMany` WHERE status IN (pending,failed)), so two concurrent workers
+  // can never both send for the same row. `notifyClaimedAt` lets a later run
+  // reap a claim orphaned by a crashed function.
+  notifyStatus    String    @default("pending")
+  notifyAttempts  Int       @default(0)
+  notifyClaimedAt DateTime?
+  notifiedAt      DateTime?
+  notifyLastError String?   // coarse error identity only — never lead content
+  notifyMessageId String?   // Resend message id: the proof a send really happened
+
   createdAt DateTime @default(now())
 
   @@index([email])
   @@index([createdAt])
   @@index([status])
   @@index([fingerprint])
+  // Drives the retry worker's queue scan.
+  @@index([notifyStatus, createdAt])
 }
 
 // NextAuth Models

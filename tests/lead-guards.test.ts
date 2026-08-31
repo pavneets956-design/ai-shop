@@ -19,8 +19,14 @@ vi.mock("@/lib/prisma", () => ({
   prisma: {
     buildRequest: {
       findFirst: vi.fn(),
+      findMany: vi.fn(),
       create: vi.fn(),
       update: vi.fn(),
+      // The notification is now claimed with an atomic conditional UPDATE
+      // before it is sent, so `updateMany` is on the hot path of every
+      // submission — see lib/leadNotify.ts.
+      updateMany: vi.fn(),
+      count: vi.fn(),
     },
   },
 }));
@@ -30,8 +36,11 @@ import { prisma } from "@/lib/prisma";
 
 const db = prisma.buildRequest as unknown as {
   findFirst: Mock;
+  findMany: Mock;
   create: Mock;
   update: Mock;
+  updateMany: Mock;
+  count: Mock;
 };
 
 let ipSeq = 0;
@@ -74,6 +83,10 @@ beforeEach(() => {
   db.findFirst.mockResolvedValue(null);
   db.create.mockResolvedValue({ id: "lead_guard_1" });
   db.update.mockResolvedValue({});
+  // Default: this request wins the notification claim (count === 1).
+  db.updateMany.mockResolvedValue({ count: 1 });
+  db.findMany.mockResolvedValue([]);
+  db.count.mockResolvedValue(0);
   sendMock.mockResolvedValue({ data: { id: "email_guard_1" }, error: null });
 });
 
@@ -285,7 +298,13 @@ describe("a failed send is never reported as sent", () => {
     const body = await res.json();
     expect(body.ok).toBe(true); // the lead IS durably stored
     expect(body.delivery.emailed).toBe(false);
-    expect(db.update).not.toHaveBeenCalled(); // never flags the row as emailed
+    // Never flags the row as emailed. It DOES write the failure down, which is
+    // what makes the lead recoverable instead of silently unseen.
+    expect(db.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({ notifyStatus: "failed", emailed: false }),
+      })
+    );
   });
 
   it("reports emailed:false when the provider throws", async () => {
