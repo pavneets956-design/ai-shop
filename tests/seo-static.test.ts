@@ -256,13 +256,23 @@ describe("sitemap", () => {
     expect(bad).toEqual([]);
   });
 
-  it("contains the eight routes that were indexable but missing, minus the NOINDEX one", () => {
+  it("contains the hub routes that were indexable but missing, and none of the thin sub-demos", () => {
     // 06-technical-seo.md §3.2 listed eight. /tools/form-filler is excluded:
     // 03-content-dispositions.md Appendix marks it NOINDEX.
-    for (const p of ["/creators", "/demo", "/demo/assistant", "/demo/lead", "/demo/nudge", "/demo/quote", "/start"]) {
+    for (const p of ["/creators", "/demo", "/start"]) {
       expect(sitemapPathSet.has(p), `${p} missing from sitemap`).toBe(true);
     }
     expect(sitemapPathSet.has("/tools/form-filler"), "/tools/form-filler is NOINDEX, must not be in the sitemap").toBe(false);
+
+    // The four sub-demos run 111–141 words (S3-seo-content-challenge.md §1.6,
+    // rows 10–13). They are functional widgets, not documents. The ROUTES stay
+    // and stay linked from /demo — only the sitemap entries go, so a release
+    // whose purpose is consolidation stops adding sub-150-word pages to the
+    // index. If one of these ever grows into a real page, delete it from this
+    // list rather than quietly re-adding it to the sitemap.
+    for (const p of ["/demo/assistant", "/demo/lead", "/demo/nudge", "/demo/quote"]) {
+      expect(sitemapPathSet.has(p), `${p} is too thin to be indexed and must stay out of the sitemap`).toBe(false);
+    }
   });
 
   it("contains no route that lib/redirects.js redirects", () => {

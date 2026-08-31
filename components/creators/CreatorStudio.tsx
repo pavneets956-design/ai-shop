@@ -268,7 +268,7 @@ export default function CreatorStudio() {
         {/* Master clip — the full system */}
         <Reveal delay={0.1}>
           <Link
-            href="/creators/ai-tools-for-content-creators"
+            href="/creators"
             className="cr-clip group mt-4 flex items-center justify-between gap-4 rounded-2xl py-5 pl-6 pr-5"
           >
             <div className="flex items-center gap-4">

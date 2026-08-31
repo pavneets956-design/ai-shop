@@ -60,7 +60,7 @@ const industriesA: LandingContent[] = [
       "automated quote follow-up for landscaping",
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Pricing", href: "/pricing" },
@@ -198,7 +198,7 @@ const industriesA: LandingContent[] = [
       "automated booking for plumbers",
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
@@ -344,7 +344,7 @@ const industriesA: LandingContent[] = [
       "ai booking for hvac contractors",
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
@@ -545,7 +545,7 @@ const industriesA: LandingContent[] = [
       "automated follow-up for moving companies",
     ],
     related: [
-      { label: "AI Intake Form Builder", href: "/services/ai-intake-form-builder" },
+      { label: "AI Intake Form Builder", href: "/services/ai-lead-capture-form" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Email Automation", href: "/services/ai-email-automation" },
       { label: "Pricing", href: "/pricing" },
@@ -612,7 +612,7 @@ const industriesA: LandingContent[] = [
       "automated renewal reminders pest control",
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
       { label: "AI Invoice Reminder System", href: "/services/ai-invoice-reminder-system" },
       { label: "Pricing", href: "/pricing" },

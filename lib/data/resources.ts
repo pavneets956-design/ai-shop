@@ -366,7 +366,7 @@ export const resources: LandingContent[] = [
     { label: "How Much Does an AI Receptionist Cost?", href: "/resources/ai-receptionist-cost" },
     { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
     { label: "AI Voice Agent", href: "/services/ai-voice-agent" },
-    { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+    { label: "AI Receptionist Setup", href: "/ai-receptionist" },
     { label: "AI Receptionist vs Answering Service", href: "/compare/ai-receptionist-vs-answering-service" },
     { label: "AI Receptionist", href: "/ai-receptionist" }
   ],
@@ -619,7 +619,7 @@ export const resources: LandingContent[] = [
     ],
     keywords: ["best ai tools for content creators", "ai tools for creators", "ai tools for youtubers", "creator ai stack"],
     related: [
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
       { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
     ],

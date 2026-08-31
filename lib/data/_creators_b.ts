@@ -41,7 +41,7 @@ export const creatorsB: LandingContent[] = [
       "ai hook generator for creators",
     ],
     related: [
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
       { label: "AI YouTube Video Workflow", href: "/creators/ai-youtube-video-workflow" },
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
       { label: "Pricing", href: "/pricing" },
@@ -97,7 +97,7 @@ export const creatorsB: LandingContent[] = [
     related: [
       { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -151,7 +151,7 @@ export const creatorsB: LandingContent[] = [
       { label: "AI Podcast Clipping System", href: "/creators/ai-podcast-clipping-system" },
       { label: "AI Social Media Scheduling Automation", href: "/creators/ai-social-media-scheduling-automation" },
       { label: "AI Newsletter Automation", href: "/creators/ai-newsletter-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -204,7 +204,7 @@ export const creatorsB: LandingContent[] = [
     related: [
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
       { label: "AI Creator CRM", href: "/creators/ai-creator-crm" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -257,7 +257,7 @@ export const creatorsB: LandingContent[] = [
     related: [
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
       { label: "AI Course Creator Automation", href: "/creators/ai-course-creator-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -310,7 +310,7 @@ export const creatorsB: LandingContent[] = [
     related: [
       { label: "AI Creator CRM", href: "/creators/ai-creator-crm" },
       { label: "AI Patreon Automation", href: "/creators/ai-patreon-creator-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -359,7 +359,7 @@ export const creatorsB: LandingContent[] = [
     ],
     related: [
       { label: "AI Fan Message & DM Automation", href: "/creators/ai-fan-message-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
       { label: "AI Coaching Content System", href: "/creators/ai-coaching-content-system" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -464,7 +464,7 @@ export const creatorsB: LandingContent[] = [
     related: [
       { label: "AI Coaching Content System", href: "/creators/ai-coaching-content-system" },
       { label: "AI Newsletter Automation", href: "/creators/ai-newsletter-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -516,7 +516,7 @@ export const creatorsB: LandingContent[] = [
       { label: "AI Course Creator Automation", href: "/creators/ai-course-creator-automation" },
       { label: "AI Creator CRM", href: "/creators/ai-creator-crm" },
       { label: "AI Newsletter Automation", href: "/creators/ai-newsletter-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {

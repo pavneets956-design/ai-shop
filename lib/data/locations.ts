@@ -729,7 +729,7 @@ export const locations: LandingContent[] = [
     ],
     related: [
       { label: "AI Automation in Vancouver", href: "/locations/ai-automation-vancouver" },
-      { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-coquitlam-bc" },
+      { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-new-westminster-bc" },
       { label: "AI Receptionist", href: "/ai-receptionist" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -803,68 +803,7 @@ export const locations: LandingContent[] = [
     schema: "Service",
     icon: "MapPin",
   },
-  {
-    slug: "ai-automation-coquitlam-bc",
-    eyebrow: "Location",
-    h1: "AI Automation in Coquitlam, BC",
-    title: "AI Answering Service & Automation in Coquitlam, BC | Handbuilt",
-    description:
-      "AI receptionists, chatbots and automations for Coquitlam and the Tri-Cities — trades, clinics, and family-run service businesses. Local builder, fixed CAD pricing.",
-    answer:
-      "Handbuilt builds custom AI receptionists, quote agents, chatbots and automations for Coquitlam and Tri-Cities businesses — home services and trades, clinics, salons, and family-run service companies. Built from nearby Surrey/Delta with fixed CAD pricing from $1,500.",
-    pain: "Coquitlam's family-run and trades businesses are stretched thin — the owner is on the tools or with a customer, so calls, quotes and follow-ups slip through the cracks and jobs go to whoever answered first.",
-    scenario:
-      "A Coquitlam home-services company loses after-hours calls to voicemail and forgets to follow up on quotes. An AI receptionist answers every call and books the job; a follow-up agent chases quiet quotes until they close. For a busy Tri-Cities trade, that's real revenue recovered from the phone alone.",
-    steps: [
-      "Discovery call — find where time and leads leak, and the fastest-payback worker.",
-      "Scoped proposal — flat CAD price, clear outcome.",
-      "Build & test — around your real services, prices and hours.",
-      "Handoff & support — working system plus optional $99/mo Care Plan.",
-    ],
-    gets: [
-      "Every call and quote captured, even when you're on a job",
-      "A custom worker built around your Coquitlam business",
-      "One accountable local builder",
-      "Fixed CAD pricing, in-person or remote",
-    ],
-    sections: [
-      {
-        heading: "Who we build for in the Tri-Cities",
-        body: "Coquitlam, Port Coquitlam and Port Moody run on trades, home services, clinics and family businesses. If the same calls, quotes, bookings and follow-ups repeat every day, an AI worker usually pays for itself inside the first season.",
-        bullets: [
-          "Trades and home services: plumbing, HVAC, electrical, landscaping, cleaning",
-          "Clinics, dental and health offices",
-          "Salons and appointment-based businesses",
-          "Family-run service and retail businesses",
-        ],
-      },
-      {
-        heading: "One builder who picks up",
-        body: "The Tri-Cities are an easy drive from Surrey/Delta, so in-person is on the table — but the work is remote-friendly either way. You get one builder accountable start to finish, not a handoff to a support desk.",
-      },
-    ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
-      "ai automation coquitlam",
-      "ai receptionist coquitlam",
-      "ai for tri-cities business",
-      "coquitlam ai developer",
-    ],
-    related: [
-      { label: "AI Automation in Burnaby, BC", href: "/locations/ai-automation-burnaby-bc" },
-      { label: "AI Automation in Maple Ridge, BC", href: "/locations/ai-automation-maple-ridge-bc" },
-      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "Do you cover the whole Tri-Cities?", a: "Yes — Coquitlam, Port Coquitlam and Port Moody. Handbuilt is run from nearby Surrey/Delta, with in-person meetings easy to arrange." },
-      { q: "I'm a solo tradesperson — is this worth it?", a: "Often especially so — when you're the one on the tools, an AI receptionist that answers and books while you work usually pays for itself in recovered jobs." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. Coquitlam skews toward trades working the newer residential builds up Burke Mountain and the renovation work around Austin Heights and Maillardville, which usually means the leak is quote follow-up rather than the phone — a long quote cycle with two or three competing bids on the same kitchen table." },
-    ],
-    schema: "Service",
-    icon: "MapPin",
-  },
+
   {
     slug: "ai-automation-new-westminster-bc",
     eyebrow: "Location",
@@ -912,11 +851,14 @@ export const locations: LandingContent[] = [
       "ai receptionist new westminster bc",
       "ai for professional services new west",
       "new westminster ai developer",
-    ],
+      "ai automation coquitlam",
+      "ai receptionist coquitlam",
+      "ai for tri-cities business",
+      "coquitlam ai developer"],
     related: [
       { label: "AI Automation in Burnaby, BC", href: "/locations/ai-automation-burnaby-bc" },
       { label: "AI Automation in Vancouver", href: "/locations/ai-automation-vancouver" },
-      { label: "AI Automation for Law Firms", href: "/industries/law-firm-ai-automation" },
+      { label: "AI Automation for Law Firms", href: "/industries" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -1038,7 +980,7 @@ export const locations: LandingContent[] = [
       "maple ridge ai developer",
     ],
     related: [
-      { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-coquitlam-bc" },
+      { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-new-westminster-bc" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
       { label: "AI Lead Follow-Up for Contractors", href: "/ai-lead-follow-up-agent" },
       { label: "Pricing", href: "/pricing" },
@@ -1113,68 +1055,7 @@ export const locations: LandingContent[] = [
     schema: "Service",
     icon: "MapPin",
   },
-  {
-    slug: "ai-automation-victoria-bc",
-    eyebrow: "Location",
-    h1: "AI Automation in Victoria, BC",
-    title: "AI Answering Service & Automation in Victoria, BC | Handbuilt",
-    description:
-      "AI receptionists, chatbots and automations for Victoria and Vancouver Island businesses — hospitality, professional services and clinics. Delivered remotely, fixed CAD pricing.",
-    answer:
-      "Handbuilt builds custom AI receptionists, chatbots and automations for Victoria and Vancouver Island businesses — hospitality and tourism, professional services, and clinics. Delivered fully remotely from the mainland, with the same hands-on build and fixed CAD pricing from $1,500.",
-    pain: "Victoria's tourism and service businesses swing between slammed and quiet — and during the busy stretches, missed calls and unanswered inquiries are lost revenue no one has time to recover.",
-    scenario:
-      "A Victoria tour operator and a downtown clinic both get more inquiries than they can answer in peak season. An AI assistant answers and books instantly, handles the repeat questions, and captures after-hours inquiries — so the busy season converts instead of overwhelming the team.",
-    steps: [
-      "Discovery call — over video; map the fastest-payback worker.",
-      "Scoped proposal — flat CAD price, clear outcome.",
-      "Build & test — around your real services and seasonal patterns.",
-      "Handoff & support — working system plus optional $99/mo Care Plan.",
-    ],
-    gets: [
-      "Inquiries answered through peak season",
-      "A custom worker built around your Victoria business",
-      "One accountable builder, delivered remotely",
-      "Fixed CAD pricing across the water",
-    ],
-    sections: [
-      {
-        heading: "Who we build for in Victoria",
-        body: "Victoria and the Island run on tourism and hospitality, professional services, clinics, and independent businesses. Where inquiries and bookings spike seasonally, an AI worker absorbs the load without seasonal hiring.",
-        bullets: [
-          "Tourism, tours and hospitality",
-          "Professional services and government-adjacent firms",
-          "Clinics and health practices",
-          "Independent retail and appointment-based businesses",
-        ],
-      },
-      {
-        heading: "Island business, mainland build",
-        body: "Being across the water changes nothing about how the system is built. Discovery is over video, the build is done around your real business, and support is a message away — one builder, accountable start to finish.",
-      },
-    ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
-      "ai automation victoria bc",
-      "ai receptionist victoria",
-      "ai for business vancouver island",
-      "victoria ai developer",
-    ],
-    related: [
-      { label: "AI Automation in Vancouver", href: "/locations/ai-automation-vancouver" },
-      { label: "Remote AI Development", href: "/remote-ai-development" },
-      { label: "AI Receptionist", href: "/ai-receptionist" },
-      { label: "Pricing", href: "/pricing" },
-    ],
-    faqs: [
-      { q: "Do you have anyone on the Island?", a: "Handbuilt is run from the mainland (Surrey/Delta) and delivers to Victoria fully remotely. Discovery is over video and the build is identical to a local one." },
-      { q: "Good fit for a seasonal tourism business?", a: "Yes — an AI worker absorbs peak-season inquiry spikes without seasonal hiring, then keeps working through the quiet months." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. Being straight about geography: Victoria is across the water, so this is remote delivery — scoping, build and handover all happen over video and email. Everything about the system is identical; what you do not get is somebody who can drive over. If that matters for your build, say so early." },
-    ],
-    schema: "Service",
-    icon: "MapPin",
-  },
+
   {
     slug: "ai-automation-edmonton-ab",
     eyebrow: "Location",

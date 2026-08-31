@@ -53,8 +53,15 @@ export interface SitemapRoute {
  * Top-level + hub routes.
  *
  * Added 2026-08-30 (06-technical-seo.md §3.2 — indexable, linked, 200, but
- * missing): /creators (GSC pos 8.0), /demo (pos 3.7) and its four sub-demos,
- * /start.
+ * missing): /creators (GSC pos 8.0), /demo (pos 3.7) and /start.
+ *
+ * The four sub-demos (/demo/assistant, /demo/lead, /demo/nudge, /demo/quote)
+ * were added by that same pass and REMOVED again on 2026-08-30 by the second
+ * consolidation pass. At 111–141 words each they are functional widgets, not
+ * documents, and a release whose stated purpose is consolidation should not be
+ * adding four sub-150-word pages to the index. THE ROUTES ARE KEPT: they stay
+ * linked from /demo, which is in the sitemap and ranks at position 3.7, so the
+ * intent is still served and the demos are still reachable.
  *
  * NOT added: /tools/form-filler. 03-content-dispositions.md Appendix marks it
  * NOINDEX (R5 P3), so putting it in the sitemap would contradict the
@@ -79,10 +86,6 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
   { path: "/create", priority: 0.9 },
   { path: "/start", priority: 0.7 },
   { path: "/demo", priority: 0.8 },
-  { path: "/demo/assistant", priority: 0.6 },
-  { path: "/demo/lead", priority: 0.6 },
-  { path: "/demo/nudge", priority: 0.6 },
-  { path: "/demo/quote", priority: 0.6 },
   { path: "/privacy", priority: 0.2 },
   { path: "/terms", priority: 0.2 },
 ];

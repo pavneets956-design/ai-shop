@@ -7,61 +7,7 @@ import { creatorsB } from "./_creators_b";
 // consensual, non-deceptive use, with consent / likeness / platform-rules
 // language baked in. batch A (1–10) here; batch B in _creators_b.ts.
 const creatorsA: LandingContent[] = [
-  {
-    slug: "ai-tools-for-content-creators",
-    eyebrow: "For Creators",
-    h1: "AI Tools & Systems for Content Creators",
-    title: "AI Tools & Systems for Content Creators | Handbuilt",
-    description:
-      "Custom AI systems for creators — clipping, editing, scripts, repurposing, captions, DMs and more. Built by hand around your channels, not a generic app.",
-    answer:
-      "Handbuilt builds custom AI systems for content creators — clip cutting, video editing, script writing, repurposing, captions, scheduling and fan-message triage — installed around the channels and workflow you already use. Instead of renting ten disconnected apps, you get one system built for how you actually make content, so you post more without burning out.",
-    pain: "The tools exist — but stitching ten of them together, keeping them in your voice, and doing it all yourself is why most creators plateau or quit. The bottleneck isn't ideas; it's operations.",
-    scenario:
-      "A creator posting daily across TikTok, YouTube and Instagram is really running a small media company solo: filming, clipping, captioning, scripting, scheduling and answering DMs. We look at that whole pipeline and build the parts that drain the most hours — usually clipping, repurposing and captions first — into one connected system in their voice. The result is the same creator, posting twice as much, spending half the time on the parts that aren't creative.",
-    steps: [
-      "We map your full content pipeline and find where the hours actually go",
-      "We build the highest-leverage pieces first — clipping, repurposing, captions",
-      "We train every output on your voice, niche and platform formats",
-      "We connect it into the tools you already use and tune it after launch",
-    ],
-    gets: [
-      "A system built around your channels, not a generic subscription app",
-      "The most time-draining parts of your workflow automated first",
-      "Everything tuned to your voice and each platform",
-      "You own the setup — no per-clip fees, no lock-in",
-    ],
-    packageId: "business",
-    ctaLabel: "Build my creator system",
-    keywords: [
-      "ai tools for content creators",
-      "ai systems for creators",
-      "ai automation for content creators",
-      "custom ai for youtubers",
-    ],
-    related: [
-      { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
-      { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-      { label: "AI TikTok Content System", href: "/creators/ai-tiktok-content-system" },
-      { label: "AI Faceless Channel Automation", href: "/creators/ai-faceless-channel-automation" },
-    ],
-    faqs: [
-      {
-        q: "Isn't this just the same AI apps I could buy myself?",
-        a: "The apps are cheap; making them work together in your voice around your exact workflow is the hard part — that's what we build. You get one connected system instead of ten tabs, tuned to you.",
-      },
-      {
-        q: "I'm a smaller creator — is this overkill?",
-        a: "We start with the one or two things eating the most of your time and grow from there. You don't need to be huge; you need a bottleneck worth removing.",
-      },
-      {
-        q: "Do you work with creators outside Canada?",
-        a: "Yes — creator work is fully remote, so where you are is not a constraint. Pricing is quoted in CAD, with USD or another currency on request. Time-zone overlap for calls is the only practical limit; Handbuilt works Pacific time.",
-      },
-    ],
-    schema: "Service",
-    icon: "Wand2",
-  },
+
   {
     slug: "ai-video-editing-automation",
     // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
@@ -100,7 +46,7 @@ const creatorsA: LandingContent[] = [
     related: [
       { label: "AI Caption & Subtitle Automation", href: "/creators/ai-caption-subtitle-automation" },
       { label: "AI Podcast Clipping System", href: "/creators/ai-podcast-clipping-system" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -148,10 +94,10 @@ const creatorsA: LandingContent[] = [
       "tiktok content system for creators",
     ],
     related: [
-      { label: "AI YouTube Shorts Automation", href: "/creators/ai-youtube-shorts-automation" },
+      { label: "AI YouTube Shorts Automation", href: "/creators" },
       { label: "AI Script Writing System", href: "/creators/ai-script-writing-system" },
       { label: "AI Social Media Scheduling Automation", href: "/creators/ai-social-media-scheduling-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -170,56 +116,7 @@ const creatorsA: LandingContent[] = [
     schema: "Service",
     icon: "Video",
   },
-  {
-    slug: "ai-youtube-shorts-automation",
-    eyebrow: "For Creators",
-    h1: "AI YouTube Shorts Automation",
-    title: "AI YouTube Shorts Automation | Handbuilt",
-    description:
-      "Turn your long videos into a steady stream of Shorts — best moments clipped, captioned and formatted automatically. Feed the algorithm without the grind.",
-    answer:
-      "YouTube Shorts automation finds the strongest moments in your long-form videos, clips them, captions and reframes them to vertical, and queues them as Shorts — so one upload becomes a week of Shorts. Handbuilt builds it around your channel so the clips actually represent your best content.",
-    pain: "Shorts are the biggest discovery engine on YouTube right now, but manually mining every long video for clip-worthy moments is a job most creators never have time for.",
-    scenario:
-      "A creator publishes two long videos a week and knows Shorts drive new subscribers — but never makes them. We build automation that scans each upload for high-retention, self-contained moments, clips them, adds captions, reframes to vertical and queues them with titles. Two long videos now also produce 8–10 Shorts a week, feeding discovery on autopilot.",
-    steps: [
-      "We connect your channel and define what makes a strong clip for you",
-      "We auto-detect high-retention moments in each long video",
-      "We clip, caption, reframe to vertical and draft titles",
-      "We queue them as Shorts on your schedule for your review",
-    ],
-    gets: [
-      "Best moments auto-clipped from every long video",
-      "Captions, vertical reframing and draft titles included",
-      "A steady Shorts pipeline feeding discovery",
-      "One upload turned into a week of Shorts",
-    ],
-    packageId: "starter",
-    ctaLabel: "Automate my Shorts",
-    keywords: [
-      "ai youtube shorts automation",
-      "long video to shorts automation",
-      "auto clip youtube shorts",
-      "repurpose youtube video into shorts",
-    ],
-    related: [
-      { label: "AI YouTube Video Workflow", href: "/creators/ai-youtube-video-workflow" },
-      { label: "AI Podcast Clipping System", href: "/creators/ai-podcast-clipping-system" },
-      { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-    ],
-    faqs: [
-      {
-        q: "How does it know which moments to clip?",
-        a: "We tune it to your content — retention patterns, self-contained points, strong hooks or reactions — and you review the picks. Over time it gets sharper at what works for your audience.",
-      },
-      {
-        q: "Will Shorts hurt my long-form views?",
-        a: "Used well, Shorts drive new viewers who then find your long-form. We queue clips that tease the full video rather than replace it.",
-      },
-    ],
-    schema: "Service",
-    icon: "Youtube",
-  },
+
   {
     slug: "ai-youtube-video-workflow",
     // Noindexed 2026-08-30: 0 impressions in the 2026-06-14→08-10 GSC window.
@@ -256,10 +153,10 @@ const creatorsA: LandingContent[] = [
       "automate youtube content pipeline",
     ],
     related: [
-      { label: "AI YouTube Shorts Automation", href: "/creators/ai-youtube-shorts-automation" },
+      { label: "AI YouTube Shorts Automation", href: "/creators" },
       { label: "AI Script Writing System", href: "/creators/ai-script-writing-system" },
       { label: "AI Video Editing Automation", href: "/creators/ai-video-editing-automation" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {
@@ -311,7 +208,7 @@ const creatorsA: LandingContent[] = [
     ],
     related: [
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-      { label: "AI YouTube Shorts Automation", href: "/creators/ai-youtube-shorts-automation" },
+      { label: "AI YouTube Shorts Automation", href: "/creators" },
       { label: "AI Caption & Subtitle Automation", href: "/creators/ai-caption-subtitle-automation" },
     ],
     faqs: [
@@ -529,7 +426,7 @@ const creatorsA: LandingContent[] = [
       { label: "AI Text-to-Speech for Creators", href: "/creators/ai-text-to-speech-for-creators" },
       { label: "AI YouTube Video Workflow", href: "/creators/ai-youtube-video-workflow" },
       { label: "AI Content Repurposing System", href: "/creators/ai-content-repurposing-system" },
-      { label: "AI Tools for Content Creators", href: "/creators/ai-tools-for-content-creators" },
+      { label: "AI Tools for Content Creators", href: "/creators" },
     ],
     faqs: [
       {

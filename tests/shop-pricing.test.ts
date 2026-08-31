@@ -29,17 +29,18 @@ import { getPackage } from "@/lib/data/packages";
 const BUILD_BILLING = new Set(["one-time", "hybrid"]);
 
 /**
- * Known, documented exception awaiting an owner decision — see the banner in
- * shopProducts.ts. It is a ~3-day one-off campaign, not an installed worker.
- * Listed explicitly so it cannot be forgotten, and so any NEW under-floor SKU
- * still fails.
+ * There are NO exemptions any more.
+ *
+ * `ai-customer-reactivation` was the last one — a ~3-day one-off campaign at
+ * $500 while tagged `starter`. The owner resolved it on 2026-08-30: it involves
+ * done-for-you work (segmenting the list, writing the email and SMS copy,
+ * sending, reporting), so it takes the $1,500 floor. The exemption set is gone
+ * rather than emptied, so nobody can quietly add a slug back into it.
  */
-const PENDING_OWNER_DECISION = new Set(["ai-customer-reactivation"]);
 
 describe("shop pricing never drops below its tier floor", () => {
   for (const product of shopProducts) {
     if (!BUILD_BILLING.has(product.billing)) continue;
-    if (PENDING_OWNER_DECISION.has(product.slug)) continue;
 
     it(`${product.slug} (${product.packageId}) clears its floor`, () => {
       const floor = getPackage(product.packageId)?.price;
@@ -65,10 +66,12 @@ describe("shop pricing never drops below its tier floor", () => {
     });
   }
 
-  it("every pending-exception slug still exists (so the list cannot go stale)", () => {
-    const slugs = new Set(shopProducts.map((p) => p.slug));
-    for (const slug of PENDING_OWNER_DECISION) {
-      expect(slugs.has(slug), `${slug} is exempted but no longer exists`).toBe(true);
-    }
+  it("the reactivation campaign is on the floor, not under it", () => {
+    // Pinned by name because this SKU is the one that was under the floor with
+    // a documented exemption. A silent revert to $500 must fail loudly.
+    const p = shopProducts.find((x) => x.slug === "ai-customer-reactivation");
+    expect(p, "ai-customer-reactivation must exist").toBeDefined();
+    expect(p!.setupPrice).toBe(1500);
+    expect(p!.priceLabel).toContain("1,500");
   });
 });

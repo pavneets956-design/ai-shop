@@ -176,7 +176,7 @@ export const moneyPages: LandingContent[] = [
     ctaLabel: "Get a Chatbot Quote",
     keywords: ["AI chatbot development Canada", "custom chatbot for small business", "website chatbot Surrey BC", "AI chatbot trained on my business", "chatbot development Canada"],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI Customer Support Agent", href: "/services/ai-customer-support-agent" },
       { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
       { label: "AI Automation Agency", href: "/ai-automation-agency" },
@@ -245,7 +245,7 @@ export const moneyPages: LandingContent[] = [
     ],
     packageId: "starter",
     ctaLabel: "Set Up My AI Receptionist",
-    keywords: ["AI receptionist local business Canada", "after hours answering service AI", "AI receptionist for contractors", "missed call AI chatbot", "automated receptionist small business BC"],
+    keywords: ["AI receptionist local business Canada", "after hours answering service AI", "AI receptionist for contractors", "missed call AI chatbot", "automated receptionist small business BC", "ai answering service setup", "ai receptionist for small business", "ai phone answering service", "automated receptionist setup", "ai call answering business"],
     related: [
       { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
       { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },

@@ -212,7 +212,7 @@ export const howtos: LandingContent[] = [
       "virtual receptionist setup",
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
       { label: "What an AI Receptionist Is", href: "/ai-receptionist" },
       { label: "Pricing", href: "/pricing" },

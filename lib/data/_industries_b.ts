@@ -141,7 +141,7 @@ export const industriesB: LandingContent[] = [
     related: [
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Intake Form Builder", href: "/services/ai-intake-form-builder" },
+      { label: "AI Intake Form Builder", href: "/services/ai-lead-capture-form" },
       { label: "Pricing", href: "/pricing" },
     ],
     faqs: [
@@ -304,7 +304,7 @@ export const industriesB: LandingContent[] = [
     ],
     related: [
       { label: "AI Chatbot for Restaurants", href: "/use-cases/ai-chatbot-for-restaurants" },
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
       { label: "Pricing", href: "/pricing" },
     ],
@@ -735,12 +735,19 @@ export const industriesB: LandingContent[] = [
     "AI receptionist for medical office",
     "AI appointment booking for clinic",
     "after-hours patient intake automation",
-    "AI front-desk system for healthcare"
-  ],
+    "AI front-desk system for healthcare",
+      "ai automation for physiotherapy",
+      "physio clinic ai receptionist",
+      "reduce no shows physiotherapy",
+      "ai booking for physio clinic",
+      "ai automation for chiropractors",
+      "chiropractic ai receptionist",
+      "patient recall automation chiropractic",
+      "chiropractor booking automation"],
   related: [
     { label: "AI Receptionist", href: "/ai-receptionist" },
     { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
-    { label: "AI Intake Form Builder", href: "/services/ai-intake-form-builder" },
+    { label: "AI Intake Form Builder", href: "/services/ai-lead-capture-form" },
     { label: "Dental Clinic AI Automation", href: "/industries/dental-clinic-ai-automation" },
     { label: "AI Admin Assistant", href: "/services/ai-admin-assistant" },
   ],

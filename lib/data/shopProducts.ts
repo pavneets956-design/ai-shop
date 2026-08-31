@@ -9,13 +9,26 @@
 // prose. `tests/shop-pricing.test.ts` fails the build if any row drops below its
 // floor again.
 //
+// RESOLVED 2026-08-30, owner instruction: `ai-customer-reactivation` moved
+// $500 → $1,500 and the test exemption was deleted. The owner's test was "if it
+// includes done-for-you work, raise it to $1,500; only keep $500 if it is
+// honestly a narrowly scoped audit, template or add-on". It is not: Handbuilt
+// segments the customer's list, WRITES the personalised email and SMS copy in
+// their voice, SENDS the campaign and REPORTS on it. That is done-for-you
+// labour, so it takes the floor. What it is NOT is an installed worker — the
+// `starter` tag is a pricing bucket here, not a claim that a system is left
+// running. The card, the /services page copy, its FAQ and the JSON-LD Offer
+// were all moved in the same commit.
+//
 // STILL OPEN, owner decision — deliberately NOT changed here:
-//   - `ai-customer-reactivation` is "From $500 · per campaign", tagged `starter`.
-//     It is a ~3-day one-off campaign run on the customer's own list, not an
-//     installed worker. Either it takes the $1,500 floor or it stops being
-//     tagged `starter`. Tripling a product's price is the owner's call.
 //   - The `managed` monthly SKUs ($99–$349/mo) are subscriptions, not builds, so
 //     the build floors arguably should not apply to them at all.
+//   - `components/creators/CreatorStudio.tsx` publishes SIX one-time creator
+//     tool prices ($500, $500, $700, $700, $900, from $900) that are all under
+//     the $1,500 done-for-you floor. They are prose only — no JSON-LD Offer —
+//     and they are a different product line (creator software you own, not a
+//     business AI worker), so they were left alone rather than tripled without
+//     the owner's say-so. `tests/pricing-consistency.test.ts` names them.
 //
 // Shop storefront catalog — the "ready-to-install" lead products.
 // Each maps to an existing /services/<slug> detail page (the SEO engine) where
@@ -94,7 +107,7 @@ export const shopProducts: ShopProduct[] = [
       "We host the line and include the AI + call usage — one flat monthly, no API keys or surprise phone bills.",
     packageId: "starter",
     demoHref: "/demo",
-    learnHref: "/services/ai-receptionist-setup",
+    learnHref: "/ai-receptionist",
   },
   {
     slug: "ai-quote-generator",
@@ -221,8 +234,8 @@ export const shopProducts: ShopProduct[] = [
     delivery: "Done-for-you",
     timeToLaunch: "Live in ~3 days",
     billing: "one-time",
-    priceLabel: "From $500 · per campaign",
-    setupPrice: 500,
+    priceLabel: "From $1,500 · per campaign",
+    setupPrice: 1500,
     whoPaysUsage: "customer",
     usageNote:
       "Run as a one-off campaign on your own list + messaging — you pay only for the texts/emails actually sent (your accounts).",

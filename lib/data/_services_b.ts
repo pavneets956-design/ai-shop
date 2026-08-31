@@ -1,48 +1,7 @@
 import type { LandingContent } from "./landing";
 
 export const servicesB: LandingContent[] = [
-  {
-    slug: "ai-intake-form-builder",
-    eyebrow: "AI Service",
-    h1: "AI Intake Form Builder",
-    title: "AI Intake Form Builder | Handbuilt",
-    description: "Smart intake forms that ask the right follow-up questions, qualify leads automatically, and route submissions to your inbox or CRM. From $1,500 CAD.",
-    answer: "A standard contact form collects a name and email and stops there. Handbuilt builds AI-powered intake forms that adapt their questions based on what the visitor types — qualifying budget, scope, and timeline before you ever pick up the phone. Submissions route to your inbox, CRM, or calendar. Starts at $1,500 CAD.",
-    pain: "Generic contact forms waste your time on tire-kickers and miss key details that would let you quote fast.",
-    scenario: "Take a Langley kitchen renovation contractor spending roughly 45 minutes on every inquiry call just gathering measurements and budget range before they can even scope the job. An adaptive intake form collecting room dimensions, material preferences, and rough budget upfront could cut that first call to maybe 15 minutes — and filter out the leads who are nowhere near budget before they ever reach the phone. The exact time savings depend on how much your current process front-loads qualification.",
-    steps: [
-      "We map the questions that matter most for your quoting or intake process",
-      "We build conditional logic so the form asks smarter follow-ups based on each answer",
-      "Completed submissions route to your inbox, CRM, or trigger a calendar invite",
-      "We test on real traffic and refine in the first two weeks"
-    ],
-    gets: [
-      "Adaptive intake form with conditional question logic",
-      "Auto-routing to inbox, CRM, or calendar",
-      "Lead qualification score on every submission",
-      "Embed code for your website or landing page"
-    ],
-    packageId: "starter",
-    ctaLabel: "Build my intake form",
-    keywords: [
-      "ai intake form builder",
-      "smart lead qualification form",
-      "automated intake form small business",
-      "ai contact form for contractors"
-    ],
-    related: [
-      { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "Contractor AI Automation", href: "/industries/contractor-ai-automation" },
-      { label: "Pricing", href: "/pricing" }
-    ],
-    faqs: [
-      { q: "How is this different from a regular form builder like Typeform?", a: "Standard form builders follow a fixed script. This form uses AI logic to branch based on answers — so a visitor who selects 'commercial' sees different follow-up questions than one who selects 'residential', without you building every branch manually." },
-      { q: "Where do the submissions go?", a: "Anywhere you want — your email, a CRM like HubSpot or Jobber, a Google Sheet, or a Slack channel. We set up the routing as part of the build." }
-    ],
-    schema: "Service",
-    icon: "FileSearch",
-  },
+
   {
     slug: "ai-sales-assistant",
     eyebrow: "AI Service",
@@ -200,7 +159,7 @@ export const servicesB: LandingContent[] = [
       "ai call answering after hours"
     ],
     related: [
-      { label: "AI Receptionist Setup", href: "/services/ai-receptionist-setup" },
+      { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "HVAC AI Automation", href: "/industries/hvac-ai-automation" },
       { label: "Pricing", href: "/pricing" }
@@ -324,8 +283,8 @@ export const servicesB: LandingContent[] = [
     "eyebrow": "AI Service",
     "h1": "How do I win back past customers with AI?",
     "title": "AI Customer Re-Activation Campaigns | Handbuilt",
-    "description": "Turn your old customer list into booked repeat jobs with an AI win-back campaign over email and text. Personalized, run on your own list, from $500 per campaign.",
-    "answer": "AI customer re-activation turns the people who already hired you into your cheapest source of new work. Handbuilt takes your past-customer list and writes a personalized win-back campaign — email plus text — that reminds each person you exist, references what they bought, and gives them an easy reason to book again. It runs as a one-off campaign on your own list and messaging, from $500 per campaign.",
+    "description": "Turn your old customer list into booked repeat jobs with an AI win-back campaign over email and text. Personalized, run on your own list, from $1,500 per campaign.",
+    "answer": "AI customer re-activation turns the people who already hired you into your cheapest source of new work. Handbuilt takes your past-customer list and writes a personalized win-back campaign — email plus text — that reminds each person you exist, references what they bought, and gives them an easy reason to book again. It runs as a one-off campaign on your own list and messaging, from $1,500 per campaign.",
     "pain": "The cheapest job you can book is from someone who already paid you and liked the work. But most owners never reach back out, so that list of past customers just sits in a spreadsheet while you spend on ads chasing strangers.",
     "scenario": "Take a Coquitlam house-cleaning company sitting on a list of maybe 300 past clients, most of whom haven't booked in a year. Roughly hedging, even a handful coming back for a one-time deep clean could more than cover the campaign cost. We'd write a short, warm message — \"it's been a while, here's a returning-client spot this month\" — send it by email and text, and route the replies straight to their booking. The point is to wake up people who already trust them, not to buy new attention.",
     "steps": [
@@ -376,7 +335,7 @@ export const servicesB: LandingContent[] = [
         "a": "These are people who already hired you, and the message is short, friendly and easy to opt out of. We send to your own list, space the email and text so nobody gets hit twice, and keep the tone like a check-in, not a sales blast."
       },
       {
-        "q": "Is the $500 a monthly fee?",
+        "q": "Is the $1,500 a monthly fee?",
         "a": "No. It's priced per campaign, so you pay for a single win-back send on your list. If it pays for itself you can run another one each quarter, but there's no ongoing subscription unless you want one."
       }
     ],
@@ -545,7 +504,7 @@ export const servicesB: LandingContent[] = [
     "related": [
       {
         "label": "AI Receptionist Setup",
-        "href": "/services/ai-receptionist-setup"
+        "href": "/ai-receptionist"
       },
       {
         "label": "AI Voice Agent",

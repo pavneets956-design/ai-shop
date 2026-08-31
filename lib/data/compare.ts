@@ -515,7 +515,7 @@ export const comparisons: LandingContent[] = [
     { label: "AI Receptionist Cost in Canada", href: "/resources/ai-receptionist-cost" },
     { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
-    { label: "AI Receptionist Setup Service", href: "/services/ai-receptionist-setup" }
+    { label: "AI Receptionist Setup Service", href: "/ai-receptionist" }
   ],
   faqs: [
     {
