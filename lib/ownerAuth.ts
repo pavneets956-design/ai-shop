@@ -56,13 +56,23 @@ export type OwnerCheck =
 /**
  * Resolve the caller against the allowlist.
  *
- * Imports NextAuth lazily so an unconfigured allowlist never drags NextAuth and
- * the Prisma adapter into the request path, and so tests can exercise the
- * `unconfigured` branch without mocking auth at all.
+ * ORDER MATTERS, and it is not the obvious one. The session is resolved FIRST,
+ * before the allowlist is even consulted. An earlier version short-circuited on
+ * an empty allowlist and returned `unconfigured` immediately — which meant that
+ * with `OWNER_EMAILS` unset (its state in Vercel today) `/admin/leads` answered
+ * an unauthenticated **200** to the whole internet with a page naming the
+ * variable to set. No lead data leaked, but an anonymous 200 on a path called
+ * /admin/leads is not something to ship.
+ *
+ * Now an anonymous caller is `anonymous` whatever the configuration, so they get
+ * the login redirect and never learn anything else. The `unconfigured`
+ * diagnostic is only ever shown to somebody who is already signed in — which is
+ * the person who needs it.
+ *
+ * NextAuth is imported lazily so it is pulled in only on a request that reaches
+ * an owner-gated surface.
  */
 export async function checkOwner(): Promise<OwnerCheck> {
-  if (!ownerAllowlistConfigured()) return { status: "unconfigured" };
-
   let email: string | null = null;
   try {
     const [{ getServerSession }, { authOptions }] = await Promise.all([
@@ -78,6 +88,17 @@ export async function checkOwner(): Promise<OwnerCheck> {
   }
 
   if (!email) return { status: "anonymous" };
+
+  // Signed in, but nobody can be an owner because the list was never set.
+  // Fail closed, and say which variable fixes it — this reader is authenticated.
+  if (!ownerAllowlistConfigured()) {
+    console.error(
+      `[owner-auth] ${OWNER_EMAILS_ENV} is not set, so no account can be an owner. ` +
+        `Set it to a comma-separated list of owner emails.`
+    );
+    return { status: "unconfigured" };
+  }
+
   if (!ownerEmails().includes(email)) return { status: "forbidden" };
   return { status: "owner", email };
 }

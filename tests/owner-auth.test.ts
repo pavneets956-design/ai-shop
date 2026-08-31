@@ -55,10 +55,20 @@ describe("ownerEmails", () => {
 });
 
 describe("checkOwner", () => {
-  it("reports 'unconfigured' and NEVER consults the session when the list is empty", async () => {
-    await expect(checkOwner()).resolves.toEqual({ status: "unconfigured" });
+  it("reports 'anonymous', NOT 'unconfigured', to a signed-out caller when the list is empty", async () => {
+    // Regression: an earlier version short-circuited on the empty allowlist, so
+    // /admin/leads answered an unauthenticated 200 with a page naming the env
+    // var. An anonymous caller must learn nothing beyond "sign in".
+    getServerSessionMock.mockResolvedValue(null);
+    await expect(checkOwner()).resolves.toEqual({ status: "anonymous" });
+  });
+
+  it("reports 'unconfigured' only to a signed-in caller, and never admits them", async () => {
+    getServerSessionMock.mockResolvedValue({ user: { email: "anyone@example.com" } });
+    const result = await checkOwner();
+    expect(result).toEqual({ status: "unconfigured" });
     // Fail closed: an empty allowlist must not mean "let everybody in".
-    expect(getServerSessionMock).not.toHaveBeenCalled();
+    expect(result).not.toMatchObject({ status: "owner" });
   });
 
   it("reports 'anonymous' when there is no session", async () => {

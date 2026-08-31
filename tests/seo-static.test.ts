@@ -281,7 +281,7 @@ describe("sitemap", () => {
   });
 
   it("contains no private or app-only route", () => {
-    const privatePrefixes = ["/login", "/cart", "/dashboard", "/account", "/agent", "/api", "/products", "/v2"];
+    const privatePrefixes = ["/login", "/cart", "/dashboard", "/account", "/agent", "/admin", "/api", "/products", "/v2"];
     const offenders = sitemapPaths.filter((p) => privatePrefixes.some((x) => p === x || p.startsWith(`${x}/`)));
     expect(offenders).toEqual([]);
   });
