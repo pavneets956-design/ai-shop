@@ -1,6 +1,7 @@
 // Shop catalog — what Handbuilt has shipped.
 // Storefront only: own live SaaS (proof) + one buyable done-for-you service.
 // No payment code lives here — external items deep-link to their own checkout/signup.
+import { PAYNUDGE_PRICING_SUMMARY } from "./packages";
 
 export type ShopKind = "service" | "saas";
 
@@ -78,13 +79,13 @@ export const liveSaas: ShopItem[] = [
     name: "PayNudge",
     kind: "saas",
     eyebrow: "Live SaaS",
-    tagline: "Polite, automated payment reminders that get invoices paid.",
+    tagline: "Automatic email reminders for overdue invoices.",
     forWho: "Small businesses tired of chasing late payments.",
     outcomes: [
-      "Automated nudges on overdue invoices — on-brand, never awkward",
-      "Get paid faster without the uncomfortable follow-up calls",
+      "Email follow-ups on days 1, 3 and 7, plus SMS drafts you send from your own phone",
+      "Follow-ups stop when PayNudge records payment; integrations sync daily or with Sync now",
     ],
-    priceLabel: "Subscription · see plans",
-    href: "https://www.paynudge.xyz",
+    priceLabel: PAYNUDGE_PRICING_SUMMARY,
+    href: "https://paynudge.xyz/pricing",
   },
 ];

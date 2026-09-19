@@ -128,3 +128,9 @@ export function packagePriceLabel(id: ServicePackage["id"]): string {
 export const BUSINESS_SYSTEM_SENTENCE =
   `From $${nf.format(packages[1].price)} CAD. Most connected back-office systems cost ` +
   `$${nf.format(packages[1].price)}–$${nf.format(packages[1].priceHigh!)} CAD after scope is confirmed.`;
+
+/** PayNudge's universal terms, verified against paynudge.xyz/pricing on 2026-09-18. */
+export const PAYNUDGE_PRICING_SUMMARY =
+  "CA$2 once per overdue invoice after its first qualifying email reminder is confirmed delivered to the receiving server. " +
+  "Later follow-ups stay included, even across billing months. CA$29 cap per monthly billing period before tax; " +
+  "CA$0 with no qualifying usage. Same CAD pricing worldwide. 14-day trial without a card; payment setup required afterward.";
