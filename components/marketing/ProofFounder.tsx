@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SectionHeading, SectionLabel } from "./primitives";
 import Reveal from "./Reveal";
 import { site } from "@/lib/data/site";
+import { PAYNUDGE_PRICING_SUMMARY } from "@/lib/data/packages";
 
 /**
  * Trust, proof and founder — the three sections the site was missing.
@@ -110,10 +111,10 @@ const BUILDS: Build[] = [
     problem:
       "Service businesses send an invoice and then feel rude about chasing it, so it sits there.",
     built:
-      "Reminders on day 1, day 3 and day 7 that stop the moment the invoice is paid — so nobody gets nagged after paying.",
-    stack: "Syncs with Jobber, QuickBooks, Square and Stripe · scheduled jobs",
+      "Automatic overdue-invoice emails on days 1, 3 and 7, plus SMS drafts you send from your own phone. Follow-ups stop when PayNudge records payment; connected invoices update after the next successful sync.",
+    stack: "Daily sync with Jobber, QuickBooks, Square and Stripe · manual Sync now available",
     tested: "Its own automated test suite, run before each deploy.",
-    owns: "One plan, one flat monthly price in CAD.",
+    owns: PAYNUDGE_PRICING_SUMMARY,
   },
 ];
 

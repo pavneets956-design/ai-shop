@@ -33,6 +33,8 @@ That is not a weakness to hide. The honest proof story is: *a builder who runs h
 
 ### A2. PayNudge — `LIVE` · OWNED PRODUCT · pre-revenue
 
+**Pricing and workflow correction, 2026-09-18:** the historical pricing row below is superseded. The owner settled universal pricing and the live https://paynudge.xyz/pricing HTML was read on 2026-09-19 UTC: CA$2 once per distinct overdue invoice after its first qualifying reminder email is confirmed delivered to the receiving server; later follow-ups remain included across billing months; CA$29 cap per monthly billing period before tax; CA$0 with no qualifying usage; same CAD pricing worldwide. The 14-day trial requires no card initially, with payment setup required afterward. No annual/regional offer or pilot is advertised. Source: live pricing page plus PayNudge `docs/RUNBOOK.md` and `docs/USAGE_BILLING_RECONCILIATION.md` at deployed release `e70f3c9fa3e3ed2e9da7e2ed303aef29b74009e3`. Payment stopping occurs when PayNudge records payment; integrations sync daily or via manual Sync now. SMS drafts are sent by the merchant from their phone, never automatically. This correction does not re-verify the dated usage/revenue figures below.
+
 | Field | Fact | Source |
 |---|---|---|
 | Problem | Small service businesses chase overdue invoices by hand | live title "PayNudge — Payment Reminder Software for Small Business"; meta "Automatic email reminders for overdue invoices at days 1, 3 and 7 past due. Works with QuickBooks, Square, Jobber and Stripe. Stops when your client pays." (`LIVE-VERIFIED` https://paynudge.xyz, HTTP 200) |

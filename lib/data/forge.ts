@@ -31,10 +31,10 @@ export const products: ForgeProduct[] = [
   {
     title: "PayNudge",
     description:
-      "[EDIT] One line on PayNudge — automated payment follow-ups that recover overdue invoices without the awkward chase.",
+      "Automatic overdue-invoice emails on days 1, 3 and 7, plus SMS drafts you review and send yourself. Usage-based CAD pricing with a monthly cap — see current pricing.",
     screenshot: null, // [EDIT] public/forge/paynudge.png
-    href: null,
-    tag: "SHIPPED",
+    href: "https://paynudge.xyz/pricing",
+    tag: "LIVE SAAS",
   },
   {
     title: "RoomRush",
