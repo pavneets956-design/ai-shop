@@ -83,6 +83,8 @@ export interface LandingContent {
    * out itself — `isNoindexEntry` only controls metadata and the sitemap.
    */
   noindex?: boolean;
+  /** Date of a substantive change to this specific page. */
+  updatedAt?: string;
 }
 
 /** Path prefix per page type. */

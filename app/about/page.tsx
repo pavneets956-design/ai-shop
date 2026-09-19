@@ -1,243 +1,195 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
-import { SectionHeading, SectionLabel } from "@/components/marketing/primitives";
-import { ProofSection } from "@/components/marketing/ProofFounder";
-import { ProcessSteps } from "@/components/marketing/HomeSections";
 import { site } from "@/lib/data/site";
 import { DEFAULT_OG_IMAGE, FOUNDER_ID, ORG_ID } from "@/lib/seo";
-
-/**
- * About — rewritten 2026-08-30.
- *
- * The page it replaces was the site's biggest credibility problem. It was
- * written in the corporate "we" for a one-person business, claimed to be
- * "working with clients worldwide" when there are no clients at all, never
- * named or showed the builder, and closed with a gradient-text headline and a
- * magnetic button. The site said "one builder" on every page and then never
- * introduced him.
- *
- * Every claim here is from the verified register in
- * research/transformation-2026-08-30/09-proof-founder-positioning.md. Where a
- * fact could not be verified it is simply absent — there is no LinkedIn link
- * because no profile was found, no phone number because there is no business
- * line, and no client count because the number is zero and the page says so.
- */
-
-const TITLE = `About ${site.founder} — the one builder behind Handbuilt AI`;
-const DESCRIPTION =
-  "Handbuilt AI is one person in Surrey, BC. Pavneet Singh runs a cedar-fence company, builds two live software products, and installs AI receptionists and admin systems for BC contractors. No agency, no account managers, no invented case studies.";
-
+const title = "About Pavneet Singh — Independent Builder | Handbuilt AI";
+const description =
+  "Meet Pavneet Singh, the independent builder behind Handbuilt AI in Surrey, BC. Custom websites, apps and AI systems, built with you from idea to handover.";
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/about" },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${site.url}/about`,
+    title,
+    description,
+    url: site.url + "/about",
     type: "profile",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: { images: [DEFAULT_OG_IMAGE] },
 };
-
-/** Person node for the founder, referenced by the sitewide organization. */
-const founderSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": FOUNDER_ID,
-  name: site.founder,
-  jobTitle: "Founder & Builder",
-  email: site.email,
-  image: `${site.url}/founder.jpg`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Surrey",
-    addressRegion: "BC",
-    addressCountry: "CA",
-  },
-  worksFor: { "@id": ORG_ID },
-  knowsAbout: [
-    "AI receptionist",
-    "AI lead follow-up",
-    "business automation for contractors",
-    "Next.js",
-    "TypeScript",
+const principles = [
+  [
+    "One person, start to finish.",
+    "You talk directly to me about the idea, design, build and handover. We work through the details together and keep the next step clear.",
   ],
-};
-
-const PRINCIPLES: { title: string; body: string }[] = [
-  {
-    title: "You talk to the person building it",
-    body: "The first conversation, the workflow map, the build, the testing and the handover are all me. Nothing gets passed to someone who has never spoken to you, because there is nobody else to pass it to.",
-  },
-  {
-    title: "A fixed CAD quote before any work starts",
-    body: "We agree the scope and the number first. If the scope grows, we agree that too, in writing, before I build it. No hourly drip and no surprise invoice at the end.",
-  },
-  {
-    title: "It runs inside the accounts you already have",
-    body: "Your phone number, your calendar, your CRM, your inbox. I am not trying to move you onto a platform I control, and you can export or switch it off without asking me first.",
-  },
-  {
-    title: "Tested on real calls before you rely on it",
-    body: "Every build gets run against the awkward cases — the caller who mumbles the address, the one who wants a price I can't give, the one who asks for a human. I would rather find those before your customers do.",
-  },
-  {
-    title: "I tell you what it can't do",
-    body: "An AI receptionist will not close a complex quote, and it should not pretend to be a person. Where a build has a limit, you'll hear about the limit from me before you pay for it.",
-  },
-  {
-    title: "No invented proof, ever",
-    body: "No stock testimonials, no borrowed client logos, no statistic I didn't measure myself. When I have a customer result worth showing, it will have a real name attached to it.",
-  },
+  [
+    "A useful first version.",
+    "We start with a defined problem and agree the scope in writing. A working prototype helps us test the idea before adding more.",
+  ],
+  [
+    "Your work, in your accounts.",
+    "Custom code, accounts and business data are handed over as agreed. Any third-party subscriptions and licences are explained upfront.",
+  ],
+  [
+    "Care beyond the happy path.",
+    "We check responsive layouts, errors, unusual inputs and the parts that need a human. The limits and ongoing costs are part of the conversation.",
+  ],
 ];
-
 export default function AboutPage() {
   return (
     <>
-      <JsonLd data={[founderSchema]} />
-
-      {/* ── Founder hero ─────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "var(--v-surface)" }}>
-        <div className="v-container pb-14 pt-14 md:pb-16 md:pt-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)] lg:gap-16">
-            <div>
-              <SectionLabel>Surrey / Delta, BC</SectionLabel>
-              <h1
-                className="v-h1 mt-5 text-balance"
-                style={{ fontSize: "clamp(34px, 5vw, 52px)" }}
-              >
-                Handbuilt AI is one person. This is him.
-              </h1>
-              <p className="v-lead mt-5 max-w-[38rem]">
-                I&rsquo;m {site.founder}. I run a cedar-fence company in South Surrey, I build
-                software, and I install AI receptionists and admin systems for contractors and local
-                service businesses around Metro Vancouver and the Fraser Valley.
-              </p>
-              <p className="v-body mt-4 max-w-[38rem]">
-                I built an AI receptionist for my own business line before I offered one to anybody
-                else — which is also how I learned what it gets wrong.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link href="/demo" className="btn-primary w-full sm:w-auto">
-                  Try the live AI demo
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <Link href="/create" className="btn-secondary w-full sm:w-auto">
-                  Request a free 10-minute fit check
-                </Link>
-              </div>
-            </div>
-
-            <div className="order-first max-w-[240px] lg:order-none lg:max-w-none">
-              <Image
-                src="/founder.jpg"
-                alt={`${site.founder}, founder of Handbuilt AI`}
-                width={560}
-                height={560}
-                sizes="(min-width: 1024px) 320px, 240px"
-                priority
-                className="w-full rounded-[var(--v-r-panel)]"
-                style={{ boxShadow: "var(--v-shadow-card)" }}
-              />
-              <p className="v-micro mt-3">
-                {site.founder} — founder and builder. Reachable at{" "}
-                <a href={`mailto:${site.email}`} className="v-link">
-                  {site.email}
-                </a>
-                .
-              </p>
-            </div>
-          </div>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": FOUNDER_ID,
+            name: site.founder,
+            jobTitle: "Founder & Builder",
+            email: site.email,
+            image: site.url + "/founder.jpg",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Surrey",
+              addressRegion: "BC",
+              addressCountry: "CA",
+            },
+            worksFor: { "@id": ORG_ID },
+            knowsAbout: [
+              "Web development",
+              "Business software",
+              "AI agents",
+              "Business automation",
+            ],
+          },
+        ]}
+      />
+      <section className="studio-page-hero studio-container studio-about-intro">
+        <div>
+          <p className="studio-eyebrow">The person behind the build</p>
+          <h1>
+            I’m Pavneet.
+            <br />
+            <span>Let’s make it work.</span>
+          </h1>
+          <p>
+            I run a cedar-fence business in South Surrey and build software.
+            Handbuilt AI is where I work with you on websites, apps and AI
+            systems—from the rough idea to the details that make it useful.
+          </p>
+          <Link href="/create" className="studio-button">
+            Tell me about your idea ↗
+          </Link>
         </div>
+        <Image
+          src="/founder.jpg"
+          alt="Pavneet Singh, founder of Handbuilt AI"
+          width={560}
+          height={560}
+          sizes="(max-width: 800px) 240px, 380px"
+          priority
+        />
       </section>
-
-      {/* ── The honest position ──────────────────────────────────────────── */}
-      <section className="v-section-tight" style={{ backgroundColor: "var(--v-field)" }}>
-        <div className="v-container">
-          <div className="max-w-[46rem]">
-            <SectionLabel>where this is up to</SectionLabel>
-            <h2 className="v-h2 mt-5 text-balance">
-              I don&rsquo;t have client case studies yet. Here&rsquo;s what I do have.
+      <section className="studio-page-section studio-container">
+        <div className="studio-section-heading">
+          <div>
+            <p className="studio-eyebrow">A practical starting point</p>
+            <h2>
+              I build things
+              <br />I use myself.
             </h2>
-            <div className="mt-5 space-y-4">
-              <p className="v-body">
-                Most agencies open with a wall of logos. I can&rsquo;t, because this is new and the
-                honest number of contractor clients I&rsquo;ve delivered for is small. Inventing a
-                testimonial would be the fastest way to lose the kind of customer I want, and every
-                contractor I&rsquo;ve met can smell a fake number from across a parking lot.
-              </p>
-              <p className="v-body">
-                What I can do is show you three systems that are live right now, tell you exactly how
-                they were built and tested, and let you talk to the receptionist yourself before you
-                give me your name.
-              </p>
-            </div>
+          </div>
+          <p>
+            Running a business gives me real problems to work on: getting an
+            enquiry, keeping track of documents and following up without losing
+            the afternoon.
+          </p>
+        </div>
+        <div className="studio-services">
+          <article>
+            <h3>Ironwood Grounds</h3>
+            <p>
+              My cedar-fence business in South Surrey, with a website and quote
+              intake supporting the work on site.
+            </p>
+            <a
+              href="https://ironwoodgrounds.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="studio-text-link"
+            >
+              Visit Ironwood Grounds ↗
+            </a>
+          </article>
+          <article>
+            <h3>COITracker</h3>
+            <p>
+              My software product for tracking certificates of insurance,
+              reviewing documents and managing expiry reminders.
+            </p>
+            <a
+              href="https://coitracker.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="studio-text-link"
+            >
+              Explore COITracker ↗
+            </a>
+          </article>
+          <article>
+            <h3>PayNudge</h3>
+            <p>
+              My invoice follow-up product, built to send reminders and stop the
+              sequence when a customer pays.
+            </p>
+            <a
+              href="https://paynudge.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="studio-text-link"
+            >
+              Explore PayNudge ↗
+            </a>
+          </article>
+        </div>
+        <p className="studio-proof-note">
+          These are my own businesses and products.
+        </p>
+      </section>
+      <section className="studio-page-section studio-container">
+        <div className="studio-section-heading">
+          <div>
+            <p className="studio-eyebrow">Working together</p>
+            <h2>Clear from the start.</h2>
           </div>
         </div>
-      </section>
-
-      {/* ── Proof (shared with the homepage — one source, one set of facts) ─ */}
-      <ProofSection />
-
-      {/* ── How I work ───────────────────────────────────────────────────── */}
-      <section className="v-section" style={{ backgroundColor: "var(--v-field)" }}>
-        <div className="v-container">
-          <SectionHeading
-            align="left"
-            eyebrow="how I work"
-            title="Six things you can hold me to."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {PRINCIPLES.map((p) => (
-              <article key={p.title} className="v-card p-6">
-                <h3 className="v-h3" style={{ fontSize: 20 }}>
-                  {p.title}
-                </h3>
-                <p className="v-small mt-2.5" style={{ color: "var(--v-ink-2)" }}>
-                  {p.body}
-                </p>
-              </article>
-            ))}
-          </div>
+        <div className="studio-about-principles">
+          {principles.map(([name, body]) => (
+            <article key={name}>
+              <h3>{name}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
         </div>
       </section>
-
-      {/* ── Process (shared component, single source of truth) ───────────── */}
-      <ProcessSteps />
-
-      {/* ── Close ────────────────────────────────────────────────────────── */}
-      <section className="v-section" style={{ backgroundColor: "var(--v-surface)" }}>
-        <div className="v-container">
-          <div className="max-w-[42rem]">
-            <SectionLabel>next step</SectionLabel>
-            <h2 className="v-h2 mt-5 text-balance">
-              Try it first. Talk to me second.
-            </h2>
-            <p className="v-lead mt-4">
-              The demo asks you for nothing. If it does something useful, tell me what you&rsquo;re
-              trying to stop losing and I&rsquo;ll tell you whether it&rsquo;s worth building —
-              including when the answer is no.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/demo" className="btn-primary w-full sm:w-auto">
-                Try the live AI demo
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-              <Link href="/create" className="btn-secondary w-full sm:w-auto">
-                Request a free 10-minute fit check
-              </Link>
-            </div>
-            <p className="v-micro mt-5">
-              I read every one myself and reply within one business day — there is no calendar to
-              book and no sales team to get past.
-            </p>
-          </div>
+      <section className="studio-final">
+        <div className="studio-container">
+          <p className="studio-eyebrow">One builder. A conversation.</p>
+          <h2>
+            Bring the idea.
+            <br />
+            We’ll work through the rest.
+          </h2>
+          <p>
+            Based in Surrey, BC. Available to work remotely.
+            <br />I reply to project requests within one business day.
+          </p>
+          <Link href="/create" className="studio-button">
+            Start a conversation ↗
+          </Link>
         </div>
       </section>
     </>

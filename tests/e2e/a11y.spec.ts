@@ -13,7 +13,7 @@ import AxeBuilder from "@axe-core/playwright";
  * order still need a human pass.
  */
 
-const PAGES = ["/", "/demo", "/pricing", "/create", "/ai-receptionist", "/about"];
+const PAGES = ["/", "/demo", "/pricing", "/create", "/ai-receptionist", "/about", "/web-design-development"];
 
 /** WCAG 2.1 A/AA, which is what the site should be held to. */
 const TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"];

@@ -40,7 +40,7 @@ export default function LandingTemplate({
   const ctaHref = content.packageId
     ? `/create?package=${content.packageId}`
     : "/create";
-  const ctaLabel = content.ctaLabel ?? "Start a build";
+  const ctaLabel = content.ctaLabel ?? "Discuss your project";
   const crumbs = landingBreadcrumb(type, content, shortName);
   const Icon = content.icon ? getIcon(content.icon) : null;
 
@@ -49,7 +49,7 @@ export default function LandingTemplate({
       <JsonLd data={landingSchema(type, content, shortName)} />
 
       {/* HERO — answer-first */}
-      <section className="relative overflow-hidden pb-12 pt-10 md:pt-14">
+      <section className="studio-landing-hero relative overflow-hidden pb-12 pt-10 md:pt-14">
         <GlowBackground variant="hero" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
@@ -92,7 +92,7 @@ export default function LandingTemplate({
                 {ctaLabel} <ArrowRight className="h-4 w-4" />
               </MagneticButton>
               <Link href="/demo" className="btn-ghost">
-                Not sure what you need? Try it yourself first
+                Explore the text demo
               </Link>
             </div>
           </Reveal>

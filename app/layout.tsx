@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import "./studio.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
@@ -45,11 +46,11 @@ const jbMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
+    default: "Handbuilt AI | Custom Websites, Apps & AI Systems",
     template: "%s | Handbuilt AI",
   },
   description:
-    "Handbuilt AI builds custom AI apps, agents, chatbots, automations, dashboards and business tools for companies and individuals who want practical AI systems that save time and grow revenue.",
+    "Custom websites, interactive experiences, apps and AI systems. Work directly with an independent builder in Surrey, BC, from idea to handover.",
   keywords: [
     "custom AI app development",
     "AI automation services",
@@ -86,13 +87,13 @@ export const metadata: Metadata = {
     // were telling every scraper their canonical social URL was the homepage.
     // Pages that need one set it via staticMetadata()/landingMetadata().
     siteName: site.name,
-    title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt AI | Custom Websites, Apps & AI Systems",
     description:
       "Tell us what you want AI to do. We design and build the system — apps, agents, automations and dashboards, around your exact workflow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Handbuilt AI | Custom AI Apps, Agents & Business Automation",
+    title: "Handbuilt AI | Custom Websites, Apps & AI Systems",
     description:
       "Custom AI apps, agents, automations and dashboards — built around your exact workflow.",
   },

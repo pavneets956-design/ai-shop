@@ -1,6 +1,8 @@
 import type { LandingContent } from "./landing";
+import { webDesignService } from "./studioServices";
 
 export const moneyPages: LandingContent[] = [
+  webDesignService,
   {
     slug: "ai-automation-agency",
     eyebrow: "AI Build",

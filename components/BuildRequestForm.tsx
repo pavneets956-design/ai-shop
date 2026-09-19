@@ -571,7 +571,7 @@ export default function BuildRequestForm() {
                       autoComplete="organization"
                       value={form.business}
                       onChange={(e) => set("business", e.target.value)}
-                      placeholder="e.g. Delta Plumbing, or 'I run a two-van plumbing crew'"
+                      placeholder="e.g. a local business, a new product, or a personal project"
                       className="field min-h-[44px] border-ink/50"
                     />
                   )}
@@ -590,7 +590,7 @@ export default function BuildRequestForm() {
                       rows={3}
                       value={form.goal}
                       onChange={(e) => set("goal", e.target.value)}
-                      placeholder="e.g. Something that answers my phone and books jobs while I'm on site"
+                      placeholder="e.g. a new website, a customer app, or help automating enquiries"
                       className="field resize-none border-ink/50"
                     />
                   )}

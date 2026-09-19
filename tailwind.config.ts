@@ -10,42 +10,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // "Handbuilt AI" palette — MOLTEN FORGE: cool near-white paper, near-black
-        // ink, a single RED action color (red gradient CTA). Token NAMES kept so all
-        // existing classes inherit the new palette automatically.
+        // Neutral studio palette; legacy token names keep older routes consistent.
         paper: {
-          DEFAULT: "#FAF9F7", // base background (cool near-white)
+          DEFAULT: "#ffffff", // base background (cool near-white)
           2: "#F5F5F7", // soft cool surface (alternating sections / soft fills)
           card: "#FFFFFF",
         },
         ink: {
-          DEFAULT: "#1C1A19", // near-black text
-          hover: "#2B2724", // ink-surface hover
-          soft: "#6B6663", // muted cool gray
+          DEFAULT: "#171b24", // near-black text
+          hover: "#303744", // ink-surface hover
+          soft: "#606977", // muted cool gray
         },
-        // "clay" token name kept (used site-wide) — now holds the PRIMARY RED.
+        // "clay" token name kept (used site-wide) — now holds the COBALT ACCENT.
         clay: {
-          DEFAULT: "#E0362C", // primary red (CTA, active, one hero highlight)
-          dark: "#B8221A", // primary hover
-          soft: "#FFE9E7", // soft red fill
+          DEFAULT: "#2854df", // cobalt accent (CTA, active, one hero highlight)
+          dark: "#2045b8", // primary hover
+          soft: "#edf2ff", // soft cobalt fill
         },
-        // Amber — same red ramp, reserved for CTAs (the single "spark").
+        // Amber token — cobalt ramp, reserved for CTAs (the single "spark").
         amber: {
-          DEFAULT: "#E0362C",
-          dark: "#B8221A",
-          soft: "#FFE9E7",
+          DEFAULT: "#2854df",
+          dark: "#2045b8",
+          soft: "#edf2ff",
         },
         // Cool muted text + borders + semantic accents (used sparingly per the system).
-        muted: { DEFAULT: "#6B6663", light: "#A39E9A" },
-        line: { DEFAULT: "#D8D4D1", strong: "#CCC7C3" },
+        muted: { DEFAULT: "#606977", light: "#667286" },
+        line: { DEFAULT: "#e0e5ed", strong: "#cbd3df" },
         success: "#2F6B4F", // only for "captured / complete"
         danger: "#B42318", // only for urgent jobs
-        // Legacy tokens remapped to the cool/red palette so any unswept refs stay coherent.
-        obsidian: { DEFAULT: "#FAF9F7", 50: "#F5F5F7", 100: "#F5F5F7", 200: "#D8D4D1" },
-        electric: "#E0362C",
-        violet: { glow: "#E0362C" },
-        cyan: { glow: "#FF6961" },
-        gold: { soft: "#FF6961" },
+        // Legacy tokens remapped to the neutral/cobalt palette so any unswept refs stay coherent.
+        obsidian: { DEFAULT: "#ffffff", 50: "#F5F5F7", 100: "#F5F5F7", 200: "#e0e5ed" },
+        electric: "#2854df",
+        violet: { glow: "#2854df" },
+        cyan: { glow: "#6289ee" },
+        gold: { soft: "#6289ee" },
       },
       fontFamily: {
         // One text family. `display` is retained as a token (37 files use it)
@@ -156,7 +154,7 @@ const config: Config = {
       boxShadow: {
         // Warm-premium shadow scale (design system): no harsh black, no random sizes.
         card: "0 20px 60px rgba(29,29,31,0.07)", // soft card
-        glow: "0 12px 24px rgba(255,69,58,0.28)", // primary-button red glow
+        glow: "0 12px 24px rgba(40,84,223,0.28)", // primary-button red glow
         phone: "0 30px 90px rgba(29,29,31,0.18)", // demo phone
         "glow-violet": "0 16px 40px -20px rgba(25,23,22,0.18)",
         "glow-cyan": "0 16px 40px -20px rgba(25,23,22,0.16)",

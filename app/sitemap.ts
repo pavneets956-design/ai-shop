@@ -152,7 +152,7 @@ export function sitemapRoutes(): SitemapRoute[] {
         path: landingPath(g.type, it.slug),
         priority: g.priority,
         changeFrequency: "monthly",
-        lastModified: lastmodForType(g.type),
+        lastModified: it.updatedAt ?? lastmodForType(g.type),
         source: g.type,
       });
     }
