@@ -143,7 +143,7 @@ export default function AboutPage() {
             <h3>PayNudge</h3>
             <p>
               My invoice follow-up product, built to send reminders and stop the
-              sequence when a customer pays.
+              sequence when payment is recorded. Connected invoices update after a successful sync.
             </p>
             <a
               href="https://paynudge.xyz"
