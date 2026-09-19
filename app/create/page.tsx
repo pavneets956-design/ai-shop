@@ -1,40 +1,33 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import GlowBackground from "@/components/GlowBackground";
 import BuildRequestForm from "@/components/BuildRequestForm";
-import Reveal from "@/components/Reveal";
-
 export const metadata: Metadata = {
-  title: "Start a Build — Request Your Custom AI System",
+  title: "Start a Project — Websites, Apps & AI Systems",
   description:
-    "Four questions, then a real reply with a plan and a quote within one business day. Custom AI apps, agents, automations and business tools from Handbuilt.",
+    "Tell Pavneet about your website, app or AI project. Four short questions, then a personal reply within one business day. Independent builder in Surrey, BC.",
   alternates: { canonical: "/create" },
 };
-
 export default function CreatePage() {
   return (
-    <section className="relative overflow-hidden pb-24 pt-32">
-      <GlowBackground variant="subtle" />
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="mb-10 text-center">
-          <Reveal>
-            <span className="eyebrow">Start a build</span>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-              Tell us what you want to build
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-ink">
-              Four questions — about a minute. You&apos;ll get a real reply from a real person
-              with a plan and a quote within one business day. No obligation, no automated
-              follow-up sequence.
-            </p>
-          </Reveal>
-        </div>
-
-        <Suspense fallback={<div className="h-96 animate-pulse rounded-3xl border border-ink/10 bg-ink/[0.02]" />}>
+    <section className="studio-container pb-24">
+      <div className="studio-page-hero">
+        <p className="studio-eyebrow">Start a conversation</p>
+        <h1>
+          Tell me what
+          <br />
+          <span>you’d like to build.</span>
+        </h1>
+        <p>
+          Four questions. A rough idea is enough. I’ll reply within one business
+          day to work through the scope and next steps with you.
+        </p>
+      </div>
+      <div className="mx-auto max-w-3xl">
+        <Suspense
+          fallback={
+            <div className="h-96 animate-pulse rounded-xl border border-ink/10 bg-ink/[0.02]" />
+          }
+        >
           <BuildRequestForm />
         </Suspense>
       </div>

@@ -90,7 +90,7 @@ export const REGISTRY_LASTMOD: Record<string, string> = {
 
 /** Last real change to each hand-routed page file. */
 export const STATIC_LASTMOD: Record<string, string> = {
-  "": "2026-08-30",
+  "": "2026-09-18",
   "/services": "2026-07-06",
   "/industries": "2026-07-06",
   "/locations": "2026-07-06",
@@ -99,12 +99,12 @@ export const STATIC_LASTMOD: Record<string, string> = {
   "/resources": "2026-06-14",
   "/how-to": "2026-06-14",
   "/compare": "2026-06-14",
-  "/pricing": "2026-08-30",
+  "/pricing": "2026-09-18",
   "/shop": "2026-08-30",
   "/tools": "2026-07-15",
-  "/faq": "2026-08-30",
-  "/about": "2026-08-30",
-  "/create": "2026-08-30",
+  "/faq": "2026-09-18",
+  "/about": "2026-09-18",
+  "/create": "2026-09-18",
   "/privacy": "2026-08-30",
   "/terms": "2026-08-30",
   "/creators": "2026-07-06",

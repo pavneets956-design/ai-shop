@@ -54,6 +54,9 @@ const nextConfig = {
   },
   async redirects() {
     const base = [
+      // Obsolete demo URLs still reported as 404s in Search Console.
+      { source: '/demo/follow-up', destination: '/demo/lead', permanent: true },
+      { source: '/demo/ai-receptionist', destination: '/demo/assistant', permanent: true },
       // ---------------------------------------------------------------------
       // /products — was a Server Component `redirect("/solutions")` inside
       // app/products/page.tsx. On production that answered **307 with NO

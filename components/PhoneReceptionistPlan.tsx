@@ -1,78 +1,60 @@
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
-import { packagePriceLabel } from "@/lib/data/packages";
-
-/**
- * AI Phone Receptionist — the SEPARATE plan (Phase C). Distinct from text-only
- * Tools Pro: this answers real phone calls (Twilio), so it carries setup +
- * monthly + usage. Numbers are the real anchors — the Starter setup floor and
- * the Care Plan ($250/mo) — and call minutes are passed through at provider
- * cost (no invented per-minute rate, no markup), with a spend cap you set.
- * Setup tracks packages[0].price so it cannot drift below the published
- * Starter/AI Receptionist Install floor (it had drifted to $1,000).
- */
-
-const rows: { k: string; v: string }[] = [
-  { k: "Setup", v: `${packagePriceLabel("starter").toLowerCase()} one-time` },
-  { k: "Monthly", v: "from $250 / mo" },
-  { k: "Phone number", v: "Your own dedicated line, included" },
-  { k: "Call minutes", v: "Billed at provider (Twilio) cost — no markup" },
-  { k: "Overage", v: "Pay-as-you-go at cost" },
-  { k: "Hard cap", v: "Set a monthly spend cap — calls roll to voicemail/booking past it" },
-];
-
-const includes = [
-  "Answers calls 24/7 in your business's voice",
-  "Books jobs, captures leads, routes urgent calls",
-  "Texts the caller a confirmation / booking link",
-  "Sends you a summary of every call",
-];
-
+import { packagePriceLabel, phonePlan } from "@/lib/data/packages";
 export default function PhoneReceptionistPlan() {
+  const rows = [
+    { k: "Setup", v: packagePriceLabel("starter") + " CAD one-time" },
+    { k: "Monthly service", v: "From $" + phonePlan.monthly + " CAD / month" },
+    { k: "Provider usage", v: "Phone and AI usage charged separately" },
+    { k: "Limits & fallback", v: "Agreed and tested as part of your scope" },
+  ];
   return (
-    <div className="glass-card spec-frame flex h-full flex-col p-7 sm:p-8">
-      <div className="flex items-center gap-2.5">
-        <span className="grid h-9 w-9 flex-none place-items-center rounded-xl border border-line bg-paper-2 text-ink">
-          <Phone className="h-[18px] w-[18px]" />
-        </span>
-        <div>
-          <h3 className="font-display text-2xl font-semibold text-ink">AI Phone Receptionist</h3>
-          <p className="text-sm text-ink-soft">Live call answering — its own plan, with setup + minutes.</p>
-        </div>
-      </div>
-
-      <div className="mt-6 rounded-2xl border border-line bg-paper-2/50">
-        <dl className="divide-y divide-line">
-          {rows.map((r) => (
-            <div key={r.k} className="flex items-start justify-between gap-4 px-4 py-2.5">
-              <dt className="text-sm font-semibold text-ink">{r.k}</dt>
-              <dd className="max-w-[62%] text-right text-sm text-ink/65">{r.v}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-
-      <ul className="mt-6 flex-1 space-y-3">
-        {includes.map((f) => (
-          <li key={f} className="flex items-start gap-3 text-[15px] text-ink/80">
-            <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-ink text-white">
-              <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
-            </span>
-            {f}
+    <article className="glass-card flex h-full flex-col p-7 sm:p-8">
+      <Phone className="mb-4 h-7 w-7 text-electric" aria-hidden="true" />
+      <h3 className="text-2xl font-semibold text-ink">AI Phone Receptionist</h3>
+      <p className="mt-2 text-sm text-ink-soft">
+        A call flow built around your business, with a clear route back to a
+        person.
+      </p>
+      <dl className="mt-6 divide-y divide-line rounded-xl border border-line">
+        {rows.map((r) => (
+          <div
+            key={r.k}
+            className="flex items-start justify-between gap-4 px-4 py-3"
+          >
+            <dt className="text-sm font-semibold text-ink">{r.k}</dt>
+            <dd className="max-w-[60%] text-right text-sm text-ink-soft">
+              {r.v}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <ul className="mt-6 space-y-3">
+        {[
+          "Capture caller details and the reason for their call",
+          "Answer agreed questions from your business information",
+          "Route enquiries and send summaries through supported integrations",
+          "Test normal calls, unclear requests and human handover",
+        ].map((x) => (
+          <li className="flex gap-3 text-sm text-ink-soft" key={x}>
+            <Check
+              className="h-4 w-4 shrink-0 text-electric"
+              aria-hidden="true"
+            />
+            {x}
           </li>
         ))}
       </ul>
-
-      <p className="mt-5 text-xs text-ink-soft">
-        Twilio passthrough means you only pay for what you use. Exact setup is scoped on a quick call —
-        no surprise minute charges, ever.
+      <p className="mt-6 text-xs text-ink-soft">
+        {phonePlan.usage} Booking and text-message integrations depend on your
+        accounts and agreed scope.
       </p>
       <Link
-        href="/create?goal=AI%20Phone%20Receptionist%20%E2%80%94%20answer%20and%20book%20calls"
-        className="btn-primary mt-5 w-full"
+        href="/create?goal=AI%20Phone%20Receptionist"
+        className="studio-button mt-6"
       >
-        Book a setup call
+        Discuss phone reception ↗
       </Link>
-    </div>
+    </article>
   );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
 import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
-import { formatNum } from "@/lib/format";
+
 
 // Featured card lift — neutral premium shadow (no orange glow).
 const accentRing: Record<string, string> = {
@@ -38,7 +38,6 @@ export default function ServicePackages({ showCarePlan = true }: { showCarePlan?
               </div>
               <p className="mt-1 text-xs text-ink-soft">
                 {p.timeline}
-                {p.priceTypical ? ` · most land around $${formatNum(p.priceTypical)}` : ""}
               </p>
 
               <p className="mt-4 text-sm text-ink-soft">

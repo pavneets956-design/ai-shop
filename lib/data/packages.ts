@@ -29,7 +29,7 @@ export const packages: ServicePackage[] = [
     forWho: "Best if you want to start with one focused win and test before scaling.",
     accent: "electric",
     includes: [
-      "One focused AI worker (receptionist, chatbot, quote intake, or review replies)",
+      "One focused AI worker (chatbot, quote intake, follow-up, or review replies)",
       "Trained on your services, pricing, hours & FAQs",
       "Connected to one channel (website, SMS, email, or WhatsApp)",
       "~5 business days to launch + 14 days of tweaks",
@@ -47,7 +47,7 @@ export const packages: ServicePackage[] = [
     timeline: "Live in 2–3 weeks",
     forWho: "Best for businesses losing money to slow replies and manual admin.",
     highlight: true,
-    badge: "Most popular",
+    badge: "Connected workflows",
     accent: "violet",
     includes: [
       "2–4 connected AI workers running as one system",
@@ -94,6 +94,12 @@ export const carePlan: CarePlan = {
     "Priority support (same/next business day)",
     "Monthly performance summary",
   ],
+};
+
+/** Existing phone-service price, centralised from PhoneReceptionistPlan. */
+export const phonePlan = {
+  monthly: 250,
+  usage: "Phone and AI provider usage is additional; estimates and limits are agreed before launch.",
 };
 
 const nf = new Intl.NumberFormat("en-CA");

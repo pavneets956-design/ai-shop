@@ -13,7 +13,7 @@ export default function GlowBackground({
       {/* faint neutral ink washes + a whisper of red — cool Molten Forge depth */}
       <div
         className="absolute left-1/2 top-[-12%] h-[55vh] w-[55vh] -translate-x-1/2 rounded-full blur-[130px]"
-        style={{ background: "radial-gradient(circle, rgba(255,69,58,0.05), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(40,84,223,0.035), transparent 70%)" }}
       />
       {variant !== "subtle" && (
         <>

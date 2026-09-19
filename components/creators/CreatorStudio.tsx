@@ -148,7 +148,7 @@ export default function CreatorStudio() {
             <Link
               href={CREATE_HREF}
               className="inline-flex h-9 items-center rounded-full px-4 text-[13px] font-bold text-white transition hover:brightness-110"
-              style={{ backgroundImage: "linear-gradient(180deg,#ff6961,#e0362c)" }}
+              style={{ backgroundImage: "linear-gradient(180deg,#5578ee,#2854df)" }}
             >
               Start a build
             </Link>
@@ -181,8 +181,8 @@ export default function CreatorStudio() {
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Link
               href={CREATE_HREF}
-              className="inline-flex h-[54px] items-center rounded-full px-7 text-[15px] font-bold text-white shadow-[0_16px_40px_-12px_rgba(255,69,58,0.55)] transition hover:-translate-y-0.5 hover:brightness-110"
-              style={{ backgroundImage: "linear-gradient(180deg,#ff6961,#e0362c)" }}
+              className="inline-flex h-[54px] items-center rounded-full px-7 text-[15px] font-bold text-white shadow-[0_16px_40px_-12px_rgba(40,84,223,0.55)] transition hover:-translate-y-0.5 hover:brightness-110"
+              style={{ backgroundImage: "linear-gradient(180deg,#5578ee,#2854df)" }}
             >
               Build my creator system
             </Link>
@@ -229,7 +229,7 @@ export default function CreatorStudio() {
         <div className="relative mt-10 overflow-hidden rounded-2xl border border-[color:var(--cr-border)] bg-[color:var(--cr-surface)]/60">
           {/* Playhead — the one moving element, sweeps across all tracks */}
           <div className="cr-playhead pointer-events-none absolute top-0 bottom-0 z-20 w-px bg-[color:var(--cr-red)]/70" aria-hidden>
-            <div className="absolute -left-[3px] top-0 h-1.5 w-1.5 rounded-full bg-[color:var(--cr-red)] shadow-[0_0_10px_2px_rgba(255,69,58,0.7)]" />
+            <div className="absolute -left-[3px] top-0 h-1.5 w-1.5 rounded-full bg-[color:var(--cr-red)] shadow-[0_0_10px_2px_rgba(40,84,223,0.7)]" />
           </div>
 
           {/* Ruler */}
@@ -381,8 +381,8 @@ export default function CreatorStudio() {
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <Link
               href={CREATE_HREF}
-              className="inline-flex h-[54px] items-center rounded-full px-8 text-[15px] font-bold text-white shadow-[0_16px_40px_-12px_rgba(255,69,58,0.55)] transition hover:-translate-y-0.5 hover:brightness-110"
-              style={{ backgroundImage: "linear-gradient(180deg,#ff6961,#e0362c)" }}
+              className="inline-flex h-[54px] items-center rounded-full px-8 text-[15px] font-bold text-white shadow-[0_16px_40px_-12px_rgba(40,84,223,0.55)] transition hover:-translate-y-0.5 hover:brightness-110"
+              style={{ backgroundImage: "linear-gradient(180deg,#5578ee,#2854df)" }}
             >
               Start with an audit
             </Link>

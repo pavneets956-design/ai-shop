@@ -2,9 +2,8 @@
 export const site = {
   name: "Handbuilt AI",
   legalName: "Handbuilt AI Studio",
-  tagline: "AI that works for your business — built by hand, not bought off a shelf.",
-  subTagline:
-    "Your personal AI studio. Custom apps, agents, and automations — built for what you actually do.",
+  tagline: "Websites, apps and AI systems, thoughtfully built with you.",
+  subTagline: "Your independent build studio. Websites, interactive experiences, apps and AI systems.",
   url: "https://aibuiltbyhand.com", // custom domain — bought 2026-06-14
   // Owner / local SEO (GEO). Every value here must be independently verifiable —
   // this object is the source for the sitewide schema identity.
@@ -64,36 +63,12 @@ export const site = {
   bookingUrl: "/create",
 };
 
-/**
- * Primary navigation (2026-08-01 rebuild).
- *
- * Labels are evidence-led — see research/search-demand/10-copy-language-recommendation.md:
- *  - "Free Tools" rather than "Tools": the "free" cluster is one of the largest measured.
- *  - "AI Receptionist" leads because it is 38.4% of first-party GSC impressions.
- *  - No "Proof" item: there is nothing honest to put behind it yet, and a nav
- *    link to an empty promise is worse than no link.
- *  - No "Get a Fit Check": "fit check" has zero search presence.
- *
- * Route safety: /demo, /shop, /creators and /ai-receptionist left the nav in
- * this pass. They are NOT orphaned — every one is linked from the footer.
- * /creators in particular currently ranks best on the site.
- */
+// Primary services and the project inquiry funnel. Older hubs remain linked in the footer.
 export const navLinks = [
-  { label: "AI Receptionist", href: "/ai-receptionist-for-contractors" },
+  { label: "Websites", href: "/web-design-development" },
+  { label: "Apps", href: "/custom-ai-app-development" },
+  { label: "AI systems", href: "/done-for-you-ai-automation" },
   { label: "Demo", href: "/demo" },
-  { label: "Free Tools", href: "/tools" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
 ] as const;
-
-/**
- * Changes 2026-08-30:
- *  + "Demo". The AI Worker Showroom is the strongest asset on the site and it
- *    was not reachable from the primary navigation of any page.
- *  + "About". The site claimed "one builder" without ever introducing him;
- *    the founder page is now the trust anchor, so it needs a permanent slot.
- *  − "How It Works" (`/#how-it-works`). A homepage anchor in the global header
- *    threw internal-page visitors back to the homepage.
- *  − "For Your Trade" (`/industries`). Still linked from the footer and from
- *    every industry page — it does not need to spend one of five header slots.
- */

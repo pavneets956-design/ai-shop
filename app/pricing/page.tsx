@@ -1,114 +1,107 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import GlowBackground from "@/components/GlowBackground";
 import ServicePackages from "@/components/ServicePackages";
 import PhoneReceptionistPlan from "@/components/PhoneReceptionistPlan";
-import FAQSection from "@/components/FAQSection";
-import SectionHeading from "@/components/SectionHeading";
-import Reveal from "@/components/Reveal";
-import MagneticButton from "@/components/MagneticButton";
 import JsonLd from "@/components/JsonLd";
 import { pricingPageFaqs } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Pricing — Custom AI Builds from $1,500 CAD",
+  title: "Pricing — Websites, Apps & AI Builds",
   description:
-    "Clear, fair pricing for custom AI. Starter AI Setup from $1,500 CAD, Business AI System from $3,500, Custom AI App from $10,000, plus an optional $99/mo AI Care Plan.",
+    "Fixed-scope AI builds from $1,500 CAD, business systems from $3,500 and custom apps from $10,000. Websites and 3D experiences quoted to your project.",
   alternates: { canonical: "/pricing" },
 };
-
-export default async function PricingPage() {
-  const pricingFaqs = pricingPageFaqs();
-
+export default function PricingPage() {
+  const faqs = pricingPageFaqs();
   return (
     <>
-      <JsonLd data={[...serviceSchema(), carePlanOffer(), faqSchema(pricingFaqs)]} />
-
-      <section className="relative overflow-hidden pb-12 pt-32">
-        <GlowBackground variant="hero" />
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <Reveal>
-            <span className="eyebrow">Pricing</span>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
-              Pricing that&apos;s easy to <span className="text-gradient-brand">say yes</span> to
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-soft">
-              Real prices in CAD — no &ldquo;contact us for everything.&rdquo; Start with one tool or
-              go all the way to a custom app you own. A part-time admin costs more every month than a
-              whole system costs once.
-            </p>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <p className="mx-auto mt-4 max-w-xl text-sm text-ink-soft">
-              Priced in CAD — often cheaper than US rates. USD, AUD &amp; NZD invoicing on request.
-              Built remotely for small businesses across Canada, the US, Australia &amp; New Zealand.{" "}
-              <Link href="/remote-ai-development" className="text-ink/70 underline underline-offset-2 hover:text-ink">
-                How remote builds work
-              </Link>
-              .
-            </p>
-          </Reveal>
-        </div>
+      <JsonLd data={[...serviceSchema(), carePlanOffer(), faqSchema(faqs)]} />
+      <section className="studio-page-hero studio-container">
+        <p className="studio-eyebrow">Pricing & scope</p>
+        <h1>
+          A clear plan.
+          <br />
+          <span>A price agreed upfront.</span>
+        </h1>
+        <p>
+          Start with the thing you need most. We agree what it does, what it
+          costs and how we’ll know it works before the build starts.
+        </p>
       </section>
-
-      <section className="relative py-12 sm:py-16" aria-labelledby="packages-heading">
-        <div className="mx-auto max-w-7xl px-4">
-          {/* The package cards are h3s. Without this h2 the page jumped h1 → h3,
-              which axe reports as `heading-order` and which leaves a screen-reader
-              user with three unlabelled headings under no section at all. */}
-          <h2
-            id="packages-heading"
-            className="mb-10 text-center font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+      <section className="studio-page-section studio-container">
+        <div className="studio-section-heading">
+          <div>
+            <p className="studio-eyebrow">AI & software</p>
+            <h2>Three starting points.</h2>
+          </div>
+          <p>
+            Prices in CAD. These are starting scopes; your written quote sets
+            the final deliverables, timeline and any ongoing costs.
+          </p>
+        </div>
+        <ServicePackages />
+      </section>
+      <section className="studio-page-section studio-container">
+        <div className="studio-note-panel">
+          <div>
+            <p className="studio-eyebrow">Websites & interactive experiences</p>
+            <h2>Designed around your project.</h2>
+            <p>
+              A landing page, a complete website and a 3D experience have
+              different needs. Tell me about your pages, content, integrations
+              and interactions for a project-specific quote.
+            </p>
+          </div>
+          <Link
+            href="/create?goal=Website%20or%203D%20experience"
+            className="studio-button"
           >
-            Three ways to start
-          </h2>
-          <ServicePackages />
+            Discuss your website ↗
+          </Link>
         </div>
       </section>
-
-      {/* Also available — the AI Phone Receptionist plan (setup + minutes). */}
-      <section className="relative border-t border-ink/[0.06] py-12 sm:py-16">
-        <div className="mx-auto max-w-2xl px-4">
-          <SectionHeading eyebrow="Also available" title="AI Phone Receptionist" />
-          <div className="mt-10">
-            <PhoneReceptionistPlan />
+      <section className="studio-page-section studio-container">
+        <div className="studio-section-heading">
+          <div>
+            <p className="studio-eyebrow">A separate service</p>
+            <h2>Phone reception.</h2>
           </div>
+          <p>
+            Voice has its own setup, monthly service and provider usage. We
+            scope the call flow, handover and limits before launch. The website
+            demo is text only.
+          </p>
+        </div>
+        <div className="mx-auto max-w-2xl">
+          <PhoneReceptionistPlan />
         </div>
       </section>
-
-      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
-        <GlowBackground variant="subtle" />
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionHeading eyebrow="FAQ" title="Pricing & process questions" />
-          <div className="mt-12">
-            <FAQSection items={pricingFaqs} />
-          </div>
+      <section className="studio-section studio-faq studio-container">
+        <div>
+          <p className="studio-eyebrow">Before you decide</p>
+          <h2>Pricing questions.</h2>
+        </div>
+        <div>
+          {faqs.map((f) => (
+            <details key={f.q}>
+              <summary>
+                {f.q}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
-
-      <section className="relative py-20 text-center sm:py-24">
-        <div className="mx-auto max-w-3xl px-4">
-          <Reveal>
-            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Get a fixed quote, free
-            </h2>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-              Tell us what you want built and we&apos;ll send a clear plan and price within one
-              business day.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-8 flex justify-center">
-              <MagneticButton href="/create">Start a build</MagneticButton>
-            </div>
-          </Reveal>
+      <section className="studio-final">
+        <div className="studio-container">
+          <p className="studio-eyebrow">Start with a conversation</p>
+          <h2>What would you like to build?</h2>
+          <p>Send a short outline. I’ll reply within one business day.</p>
+          <Link href="/create" className="studio-button">
+            Tell me about your idea ↗
+          </Link>
         </div>
       </section>
     </>
