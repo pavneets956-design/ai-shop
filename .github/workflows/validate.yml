@@ -51,6 +51,7 @@ jobs:
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
           npx playwright test --workers=2 --reporter=list
+          npx playwright test tests/e2e/a11y.spec.ts --grep '/demo has' --repeat-each=3 --retries=0 --workers=2 --reporter=list
           node scripts/smoke.mjs http://127.0.0.1:3200
       - name: Server diagnostics on failure
         if: failure()

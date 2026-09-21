@@ -462,10 +462,12 @@ const Phone = forwardRef<
 
 function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
   const me = role === "user";
+  const reduce = useReducedMotion();
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      // Keep text at full contrast throughout its entrance, including hydration.
+      initial={reduce ? false : { y: 8, scale: 0.98 }}
+      animate={{ y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 420, damping: 32 }}
       className={`max-w-[86%] text-[12.5px] leading-relaxed ${me ? "self-end" : "self-start"}`}
     >
