@@ -144,7 +144,7 @@ describe("agent subsystem — kill switch (AGENT_SUBSYSTEM_ENABLED unset)", () =
       () =>
         import("@/app/api/agent/contacts/[id]/route").then((m) =>
           m.PUT(req("http://localhost/api/agent/contacts/abc", { method: "PUT", body: json({ status: "won" }) }) as never, {
-            params: { id: "abc" },
+            params: Promise.resolve({ id: "abc" }),
           }),
         ),
     ],
@@ -153,7 +153,7 @@ describe("agent subsystem — kill switch (AGENT_SUBSYSTEM_ENABLED unset)", () =
       () =>
         import("@/app/api/agent/contacts/[id]/route").then((m) =>
           m.DELETE(req("http://localhost/api/agent/contacts/abc", { method: "DELETE" }) as never, {
-            params: { id: "abc" },
+            params: Promise.resolve({ id: "abc" }),
           }),
         ),
     ],
@@ -308,7 +308,7 @@ describe("agent subsystem — owner auth (switch on)", () => {
         method: "PUT",
         body: json({ status: "won", id: "hijacked", createdAt: "1999-01-01", notAColumn: true }),
       }) as never,
-      { params: { id: "c1" } },
+      { params: Promise.resolve({ id: "c1" }) },
     );
 
     expect(contactDb.update).toHaveBeenCalledTimes(1);
@@ -325,7 +325,7 @@ describe("agent subsystem — owner auth (switch on)", () => {
     const { PUT } = await import("@/app/api/agent/contacts/[id]/route");
     const res = await PUT(
       req("http://localhost/api/agent/contacts/c1", { method: "PUT", body: json({ id: "hijacked" }) }) as never,
-      { params: { id: "c1" } },
+      { params: Promise.resolve({ id: "c1" }) },
     );
     expect(res.status).toBe(400);
     expect(contactDb.update).not.toHaveBeenCalled();

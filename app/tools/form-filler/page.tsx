@@ -1,16 +1,10 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-// The filler runs entirely in the browser (WASM OCR + PDF engine), so it must not SSR.
-const FormFiller = dynamic(() => import('../../../tools/form-filler-ca/ui/FormFiller'), {
-  ssr: false,
-  loading: () => <p className="px-4 py-10 font-mono text-sm text-teal-400">Loading the filler…</p>,
-});
+import FormFiller from '@/tools/form-filler-ca/ui/ClientFormFiller';
 
 export const metadata: Metadata = {
-  title: 'Super Visa Form Filler — fill IMM 5257 & IMM 5645 on your device | Handbuilt',
+  title: 'Super Visa Forms — IMM 5645 PDF & IMM 5257 answer sheet | Handbuilt',
   description:
-    'Fill your Canadian super visa forms (IMM 5257 + IMM 5645) from your passport automatically. 100% private — your documents are processed in your browser and never uploaded.',
+    'Prepare an IMM 5645 PDF and an IMM 5257 answer sheet from the details you enter. Your documents are processed in your browser and never uploaded. Review both outputs before use.',
   alternates: { canonical: '/tools/form-filler' },
 };
 
@@ -21,7 +15,7 @@ export default function Page() {
         <div className="mx-auto max-w-4xl px-4 py-8">
           <p className="font-mono text-xs uppercase tracking-widest text-amber-400">Handbuilt · Form Filler</p>
           <h1 className="mt-2 text-2xl font-semibold text-slate-100 sm:text-3xl">
-            Canadian Super Visa — fill your forms without retyping
+            Prepare your Canadian Super Visa forms
           </h1>
           <p className="mt-2 max-w-2xl text-slate-400">
             Upload the applicant&apos;s passport, confirm the details, and download a filled

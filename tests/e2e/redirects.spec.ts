@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./safe-test";
 import nextConfigRaw from "../../next.config.js";
 
 /**

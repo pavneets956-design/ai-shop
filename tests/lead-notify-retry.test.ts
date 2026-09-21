@@ -15,7 +15,7 @@ import { describe, it, expect, vi, beforeEach, afterEach, type Mock } from "vite
 
 const { sendMock } = vi.hoisted(() => ({ sendMock: vi.fn() }));
 vi.mock("resend", () => ({
-  Resend: vi.fn().mockImplementation(() => ({ emails: { send: sendMock } })),
+  Resend: vi.fn().mockImplementation(function () { return { emails: { send: sendMock } }; }),
 }));
 
 vi.mock("@/lib/prisma", () => ({

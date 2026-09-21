@@ -1,0 +1,352 @@
+{
+  "project": "ai-shop",
+  "environment": "production",
+  "queriedOn": "2026-09-20 America/Vancouver",
+  "metrics": [
+    {
+      "name": "pageviews",
+      "summary": [
+        {
+          "vercel_analytics_pageview_count_sum": 100
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_pageview.count",
+        "aggregation": "sum",
+        "groupBy": [],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "days": 1
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "visitors",
+      "summary": [
+        {
+          "vercel_analytics_pageview_count_unique_visitor_id": 32
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_pageview.count",
+        "aggregation": "unique/visitor_id",
+        "groupBy": [],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "days": 1
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "paths",
+      "summary": [
+        {
+          "vercel_analytics_pageview_count_sum": 27,
+          "request_path": "/"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 7,
+          "request_path": "/create"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 7,
+          "request_path": "/demo"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 7,
+          "request_path": "/pricing"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 6,
+          "request_path": "/about"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 6,
+          "request_path": "/ai-receptionist"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 5,
+          "request_path": "/start"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 4,
+          "request_path": "/admin/leads"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 4,
+          "request_path": "/ai-automation-agency"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 4,
+          "request_path": "/locations/ai-automation-agency-surrey-bc"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 3,
+          "request_path": "/ai-receptionist-for-contractors"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 3,
+          "request_path": "/industries"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 3,
+          "request_path": "/locations/surrey"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 2,
+          "request_path": "/login"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 2,
+          "request_path": "/shop"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/compare/ai-receptionist-pricing-canada"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/compare/ai-receptionist-vs-virtual-receptionist"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/custom-ai-app-development"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/locations"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/locations/ai-automation-delta-bc"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/locations/ai-automation-maple-ridge-bc"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/locations/ai-receptionist-surrey-bc"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/resources/best-ai-tools-for-contractors"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/services/ai-quote-generator"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "request_path": "/tools"
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_pageview.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "request_path"
+        ],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "device_type",
+      "summary": [
+        {
+          "vercel_analytics_pageview_count_sum": 78,
+          "device_type": "desktop"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 22,
+          "device_type": "mobile"
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_pageview.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "device_type"
+        ],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "referrer_hostname",
+      "summary": [
+        {
+          "vercel_analytics_pageview_count_sum": 94,
+          "referrer_hostname": ""
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 2,
+          "referrer_hostname": "accounts.google.com"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 2,
+          "referrer_hostname": "chatgpt.com"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "referrer_hostname": "bing.com"
+        },
+        {
+          "vercel_analytics_pageview_count_sum": 1,
+          "referrer_hostname": "google.com"
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_pageview.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "referrer_hostname"
+        ],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "events",
+      "summary": [
+        {
+          "vercel_analytics_event_count_sum": 1,
+          "event_name": "demo_completed"
+        },
+        {
+          "vercel_analytics_event_count_sum": 1,
+          "event_name": "demo_prompt_used"
+        },
+        {
+          "vercel_analytics_event_count_sum": 1,
+          "event_name": "demo_started"
+        },
+        {
+          "vercel_analytics_event_count_sum": 1,
+          "event_name": "form_started"
+        },
+        {
+          "vercel_analytics_event_count_sum": 1,
+          "event_name": "form_submitted"
+        }
+      ],
+      "query": {
+        "metric": "vercel.analytics_event.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "event_name"
+        ],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "function-status",
+      "summary": [
+        {
+          "vercel_function_invocation_count_sum": 169,
+          "http_status": "200"
+        },
+        {
+          "vercel_function_invocation_count_sum": 3,
+          "http_status": "503"
+        },
+        {
+          "vercel_function_invocation_count_sum": 1,
+          "http_status": "401"
+        }
+      ],
+      "query": {
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "http_status"
+        ],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-09-14T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "errors",
+      "summary": [
+        {
+          "route": "/api/indexnow",
+          "vercel_function_invocation_count_sum": 3,
+          "error_code": ""
+        }
+      ],
+      "query": {
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "sum",
+        "groupBy": [
+          "route",
+          "error_code"
+        ],
+        "filter": "(http_status ge 500) and (environment eq 'production')",
+        "startTime": "2026-09-14T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    },
+    {
+      "name": "speed",
+      "summary": [],
+      "query": {
+        "metric": "vercel.speed_insights.lcp_ms",
+        "aggregation": "p75",
+        "groupBy": [],
+        "filter": "environment eq 'production'",
+        "startTime": "2026-08-24T00:00:00Z",
+        "endTime": "2026-09-21T00:00:00Z",
+        "granularity": {
+          "hours": 4
+        },
+        "orderBy": "count",
+        "orderDirection": "desc"
+      }
+    }
+  ]
+}

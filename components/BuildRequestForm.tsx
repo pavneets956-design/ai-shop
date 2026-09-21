@@ -178,7 +178,7 @@ export default function BuildRequestForm() {
         : "That doesn't look like an email or a phone number.";
     }
     if (!form.business.trim()) e.business = "What's the business called, or what do you do?";
-    if (!form.goal.trim()) e.goal = "Tell us what you'd like the AI to take off your plate.";
+    if (!form.goal.trim()) e.goal = "Tell us what you'd like to build or improve.";
     return e;
   }
 
@@ -215,8 +215,11 @@ export default function BuildRequestForm() {
     const kind = classifyContact(form.contact);
     const intakeLabels = trade ? intakeToLabels(trade, intake) : {};
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 30_000);
     try {
       const res = await fetch("/api/build-request", {
+        signal: controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -359,10 +362,14 @@ export default function BuildRequestForm() {
         kind: "error",
         variant: "network",
         message:
-          "We couldn't reach the server. Check your connection and try again — everything you typed is still here.",
+          controller.signal.aborted
+            ? "The server took too long to reply. Your request may have arrived. Try again — duplicate requests are recognised, and everything you typed is still here."
+            : "We couldn't reach the server. Check your connection and try again — everything you typed is still here.",
       });
       setStatus("error");
       trackEvent("form_submitted", { form: "build_request", result: "error", status: 0 });
+    } finally {
+      window.clearTimeout(timeout);
     }
   };
 
@@ -579,9 +586,9 @@ export default function BuildRequestForm() {
 
                 <Field
                   id="br-goal"
-                  label="What are you trying to automate?"
+                  label="What would you like to build?"
                   required
-                  hint="Plain words are fine — the problem, not the solution."
+                  hint="A rough idea, an example you like, or a problem to solve is enough."
                   error={errors.goal}
                 >
                   {(p) => (

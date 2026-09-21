@@ -10,14 +10,14 @@ export function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const c = getComparison(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const c = getComparison((await params).slug);
   if (!c) return { title: "Comparison not found" };
   return landingMetadata("compare", c);
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const c = getComparison(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const c = getComparison((await params).slug);
   if (!c) notFound();
   return <LandingTemplate type="compare" content={c} />;
 }

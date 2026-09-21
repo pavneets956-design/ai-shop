@@ -6,7 +6,7 @@
 
 **Handbuilt AI** — the marketing and lead-generation site at https://aibuiltbyhand.com for a one-person AI studio in Surrey, BC. It sells done-for-you AI receptionists, automations and custom builds to trades and small businesses, runs a suite of free browser calculators, and captures enquiries through one form. It is not a marketplace, not a SaaS product, and has no dashboard a customer logs into.
 
-Next.js 14 App Router · TypeScript · Tailwind · Prisma → Neon Postgres · Resend · OpenAI · NextAuth (Google) · Vercel Web Analytics · Vitest · Playwright.
+Next.js 15 App Router · TypeScript · Tailwind · Prisma → Neon Postgres · Resend · OpenAI · NextAuth (Google) · Vercel Web Analytics · Vitest · Playwright.
 
 `ROUTES.md` and the other guides in `docs/archive/` describe a marketplace era that no longer exists. Do not cite them.
 

@@ -7,7 +7,7 @@ import { defineConfig, devices } from "@playwright/test";
  * The build + `next start` are the integrator's gate (port 3200), and a second
  * process racing for that port produces confusing failures. Start it yourself:
  *
- *     npm run build                 # prisma migrate deploy && next build
+ *     npx next build                # compile only; do not run database migrations
  *     npx next start -p 3200        # leave running in another terminal
  *     npm run test:e2e              # this suite
  *

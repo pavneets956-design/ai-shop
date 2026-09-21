@@ -32,7 +32,7 @@ export default async function globalSetup(config: FullConfig) {
       ``,
       `The e2e suite runs against a build the integrator starts. In another terminal:`,
       ``,
-      `    npm run build`,
+      `    npx next build`,
       `    npx next start -p 3200`,
       ``,
       `Then re-run: npm run test:e2e`,

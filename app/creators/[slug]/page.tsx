@@ -10,14 +10,14 @@ export function generateStaticParams() {
   return creators.map((c) => ({ slug: c.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const c = getCreator(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const c = getCreator((await params).slug);
   if (!c) return { title: "Page not found" };
   return landingMetadata("creators", c);
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const c = getCreator(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const c = getCreator((await params).slug);
   if (!c) notFound();
   return <LandingTemplate type="creators" content={c} />;
 }

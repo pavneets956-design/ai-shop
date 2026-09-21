@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./safe-test";
 import AxeBuilder from "@axe-core/playwright";
 
 /**
@@ -34,7 +34,10 @@ for (const path of PAGES) {
       id: v.id,
       impact: v.impact,
       help: v.help,
-      nodes: v.nodes.slice(0, 3).map((n) => n.target.join(" ")),
+      nodes: v.nodes.slice(0, 3).map((n) => ({
+        target: n.target.join(" "),
+        reason: n.failureSummary,
+      })),
     }));
 
     expect(report, `serious/critical a11y violations on ${path}`).toEqual([]);

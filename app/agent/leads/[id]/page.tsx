@@ -58,7 +58,7 @@ Agent: My pleasure! Have a great day!`,
   revenue: null,
 };
 
-export default function LeadDetailPage({ params }: { params: { id: string } }) {
+export default function LeadDetailPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "calls" | "notes">("overview");
   const lead = mockLead; // In production, fetch by params.id
 

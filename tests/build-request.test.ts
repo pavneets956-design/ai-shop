@@ -5,7 +5,7 @@ import { describe, it, expect, vi, beforeEach, afterEach, type Mock } from "vite
 // factory can reference it.
 const { sendMock } = vi.hoisted(() => ({ sendMock: vi.fn() }));
 vi.mock("resend", () => ({
-  Resend: vi.fn().mockImplementation(() => ({ emails: { send: sendMock } })),
+  Resend: vi.fn().mockImplementation(function () { return { emails: { send: sendMock } }; }),
 }));
 
 // Durable store — the route imports `{ prisma }` from "@/lib/prisma".

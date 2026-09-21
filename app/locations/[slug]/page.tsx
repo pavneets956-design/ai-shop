@@ -10,14 +10,14 @@ export function generateStaticParams() {
   return locations.map((l) => ({ slug: l.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const c = getLocation(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const c = getLocation((await params).slug);
   if (!c) return { title: "Location not found" };
   return landingMetadata("location", c);
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const c = getLocation(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const c = getLocation((await params).slug);
   if (!c) notFound();
   return <LandingTemplate type="location" content={c} />;
 }

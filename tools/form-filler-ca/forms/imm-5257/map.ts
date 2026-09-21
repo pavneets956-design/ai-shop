@@ -1,14 +1,9 @@
 // IMM 5257 (Application for a Temporary Resident Visa) — guided map.
 //
 // IMM 5257 is an XFA "dynamic" form: its field layer renders only in Adobe, so no
-// browser library can reliably WRITE it. Rather than risk a silently-wrong write to
-// a real visa application, the free tier produces a GUIDED value sheet — every answer
-// the form asks for, pre-computed from the passport + applicant data and clearly
-// labelled — so the user fills the official 5257 in free Adobe Reader in a couple of
-// minutes instead of researching each field cold.
-//
-// One-click 5257 auto-fill (writing the XFA datasets) is the Pro/server tier, which
-// uses an Adobe-grade engine that can read the XFA schema.
+// this tool does not write its PDF directly. It produces an answer sheet from
+// entered passport/applicant details for copying into the official form in Adobe
+// Reader. Unanswered questions still need completion. No Pro XFA engine is built.
 
 import type { ApplicantFile, FieldValue } from '../../engine/types';
 

@@ -13,10 +13,7 @@ export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(__dirname) },
   },
-  // `tests/admin-leads-authorization.test.ts` imports the /admin/leads server
-  // component to pin the order of authorisation and query. esbuild's default is
-  // the classic JSX runtime, which needs `React` in scope — Next uses the
-  // automatic runtime and never imports it. Without this, importing any TSX
-  // file into a test throws "React is not defined" at the first `return (`.
-  esbuild: { jsx: "automatic" },
+  // Transform TSX imports in server-component tests with the automatic runtime.
+  // Vite 8 uses Oxc; Next's tsconfig keeps JSX for its own compiler.
+  oxc: { jsx: { runtime: "automatic" } },
 });

@@ -19,8 +19,8 @@ export function generateStaticParams() {
   return useCases.map((u) => ({ slug: u.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const uc = getUseCase(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const uc = getUseCase((await params).slug);
   if (!uc) return { title: "Use case not found" };
   return {
     title: `${uc.solution} for ${uc.industry}`,
@@ -42,8 +42,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function UseCasePage({ params }: { params: { slug: string } }) {
-  const uc = getUseCase(params.slug);
+export default async function UseCasePage({ params }: { params: Promise<{ slug: string }> }) {
+  const uc = getUseCase((await params).slug);
   if (!uc) notFound();
 
   const pkg = getPackage(uc.packageId)!;
