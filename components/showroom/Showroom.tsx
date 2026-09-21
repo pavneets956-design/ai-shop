@@ -508,6 +508,7 @@ function OutcomePanel(props: {
   atLimit: boolean; onSuggest: (s: string) => void; createHref: string;
 }) {
   const { captured, leadSummary, nextActions, events, suggested, cta, atLimit, onSuggest, createHref } = props;
+  const reduce = useReducedMotion();
   const high = captured?.urgency?.toLowerCase().includes("high");
   const fields: [string, string | null][] = captured ? [
     ["Name", captured.name],
@@ -586,9 +587,8 @@ function OutcomePanel(props: {
               <motion.div
                 key={e.id}
                 layout
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0 }}
+                initial={reduce ? false : { x: 24 }}
+                animate={{ x: 0 }}
                 transition={spring}
                 className="flex items-center gap-2.5 rounded-card-sm border border-line bg-paper-2 px-3 py-2 text-[12px] text-ink"
               >
@@ -621,7 +621,7 @@ function OutcomePanel(props: {
       <AnimatePresence>
         {(cta.show || atLimit) && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={spring}
+            initial={reduce ? false : { y: 12 }} animate={{ y: 0 }} transition={spring}
             className="rounded-card border border-ink bg-ink p-5 text-white shadow-card"
           >
             <div className="flex items-center gap-2 text-[13px] font-semibold">
