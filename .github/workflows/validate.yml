@@ -1,0 +1,55 @@
+name: Validate studio
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studio-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # Standard runners are free for this public repository. No stored artifacts
+    # or caches, and no production secrets or deployment credentials are used.
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
+      E2E_BASE_URL: http://127.0.0.1:3200
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install exact dependencies and generate local Prisma client
+        run: |
+          npx --yes npm@11 ci --ignore-scripts
+          npx prisma generate
+      - name: Audit dependencies
+        run: npm audit --audit-level=low
+      - name: Unit tests
+        run: npx vitest run
+      - name: Compile without database migrations
+        run: |
+          npx next build
+          npx tsc --noEmit
+      - name: Install test browsers
+        run: npx playwright install --with-deps chromium webkit
+      - name: Browser regression suite and local smoke
+        run: |
+          npx next start --hostname 127.0.0.1 --port 3200 > /tmp/studio-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          npx playwright test --workers=2 --reporter=list
+          node scripts/smoke.mjs http://127.0.0.1:3200
+      - name: Server diagnostics on failure
+        if: failure()
+        run: test ! -f /tmp/studio-server.log || tail -n 80 /tmp/studio-server.log
