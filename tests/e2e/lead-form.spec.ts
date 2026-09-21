@@ -157,3 +157,25 @@ test.describe("/create build request form", () => {
     await expect(pot).not.toBeVisible();
   });
 });
+
+test("a stalled request recovers with input retained and a working retry", async ({ page }) => {
+  let attempts = 0;
+  await page.route("**/api/build-request", async (route) => {
+    attempts++;
+    if (attempts === 1) return; // No server response: browser must time out.
+    await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, delivery: { persisted: true }, deduped: true }) });
+  });
+  await page.goto("/create");
+  await expect(page.getByLabel(/What would you like to build/)).toBeVisible();
+  await fillStepOne(page);
+  await page.clock.install();
+  await submit(page).click();
+  await expect(page.getByRole("button", { name: "Sending…", exact: true })).toBeDisabled();
+  await page.clock.runFor(30_100);
+  await expect(page.getByText(/server took too long to reply/)).toBeVisible();
+  await expect(page.locator("#br-name")).toHaveValue("Pat Reynolds");
+  await expect(submit(page)).toBeEnabled();
+  await submit(page).click();
+  await expect(page.getByRole("heading", { name: "Already received." })).toBeVisible();
+  expect(attempts).toBe(2);
+});

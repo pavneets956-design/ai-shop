@@ -1,3 +1,4 @@
+import { readJsonObject, RequestJsonError } from "@/lib/requestJson";
 import { NextResponse } from "next/server";
 import { getOpenAI, modelFor, DEMO_SAFETY, DEMO_REFUSAL, looksLikeInjection } from "@/lib/ai/core";
 import {
@@ -61,9 +62,10 @@ function refusal(): DemoResponse {
 export async function POST(req: Request) {
   let body: { workerId?: string; industryId?: string; messages?: ChatMessage[] };
   try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    body = await readJsonObject(req) as typeof body;
+  } catch (error) {
+    const status = error instanceof RequestJsonError ? error.status : 400;
+    return NextResponse.json({ error: status === 413 ? "Request is too large" : "Invalid request" }, { status });
   }
 
   const worker = workerById((body.workerId as WorkerId) ?? "receptionist");

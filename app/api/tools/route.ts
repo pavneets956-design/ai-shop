@@ -1,3 +1,4 @@
+import { readJsonObject, RequestJsonError } from "@/lib/requestJson";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { modelFor } from "@/lib/ai/core";
@@ -219,9 +220,10 @@ export async function POST(req: Request) {
 
   let body: { kind?: string; fields?: Record<string, string> };
   try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+    body = await readJsonObject(req) as typeof body;
+  } catch (error) {
+    const status = error instanceof RequestJsonError ? error.status : 400;
+    return NextResponse.json({ error: status === 413 ? "Request is too large" : "Invalid request" }, { status });
   }
 
   const kind = body.kind as Kind;
