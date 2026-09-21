@@ -1,11 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-// The filler runs entirely in the browser (WASM OCR + PDF engine), so it must not SSR.
-const FormFiller = dynamic(() => import('../../../tools/form-filler-ca/ui/FormFiller'), {
-  ssr: false,
-  loading: () => <p className="px-4 py-10 font-mono text-sm text-teal-400">Loading the filler…</p>,
-});
+import FormFiller from '@/tools/form-filler-ca/ui/ClientFormFiller';
 
 export const metadata: Metadata = {
   title: 'Super Visa Form Filler — fill IMM 5257 & IMM 5645 on your device | Handbuilt',

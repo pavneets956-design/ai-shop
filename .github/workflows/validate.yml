@@ -35,8 +35,10 @@ jobs:
           npx prisma generate
       - name: Audit dependencies
         run: npm audit --audit-level=low
-      - name: Unit tests
-        run: npx vitest run
+      - name: Unit tests and PDF round-trip
+        run: |
+          npx vitest run
+          node tools/form-filler-ca/__tests__/verify.mjs
       - name: Compile without database migrations
         run: |
           npx next build
