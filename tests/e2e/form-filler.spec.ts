@@ -1,5 +1,4 @@
 import { test, expect } from "./safe-test";
-import * as mupdf from "mupdf";
 
 test("form filler loads its browser-only engine and supports manual entry", async ({ page }) => {
   const errors: string[] = [];
@@ -22,7 +21,8 @@ test("form filler loads its browser-only engine and supports manual entry", asyn
   for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
   // The official template retains its encryption flag; MuPDF handles this
   // supported form without stripping it or weakening the download assertion.
-  const pdf = mupdf.PDFDocument.openDocument(new Uint8Array(Buffer.concat(chunks)), "application/pdf") as mupdf.PDFDocument;
+  const mupdf = await import("mupdf");
+  const pdf = mupdf.PDFDocument.openDocument(new Uint8Array(Buffer.concat(chunks)), "application/pdf") as import("mupdf").PDFDocument;
   const values: string[] = [];
   for (let p = 0; p < pdf.countPages(); p++) {
     for (const widget of pdf.loadPage(p).getWidgets()) {
