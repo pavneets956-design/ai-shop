@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./safe-test";
 
 /**
  * No console errors, no failed same-origin requests.

@@ -3,6 +3,11 @@ name: Validate studio
 on:
   pull_request:
   workflow_dispatch:
+    inputs:
+      production:
+        description: 'Also verify the deployed production UI with outbound submissions intercepted'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -28,7 +33,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
       - name: Install exact dependencies and generate local Prisma client
         run: |
           npx --yes npm@11 ci --ignore-scripts
@@ -56,3 +61,12 @@ jobs:
       - name: Server diagnostics on failure
         if: failure()
         run: test ! -f /tmp/studio-server.log || tail -n 80 /tmp/studio-server.log
+      - name: Verify deployed production UI and smoke
+        if: ${{ inputs.production }}
+        env:
+          E2E_BASE_URL: https://aibuiltbyhand.com
+          E2E_PRODUCTION_CHECK: '1'
+        run: |
+          npx playwright test --workers=2 --retries=0 --reporter=list
+          npx playwright test tests/e2e/a11y.spec.ts --grep '/demo has' --repeat-each=3 --retries=0 --workers=2 --reporter=list
+          node scripts/smoke.mjs https://aibuiltbyhand.com

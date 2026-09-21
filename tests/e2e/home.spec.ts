@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page } from "./safe-test";
 import { navLinks } from "../../lib/data/site";
 
 /**

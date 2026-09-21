@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./safe-test";
 test("interactive examples switch, and the 3D study responds to a keyboard", async ({
   page,
 }) => {

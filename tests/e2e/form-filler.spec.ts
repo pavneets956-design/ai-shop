@@ -1,4 +1,5 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./safe-test";
+import { PDFDocument, PDFTextField } from "pdf-lib";
 
 test("form filler loads its browser-only engine and supports manual entry", async ({ page }) => {
   const errors: string[] = [];
@@ -9,5 +10,19 @@ test("form filler loads its browser-only engine and supports manual entry", asyn
   await page.getByRole("button", { name: "Enter details manually", exact: true }).click();
   await expect(page.getByText("Applicant (the parent applying)", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "Fill my forms", exact: true })).toBeDisabled();
+  await page.getByLabel("Full name (SURNAME, Given)", { exact: true }).first().fill("EXAMPLE, Test Applicant");
+  await page.getByRole("button", { name: "Fill my forms", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Your forms are ready" })).toBeVisible();
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download filled PDF", exact: true }).click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("imm-5645-filled.pdf");
+  const stream = await download.createReadStream();
+  const chunks: Buffer[] = [];
+  for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
+  const pdf = await PDFDocument.load(Buffer.concat(chunks));
+  expect(pdf.getForm().getFields().some((field) =>
+    field instanceof PDFTextField && field.getText() === "EXAMPLE, Test Applicant"
+  )).toBe(true);
   expect(errors).toEqual([]);
 });
