@@ -1,5 +1,5 @@
 import { test, expect } from "./safe-test";
-import { PDFDocument, PDFTextField } from "pdf-lib";
+import * as mupdf from "mupdf";
 
 test("form filler loads its browser-only engine and supports manual entry", async ({ page }) => {
   const errors: string[] = [];
@@ -20,10 +20,17 @@ test("form filler loads its browser-only engine and supports manual entry", asyn
   const stream = await download.createReadStream();
   const chunks: Buffer[] = [];
   for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
-  const pdf = await PDFDocument.load(Buffer.concat(chunks));
-  expect(pdf.getForm().getFields().some((field) =>
-    field instanceof PDFTextField && field.getText() === "EXAMPLE, Test Applicant"
-  )).toBe(true);
+  // The official template retains its encryption flag; MuPDF handles this
+  // supported form without stripping it or weakening the download assertion.
+  const pdf = mupdf.PDFDocument.openDocument(new Uint8Array(Buffer.concat(chunks)), "application/pdf") as mupdf.PDFDocument;
+  const values: string[] = [];
+  for (let p = 0; p < pdf.countPages(); p++) {
+    for (const widget of pdf.loadPage(p).getWidgets()) {
+      if (widget.getName().endsWith("Applicant[0].AppName[0]")) values.push(widget.getValue());
+    }
+  }
+  expect(values).toEqual(["EXAMPLE, Test Applicant"]);
+  pdf.destroy();
   await expect(page.getByText(/This tool does not fill the IMM 5257 PDF directly/)).toBeVisible();
   await expect(page.getByRole("button", { name: "Download answer sheet", exact: true })).toBeVisible();
   expect(errors).toEqual([]);
