@@ -100,6 +100,8 @@ export default function GlobalError({
             >
               Try again
             </button>
+            {/* A root-layout failure needs a full document reload, not the failed router. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
               href="/"
               style={{
