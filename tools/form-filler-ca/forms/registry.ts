@@ -25,7 +25,7 @@ export const FORMS: RegisteredForm[] = [
     templateUrl: '/form-templates/imm-5645.pdf',
     map: mapImm5645,
     superVisaRequired: true,
-    delivery: 'Filled automatically. Download the completed PDF, ready to print and sign.',
+    delivery: 'Download the PDF with the details you entered, then review it and complete any missing information.',
   },
   {
     id: 'imm-5257',
@@ -34,7 +34,7 @@ export const FORMS: RegisteredForm[] = [
     map: mapImm5257,
     superVisaRequired: true,
     delivery:
-      'Guided fill: every answer is pre-computed for you. Open the official form in free Adobe Reader and copy each value across (about 2 minutes). One-click auto-fill is on the Pro plan.',
+      'Download an answer sheet based on the details you entered. Copy the values into the official IMM 5257 form in Adobe Reader, review them and complete any remaining questions. This tool does not fill the IMM 5257 PDF directly.',
   },
 ];
 

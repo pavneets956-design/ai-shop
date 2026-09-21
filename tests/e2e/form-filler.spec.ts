@@ -24,5 +24,7 @@ test("form filler loads its browser-only engine and supports manual entry", asyn
   expect(pdf.getForm().getFields().some((field) =>
     field instanceof PDFTextField && field.getText() === "EXAMPLE, Test Applicant"
   )).toBe(true);
+  await expect(page.getByText(/This tool does not fill the IMM 5257 PDF directly/)).toBeVisible();
+  await expect(page.getByRole("button", { name: "Download answer sheet", exact: true })).toBeVisible();
   expect(errors).toEqual([]);
 });
