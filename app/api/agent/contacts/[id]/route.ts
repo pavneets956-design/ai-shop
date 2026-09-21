@@ -5,14 +5,14 @@ import { guardAgentApi } from "@/lib/agent/guard";
 // DELETE - Delete a contact
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   // Owner-only + kill-switched. See lib/agent/guard.ts.
   const denied = await guardAgentApi();
   if (denied) return denied;
 
   try {
-    const { id } = params;
+    const { id } = await params;
 
     await prisma.contact.delete({
       where: { id },
@@ -31,14 +31,14 @@ export async function DELETE(
 // PUT - Update a contact
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   // Owner-only + kill-switched. See lib/agent/guard.ts.
   const denied = await guardAgentApi();
   if (denied) return denied;
 
   try {
-    const { id } = params;
+    const { id } = await params;
 
     let body: Record<string, unknown>;
     try {

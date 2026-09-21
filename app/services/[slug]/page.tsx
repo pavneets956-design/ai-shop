@@ -10,14 +10,14 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const c = getService(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const c = getService((await params).slug);
   if (!c) return { title: "Service not found" };
   return landingMetadata("service", c);
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const c = getService(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const c = getService((await params).slug);
   if (!c) notFound();
   return <LandingTemplate type="service" content={c} />;
 }

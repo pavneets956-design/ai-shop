@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 export default async function AccountPage({
   searchParams,
 }: {
-  searchParams: { checkout?: string };
+  searchParams: Promise<{ checkout?: string }>;
 }) {
   const sub = await getSubStatus();
   if (!sub.authed) redirect("/login");
 
   // Just paid but the subscription record hasn't synced yet — show a finalizing
   // state that auto-refreshes until the webhook lands.
-  const finalizing = searchParams.checkout === "success" && !sub.subscribed;
+  const finalizing = (await searchParams).checkout === "success" && !sub.subscribed;
 
   const runs = sub.userId
     ? await prisma.toolRun
