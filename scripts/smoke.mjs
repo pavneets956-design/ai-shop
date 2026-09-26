@@ -49,6 +49,7 @@ async function get(path, { redirect = "follow" } = {}) {
     method: "GET",
     redirect,
     headers: { "user-agent": "handbuilt-smoke/1.0 (read-only)" },
+    signal: AbortSignal.timeout(20_000),
   });
   return res;
 }
@@ -383,6 +384,38 @@ async function checkSecurity() {
 // ---------------------------------------------------------------------------
 // Runner
 // ---------------------------------------------------------------------------
+async function checkOwnerLogin() {
+  group("owner login");
+  // CI deliberately has no production OAuth credentials or session secret.
+  // This is a live configuration gate, not a requirement for secret-free builds.
+  if (new URL(BASE).origin !== "https://aibuiltbyhand.com") return;
+  const response = await get("/admin/leads", { redirect: "manual" });
+  const location = new URL(response.headers.get("location") || "/", BASE);
+  check(
+    [302, 307].includes(response.status) &&
+      location.pathname === "/login" &&
+      location.searchParams.get("callbackUrl") === "/admin/leads",
+    "anonymous lead inbox redirects to login and preserves its destination",
+    `status ${response.status}`,
+  );
+
+  // Check the real production origin against the callback already registered in
+  // Google Cloud. This caught a stale NEXTAUTH_URL that every old smoke passed.
+  const providersResponse = await get("/api/auth/providers");
+  check(providersResponse.status === 200, "production auth providers are available");
+  const providers = await providersResponse.json();
+  check(
+    providers.google?.callbackUrl === "https://aibuiltbyhand.com/api/auth/callback/google",
+    "Google callback uses the registered production domain",
+    providers.google?.callbackUrl || "Google provider missing",
+  );
+  check(
+    providers.google?.signinUrl === "https://aibuiltbyhand.com/api/auth/signin/google",
+    "Google sign-in uses the production domain",
+    providers.google?.signinUrl || "Google provider missing",
+  );
+}
+
 async function main() {
   process.stdout.write(`\nHandbuilt smoke test — READ-ONLY (no POST/PUT/DELETE)\nTarget: ${BASE}\n\n`);
 
@@ -393,6 +426,7 @@ async function main() {
     ["Content defects", checkContentDefects],
     ["Redirects", checkRedirects],
     ["Security", checkSecurity],
+    ["Owner login", checkOwnerLogin],
   ];
 
   for (const [label, fn] of steps) {
