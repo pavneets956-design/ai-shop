@@ -386,6 +386,9 @@ async function checkSecurity() {
 // ---------------------------------------------------------------------------
 async function checkOwnerLogin() {
   group("owner login");
+  // CI deliberately has no production OAuth credentials or session secret.
+  // This is a live configuration gate, not a requirement for secret-free builds.
+  if (new URL(BASE).origin !== "https://aibuiltbyhand.com") return;
   const response = await get("/admin/leads", { redirect: "manual" });
   const location = new URL(response.headers.get("location") || "/", BASE);
   check(
@@ -396,10 +399,8 @@ async function checkOwnerLogin() {
     `status ${response.status}`,
   );
 
-  // Local/preview hosts may intentionally use a different OAuth client. Check
-  // the real production origin against the callback already registered in
+  // Check the real production origin against the callback already registered in
   // Google Cloud. This caught a stale NEXTAUTH_URL that every old smoke passed.
-  if (new URL(BASE).origin !== "https://aibuiltbyhand.com") return;
   const providersResponse = await get("/api/auth/providers");
   check(providersResponse.status === 200, "production auth providers are available");
   const providers = await providersResponse.json();
