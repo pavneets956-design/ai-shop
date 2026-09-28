@@ -1060,4 +1060,3 @@ export const discoveryHowtos: LandingContent[] = [
     ]
   }
 ];
-
