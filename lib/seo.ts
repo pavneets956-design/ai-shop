@@ -674,14 +674,14 @@ export function landingSchema(
 }
 
 // Next.js Metadata for any landing page. Title goes through the root layout
-// template ("%s | Handbuilt AI"), so we pass the bare H1 and use the full
+// template ("%s | Handbuilt AI"), so we pass the optional bare search title or H1 and use the full
 // content.title for OpenGraph (which isn't templated).
 export function landingMetadata(type: PageType, content: LandingContent): Metadata {
   const path = landingPath(type, content.slug);
   const url = `${site.url}${path}`;
   const noindex = isNoindexEntry(content);
   return {
-    title: content.h1,
+    title: content.searchTitle ?? content.h1,
     description: content.description,
     keywords: content.keywords,
     alternates: { canonical: path },

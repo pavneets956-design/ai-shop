@@ -7,6 +7,7 @@ import type { LandingContent } from "./landing";
 // hypothetical. related[] points only to pages that exist.
 export const locations: LandingContent[] = [
   {
+updatedAt: "2026-09-27",
     slug: "ai-automation-agency-surrey-bc",
     eyebrow: "Location",
     h1: "AI Automation Agency in Surrey, BC",
@@ -34,6 +35,10 @@ export const locations: LandingContent[] = [
       "In-person or fully remote — whichever you prefer",
     ],
     sections: [
+{
+  "heading": "Search visibility and enquiries in Surrey, BC",
+  "body": "If prospective customers are not finding the business, an answering workflow may not be the first task. Review the service information, actual area covered and the route from a search result to a received request. Use Surrey, BC clearly where location matters so the business is not confused with another Surrey.\n\nHandbuilt can scope website and search-information improvements alongside enquiry handling. The proposal separates discovery work from receptionist or automation integrations and explains what will be checked."
+},
       {
         heading: "Who we build for in Surrey",
         body: "Surrey runs on service businesses — trades and home services, clinics and dental offices, salons, restaurants, real estate, and local professional services. If your team repeats the same phone calls, quotes, bookings, and follow-ups every day, there's usually an AI worker that pays for itself inside the first season.",
@@ -59,6 +64,14 @@ export const locations: LandingContent[] = [
       "surrey ai developer",
     ],
     related: [
+{
+  "label": "AI search visibility service",
+  "href": "/services/ai-search-visibility"
+},
+{
+  "label": "Business profile checklist",
+  "href": "/resources/google-business-profile-checklist-for-trades"
+},
       { label: "AI Receptionist in Surrey, BC", href: "/locations/ai-receptionist-surrey-bc" },
       { label: "Custom AI Apps in Surrey", href: "/locations/custom-ai-apps-surrey" },
       { label: "AI Automation in Delta, BC", href: "/locations/ai-automation-delta-bc" },
@@ -427,6 +440,7 @@ export const locations: LandingContent[] = [
     icon: "MapPin",
   },
   {
+updatedAt: "2026-09-27",
     slug: "ai-receptionist-surrey-bc",
     eyebrow: "Location",
     h1: "AI Receptionist in Surrey, BC",
@@ -454,6 +468,10 @@ export const locations: LandingContent[] = [
       "Fixed CAD price, live in about 5 business days",
     ],
     sections: [
+{
+  "heading": "Separate getting found from answering an enquiry",
+  "body": "A receptionist addresses what happens when someone contacts the business. If there are few relevant incoming requests, review search visibility and the service page as well. If the requests already arrive but are missed, focus on the answering and human handoff.\n\nFor a Surrey business, test the actual phone or website setup and the real service-area questions customers ask. An illustrative demo does not verify your routing, calendar or notification path."
+},
       {
         heading: "What a Surrey AI receptionist handles",
         body: "It picks up when you can't, answers the questions you get asked all day, captures the caller's details, books the appointment, and sends a text confirmation. For calls that genuinely need you — complex or sensitive ones — it takes a clear message and routes it so nothing important is lost.",
@@ -480,6 +498,10 @@ export const locations: LandingContent[] = [
       "surrey ai receptionist cost",
     ],
     related: [
+{
+  "label": "Visibility review",
+  "href": "/services/ai-search-visibility"
+},
       { label: "AI Receptionist (overview)", href: "/ai-receptionist" },
       { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
       { label: "AI Automation Agency in Surrey, BC", href: "/locations/ai-automation-agency-surrey-bc" },

@@ -610,6 +610,7 @@ export const comparisons: LandingContent[] = [
   icon: "Phone"
 },
 {
+updatedAt: "2026-09-27",
   slug: "chatgpt-vs-custom-ai-agent",
   eyebrow: "Compare",
   h1: "Custom AI Agent vs ChatGPT — When Generic Is Not Enough",
@@ -618,6 +619,10 @@ export const comparisons: LandingContent[] = [
   answer: "ChatGPT is a powerful general tool, but it does not know your products, cannot access your systems, and has no guardrails. A custom AI agent is trained on your data, wired into your tools, and follows rules you set. If you just need quick answers for yourself, use ChatGPT. For customer-facing work, Handbuilt builds custom agents from CAD $3,500.",
   pain: "You are copying data into ChatGPT manually and wishing it could just plug into your systems and act on its own.",
   sections: [
+{
+  "heading": "Using ChatGPT and being found through ChatGPT are different tasks",
+  "body": "An owner using an assistant to draft a reply is a different situation from a customer asking an assistant to recommend a business. The first concerns your workflow; the second concerns discovery and accurate public information.\n\nChoose the work that matches the problem. A custom internal agent does not automatically make the business more visible in public answers. A visibility review does not by itself connect ChatGPT to your private business systems."
+},
     {
       heading: "When ChatGPT is the right call",
       body: "ChatGPT is excellent for personal productivity — drafting emails, summarizing documents, brainstorming, writing code snippets. If you are the only user and the stakes are low, a $20–$200/mo ChatGPT subscription covers a lot of ground. It requires no build time, no developer, and no setup beyond signing up."
@@ -649,6 +654,14 @@ export const comparisons: LandingContent[] = [
   ctaLabel: "Get a fixed quote",
   keywords: ["chatgpt vs custom ai agent", "custom ai chatbot", "chatgpt for business", "build custom ai agent canada"],
   related: [
+{
+  "label": "Get your business found in ChatGPT",
+  "href": "/resources/get-your-business-recommended-by-chatgpt"
+},
+{
+  "label": "SEO, AEO and GEO explained",
+  "href": "/resources/geo-aeo-explained-for-local-business"
+},
     { label: "AI Chatbot Development", href: "/ai-chatbot-development" },
     { label: "Custom AI App Development", href: "/custom-ai-app-development" },
     { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
@@ -1037,64 +1050,60 @@ export const comparisons: LandingContent[] = [
   },
 
   {
+secondaryCta: {
+  "label": "Understand the cost components",
+  "href": "/resources/ai-receptionist-cost"
+},
+updatedAt: "2026-09-27",
+gets: [],
+comparison: {
+  "alternativeLabel": "Subscription or human service",
+  "rows": [
+    {
+      "factor": "Fit",
+      "handbuilt": "A custom workflow scoped to the business; required channels must be confirmed.",
+      "alternative": "Evaluate the specific provider's supported tasks and handoff."
+    },
+    {
+      "factor": "Costs",
+      "handbuilt": "Agreed implementation quote plus specified external and support costs.",
+      "alternative": "Check current setup, recurring, usage and cancellation charges."
+    },
+    {
+      "factor": "Maintenance",
+      "handbuilt": "Ownership and ongoing responsibility defined in the proposal.",
+      "alternative": "Provider support and business responsibilities defined by its terms."
+    }
+  ]
+},
+scenario: "Illustrative comparison: you need after-hours phone message-taking with a human callback. A web-chat package does not meet that requirement by itself. Compare phone-capable proposals against the same call scenarios and the same expected usage before evaluating their cost.",
     slug: "ai-receptionist-pricing-canada",
     eyebrow: "Compare",
     h1: "What Does an AI Receptionist Actually Cost in Canada?",
-    title: "AI Receptionist Pricing in Canada (2026)",
-    description:
-      "AI receptionist pricing in Canada: monthly SaaS apps, custom builds, and human answering services compared. Handbuilt custom builds start at $1,500 CAD.",
-    answer:
-      "AI receptionist pricing in Canada typically falls into three categories: monthly SaaS apps (around $50–$500+/mo at time of writing), custom one-time builds ($1,500 for a single worker up to $3,500–$7,500 for a connected system, at Handbuilt), and traditional human answering services ($200–$1,500+/mo). The right choice depends on your call complexity, integration needs, and whether you prefer ongoing fees or a one-time build cost.",
-    pain: "You have seen AI receptionist prices ranging from $30/mo to $10,000+ and have no idea what is normal or what you are actually paying for.",
+    title: "AI Receptionist Pricing in Canada: Compare the Options",
+    description: "Compare an AI subscription, a custom intake build and human answering by channel, included usage, support, currency and exit terms.",
+    answer: "Compare Canadian AI receptionist options by the same job: which channel they handle, what usage is included, how they reach a person and who supports failures. A subscription, a custom build and a human answering service may have very different scope. Ask for the complete price in a stated currency before choosing.",
+    pain: "Prices that refer to different channels, usage limits and support arrangements are not directly comparable.",
     sections: [
-      {
-        heading: "Monthly SaaS receptionist apps",
-        body: "The most common model. You sign up, configure a script, and the service answers your calls. Pricing at time of writing typically ranges from about $50 to $500+/mo depending on the provider, your call volume, and included minutes. Some charge per minute on top of a base fee. Best for simple, repeatable call flows where the default templates cover your needs.",
-        bullets: [
-          "Typical range: ~$50–$500+/mo (varies by provider and volume)",
-          "Often includes a base number of minutes with overage charges",
-          "Setup is fast but customization is limited to the platform",
-          "You are renting — if you cancel, the system stops",
-        ],
-      },
-      {
-        heading: "Custom one-time builds",
-        body: "A developer or studio builds an AI receptionist trained on your specific business, services, and booking logic. You pay once and own it. Handbuilt charges $1,500–$3,500 CAD depending on complexity (number of services, integrations, call routing rules). Ongoing costs are limited to third-party telephony and API usage, which is typically modest for small-business volumes.",
-        bullets: [
-          "Handbuilt pricing: $1,500–$3,500 CAD one-time",
-          "You own the system — no monthly platform fee",
-          "Ongoing third-party costs (telephony, AI API) are typically under $50/mo for light volumes",
-          "Best for businesses with specific call logic that off-the-shelf apps cannot handle",
-        ],
-      },
-      {
-        heading: "Human answering services",
-        body: "A live person answers your calls from a call centre. Still widely used, especially where callers expect a human. Pricing generally runs $200–$1,500+/mo depending on hours of coverage and call volume, though some services charge per call. Quality varies significantly between providers.",
-        bullets: [
-          "Typical range: ~$200–$1,500+/mo (varies widely)",
-          "Callers get a real human — some industries prefer this",
-          "Limited by the operator’s training on your business",
-          "Not available 24/7 without premium pricing",
-        ],
-      },
-      {
-        heading: "What drives the cost",
-        body: "Regardless of the model, these factors affect pricing.",
-        bullets: [
-          "Call volume — more calls means higher costs in every model",
-          "Complexity — simple FAQ routing is cheap; qualifying leads by service type, area, and urgency costs more",
-          "Integrations — connecting to your calendar, CRM, or job management software adds build time or subscription tiers",
-          "Hours of coverage — 24/7 costs more than business-hours-only",
-          "Voice quality — premium, natural-sounding AI voices may carry per-minute API costs",
-        ],
-      },
-      {
-        heading: "Best for / Not best for (Handbuilt custom build)",
-        body: "A Handbuilt custom build is a strong fit if you want to pay once and own the system, your call-handling logic is specific to your trade or practice, or monthly SaaS fees would exceed the one-time build cost within a year or two. It is not the best fit if a $50/mo app already covers your needs, you want zero setup effort, or you need enterprise features like multi-location routing across dozens of branches.",
-      },
-    ],
+  {
+    "heading": "Option one: an existing subscription",
+    "body": "An existing product can be a practical choice when its supported workflow matches the business. Check the included channel, usage allowance, overage charges and integration limits in the current vendor terms. Ask what you retain when you cancel.\n\nDo not assume every subscription is restrictive or every integration works. Test the specific service against your own questions and handoff requirements."
+  },
+  {
+    "heading": "Option two: a custom implementation",
+    "body": "Custom work can address a workflow that does not fit an existing tool. The proposal needs to identify the initial build, external services, maintenance responsibility and handover. Ownership of the code does not remove third-party hosting or communications costs.\n\nHandbuilt's current build package appears below. Live phone answering and other integrations require their own scope; the package card does not include every possible channel by default."
+  },
+  {
+    "heading": "Option three: human answering",
+    "body": "A human answering service may suit requests that need flexibility or a personal conversation. Check its current availability, scripts, escalation, pricing basis and what information it sends back to you. A person answering still needs accurate business instructions.\n\nCompare the same representative scenarios across options, including an unclear enquiry, a request outside your service area and a caller asking for the owner."
+  },
+  {
+    "heading": "Use a like-for-like quote checklist",
+    "body": "State the required channel, expected usage, service hours and integrations. Ask each provider to identify setup, recurring and variable charges; currency; support; cancellation; and access ownership. Review the actual terms rather than relying on an old comparison table.\n\nChoose the option that fits the work and your ability to maintain it. There is no vendor price range or universal cheapest option established by this page."
+  }
+],
     packageId: "starter",
-    ctaLabel: "Get a fixed quote",
+    ctaLabel: "Request an option review",
     keywords: [
       "ai receptionist pricing canada",
       "ai receptionist cost",
@@ -1103,35 +1112,37 @@ export const comparisons: LandingContent[] = [
       "ai receptionist canada price",
     ],
     related: [
-      { label: "AI Receptionist", href: "/ai-receptionist" },
-      { label: "AI Receptionist Cost", href: "/resources/ai-receptionist-cost" },
-      { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
-      { label: "AI Receptionist vs Virtual Receptionist", href: "/compare/ai-receptionist-vs-virtual-receptionist" },
-      { label: "How Much Does AI Automation Cost?", href: "/resources/how-much-does-ai-automation-cost" },
-      { label: "Pricing", href: "/pricing" },
-    ],
+  {
+    "label": "AI receptionist costs",
+    "href": "/resources/ai-receptionist-cost"
+  },
+  {
+    "label": "AI receptionist service",
+    "href": "/ai-receptionist"
+  },
+  {
+    "label": "Is it worth it?",
+    "href": "/resources/is-ai-receptionist-worth-it"
+  },
+  {
+    "label": "Current build packages",
+    "href": "/pricing"
+  }
+],
     faqs: [
-      {
-        q: "Is a one-time build cheaper than monthly SaaS in the long run?",
-        a: "It depends on the SaaS price and how long you use it. If you are paying $150/mo for a SaaS receptionist, a $1,500 custom build pays for itself in about 10 months. If a $50/mo app covers your needs, the math favours SaaS.",
-      },
-      {
-        q: "What are the ongoing costs after a custom build?",
-        a: "Third-party telephony (phone number, per-minute charges) and AI API usage. For a small business with moderate call volume, this is typically well under $50/mo. Handbuilt does not charge a recurring platform fee.",
-      },
-      {
-        q: "Can I switch from SaaS to custom later?",
-        a: "Yes. Many businesses start with a SaaS app and move to custom once they hit the limits of the platform’s configuration. Handbuilt can build a replacement trained on your actual call patterns.",
-      },
-      {
-        q: "Are these prices in CAD or USD?",
-        a: "All Handbuilt prices are in Canadian dollars. SaaS and answering-service prices vary — many US-based providers price in USD, so factor in the exchange rate.",
-      },
-      {
-        q: "Do I need to pay for a phone number separately?",
-        a: "Usually yes. A Canadian phone number through a telephony provider like Twilio typically costs a few dollars per month plus per-minute charges. This applies to both SaaS and custom builds.",
-      },
-    ],
+  {
+    "q": "Are prices on this page in Canadian dollars?",
+    "a": "The Handbuilt package card is labelled CAD and comes from the current pricing data. Other providers' quotes must be checked for their stated currency."
+  },
+  {
+    "q": "Which option is cheapest?",
+    "a": "That depends on the actual scope, usage, support and current terms. This page does not claim a universally cheapest provider."
+  },
+  {
+    "q": "Does custom mean no ongoing fees?",
+    "a": "No. A custom build may still need hosting, communications, model services and maintenance. Those costs should be listed in the proposal."
+  }
+],
     schema: "Comparison" as const,
   },
 

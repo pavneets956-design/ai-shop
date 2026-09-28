@@ -1,4 +1,5 @@
 import type { LandingContent } from "./landing";
+import { discoveryServices } from "./discovery";
 import { servicesB } from "./_services_b";
 
 const servicesA: LandingContent[] = [
@@ -338,7 +339,7 @@ const servicesA: LandingContent[] = [
   },
 ];
 
-export const services: LandingContent[] = [...servicesA, ...servicesB];
+export const services: LandingContent[] = [...discoveryServices, ...servicesA, ...servicesB];
 
 export function getService(slug: string): LandingContent | undefined {
   return services.find((s) => s.slug === slug);

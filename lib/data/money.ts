@@ -209,69 +209,92 @@ export const moneyPages: LandingContent[] = [
     icon: "MessagesSquare",
   },
   {
+updatedAt: "2026-09-27",
+secondaryCta: {
+  "label": "Read the cost guide",
+  "href": "/resources/ai-receptionist-cost"
+},
     slug: "ai-receptionist",
     eyebrow: "AI Build",
-    h1: "AI Receptionist for Local Businesses",
-    title: "AI Receptionist for Local Businesses | Handbuilt",
-    description: "Never miss a call, text, or inquiry again. A Handbuilt AI receptionist books jobs 24/7 starting at $1,500 CAD — for contractors, clinics, and local services.",
-    answer: "A Handbuilt AI receptionist answers your website chat, texts, or missed-call inquiries 24 hours a day — asking the right intake questions, booking appointments, and routing urgent issues to you. Setup starts at $1,500 CAD. Built specifically for local service businesses that lose work to unanswered after-hours contact.",
-    pain: "A potential customer contacts you at 7pm on a Tuesday. If you don't answer, they move to the next search result. That's not a loyalty problem — it's a response-time problem. Hiring a human to cover after-hours costs $3,000–5,000/mo. Most small businesses just accept the lost jobs.",
-    scenario: "Say a residential HVAC contractor is missing roughly 8–10 inbound inquiries per week outside business hours — each one a homeowner whose heat stopped working who will book with whoever answers first. An AI receptionist on the website and Google Business Profile answering those inquiries immediately, booking jobs, and surfacing a morning summary could recover most of that. How many of those 8–10 weekly contacts convert to booked work depends on the job type and urgency, but after-hours HVAC calls are typically high-intent.",
+    h1: "AI Receptionist for Small Businesses",
+    title: "AI Receptionist for Small Businesses | Handbuilt AI",
+    description: "Plan an AI receptionist around your real enquiries, with approved answers, clear human handoff and tested notifications. Request a setup review.",
+    answer: "An AI receptionist can handle defined questions and collect enquiry details when your team is busy. Handbuilt scopes the channel, the information it may use and the handoff to a person before building. Website or text intake and live phone answering have different requirements; your proposal makes those boundaries clear.",
+    pain: "A missed enquiry needs a reliable next step. A natural-sounding answer is not enough if the details never reach you or a caller cannot ask for a person.",
+    scenario: "Illustrative example: a trades business wants after-hours enquiries recorded for review. The agreed workflow asks about the job and service area, records a callback request and notifies the owner. It does not confirm availability or a price that the owner has not authorised.",
     steps: [
-      "Intake design — We map out what your receptionist needs to ask: job type, location, urgency, preferred time, contact info. Every business is different.",
-      "Build & connect — We build the AI, connect it to your calendar or booking system, and configure how it routes urgent vs. routine inquiries.",
-      "Test with real scenarios — We run your actual common call types through the system and tune the responses until they sound natural and capture the right information.",
-      "Go live + monitoring — You flip it on. We monitor the first two weeks for edge cases. You get a daily summary of what the AI handled.",
-    ],
+  "Map common questions, approved answers and services you do not provide.",
+  "Confirm the channel, integration requirements and what needs a person.",
+  "Build the agreed intake and notification flow with visible failure handling.",
+  "Test ordinary requests, unclear answers, out-of-area work and requests for a person."
+],
     gets: [
-      "24/7 inquiry handling — chat, text, or web form",
-      "Intelligent intake that asks the right questions for your trade",
-      "Automatic booking or appointment requests dropped into your calendar",
-      "Urgent-issue routing so real emergencies still reach you fast",
-      "Daily summary of everything the AI handled while you were off",
-      "Flat build price starting at $1,500 CAD — no per-call fees",
-    ],
+  "Business-specific intake questions and approved information",
+  "Defined human handoff and fallback requirements",
+  "An enquiry notification workflow scoped to your tools",
+  "Representative scenario testing and an agreed handover"
+],
     sections: [
-      {
-        heading: "What's included in the setup",
-        body: "The AI receptionist setup includes: intake script design (tailored to your business type — HVAC, plumbing, dental, real estate, cleaning, etc.), AI build and configuration, integration with your existing booking system or a simple calendar link, web chat widget deployment, and two weeks of post-launch monitoring. You also get a plain-English admin panel to update your service area, hours, or pricing information without needing a developer.",
-      },
-      {
-        heading: "How it handles different types of inquiries",
-        body: "Routine inquiries (pricing questions, availability, service area, what you do) get handled fully by the AI with no human needed. Booking inquiries get captured with full intake details and either auto-booked or sent to you as a ready-to-confirm appointment request. Urgent or unusual inquiries — emergency calls, complaints, things outside the script — get flagged immediately with a notification to you or a staff number. The AI knows what it knows, and escalates what it doesn't.",
-      },
-      {
-        heading: "Who this is for",
-        body: "Any local business where missing an inquiry means losing a job: plumbers, electricians, HVAC contractors, cleaning businesses, dental clinics, physiotherapy clinics, real estate agents, law offices. If you've ever said \"I lost that job because I couldn't answer fast enough\" — this solves that specific problem. The Starter AI Setup at $1,500 CAD is built for single-location businesses. Multi-location or more complex setups move into the Business AI System range.",
-      },
-    ],
+  {
+    "heading": "Choose the channel before comparing the price",
+    "body": "The recommended Starter package is for a scoped initial setup; it is not a promise that every phone, text and calendar integration is included. Phone answering requires a separate review of the number, forwarding, telephony, usage charges and fallback. Website intake has different requirements.\n\nCompare the complete proposal: setup, third-party services, ongoing support and what happens when a dependency is unavailable. Current package prices are shown in the package card and pricing page."
+  },
+  {
+    "heading": "Make the handoff part of the design",
+    "body": "Decide what happens when someone asks for a person, provides unclear information, raises an urgent issue or requests work outside the service area. The specification should identify who receives the request and which commitments the system is allowed to make.\n\nA calendar request is not a confirmed appointment unless an actual scheduling integration checks availability and completes confirmation. The Handbuilt request form itself does not book a call."
+  },
+  {
+    "heading": "Test the enquiry, not just the greeting",
+    "body": "Use representative scenarios and inspect the resulting record and notification. Include interruptions, a request for a human, incomplete contact details and an unavailable dependency. Define how the owner learns about a failure.\n\nPavneet built an AI phone receptionist for his own Ironwood Grounds business. The proof record documents that the AI was taken out of the call path in August 2026 while reliability was being evaluated. That is why the fallback deserves as much attention as the conversation."
+  },
+  {
+    "heading": "When a simpler workflow is enough",
+    "body": "If your main problem is a few web requests that need a callback, a clear form and reliable notification may be sufficient. If most calls require your personal judgement, consider human answering or a message-taking flow. Start with the actual missed work and your capacity to respond, rather than buying a system because it is called AI."
+  }
+],
     packageId: "starter",
-    ctaLabel: "Set Up My AI Receptionist",
+    ctaLabel: "Request a receptionist review",
     keywords: ["AI receptionist local business Canada", "after hours answering service AI", "AI receptionist for contractors", "missed call AI chatbot", "automated receptionist small business BC", "ai answering service setup", "ai receptionist for small business", "ai phone answering service", "automated receptionist setup", "ai call answering business"],
     related: [
-      { label: "AI Receptionist for Contractors", href: "/use-cases/ai-receptionist-for-contractors" },
-      { label: "AI Chatbot for Website", href: "/services/ai-chatbot-for-website" },
-      { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
-      { label: "Complete AI Business System", href: "/ai-business-system" },
-    ],
+  {
+    "label": "AI receptionist costs",
+    "href": "/resources/ai-receptionist-cost"
+  },
+  {
+    "label": "Is it worth it for your business?",
+    "href": "/resources/is-ai-receptionist-worth-it"
+  },
+  {
+    "label": "Phone or answering service?",
+    "href": "/compare/ai-receptionist-vs-answering-service"
+  },
+  {
+    "label": "AI receptionist in Surrey, BC",
+    "href": "/locations/ai-receptionist-surrey-bc"
+  },
+  {
+    "label": "Getting customers to find you",
+    "href": "/services/ai-search-visibility"
+  }
+],
     faqs: [
-      {
-        q: "Does this work for phone calls or just web chat?",
-        a: "The base $1,500 setup covers web chat and text/form-based inquiries. Phone call answering (voice AI) is available as an add-on and is typically quoted as part of a Business AI System engagement.",
-      },
-      {
-        q: "What happens when the AI doesn't know the answer?",
-        a: "It escalates — either asking the visitor to call you directly, capturing their info for a callback, or (for urgent issues) sending you an immediate notification. The AI never leaves someone with no path forward.",
-      },
-      {
-        q: "Can I change what the AI says without calling you?",
-        a: "Yes. You get an admin interface where you can update your services, service area, hours, and pricing. Bigger changes to the intake flow are part of the $99/mo AI Care Plan or billed as a flat update.",
-      },
-      {
-        q: "How long does setup take?",
-        a: "Typically 1–2 weeks from the intake call to going live. Most of that time is building and testing. The first conversation we have to scope it takes 30 minutes.",
-      },
-    ],
+  {
+    "q": "Does the Starter package include live phone answering?",
+    "a": "Do not assume it does. Phone answering is scoped separately for your phone setup, integrations and fallback requirements. The proposal specifies the included channel and ongoing charges."
+  },
+  {
+    "q": "Can it book appointments?",
+    "a": "Only where the agreed implementation connects to an actual scheduling system and completes its availability and confirmation steps. Otherwise it can collect a request for a person to review."
+  },
+  {
+    "q": "Can I keep my current number?",
+    "a": "That depends on your provider and routing options. We check the existing setup before promising forwarding, number transfer or a particular call flow."
+  },
+  {
+    "q": "What happens when the AI cannot answer?",
+    "a": "The implementation needs an agreed handoff, message-taking or fallback path. We define and test that path instead of expecting the system to improvise."
+  }
+],
     schema: "Service",
     icon: "PhoneCall",
   },
@@ -554,57 +577,51 @@ export const moneyPages: LandingContent[] = [
   },
 
   {
+updatedAt: "2026-09-27",
+secondaryCta: {
+  "label": "See the quote-request guide",
+  "href": "/how-to/automate-quote-requests"
+},
     slug: "ai-lead-follow-up-agent",
     eyebrow: "AI Build",
-    h1: "AI Lead Follow-Up Agent",
-    title: "AI Lead Follow-Up Agent for Small Business",
-    description: "AI agent that follows up on every lead by SMS and email until you get a yes or no. $1,500 CAD. Built by Handbuilt in Surrey BC.",
-    answer: "An AI lead follow-up agent chases every new inquiry and every quiet quote by SMS and email — politely and persistently — until you get a yes or a no. Plugs into your existing CRM and lead sources. Starts at $1,500 CAD. Built by Handbuilt in Surrey BC, serving Canada and remote clients.",
-    pain: "You sent the quote three days ago. The customer said “let me think about it.” You meant to follow up yesterday, but you had two jobs and a supplier issue. Now it’s been a week. The lead is cold. You know follow-up wins jobs — you just don’t have time to chase every single one. So the leads that don’t close themselves quietly disappear.",
-    scenario: "Imagine a home renovation company that gets 30–40 quote requests a month from their website, Google Ads, and referrals. The owner sends quotes within 24 hours, but follow-up is inconsistent. Some leads get a callback. Most don’t. The owner estimates they close about 25% of quotes — and suspects another 10–15% would close with better follow-up.\n\nIn this hypothetical scenario, Handbuilt would install a follow-up agent that texts and emails every lead on a structured cadence: same-day acknowledgment, 2-day check-in, 5-day nudge, and a final “are you still interested?” at 10 days. Every message is polite, specific to the quote, and stops the moment the lead replies. The owner’s pipeline stops leaking.",
+    h1: "AI Lead Follow-Up for Incoming Enquiries",
+    title: "AI Lead Follow-Up for Small Businesses | Handbuilt AI",
+    description: "Record incoming enquiries, notify the right person and define the next response. Request a review of your lead follow-up workflow.",
+    answer: "A lead follow-up workflow records incoming requests, notifies the right person and supports the next response under rules you approve. Handbuilt reviews where enquiries arrive, which tools you use and where follow-up gets lost before proposing the automation.",
+    pain: "When a request arrives during a job, it is easy to forget which details are missing or whether anyone has replied. A sent acknowledgement is not the same as a handled enquiry.",
+    scenario: "Illustrative workflow: a website quote request is saved and the owner is notified. A draft response asks for the missing job details. The owner reviews the draft, replies and marks the next step. A duplicate submission is attached to the same opportunity rather than counted as another prospect.",
     steps: [
-      "Discovery call — Pavneet maps your lead sources, your CRM, and your current follow-up process (or lack of one). 20 minutes.",
-      "Scoped flat-price proposal — Fixed CAD price, a defined follow-up sequence, and the channels it’ll use (SMS, email, or both). No surprises.",
-      "Build & test on your real leads — Pavneet connects the agent to your CRM and lead sources, writes the follow-up messages in your voice, and tests it against real lead scenarios.",
-      "Handoff + optional Care Plan — The agent goes live. You get a walkthrough of how to monitor it and adjust the cadence. Optional $99/mo Care Plan for ongoing tuning."
-    ],
+  "Map incoming channels and the information each request needs.",
+  "Define acknowledgements, draft replies and actions requiring review.",
+  "Connect the agreed systems with duplicate and failure handling.",
+  "Test notification, reply, stop and handoff conditions before release."
+],
     gets: [
-      "Every lead followed up — no more leads slipping through because you got busy",
-      "Structured SMS and email cadence customized to your sales cycle",
-      "Messages written in your voice, specific to each quote or inquiry",
-      "Automatic stop when the lead replies, books, or declines",
-      "Connected to your existing CRM and lead sources — no new software to learn",
-      "Full visibility into which leads are active, which responded, and which went cold"
-    ],
+  "A scoped incoming-enquiry workflow",
+  "Clear notification and response responsibilities",
+  "Defined stop conditions and human review",
+  "Testing of failures and duplicate requests"
+],
     sections: [
-      {
-        heading: "Speed-to-Lead Is the Biggest Factor You Control",
-        body: "Responding to a new lead within minutes tends to convert far better than getting back to them hours later — speed is one of the few levers you fully control. For small businesses, that window is almost impossible to hit manually — you’re on a job, in a meeting, or handling another customer. An AI follow-up agent responds instantly and keeps the conversation going on a schedule you define. You don’t have to remember, and the lead never feels forgotten.",
-        bullets: [
-          "Instant acknowledgment tells the lead you received their inquiry",
-          "Structured cadence keeps you top-of-mind without being pushy",
-          "Persistent follow-up surfaces the “maybe later” leads that would otherwise vanish",
-          "Every message is logged — you see what was sent and when"
-        ]
-      },
-      {
-        heading: "What the Follow-Up Agent Actually Does",
-        body: "It’s not a drip campaign blasting the same template to everyone. The agent is contextual — it references the specific service the lead asked about, the quote amount if one was sent, and adjusts tone based on where the lead is in the sequence.",
-        bullets: [
-          "Same-day: “Got your request for [service]. Here’s what happens next.”",
-          "Day 2–3: “Just checking in — any questions about the quote for [project]?”",
-          "Day 5–7: “Wanted to make sure this didn’t get buried. Still interested in [service]?”",
-          "Day 10–14: “Last check-in. If the timing isn’t right, no pressure — we’re here when you’re ready.”",
-          "On reply: Agent stops the sequence and alerts you to take over the conversation"
-        ]
-      },
-      {
-        heading: "Not a Marketing Tool — a Closing Tool",
-        body: "Marketing gets leads to your door. This agent makes sure they don’t walk away while you’re busy. It’s the difference between a CRM full of cold leads and a pipeline where every inquiry gets a definitive outcome: booked, declined, or not-right-now with a future follow-up date. Most small businesses already have enough leads — they just don’t follow up consistently enough to close them."
-      }
-    ],
+  {
+    "heading": "Keep acquisition and follow-up separate",
+    "body": "This service handles enquiries that reach your business. It does not promise to generate a list of new prospects or send unsolicited campaigns. If customers are not finding the business, the first task may be website and search visibility work.\n\nFor existing requests, identify the point where the process stalls: missing information, delayed acknowledgement, an unread inbox or no record of the next action."
+  },
+  {
+    "heading": "Decide what may happen automatically",
+    "body": "An acknowledgement, a draft reply and a binding quote are different actions. Define which messages may be sent, which need a person and when follow-up must stop. Make sure the workflow uses current information and respects the customer's communication preferences.\n\nThe implementation should not keep contacting someone after the opportunity is closed or a stop request is recorded. The exact channel and message rules are part of the scope."
+  },
+  {
+    "heading": "Make failures visible",
+    "body": "If an email cannot be sent, a useful workflow records the problem and provides a recovery route. If a tool connection expires, someone needs to know. Decide how retries work and how repeated submissions are identified.\n\nWe test the record, notification and owner handoff together. A successful API response by itself does not prove that an owner received and acted on the request."
+  },
+  {
+    "heading": "Measure the next useful business step",
+    "body": "Track distinct prospects, fit, replies, quotes and paid work in the private lead system. Keep tests and spam out of demand counts. A generated message should not mark a job won.\n\nUse the results to decide whether the workflow saves useful effort. If volume is low, a simple shared status list and a reliable form notification may solve the immediate problem."
+  }
+],
     packageId: "starter" as const,
-    ctaLabel: "Stop losing leads",
+    ctaLabel: "Request a follow-up review",
     keywords: [
       "ai lead follow up agent",
       "automated lead follow up",
@@ -614,46 +631,41 @@ export const moneyPages: LandingContent[] = [
       "ai sms follow up"
     ],
     related: [
-      { label: "AI Lead Capture Form", href: "/services/ai-lead-capture-form" },
-      { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
-      { label: "AI Lead Follow-Up Guide", href: "/resources/ai-lead-follow-up-guide" },
-      { label: "AI CRM Automation", href: "/services/ai-crm-automation" },
-      { label: "AI Receptionist", href: "/ai-receptionist" }
-    ],
+  {
+    "label": "Automate quote requests",
+    "href": "/how-to/automate-quote-requests"
+  },
+  {
+    "label": "Lead capture forms",
+    "href": "/services/ai-lead-capture-form"
+  },
+  {
+    "label": "Track where leads came from",
+    "href": "/how-to/track-where-your-customers-found-you"
+  },
+  {
+    "label": "Improve discovery",
+    "href": "/services/ai-search-visibility"
+  }
+],
     faqs: [
-      {
-        q: "How much does an AI lead follow-up agent cost?",
-        a: "$1,500 CAD for the build. That covers discovery, message writing, CRM integration, and go-live. For businesses with complex multi-channel sequences, it may fall in the $3,500–$7,500 range. You’ll know the price before work starts."
-      },
-      {
-        q: "Will it annoy my leads?",
-        a: "No. The cadence is designed to be helpful, not pushy. Messages are spaced days apart, reference the specific inquiry, and stop immediately when the lead replies. You approve the tone and wording before it goes live."
-      },
-      {
-        q: "What channels does it use — SMS, email, or both?",
-        a: "Both, depending on what makes sense for your business. SMS tends to get faster responses for service businesses. Email works better for larger quotes. Most setups use a combination."
-      },
-      {
-        q: "How fast does it follow up after a new lead comes in?",
-        a: "Within minutes of the lead hitting your CRM or intake form. That’s the speed-to-lead advantage — instant acknowledgment while the lead is still thinking about their problem."
-      },
-      {
-        q: "Can it handle leads from multiple sources?",
-        a: "Yes. Website forms, Google Ads leads, Facebook leads, referral emails, Jobber inquiries — if the lead data lands somewhere digital, the agent can pick it up and start the sequence."
-      },
-      {
-        q: "Does it replace my CRM?",
-        a: "No. It plugs into your existing CRM — HubSpot, Jobber, Housecall Pro, a Google Sheet, whatever you use. It reads new leads from there and logs its follow-up activity back. No new software to learn."
-      },
-      {
-        q: "What happens when a lead replies and says yes?",
-        a: "The agent stops the automated sequence, logs the reply, and sends you an alert so you can take over personally. It’s a closer, not a replacement for you — it gets the lead back to the table, then you seal it."
-      },
-      {
-        q: "Can I customize the follow-up messages?",
-        a: "Absolutely. Pavneet writes the first drafts based on your voice and your services, then you review and adjust before go-live. The messages should sound like you, not like a robot."
-      }
-    ],
+  {
+    "q": "Will this find new customers for me?",
+    "a": "This service focuses on handling incoming enquiries. Improving discovery or running an acquisition campaign is a separate task."
+  },
+  {
+    "q": "Can it connect to my CRM?",
+    "a": "We review the specific product, account access and supported integration before promising a connection. Include the tools you use in the request."
+  },
+  {
+    "q": "Does every response need AI?",
+    "a": "No. A fixed acknowledgement or a straightforward routing rule may be enough. Use AI where it adds a defined capability that can be checked."
+  },
+  {
+    "q": "How are duplicate leads handled?",
+    "a": "The workflow needs an agreed way to identify repeated requests about the same opportunity. The rule depends on your channels and records and is tested during implementation."
+  }
+],
     schema: "Service" as const,
     icon: "MessageSquare"
   },

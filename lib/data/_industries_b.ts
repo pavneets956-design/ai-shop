@@ -329,6 +329,7 @@ export const industriesB: LandingContent[] = [
     icon: "MessagesSquare",
   },
   {
+updatedAt: "2026-09-27",
     slug: "auto-detailing-ai-automation",
     eyebrow: "Industry",
     h1: "AI Automation for Auto Detailing Shops",
@@ -354,6 +355,10 @@ export const industriesB: LandingContent[] = [
       "Day-before reminder to reduce no-shows",
     ],
     sections: [
+{
+  "heading": "Make the enquiry match the detailing job",
+  "body": "Explain the vehicle types and services the business actually accepts, where the work happens and what affects assessment. If condition, access or vehicle size changes the estimate, collect that information for review rather than making an unsupported fixed promise.\n\nA useful page and a clear request form can prepare the next conversation. Record whether the customer wants mobile service or another arrangement, then confirm the fit before offering a slot."
+},
       {
         heading: "Where AI helps an auto detailing business",
         body: "Auto detailing has a predictable quote structure — vehicle + service = price. That predictability makes it highly automatable:",
@@ -385,6 +390,14 @@ export const industriesB: LandingContent[] = [
       "auto detail chatbot Canada",
     ],
     related: [
+{
+  "label": "Website traffic without enquiries",
+  "href": "/resources/website-traffic-but-no-quote-requests"
+},
+{
+  "label": "Search visibility review",
+  "href": "/services/ai-search-visibility"
+},
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Calendar Booking Agent", href: "/services/ai-calendar-booking-agent" },
       { label: "AI Review Engine", href: "/services/ai-review-engine" },
@@ -411,6 +424,7 @@ export const industriesB: LandingContent[] = [
     icon: "Sparkles",
   },
 {
+updatedAt: "2026-09-27",
   slug: "fence-company-ai-automation",
   eyebrow: "Industry",
   schema: "Service" as const,
@@ -436,6 +450,10 @@ export const industriesB: LandingContent[] = [
     "A system you own outright — no ongoing platform fees unless you want the Care Plan"
   ],
   sections: [
+{
+  "heading": "Help the right fence enquiries reach you",
+  "body": "Before automating replies, make it clear which work the business handles: installations, gates, repairs or a narrower service. Explain the real area covered and what information helps with an assessment. Use project evidence you can substantiate and avoid promising a final price before the necessary inspection.\n\nPavneet's Ironwood Grounds website and quote-request workflow are an owned-business example. The practical connection is between a useful service page, a working request form and a person who follows up; it is not a claim of a guaranteed number of new jobs."
+},
       {
         heading: "Written from running a fence company, not from a case study",
         body: "Plain disclosure, because it changes how you should read this page: the person who builds these also runs a cedar-fence contracting business in South Surrey, White Rock and Delta. There is no client fencing company behind this page — the experience is first-person, and that cuts both ways.\n\nWhat that means in practice. The intake questions on this page are the ones actually needed to price a fence: linear footage, whether it is a replacement or a new run, panel style, post material, number and width of gates, slope, and access for a truck. Miss the slope and the access and you will quote a job you lose money on, which is exactly why a generic chatbot asking \"how can I help?\" produces leads you cannot use.\n\nAlso first-person: an AI answering service was built and put on that real business line through July and August 2026, and as of late August the line rings a person first instead. Not because the concept failed, but because on a business where one call is a several-thousand-dollar quote, a silent failure costs more than a missed call does — and the failure that forced it was the model provider retiring a model underneath a running agent. If a page selling you an AI receptionist has never mentioned a failure mode, that is the one to ask about."
@@ -472,6 +490,14 @@ export const industriesB: LandingContent[] = [
     "AI follow-up for fence company"
   ],
   related: [
+{
+  "label": "Search visibility for local businesses",
+  "href": "/services/ai-search-visibility"
+},
+{
+  "label": "Quote-request workflow",
+  "href": "/how-to/automate-quote-requests"
+},
     { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
     { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
     { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },

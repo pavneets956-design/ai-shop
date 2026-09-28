@@ -1,6 +1,8 @@
 import type { LandingContent } from "./landing";
+import { discoveryResources } from "./discovery";
 
 export const resources: LandingContent[] = [
+  ...discoveryResources,
   {
     slug: "how-much-does-ai-automation-cost",
     eyebrow: "Resource",
@@ -168,147 +170,153 @@ export const resources: LandingContent[] = [
     icon: "Bot",
   },
 {
+updatedAt: "2026-09-27",
+secondaryCta: {
+  "label": "See the receptionist service",
+  "href": "/ai-receptionist"
+},
+gets: [],
+scenario: "Illustrative comparison: one proposal handles website enquiries, while another forwards a live phone number and transfers callers. Compare each against the job you need done, then list the ongoing services and failure handling required. Do not choose solely by the lowest headline figure.",
   slug: "ai-receptionist-cost",
   icon: "Receipt",
   eyebrow: "Resource",
   h1: "How Much Does an AI Receptionist Cost?",
-  title: "How Much Does an AI Receptionist Cost?",
-  description: "What AI call answering actually costs in Canada — one-time builds, monthly subscriptions and per-minute answering services compared, including the fees that are easy to miss.",
-  answer: "In Canada an AI receptionist arrives in three price shapes. Subscription tools run roughly $49–299/mo, often with per-minute overages and a setup fee of $75–1,500. Traditional human answering services bill per minute or per call, commonly $200–500/mo at low volume and far more as you grow. A custom build is a one-time fee — from $1,500 CAD for a single worker, or $3,500–$7,500 for a connected system — with no platform licence afterwards. Which is cheapest depends almost entirely on your call volume and how long you plan to keep it.",
-  pain: "Every vendor quotes a different unit — per month, per minute, per call, per resolution — so nothing is comparable and the number on the pricing page is rarely the number on the invoice.",
+  title: "AI Receptionist Cost: Setup, Usage and Support",
+  description: "Understand AI receptionist setup, channel differences, usage charges and support before comparing a subscription with a custom build.",
+  answer: "Compare an AI receptionist by its complete scope: setup, the channel it handles, phone or model usage, integrations and ongoing support. Handbuilt's current build package price is shown below and on the pricing page. A phone-answering implementation is scoped separately; the package figure is not a promise that every integration or running cost is included.",
+  pain: "A starting price is difficult to compare when one offer means web chat and another means live phone answering.",
   sections: [
-    {
-      heading: "The three price shapes, and how to compare them",
-      body: "The trick is to convert everything to a twelve-month figure before you compare anything, because the three models are designed to look cheap at different moments.",
-      bullets: [
-        "Subscription (Numa, Rosie, Goodcall, Smith.ai; in Canada Benny from about $99/mo, Mihron about CA$299/mo, VoiceFleet about CA$149/mo): roughly $49–299/mo plus overages. Cheapest to start, cancellable, and the bill moves with your call volume.",
-        "Platform-bundled (Jobber's AI Receptionist at $99/mo, free on their Plus plan at roughly $499–599/mo; Housecall Pro's built-in features inside $59–329/mo): cheap if you already pay for the platform, useless outside it.",
-        "Human answering service: billed per minute or per call, commonly $200–500/mo for light coverage. Best judgment on the line, worst scaling — volume is exactly what makes it expensive.",
-        "Custom build: from $1,500 CAD once for a single worker, $3,500–$7,500 for a connected system. Highest day-one cost, no licence afterwards.",
-      ],
-    },
-    {
-      heading: "The fees that are easy to miss",
-      body: "Almost every complaint about AI answering pricing traces back to one of four line items rather than the headline number.\n\nPer-minute overages are the big one. A plan with a bundle of included minutes prices your quiet month accurately and your busy month badly — and busy months are exactly when you are least able to notice a bill. Setup fees in this category run anywhere from $75 to $1,500 and are frequently not on the pricing page at all. Per-resolution billing, which some support-focused products use, means a spike in inbound genuinely does mean a spike in cost. And on a custom build the equivalent line is model usage — you pay the AI provider directly, typically $5–50/month at local-business call volumes, which is small but is not zero.\n\nBefore signing anything, ask for the per-minute rate, the overage rate, the setup fee, and what happens in a month with double your normal calls. A vendor who will not answer those four in writing is telling you something.",
-    },
-    {
-      heading: "Where the arithmetic actually lands",
-      body: "A subscription at $99/mo is $1,188 over a year, before overages. At $149/mo it is $1,788, and at CA$299/mo it is $3,588. A single-worker custom build is $1,500 CAD once.\n\nSo in year one a subscription is usually cheaper or level. The custom build wins from roughly year two onward, and it wins harder the longer you trade. That means the honest question is not 'which is cheaper' but 'how confident am I that this business is still running this system in three years, and how much do I care about owning it?' If the answer is 'not very', rent it. This page would rather say that than sell you a build you should not buy.",
-    },
-    {
-      heading: "What drives the build price",
-      body: "Scope, in four dimensions: how many scenarios it has to handle (FAQs, booking, quoting, emergency routing), whether it connects to a calendar or CRM, whether it handles voice as well as chat, and how many service areas and service types it needs to keep straight. Voice is the expensive one — a phone system has latency, interruption and audio-quality problems that a chat widget simply does not have.\n\nA straightforward chat receptionist for a single-trade contractor lands around $1,500. A phone-and-chat system with live calendar booking and lead logging is a Business AI System at $3,500–$7,500 CAD.",
-    },
-    {
-      heading: "Best For / Not Best For",
-      body: "A custom build fits when you regularly miss after-hours calls, answer the same questions daily, and expect to keep the system for years. It is the wrong purchase under roughly 20 calls a month, where every call needs nuanced human judgment, or where complaints are the normal inbound. At low volume a cancellable subscription is genuinely the better buy.",
-    }
-  ],
+  {
+    "heading": "Separate setup from ongoing charges",
+    "body": "Setup covers the agreed design, implementation and testing. Running costs can include hosting, communications, model usage and maintenance, depending on the system. Ask which are paid directly by you and which are included in a recurring agreement.\n\nGet the proposal in a stated currency. If a provider quotes in another currency, account for that distinction without assuming a fixed exchange rate."
+  },
+  {
+    "heading": "Phone, text and website intake are different scopes",
+    "body": "Live phone answering requires reviewing the number, provider, forwarding, call routing and fallback. Website chat or a form-based intake does not automatically include those pieces. Calendar confirmation and CRM connections are also specific integrations.\n\nWrite down the channels you need before comparing offers. A package card describes its own scope; a written proposal should confirm what your implementation adds or excludes."
+  },
+  {
+    "heading": "Include support and failure recovery in the comparison",
+    "body": "Ask who investigates failed calls, expired connections or a notification that does not arrive. Find out whether monitoring, adjustments and future changes are included. A system whose dependencies change needs an owner for maintenance.\n\nDefine a fallback the business can operate. The cost of an unavailable enquiry path matters, but do not invent a lost-revenue number without your own evidence."
+  },
+  {
+    "heading": "Calculate value from your own workload",
+    "body": "Use actual enquiry volume, time spent and the contribution margin of suitable jobs. Revenue alone is not the money available to recover setup costs. Separate a scenario from a forecast, and test assumptions before deciding to buy.\n\nFor a business with little routine intake, a simple form, a human callback process or an off-the-shelf service may be enough. Custom work makes sense when the requirements justify it."
+  }
+],
   packageId: "starter",
-  ctaLabel: "Get a quote",
+  ctaLabel: "Request a receptionist quote",
   keywords: ["ai receptionist cost", "ai receptionist price canada", "how much does an ai receptionist cost", "ai phone answering cost", "answering service cost canada", "ai answering service pricing"],
   related: [
-    { label: "Is an AI Receptionist Worth It?", href: "/resources/is-ai-receptionist-worth-it" },
-    { label: "AI Receptionist vs Virtual Receptionist", href: "/compare/ai-receptionist-vs-virtual-receptionist" },
-    { label: "AI Receptionist vs Answering Service", href: "/compare/ai-receptionist-vs-answering-service" },
-    { label: "AI Receptionist Pricing in Canada", href: "/compare/ai-receptionist-pricing-canada" },
-    { label: "Free missed-call revenue calculator", href: "/tools/missed-call-revenue-calculator" },
-    { label: "Can AI Answer Business Phone Calls?", href: "/resources/can-ai-answer-business-phone-calls" },
-    { label: "Pricing", href: "/pricing" }
-  ],
+  {
+    "label": "AI receptionist service",
+    "href": "/ai-receptionist"
+  },
+  {
+    "label": "Canadian pricing comparison",
+    "href": "/compare/ai-receptionist-pricing-canada"
+  },
+  {
+    "label": "Is an AI receptionist worth it?",
+    "href": "/resources/is-ai-receptionist-worth-it"
+  },
+  {
+    "label": "Current build packages",
+    "href": "/pricing"
+  }
+],
   faqs: [
-    {
-      q: "Is there a monthly fee for a custom-built AI receptionist?",
-      a: "No platform fee — you own the build. The ongoing costs are model usage billed by the AI provider directly (typically $5–50/month at local-business volumes) and the optional Care Plan at $99/month CAD if you want it monitored and updated for you."
-    },
-    {
-      q: "What is included in a $1,500 AI receptionist build?",
-      a: "One AI worker trained on your FAQs, hours, services and service area, handling inbound inquiries, qualifying and either capturing or routing the contact. Roughly five business days to live. What it does not include is voice telephony on a complex multi-line setup — that is Business AI System scope."
-    },
-    {
-      q: "Do I pay per call or per minute?",
-      a: "Not to Handbuilt. That model belongs to the subscription and answering-service options, and it is the line item worth scrutinising there — ask specifically about the overage rate, not just the included minutes."
-    },
-    {
-      q: "Is a subscription cheaper long-term?",
-      a: "In year one, usually yes or close to level. A $99/mo plan is $1,188 a year against $1,500 once. From year two the build is ahead, and further ahead every year after. Genuinely depends on how long you expect to run it."
-    },
-    {
-      q: "How do I work out what this is worth to me before I spend anything?",
-      a: "Run the missed-call revenue calculator on this site. It runs in your browser, nothing is sent anywhere, and it takes about five minutes. If the number it gives you is small, that is a real answer and you should not buy any of this yet."
-    }
-  ],
+  {
+    "q": "Is live phone answering included in the displayed Starter price?",
+    "a": "It is not automatically included. The phone setup, integrations, usage and fallback need a separate scope confirmed in the proposal."
+  },
+  {
+    "q": "Are there ongoing costs?",
+    "a": "There may be hosting, communications, model usage and support costs depending on the implementation. Ask for these to be itemised before approving the work."
+  },
+  {
+    "q": "Is there a free AI receptionist?",
+    "a": "Some tools may offer trials or limited free features, but that does not establish that your required workflow has no ongoing cost. Review current limits and the complete setup."
+  },
+  {
+    "q": "Should I choose a subscription or a custom build?",
+    "a": "Compare the fit, complete running cost, ownership, support and exit process. A custom build is not automatically the best choice for a straightforward low-volume workflow."
+  }
+],
   schema: "Article"
 },
 {
+updatedAt: "2026-09-27",
+secondaryCta: {
+  "label": "Read the cost guide",
+  "href": "/resources/ai-receptionist-cost"
+},
+gets: [],
+scenario: "Illustrative decision: a business reviews its call log and finds several missed calls, but many are repeat calls about the same job. Deduplicate them before estimating opportunities. Then test whether a scoped receptionist can handle the common request and reach a human when needed.",
   slug: "is-ai-receptionist-worth-it",
   icon: "TrendingUp",
   eyebrow: "Resource",
   h1: "Is an AI Receptionist Worth It?",
-  title: "Is an AI Receptionist Worth It?",
-  description: "Honest ROI framing for Canadian service businesses: when an AI receptionist pays off, the two cases where the answer is no, and how to run the break-even yourself.",
-  answer: "An AI receptionist is worth it for a service business that regularly misses after-hours calls, answers the same handful of questions every day, and loses work to whoever picks up first. It is not worth it below roughly 20 inbound calls a month, or where every call is a bespoke consultation. Break-even is normally one or two recovered jobs — which makes it a calculation about your average job value, not a matter of opinion.",
-  pain: "You're missing calls while you're on a job, sleeping, or just busy — and you have no idea how many leads those missed calls represent.",
+  title: "Is an AI Receptionist Worth It for Your Small Business?",
+  description: "Evaluate call volume, routine questions, human handoff, reliability and real costs before deciding whether an AI receptionist fits your business.",
+  answer: "An AI receptionist may be useful when enough routine enquiries go unanswered and the business can define a safe intake and handoff. Evaluate your actual workload, complete costs and failure tolerance. If callers mainly need your judgement or volume is low, a simpler callback or human-answering process may fit better.",
+  pain: "The decision is about the enquiries your business can handle well, including what happens when a caller needs a person.",
   sections: [
-    {
-      heading: "When It Pays Off",
-      body: "An AI receptionist earns its keep when you are structurally unavailable — on a job, up a ladder, after hours, on a weekend. It earns it again when a real share of your calls are the same four questions: what do you charge, do you cover my area, when could you come, do you do this kind of work. Those are answerable from a config file, and answering them at 8pm is worth more than answering them well."
-    },
-    {
-      heading: "Run the break-even yourself, in five minutes",
-      body: "The arithmetic is simple enough that nobody should be quoting you a payback period. Take a $1,500 build with model usage running $5–50/month. Divide $1,500 by your average job value. That is how many recovered jobs it takes to pay for itself — for a business with an $800 average job, two of them.\n\nThen the real question: do you miss two jobs' worth of calls in a reasonable payback window? The missed-call revenue calculator on this site does exactly this, runs entirely in your browser, and sends nothing anywhere. Any specific payback figure quoted at you by a vendor who has not seen your call log is invented."
-    },
-    {
-      heading: "Two businesses where the answer is no",
-      body: "Being specific about this, because 'it depends' is not an answer.\n\nThe first is genuinely low volume. A shop taking fifteen calls a month, most of which it answers, is not losing enough to justify a build. A cancellable subscription is the better purchase, and possibly nothing at all is better still.\n\nThe second is the bespoke consult. If every inbound call is a long, exploratory conversation where the value is your judgment — a designer, a specialist trade quoting unusual work, anything where the caller is buying you specifically — an AI front door removes the thing they called for. Screening those calls costs more than the calls you miss.\n\nThere is a softer third case: a business whose customers are heavily non-English-speaking. English is what this handles reliably. Other languages are possible but should be tested against real calls before you commit, not after."
-    },
-    {
-      heading: "What running one on a real line actually taught",
-      body: "This is not theoretical here. A self-hosted AI phone receptionist was built and put on the live business line of a cedar-fence contracting business in July and August 2026. Three things it taught, none of which appear in vendor marketing:\n\nThe telephony breaks before the AI does. For several days, calls arrived as zero-second no-answers while the system itself was provably healthy — a delivery problem upstream of the software entirely. One caller tried fourteen times and never got through. If you take nothing else from this page: the AI is the least fragile part of an AI phone system.\n\nYour model can be retired underneath you. In August the provider retired the default model, and the result was an agent that answered, delivered its greeting, and then went dead mid-call — the worst possible failure, because the caller believes they have reached someone. Anything you buy or build needs monitoring that catches a silent agent, not just a down one.\n\nAnd the honest conclusion: as of late August 2026 the AI is out of the call path on that line, deliberately. It rings a real phone first. That is not a verdict that AI answering does not work — it is a verdict that on a business where every call is a several-thousand-dollar quote, the failure cost outweighed the coverage benefit while the reliability was still being established. Your volume and job value may put you on the other side of that line. That is the calculation."
-    },
-    {
-      heading: "Best For / Not Best For",
-      body: "A plain summary of who this fits and who it doesn't.",
-      bullets: [
-        "Best for: trades, home services, clinics and salons — high call volume, repeatable questions, and someone who cannot pick up because they are working.",
-        "Not best for: under about 20 calls a month, businesses where every call is a custom consultation, or where the caller is specifically buying access to the owner.",
-      ]
-    }
-  ],
+  {
+    "heading": "Count the problem before choosing the tool",
+    "body": "Review the calls or requests you miss, what customers ask and whether those requests fit your services. Do not treat every unanswered call as a lost job. Some are duplicates, spam or work you would not accept.\n\nCompare that evidence with your capacity. More captured enquiries help only if someone can review and respond to them."
+  },
+  {
+    "heading": "Test the boundary between routine and judgement",
+    "body": "Approved service information, basic intake and message-taking can be defined. Complex advice, unusual pricing and sensitive complaints may need a person. Decide which commitments the system may make and which must be deferred.\n\nMake the option to request a human clear. Test the handoff during implementation, including what happens when the intended person is unavailable."
+  },
+  {
+    "heading": "Include reliability in the business case",
+    "body": "Pavneet built an AI receptionist for his own Ironwood Grounds business. The recorded trial exposed call-delivery and model-dependency failures, and the AI was removed from the call path in August 2026 while reliability was evaluated. This is an owned-business experience, not a customer success claim.\n\nThe practical lesson is to check more than the voice. Verify the telephone route, conversation, saved details, notification and fallback. A working greeting does not prove the whole request was handled."
+  },
+  {
+    "heading": "Use margin and complete costs",
+    "body": "For a hypothetical break-even calculation, compare setup and running costs with the contribution margin of genuinely additional work, not the entire selling price. Include ongoing support and the time needed to review enquiries.\n\nNo universal call-count threshold or payback period can decide this for you. Use your data, document assumptions and begin with a narrowly scoped test when the result is uncertain."
+  }
+],
   packageId: "starter",
-  ctaLabel: "Talk it through",
+  ctaLabel: "Request a receptionist fit review",
   keywords: ["is ai receptionist worth it", "ai receptionist roi", "ai receptionist small business", "virtual receptionist worth it canada"],
   related: [
-    { label: "How Much Does an AI Receptionist Cost?", href: "/resources/ai-receptionist-cost" },
-    { label: "AI Receptionist vs Virtual Receptionist", href: "/compare/ai-receptionist-vs-virtual-receptionist" },
-    { label: "AI Receptionist vs Answering Service", href: "/compare/ai-receptionist-vs-answering-service" },
-    { label: "Free missed-call revenue calculator", href: "/tools/missed-call-revenue-calculator" },
-    { label: "Can AI Answer Business Phone Calls?", href: "/resources/can-ai-answer-business-phone-calls" },
-    { label: "AI Receptionist", href: "/ai-receptionist" },
-    { label: "Pricing", href: "/pricing" }
-  ],
+  {
+    "label": "AI receptionist service",
+    "href": "/ai-receptionist"
+  },
+  {
+    "label": "Complete cost comparison",
+    "href": "/resources/ai-receptionist-cost"
+  },
+  {
+    "label": "Missed-call calculator",
+    "href": "/tools/missed-call-revenue-calculator"
+  },
+  {
+    "label": "Answering service comparison",
+    "href": "/compare/ai-receptionist-vs-answering-service"
+  }
+],
   faqs: [
-    {
-      q: "What if I only get a few calls per week?",
-      a: "Then the build is probably the wrong purchase and a cancellable subscription is the right one. The exception is high job value — if those few calls are five-figure work and you genuinely miss them, one recovered job changes the arithmetic entirely. Run the calculator rather than guessing."
-    },
-    {
-      q: "Will customers know they're talking to an AI?",
-      a: "They should, and it should say so in the first sentence — \"Hi, I'm the AI assistant for XYZ Plumbing\". Disclosing costs almost nothing and being caught not disclosing costs a great deal. It also gives the caller an obvious way to ask for a person, which is information you want."
-    },
-    {
-      q: "What happens when the AI can't handle the call?",
-      a: "It transfers, takes a message, or books a callback — you define which, per scenario, during setup. The boundaries are worth more thought than the greeting: an agent that guesses at the edge of its knowledge is worse than one that hands off early."
-    },
-    {
-      q: "Is there a risk the AI gives wrong information?",
-      a: "Yes, and the mitigation is scope rather than cleverness. It answers from the services, pricing ranges, hours and service area you supply, and it should be configured to say it does not know rather than improvise. The commonest real-world cause of a wrong answer is not the model — it is a price you changed six months ago and never updated in the config."
-    },
-    {
-      q: "What's a realistic payback timeline?",
-      a: "Divide the build cost by your average job value to get the number of recovered jobs needed, then check that against how many calls you actually miss. No honest figure can be quoted here without your call log — anyone offering one is guessing."
-    }
-  ],
+  {
+    "q": "Can AI replace a receptionist?",
+    "a": "It can handle an agreed subset of work, but replacing a person's role depends on the tasks and business. Begin with scope and human fallback rather than assuming full replacement."
+  },
+  {
+    "q": "What if I only receive a few calls?",
+    "a": "Consider the actual workload and value of appropriate enquiries. A simple callback process or existing service may be sufficient; there is no fixed threshold established by this guide."
+  },
+  {
+    "q": "Should callers know they are speaking to AI?",
+    "a": "The experience should clearly identify the assistant and provide a route to a person. Build that expectation into the greeting and handoff."
+  },
+  {
+    "q": "Does a demonstration prove the system will work on my phone line?",
+    "a": "No. Your provider, routing, integrations and failure cases need their own implementation checks."
+  }
+],
   schema: "Article"
 },
 {
@@ -470,6 +478,7 @@ export const resources: LandingContent[] = [
   schema: "Article"
 },
 {
+updatedAt: "2026-09-27",
   slug: "ai-lead-follow-up-guide",
   icon: "Magnet",
   eyebrow: "Resource",
@@ -479,6 +488,10 @@ export const resources: LandingContent[] = [
   answer: "AI lead follow-up agents automatically contact new leads by SMS or email within minutes of an inquiry, then send scheduled follow-ups until they get a clear yes or no. For service businesses, fast first response is one of the highest-ROI automations available — the business that replies first usually wins the job, regardless of price.",
   pain: "You send quotes or get website inquiries, and then life gets busy. Three days later you remember to follow up — but the lead already hired someone else.",
   sections: [
+{
+  "heading": "Track the incoming enquiry through to a reply",
+  "body": "A website submission, saved request and owner notification are separate steps. Check all three, then give a person responsibility for the response. Keep a visible failure status and a way to recover requests when an email does not arrive.\n\nCount repeat submissions about the same opportunity once in your private reporting. Separate enquiries, replies, quotes and paid work. A generated acknowledgement is not evidence that a prospect received a useful answer."
+},
     {
       heading: "Why Speed-to-Lead Matters",
       body: "When a homeowner needs a plumber, roofer, or cleaner, they often contact two or three businesses at once. The first one to respond — even with a simple acknowledgment — typically gets the job. An AI follow-up agent closes that gap by sending a personalized first reply within minutes of the inquiry, before you've even seen the notification."
@@ -514,6 +527,14 @@ export const resources: LandingContent[] = [
   ctaLabel: "Get this built",
   keywords: ["ai lead follow up", "automated lead follow up small business", "ai follow up agent", "lead follow up automation", "ai sms follow up canada"],
   related: [
+{
+  "label": "Automate quote requests",
+  "href": "/how-to/automate-quote-requests"
+},
+{
+  "label": "Diagnose website enquiries",
+  "href": "/resources/website-traffic-but-no-quote-requests"
+},
     { label: "AI Lead Follow-Up Agent", href: "/ai-lead-follow-up-agent" },
     { label: "AI SMS Automation", href: "/services/ai-sms-automation" },
     { label: "AI Email Automation", href: "/services/ai-email-automation" },

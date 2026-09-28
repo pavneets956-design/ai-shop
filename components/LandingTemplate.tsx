@@ -91,8 +91,8 @@ export default function LandingTemplate({
               <MagneticButton href={ctaHref}>
                 {ctaLabel} <ArrowRight className="h-4 w-4" />
               </MagneticButton>
-              <Link href="/demo" className="btn-ghost">
-                Explore the text demo
+              <Link href={content.secondaryCta?.href ?? "/demo"} className="btn-ghost">
+                {content.secondaryCta?.label ?? "Explore the text demo"}
               </Link>
             </div>
           </Reveal>
@@ -180,6 +180,17 @@ export default function LandingTemplate({
                       ))}
                     </ul>
                   )}
+                  {sec.sources && sec.sources.length > 0 && (
+                    <ul aria-label={`Sources for ${sec.heading}`} className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                      {sec.sources.map((source) => (
+                        <li key={source.href}>
+                          <a href={source.href} className="inline-flex min-h-[44px] items-center underline underline-offset-4 text-ink/75 hover:text-ink">
+                            {source.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -256,7 +267,7 @@ export default function LandingTemplate({
       {/* WHAT YOU GET + PRICE */}
       {(content.gets?.length || pkg) && (
         <section className="relative py-12">
-          <div className="mx-auto grid max-w-5xl gap-6 px-4 lg:grid-cols-2">
+          <div className={`mx-auto grid gap-6 px-4 ${pkg && content.gets?.length ? "max-w-5xl lg:grid-cols-2" : "max-w-3xl"}`}>
             {content.gets && content.gets.length > 0 && (
               <Reveal>
                 <div className="glass-card h-full">
@@ -345,13 +356,12 @@ export default function LandingTemplate({
         <div className="mx-auto max-w-2xl px-4">
           <Reveal>
             <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Want this built for your business?
+              {content.ctaHeading ?? "Want this built for your business?"}
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mx-auto mt-4 text-ink-soft">
-              Tell us about your setup and we&apos;ll send a plan and a fixed quote within one
-              business day.
+              {content.ctaDescription ?? "Tell us about your setup and we'll send a plan and a fixed quote within one business day."}
             </p>
           </Reveal>
           <Reveal delay={0.15}>

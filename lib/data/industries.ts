@@ -4,6 +4,7 @@ import { industriesC } from "./_industries_c";
 
 const industriesA: LandingContent[] = [
   {
+updatedAt: "2026-09-27",
     slug: "landscaping-ai-automation",
     eyebrow: "Industry",
     h1: "AI Automation for Landscaping Businesses",
@@ -28,6 +29,10 @@ const industriesA: LandingContent[] = [
       "Review requests sent after each completed job",
     ],
     sections: [
+{
+  "heading": "Connect seasonal discovery to an organised request",
+  "body": "Make the current services and coverage clear before adding an answering workflow. A maintenance enquiry, a one-off cleanup and a larger landscape project may need different intake questions. Explain what is offered now and what information helps assess the job.\n\nGroup related customer questions on useful service pages. Then check that each request reaches the right person and receives a response. Search visibility, enquiry delivery and an accepted job are separate steps to review."
+},
       {
         heading: "What an AI receptionist has to know about a landscaping business",
         body: "The failure mode with a generic answering service on a landscaping line is that it takes a message. A message is not a lead — it is homework for you at 8pm.\n\nWhat it needs configured to be useful: your service zones by neighbourhood, not by city, because half of what you decline is a job forty minutes the wrong way. Which services you actually offer and, just as important, the ones you do not — an agent that cheerfully agrees to tree removal you do not do creates a worse call than voicemail. Your recurring-versus-one-off split, since those are completely different conversations. And a rough price band per service, so a caller gets a real answer rather than \"someone will get back to you\".\n\nThat last one is where owners hesitate, and the honest advice is to give a band rather than nothing. A caller who hears \"spring cleanups typically run in this range\" self-selects. A caller who hears nothing calls the next landscaper."
@@ -60,6 +65,14 @@ const industriesA: LandingContent[] = [
       "automated quote follow-up for landscaping",
     ],
     related: [
+{
+  "label": "Search visibility for local businesses",
+  "href": "/services/ai-search-visibility"
+},
+{
+  "label": "Google profile checklist for trades",
+  "href": "/resources/google-business-profile-checklist-for-trades"
+},
       { label: "AI Receptionist Setup", href: "/ai-receptionist" },
       { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
       { label: "AI Review Engine", href: "/services/ai-review-engine" },
