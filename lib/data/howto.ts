@@ -1,6 +1,8 @@
 import type { LandingContent } from "./landing";
+import { discoveryHowtos } from "./discovery";
 
 export const howtos: LandingContent[] = [
+  ...discoveryHowtos,
   {
     slug: "add-ai-chatbot-to-website",
     eyebrow: "How-to",
@@ -77,51 +79,55 @@ export const howtos: LandingContent[] = [
     icon: "MessagesSquare",
   },
   {
+updatedAt: "2026-09-27",
+secondaryCta: {
+  "label": "Review your enquiry journey",
+  "href": "/resources/website-traffic-but-no-quote-requests"
+},
+gets: [
+  "An intake form matched to the job",
+  "Visible success, validation and failure states",
+  "An owner notification and recovery plan",
+  "A clear handoff for estimates requiring judgement"
+],
     slug: "automate-quote-requests",
     eyebrow: "How-to",
     h1: "How to Automate Quote Requests for a Small Business",
-    title: "How to Automate Quote Requests for a Small Business | Handbuilt",
-    description:
-      "Stop manually pricing every job. Here's how to build an AI-powered quote form that collects scope, calculates estimates, and emails the customer automatically.",
-    answer:
-      "Build a smart intake form that asks the right scoping questions, pass the answers through a pricing logic layer (spreadsheet formula or GPT prompt), and send an automated quote email. The customer gets a number in minutes; you get a qualified lead with full job details.",
-    pain:
-      "Small service businesses price jobs over the phone or by email — one at a time. Every quote is a 15-minute conversation you have to schedule, repeat for no-shows, and manually follow up on. Evenings and weekends go unanswered. You lose jobs to whoever replies first.",
+    title: "How to Automate Quote Requests Without Losing Enquiries",
+    description: "Build a reliable quote-request journey from form submission to record, notification and follow-up, including errors and duplicate requests.",
+    answer: "Start with a clear request form, a reliable record and an owner notification. Collect the information needed for the next step, confirm receipt to the visitor and make failures visible. Add automatic estimates only where the business can define and check the pricing rules.",
+    pain: "A request form is not useful if the customer cannot tell whether it worked or the owner never receives the details.",
     steps: [
-      "Map your pricing variables: what inputs change your price? Square footage, job type, location, timeline urgency, number of units.",
-      "Build a scoping form with conditional logic — only show fields that are relevant based on earlier answers (Typeform, Tally, or a custom form).",
-      "Write your pricing rules as a spreadsheet formula or a GPT prompt that takes the form inputs and returns a price range.",
-      "Connect the form to an automation layer (Make, Zapier, or n8n) that passes answers to your pricing logic.",
-      "Draft your quote email template — include the price range, what's included, and a clear next step (book a call, pay deposit, etc.).",
-      "Set up the send: when the form submits, the automation emails the customer within 60 seconds.",
-      "Log every quote to a spreadsheet or CRM so you can follow up and track close rate.",
-    ],
+  "Define the information needed to assess a request.",
+  "Build validation and clear sending, success and error states.",
+  "Record the request and notify the responsible person.",
+  "Test failure and duplicate-submission handling.",
+  "Add estimate preparation only where approved rules make it appropriate."
+],
     sections: [
-      {
-        heading: "The manual way (and why it breaks)",
-        body: "The typical small business quote flow: customer calls or emails, you play phone tag, you ask the same 8 questions you always ask, you hang up and do the math, you send a quote 24 hours later. By then the customer has three other quotes. Your conversion rate is a coin flip, and you wasted an hour on every job you didn't win.",
-        bullets: [
-          "Average quote turnaround for service businesses: 1–3 days",
-          "Customers who receive quotes within an hour are significantly more likely to accept",
-          "No record of lost quotes means you can't see patterns or improve your close rate",
-        ],
-      },
-      {
-        heading: "What tools you need",
-        body: "You need three pieces: a form, a pricing engine, and an email sender. The form can be Typeform, Tally, or a custom-coded intake page. The pricing engine is either a Google Sheets formula or a GPT prompt with your pricing rules baked in. The email sender is your existing email (Gmail, Outlook) triggered through Make or Zapier.",
-        bullets: [
-          "Form builder: Tally (free), Typeform ($25–$50/month), or custom build",
-          "Automation layer: Make (free tier), Zapier ($20+/month), or n8n (self-hosted free)",
-          "Email: Gmail or any SMTP sender via the automation",
-        ],
-      },
-      {
-        heading: "What it costs to set up",
-        body: "DIY: 10–20 hours to map your pricing, build the form, wire the automation, and test edge cases. Tools cost $0–$70/month ongoing. Hiring Handbuilt: Starter package at $1,500 CAD covers the full quote automation — form, pricing logic, email template, and CRM logging. Whether that pays for itself in a month or a quarter depends on your job value and how many quotes currently go quiet — the missed-call calculator will tell you from your own numbers.",
-      },
-    ],
+  {
+    "heading": "Ask for enough information to take the next step",
+    "body": "For a local service, start with the type of work, service area, contact route and a short description. Request measurements or photographs only where they are useful. Explain when a site assessment is required.\n\nA request should not look like a confirmed booking or a final quote if the business still needs to review it. The wording above the submit button should make the next step clear."
+  },
+  {
+    "heading": "Show what happened after submission",
+    "body": "The form needs a sending state, a clear receipt confirmation and an error that explains when submission has failed. Keep the visitor's input available when recovery is possible. Provide a working alternative contact route.\n\nValidation should identify the field needing attention. A silent screen or a button that simply stops responding can leave a customer unsure whether to submit again."
+  },
+  {
+    "heading": "Check the record and the email separately",
+    "body": "Submitting a request, saving it, having an email provider accept a notification and seeing it in the inbox are different steps. Decide what evidence the system retains and how the owner sees a delivery problem.\n\nWhere the workflow stores requests, it can offer a recovery path when notification fails. Use an appropriate retry policy and avoid duplicate notifications or prospects when a customer resubmits."
+  },
+  {
+    "heading": "Keep judgement with the responsible person",
+    "body": "Some work can be estimated from explicit measurements and agreed rules. Other work depends on access, material condition or inspection. In those cases, automation can organise details and prepare a draft while a person approves the final commitment.\n\nDo not use an unconstrained language-model guess as the pricing rule. Record which information is missing and make the next question easy for the owner to answer."
+  },
+  {
+    "heading": "Test the whole journey with a labelled request",
+    "body": "Before release, agree a clearly labelled test that will not be mistaken for a prospect. Check the browser confirmation, the saved record where available, the notification and the reply route. Include a provider failure and repeated submission in a safe test environment.\n\nAfter release, review genuine enquiries separately from tests. A functional form is necessary for acquisition, but it is not evidence that relevant customers are visiting the site."
+  }
+],
     packageId: "starter",
-    ctaLabel: "Get quote automation built for $1,500 CAD",
+    ctaLabel: "Request a quote-workflow review",
     keywords: [
       "automate quote requests small business",
       "ai quote generator canada",
@@ -129,25 +135,33 @@ export const howtos: LandingContent[] = [
       "quote automation surrey bc",
     ],
     related: [
-      { label: "AI Quote Generator", href: "/services/ai-quote-generator" },
-      { label: "Cleaning Business AI Automation", href: "/industries/cleaning-business-ai-automation" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Start a Project", href: "/create" },
-    ],
+  {
+    "label": "Lead capture form service",
+    "href": "/services/ai-lead-capture-form"
+  },
+  {
+    "label": "Lead follow-up",
+    "href": "/ai-lead-follow-up-agent"
+  },
+  {
+    "label": "Get found by customers",
+    "href": "/services/ai-search-visibility"
+  }
+],
     faqs: [
-      {
-        q: "Can AI pricing replace my judgment on complex jobs?",
-        a: "For standard jobs, yes — your pricing rules are consistent enough to automate. For complex or custom jobs, the form flags them as 'needs review' and routes to you. You stop doing the easy quotes manually; you still handle the exceptions.",
-      },
-      {
-        q: "What if my pricing changes seasonally?",
-        a: "You update the pricing rules in one place — the spreadsheet or the GPT prompt — and every future quote reflects the new rates. No chasing old templates.",
-      },
-      {
-        q: "Will customers trust an automated quote?",
-        a: "Yes, if it's fast and accurate. Customers don't care whether a human or a system produced the number — they care that it arrived in 60 seconds with a clear scope of what's included.",
-      },
-    ],
+  {
+    "q": "Does a quote request need AI?",
+    "a": "No. A reliable form and notification may solve the problem. Add AI only for a specific capability you can define and test."
+  },
+  {
+    "q": "Can every job be priced automatically?",
+    "a": "No. Work requiring inspection or judgement should remain a request or draft until the responsible person approves the quote."
+  },
+  {
+    "q": "How do I know the form email arrived?",
+    "a": "Check the notification in the receiving inbox during an agreed labelled test. A browser confirmation or provider acceptance alone is not the same observation."
+  }
+],
     schema: "HowTo",
     icon: "Receipt",
   },
@@ -392,6 +406,7 @@ export const howtos: LandingContent[] = [
   schema: "HowTo"
 },
   {
+updatedAt: "2026-09-27",
     slug: "automate-review-requests",
     eyebrow: "How-to",
     h1: "How to Automate Review Requests",
@@ -418,6 +433,16 @@ export const howtos: LandingContent[] = [
       "A private channel so problems reach you directly as well as publicly",
     ],
     sections: [
+{
+  "heading": "Use honest feedback as business information",
+  "body": "Google prohibits fake engagement and incentives for reviews, including selectively asking only customers likely to give a positive rating. A request workflow should ask for honest feedback and avoid making rewards or service conditional on a favourable review.\n\nKeep a separate private route for resolving a customer's problem. When publishing a review on your own site, use only real feedback you have permission to reproduce and retain the context.",
+  "sources": [
+    {
+      "label": "Google: review content policies",
+      "href": "https://support.google.com/contributionpolicy/answer/7400114"
+    }
+  ]
+},
       {
         heading: "The compliance line, stated plainly",
         body: "This is the part most review-automation marketing gets wrong, so here it is directly.\n\nAsking every customer for an honest review is fine and encouraged. Asking only the customers you predict will say something nice is review gating. Google's policies prohibit it, and the enforcement risk is not theoretical — it can affect the reviews already on your profile, which is a far worse outcome than having fewer reviews.\n\nThe common dressed-up version is a tool that asks 'how did we do?' first and only shows the Google link to people who answer positively, routing everyone else to a private form. That is gating with an extra step. If a product sells you 'sentiment routing' or 'catch the unhappy ones before they post', that is what it means.\n\nThe compliant pattern is genuinely simple: everyone gets the same link, and you additionally give them a private way to tell you if something went wrong. Both, not either.",
@@ -433,6 +458,14 @@ export const howtos: LandingContent[] = [
     ],
     keywords: ["how to automate review requests", "automate google reviews", "review request automation", "get more reviews automatically", "review gating google policy"],
     related: [
+{
+  "label": "Google profile checklist",
+  "href": "/resources/google-business-profile-checklist-for-trades"
+},
+{
+  "label": "Search visibility review",
+  "href": "/services/ai-search-visibility"
+},
       { label: "AI Review Engine", href: "/services/ai-review-engine" },
       { label: "Google Business Profile Lead Automation", href: "/use-cases/google-business-profile-lead-automation" },
       { label: "Best AI Automations for Service Businesses", href: "/resources/best-ai-automations-for-service-businesses" },
