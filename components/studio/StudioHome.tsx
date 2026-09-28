@@ -7,12 +7,9 @@ import {
   Globe2,
   Workflow,
   Code2,
-  FileCheck2,
-  Bell,
-  Fence,
   Calculator,
 } from "lucide-react";
-import WorkflowPreview from "./WorkflowPreview";
+import ProductShowcase from "./ProductShowcase";
 import {
   packages,
   formatPackagePrice,
@@ -63,8 +60,7 @@ export default function StudioHome() {
           <span>Let’s build it properly.</span>
         </h1>
         <p className="studio-hero-copy">
-          Custom websites, apps and AI systems. One independent builder working
-          with you from the first sketch to something you can actually use.
+          Custom websites, apps and AI systems. Thoughtfully built with you.
         </p>
         <div className="studio-actions">
           <Link
@@ -83,13 +79,7 @@ export default function StudioHome() {
         <p className="studio-hero-note">
           Your accounts. A fixed scope. One builder from start to finish.
         </p>
-        <WorkflowPreview />
-        <div className="studio-trust-row">
-          <span>Based in Surrey, BC</span>
-          <span>Fixed quotes in CAD</span>
-          <span>Your code, accounts & data</span>
-          <span>Design → build → handover</span>
-        </div>
+        <ProductShowcase />
       </section>
       <section className="studio-section studio-container" id="what-we-build">
         <div className="studio-section-heading">
@@ -122,115 +112,8 @@ export default function StudioHome() {
           ))}
         </div>
       </section>
-      <section className="studio-section studio-proof" id="work">
+      <section className="studio-section studio-proof" aria-label="The builder behind the work">
         <div className="studio-container">
-          <div className="studio-section-heading">
-            <div>
-              <p className="studio-eyebrow">Built, and out in the world</p>
-              <h2>
-                Real work.
-                <br />
-                From my own businesses.
-              </h2>
-            </div>
-            <p>
-              These are products and systems I own and build. Open them, explore
-              the work, and see how I approach a practical problem.
-            </p>
-          </div>
-          <div className="studio-projects">
-            <a
-              className="studio-project"
-              href="https://ironwoodgrounds.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div
-                className="studio-project-art studio-art-fence"
-                aria-hidden="true"
-              >
-                <Fence size={90} strokeWidth={0.8} />
-                <div className="studio-art-caption">Enquiry → quote → job</div>
-              </div>
-              <div className="studio-project-title">
-                <h3>Ironwood Grounds</h3>
-                <ArrowUpRight size={20} aria-hidden="true" />
-              </div>
-              <p>
-                My cedar-fence business. A website and quote intake built around
-                work on site.
-              </p>
-              <span className="studio-small">
-                Owned business · South Surrey
-              </span>
-            </a>
-            <a
-              className="studio-project"
-              href="https://coitracker.co"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div
-                className="studio-project-art studio-art-docs"
-                aria-hidden="true"
-              >
-                <div className="studio-document">
-                  <FileCheck2 size={30} strokeWidth={1.3} />
-                  <span>Certificate received</span>
-                  <i />
-                  <i />
-                  <div>
-                    <Check size={12} /> Review → reminders
-                  </div>
-                </div>
-              </div>
-              <div className="studio-project-title">
-                <h3>COITracker</h3>
-                <ArrowUpRight size={20} aria-hidden="true" />
-              </div>
-              <p>
-                Certificate tracking with document review and reminders before
-                insurance expires.
-              </p>
-              <span className="studio-small">
-                Owned product · Document workflows
-              </span>
-            </a>
-            <a
-              className="studio-project"
-              href="https://paynudge.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div
-                className="studio-project-art studio-art-nudge"
-                aria-hidden="true"
-              >
-                <div className="studio-nudge">
-                  <Bell size={26} strokeWidth={1.3} />
-                  <span>Follow up. Then get on with it.</span>
-                  <div>
-                    <i /> Reminder <i /> Reply <i /> Resolved
-                  </div>
-                </div>
-              </div>
-              <div className="studio-project-title">
-                <h3>PayNudge</h3>
-                <ArrowUpRight size={20} aria-hidden="true" />
-              </div>
-              <p>
-                Invoice reminders that stop when payment is recorded, so follow-up
-                stays useful.
-              </p>
-              <span className="studio-small">
-                Owned product · Invoice follow-up
-              </span>
-            </a>
-          </div>
-          <p className="studio-proof-note">
-            Workflow illustrations above; these are owned projects, not client
-            case studies.
-          </p>
           <div className="studio-founder">
             <Image
               src="/founder.jpg"
@@ -239,12 +122,13 @@ export default function StudioHome() {
               alt="Pavneet Singh, founder of Handbuilt AI"
             />
             <div>
-              <h3>A builder you can talk to.</h3>
+              <h2>A builder you can talk to.</h2>
               <p>
                 I’m {site.founder}. I run a trade business in South Surrey and
                 build the software around it. You work directly with me from the
                 first conversation to handover.
               </p>
+              <a href="https://ironwoodgrounds.ca" target="_blank" rel="noopener noreferrer" className="studio-text-link">Explore my trade business <ArrowUpRight size={14} aria-hidden="true" /></a>
             </div>
             <Link href="/about" className="studio-text-link">
               Meet Pavneet <ArrowUpRight size={16} aria-hidden="true" />
