@@ -22,6 +22,8 @@ export interface LandingSection {
   /** Plain prose; split into paragraphs on blank lines. */
   body: string;
   bullets?: string[];
+  /** Official references supporting this section, shown beside the explanation. */
+  sources?: LandingLink[];
 }
 
 export interface LandingLink {
@@ -43,6 +45,8 @@ export interface LandingContent {
   h1: string;
   /** <title> — unique, includes the primary keyword. */
   title: string;
+  /** Optional concise search title, without the root layout's brand suffix. */
+  searchTitle?: string;
   /** Meta description — unique, ~150 chars, buyer language. */
   description: string;
   /** Answer-first lead paragraph (LLM-citable, self-contained). */
@@ -62,6 +66,9 @@ export interface LandingContent {
   /** Recommended package — drives the price card + CTA target. */
   packageId?: "starter" | "business" | "custom";
   ctaLabel?: string;
+  secondaryCta?: LandingLink;
+  ctaHeading?: string;
+  ctaDescription?: string;
   keywords: string[];
   /** Internal links (hub→spoke). Enforce ≥2 to avoid orphans. */
   related: LandingLink[];

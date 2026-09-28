@@ -202,34 +202,42 @@ export const useCases: UseCase[] = [
     slug: "google-business-profile-lead-automation",
     solution: "Google Business Profile Leads",
     industry: "Local Businesses",
-    question: "How do I capture and respond to Google Business Profile leads automatically?",
-    answer:
-      "Google Business Profile lead automation answers the messages and questions that come through your Google listing instantly, captures the lead, and follows up — so the customers who find you on Maps don't slip away while you're busy. Handbuilt builds it around your services.",
-    pain: "Your Google Business Profile is often where local customers first reach out — and a slow reply to a Google message or question sends them straight to a competitor down the list.",
+    question: "How can I follow up on enquiries from my Google Business Profile?",
+    answer: "Your Google Business Profile can send customers to your website or phone. Handbuilt reviews those incoming paths and scopes a workflow that records requests, notifies you and supports follow-up through the channels your business actually uses.",
+    pain: "Someone finds your business on Google and visits your website or calls while you are working. The enquiry needs a clear next step and a person responsible for it.",
     steps: [
-      "We connect to your Google Business Profile messaging and Q&A",
-      "Inquiries get instant, on-brand answers",
-      "Leads are captured and qualified",
-      "Bookings or hot leads are routed to you",
-    ],
+  "Check the website and contact options currently available on your profile.",
+  "Map each supported channel to your existing form, inbox or phone workflow.",
+  "Define notifications, follow-up rules and when a person takes over.",
+  "Test an incoming enquiry and its failure path before relying on the setup."
+],
     gets: [
-      "Instant replies to Google messages and questions",
-      "Leads from Maps captured, not missed",
-      "Qualification and booking",
-      "Faster response than nearby competitors",
-    ],
+  "A scoped incoming-enquiry workflow",
+  "Agreed supported channels",
+  "Clear owner notifications",
+  "A tested handoff and failure process"
+],
     packageId: "starter",
     relatedBuilds: ["ai-receptionist", "ai-automation-agency"],
     keywords: [
-      "google business profile lead automation",
-      "google business messages automation",
-      "gmb lead automation",
-      "respond to google messages automatically",
-    ],
+  "Google Business Profile lead automation",
+  "follow up Google Maps enquiries",
+  "Google Business Profile website enquiries"
+],
     faqs: [
-      { q: "Does this help my local ranking?", a: "Fast, consistent responses to Google messages and questions support engagement signals, and — more directly — they stop you losing the local searchers who message you first." },
-      { q: "Can it answer the Q&A on my listing?", a: "It can help keep common questions answered and capture the people who reach out, so your profile actively converts instead of sitting passive." },
-    ],
+  {
+    "q": "Does this improve my local ranking?",
+    "a": "This workflow focuses on what happens after a customer contacts you. It does not promise a ranking improvement. Business information and search visibility can be reviewed separately."
+  },
+  {
+    "q": "Does this connect to Google's former messaging or Q&A API?",
+    "a": "No. Those former integrations were discontinued. We review the website, phone and eligible contact options currently available before promising an integration."
+  },
+  {
+    "q": "Can you support text messages or WhatsApp?",
+    "a": "That depends on the available profile options, the channel you use and the agreed implementation. We check those requirements during scoping."
+  }
+],
   },
   {
     slug: "facebook-lead-automation",
