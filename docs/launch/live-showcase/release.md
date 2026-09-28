@@ -10,10 +10,10 @@ The responsiveness fix removes a 400ms stacking delay, shortens the transform tr
 
 ## Before release
 
-- Base: `c5ad090` on origin/main at the initial fetch.
+- Initial base: `c5ad090`. Before pushing, merged refreshed `origin/main` at `e3ee4ac`, preserving the complete SEO PR #7 without conflicts.
 - Existing production: `dpl_4kL3AxmRWyPj7g2KheeASD39pfYW`, https://ai-shop-i4nev7jbo-pavs-projects-2a8231d9.vercel.app.
 - The production anchor must be checked again immediately before merging because the SEO release is concurrent.
-- TypeScript and 319 unit tests passed. Built-server and cloud release verification are pending at the time this note was first written.
+- TypeScript and 319 unit tests passed, including after integrating PR #7. The showcase build passed; its focused desktop/mobile browser run passed 14 checks with 2 device-specific skips, and its local read-only smoke passed 158/158. Cloud verification of the integrated release is pending at the time this note was first written.
 
 ## Follow-up
 
