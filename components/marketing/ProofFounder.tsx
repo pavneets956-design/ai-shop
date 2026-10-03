@@ -188,7 +188,7 @@ export function ProofSection() {
           ))}
         </div>
 
-        <p className="v-small mt-8 max-w-[46rem]" style={{ color: "var(--v-ink-2)" }}>
+        <p className="v-small mt-8 max-w-184" style={{ color: "var(--v-ink-2)" }}>
           Everything else on this site that looks like a customer story is an illustration, and it
           is labelled as one. When there is a real one, it will have a name on it.
         </p>
@@ -212,7 +212,7 @@ export function FounderSection() {
               width={560}
               height={560}
               sizes="(min-width: 1024px) 260px, 200px"
-              className="w-full rounded-[var(--v-r-panel)]"
+              className="w-full rounded-(--v-r-panel)"
               style={{ boxShadow: "var(--v-shadow-card)" }}
               priority={false}
             />
@@ -224,7 +224,7 @@ export function FounderSection() {
               Built by {site.founder}, in Surrey, BC.
             </h2>
 
-            <div className="mt-5 max-w-[42rem] space-y-4">
+            <div className="mt-5 max-w-2xl space-y-4">
               <p className="v-body">
                 I&rsquo;m one person, and you deal with me from the first conversation to the day it
                 goes live. There is no account manager, no offshore team, and nobody who will hand
@@ -286,13 +286,13 @@ export function DemoSection() {
             <h2 className="v-h2 mt-5 text-balance">
               Talk to the receptionist yourself. No form first.
             </h2>
-            <p className="v-lead mt-4 max-w-[38rem]">
+            <p className="v-lead mt-4 max-w-152">
               Pick the worker and the trade, then type what one of your customers would actually
               say. You&rsquo;ll see the reply, the details it captured, and the summary that would
               land on your phone.
             </p>
 
-            <ul className="v-body mt-6 max-w-[38rem] list-none space-y-2.5 p-0">
+            <ul className="v-body mt-6 max-w-152 list-none space-y-2.5 p-0">
               {[
                 "Six workers — reception, quotes, follow-up, invoices, reviews, proposals",
                 "Nine trades, so the answers use your vocabulary and not a generic script",

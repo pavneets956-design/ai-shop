@@ -24,7 +24,7 @@ export default function ToolsHubPage() {
       <header className="border-b border-line bg-paper-2/60">
         <div className="mx-auto max-w-container px-4 pb-12 pt-10 sm:px-6 sm:pt-14">
           <p className="text-tiny-label font-mono uppercase tracking-wider text-clay-dark">{TOOLS_HUB.eyebrow}</p>
-          <h1 className="mt-3 max-w-3xl font-display text-hero-sm font-bold leading-tight text-ink sm:text-section">
+          <h1 className="mt-3 max-w-3xl font-display text-hero-sm font-bold leading-tight text-ink sm:text-section sm:leading-[1.05]">
             {TOOLS_HUB.h1}
           </h1>
           <p className="mt-4 max-w-2xl text-body-lg text-ink/80">{TOOLS_HUB.answer}</p>

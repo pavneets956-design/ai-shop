@@ -97,7 +97,7 @@ export default function ToolChat({
         </button>
       </div>
 
-      <div ref={scrollRef} className="h-[20rem] space-y-4 overflow-y-auto px-5 py-5">
+      <div ref={scrollRef} className="h-80 space-y-4 overflow-y-auto px-5 py-5">
         {messages.map((m, i) => (
           <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
             <div

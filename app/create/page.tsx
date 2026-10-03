@@ -25,7 +25,7 @@ export default function CreatePage() {
       <div className="mx-auto max-w-3xl">
         <Suspense
           fallback={
-            <div className="h-96 animate-pulse rounded-xl border border-ink/10 bg-ink/[0.02]" />
+            <div className="h-96 animate-pulse rounded-xl border border-ink/10 bg-ink/2" />
           }
         >
           <BuildRequestForm />

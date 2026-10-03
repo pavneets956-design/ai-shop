@@ -71,7 +71,7 @@ export default async function AdminLeadsPage() {
       <Shell title="Owner allowlist not configured">
         <p className="text-ink-soft">
           Nobody can open this page until the owner allowlist exists. Set{" "}
-          <code className="rounded bg-paper-2 px-1.5 py-0.5 font-mono text-sm">
+          <code className="rounded-sm bg-paper-2 px-1.5 py-0.5 font-mono text-sm">
             {OWNER_EMAILS_ENV}
           </code>{" "}
           in the Vercel project to a comma-separated list of owner email
@@ -80,7 +80,7 @@ export default async function AdminLeadsPage() {
         <p className="mt-4 text-ink-soft">
           Nothing is lost in the meantime — every lead is still being written to
           the database. You can read them right now with{" "}
-          <code className="rounded bg-paper-2 px-1.5 py-0.5 font-mono text-sm">
+          <code className="rounded-sm bg-paper-2 px-1.5 py-0.5 font-mono text-sm">
             node --env-file=.env.prod.local scripts/leads-report.mjs
           </code>
           .
@@ -205,7 +205,7 @@ export default async function AdminLeadsPage() {
         </div>
       ) : (
         <div className="overflow-x-auto rounded-xl border border-line bg-paper-card">
-          <table className="w-full min-w-[56rem] border-collapse text-left text-sm">
+          <table className="w-full min-w-4xl border-collapse text-left text-sm">
             <caption className="sr-only">
               Website leads, newest first, with owner-notification delivery state
             </caption>
@@ -284,7 +284,7 @@ function NotifyBadge({ row }: { row: LeadRow }) {
   const dead = row.notifyStatus === NOTIFY.FAILED && row.notifyAttempts >= MAX_NOTIFY_ATTEMPTS;
 
   return (
-    <div className="min-w-[11rem]">
+    <div className="min-w-44">
       <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${meta.cls}`}>
         {meta.label}
       </span>
@@ -300,7 +300,7 @@ function NotifyBadge({ row }: { row: LeadRow }) {
         </span>
       ) : null}
       {row.notifyLastError ? (
-        <span className="mt-1 block break-words text-[11px] text-danger">
+        <span className="mt-1 block wrap-break-word text-[11px] text-danger">
           {row.notifyLastError}
         </span>
       ) : null}

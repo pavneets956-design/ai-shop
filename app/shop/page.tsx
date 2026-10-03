@@ -142,7 +142,7 @@ export default function ShopPage() {
                   <div className="glass-card spec-frame flex h-full flex-col p-7">
                     {/* Head */}
                     <div className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-ink/[0.08] bg-paper-2/70 text-ink">
+                      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-ink/8 bg-paper-2/70 text-ink">
                         <Icon className="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
@@ -177,7 +177,7 @@ export default function ShopPage() {
                         {p.integrations.map((tool) => (
                           <span
                             key={tool}
-                            className="rounded-full border border-ink/[0.08] bg-paper-2/60 px-2.5 py-1 text-xs font-medium text-ink/65"
+                            className="rounded-full border border-ink/8 bg-paper-2/60 px-2.5 py-1 text-xs font-medium text-ink/65"
                           >
                             {tool}
                           </span>
@@ -187,11 +187,11 @@ export default function ShopPage() {
 
                     {/* Footer: who-pays-usage disclosure + price + time + CTAs */}
                     <div className="mt-auto pt-6">
-                      <div className="mb-4 flex items-start gap-2 rounded-xl border border-ink/[0.06] bg-paper-2/40 px-3 py-2.5">
+                      <div className="mb-4 flex items-start gap-2 rounded-xl border border-ink/6 bg-paper-2/40 px-3 py-2.5">
                         <Wallet className="mt-0.5 h-3.5 w-3.5 flex-none text-ink/35" aria-hidden="true" />
                         <p className="text-xs leading-relaxed text-ink-soft">{p.usageNote}</p>
                       </div>
-                      <div className="flex items-center justify-between border-t border-ink/[0.06] pt-5">
+                      <div className="flex items-center justify-between border-t border-ink/6 pt-5">
                         <span className="text-sm font-semibold text-ink/75">{p.priceLabel}</span>
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-ink-soft">
                           <Clock className="h-3.5 w-3.5" /> {p.timeToLaunch}
@@ -318,7 +318,7 @@ export default function ShopPage() {
                     ))}
                   </ul>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-ink/[0.06] pt-5">
+                  <div className="mt-6 flex items-center justify-between border-t border-ink/6 pt-5">
                     <span className="text-sm font-medium text-ink-soft">{item.priceLabel}</span>
                     {item.href ? (
                       <a
@@ -346,7 +346,7 @@ export default function ShopPage() {
       </section>
 
       {/* ---------- Closing band ---------- */}
-      <section className="relative border-t border-ink/[0.06] py-20 text-center sm:py-28">
+      <section className="relative border-t border-ink/6 py-20 text-center sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>

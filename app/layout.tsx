@@ -155,9 +155,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* tabIndex={-1} is load-bearing. Without it the skip link scrolls here
             but focus stays on <body>, so the very next Tab sends the keyboard
             user straight back to the top of the navigation they just skipped —
-            the link appeared to work and did not. `outline-none` because the
+            the link appeared to work and did not. `outline-hidden` because the
             target of a skip link should not draw a ring around the whole page. */}
-        <main id="main" tabIndex={-1} className="min-h-screen outline-none">
+        <main id="main" tabIndex={-1} className="min-h-screen outline-hidden">
           {children}
         </main>
         <ChromeGate>

@@ -216,7 +216,7 @@ export default function LandingTemplate({
                 {content.comparison.rows.map((r) => (
                   <div
                     key={r.factor}
-                    className="grid grid-cols-[1fr] border-b border-ink/[0.06] text-sm last:border-0 sm:grid-cols-3"
+                    className="grid grid-cols-[1fr] border-b border-ink/6 text-sm last:border-0 sm:grid-cols-3"
                   >
                     <div className="px-4 pb-1 pt-4 font-medium sm:p-4" style={{ color: "var(--v-ink)" }}>
                       {r.factor}
@@ -338,7 +338,7 @@ export default function LandingTemplate({
 
       {/* FAQ */}
       {content.faqs.length > 0 && (
-        <section className="relative border-t border-ink/[0.06] py-16">
+        <section className="relative border-t border-ink/6 py-16">
           <div className="mx-auto max-w-3xl px-4">
             <Reveal>
               <h2 className="mb-8 font-display text-2xl font-semibold text-ink sm:text-3xl">

@@ -356,7 +356,7 @@ function ControlRoom(props: {
             rows={2}
             disabled={atLimit}
             placeholder={atLimit ? "Free demo limit reached" : "Type as the customer…"}
-            className="max-h-28 min-h-[44px] w-full resize-none rounded-[4px] bg-transparent px-2 py-1.5 text-[13px] text-ink placeholder-ink-soft focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)] focus-visible:shadow-[0_0_0_2px_var(--v-surface),0_0_0_4px_var(--v-accent)] disabled:opacity-60"
+            className="max-h-28 min-h-[44px] w-full resize-none rounded-[4px] bg-transparent px-2 py-1.5 text-[13px] text-ink placeholder-ink-soft focus:outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--v-accent) focus-visible:shadow-[0_0_0_2px_var(--v-surface),0_0_0_4px_var(--v-accent)] disabled:opacity-60"
           />
           <button
             onClick={onSend}
@@ -407,14 +407,14 @@ const Phone = forwardRef<
         <div className="relative w-[332px] max-w-full" style={{ filter: "drop-shadow(0 40px 70px rgba(25,23,22,0.22))" }}>
           {/* device frame */}
           <div className="rounded-[46px] bg-[#0e0d0c] p-[11px]" style={{ boxShadow: "inset 0 0 0 2px #2a2724, 0 0 0 1px #0e0d0c" }}>
-            <div className="relative h-[640px] overflow-hidden rounded-[36px] bg-gradient-to-b from-[#FBFAF8] to-[#F2EFEA]">
+            <div className="relative h-[640px] overflow-hidden rounded-[36px] bg-linear-to-b from-[#FBFAF8] to-[#F2EFEA]">
               {/* notch + status bar */}
               <div className="absolute left-1/2 top-[11px] z-20 h-[26px] w-[100px] -translate-x-1/2 rounded-[15px] bg-black" />
               <div className="absolute left-0 right-0 top-[15px] z-10 flex justify-between px-7 text-[11px] font-semibold text-ink">
                 <span>9:41</span><span>5G&nbsp;&nbsp;100%</span>
               </div>
               {/* app header */}
-              <div className="absolute inset-x-0 top-[46px] z-10 flex items-center gap-2.5 border-b border-[#e7e3db] bg-white/90 px-4 py-2.5 backdrop-blur">
+              <div className="absolute inset-x-0 top-[46px] z-10 flex items-center gap-2.5 border-b border-[#e7e3db] bg-white/90 px-4 py-2.5 backdrop-blur-sm">
                 <span className="grid h-8 w-8 flex-none place-items-center rounded-[9px] bg-ink text-white"><Icon className="h-4 w-4" /></span>
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-[13px] font-bold text-ink">{industry.business}</div>
@@ -424,14 +424,14 @@ const Phone = forwardRef<
                 </div>
               </div>
               {/* chat */}
-              <div ref={ref} className="absolute inset-x-0 bottom-0 top-[96px] flex flex-col gap-2.5 overflow-y-auto px-3.5 py-4" style={{ scrollbarWidth: "none" }}>
+              <div ref={ref} className="absolute inset-x-0 bottom-0 top-section-y flex flex-col gap-2.5 overflow-y-auto px-3.5 py-4" style={{ scrollbarWidth: "none" }}>
                 {messages.map((m) => (<Bubble key={m.id} role={m.role} text={m.content} />))}
                 {typing && <Typing />}
                 {streaming !== null && <Bubble role="assistant" text={streaming || "…"} />}
                 <div className="h-1 flex-none" />
               </div>
               {/* demo-mode footer */}
-              <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#F2EFEA] via-[#F2EFEA]/90 to-transparent px-4 pb-3 pt-5 text-center">
+              <div className="absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-[#F2EFEA] via-[#F2EFEA]/90 to-transparent px-4 pb-3 pt-5 text-center">
                 {scripted ? (
                   <span
                     role="status"
@@ -471,7 +471,7 @@ function Bubble({ role, text }: { role: "user" | "assistant"; text: string }) {
       transition={{ type: "spring", stiffness: 420, damping: 32 }}
       className={`max-w-[86%] text-[12.5px] leading-relaxed ${me ? "self-end" : "self-start"}`}
     >
-      <div className={`mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] ${me ? "text-right text-ink-soft" : "text-ink-soft"}`}>{me ? "You (customer)" : "AI worker"}</div>
+      <div className={`mb-1 text-[8.5px] font-bold uppercase tracking-wider ${me ? "text-right text-ink-soft" : "text-ink-soft"}`}>{me ? "You (customer)" : "AI worker"}</div>
       <div className={me
         ? "rounded-2xl rounded-br-sm bg-ink px-3.5 py-2.5 text-white"
         : "rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-3.5 py-2.5 text-ink"}>
@@ -488,7 +488,7 @@ function Typing() {
     // sr-only so the design is unchanged.
     <div className="self-start" role="status" aria-live="polite">
       <span className="sr-only">AI is responding…</span>
-      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-[0.05em] text-ink-soft" aria-hidden="true">AI worker</div>
+      <div className="mb-1 text-[8.5px] font-bold uppercase tracking-wider text-ink-soft" aria-hidden="true">AI worker</div>
       <div className="inline-flex items-center gap-1 rounded-2xl rounded-bl-sm border border-[#e7e3db] bg-white px-4 py-3" aria-hidden="true">
         {[0, 1, 2].map((i) => (
           <motion.span key={i} className="h-1.5 w-1.5 rounded-full bg-ink/40"
@@ -543,7 +543,7 @@ function OutcomePanel(props: {
                     initial={{ backgroundColor: "rgba(224,54,44,0.16)" }}
                     animate={{ backgroundColor: "rgba(224,54,44,0)" }}
                     transition={{ duration: 1.1 }}
-                    className="rounded px-1 text-ink"
+                    className="rounded-sm px-1 text-ink"
                   >
                     {v}
                   </motion.span>

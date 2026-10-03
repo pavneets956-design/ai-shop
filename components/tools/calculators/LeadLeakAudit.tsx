@@ -118,7 +118,7 @@ export default function LeadLeakAudit() {
                       value={opt.points}
                       checked={checked}
                       onChange={() => setAnswers((a) => ({ ...a, [cat.key]: opt.points }))}
-                      className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer border-line accent-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 focus-visible:ring-offset-2"
+                      className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer border-line accent-clay focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/40 focus-visible:ring-offset-2"
                     />
                     <span className="text-ink">{opt.label}</span>
                   </label>

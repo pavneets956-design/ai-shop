@@ -1,0 +1,300 @@
+
+Handbuilt smoke test — READ-ONLY (no POST/PUT/DELETE)
+Target: http://localhost:3217
+
+
+Routes
+------
+  PASS  GET / is 200
+         got 200
+  PASS  GET /pricing is 200
+         got 200
+  PASS  GET /create is 200
+         got 200
+  PASS  GET /demo is 200
+         got 200
+  PASS  GET /start is 200
+         got 200
+  PASS  GET /about is 200
+         got 200
+  PASS  GET /faq is 200
+         got 200
+  PASS  GET /shop is 200
+         got 200
+  PASS  GET /tools is 200
+         got 200
+  PASS  GET /industries is 200
+         got 200
+  PASS  GET /locations is 200
+         got 200
+  PASS  GET /services is 200
+         got 200
+  PASS  GET /compare is 200
+         got 200
+  PASS  GET /resources is 200
+         got 200
+  PASS  GET /how-to is 200
+         got 200
+  PASS  GET /use-cases is 200
+         got 200
+  PASS  GET /solutions is 200
+         got 200
+  PASS  GET /creators is 200
+         got 200
+  PASS  GET /privacy is 200
+         got 200
+  PASS  GET /terms is 200
+         got 200
+  PASS  GET /ai-receptionist is 200
+         got 200
+  PASS  GET /ai-receptionist-for-contractors is 200
+         got 200
+  PASS  GET /ai-business-system is 200
+         got 200
+  PASS  GET /ai-chatbot-for-small-business is 200
+         got 200
+  PASS  an unknown route answers 404
+         got 404
+  PASS  the 404 page renders an <h1>
+  PASS  the 404 page is noindex
+  PASS  the 404 page leaks no stack trace
+
+Robots + sitemap
+----------------
+  PASS  GET /robots.txt is 200
+         got 200
+  PASS  robots.txt declares a Sitemap
+  PASS  robots.txt disallows /api/
+  PASS  robots.txt disallows /agent/
+  PASS  GET /sitemap.xml is 200
+         got 200
+  PASS  sitemap parses and lists URLs
+         160 <loc> entries
+  PASS  sitemap has no duplicate URLs
+  PASS  every sitemap URL is absolute and https
+  PASS  sampled 15 sitemap URLs, all 200
+
+Metadata
+--------
+  PASS  / has a <title>
+         Custom Websites, Apps &amp; AI Systems | Handbuilt AI · Surrey, BC
+  PASS  / has a description
+         146 chars
+  PASS  / canonical points at itself
+         https://aibuiltbyhand.com
+  PASS  / declares og:image
+  PASS  / has exactly one <h1>
+         found 1
+  PASS  / JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /pricing has a <title>
+         Pricing — Websites, Apps &amp; AI Builds | Handbuilt AI
+  PASS  /pricing has a description
+         149 chars
+  PASS  /pricing canonical points at itself
+         https://aibuiltbyhand.com/pricing
+  PASS  /pricing declares og:image
+  PASS  /pricing has exactly one <h1>
+         found 1
+  PASS  /pricing JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /create has a <title>
+         Start a Project — Websites, Apps &amp; AI Systems | Handbuilt AI
+  PASS  /create has a description
+         155 chars
+  PASS  /create canonical points at itself
+         https://aibuiltbyhand.com/create
+  PASS  /create declares og:image
+  PASS  /create has exactly one <h1>
+         found 1
+  PASS  /create JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /demo has a <title>
+         AI Worker Showroom — Test a Real AI Worker | Handbuilt AI
+  PASS  /demo has a description
+         221 chars
+  PASS  /demo canonical points at itself
+         https://aibuiltbyhand.com/demo
+  PASS  /demo declares og:image
+  PASS  /demo has exactly one <h1>
+         found 1
+  PASS  /demo JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /start has a <title>
+         The AI Builder — a one-minute guided plan for your business | Handbuilt AI
+  PASS  /start has a description
+         242 chars
+  PASS  /start canonical points at itself
+         https://aibuiltbyhand.com/start
+  PASS  /start declares og:image
+  PASS  /start has exactly one <h1>
+         found 1
+  PASS  /start JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /about has a <title>
+         About Pavneet Singh — Independent Builder | Handbuilt AI
+  PASS  /about has a description
+         154 chars
+  PASS  /about canonical points at itself
+         https://aibuiltbyhand.com/about
+  PASS  /about declares og:image
+  PASS  /about has exactly one <h1>
+         found 1
+  PASS  /about JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /faq has a <title>
+         FAQ — Custom AI Apps, Agents &amp; Automation | Handbuilt AI
+  PASS  /faq has a description
+         167 chars
+  PASS  /faq canonical points at itself
+         https://aibuiltbyhand.com/faq
+  PASS  /faq declares og:image
+  PASS  /faq has exactly one <h1>
+         found 1
+  PASS  /faq JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /shop has a <title>
+         Shop — AI tools you can actually install into your business | Handbuilt AI
+  PASS  /shop has a description
+         202 chars
+  PASS  /shop canonical points at itself
+         https://aibuiltbyhand.com/shop
+  PASS  /shop declares og:image
+  PASS  /shop has exactly one <h1>
+         found 1
+  PASS  /shop JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /tools has a <title>
+         Free Contractor Business Tools | Handbuilt AI
+  PASS  /tools has a description
+         191 chars
+  PASS  /tools canonical points at itself
+         https://aibuiltbyhand.com/tools
+  PASS  /tools declares og:image
+  PASS  /tools has exactly one <h1>
+         found 1
+  PASS  /tools JSON-LD parses
+         2 block(s), 0 invalid
+  PASS  /industries has a <title>
+         AI Automation by Industry | Handbuilt AI
+  PASS  /industries has a description
+         165 chars
+  PASS  /industries canonical points at itself
+         https://aibuiltbyhand.com/industries
+  PASS  /industries declares og:image
+  PASS  /industries has exactly one <h1>
+         found 1
+  PASS  /industries JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /locations has a <title>
+         AI Automation by Location | Handbuilt AI
+  PASS  /locations has a description
+         179 chars
+  PASS  /locations canonical points at itself
+         https://aibuiltbyhand.com/locations
+  PASS  /locations declares og:image
+  PASS  /locations has exactly one <h1>
+         found 1
+  PASS  /locations JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /services has a <title>
+         AI &amp; Search Visibility Services | Handbuilt AI
+  PASS  /services has a description
+         151 chars
+  PASS  /services canonical points at itself
+         https://aibuiltbyhand.com/services
+  PASS  /services declares og:image
+  PASS  /services has exactly one <h1>
+         found 1
+  PASS  /services JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /compare has a <title>
+         Compare Your Options | Handbuilt AI
+  PASS  /compare has a description
+         155 chars
+  PASS  /compare canonical points at itself
+         https://aibuiltbyhand.com/compare
+  PASS  /compare declares og:image
+  PASS  /compare has exactly one <h1>
+         found 1
+  PASS  /compare JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  /resources has a <title>
+         AI &amp; Search Visibility Resources | Handbuilt AI
+  PASS  /resources has a description
+         154 chars
+  PASS  /resources canonical points at itself
+         https://aibuiltbyhand.com/resources
+  PASS  /resources declares og:image
+  PASS  /resources has exactly one <h1>
+         found 1
+  PASS  /resources JSON-LD parses
+         1 block(s), 0 invalid
+  PASS  titles are unique across the sampled pages
+  PASS  descriptions are unique across the sampled pages
+
+Content defects
+---------------
+  PASS  / has no href="#"
+         0 found
+  PASS  / carries no retired price string
+  PASS  / has no "is From $" prose defect
+  PASS  /pricing has no href="#"
+         0 found
+  PASS  /pricing carries no retired price string
+  PASS  /pricing has no "is From $" prose defect
+  PASS  /create has no href="#"
+         0 found
+  PASS  /create carries no retired price string
+  PASS  /create has no "is From $" prose defect
+  PASS  /about has no href="#"
+         0 found
+  PASS  /about carries no retired price string
+  PASS  /about has no "is From $" prose defect
+  PASS  /ai-receptionist has no href="#"
+         0 found
+  PASS  /ai-receptionist carries no retired price string
+  PASS  /ai-receptionist has no "is From $" prose defect
+  PASS  /faq has no href="#"
+         0 found
+  PASS  /faq carries no retired price string
+  PASS  /faq has no "is From $" prose defect
+  PASS  /llms.txt has no href="#"
+         0 found
+  PASS  /llms.txt carries no retired price string
+  PASS  /llms.txt has no "is From $" prose defect
+  PASS  /pricing quotes every price from lib/data/packages.ts
+
+Redirects
+---------
+  PASS  found redirect rules to verify
+         89 rule(s)
+         (rules read from the local next.config.js — a 200 here can mean "not deployed yet")
+  PASS  every redirect lands in one hop on a live page
+
+Security
+--------
+  PASS  GET /api/agent/contacts does NOT serve data
+         status 404
+  PASS  the /api/agent/contacts body contains no contact fields
+  PASS  GET /api/agent/calls is gated
+         status 404
+  PASS  GET /api/agent/campaigns is gated
+         status 404
+  PASS  GET /agent is gated
+         status 404
+  PASS  GET /agent/contacts is gated
+         status 404
+  PASS  GET /api/indexnow without a secret is refused
+         status 503
+  PASS  X-Content-Type-Options: nosniff
+  PASS  X-Frame-Options is set
+         SAMEORIGIN
+  PASS  Referrer-Policy is set
+         strict-origin-when-cross-origin
+  PASS  Permissions-Policy is set
+
+============================================================
+158/158 checks passed
+
+All checks passed.

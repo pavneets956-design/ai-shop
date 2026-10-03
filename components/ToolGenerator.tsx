@@ -120,7 +120,7 @@ export default function ToolGenerator({
                   setBiz(b);
                   setResult(null);
                 }}
-                className={`rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
+                className={`rounded-full border px-4 py-2 text-sm transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/50 ${
                   biz?.id === b.id
                     ? "border-ink bg-ink text-white"
                     : "border-ink/10 bg-white text-ink-soft hover:border-ink/25 hover:text-ink"
@@ -205,7 +205,7 @@ export default function ToolGenerator({
 
       {/* Result */}
       {result && (
-        <div className="print-area mt-5 rounded-3xl border border-ink/[0.08] bg-white p-6 shadow-card">
+        <div className="print-area mt-5 rounded-3xl border border-ink/8 bg-white p-6 shadow-card">
           <div className="mb-3 flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
               {resultTitle}

@@ -158,10 +158,10 @@ export default function CallsPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className={`px-2 py-1 rounded text-xs font-light border ${getStatusColor(call.status)}`}>
+                    <span className={`px-2 py-1 rounded-sm text-xs font-light border ${getStatusColor(call.status)}`}>
                       {call.status}
                     </span>
-                    <span className={`px-2 py-1 rounded text-xs font-light border ${getOutcomeColor(call.outcome)}`}>
+                    <span className={`px-2 py-1 rounded-sm text-xs font-light border ${getOutcomeColor(call.outcome)}`}>
                       {call.outcome.replace("-", " ")}
                     </span>
                     <span className="text-xs text-gray-500 font-light">{call.duration}</span>
@@ -201,7 +201,7 @@ export default function CallsPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400 font-light mb-1">Outcome</p>
-                    <span className={`inline-block px-2 py-1 rounded text-xs font-light border ${getOutcomeColor(selectedCall.outcome)}`}>
+                    <span className={`inline-block px-2 py-1 rounded-sm text-xs font-light border ${getOutcomeColor(selectedCall.outcome)}`}>
                       {selectedCall.outcome.replace("-", " ")}
                     </span>
                   </div>

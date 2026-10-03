@@ -59,7 +59,7 @@ export default function Hero() {
               Your business number, answered by an AI receptionist built for contractors.
             </h1>
 
-            <p className="v-body mt-5 max-w-[36rem]">
+            <p className="v-body mt-5 max-w-xl">
               It answers the calls you miss while you&rsquo;re on site, books the job into your
               calendar, and chases the quotes that go quiet. Installed in about a week.
             </p>
@@ -68,7 +68,7 @@ export default function Hero() {
                 eight sections down, so the two questions every contractor asks
                 first ("what does it cost" / "how long") went unanswered until
                 the visitor had scrolled most of the page. */}
-            <p className="v-small mt-4 max-w-[36rem]" style={{ color: "var(--v-ink-2)" }}>
+            <p className="v-small mt-4 max-w-xl" style={{ color: "var(--v-ink-2)" }}>
               <strong style={{ color: "var(--v-ink)", fontWeight: 600 }}>
                 From {STARTER_PRICE} CAD, one time
               </strong>{" "}

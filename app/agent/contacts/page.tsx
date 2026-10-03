@@ -277,7 +277,7 @@ export default function ContactsPage() {
                     </td>
                     <td className="py-4 px-6 text-gray-400 font-light">{contact.industry || "-"}</td>
                     <td className="py-4 px-6">
-                      <span className={`px-2 py-1 rounded text-xs font-light border ${getStatusColor(contact.status)}`}>
+                      <span className={`px-2 py-1 rounded-sm text-xs font-light border ${getStatusColor(contact.status)}`}>
                         {contact.status.charAt(0).toUpperCase() + contact.status.slice(1).replace("-", " ")}
                       </span>
                     </td>

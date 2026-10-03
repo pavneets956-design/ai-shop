@@ -56,7 +56,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="relative border-t border-ink/[0.06] py-20 sm:py-28">
+      <section className="relative border-t border-ink/6 py-20 sm:py-28">
         <GlowBackground variant="subtle" />
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading

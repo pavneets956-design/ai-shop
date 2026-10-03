@@ -93,20 +93,20 @@ function TrackClip({ clip, delay }: { clip: Clip; delay: number }) {
         className="cr-clip group flex h-full flex-col justify-between rounded-lg py-3.5 pl-5 pr-3.5"
       >
         <div className="flex items-start justify-between gap-2">
-          <Icon className="h-5 w-5 text-[color:var(--cr-red)]" strokeWidth={1.75} aria-hidden />
-          <span className="font-mono text-[10px] tracking-[0.14em] text-[color:var(--cr-muted)]">
+          <Icon className="h-5 w-5 text-(--cr-red)" strokeWidth={1.75} aria-hidden />
+          <span className="font-mono text-[10px] tracking-[0.14em] text-(--cr-muted)">
             {clip.tc}
           </span>
         </div>
         <div className="mt-4">
-          <div className="font-display text-[15px] font-bold leading-tight text-[color:var(--cr-text)]">
+          <div className="font-display text-[15px] font-bold leading-tight text-(--cr-text)">
             {clip.label}
           </div>
-          <div className="mt-1 text-[12.5px] leading-snug text-[color:var(--cr-muted)]">
+          <div className="mt-1 text-[12.5px] leading-snug text-(--cr-muted)">
             {clip.note}
           </div>
         </div>
-        <div className="mt-3 flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--cr-muted)] transition-colors group-hover:text-[color:var(--cr-red)]">
+        <div className="mt-3 flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.16em] text-(--cr-muted) transition-colors group-hover:text-(--cr-red)">
           Open
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5" aria-hidden>
             <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -124,24 +124,24 @@ export default function CreatorStudio() {
       <div className="cr-grain" aria-hidden />
 
       {/* ---------- Nav ---------- */}
-      <header className="sticky top-0 z-50 border-b border-[color:var(--cr-border)] bg-[color:var(--cr-bg)]/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-[1180px] items-center justify-between px-5 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 border-b border-(--cr-border) bg-(--cr-bg)/80 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-container items-center justify-between px-5 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="cr-rec inline-block h-2.5 w-2.5 rounded-full bg-[color:var(--cr-red)]" aria-hidden />
-            <span className="font-display text-[17px] font-bold tracking-tight text-[color:var(--cr-text)]">
+            <span className="cr-rec inline-block h-2.5 w-2.5 rounded-full bg-(--cr-red)" aria-hidden />
+            <span className="font-display text-[17px] font-bold tracking-tight text-(--cr-text)">
               Handbuilt AI
             </span>
           </Link>
           <nav className="flex items-center gap-1.5 sm:gap-4">
             <a
               href="#timeline"
-              className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--cr-muted)] transition-colors hover:text-[color:var(--cr-text)] sm:inline"
+              className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-(--cr-muted) transition-colors hover:text-(--cr-text) sm:inline"
             >
               The Timeline
             </a>
             <Link
               href="/pricing"
-              className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--cr-muted)] transition-colors hover:text-[color:var(--cr-text)] sm:inline"
+              className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-(--cr-muted) transition-colors hover:text-(--cr-text) sm:inline"
             >
               Pricing
             </Link>
@@ -157,21 +157,21 @@ export default function CreatorStudio() {
       </header>
 
       {/* ---------- Hero ---------- */}
-      <section className="relative z-10 mx-auto max-w-[1180px] px-5 pb-6 pt-16 sm:px-6 sm:pt-24 lg:px-8">
+      <section className="relative z-10 mx-auto max-w-container px-5 pb-6 pt-16 sm:px-6 sm:pt-24 lg:px-8">
         <Reveal>
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--cr-muted)]">
+          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-(--cr-muted)">
             For Creators · Worldwide · Remote
           </div>
         </Reveal>
         <Reveal delay={0.05}>
-          <h1 className="mt-5 max-w-[16ch] font-display text-[40px] font-bold leading-[0.98] tracking-[-0.02em] text-[color:var(--cr-text)] sm:text-[58px]">
+          <h1 className="mt-5 max-w-[16ch] font-display text-[40px] font-bold leading-[0.98] tracking-[-0.02em] text-(--cr-text) sm:text-[58px]">
             You make the content.
             <br />
-            <span className="text-[color:var(--cr-red)]">The machine</span> handles the rest.
+            <span className="text-(--cr-red)">The machine</span> handles the rest.
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-6 max-w-[54ch] text-[17px] leading-relaxed text-[color:var(--cr-muted)] sm:text-[19px]">
+          <p className="mt-6 max-w-[54ch] text-[17px] leading-relaxed text-(--cr-muted) sm:text-[19px]">
             Clipping, editing, captions, voiceovers, scheduling, DMs, brand-deal admin —
             one system built around your channels and your voice, installed by hand. You
             post more; you don&apos;t burn out.
@@ -188,7 +188,7 @@ export default function CreatorStudio() {
             </Link>
             <a
               href="#timeline"
-              className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-[color:var(--cr-text)] transition-colors hover:text-[color:var(--cr-red)]"
+              className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-(--cr-text) transition-colors hover:text-(--cr-red)"
             >
               Scrub the 20 builds
               <span aria-hidden>↓</span>
@@ -198,64 +198,64 @@ export default function CreatorStudio() {
 
         {/* REC status HUD */}
         <Reveal delay={0.2}>
-          <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[color:var(--cr-border)] pt-5 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--cr-muted)]">
-            <span className="flex items-center gap-2 text-[color:var(--cr-red)]">
-              <span className="cr-rec inline-block h-2 w-2 rounded-full bg-[color:var(--cr-red)]" aria-hidden />
+          <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-(--cr-border) pt-5 font-mono text-[11px] uppercase tracking-[0.14em] text-(--cr-muted)">
+            <span className="flex items-center gap-2 text-(--cr-red)">
+              <span className="cr-rec inline-block h-2 w-2 rounded-full bg-(--cr-red)" aria-hidden />
               REC
             </span>
             <span aria-hidden>00:14:22:09</span>
-            <span className="text-[color:var(--cr-border-strong)]" aria-hidden>·</span>
+            <span className="text-(--cr-border-strong)" aria-hidden>·</span>
             <span>20 Builds</span>
-            <span className="text-[color:var(--cr-border-strong)]" aria-hidden>·</span>
+            <span className="text-(--cr-border-strong)" aria-hidden>·</span>
             <span>4 Tracks</span>
-            <span className="text-[color:var(--cr-border-strong)]" aria-hidden>·</span>
+            <span className="text-(--cr-border-strong)" aria-hidden>·</span>
             <span>Delivered Worldwide</span>
           </div>
         </Reveal>
       </section>
 
       {/* ---------- The Timeline (signature) ---------- */}
-      <section id="timeline" className="relative z-10 mx-auto max-w-[1180px] scroll-mt-20 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section id="timeline" className="relative z-10 mx-auto max-w-container scroll-mt-20 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
         <Reveal>
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--cr-red)]">
+          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-(--cr-red)">
             The Timeline
           </div>
-          <h2 className="mt-3 max-w-[24ch] font-display text-[30px] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--cr-text)] sm:text-[40px]">
+          <h2 className="mt-3 max-w-[24ch] font-display text-[30px] font-bold leading-[1.05] tracking-[-0.02em] text-(--cr-text) sm:text-[40px]">
             Twenty builds, four tracks. Find where your hours are leaking.
           </h2>
         </Reveal>
 
         {/* Timeline frame: ruler + playhead + tracks */}
-        <div className="relative mt-10 overflow-hidden rounded-2xl border border-[color:var(--cr-border)] bg-[color:var(--cr-surface)]/60">
+        <div className="relative mt-10 overflow-hidden rounded-2xl border border-(--cr-border) bg-(--cr-surface)/60">
           {/* Playhead — the one moving element, sweeps across all tracks */}
-          <div className="cr-playhead pointer-events-none absolute top-0 bottom-0 z-20 w-px bg-[color:var(--cr-red)]/70" aria-hidden>
-            <div className="absolute -left-[3px] top-0 h-1.5 w-1.5 rounded-full bg-[color:var(--cr-red)] shadow-[0_0_10px_2px_rgba(40,84,223,0.7)]" />
+          <div className="cr-playhead pointer-events-none absolute top-0 bottom-0 z-20 w-px bg-(--cr-red)/70" aria-hidden>
+            <div className="absolute left-[-3px] top-0 h-1.5 w-1.5 rounded-full bg-(--cr-red) shadow-[0_0_10px_2px_rgba(40,84,223,0.7)]" />
           </div>
 
           {/* Ruler */}
-          <div className="flex items-center justify-between border-b border-[color:var(--cr-border)] px-4 py-2.5 sm:px-6">
+          <div className="flex items-center justify-between border-b border-(--cr-border) px-4 py-2.5 sm:px-6">
             {RULER.map((t) => (
-              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-[color:var(--cr-muted)]">
+              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-(--cr-muted)">
                 {t}
               </span>
             ))}
           </div>
 
           {/* Tracks */}
-          <div className="divide-y divide-[color:var(--cr-border)]">
+          <div className="divide-y divide-(--cr-border)">
             {TRACKS.map((track) => (
               <div key={track.code} className="grid grid-cols-1 gap-4 px-4 py-5 sm:px-6 md:grid-cols-[130px_1fr] md:gap-6">
                 {/* Track gutter */}
                 <div className="flex items-center gap-3 md:flex-col md:items-start md:justify-center md:gap-1">
-                  <span className="font-mono text-[13px] font-medium tracking-[0.1em] text-[color:var(--cr-red)]">
+                  <span className="font-mono text-[13px] font-medium tracking-widest text-(--cr-red)">
                     {track.code}
                   </span>
-                  <span className="font-mono text-[10px] uppercase leading-tight tracking-[0.14em] text-[color:var(--cr-muted)]">
+                  <span className="font-mono text-[10px] uppercase leading-tight tracking-[0.14em] text-(--cr-muted)">
                     {track.name}
                   </span>
                 </div>
                 {/* Clips lane */}
-                <div className="grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(148px,1fr))]">
+                <div className="grid gap-3 grid-cols-[repeat(auto-fill,minmax(148px,1fr))]">
                   {track.clips.map((clip, i) => (
                     <TrackClip key={clip.slug} clip={clip} delay={i * 0.04} />
                   ))}
@@ -274,18 +274,18 @@ export default function CreatorStudio() {
             <div className="flex items-center gap-4">
               {(() => {
                 const Icon = getIcon("Wand2");
-                return <Icon className="h-6 w-6 shrink-0 text-[color:var(--cr-red)]" strokeWidth={1.75} aria-hidden />;
+                return <Icon className="h-6 w-6 shrink-0 text-(--cr-red)" strokeWidth={1.75} aria-hidden />;
               })()}
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--cr-muted)]">
+                <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-(--cr-muted)">
                   Master · the full pipeline
                 </div>
-                <div className="mt-1 font-display text-[19px] font-bold leading-tight text-[color:var(--cr-text)]">
+                <div className="mt-1 font-display text-[19px] font-bold leading-tight text-(--cr-text)">
                   One connected creator system
                 </div>
               </div>
             </div>
-            <span className="hidden shrink-0 items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--cr-text)] transition-colors group-hover:text-[color:var(--cr-red)] sm:flex">
+            <span className="hidden shrink-0 items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-(--cr-text) transition-colors group-hover:text-(--cr-red) sm:flex">
               Open
               <span aria-hidden>→</span>
             </span>
@@ -294,15 +294,15 @@ export default function CreatorStudio() {
       </section>
 
       {/* ---------- Honest band ---------- */}
-      <section className="relative z-10 border-y border-[color:var(--cr-border)] bg-[color:var(--cr-surface)]/40">
-        <div className="mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-8">
+      <section className="relative z-10 border-y border-(--cr-border) bg-(--cr-surface)/40">
+        <div className="mx-auto grid max-w-container gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-8">
           <Reveal>
-            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--cr-muted)]">
+            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-(--cr-muted)">
               Why handbuilt
             </div>
-            <p className="mt-4 max-w-[30ch] font-display text-[26px] font-bold leading-[1.15] tracking-[-0.01em] text-[color:var(--cr-text)] sm:text-[32px]">
+            <p className="mt-4 max-w-[30ch] font-display text-[26px] font-bold leading-[1.15] tracking-[-0.01em] text-(--cr-text) sm:text-[32px]">
               The apps are cheap. Wiring ten of them into one system that sounds like
-              <span className="text-[color:var(--cr-red)]"> you </span>
+              <span className="text-(--cr-red)"> you </span>
               is the actual work.
             </p>
           </Reveal>
@@ -313,9 +313,9 @@ export default function CreatorStudio() {
               ["Consent-first on voice, likeness & DMs", "Your voice only. A review step before anything ships. Revocable any time. We never build impersonation or fake personal replies."],
             ].map(([title, body], i) => (
               <Reveal key={title} delay={i * 0.06}>
-                <div className="border-l-2 border-[color:var(--cr-red)]/50 pl-5">
-                  <div className="font-display text-[17px] font-bold text-[color:var(--cr-text)]">{title}</div>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-[color:var(--cr-muted)]">{body}</p>
+                <div className="border-l-2 border-(--cr-red)/50 pl-5">
+                  <div className="font-display text-[17px] font-bold text-(--cr-text)">{title}</div>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-(--cr-muted)">{body}</p>
                 </div>
               </Reveal>
             ))}
@@ -324,43 +324,43 @@ export default function CreatorStudio() {
       </section>
 
       {/* ---------- Own the tools (creator software pricing) ---------- */}
-      <section className="relative z-10 mx-auto max-w-[1180px] px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="relative z-10 mx-auto max-w-container px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--cr-red)]">
+            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-(--cr-red)">
               Own the tools · one-time
             </div>
-            <h2 className="mt-3 max-w-[18ch] font-display text-[30px] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--cr-text)] sm:text-[40px]">
+            <h2 className="mt-3 max-w-[18ch] font-display text-[30px] font-bold leading-[1.05] tracking-[-0.02em] text-(--cr-text) sm:text-[40px]">
               The tools you rent for ~$165/mo — built once, yours forever.
             </h2>
-            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-[color:var(--cr-muted)]">
+            <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-(--cr-muted)">
               Opus Clip, Submagic, ElevenLabs, a thumbnail app, a script tool — that stack runs
               roughly $2,000 a year, forever, with credit caps. I build the ones you actually need
               around your channel and voice. One-time price. No subscription. No credit caps.
             </p>
             <Link
               href={CREATE_HREF}
-              className="mt-7 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-[color:var(--cr-text)] transition-colors hover:text-[color:var(--cr-red)]"
+              className="mt-7 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-(--cr-text) transition-colors hover:text-(--cr-red)"
             >
               Price my tool <span aria-hidden>→</span>
             </Link>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="overflow-hidden rounded-2xl border border-[color:var(--cr-border)] bg-[color:var(--cr-surface)]/60">
+            <div className="overflow-hidden rounded-2xl border border-(--cr-border) bg-(--cr-surface)/60">
               {PRICES.map((p, i) => (
                 <div
                   key={p.name}
-                  className={`flex items-baseline justify-between gap-4 px-5 py-4 ${i > 0 ? "border-t border-[color:var(--cr-border)]" : ""}`}
+                  className={`flex items-baseline justify-between gap-4 px-5 py-4 ${i > 0 ? "border-t border-(--cr-border)" : ""}`}
                 >
                   <div>
-                    <div className="font-display text-[15px] font-bold text-[color:var(--cr-text)]">{p.name}</div>
-                    <div className="text-[12.5px] text-[color:var(--cr-muted)]">{p.note}</div>
+                    <div className="font-display text-[15px] font-bold text-(--cr-text)">{p.name}</div>
+                    <div className="text-[12.5px] text-(--cr-muted)">{p.note}</div>
                   </div>
-                  <div className="whitespace-nowrap font-mono text-[15px] font-medium text-[color:var(--cr-red)]">{p.price}</div>
+                  <div className="whitespace-nowrap font-mono text-[15px] font-medium text-(--cr-red)">{p.price}</div>
                 </div>
               ))}
-              <div className="border-t border-[color:var(--cr-border)] px-5 py-4 text-[12.5px] leading-snug text-[color:var(--cr-muted)]">
-                <span className="font-semibold text-[color:var(--cr-text)]">Bundle any three</span> into one
+              <div className="border-t border-(--cr-border) px-5 py-4 text-[12.5px] leading-snug text-(--cr-muted)">
+                <span className="font-semibold text-(--cr-text)">Bundle any three</span> into one
                 wired system — that&apos;s the $1,500 Starter build. Prices in CAD, one-time; AI usage runs on your own keys.
               </div>
             </div>
@@ -369,12 +369,12 @@ export default function CreatorStudio() {
       </section>
 
       {/* ---------- CTA closer ---------- */}
-      <section className="relative z-10 mx-auto max-w-[1180px] px-5 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <section className="relative z-10 mx-auto max-w-container px-5 py-20 sm:px-6 sm:py-28 lg:px-8">
         <Reveal>
-          <h2 className="max-w-[18ch] font-display text-[34px] font-bold leading-[1.02] tracking-[-0.02em] text-[color:var(--cr-text)] sm:text-[48px]">
+          <h2 className="max-w-[18ch] font-display text-[34px] font-bold leading-[1.02] tracking-[-0.02em] text-(--cr-text) sm:text-[48px]">
             Tell me what eats your week.
           </h2>
-          <p className="mt-5 max-w-[52ch] text-[17px] leading-relaxed text-[color:var(--cr-muted)] sm:text-[18px]">
+          <p className="mt-5 max-w-[52ch] text-[17px] leading-relaxed text-(--cr-muted) sm:text-[18px]">
             A $99 audit maps where your hours actually go and what to automate first —
             no obligation to build. Remote, worldwide, in your voice.
           </p>
@@ -388,7 +388,7 @@ export default function CreatorStudio() {
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-[color:var(--cr-text)] transition-colors hover:text-[color:var(--cr-red)]"
+              className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-(--cr-text) transition-colors hover:text-(--cr-red)"
             >
               See pricing
               <span aria-hidden>→</span>
@@ -398,25 +398,25 @@ export default function CreatorStudio() {
       </section>
 
       {/* ---------- Footer (slim, dark) ---------- */}
-      <footer className="relative z-10 border-t border-[color:var(--cr-border)]">
-        <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <footer className="relative z-10 border-t border-(--cr-border)">
+        <div className="mx-auto flex max-w-container flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--cr-red)]" aria-hidden />
-              <span className="font-display text-[15px] font-bold text-[color:var(--cr-text)]">Handbuilt AI</span>
+              <span className="inline-block h-2 w-2 rounded-full bg-(--cr-red)" aria-hidden />
+              <span className="font-display text-[15px] font-bold text-(--cr-text)">Handbuilt AI</span>
             </div>
-            <p className="mt-2 text-[13px] text-[color:var(--cr-muted)]">
+            <p className="mt-2 text-[13px] text-(--cr-muted)">
               Custom AI, built by hand. Surrey, BC · delivered worldwide.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--cr-muted)]">
-            <Link href="/" className="transition-colors hover:text-[color:var(--cr-text)]">Main site</Link>
-            <Link href="/pricing" className="transition-colors hover:text-[color:var(--cr-text)]">Pricing</Link>
-            <Link href="/services" className="transition-colors hover:text-[color:var(--cr-text)]">All services</Link>
-            <Link href="/industries" className="transition-colors hover:text-[color:var(--cr-text)]">For business</Link>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-(--cr-muted)">
+            <Link href="/" className="transition-colors hover:text-(--cr-text)">Main site</Link>
+            <Link href="/pricing" className="transition-colors hover:text-(--cr-text)">Pricing</Link>
+            <Link href="/services" className="transition-colors hover:text-(--cr-text)">All services</Link>
+            <Link href="/industries" className="transition-colors hover:text-(--cr-text)">For business</Link>
           </nav>
         </div>
-        <div className="mx-auto max-w-[1180px] px-5 pb-8 font-mono text-[10px] tracking-[0.12em] text-[color:var(--cr-muted)] sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-container px-5 pb-8 font-mono text-[10px] tracking-[0.12em] text-(--cr-muted) sm:px-6 lg:px-8">
           © 2026 Handbuilt AI — all builds delivered remotely.
         </div>
       </footer>

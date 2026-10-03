@@ -95,7 +95,7 @@ export default function LeadDetailPage() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <h1 className="text-4xl font-light text-white">{lead.company}</h1>
-                <span className={`px-3 py-1 rounded text-sm font-light border ${getStatusColor(lead.status)}`}>
+                <span className={`px-3 py-1 rounded-sm text-sm font-light border ${getStatusColor(lead.status)}`}>
                   {lead.status.charAt(0).toUpperCase() + lead.status.slice(1).replace("-", " ")}
                 </span>
                 <div className="flex items-center gap-1 text-yellow-400">

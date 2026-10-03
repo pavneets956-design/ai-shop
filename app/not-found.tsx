@@ -48,7 +48,7 @@ export default function NotFound() {
             <Link
               key={d.href}
               href={d.href}
-              className="group flex items-baseline justify-between gap-4 border-b border-line py-4 no-underline transition-colors hover:bg-paper-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              className="group flex items-baseline justify-between gap-4 border-b border-line py-4 no-underline transition-colors hover:bg-paper-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               <span className="text-base font-semibold text-ink group-hover:text-ink-hover">
                 {d.label}

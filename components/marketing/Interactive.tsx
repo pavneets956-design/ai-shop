@@ -74,7 +74,7 @@ export function ProblemSelector() {
                     aria-selected={selected}
                     aria-controls={`${uid}-panel-${i}`}
                     onClick={() => setActive(i)}
-                    className="flex-1 px-5 py-4 text-left text-[15px] font-medium transition-colors focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)]"
+                    className="flex-1 px-5 py-4 text-left text-[15px] font-medium transition-colors focus:outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--v-accent)"
                     style={{
                       color: selected ? "var(--v-ink)" : "var(--v-muted)",
                       backgroundColor: selected ? "var(--v-surface)" : "transparent",
@@ -99,7 +99,7 @@ export function ProblemSelector() {
                 className="p-6 md:p-8"
               >
                 <p className="v-body">{p.body}</p>
-                <div className="mt-6 rounded-[var(--v-r-card)] p-5" style={{ backgroundColor: "var(--v-recess)" }}>
+                <div className="mt-6 rounded-(--v-r-card) p-5" style={{ backgroundColor: "var(--v-recess)" }}>
                   <p className="v-micro uppercase tracking-wide">What we install</p>
                   <p className="v-body mt-2">{p.fix}</p>
                 </div>
@@ -148,7 +148,7 @@ export function FaqSection({ items }: { items: QA[] }) {
         return (
           <div
             key={item.q}
-            className={isOpen ? "v-card overflow-hidden" : "overflow-hidden rounded-[var(--v-r-card)]"}
+            className={isOpen ? "v-card overflow-hidden" : "overflow-hidden rounded-(--v-r-card)"}
             style={isOpen ? undefined : { boxShadow: "0 0 0 1px var(--v-hairline)" }}
           >
             <h3 className="m-0">
@@ -158,13 +158,13 @@ export function FaqSection({ items }: { items: QA[] }) {
                 aria-controls={`${uid}-a-${i}`}
                 id={`${uid}-q-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--v-accent)]"
+                className="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--v-accent)"
               >
                 <span className="text-[17px] font-medium" style={{ color: "var(--v-ink)" }}>
                   {item.q}
                 </span>
                 <span
-                  className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-[var(--v-r-control)]"
+                  className="inline-flex h-11 w-11 flex-none items-center justify-center rounded-(--v-r-control)"
                   style={{ boxShadow: "0 0 0 1px var(--v-hairline-strong)" }}
                   aria-hidden="true"
                 >

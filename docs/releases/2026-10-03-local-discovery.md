@@ -1,6 +1,6 @@
 # Local discovery and cleaner measurement — prepared October 3, 2026
 
-Status: tested local changes, not pushed, merged or deployed. Based on fetched `origin/main` at `fe474d20f66100f203a1610a563bfd6d6706ac03`, isolated on `codex/local-discovery-measurement`. The original checkout and its owner's unfinished work are untouched.
+Status: PR #9, approved by the owner for push, merge and deployment after fixing the dependency audit; release awaits passing CI. Based on fetched `origin/main` at `fe474d20f66100f203a1610a563bfd6d6706ac03`, isolated on `codex/local-discovery-measurement`. The original checkout and its owner's unfinished work are untouched.
 
 ## Problem and result
 
@@ -10,6 +10,15 @@ Owner visits were indistinguishable from prospect activity in Vercel. `form_subm
 - `lead_received` fires only after a new request has confirmed persistence or an accepted notification. Duplicate retries and errors do not fire it. `form_submitted` remains available for attempt/outcome diagnostics. Missing delivery evidence now displays a failure rather than a success. Tool conversions also exclude duplicates.
 - The Surrey receptionist and Burnaby small-business automation pages now have focused search titles, scoped service descriptions, clear request CTAs, and links to the existing AI search visibility service. Own-business experience is labelled accurately. Removed hard-coded prices and automatic Starter offer associations from these two custom-scoped pages; the pricing catalogue itself is unchanged. URLs and canonicals are unchanged.
 - Privacy documentation describes the new localStorage preference and receipt event. The preference page is noindex and is not added to the sitemap.
+
+## Dependency audit repair
+
+CI exposed GHSA-vfj7-8cjw-p6xm in `braces <=3.0.3`; no patched release was available. The owner requested a fix, not an audit exception. Tailwind 3 and Next's lint plugin both pulled in that package.
+
+- Migrated Tailwind to 4.3.3 and its dedicated PostCSS plugin using the official upgrader. Theme configuration now lives in `app/globals.css`, with the same application/component/data source boundaries. Reviewed the class changes and restored prose that the upgrader mistakenly treated as class names. Preserved legacy Inter utility fonts separately from the studio's Archivo token after visual comparison exposed the collision.
+- Replaced only Next's lint-plugin `fast-glob` dependency with the private `tools/next-root-glob` adapter over `tinyglobby` 0.2.17. It preserves literal directories, directory-only glob matching, absolute/relative paths and separator behavior. Seven integration cases exercise the actual Next consumer and verify that it resolves the checked-in adapter, so an unrelated parent installation cannot mask a bad link.
+- The exact lockfile installs successfully with `npx --yes npm@11 ci --ignore-scripts`. `npm audit --audit-level=low` reports **zero vulnerabilities**, including development dependencies. The CI audit gate is unchanged. No advisory ignore, fake patched version, or lint-rule downgrade was used.
+- Tailwind 4's supported browser floor is Safari 16.4, Chrome 111 and Firefox 128. Current Chromium and WebKit are covered by the browser suite; older browsers were not tested. Official migration reference: https://tailwindcss.com/docs/upgrade-guide. Advisory: https://github.com/advisories/GHSA-vfj7-8cjw-p6xm.
 
 ## Existing AI recommendation pages
 
@@ -21,8 +30,10 @@ No duplicate service page was added. The service was verified live in the browse
 ## Validation
 
 - `npx tsc --noEmit`: passed.
-- `npx vitest run`: 19 files, 327 tests passed.
-- `npx next build`: passed after final application edits; no migrations or production credentials used. Existing MuPDF async-target, multiple-lockfile and unrelated lint warnings remain. Build log: `local-discovery-2026-10-03/local-build.log`.
+- `npx vitest run`: 20 files, 334 tests passed after the dependency repair.
+- `npx next build`: passed after final application and dependency edits; no migrations or production credentials used. Existing MuPDF async-target, multiple-lockfile and unrelated lint warnings remain. Build log: `local-discovery-2026-10-03/dependency-build.log`.
+- Full Playwright suite after the final CSS correction: 141 passed, three intentional skips. Repeated demo accessibility checks: six passed. Local smoke: 158/158. PDF fixture verification: 12/12 fields applied, 9/9 text/combo round trips.
+- Before/after screenshots at 1440px and 390px: homepage and analytics preference pixels match exactly; request form and demo retain their full-page dimensions and were reviewed visually. The mobile font regression detected during migration was fixed before the final run. All form/paid API traffic was intercepted and analytics suppressed.
 - Playwright against the local production build: 20 analytics/lead-form desktop and mobile cases passed; added storage-error cases passed on both devices, making 22 distinct cases. The new preference screen has no axe WCAG A/AA violations. A selector initially matched Next's route announcer as well as the intended error; the selector was narrowed and both cases passed. All lead API responses were mocked, and analytics traffic was blocked.
 - Rendered local pages: both return 200, have one H1, self-canonicals, parseable JSON-LD, an AI visibility link and a working request href. Desktop browser review completed. Preference screenshots are in the adjacent evidence folder.
 - Current production read-only smoke: 159/159 checks passed. This checks the existing release, not these unpublished changes. Log: `local-discovery-2026-10-03/production-smoke.log`.
@@ -43,4 +54,6 @@ The signed-in Bing Webmaster Tools account did not expose a configured site or h
 
 ## Release and rollback
 
-No schema, migration, paid API, outbound calling flag, or email delivery change. Push, merge and deploy require the owner's explicit per-action approval under `AGENTS.md`. Recheck the production revision before release, use the existing deployment workflow, then rerun production smoke and safe browser checks. Roll back through `docs/ROLLBACK.md` using a freshly verified previous production deployment if verification fails. Do not reuse an old deployment anchor without checking it.
+No schema, migration, paid API, outbound calling flag, or email delivery change. The owner approved pushing, merging and deploying, then required all audit findings to be fixed first. Recheck the production revision before release, use the existing deployment workflow, then rerun production smoke and safe browser checks. Roll back through `docs/ROLLBACK.md` using a freshly verified previous production deployment if verification fails.
+
+Verified pre-release production anchor: `dpl_47rnT645gRiaVk6FemkKyrDq13pb`, https://ai-shop-mbazxwrz0-pavs-projects-2a8231d9.vercel.app, serving `fe474d20f66100f203a1610a563bfd6d6706ac03`. Actual deployment and post-release checks must be recorded after release; the historical smoke result above does not establish them.

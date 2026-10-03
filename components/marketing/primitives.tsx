@@ -158,7 +158,7 @@ export function WindowChrome({
   className?: string;
 }) {
   return (
-    <div className={`overflow-hidden rounded-[var(--v-r-panel)] ${className}`} style={{ boxShadow: "var(--v-shadow-card)" }}>
+    <div className={`overflow-hidden rounded-(--v-r-panel) ${className}`} style={{ boxShadow: "var(--v-shadow-card)" }}>
       <div
         className="flex items-center gap-3 px-4 py-3"
         style={{ backgroundColor: "var(--v-recess)", boxShadow: "inset 0 -1px 0 var(--v-hairline)" }}
