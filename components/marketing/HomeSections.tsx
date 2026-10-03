@@ -44,7 +44,7 @@ export function BeforeAfter() {
             <Reveal delay={160}>
               <div className="v-card h-full p-6 md:p-7">
                 <span
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)]"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-(--v-r-control)"
                   style={{ backgroundColor: "var(--v-ink)" }}
                 >
                   <Check className="h-5 w-5 text-white" aria-hidden="true" />
@@ -71,7 +71,7 @@ function ProblemCard({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="v-card-flat h-full p-6 md:p-7">
       <span
-        className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--v-r-control)]"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-(--v-r-control)"
         style={{ boxShadow: "0 0 0 1px var(--v-hairline-strong)" }}
       >
         <X className="h-5 w-5" style={{ color: "var(--v-muted)" }} aria-hidden="true" />
@@ -160,7 +160,7 @@ export function ProcessSteps() {
               <Reveal as="li" key={s.n} delay={i * 90}>
                 <div className="v-card p-6 md:p-8">
                   <span
-                    className="inline-flex items-center rounded-[var(--v-r-control)] px-2.5 py-1 font-mono text-[13px] font-medium text-white"
+                    className="inline-flex items-center rounded-(--v-r-control) px-2.5 py-1 font-mono text-[13px] font-medium text-white"
                     style={{ backgroundColor: "var(--v-ink)" }}
                   >
                     {s.n}
@@ -199,7 +199,7 @@ export function ToolShowcase() {
             <Reveal key={t.slug} delay={i * 60}>
               <Link
                 href={toolPath(t.slug)}
-                className="v-card v-card-hover group flex h-full flex-col p-6 focus:outline-none focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]"
+                className="v-card v-card-hover group flex h-full flex-col p-6 focus:outline-hidden focus-visible:shadow-[0_0_0_2px_#fff,0_0_0_4px_var(--v-accent)]"
               >
                 <span className="v-micro uppercase tracking-wide">{t.category}</span>
                 <h3 className="v-h3 mt-3 text-[20px]">{t.name}</h3>
@@ -258,7 +258,7 @@ export function PricingSection() {
                       <PegIcon glyph={i === 0 ? "clock" : i === 1 ? "office" : "tools"} size={36} />
                       {featured && p.badge ? (
                         <span
-                          className="rounded-[var(--v-r-control)] px-2.5 py-1 text-[12px] font-medium"
+                          className="rounded-(--v-r-control) px-2.5 py-1 text-[12px] font-medium"
                           style={{ backgroundColor: "var(--v-accent-wash)", color: "var(--v-accent-press)" }}
                         >
                           {p.badge}
@@ -366,7 +366,7 @@ export function LocalSection() {
                 {AREAS.map((a) => (
                   <li
                     key={a}
-                    className="rounded-[var(--v-r-control)] px-3 py-1.5 text-[15px]"
+                    className="rounded-(--v-r-control) px-3 py-1.5 text-[15px]"
                     style={{ backgroundColor: "var(--v-recess)", color: "var(--v-ink-2)", boxShadow: "0 0 0 1px var(--v-hairline)" }}
                   >
                     {a}
@@ -411,7 +411,7 @@ export function FinalCta() {
     // heavier on a dark band than on white, which is what made the previous
     // version look like an empty banner. Generous above, tighter below.
     <section
-      className="pb-16 pt-[72px] md:pb-20 md:pt-24 lg:pb-[88px] lg:pt-[120px]"
+      className="pb-16 pt-header md:pb-20 md:pt-24 lg:pb-[88px] lg:pt-[120px]"
       style={{ backgroundColor: "var(--v-ink-invert)" }}
       id="start"
     >
@@ -423,7 +423,7 @@ export function FinalCta() {
             <h2 className="v-h2 mt-5 text-balance" style={{ color: "var(--v-on-dark)" }}>
               The calls are still going to voicemail while you read this.
             </h2>
-            <p className="v-body mt-5 max-w-[38rem]" style={{ color: "var(--v-on-dark-muted)" }}>
+            <p className="v-body mt-5 max-w-152" style={{ color: "var(--v-on-dark-muted)" }}>
               Every one of them dials the number already on your truck, your invoices and your yard
               signs. That number is the thing worth fixing — not replacing it, not adding a second
               one, just making sure somebody picks it up.
@@ -436,7 +436,7 @@ export function FinalCta() {
               </Link>
               <Link
                 href="/tools"
-                className="inline-flex h-12 items-center justify-center gap-1.5 rounded-[var(--v-r-control)] px-2 text-[15px] transition-colors focus:outline-none focus-visible:shadow-[0_0_0_2px_var(--v-ink-invert),0_0_0_4px_var(--v-accent)]"
+                className="inline-flex h-12 items-center justify-center gap-1.5 rounded-(--v-r-control) px-2 text-[15px] transition-colors focus:outline-hidden focus-visible:shadow-[0_0_0_2px_var(--v-ink-invert),0_0_0_4px_var(--v-accent)]"
                 style={{ color: "var(--v-on-dark)", textDecoration: "underline", textDecorationColor: "var(--v-accent)", textDecorationThickness: "1.5px", textUnderlineOffset: "4px" }}
               >
                 or just use the free calculators
@@ -450,7 +450,7 @@ export function FinalCta() {
           {/* ---- what actually happens next ---- */}
           <Reveal delay={90}>
             <div
-              className="rounded-[var(--v-r-panel)] p-6"
+              className="rounded-(--v-r-panel) p-6"
               style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.13)" }}
             >
               <p className="v-micro uppercase tracking-wide" style={{ color: "var(--v-on-dark-muted)" }}>

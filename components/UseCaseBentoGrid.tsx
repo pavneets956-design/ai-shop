@@ -39,7 +39,7 @@ export default function UseCaseBentoGrid() {
                 {c.examples.slice(0, feature ? 4 : 2).map((ex) => (
                   <span
                     key={ex}
-                    className="rounded-full border border-ink/10 bg-ink/[0.03] px-2.5 py-1 text-xs text-ink-soft"
+                    className="rounded-full border border-ink/10 bg-ink/3 px-2.5 py-1 text-xs text-ink-soft"
                   >
                     {ex}
                   </span>

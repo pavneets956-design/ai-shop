@@ -319,20 +319,22 @@ export default function BuildRequestForm() {
       const delivery = (data as { delivery?: { persisted?: boolean; emailed?: boolean } })
         .delivery;
       const nothingHappened =
-        delivery !== undefined && delivery.persisted !== true && delivery.emailed !== true;
+        delivery?.persisted !== true && delivery?.emailed !== true;
       if (nothingHappened) {
+        const confirmedRejection = delivery?.persisted === false && delivery?.emailed === false;
         setResult({
           kind: "error",
-          variant: "rejected",
-          message:
-            "That didn't go through — the form flagged the submission and nothing was saved. " +
-            "It may have been a browser autofill filling a hidden field. Email me directly and " +
-            "I'll pick it up from there.",
+          variant: confirmedRejection ? "rejected" : "server",
+          message: confirmedRejection
+            ? "That didn't go through — the form flagged the submission and nothing was saved. " +
+              "It may have been a browser autofill filling a hidden field. Email me directly and " +
+              "I'll pick it up from there."
+            : "We couldn't confirm whether your request arrived. Try again — duplicate requests are recognised — or email me directly. Everything you typed is still here.",
         });
         setStatus("error");
         trackEvent("form_submitted", {
           form: "build_request",
-          result: "rejected_no_delivery",
+          result: confirmedRejection ? "rejected_no_delivery" : "unconfirmed_delivery",
           status: res.status,
         });
         return;
@@ -351,7 +353,12 @@ export default function BuildRequestForm() {
         timeline: form.timeline || null,
         industry: form.industry || null,
       });
-      if (presetSrc.startsWith("tool-")) {
+      // A separate conversion event excludes failed attempts and duplicate retries.
+      // Receipt means saved or notification accepted; it is not a qualified customer.
+      if (data.deduped !== true) {
+        trackEvent("lead_received", { form: "build_request" });
+      }
+      if (data.deduped !== true && presetSrc.startsWith("tool-")) {
         // Declared in lib/track.ts since the free-tools build and never once
         // fired — a defined-but-dead event is a dashboard lie. It fires here, on
         // a real lead that came from a tool CTA.
@@ -403,7 +410,7 @@ export default function BuildRequestForm() {
         <h2
           ref={doneHeadingRef}
           tabIndex={-1}
-          className="mt-5 font-display text-2xl font-semibold text-ink focus:outline-none"
+          className="mt-5 font-display text-2xl font-semibold text-ink focus:outline-hidden"
         >
           {result.deduped ? "Already received." : "Request received."}
         </h2>
@@ -468,7 +475,7 @@ export default function BuildRequestForm() {
                   disabled={i > step}
                   aria-current={active ? "step" : undefined}
                   className={`flex min-h-[44px] items-center gap-2 rounded-md px-1 text-sm ${
-                    i < step ? "cursor-pointer hover:bg-ink/[0.04]" : "cursor-default"
+                    i < step ? "cursor-pointer hover:bg-ink/4" : "cursor-default"
                   }`}
                 >
                   <span
@@ -507,7 +514,7 @@ export default function BuildRequestForm() {
           : ""}
       </div>
       {attempted && errorCount > 0 && (
-        <p className="mb-6 rounded-md border border-danger/30 bg-danger/[0.08] px-4 py-3 text-sm text-danger">
+        <p className="mb-6 rounded-md border border-danger/30 bg-danger/8 px-4 py-3 text-sm text-danger">
           {errorCount === 1
             ? "One answer needs fixing before this can send — it's marked below."
             : `${errorCount} answers need fixing before this can send — they're marked below.`}
@@ -651,7 +658,7 @@ export default function BuildRequestForm() {
       {status === "error" && result?.kind === "error" && (
         <div
           role="alert"
-          className="mt-6 rounded-md border border-danger/30 bg-danger/[0.08] px-4 py-3 text-sm text-danger"
+          className="mt-6 rounded-md border border-danger/30 bg-danger/8 px-4 py-3 text-sm text-danger"
         >
           <p>{result.message}</p>
           <p className="mt-2 text-danger">
@@ -807,7 +814,7 @@ function ChipGroup({
               type="button"
               aria-pressed={on}
               onClick={() => onPick(o.id)}
-              className={`min-h-[44px] rounded-full border px-4 py-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${
+              className={`min-h-[44px] rounded-full border px-4 py-2 text-sm transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/50 ${
                 on
                   ? "border-ink bg-ink text-white"
                   : "border-ink/50 bg-white text-ink-soft hover:border-ink hover:text-ink"

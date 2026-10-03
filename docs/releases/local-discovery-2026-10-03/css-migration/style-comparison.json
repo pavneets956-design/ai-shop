@@ -1,0 +1,2090 @@
+[
+  {
+    "path": "/create",
+    "width": 390,
+    "before": {
+      "key": "INPUT::hb_form_token",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgb(23, 27, 36)",
+        "24px",
+        "rgb(255, 255, 255)",
+        "0px"
+      ],
+      "box": [
+        0,
+        0
+      ]
+    },
+    "after": {
+      "key": "INPUT::hb_form_token",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgb(23, 27, 36)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "path": "/create",
+    "width": 390,
+    "before": {
+      "key": "BUTTON:Add detail first:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "15px",
+        "500",
+        "rgba(23, 27, 36, 0.7)",
+        "22.5px",
+        "rgba(0, 0, 0, 0)",
+        "4px"
+      ],
+      "box": [
+        161,
+        48
+      ]
+    },
+    "after": {
+      "key": "BUTTON:Add detail first:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "15px",
+        "500",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.7)",
+        "22.5px",
+        "rgba(0, 0, 0, 0)",
+        "4px"
+      ],
+      "box": [
+        161,
+        48
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Multiply your monthly calls by the share you miss, the share that are genuine pr:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "20px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "31px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        310
+      ]
+    },
+    "after": {
+      "key": "P:Multiply your monthly calls by the share you miss, the share that are genuine pr:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "20px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "31px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        310
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        73
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        73
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:It estimates how many calls you miss each month, how many were genuine leads, th:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        198
+      ]
+    },
+    "after": {
+      "key": "P:It estimates how many calls you miss each month, how many were genuine leads, th:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        198
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Missed calls/month = calls × % missed. Qualified leads = missed calls × % genuin:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        223
+      ]
+    },
+    "after": {
+      "key": "P:Missed calls/month = calls × % missed. Qualified leads = missed calls × % genuin:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        223
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are gen:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        223
+      ]
+    },
+    "after": {
+      "key": "P:A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are gen:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        223
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:It depends entirely on your call volume, close rate and job value — which is why:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    },
+    "after": {
+      "key": "P:It depends entirely on your call volume, close rate and job value — which is why:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Rather than assume one, the tool lets you set a recoverable rate and shows conse:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    },
+    "after": {
+      "key": "P:Rather than assume one, the tool lets you set a recoverable rate and shows conse:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:If you regularly miss calls while on a job, recovering even a few per month can :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    },
+    "after": {
+      "key": "P:If you regularly miss calls while on a job, recovering even a few per month can :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        124
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:No. Everything is calculated in your browser. Nothing you enter is uploaded or s:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        99
+      ]
+    },
+    "after": {
+      "key": "P:No. Everything is calculated in your browser. Nothing you enter is uploaded or s:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        99
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        73
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        316,
+        73
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 390,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(255, 255, 255, 0.7)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        99
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        99
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Handbuilt AI helps local businesses improve their website, search information an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "rgba(23, 27, 36, 0.7)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        263
+      ]
+    },
+    "after": {
+      "key": "P:Handbuilt AI helps local businesses improve their website, search information an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.7)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        263
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:You may have a website and still hear nothing from it. Before adding more pages,:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        307,
+        176
+      ]
+    },
+    "after": {
+      "key": "P:You may have a website and still hear nothing from it. Before adding more pages,:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        307,
+        176
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Send your website, main services and service area through the request form.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        52
+      ]
+    },
+    "after": {
+      "key": "P:Send your website, main services and service area through the request form.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        52
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:We review search access, business information, useful content and the enquiry pa:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        76
+      ]
+    },
+    "after": {
+      "key": "P:We review search access, business information, useful content and the enquiry pa:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        76
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:You receive a proposed scope identifying the fixes and pages worth doing.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        76
+      ]
+    },
+    "after": {
+      "key": "P:You receive a proposed scope identifying the fixes and pages worth doing.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        76
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:After agreed changes, compare qualified enquiries with the starting point.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        52
+      ]
+    },
+    "after": {
+      "key": "P:After agreed changes, compare qualified enquiries with the starting point.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        310,
+        52
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:We check the pages a prospective customer would use: the main service, the locat:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    },
+    "after": {
+      "key": "P:We check the pages a prospective customer would use: the main service, the locat:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:The proposal separates technical fixes, content work and enquiry handling so you:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:The proposal separates technical fixes, content work and enquiry handling so you:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:You may see this work described as local SEO, answer engine optimisation or gene:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    },
+    "after": {
+      "key": "P:You may see this work described as local SEO, answer engine optimisation or gene:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:A useful deliverable is a page or a corrected workflow that helps a customer. A :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:A useful deliverable is a page or a corrected workflow that helps a customer. A :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:We organise related questions into useful pages. A service page explains the job:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    },
+    "after": {
+      "key": "P:We organise related questions into useful pages. A service page explains the job:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Pavneet runs Ironwood Grounds and built its website and quote-request workflow. :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        130
+      ]
+    },
+    "after": {
+      "key": "P:Pavneet runs Ironwood Grounds and built its website and quote-request workflow. :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        130
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Discovery is only the start. We review the form, the saved request, the notifica:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    },
+    "after": {
+      "key": "P:Discovery is only the start. We review the form, the saved request, the notifica:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Phone answering and automated follow-up can be scoped separately when they solve:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        130
+      ]
+    },
+    "after": {
+      "key": "P:Phone answering and automated follow-up can be scoped separately when they solve:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        130
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Send the website, the service you want more enquiries for, the area you cover an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    },
+    "after": {
+      "key": "P:Send the website, the service you want more enquiries for, the area you cover an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        156
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 390,
+    "before": {
+      "key": "P:Progress is reviewed using relevant enquiries alongside search clicks and dated :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    },
+    "after": {
+      "key": "P:Progress is reviewed using relevant enquiries alongside search clicks and dated :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        358,
+        182
+      ]
+    }
+  },
+  {
+    "path": "/create",
+    "width": 1440,
+    "before": {
+      "key": "INPUT::hb_form_token",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgb(23, 27, 36)",
+        "24px",
+        "rgb(255, 255, 255)",
+        "0px"
+      ],
+      "box": [
+        0,
+        0
+      ]
+    },
+    "after": {
+      "key": "INPUT::hb_form_token",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgb(23, 27, 36)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "path": "/create",
+    "width": 1440,
+    "before": {
+      "key": "BUTTON:Add detail first:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "15px",
+        "500",
+        "rgba(23, 27, 36, 0.7)",
+        "22.5px",
+        "rgba(0, 0, 0, 0)",
+        "4px"
+      ],
+      "box": [
+        161,
+        48
+      ]
+    },
+    "after": {
+      "key": "BUTTON:Add detail first:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "15px",
+        "500",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.7)",
+        "22.5px",
+        "rgba(0, 0, 0, 0)",
+        "4px"
+      ],
+      "box": [
+        161,
+        48
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Multiply your monthly calls by the share you miss, the share that are genuine pr:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "20px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "31px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        672,
+        186
+      ]
+    },
+    "after": {
+      "key": "P:Multiply your monthly calls by the share you miss, the share that are genuine pr:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "20px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "31px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        672,
+        186
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        526,
+        36
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        526,
+        36
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:It estimates how many calls you miss each month, how many were genuine leads, th:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    },
+    "after": {
+      "key": "P:It estimates how many calls you miss each month, how many were genuine leads, th:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Missed calls/month = calls × % missed. Qualified leads = missed calls × % genuin:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    },
+    "after": {
+      "key": "P:Missed calls/month = calls × % missed. Qualified leads = missed calls × % genuin:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are gen:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    },
+    "after": {
+      "key": "P:A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are gen:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        768,
+        99
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:It depends entirely on your call volume, close rate and job value — which is why:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        74
+      ]
+    },
+    "after": {
+      "key": "P:It depends entirely on your call volume, close rate and job value — which is why:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        74
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Rather than assume one, the tool lets you set a recoverable rate and shows conse:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    },
+    "after": {
+      "key": "P:Rather than assume one, the tool lets you set a recoverable rate and shows conse:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:If you regularly miss calls while on a job, recovering even a few per month can :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    },
+    "after": {
+      "key": "P:If you regularly miss calls while on a job, recovering even a few per month can :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:No. Everything is calculated in your browser. Nothing you enter is uploaded or s:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    },
+    "after": {
+      "key": "P:No. Everything is calculated in your browser. Nothing you enter is uploaded or s:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        726,
+        50
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        258,
+        91
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "13px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "18.2px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        258,
+        91
+      ]
+    }
+  },
+  {
+    "path": "/tools/missed-call-revenue-calculator",
+    "width": 1440,
+    "before": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(255, 255, 255, 0.7)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        576,
+        74
+      ]
+    },
+    "after": {
+      "key": "P:Our AI receptionist answers every call 24/7, texts back missed callers in second:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+        "24.8px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        576,
+        74
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Handbuilt AI helps local businesses improve their website, search information an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "rgba(23, 27, 36, 0.7)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        117
+      ]
+    },
+    "after": {
+      "key": "P:Handbuilt AI helps local businesses improve their website, search information an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.7)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        117
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:You may have a website and still hear nothing from it. Before adding more pages,:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "rgba(23, 27, 36, 0.8)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        685,
+        88
+      ]
+    },
+    "after": {
+      "key": "P:You may have a website and still hear nothing from it. Before adding more pages,:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "18px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.8)",
+        "29.25px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        685,
+        88
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Send your website, main services and service area through the request form.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        582,
+        32
+      ]
+    },
+    "after": {
+      "key": "P:Send your website, main services and service area through the request form.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        582,
+        32
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:We review search access, business information, useful content and the enquiry pa:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        642,
+        32
+      ]
+    },
+    "after": {
+      "key": "P:We review search access, business information, useful content and the enquiry pa:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        642,
+        32
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:You receive a proposed scope identifying the fixes and pages worth doing.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        566,
+        32
+      ]
+    },
+    "after": {
+      "key": "P:You receive a proposed scope identifying the fixes and pages worth doing.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        566,
+        32
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:After agreed changes, compare qualified enquiries with the starting point.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        557,
+        32
+      ]
+    },
+    "after": {
+      "key": "P:After agreed changes, compare qualified enquiries with the starting point.:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "24px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        557,
+        32
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:We check the pages a prospective customer would use: the main service, the locat:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    },
+    "after": {
+      "key": "P:We check the pages a prospective customer would use: the main service, the locat:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:The proposal separates technical fixes, content work and enquiry handling so you:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    },
+    "after": {
+      "key": "P:The proposal separates technical fixes, content work and enquiry handling so you:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:You may see this work described as local SEO, answer engine optimisation or gene:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    },
+    "after": {
+      "key": "P:You may see this work described as local SEO, answer engine optimisation or gene:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:A useful deliverable is a page or a corrected workflow that helps a customer. A :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    },
+    "after": {
+      "key": "P:A useful deliverable is a page or a corrected workflow that helps a customer. A :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:We organise related questions into useful pages. A service page explains the job:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:We organise related questions into useful pages. A service page explains the job:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Pavneet runs Ironwood Grounds and built its website and quote-request workflow. :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:Pavneet runs Ironwood Grounds and built its website and quote-request workflow. :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Discovery is only the start. We review the form, the saved request, the notifica:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:Discovery is only the start. We review the form, the saved request, the notifica:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Phone answering and automated follow-up can be scoped separately when they solve:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    },
+    "after": {
+      "key": "P:Phone answering and automated follow-up can be scoped separately when they solve:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        52
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Send the website, the service you want more enquiries for, the area you cover an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    },
+    "after": {
+      "key": "P:Send the website, the service you want more enquiries for, the area you cover an:",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        78
+      ]
+    }
+  },
+  {
+    "path": "/services/ai-search-visibility",
+    "width": 1440,
+    "before": {
+      "key": "P:Progress is reviewed using relevant enquiries alongside search clicks and dated :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "rgba(23, 27, 36, 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    },
+    "after": {
+      "key": "P:Progress is reviewed using relevant enquiries alongside search clicks and dated :",
+      "style": [
+        "Inter, \"Inter Fallback\", system-ui, sans-serif",
+        "16px",
+        "400",
+        "oklab(0.222219 -0.00124847 -0.0186239 / 0.75)",
+        "26px",
+        "rgba(0, 0, 0, 0)",
+        "0px"
+      ],
+      "box": [
+        736,
+        104
+      ]
+    }
+  }
+]

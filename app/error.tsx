@@ -52,13 +52,13 @@ export default function Error({
           <button
             type="button"
             onClick={reset}
-            className="rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ink-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            className="rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ink-hover focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
           >
             Try again
           </button>
           <Link
             href="/"
-            className="rounded-md border border-line px-5 py-3 text-sm font-semibold text-ink no-underline transition-colors hover:bg-paper-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            className="rounded-md border border-line px-5 py-3 text-sm font-semibold text-ink no-underline transition-colors hover:bg-paper-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
           >
             Go home
           </Link>

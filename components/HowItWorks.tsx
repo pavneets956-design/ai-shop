@@ -12,7 +12,7 @@ export default function HowItWorks() {
   return (
     <div className="relative">
       {/* connecting line */}
-      <div className="absolute left-0 right-0 top-[34px] hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent lg:block" />
+      <div className="absolute left-0 right-0 top-[34px] hidden h-px bg-linear-to-r from-transparent via-white/15 to-transparent lg:block" />
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, idx) => {
           const Icon = s.icon;

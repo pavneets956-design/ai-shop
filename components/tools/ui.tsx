@@ -57,8 +57,8 @@ function FieldFrame({
 const inputBase =
   "h-input w-full rounded-input border border-line bg-white px-3.5 text-body text-ink " +
   "placeholder:text-ink-soft transition-colors " +
-  "focus:outline-none focus-visible:border-clay focus-visible:ring-2 focus-visible:ring-clay/25 " +
-  "aria-[invalid=true]:border-danger";
+  "focus:outline-hidden focus-visible:border-clay focus-visible:ring-2 focus-visible:ring-clay/25 " +
+  "aria-invalid:border-danger";
 
 function numericProps(value: string, onChange: (v: string) => void, describedBy: string, invalid: boolean) {
   return {
@@ -155,7 +155,7 @@ export function SelectField({
     <FieldFrame label={label} hint={hint} htmlFor={fieldId}>
       <select
         id={fieldId}
-        className={`${inputBase} cursor-pointer appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236e6e73%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>')] bg-[right_0.9rem_center] bg-no-repeat pr-10`}
+        className={`${inputBase} cursor-pointer appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236e6e73%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>')] bg-position-[right_0.9rem_center] bg-no-repeat pr-10`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-describedby={hint ? `${fieldId}-hint` : undefined}
@@ -189,7 +189,7 @@ export function ToggleField({
         type="checkbox"
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        className="mt-1 h-5 w-5 shrink-0 cursor-pointer rounded border-line text-clay accent-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/30"
+        className="mt-1 h-5 w-5 shrink-0 cursor-pointer rounded-sm border-line text-clay accent-clay focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/30"
       />
       <label htmlFor={id} className="cursor-pointer text-small text-ink">
         <span className="font-semibold">{label}</span>
@@ -216,7 +216,7 @@ export function CopyButton({ text, label = "Copy", className }: { text: string; 
     <button
       type="button"
       onClick={copy}
-      className={`inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/30 ${className ?? ""}`}
+      className={`inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/30 ${className ?? ""}`}
       aria-live="polite"
     >
       {copied ? <Check size={15} className="text-success" aria-hidden /> : <Copy size={15} aria-hidden />}
@@ -230,7 +230,7 @@ export function PrintButton({ label = "Print" }: { label?: string }) {
     <button
       type="button"
       onClick={() => window.print()}
-      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/30"
+      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/30"
     >
       <Printer size={15} aria-hidden />
       {label}
@@ -243,7 +243,7 @@ export function ResetButton({ onClick, label = "Reset" }: { onClick: () => void;
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-muted transition-colors hover:bg-paper-2 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/30"
+      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-muted transition-colors hover:bg-paper-2 hover:text-ink focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/30"
     >
       <RotateCcw size={15} aria-hidden />
       {label}
@@ -262,7 +262,7 @@ export function ShareButton({ onShare, label = "Share" }: { onShare: () => void;
     <button
       type="button"
       onClick={share}
-      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/30"
+      className="inline-flex h-9 items-center gap-1.5 rounded-btn border border-line bg-white px-3 text-small font-semibold text-ink transition-colors hover:bg-paper-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/30"
       aria-live="polite"
     >
       {done ? <Check size={15} className="text-success" aria-hidden /> : <Share2 size={15} aria-hidden />}
@@ -316,8 +316,8 @@ export function ResultStat({
 }
 
 const bannerTone: Record<string, string> = {
-  good: "border-success/30 bg-success/[0.06] text-ink",
-  warn: "border-danger/30 bg-danger/[0.06] text-ink",
+  good: "border-success/30 bg-success/6 text-ink",
+  warn: "border-danger/30 bg-danger/6 text-ink",
   neutral: "border-line bg-paper-2 text-ink",
 };
 

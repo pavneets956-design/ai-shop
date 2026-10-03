@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChromeGate from "@/components/ChromeGate";
 import JsonLd from "@/components/JsonLd";
-import { Analytics } from "@vercel/analytics/next";
+import SiteAnalytics from "@/components/SiteAnalytics";
 import AnalyticsBridge from "@/components/AnalyticsBridge";
 import { site } from "@/lib/data/site";
 import { identityGraph } from "@/lib/seo";
@@ -155,9 +155,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* tabIndex={-1} is load-bearing. Without it the skip link scrolls here
             but focus stays on <body>, so the very next Tab sends the keyboard
             user straight back to the top of the navigation they just skipped —
-            the link appeared to work and did not. `outline-none` because the
+            the link appeared to work and did not. `outline-hidden` because the
             target of a skip link should not draw a ring around the whole page. */}
-        <main id="main" tabIndex={-1} className="min-h-screen outline-none">
+        <main id="main" tabIndex={-1} className="min-h-screen outline-hidden">
           {children}
         </main>
         <ChromeGate>
@@ -165,7 +165,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </ChromeGate>
         {/* Cookieless product analytics (no consent banner needed). Failure-safe:
             never blocks rendering, the tools, or the lead flow. */}
-        <Analytics />
+        <SiteAnalytics />
         {/* Captures first-touch attribution and delegates every [data-track]
             click, so CTAs stay server components. See components/AnalyticsBridge.tsx. */}
         <AnalyticsBridge />

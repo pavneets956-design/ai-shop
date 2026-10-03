@@ -33,7 +33,7 @@ export default function ProductCard({
     <Link href={`/products/${id}`}>
       <div className="group cursor-pointer h-full flex flex-col relative">
         {/* Product Image - Cosmos.so style */}
-        <div className="relative w-full aspect-[4/3] mb-4 overflow-hidden rounded-lg">
+        <div className="relative w-full aspect-4/3 mb-4 overflow-hidden rounded-lg">
           <img
             src={finalImage}
             alt={title}

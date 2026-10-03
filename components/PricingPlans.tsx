@@ -19,7 +19,7 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
         return (
           <div
             key={plan.id}
-            className={`border rounded-2xl p-6 shadow-sm transition-all ${
+            className={`border rounded-2xl p-6 shadow-xs transition-all ${
               isPopular
                 ? "border-ink/30 bg-ink/5"
                 : "border-ink/10 hover:border-ink/20 bg-transparent"
@@ -30,7 +30,7 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-2xl font-light text-ink">{plan.name}</h3>
                 {isPopular && (
-                  <span className="px-2 py-1 text-xs font-light bg-ink/10 text-ink border border-ink/20 rounded">
+                  <span className="px-2 py-1 text-xs font-light bg-ink/10 text-ink border border-ink/20 rounded-sm">
                     Most popular
                   </span>
                 )}
@@ -77,7 +77,7 @@ export default function PricingPlans({ onSelectPlan, showDescription = true, com
             <div className="space-y-3 mb-6">
               {plan.features.map((feature, featureIndex) => (
                 <div key={featureIndex} className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                   <span className="text-sm text-gray-300 font-light">{feature}</span>
                 </div>
               ))}

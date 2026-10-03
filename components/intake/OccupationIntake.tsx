@@ -52,7 +52,7 @@ export default function OccupationIntake({
                         type="button"
                         aria-pressed={on}
                         onClick={() => onChange(f.key, on ? "" : opt)}
-                        className={`rounded-full border px-3.5 py-1.5 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 ${
+                        className={`rounded-full border px-3.5 py-1.5 text-sm transition focus:outline-hidden focus-visible:ring-2 focus-visible:ring-clay/40 ${
                           on
                             ? "border-ink bg-ink text-white"
                             : "border-ink/10 bg-white text-ink/65 hover:border-ink/25 hover:text-ink"

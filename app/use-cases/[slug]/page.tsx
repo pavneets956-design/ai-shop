@@ -252,7 +252,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* FAQ */}
-      <section className="relative border-t border-ink/[0.06] py-16">
+      <section className="relative border-t border-ink/6 py-16">
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
             <h2 className="mb-8 font-display text-2xl font-semibold text-ink sm:text-3xl">

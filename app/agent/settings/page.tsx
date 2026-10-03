@@ -152,7 +152,7 @@ export default function SettingsPage() {
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                      className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                     />
                     <span className="text-sm text-gray-400 font-light">
                       Highlight 24/7 availability and cost savings
@@ -162,7 +162,7 @@ export default function SettingsPage() {
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                      className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                     />
                     <span className="text-sm text-gray-400 font-light">
                       Mention multi-language support
@@ -172,7 +172,7 @@ export default function SettingsPage() {
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                      className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                     />
                     <span className="text-sm text-gray-400 font-light">
                       Emphasize CRM integration capabilities
@@ -182,7 +182,7 @@ export default function SettingsPage() {
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                      className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                     />
                     <span className="text-sm text-gray-400 font-light">
                       Discuss ROI and time savings
@@ -200,7 +200,7 @@ export default function SettingsPage() {
               Pricing Plans
             </h2>
             <p className="text-sm text-gray-400 font-light mb-6">
-              These are the pricing plans your AI agent will discuss with prospects. Edit the pricebook in <code className="text-xs bg-white/5 px-2 py-1 rounded">lib/agent/pricebook.ts</code> to update pricing.
+              These are the pricing plans your AI agent will discuss with prospects. Edit the pricebook in <code className="text-xs bg-white/5 px-2 py-1 rounded-sm">lib/agent/pricebook.ts</code> to update pricing.
             </p>
             <PricingPlans compact={true} />
           </div>
@@ -220,7 +220,7 @@ export default function SettingsPage() {
                   type="checkbox"
                   checked={settings.followUpEnabled}
                   onChange={(e) => setSettings({ ...settings, followUpEnabled: e.target.checked })}
-                  className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                  className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                 />
               </label>
               <label className="flex items-center justify-between">
@@ -234,7 +234,7 @@ export default function SettingsPage() {
                   type="checkbox"
                   checked={settings.autoSchedule}
                   onChange={(e) => setSettings({ ...settings, autoSchedule: e.target.checked })}
-                  className="rounded border-white/10 bg-transparent text-white focus:ring-white/20"
+                  className="rounded-sm border-white/10 bg-transparent text-white focus:ring-white/20"
                 />
               </label>
             </div>

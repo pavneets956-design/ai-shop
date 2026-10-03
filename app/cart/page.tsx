@@ -40,7 +40,7 @@ export default function CartPage() {
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => (
                 <div key={item.id} className="border border-ink/10 rounded-lg p-4 flex items-center gap-4 hover:border-ink/20 transition-colors">
-                  <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                  <div className="w-24 h-24 rounded-lg overflow-hidden shrink-0">
                     <img
                       src={productImages[item.id] || "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=200&fit=crop"}
                       alt={item.title}

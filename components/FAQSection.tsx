@@ -21,7 +21,7 @@ import type { FAQ } from "@/lib/data/faqs";
 export default function FAQSection({ items }: { items: Pick<FAQ, "q" | "a">[] }) {
   return (
     <div
-      className="mx-auto max-w-3xl overflow-hidden rounded-[var(--v-r-panel)]"
+      className="mx-auto max-w-3xl overflow-hidden rounded-(--v-r-panel)"
       style={{ backgroundColor: "var(--v-surface)", boxShadow: "var(--v-shadow-card)" }}
     >
       {items.map((f, idx) => (

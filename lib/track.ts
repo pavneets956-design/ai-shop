@@ -9,6 +9,7 @@
 // unit tests; it is a no-op cost in production.
 import { track as vercelTrack } from "@vercel/analytics";
 import { getAttribution } from "@/lib/attribution";
+import { analyticsAllowed } from "@/lib/analyticsPreference";
 
 /** Free-tool events (pre-existing). */
 export type ToolEvent =
@@ -29,6 +30,7 @@ export type SiteEvent =
   | "form_step_completed"
   | "form_validation_error"
   | "form_submitted"
+  | "lead_received"
   | "email_click"
   | "calendar_click"
   | "phone_click";
@@ -68,6 +70,7 @@ export function safeProps(props: SafeProps | undefined, event = "test"): SafePro
 
 function send(event: TrackedEvent, props?: SafeProps, withAttribution = false): void {
   try {
+    if (!analyticsAllowed()) return;
     const base = sanitize(props, event) ?? {};
     if (typeof window !== "undefined") {
       base.page = window.location.pathname.slice(0, MAX_VALUE);

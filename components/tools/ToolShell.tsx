@@ -65,7 +65,7 @@ export default function ToolShell({ entry, calculator }: { entry: ToolRegistryEn
             <Icon size={15} aria-hidden />
             {entry.eyebrow}
           </div>
-          <h1 className="mt-3 max-w-3xl font-display text-hero-sm font-bold leading-tight text-ink sm:text-section">
+          <h1 className="mt-3 max-w-3xl font-display text-hero-sm font-bold leading-tight text-ink sm:text-section sm:leading-[1.05]">
             {entry.h1}
           </h1>
           <p className="mt-4 max-w-2xl text-body-lg text-ink/80">{entry.answer}</p>

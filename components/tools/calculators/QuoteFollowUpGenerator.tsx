@@ -130,7 +130,7 @@ export default function QuoteFollowUpGenerator() {
                 {msg.sms && (
                   <div className="mt-4">
                     <div className="text-tiny-label font-mono uppercase tracking-wider text-clay-dark">Text</div>
-                    <p className="mt-1.5 whitespace-pre-line break-words rounded-card-sm border border-line bg-paper-2 p-3.5 text-body text-ink">
+                    <p className="mt-1.5 whitespace-pre-line wrap-break-word rounded-card-sm border border-line bg-paper-2 p-3.5 text-body text-ink">
                       {msg.sms.body}
                     </p>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -146,8 +146,8 @@ export default function QuoteFollowUpGenerator() {
                   <div className="mt-4">
                     <div className="text-tiny-label font-mono uppercase tracking-wider text-clay-dark">Email</div>
                     <div className="mt-1.5 rounded-card-sm border border-line bg-paper-2 p-3.5">
-                      <p className="break-words text-body font-semibold text-ink">{msg.email.subject}</p>
-                      <p className="mt-2 whitespace-pre-line break-words text-body text-ink">{msg.email.body}</p>
+                      <p className="wrap-break-word text-body font-semibold text-ink">{msg.email.subject}</p>
+                      <p className="mt-2 whitespace-pre-line wrap-break-word text-body text-ink">{msg.email.body}</p>
                     </div>
                     <div className="mt-2">
                       <CopyButton text={`${msg.email.subject}\n\n${msg.email.body}`} label="Copy email" />

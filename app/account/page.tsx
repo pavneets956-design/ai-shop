@@ -108,7 +108,7 @@ export default async function AccountPage({
                 Nothing yet — anything you generate in the tools shows up here.
               </p>
             ) : (
-              <ul className="mt-4 divide-y divide-ink/[0.06] overflow-hidden rounded-xl border border-ink/[0.08] bg-white">
+              <ul className="mt-4 divide-y divide-ink/6 overflow-hidden rounded-xl border border-ink/8 bg-white">
                 {runs.map((r) => (
                   <li key={r.id} className="flex items-center justify-between gap-4 px-4 py-3">
                     <div className="min-w-0">

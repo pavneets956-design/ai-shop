@@ -440,98 +440,105 @@ updatedAt: "2026-09-27",
     icon: "MapPin",
   },
   {
-updatedAt: "2026-09-27",
-    slug: "ai-receptionist-surrey-bc",
-    eyebrow: "Location",
-    h1: "AI Receptionist in Surrey, BC",
-    title: "AI Receptionist in Surrey, BC | Handbuilt",
-    description:
-      "A custom AI receptionist for Surrey businesses — answers calls, books jobs, and texts customers back. Built local, from $1,500 CAD, live in about 5 days.",
-    answer:
-      "An AI receptionist for a Surrey business answers inbound calls and messages, answers common questions, books appointments, and texts customers back — 24/7, without adding front-desk staff. Handbuilt builds it around your real services, prices, and hours from a Surrey/Delta base, for a fixed $1,500–$3,500 CAD, usually live in about 5 business days.",
-    pain:
-      "Every missed call in Surrey is a job that can go to the next business that picks up. Owners on the tools or with a full front desk can't catch every call, and after-hours inquiries go to voicemail and rarely call back. That lost pipeline is invisible — it never shows up as a number, so it's easy to ignore.",
-    scenario:
-      "Say a Surrey home-services company misses a handful of calls a day while crews are working, plus the evening callers who never leave a message. An AI receptionist could answer on the second ring, handle the common questions, book the job into the calendar, and text the customer a confirmation.\n\nThe value depends on how many of those callers would have waited for a callback versus moving on — but for most Surrey trades, missed-call recovery is where an AI receptionist earns its cost fastest.",
-    steps: [
-      "Discovery call — review your call types, hours, and booking process.",
-      "Scoped proposal — a flat CAD price and exactly what the receptionist will handle.",
-      "Build & test — trained on your services, pricing, FAQs, and calendar.",
-      "Handoff & support — go live in about 5 days; optional $99/mo Care Plan.",
+    "updatedAt": "2026-10-03",
+    "eyebrow": "Local business systems",
+    "schema": "Service",
+    "ctaLabel": "Request a scoped proposal",
+    "ctaHeading": "Start with the enquiry you want to handle better",
+    "ctaDescription": "Send your website, service area and an example of the request or task you want help with. Pavneet will review the fit and reply with a proposed next step.",
+    "slug": "ai-receptionist-surrey-bc",
+    "h1": "AI Receptionist in Surrey, BC",
+    "title": "AI Receptionist in Surrey, BC",
+    "searchTitle": "AI Receptionist Surrey BC | Call Handling & Setup",
+    "description": "AI receptionist setup for Surrey businesses: handle routine questions, capture requests and hand calls to a person. Request a scoped proposal from a Surrey builder.",
+    "answer": "Handbuilt AI builds AI receptionist workflows for Surrey businesses that need help handling incoming enquiries. Start with the calls you miss, the questions you repeat and the requests that need a person. Pavneet, a builder based in Surrey, scopes the phone or website setup, tests the handoff and quotes the agreed work before building.",
+    "pain": "When you are working on a job, answering every call may be difficult. A useful receptionist needs to do more than reply quickly: it must collect the right details, respect your service area and give callers a reliable route to a person.",
+    "steps": [
+      "Send your website, hours, service area and the calls you want help with.",
+      "Review the proposed scope, existing phone tools and what needs a human.",
+      "Build and test routine questions, missed-call handling and notification delivery.",
+      "Approve the tested workflow and receive handover instructions."
     ],
-    gets: [
-      "An AI receptionist trained on your Surrey business",
-      "Answers calls and messages 24/7, on the second ring",
-      "Books jobs and texts customers a confirmation",
-      "Handles your common questions in your wording",
-      "Connected to your calendar or booking tool",
-      "Fixed CAD price, live in about 5 business days",
+    "gets": [
+      "A defined call or enquiry workflow",
+      "Answers based on the business information you approve",
+      "Request details and a tested human handoff",
+      "A scoped quote covering setup and ongoing provider costs"
     ],
-    sections: [
-{
-  "heading": "Separate getting found from answering an enquiry",
-  "body": "A receptionist addresses what happens when someone contacts the business. If there are few relevant incoming requests, review search visibility and the service page as well. If the requests already arrive but are missed, focus on the answering and human handoff.\n\nFor a Surrey business, test the actual phone or website setup and the real service-area questions customers ask. An illustrative demo does not verify your routing, calendar or notification path."
-},
+    "sections": [
       {
-        heading: "What a Surrey AI receptionist handles",
-        body: "It picks up when you can't, answers the questions you get asked all day, captures the caller's details, books the appointment, and sends a text confirmation. For calls that genuinely need you — complex or sensitive ones — it takes a clear message and routes it so nothing important is lost.",
-        bullets: [
-          "Answering FAQs about services, pricing, hours, and area",
-          "Booking appointments into your real calendar",
-          "Capturing quote requests and new-customer details",
-          "Texting callers a confirmation or follow-up",
-          "Routing the calls that need a human to you",
-        ],
+        "heading": "Handle requests without promising a booking",
+        "body": "For a Surrey trades business, a useful first step may be collecting the type of job, the area and a callback request. The assistant should not promise availability, an estimate or a confirmed visit that your business has not approved.\n\nIf you want calendar booking, we first check the calendar provider, availability rules and what confirmation really means. That integration is agreed separately in the scope.",
+        "bullets": [
+          "Routine questions about services, hours and areas served",
+          "Quote requests for a person to review",
+          "Clear escalation when a question is outside the approved information"
+        ]
       },
       {
-        heading: "Why build it locally",
-        body: "A Surrey builder who understands local trades sets up the receptionist around how you actually work — your service area, your pricing language, your booking flow — and is reachable directly when you want a change. You own the setup; there's no per-call SaaS meter running against you.",
+        "heading": "Built by a trades business owner",
+        "body": "Pavneet runs Ironwood Grounds, his own fence business, and built and tested an AI phone receptionist on its business line. He later moved that line to a human-first setup.\n\nThat hands-on work informs how he scopes call routing, handles delivery failures and tests the route back to a person. Read more about his background on the About page."
       },
+      {
+        "heading": "Check the actual phone setup before launch",
+        "body": "A website text demo can show a conversation, but it does not verify your business phone line. A phone project needs tests of call routing, unanswered calls, message delivery and the path back to a person. Provider charges, integrations and the launch date are confirmed in the proposal."
+      },
+      {
+        "heading": "If the problem is getting found",
+        "body": "A receptionist helps with enquiries that already arrive. If few people discover your business, review the service information and search visibility first. Our AI search visibility service covers how customers find and understand the business on Google and in AI answers."
+      }
     ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
+    "secondaryCta": {
+      "label": "See the builder’s background",
+      "href": "/about"
+    },
+    "keywords": [
       "ai receptionist surrey bc",
       "ai phone answering surrey",
       "virtual receptionist surrey",
-      "ai call answering small business",
-      "surrey ai receptionist cost",
+      "surrey ai receptionist setup"
     ],
-    related: [
-{
-  "label": "Visibility review",
-  "href": "/services/ai-search-visibility"
-},
-      { label: "AI Receptionist (overview)", href: "/ai-receptionist" },
-      { label: "AI Receptionist for Contractors", href: "/ai-receptionist-for-contractors" },
-      { label: "AI Automation Agency in Surrey, BC", href: "/locations/ai-automation-agency-surrey-bc" },
-      { label: "How Much Does an AI Receptionist Cost?", href: "/resources/ai-receptionist-cost" },
-      { label: "Can AI Answer Business Phone Calls?", href: "/resources/can-ai-answer-business-phone-calls" },
+    "related": [
+      {
+        "label": "AI receptionist scope and options",
+        "href": "/ai-receptionist-for-contractors"
+      },
+      {
+        "label": "Help customers find you in AI answers",
+        "href": "/services/ai-search-visibility"
+      },
+      {
+        "label": "AI receptionist costs",
+        "href": "/resources/ai-receptionist-cost"
+      },
+      {
+        "label": "Meet Pavneet",
+        "href": "/about"
+      }
     ],
-    faqs: [
+    "faqs": [
       {
-        q: "Does the AI receptionist actually answer phone calls?",
-        a: "Yes — it can answer live calls, handle the routine ones end to end, and route or take a message for the calls that need you. It can also handle website chat and text if you want the same assistant across channels.",
+        "q": "Can you connect an AI receptionist to my business phone?",
+        "a": "A phone workflow can be scoped after reviewing your current provider and routing. We confirm which connections are supported and test the real call path before handover."
       },
       {
-        q: "Will callers know it's AI?",
-        a: "It's built to be helpful and clear rather than to pretend to be a specific person. Most routine callers just get their question answered and their booking made; anything it can't handle is routed to you.",
+        "q": "Will callers know they are speaking with AI?",
+        "a": "The greeting should clearly identify the assistant as AI. Callers need a clear route to a person when the assistant cannot help."
       },
       {
-        q: "How much does an AI receptionist cost in Surrey?",
-        a: "A focused AI receptionist build is typically $1,500–$3,500 CAD as a one-time cost, plus small ongoing AI usage fees and an optional $99/mo Care Plan. There's a full cost breakdown on the AI receptionist cost page.",
+        "q": "How much does an AI receptionist cost in Surrey?",
+        "a": "Request a scoped quote for your phone or website workflow. The proposal identifies the setup work, integrations and ongoing provider costs. Published packages are available on the pricing page, but a phone integration needs its own scope check."
       },
       {
-        q: "How long until it's live?",
-        a: "Usually about 5 business days for a single receptionist worker, once you've shared your services, pricing, and hours.",
+        "q": "Can it book appointments?",
+        "a": "Only when your calendar integration, availability rules and confirmation process are included and tested. Otherwise it captures a request for your team to confirm."
       },
       {
-        q: "Can it book into my existing calendar?",
-        a: "In most cases yes. Common calendar and booking tools connect directly; the exact integration is confirmed on the discovery call.",
-      },
+        "q": "How do I get started?",
+        "a": "Send a request with your website, hours, service area and examples of the calls you want help with. We reply with a proposed next step; the request form does not reserve a meeting."
+      }
     ],
-    schema: "Service",
-    icon: "Phone",
+    "icon": "Phone"
   },
   {
     slug: "ai-chatbot-developer-vancouver",
@@ -702,66 +709,102 @@ updatedAt: "2026-09-27",
     icon: "AppWindow",
   },
   {
-    slug: "ai-automation-burnaby-bc",
-    eyebrow: "Location",
-    h1: "AI Automation in Burnaby, BC",
-    title: "AI Automation in Burnaby, BC | Handbuilt",
-    description:
-      "AI receptionists, chatbots and automations for Burnaby businesses — from Metrotown retail to Brentwood service firms. Local Lower Mainland builder, fixed CAD pricing.",
-    answer:
-      "Handbuilt builds custom AI receptionists, chatbots, quote agents and workflow automations for Burnaby businesses — retail around Metrotown, service and professional firms in Brentwood and Lougheed, clinics and trades across the city. Run from nearby Surrey/Delta, so you get a local builder and fixed CAD pricing from $1,500.",
-    pain: "Burnaby businesses compete in one of the busiest markets in the Lower Mainland — a missed call or a slow reply doesn't just lose a sale, it hands it to a competitor a few blocks away.",
-    scenario:
-      "A Burnaby clinic near Metrotown fields calls it can't answer during treatment and loses after-hours inquiries to voicemail. An AI receptionist answers every call, books appointments into their system, and texts confirmations — while a follow-up agent keeps quiet leads warm. The fastest wins here are usually missed-call recovery and instant booking.",
-    steps: [
-      "Discovery call — 30 minutes to find where leads and time leak, and which AI worker pays back fastest.",
-      "Scoped proposal — a flat CAD price with exactly what's built and the outcome.",
-      "Build & test — built around your real services, prices and hours, tested on your workflow.",
-      "Handoff & support — the working system plus an optional $99/mo Care Plan.",
+    "updatedAt": "2026-10-03",
+    "eyebrow": "Local business systems",
+    "schema": "Service",
+    "ctaLabel": "Request a scoped proposal",
+    "ctaHeading": "Start with the enquiry you want to handle better",
+    "ctaDescription": "Send your website, service area and an example of the request or task you want help with. Pavneet will review the fit and reply with a proposed next step.",
+    "slug": "ai-automation-burnaby-bc",
+    "h1": "AI Automation for Small Business in Burnaby, BC",
+    "title": "AI Automation for Small Business in Burnaby, BC",
+    "searchTitle": "AI Automation for Small Business in Burnaby, BC",
+    "description": "AI automation for Burnaby small businesses: organise enquiries, prepare quote details and reduce repeated admin. A scoped build from an independent Surrey studio.",
+    "answer": "Handbuilt AI helps Burnaby small businesses connect the repeated steps between an enquiry and a useful response. That might mean collecting quote details, drafting a reply for approval or organising follow-up tasks. You work directly with Pavneet, an independent builder based in Surrey, starting with one workflow and a scoped CAD quote.",
+    "pain": "Copying the same information between your inbox, forms and work tools makes it easy to lose a request. Start by identifying the repeated step and who needs to check the result before adding automation.",
+    "steps": [
+      "Send an example of the repeated task and the tools you use.",
+      "Agree one workflow, its limits and a fixed scope before work starts.",
+      "Test normal requests, incomplete information and provider failures.",
+      "Receive the workflow, instructions and a clear route for changes."
     ],
-    gets: [
-      "A custom AI worker built around your Burnaby business, not a template",
-      "One accountable local builder, start to finish",
-      "Fixed CAD pricing, no surprise invoices",
-      "In-person or fully remote — your call",
+    "gets": [
+      "One workflow built around your existing tools where supported",
+      "A clear human approval or handoff point",
+      "Visible success and failure states",
+      "An agreed scope and CAD quote before the build"
     ],
-    sections: [
+    "sections": [
       {
-        heading: "Who we build for in Burnaby",
-        body: "Burnaby runs on a dense mix of retail, professional services, clinics, restaurants and trades. If your team repeats the same calls, quotes, bookings and follow-ups every day, there's usually an AI worker that pays for itself fast.",
-        bullets: [
-          "Metrotown and Brentwood retail and service businesses",
-          "Clinics, dental and health offices needing front-desk help",
-          "Restaurants and appointment-based businesses",
-          "Trades and home services across the city",
-        ],
+        "heading": "Choose a small workflow you can verify",
+        "body": "A Burnaby service business might receive quote requests by form and email, then manually turn each one into a task. An illustrative first automation could organise the approved details and prepare a reply for the owner to review. This illustrative workflow would be reviewed against your actual tools and approval process.",
+        "bullets": [
+          "Collect the details needed to assess a quote request",
+          "Prepare a draft response for human approval",
+          "Route an enquiry to the person responsible",
+          "Flag a failed step instead of silently losing the request"
+        ]
       },
       {
-        heading: "Local, without the agency runaround",
-        body: "Burnaby is a short drive from home base in Surrey/Delta, so an in-person discovery or handoff is easy if you want it — but most of the work is remote either way. You deal with one builder who picks up, not an offshore support queue.",
+        "heading": "Keep business decisions with a person",
+        "body": "The scope should say which details come from a known source, which outputs need approval and what happens when information is missing. An automation should not invent prices, promise availability or accept a job on your behalf unless the approved workflow explicitly supports that decision."
       },
+      {
+        "heading": "One local builder, with a clear scope",
+        "body": "Handbuilt AI is based in Surrey and serves Burnaby. Work can be reviewed remotely using your actual workflow and tools. Pavneet also runs Ironwood Grounds, his own contracting business, and built its website and quote-request workflow. That practical experience informs the attention to request handling and day-to-day business tasks."
+      },
+      {
+        "heading": "Getting found and handling enquiries are different jobs",
+        "body": "If the website receives few relevant visits, start with the service information and discovery path. Our AI search visibility service reviews how customers find and understand a business on Google and in AI answers. Once requests arrive, automation can help organise the next step."
+      }
     ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
-    keywords: [
+    "secondaryCta": {
+      "label": "Explore workflow automation",
+      "href": "/done-for-you-ai-automation"
+    },
+    "keywords": [
+      "ai automation small business burnaby",
       "ai automation burnaby",
-      "ai receptionist burnaby",
-      "ai for small business burnaby bc",
-      "burnaby ai developer",
+      "burnaby workflow automation",
+      "ai for small business burnaby bc"
     ],
-    related: [
-      { label: "AI Automation in Vancouver", href: "/locations/ai-automation-vancouver" },
-      { label: "AI Automation in Coquitlam, BC", href: "/locations/ai-automation-new-westminster-bc" },
-      { label: "AI Receptionist", href: "/ai-receptionist" },
-      { label: "Pricing", href: "/pricing" },
+    "related": [
+      {
+        "label": "Workflow automation scope",
+        "href": "/done-for-you-ai-automation"
+      },
+      {
+        "label": "AI search visibility for local businesses",
+        "href": "/services/ai-search-visibility"
+      },
+      {
+        "label": "Published packages and pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Meet Pavneet",
+        "href": "/about"
+      }
     ],
-    faqs: [
-      { q: "Are you based in Burnaby?", a: "Handbuilt is run from the nearby Surrey/Delta area — a short drive from Burnaby. Most work is remote, but an in-person meeting is easy to arrange for local businesses." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD and is usually live in about 5 business days. Larger multi-worker systems run $3,500–$7,500." },
-      { q: "Which AI worker should I start with?", a: "Usually the one tied to lost revenue — for most Burnaby businesses that's an AI receptionist or a quote agent. The discovery call pinpoints the fastest payback for you." },
+    "faqs": [
+      {
+        "q": "Are you based in Burnaby?",
+        "a": "Handbuilt AI is based in Surrey and serves Burnaby businesses. The workflow review and build can be handled remotely."
+      },
+      {
+        "q": "Which task should I automate first?",
+        "a": "Start with a repeated, clearly defined task whose result you can check. Send an example and the tools involved so we can assess whether automation is a useful fit."
+      },
+      {
+        "q": "What does a small-business automation cost?",
+        "a": "The quote depends on the workflow, integrations and approval steps. Review the published packages for a starting point, then request a scope that identifies build work and ongoing provider costs."
+      },
+      {
+        "q": "Will this get my business recommended by ChatGPT?",
+        "a": "Workflow automation handles work inside your business. Improving how people find your business in AI answers is a separate service, linked from this page. Recommendations cannot be guaranteed."
+      }
     ],
-    schema: "Service",
-    icon: "MapPin",
+    "icon": "MapPin"
   },
   {
     slug: "ai-automation-richmond-bc",
