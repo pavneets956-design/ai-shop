@@ -319,20 +319,22 @@ export default function BuildRequestForm() {
       const delivery = (data as { delivery?: { persisted?: boolean; emailed?: boolean } })
         .delivery;
       const nothingHappened =
-        delivery !== undefined && delivery.persisted !== true && delivery.emailed !== true;
+        delivery?.persisted !== true && delivery?.emailed !== true;
       if (nothingHappened) {
+        const confirmedRejection = delivery?.persisted === false && delivery?.emailed === false;
         setResult({
           kind: "error",
-          variant: "rejected",
-          message:
-            "That didn't go through — the form flagged the submission and nothing was saved. " +
-            "It may have been a browser autofill filling a hidden field. Email me directly and " +
-            "I'll pick it up from there.",
+          variant: confirmedRejection ? "rejected" : "server",
+          message: confirmedRejection
+            ? "That didn't go through — the form flagged the submission and nothing was saved. " +
+              "It may have been a browser autofill filling a hidden field. Email me directly and " +
+              "I'll pick it up from there."
+            : "We couldn't confirm whether your request arrived. Try again — duplicate requests are recognised — or email me directly. Everything you typed is still here.",
         });
         setStatus("error");
         trackEvent("form_submitted", {
           form: "build_request",
-          result: "rejected_no_delivery",
+          result: confirmedRejection ? "rejected_no_delivery" : "unconfirmed_delivery",
           status: res.status,
         });
         return;
@@ -351,7 +353,12 @@ export default function BuildRequestForm() {
         timeline: form.timeline || null,
         industry: form.industry || null,
       });
-      if (presetSrc.startsWith("tool-")) {
+      // A separate conversion event excludes failed attempts and duplicate retries.
+      // Receipt means saved or notification accepted; it is not a qualified customer.
+      if (data.deduped !== true) {
+        trackEvent("lead_received", { form: "build_request" });
+      }
+      if (data.deduped !== true && presetSrc.startsWith("tool-")) {
         // Declared in lib/track.ts since the free-tools build and never once
         // fired — a defined-but-dead event is a dashboard lie. It fires here, on
         // a real lead that came from a tool CTA.

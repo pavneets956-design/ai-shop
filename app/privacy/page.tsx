@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
@@ -18,15 +19,16 @@ export const metadata: Metadata = {
  * describes. Before adding a processor to the codebase, add it here in the same
  * commit. The mapping today:
  *   - OpenAI              app/api/{demo,consultation,tts,recommend,tools-demo,tools}/route.ts via lib/ai/core.ts
- *   - Vercel Analytics    app/layout.tsx (<Analytics />), lib/track.ts
+ *   - Vercel Analytics    components/SiteAnalytics.tsx, lib/track.ts
  *   - Neon Postgres       prisma/schema.prisma (model BuildRequest), app/api/build-request/route.ts
  *   - Resend              lib/leadNotify.ts, called by app/api/build-request/route.ts and by
  *                         app/api/internal/lead-notify-retry/route.ts (the hourly retry worker)
  *   - Google / NextAuth   lib/auth.ts, app/login/page.tsx
  *   - Stripe              lib/stripe.ts, app/api/stripe/* (no reachable checkout today)
- *   - Browser storage     lib/attribution.ts (sessionStorage key hb_attr_v1)
+ *   - Browser storage     lib/attribution.ts (sessionStorage key hb_attr_v1),
+ *                         lib/analyticsPreference.ts (localStorage key hb_analytics_excluded_v1)
  */
-const updated = "August 30, 2026";
+const updated = "October 3, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -130,7 +132,9 @@ export default function PrivacyPage() {
             <p>
               On top of that we record a small number of named events so we can see which parts of the
               site work: a tool being used, a call-to-action being clicked, a form being started or
-              submitted. Each event carries only machine tags &mdash; a page path, a button
+              submitted. A separate <code>lead_received</code> event records a new request only
+              when the server confirms it was saved or its notification was accepted, excluding
+              duplicate retries. It does not identify a qualified customer. Each event carries only machine tags &mdash; a page path, a button
               identifier, a package name, a budget band.{" "}
               <strong>
                 No event ever carries a name, an email address, a phone number, or anything you typed
@@ -140,6 +144,16 @@ export default function PrivacyPage() {
           </Section>
 
           <Section title="Storage in your browser">
+            <p>
+              You can exclude future page views and events from this browser using{" "}
+              <Link href="/analytics-preferences" className="underline">analytics preferences</Link>.
+              This stores only the flag <code>1</code> in <code>localStorage</code> under{" "}
+              <code>hb_analytics_excluded_v1</code>. It lasts until you include the browser again
+              or clear site storage. It is not sent as an analytics property. Administration,
+              sign-in and preference pages are always excluded. If this preference cannot be
+              read because storage is blocked, analytics is suppressed. Forms and hosting logs
+              still work normally.
+            </p>
             <p>
               On your first page view we store a small record in your browser&apos;s{" "}
               <code>sessionStorage</code> under the key <code>hb_attr_v1</code>. It holds only how you
