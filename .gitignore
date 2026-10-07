@@ -91,3 +91,4 @@ research/**/*.jpeg
 /test-results/
 /blob-report/
 /playwright/.cache/
+.env*
