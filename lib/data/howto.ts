@@ -1,5 +1,6 @@
 import type { LandingContent } from "./landing";
 import { discoveryHowtos } from "./discovery";
+import { PHONE_PRICE_SENTENCE, PHONE_SCOPE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE } from "./packages";
 
 export const howtos: LandingContent[] = [
   ...discoveryHowtos,
@@ -171,9 +172,9 @@ gets: [
     h1: "How to Create an AI Receptionist for a Small Business",
     title: "How to Create an AI Receptionist for a Small Business | Handbuilt",
     description:
-      "Learn how to set up an AI receptionist that answers calls, books appointments, and captures leads — without hiring staff or missing after-hours inquiries.",
+      "Learn how to set up an AI receptionist that answers calls, captures leads and hands off to a person — DIY or done for you — without missing after-hours inquiries.",
     answer:
-      "An AI receptionist is a voice or text agent that answers inbound calls or messages, collects caller information, answers common questions, and books appointments directly into your calendar. You need a voice AI provider (or phone + chat combo), a calendar integration, and a script trained on your business. Setup takes 3–7 days.",
+      "An AI receptionist is a voice or text agent that answers inbound calls or messages, collects caller information and answers common questions; connected to a calendar, a DIY build can also book appointments. You need a voice AI provider, a script trained on your business, a tested fallback and, if you want booking, a calendar integration.",
     pain:
       "A ringing phone during a job is a problem. You can't answer, the caller hangs up, and they dial the next business on Google. Hiring a part-time receptionist runs around $18–$22/hour in BC and still leaves evenings and weekends uncovered. Every missed call after hours is a lead that usually never calls back.",
     steps: [
@@ -199,7 +200,7 @@ gets: [
         heading: "What tools you need",
         body: "For voice AI: a platform like Bland.ai or Synthflow that connects to a phone number, a script, and a calendar integration. For text/chat: a GPT-powered agent connected to your site or SMS line. You'll also need a calendar system the AI can write to — Google Calendar works for most small businesses.",
         bullets: [
-          "Voice AI platform: $50–$200/month depending on call volume",
+          "Voice AI platform: a monthly fee that varies with call volume — check the provider's current pricing",
           "Calendar integration: Google Calendar (free) or Calendly ($10–$20/month)",
           "Phone number: use your existing number via forwarding, or get a new number ($2–$5/month)",
         ],
@@ -214,11 +215,11 @@ gets: [
       },
       {
         heading: "What it costs to set up",
-        body: "DIY: 15–30 hours to build the script, configure the platform, connect the calendar and test it properly. Ongoing: $50–$200/month in platform fees. Done-for-you from Handbuilt: the Starter package at $1,500 CAD covers the script, platform setup, calendar integration, escalation routing and a round of live testing. The honest case for DIY is that the platform documentation is good and this is a learnable weekend project. The honest case against it is the testing section above — most DIY builds ship the happy path and discover the rest from a customer.",
+        body: `DIY: 15–30 hours to build the script, configure the platform, connect the calendar and test it properly, plus the platform's monthly fees. Done-for-you from Handbuilt: ${PHONE_PRICE_SENTENCE} ${PHONE_SCOPE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE}\n\nThe honest case for DIY is that the platform documentation is good and this is a learnable weekend project. The honest case against it is the testing section above — most DIY builds ship the happy path and discover the rest from a customer.`,
       },
     ],
-    packageId: "starter",
-    ctaLabel: "Get an AI receptionist set up for $1,500 CAD",
+    packageId: "phone",
+    ctaLabel: "Request an AI receptionist setup",
     keywords: [
       "ai receptionist small business canada",
       "automated phone answering service bc",
@@ -234,11 +235,11 @@ gets: [
     faqs: [
       {
         q: "Can the AI receptionist book appointments without my input?",
-        a: "Yes — if you connect it to a calendar with real-time availability, it can confirm and book slots directly. You get a notification; the customer gets a confirmation. You're never in the loop unless something flags for review.",
+        a: "A DIY build can, if you connect it to a calendar with real-time availability and test the confirmation step. Handbuilt's standard AI phone receptionist does not book: it records a callback request and emails you. Calendar booking is quoted separately.",
       },
       {
         q: "What happens if the caller speaks French or has a heavy accent?",
-        a: "Modern voice AI handles accents reasonably well. French support depends on the platform — Bland.ai and Vapi both support multilingual configs. If your customer base is bilingual, flag that at the start and we build for it.",
+        a: "Modern voice AI handles accents reasonably well, but test it on real calls. Handbuilt's standard receptionist covers one language; a second language is quoted separately after testing.",
       },
       {
         q: "Will it sound robotic?",

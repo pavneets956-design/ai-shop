@@ -1,4 +1,5 @@
 import type { LandingContent } from "./landing";
+import { packagePriceLabel, PHONE_PRICE_LABEL, PHONE_PRICE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE } from "./packages";
 
 export const industriesB: LandingContent[] = [
   {
@@ -432,7 +433,7 @@ updatedAt: "2026-09-27",
   h1: "AI Automation for Fence Companies",
   title: "AI Tools for Fence Companies — Quotes & Follow-Ups",
   description: "An AI worker for your fence company handles quote requests, missed calls, and follow-ups while you're on site. Fixed CAD pricing, built in Surrey BC.",
-  answer: "A fence company AI setup handles inbound calls, captures quote details, and follows up on cold estimates automatically. Two or three connected workers, starting at $1,500 CAD. You stop losing jobs to whoever picks up the phone first.",
+  answer: `A fence company AI setup handles inbound calls, captures quote details, and follows up on cold estimates automatically. Two or three connected workers are a Business AI System (${packagePriceLabel("business")} CAD); the AI phone receptionist on its own is ${PHONE_PRICE_LABEL} CAD launch pricing.`,
   pain: "Fence installs keep you off-site for hours. By the time you check your phone, the caller has already booked with someone else. Quote requests pile up, follow-up emails don't happen, and the prospects who needed a fence last week have moved on.",
   scenario: `Say a fencing company runs two crews during peak season. Between measuring and installing, the owner fields 8–12 inbound calls a day — many of them asking the same things about pricing per linear foot, timing, and materials. An AI receptionist could answer those calls, collect job details (footage, fence type, gate count, timing), and send the owner a clean lead card instead of a pile of voicemails.\n\nA follow-up worker could automatically ping the quotes that go quiet after 3–4 days with a short, friendly message. The exact lift depends on call volume and how many callers would have waited for a callback versus calling someone else. In a trade where a single job is worth several thousand dollars, one recovered lead covers the system cost.`,
   steps: [
@@ -512,7 +513,7 @@ updatedAt: "2026-09-27",
     },
     {
       q: "What if I only want the receptionist, not the follow-up worker?",
-      a: "The AI Starter System at $1,500 CAD covers one worker. If you just want missed-call handling and basic quote intake, that's the right fit. You can add more workers later if the volume justifies it."
+      a: `Then the AI Phone Receptionist is the fit. ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE} You can add a follow-up worker later if the volume justifies it.`
     },
     {
       q: "Can it quote jobs automatically?",
@@ -528,7 +529,7 @@ updatedAt: "2026-09-27",
     },
     {
       q: "What does it cost?",
-      a: "AI Starter System is $1,500 CAD. The AI Business System — what most fence companies use for quote intake plus follow-up — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
+      a: `The AI Phone Receptionist is ${PHONE_PRICE_LABEL} CAD launch pricing. AI Starter System is $1,500 CAD. The AI Business System — what most fence companies use for quote intake plus follow-up — is $3,500–$7,500 CAD. Optional Care Plan is $99/mo.`
     }
   ]
 },
@@ -628,7 +629,7 @@ updatedAt: "2026-09-27",
   h1: "AI Automation for Painters",
   title: "AI Automation for Painters — Quotes, Reviews & Leads",
   description: "AI workers for painters handle quote intake, call overflow, follow-up on cold estimates, and review requests. Fixed CAD pricing, built by Handbuilt AI in Surrey BC.",
-  answer: "A painter AI setup handles high call volume, captures quote details for small and large jobs, follows up on estimates, and automatically asks satisfied customers for reviews. Starts at $1,500 CAD. Seasonal call spikes no longer mean missed revenue.",
+  answer: `A painter AI setup handles high call volume, captures quote details for small and large jobs, follows up on estimates, and automatically asks satisfied customers for reviews. Single builds start at $1,500 CAD; the AI phone receptionist on its own is ${PHONE_PRICE_LABEL} CAD launch pricing.`,
   pain: "Painting businesses run on volume — many small jobs, tight margins, and a constant flow of inbound quote requests. During peak season you're painting and your phone is ringing. Answering every call, quoting every job, and remembering to ask for reviews takes more time than the jobs themselves.",
   scenario: `Say a residential painting company does 4–6 jobs a week during the spring and summer rush. Between crew management and on-site work, the owner misses 3–4 calls a day. Some of those callers leave messages; most just call the next painter in search results. An AI receptionist could answer those calls, ask the right scoping questions (interior or exterior, square footage, number of rooms, prep needed), and send a clean summary to the owner.\n\nAfter a job wraps up, an automated review request sent 2–3 days later could meaningfully increase the number of Google reviews the business receives. Reviews are the main trust signal for painting businesses — more reviews typically means higher map-pack rankings and more inbound calls. The exact conversion rate varies, but the ask costs nothing once it's automated.`,
   steps: [
@@ -660,8 +661,8 @@ updatedAt: "2026-09-27",
       body: "Painting is a high-trust, high-volume trade. Most homeowners search locally and pick from the top 3–5 results. More recent Google reviews directly influence where you rank in the map pack. An automated review request — sent at the right time, in plain language — removes the awkwardness of asking in person and captures feedback while the job is still fresh.",
     },
     {
-      heading: "Starter or Business — which is right?",
-      body: "The AI Starter System ($1,500 CAD) works well for a solo painter who mainly needs missed-call handling and basic intake. The AI Business System ($3,500–$7,500 CAD) is the right fit if you're running a crew, handling volume quotes, and want intake plus follow-up plus review requests all connected.",
+      heading: "Phone, Starter or Business — which is right?",
+      body: `A solo painter who mainly needs calls answered and details taken can start with the AI Phone Receptionist (${PHONE_PRICE_LABEL} CAD). The AI Starter System ($1,500 CAD) suits one focused text-based worker such as quote intake. The AI Business System ($3,500–$7,500 CAD) is the right fit if you're running a crew, handling volume quotes, and want intake plus follow-up plus review requests all connected.`,
     }
   ],
   packageId: "starter" as const,
@@ -684,7 +685,7 @@ updatedAt: "2026-09-27",
   faqs: [
     {
       q: "I'm one painter — is this worth it for me?",
-      a: "The AI Starter System at $1,500 CAD is built for exactly this. One worker — a receptionist that answers calls and captures quote details — can recover the jobs you're missing while you're on a ladder."
+      a: `If the phone is your leak, the AI Phone Receptionist is built for exactly this: it answers while you're on a ladder, captures the job details and emails you a summary. ${PHONE_PRICE_SENTENCE}`
     },
     {
       q: "Can the AI scope a painting job accurately?",
@@ -696,7 +697,7 @@ updatedAt: "2026-09-27",
     },
     {
       q: "What does it cost?",
-      a: "AI Starter System is $1,500 CAD. The AI Business System covering intake, follow-up, and review requests is $3,500–$7,500 CAD. Optional Care Plan is $99/mo."
+      a: `The AI Phone Receptionist is ${PHONE_PRICE_LABEL} CAD launch pricing. AI Starter System is $1,500 CAD. The AI Business System covering intake, follow-up, and review requests is $3,500–$7,500 CAD. Optional Care Plan is $99/mo.`
     },
     {
       q: "How long does setup take?",

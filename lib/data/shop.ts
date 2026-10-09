@@ -1,7 +1,7 @@
 // Shop catalog — what Handbuilt has shipped.
 // Storefront only: own live SaaS (proof) + one buyable done-for-you service.
 // No payment code lives here — external items deep-link to their own checkout/signup.
-import { PAYNUDGE_PRICING_SUMMARY } from "./packages";
+import { PAYNUDGE_PRICING_SUMMARY, PHONE_PRICE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE, phonePlan } from "./packages";
 
 export type ShopKind = "service" | "saas";
 
@@ -41,19 +41,14 @@ export const featuredService: ShopItem = {
   name: "AI Receptionist",
   kind: "service",
   eyebrow: "Done-for-you",
-  tagline: "An AI that answers every call and message — and books the job.",
+  tagline: "Phone answering, callback requests and emailed call summaries.",
   forWho: "Local service businesses losing leads to missed calls and slow replies.",
-  outcomes: [
-    "Answers around the clock, so a call at 7pm gets a reply instead of voicemail",
-    "Books appointments and captures details straight into your day",
-    "Sounds like your shop, not a robot — trained on your services, hours and pricing",
-    "Live in days, fully built and tuned for you",
-  ],
+  outcomes: [...phonePlan.setupIncludes, PHONE_EXCLUSIONS_SENTENCE],
   // NOT "custom build" — this is the productized shop tool, a fixed-scope
   // install. Bespoke development is a separate line and a separate price
   // (see lib/data/packages.ts). Conflating the two was the source of the
   // "$1,000 vs $1,500 floor" contradiction.
-  priceLabel: "Fixed-scope install, from $1,000",
+  priceLabel: PHONE_PRICE_SENTENCE,
   demoHref: "/demo",
 };
 

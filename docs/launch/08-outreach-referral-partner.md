@@ -2,6 +2,8 @@
 
 > **Draft. Not sent.** No email was sent to anyone.
 
+> **⚠️ Price line superseded 2026-10-08.** "Starter systems from $1,500 CAD. No monthly subscription" no longer describes the phone receptionist this email is about. AI Phone Receptionist launch pricing is $750 CAD setup + $179 CAD/month, month-to-month (`phonePlan` in `lib/data/packages.ts`). Replace before sending. See `00-README.md`.
+
 **Why this one matters more than the cold contractor email.** A bookkeeper who serves thirty trades businesses hears about the missed-call problem thirty times a year, has already earned trust, and is not competing for the work. One good partner is worth a hundred cold emails, and the message is easier to send honestly — he is asking to be useful to their clients, not asking them to buy something.
 
 **Every CASL rule in `07-outreach-contractor.md` applies here identically.** Same consent basis, same sender identification, same mailing address requirement, same unsubscribe, same log. Read that file first.

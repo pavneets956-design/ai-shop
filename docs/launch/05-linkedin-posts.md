@@ -1,5 +1,7 @@
 # LinkedIn — five post drafts
 
+> **⚠️ Price line superseded 2026-10-08.** Any post that pairs the phone problem with "Starter systems start at $1,500" is out of date: the AI Phone Receptionist is $750 CAD setup + $179 CAD/month launch pricing (`phonePlan` in `lib/data/packages.ts`). See `00-README.md`.
+
 > **Draft. Not sent, not published.** No LinkedIn profile was created and nothing was posted. A personal LinkedIn URL for Pavneet was not found anywhere on disk, and no company page exists — see `12-external-checklist.md`.
 
 **Format notes.** First line is the hook; LinkedIn truncates around 140–200 characters on mobile, so it has to stand alone. No hashtag spam — two at most, or none. No links in the body of the first three (LinkedIn suppresses reach on link posts); put the link in the first comment or leave it out. Every post below is a true story, told plainly.

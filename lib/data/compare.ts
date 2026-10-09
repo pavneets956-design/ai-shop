@@ -1,4 +1,15 @@
 import type { LandingContent } from "./landing";
+import {
+  phonePlan,
+  PHONE_SETUP_PRICE,
+  PHONE_MONTHLY_PRICE,
+  PHONE_OVERAGE_PRICE,
+  PHONE_PRICE_LABEL,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_MONTHLY_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 
 export const comparisons: LandingContent[] = [
   {
@@ -476,38 +487,42 @@ export const comparisons: LandingContent[] = [
   eyebrow: "Compare",
   h1: "AI Receptionist or Virtual Receptionist — Which Fits Your Business?",
   title: "AI Receptionist vs Virtual Receptionist",
-  description: "Honest comparison of AI receptionists and virtual receptionist services for Canadian small businesses. Fixed pricing, no lock-in, real trade-offs.",
-  answer: "A virtual receptionist is a real person answering remotely — warm, flexible, and long-established. An AI receptionist is software that picks up instantly, 24/7, at lower ongoing cost. If your calls follow predictable patterns, AI handles them well. If every call is unique and emotional, a human wins. Handbuilt installs a custom AI receptionist from CAD $1,500.",
-  pain: "You are paying hundreds a month for a virtual receptionist and wondering whether AI could handle the same calls for less.",
+  description: `Honest comparison of AI receptionists and virtual receptionist services for Canadian small businesses: cost model, coverage and real trade-offs. Handbuilt: ${PHONE_PRICE_LABEL} CAD.`,
+  answer: `A virtual receptionist is a real person answering remotely — warm, flexible, and long-established. An AI receptionist is software that follows an agreed call flow, takes the caller's details and hands off to a person when needed. If your calls follow predictable patterns, AI handles them well. If every call is unique and emotional, a human wins. ${PHONE_PRICE_SENTENCE}`,
+  pain: "You are paying a monthly fee for a virtual receptionist and wondering whether AI could handle the routine calls.",
   sections: [
     {
       heading: "When a virtual receptionist is the right call",
-      body: "Virtual receptionists shine when callers need genuine empathy, when conversations regularly go off-script, or when your industry demands a human voice for trust. If you take only a handful of calls a day, the monthly fee may be modest and the human touch worth every dollar. Some regulated industries also require a real person on the line for compliance reasons."
+      body: "Virtual receptionists shine when callers need genuine empathy, when conversations regularly go off-script, or when your industry demands a human voice for trust. If you take only a handful of calls a day, the human touch may be worth the fee. Some regulated industries also require a real person on the line for compliance reasons."
     },
     {
       heading: "When Handbuilt wins",
-      body: "If most calls follow a pattern — appointment booking, quote requests, business hours, call routing — an AI receptionist handles them instantly around the clock without per-minute billing. You own the system after a one-time build. No staffing gaps at 2 AM, no surprise invoices on busy months.",
+      body: "If most calls follow a pattern — service questions, quote requests, business hours, callback requests — an AI receptionist answers them from approved information and emails you a summary, at a fixed monthly price with included minutes.",
       bullets: [
-        "24/7 coverage with no overtime or after-hours surcharges",
-        "One-time build cost instead of open-ended monthly billing",
-        "Custom call flow built around how your business actually operates",
-        "Integrates directly with your calendar, CRM, or booking system"
+        "Answers outside business hours if that is the routing you choose",
+        `Fixed monthly fee with ${phonePlan.includedMinutes} AI-handled minutes included; extra minutes ${PHONE_OVERAGE_PRICE} each`,
+        "Call flow written around your services, service area and greeting",
+        "A configured and tested fallback to a person or voicemail"
       ]
+    },
+    {
+      heading: "What it does not include",
+      body: PHONE_EXCLUSIONS_SENTENCE
     }
   ],
   comparison: {
     alternativeLabel: "Virtual receptionist",
     rows: [
-      { factor: "Upfront cost", handbuilt: "From CAD $1,500 one-time build", alternative: "Typically $0 setup" },
-      { factor: "Ongoing cost", handbuilt: "Optional Care Plan CAD $99/mo", alternative: "Around $200–$600+/mo recurring" },
-      { factor: "Availability", handbuilt: "24/7/365, instant pickup", alternative: "Business hours typical; after-hours often extra" },
-      { factor: "Fit to your workflow", handbuilt: "Custom-built around your exact call flow", alternative: "General scripts with some customization" },
-      { factor: "Integrations", handbuilt: "Built into your CRM, calendar, or booking system", alternative: "Basic integrations, varies by provider" },
-      { factor: "Ownership", handbuilt: "You own the system — runs on your infrastructure", alternative: "Service stops when you stop paying" },
-      { factor: "Who controls pricing", handbuilt: "You — fixed quote, no per-minute fees", alternative: "Provider sets rates; they can increase" }
+      { factor: "Upfront cost", handbuilt: `${PHONE_SETUP_PRICE} CAD fixed setup`, alternative: "Varies by provider; check current published pricing" },
+      { factor: "Ongoing cost", handbuilt: `${PHONE_MONTHLY_PRICE} CAD/month, ${phonePlan.includedMinutes} minutes included, then ${PHONE_OVERAGE_PRICE}/min`, alternative: "Recurring monthly fee, often tied to call volume" },
+      { factor: "Availability", handbuilt: "Hours you choose, with a tested fallback", alternative: "Business hours typical; after-hours often extra" },
+      { factor: "Fit to your workflow", handbuilt: "Call flow written around your approved answers", alternative: "General scripts with some customization" },
+      { factor: "What you receive", handbuilt: "Emailed summary of each handled call", alternative: "Message relay; varies by provider" },
+      { factor: "Judgement on unusual calls", handbuilt: "Hands off to a person", alternative: "A person handles it directly" },
+      { factor: "Contract", handbuilt: "Month-to-month, taxes extra", alternative: "Varies by provider" }
     ]
   },
-  packageId: "starter",
+  packageId: "phone",
   ctaLabel: "Get a fixed quote",
   keywords: ["ai receptionist vs virtual receptionist", "virtual receptionist alternative", "ai phone answering canada", "ai receptionist cost"],
   related: [
@@ -520,19 +535,19 @@ export const comparisons: LandingContent[] = [
   faqs: [
     {
       q: "Can an AI receptionist handle complex or emotional calls?",
-      a: "It depends on the call. AI handles structured interactions well — booking, FAQs, call routing. For calls needing real empathy or nuanced judgment, a human receptionist is still better. Handbuilt builds your AI around your actual call patterns so it handles what it can and transfers what it cannot."
+      a: "It depends on the call. AI handles structured interactions well — FAQs, details capture, callback requests. For calls needing real empathy or nuanced judgment, a human receptionist is still better. The AI receptionist answers what it is approved to and hands off what it cannot."
     },
     {
       q: "Is an AI receptionist cheaper long-term?",
-      a: "Usually, yes. Virtual receptionist services typically run around $200–$600+/mo indefinitely. A Handbuilt AI receptionist costs from CAD $1,500 once, with an optional $99/mo Care Plan. After a few months the AI usually costs less — but only if your call patterns suit automation."
+      a: `Compare your current invoice with the AI terms. ${PHONE_PRICE_SENTENCE} Whether that is cheaper depends on your call volume and how many calls genuinely need a person.`
     },
     {
       q: "What happens to calls the AI cannot handle?",
-      a: "It transfers them to you or your team, just like a human receptionist would. You define the rules for what gets transferred and what gets handled automatically."
+      a: "They go to the agreed fallback — you, your team or voicemail. The fallback is configured and tested before go-live."
     },
     {
       q: "Will callers know they are talking to AI?",
-      a: "Modern AI voice agents sound natural, but some callers will notice. Handbuilt configures the greeting and tone to match your brand. Whether to disclose is your call and may depend on your local regulations."
+      a: "We recommend the greeting says so. Callers should always have a clear route to a person."
     },
     {
       q: "Can I switch from a virtual receptionist to AI gradually?",
@@ -545,40 +560,43 @@ export const comparisons: LandingContent[] = [
 {
   slug: "ai-receptionist-vs-answering-service",
   eyebrow: "Compare",
-  h1: "AI Receptionist vs Answering Service — Per-Minute or One-Time Build?",
+  h1: "AI Receptionist vs Answering Service — Which Pricing Model Fits?",
   title: "AI Receptionist vs Traditional Answering Service",
-  description: "AI receptionist versus a per-minute answering service: honest cost and capability breakdown for Canadian small businesses. Fixed CAD pricing.",
-  answer: "Answering services bill per minute or per call — affordable at low volume, unpredictable at high. An AI receptionist costs a flat build fee and handles unlimited calls. If you need a human for every caller, the answering service wins. If most calls are routine, Handbuilt builds a fixed-price AI receptionist from CAD $1,500.",
-  pain: "Your answering service bills per minute, and busy months blow your budget. You want predictable costs without losing call coverage.",
+  description: `AI receptionist versus a traditional answering service: honest cost and capability breakdown for Canadian small businesses. Handbuilt: ${PHONE_PRICE_LABEL} CAD.`,
+  answer: `Answering services usually bill by the minute, the call or a monthly plan with overages. Handbuilt's AI receptionist has a fixed setup and a fixed monthly fee with included minutes. If you need a human for every caller, the answering service wins. If most calls are routine, the AI receptionist may suit you. ${PHONE_PRICE_SENTENCE}`,
+  pain: "Your answering service bill moves with call volume, and busy months cost the most. You want more predictable costs without losing call coverage.",
   sections: [
     {
       heading: "When an answering service is the right call",
-      body: "Answering services work well when you receive a low, steady volume of calls and each one is different enough to need a human ear. They require no setup beyond a script handoff, and there is no technology to maintain. If your call volume is under a few hundred minutes a month, the per-minute model can actually be cheaper than building anything custom."
+      body: "Answering services work well when you receive a low, steady volume of calls and each one is different enough to need a human ear. They require no setup beyond a script handoff, and there is no technology to maintain. At low volume, a usage-based service can be cheaper than any setup fee."
     },
     {
       heading: "When Handbuilt wins",
-      body: "If your call volume fluctuates — seasonal spikes, marketing campaigns, unpredictable busy days — per-minute billing punishes growth, because the months you most want coverage are the months it costs most. A one-time build does not move with volume.\n\nThe second difference is consistency of a specific kind: it delivers the same script every time and takes several calls at once without a hold queue. That is a genuine advantage over a small answering service with two operators on a Monday morning. It is not an advantage over a human on the calls that need judgment, and it is worth being clear about which of your calls are which before choosing.",
+      body: `The AI receptionist's monthly fee includes ${phonePlan.includedMinutes} AI-handled minutes, so a typical small-business month has a known cost; minutes beyond that are ${PHONE_OVERAGE_PRICE} each, and you can see that rate before you sign.\n\nThe second difference is consistency of a specific kind: it delivers the same approved answers every time. It is not an advantage over a human on the calls that need judgment, and it is worth being clear about which of your calls are which before choosing.`,
       bullets: [
-        "Unlimited calls at no per-minute cost",
-        "Consistent delivery of your exact script every time",
-        "No hold times — handles multiple simultaneous calls",
-        "Instant pickup at 3 AM, weekends, and holidays"
+        `${phonePlan.includedMinutes} AI-handled minutes a month included; ${PHONE_OVERAGE_PRICE} per extra minute`,
+        "Consistent delivery of your approved answers every time",
+        "Emailed summary of each handled call",
+        "A configured and tested fallback to a person or voicemail"
       ]
+    },
+    {
+      heading: "What it does not include",
+      body: PHONE_EXCLUSIONS_SENTENCE
     }
   ],
   comparison: {
     alternativeLabel: "Answering service",
     rows: [
-      { factor: "Upfront cost", handbuilt: "From CAD $1,500 one-time build", alternative: "Typically $0–$100 setup" },
-      { factor: "Ongoing cost", handbuilt: "Optional Care Plan CAD $99/mo", alternative: "Around $0.75–$2+/min or $50–$500+/mo base plus overages" },
-      { factor: "Cost predictability", handbuilt: "Fixed — no surprises on busy months", alternative: "Varies with call volume; overages common" },
-      { factor: "Simultaneous calls", handbuilt: "Unlimited — no hold queue", alternative: "Limited by available operators" },
-      { factor: "Integrations", handbuilt: "Built into your calendar, CRM, or job management tool", alternative: "Message relay via email or text; deeper integration rare" },
-      { factor: "Ownership", handbuilt: "You own the system outright", alternative: "Service-dependent — stops when contract ends" },
-      { factor: "Who controls pricing", handbuilt: "You — fixed quote, no per-minute fees", alternative: "Provider — rates can rise; overages hit hard" }
+      { factor: "Upfront cost", handbuilt: `${PHONE_SETUP_PRICE} CAD fixed setup`, alternative: "Varies by provider; check current published pricing" },
+      { factor: "Ongoing cost", handbuilt: `${PHONE_MONTHLY_PRICE} CAD/month with ${phonePlan.includedMinutes} minutes included`, alternative: "Per-minute, per-call or plan-plus-overage, depending on provider" },
+      { factor: "Beyond the included amount", handbuilt: `${PHONE_OVERAGE_PRICE} CAD per extra AI-handled minute`, alternative: "Overage rates vary by provider" },
+      { factor: "Judgement on unusual calls", handbuilt: "Hands off to the agreed fallback", alternative: "A person handles it directly" },
+      { factor: "What you receive", handbuilt: "Emailed summary of each handled call", alternative: "Message relay via email or text" },
+      { factor: "Contract", handbuilt: "Month-to-month, taxes extra", alternative: "Varies by provider" }
     ]
   },
-  packageId: "starter",
+  packageId: "phone",
   ctaLabel: "Get a fixed quote",
   keywords: ["ai receptionist vs answering service", "answering service alternative", "ai phone receptionist canada", "per minute answering service replacement"],
   related: [
@@ -591,15 +609,15 @@ export const comparisons: LandingContent[] = [
   faqs: [
     {
       q: "How does an AI receptionist handle calls differently from a human operator?",
-      a: "An AI receptionist follows a call flow you define — greeting, intent detection, booking, routing — and executes it consistently every time. A human operator listens and improvises. The AI is faster and more consistent for structured calls; the human is better when the conversation is truly unpredictable."
+      a: "An AI receptionist follows a call flow you approve — greeting, the caller's reason, details capture, callback request, fallback — and executes it consistently every time. A human operator listens and improvises. The AI is more consistent for structured calls; the human is better when the conversation is truly unpredictable."
     },
     {
       q: "What if my call volume is low — is AI still worth it?",
-      a: "If you take fewer than a hundred minutes of calls a month and an answering service costs under $100/mo, the math may favor keeping the service. AI makes more sense when volume is higher, unpredictable, or growing."
+      a: "Compare your current monthly bill with the AI's fixed monthly fee. If your answering service already costs less than that and handles your calls well, the math may favour keeping it."
     },
     {
       q: "Can the AI receptionist take messages and send them to me?",
-      a: "Yes. Handbuilt configures message-taking, email or SMS forwarding, and CRM logging based on how you want to receive caller information. You define the rules."
+      a: "Yes. It records the caller's name, contact details, reason and callback request and emails you a summary. Text-message forwarding and CRM logging are not included and are quoted separately."
     },
     {
       q: "What happens during a service outage?",
@@ -853,9 +871,9 @@ updatedAt: "2026-09-27",
     h1: "AI Chatbot or AI Receptionist — Which One Do You Need?",
     title: "AI Chatbot vs AI Receptionist: Which Fits?",
     description:
-      "Comparing AI chatbots and AI receptionists: when each fits, what they cost at Handbuilt ($1,500–$3,500 CAD), and how to decide for your business.",
+      `Comparing AI chatbots and AI receptionists: when each fits, how each is priced at Handbuilt (phone receptionist ${PHONE_PRICE_LABEL} CAD; chatbots are one-time builds), and how to decide.`,
     answer:
-      "An AI chatbot handles text-based conversations on your website — answering questions, capturing leads, and booking appointments via chat. An AI receptionist answers phone calls with a natural voice, routes callers, and takes messages. Choose a chatbot if most enquiries come through your website; choose a receptionist if your customers prefer to call.",
+      "An AI chatbot handles text-based conversations on your website — answering questions and capturing leads via chat. An AI receptionist answers phone calls, takes the caller's details and reason for calling, and emails you a summary. Choose a chatbot if most enquiries come through your website; choose a receptionist if your customers prefer to call.",
     pain: "You know you want AI handling customer contact, but you are not sure whether to start with chat or voice.",
     sections: [
       {
@@ -874,17 +892,17 @@ updatedAt: "2026-09-27",
         bullets: [
           "A significant portion of your leads come in by phone",
           "Missed calls are costing you jobs (contractors, clinics, law offices)",
-          "You need call routing, message-taking, or live transfers",
+          "You need message-taking and a tested route back to a person",
           "Customers want to describe their problem verbally, not type it out",
         ],
       },
       {
         heading: "Cost at Handbuilt",
-        body: "Both are custom builds you own outright. A chatbot starts at $1,500 CAD (Starter tier). A receptionist with voice, call routing, and booking typically runs $1,500–$3,500 CAD depending on complexity. No monthly AI fees from Handbuilt — you pay once for the build. Third-party API and telephony costs depend on your volume but are typically modest for small-business call loads.",
+        body: `They are priced differently. A chatbot is a one-time Starter build from $1,500 CAD that you own. The phone receptionist is a separate offer with a monthly fee. ${PHONE_PRICE_SENTENCE}\n\n${PHONE_EXCLUSIONS_SENTENCE}`,
       },
       {
         heading: "Can you run both?",
-        body: "Yes. Some businesses start with a chatbot on their website, then add a receptionist once they see the value. Handbuilt can build them to share the same booking calendar and lead pipeline so nothing falls through the cracks.",
+        body: "Yes. Some businesses start with a chatbot on their website, then add a receptionist once they see the value. Each is priced on its own terms; connecting them to a shared calendar or lead pipeline is a separately scoped build.",
       },
     ],
     comparison: {
@@ -903,7 +921,7 @@ updatedAt: "2026-09-27",
         {
           factor: "Handles phone calls?",
           handbuilt: "No — text and chat only",
-          alternative: "Yes — answers, routes, takes messages",
+          alternative: "Yes — answers, takes messages, hands off to a person",
         },
         {
           factor: "Captures leads",
@@ -913,11 +931,11 @@ updatedAt: "2026-09-27",
         {
           factor: "Typical Handbuilt cost",
           handbuilt: "From $1,500 CAD (one-time)",
-          alternative: "$1,500–$3,500 CAD (one-time)",
+          alternative: `${PHONE_PRICE_LABEL} CAD, ${phonePlan.includedMinutes} minutes included`,
         },
       ],
     },
-    packageId: "starter",
+    packageId: "phone",
     ctaLabel: "Get a fixed quote",
     keywords: [
       "ai chatbot vs ai receptionist",
@@ -939,7 +957,7 @@ updatedAt: "2026-09-27",
       },
       {
         q: "Which one is cheaper to build?",
-        a: "They are comparable. A basic chatbot starts at $1,500 CAD; a basic receptionist also starts around $1,500. More complex receptionist builds — multi-line routing, CRM writes, calendar booking — are scoped as a Business AI System at $3,500–$7,500 CAD.",
+        a: `The receptionist has the lower setup fee but a monthly charge. A basic chatbot is a one-time build from $1,500 CAD. The AI phone receptionist is ${PHONE_PRICE_LABEL} CAD, month-to-month. Extra receptionist features such as calendar booking or CRM writes are quoted separately.`,
       },
       {
         q: "Do I need both?",
@@ -947,11 +965,11 @@ updatedAt: "2026-09-27",
       },
       {
         q: "What ongoing costs are there after the build?",
-        a: "Handbuilt charges a one-time build fee. Third-party costs like hosting, AI API usage, and telephony depend on your volume but are typically modest for a small business — often well under $50/mo.",
+        a: `For a chatbot, Handbuilt charges a one-time build fee; hosting and AI usage depend on your volume. For the phone receptionist: ${PHONE_MONTHLY_SENTENCE}`,
       },
       {
         q: "How long does setup take?",
-        a: "A chatbot is typically ready in about 5 business days. A receptionist with voice and call routing usually takes 5–10 business days depending on integrations.",
+        a: "A chatbot is typically ready in about 5 business days. A phone receptionist's timeline depends on your phone provider and forwarding, and it goes live only after test calls pass.",
       },
     ],
     schema: "Comparison" as const,
@@ -965,7 +983,7 @@ updatedAt: "2026-09-27",
     description:
       "What to look for in an AI receptionist for a Canadian small business. Honest comparison of monthly SaaS apps versus custom-built solutions like Handbuilt.",
     answer:
-      "The best AI receptionist for a small business in Canada depends on your call volume, booking complexity, and budget. Monthly SaaS apps typically run around $50–$500+/mo and work for simple call routing. A custom build like Handbuilt — from $1,500 CAD for a single worker, or $3,500–$7,500 for a connected system, one-time — is trained on your specific services and booking logic, and you own it outright. Named Canadian options worth pricing against each other include Benny (from about $99/mo), VoiceFleet (about CA$149/mo) and Mihron AI (about CA$299/mo); Jobber bundles one at $99/mo if you already pay for Jobber.",
+      `The best AI receptionist for a small business in Canada depends on your call volume, the calls you need handled, and budget. Self-serve subscription apps work for simple call flows; check each provider's current published pricing, included usage and overage terms. Handbuilt's AI Phone Receptionist is set up for you around your approved answers. ${PHONE_PRICE_SENTENCE} Named options worth pricing against each other include Benny, VoiceFleet and Mihron AI, and Jobber offers one to its subscribers.`,
     pain: "You are missing calls and losing jobs, but the AI receptionist market is confusing — dozens of apps, wildly different pricing, and no clear way to compare.",
     sections: [
       {
@@ -982,15 +1000,15 @@ updatedAt: "2026-09-27",
       },
       {
         heading: "Monthly SaaS receptionist apps",
-        body: "There are a growing number of AI receptionist SaaS products. Pricing typically ranges from around $50 to $500+/mo at time of writing, depending on call volume and features. These are generally best for businesses with simple, repeatable call flows — a restaurant taking reservations, a clinic confirming appointments. Setup is usually fast (minutes to hours), but customization is limited to what the platform offers.",
+        body: "There are a growing number of AI receptionist subscription products, priced by call volume and features — check current published pricing rather than an old comparison table. These are generally best for businesses with simple, repeatable call flows. Setup is usually fast, but customization is limited to what the platform offers and you configure it yourself.",
       },
       {
-        heading: "Custom-built AI receptionists",
-        body: "A custom build is trained on your specific business — your services, your pricing, your booking rules, your voice. Handbuilt builds these for $1,500–$3,500 CAD as a one-time cost. You own the result. This approach is best when off-the-shelf apps do not handle your workflow — for example, a contractor who needs the AI to qualify job type, service area, and urgency before booking, or a clinic with multiple practitioners and different appointment types.",
+        heading: "A done-for-you AI receptionist",
+        body: `Handbuilt sets the receptionist up for you. ${PHONE_SCOPE_SENTENCE}\n\n${PHONE_PRICE_SENTENCE} ${PHONE_MONTHLY_SENTENCE}`,
       },
       {
-        heading: "Best for / Not best for (custom build)",
-        body: "A custom build from Handbuilt is a good fit if you have specific call-handling logic that generic apps cannot cover, you want to own the system outright, or you prefer a one-time cost over monthly fees. It is not the best fit if your call flow is very simple and a $50/mo app already handles it, or if you need enterprise-scale features like multi-location routing for dozens of offices.",
+        heading: "Best for / Not best for (Handbuilt)",
+        body: `Handbuilt's receptionist suits a business that wants its line answered from approved information, with caller details emailed and a tested fallback, without configuring software itself. It is not the best fit if a self-serve app already handles your calls well, or if you need multi-location routing. ${PHONE_EXCLUSIONS_SENTENCE}`,
       },
       {
         heading: "Questions to ask any provider",
@@ -1004,8 +1022,8 @@ updatedAt: "2026-09-27",
         ],
       },
     ],
-    packageId: "starter",
-    ctaLabel: "Get a fixed quote",
+    packageId: "phone",
+    ctaLabel: "Request a receptionist review",
     keywords: [
       "best ai receptionist small business canada",
       "ai receptionist for small business",
@@ -1023,11 +1041,11 @@ updatedAt: "2026-09-27",
     faqs: [
       {
         q: "How much does an AI receptionist cost in Canada?",
-        a: "It depends on the model. Monthly SaaS apps typically range from around $50 to $500+/mo. A custom build like Handbuilt is a one-time $1,500–$3,500 CAD. Human answering services generally run $200–$1,500+/mo depending on call volume.",
+        a: `It depends on the model: subscription apps, human answering services and done-for-you setups all price differently, so compare current published terms. ${PHONE_PRICE_SENTENCE}`,
       },
       {
         q: "Can an AI receptionist handle complex booking logic?",
-        a: "SaaS apps handle simple flows well. If your booking involves qualifying the caller (job type, urgency, service area) before scheduling, a custom build trained on your business will handle it more reliably.",
+        a: "Handbuilt's standard receptionist does not book: it qualifies the caller (job type, urgency, service area) and records a callback request. Calendar booking is quoted separately.",
       },
       {
         q: "Will callers know they are talking to AI?",
@@ -1043,7 +1061,7 @@ updatedAt: "2026-09-27",
       },
       {
         q: "How long does it take to set up?",
-        a: "SaaS apps can be live in minutes to hours. A custom Handbuilt receptionist typically takes about 5–10 business days including training it on your services and testing.",
+        a: "Self-serve apps can be live quickly if you configure them yourself. A Handbuilt receptionist's timeline depends on your phone provider and forwarding; it goes live only after test calls pass.",
       },
     ],
     schema: "Comparison" as const,
@@ -1061,18 +1079,23 @@ comparison: {
   "rows": [
     {
       "factor": "Fit",
-      "handbuilt": "A custom workflow scoped to the business; required channels must be confirmed.",
+      "handbuilt": "One business, one number, one routing flow and one language, set up for you.",
       "alternative": "Evaluate the specific provider's supported tasks and handoff."
     },
     {
       "factor": "Costs",
-      "handbuilt": "Agreed implementation quote plus specified external and support costs.",
+      "handbuilt": `${PHONE_SETUP_PRICE} CAD setup, then ${PHONE_MONTHLY_PRICE} CAD/month with ${phonePlan.includedMinutes} minutes included; ${PHONE_OVERAGE_PRICE}/extra minute. Taxes extra.`,
       "alternative": "Check current setup, recurring, usage and cancellation charges."
     },
     {
       "factor": "Maintenance",
-      "handbuilt": "Ownership and ongoing responsibility defined in the proposal.",
+      "handbuilt": `Operation, maintenance, fault correction and up to ${phonePlan.includedChangeMinutes} minutes of small changes a month included.`,
       "alternative": "Provider support and business responsibilities defined by its terms."
+    },
+    {
+      "factor": "Contract",
+      "handbuilt": "Month-to-month.",
+      "alternative": "Check the cancellation terms."
     }
   ]
 },
@@ -1082,7 +1105,7 @@ scenario: "Illustrative comparison: you need after-hours phone message-taking wi
     h1: "What Does an AI Receptionist Actually Cost in Canada?",
     title: "AI Receptionist Pricing in Canada: Compare the Options",
     description: "Compare an AI subscription, a custom intake build and human answering by channel, included usage, support, currency and exit terms.",
-    answer: "Compare Canadian AI receptionist options by the same job: which channel they handle, what usage is included, how they reach a person and who supports failures. A subscription, a custom build and a human answering service may have very different scope. Ask for the complete price in a stated currency before choosing.",
+    answer: `Compare Canadian AI receptionist options by the same job: which channel they handle, what usage is included, how they reach a person and who supports failures. A subscription, a done-for-you setup and a human answering service may have very different scope. ${PHONE_PRICE_SENTENCE}`,
     pain: "Prices that refer to different channels, usage limits and support arrangements are not directly comparable.",
     sections: [
   {
@@ -1090,8 +1113,8 @@ scenario: "Illustrative comparison: you need after-hours phone message-taking wi
     "body": "An existing product can be a practical choice when its supported workflow matches the business. Check the included channel, usage allowance, overage charges and integration limits in the current vendor terms. Ask what you retain when you cancel.\n\nDo not assume every subscription is restrictive or every integration works. Test the specific service against your own questions and handoff requirements."
   },
   {
-    "heading": "Option two: a custom implementation",
-    "body": "Custom work can address a workflow that does not fit an existing tool. The proposal needs to identify the initial build, external services, maintenance responsibility and handover. Ownership of the code does not remove third-party hosting or communications costs.\n\nHandbuilt's current build package appears below. Live phone answering and other integrations require their own scope; the package card does not include every possible channel by default."
+    "heading": "Option two: a done-for-you AI receptionist",
+    "body": `Handbuilt's AI Phone Receptionist is set up for you and run for a monthly fee. ${PHONE_SCOPE_SENTENCE}\n\n${PHONE_MONTHLY_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE}`
   },
   {
     "heading": "Option three: human answering",
@@ -1102,7 +1125,7 @@ scenario: "Illustrative comparison: you need after-hours phone message-taking wi
     "body": "State the required channel, expected usage, service hours and integrations. Ask each provider to identify setup, recurring and variable charges; currency; support; cancellation; and access ownership. Review the actual terms rather than relying on an old comparison table.\n\nChoose the option that fits the work and your ability to maintain it. There is no vendor price range or universal cheapest option established by this page."
   }
 ],
-    packageId: "starter",
+    packageId: "phone",
     ctaLabel: "Request an option review",
     keywords: [
       "ai receptionist pricing canada",
@@ -1132,15 +1155,15 @@ scenario: "Illustrative comparison: you need after-hours phone message-taking wi
     faqs: [
   {
     "q": "Are prices on this page in Canadian dollars?",
-    "a": "The Handbuilt package card is labelled CAD and comes from the current pricing data. Other providers' quotes must be checked for their stated currency."
+    "a": "Handbuilt's prices are in CAD, taxes extra. Other providers' quotes must be checked for their stated currency."
   },
   {
     "q": "Which option is cheapest?",
     "a": "That depends on the actual scope, usage, support and current terms. This page does not claim a universally cheapest provider."
   },
   {
-    "q": "Does custom mean no ongoing fees?",
-    "a": "No. A custom build may still need hosting, communications, model services and maintenance. Those costs should be listed in the proposal."
+    "q": "Are there ongoing fees with Handbuilt's receptionist?",
+    "a": `Yes. ${PHONE_MONTHLY_SENTENCE} Phone and AI usage for the first ${phonePlan.includedMinutes} minutes is included in that fee.`
   }
 ],
     schema: "Comparison" as const,

@@ -22,11 +22,17 @@
 //
 // The `managed` SKUs are NOT exempt any more, they are checked on the right
 // axis: a subscription recovers the build through the monthly, so the floor it
-// must clear is setup + 12 months. Both $1,500-setup SKUs clear it comfortably
-// (receptionist-os $5,688, operations-dashboard $3,888 vs a $3,500 floor), and
-// `ai-business-analyst` is exempt because it is an add-on to another product,
-// which it declares in both its priceLabel and its timeToLaunch.
+// must clear is setup + 12 months (operations-dashboard $3,888 vs a $3,500
+// floor), and `ai-business-analyst` is exempt because it is an add-on to
+// another product, which it declares in both its priceLabel and its timeToLaunch.
 // See `tests/pricing-consistency.test.ts`.
+//
+// THE PHONE RECEPTIONIST IS NOT A TIER. `packageId: "phone"` prices from
+// `phonePlan` in packages.ts and is tested for EQUALITY with it, not against a
+// build floor. Its numbers are imported, never typed here. Amended 2026-10-08:
+// the old $129/mo "calls included" card and the $1,500 + $349/mo "Receptionist
+// OS" card were the same receptionist at two contradictory prices; both were
+// consolidated into the one approved launch offer.
 //
 // Shop storefront catalog — the "ready-to-install" lead products.
 // Each maps to an existing /services/<slug> detail page (the SEO engine) where
@@ -42,6 +48,8 @@
 //     and tune a system that keeps working after launch.
 // `whoPaysUsage` + `usageNote` make this explicit on every product card so a buyer
 // is never surprised by an OpenAI/Twilio bill.
+
+import { phonePlan, PHONE_PRICE_LABEL, PHONE_USAGE_SENTENCE } from "./packages";
 
 export interface ShopProduct {
   /** Maps to a /services/<slug> landing page where `learnHref` is set. */
@@ -74,8 +82,8 @@ export interface ShopProduct {
   whoPaysUsage: "customer" | "managed";
   /** One honest line on who pays usage — shown on the card. */
   usageNote: string;
-  /** Pricing tier for cross-references + schema baseline. */
-  packageId: "starter" | "business" | "custom";
+  /** Pricing tier for cross-references + schema baseline. "phone" = phonePlan. */
+  packageId: "starter" | "business" | "custom" | "phone";
   /** Live demo on this site, if one exists. */
   demoHref?: string;
   /** "How it works" detail page, if one exists (existing /services pages only). */
@@ -87,23 +95,23 @@ export interface ShopProduct {
 export const shopProducts: ShopProduct[] = [
   {
     slug: "ai-receptionist-setup",
-    name: "AI Receptionist",
+    name: phonePlan.name,
     icon: "PhoneCall",
     accent: "electric",
     problem: "You miss calls while you're on a job — and those callers dial the next business on the list.",
     outcome:
-      "Answers every call and text 24/7, captures the job details, books the appointment into your calendar, and texts back every missed call before the lead goes cold.",
+      "Answers your line with approved information, takes the caller's details, reason and callback request, emails you a summary, and hands off to a tested fallback when someone needs a person.",
     forWho: "Trades, clinics, salons & local services losing leads to voicemail.",
-    integrations: ["Twilio", "Google Calendar", "Your website"],
+    integrations: ["Your existing number (forwarded)", "Email summary"],
     delivery: "Done-for-you",
-    timeToLaunch: "Live in ~5 days",
-    billing: "managed",
-    priceLabel: "From $129/mo · we run it",
-    monthlyPrice: 129,
+    timeToLaunch: "Live after test calls pass",
+    billing: "hybrid",
+    priceLabel: `${PHONE_PRICE_LABEL} · launch pricing`,
+    setupPrice: phonePlan.setup,
+    monthlyPrice: phonePlan.monthly,
     whoPaysUsage: "managed",
-    usageNote:
-      "We host the line and include the AI + call usage — one flat monthly, no API keys or surprise phone bills.",
-    packageId: "starter",
+    usageNote: `${PHONE_USAGE_SENTENCE} Month-to-month, taxes extra. Booking, CRM, SMS and dashboards are quoted separately.`,
+    packageId: "phone",
     demoHref: "/demo",
     learnHref: "/ai-receptionist",
   },
@@ -283,30 +291,6 @@ export const shopProducts: ShopProduct[] = [
       "An add-on to the Operations Dashboard — hosted by us, AI included in the monthly. Every answer is sourced from your data, never made up.",
     packageId: "business",
     learnHref: "/services/ai-business-analyst",
-  },
-  {
-    slug: "ai-receptionist-os",
-    name: "AI Receptionist OS",
-    icon: "Headphones",
-    accent: "electric",
-    problem: "You're stitching together a receptionist, texting, booking, reviews and follow-ups — and still losing leads in the gaps.",
-    outcome:
-      "One system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — run for you, on one dashboard, instead of five tools that don't talk to each other.",
-    forWho: "Busy local businesses ready to run the whole front desk on autopilot.",
-    integrations: ["Twilio", "Google Calendar", "Your CRM", "Stripe", "Google Business"],
-    delivery: "Done-for-you",
-    timeToLaunch: "Live in 1–2 weeks",
-    billing: "managed",
-    priceLabel: "From $349/mo + setup",
-    monthlyPrice: 349,
-    setupPrice: 1500,
-    whoPaysUsage: "managed",
-    usageNote:
-      "Fully hosted and run by us — calls, texts, booking, reviews and follow-ups in one monthly. No API keys, no surprise bills.",
-    packageId: "business",
-    badge: "Flagship",
-    demoHref: "/start",
-    learnHref: "/services/ai-receptionist-os",
   },
 ];
 

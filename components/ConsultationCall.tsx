@@ -107,7 +107,8 @@ const DIAG: Record<
     volOpts: ["A few", "5–15", "15–30", "30+"],
     problem: (v) => `You're missing around ${v.toLowerCase()} calls a week — and most callers never try again.`,
     impact: "Every call that rings out is a job the next contractor picks up.",
-    includes: ["AI Receptionist", "SMS follow-up", "Appointment booking", "Lead tracking"],
+    // Matches the approved phone offer: no SMS, booking or CRM in the base price.
+    includes: ["AI phone receptionist", "Approved answers", "Callback requests", "Emailed call summaries"],
   },
   leads: {
     volQ: "How many new leads come in each week?",
@@ -488,7 +489,10 @@ export default function ConsultationCall({ onHomepage = false }: { onHomepage?: 
     });
     const cleanTimeline = plan.timeline.replace(/^[≈~]\s*/, "");
     await speak(
-      `Here's what I'm seeing for ${name}. I'd build you the ${plan.system} — roughly ${plan.priceRange}, ready in ${cleanTimeline}.`
+      plan.intent === "calls"
+        ? // The phone offer has fixed terms, not an estimate — say them plainly.
+          `Here's what I'm seeing for ${name}. I'd set you up with the ${plan.system}. ${plan.priceRange}`
+        : `Here's what I'm seeing for ${name}. I'd build you the ${plan.system} — roughly ${plan.priceRange}, ready in ${cleanTimeline}.`
     );
 
     // 4) Micro-commitment before the wow moment.

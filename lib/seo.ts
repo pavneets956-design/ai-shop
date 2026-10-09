@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { site } from "./data/site";
-import { packages, carePlan, formatPackagePrice, getPackage } from "./data/packages";
+import {
+  packages,
+  carePlan,
+  formatPackagePrice,
+  getPackage,
+  phonePlan,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+} from "./data/packages";
 import type { LandingContent, PageType } from "./data/landing";
 import { landingPath, landingBreadcrumb } from "./data/landing";
 
@@ -76,35 +84,35 @@ export const DEFAULT_OG_IMAGE = {
 
 /** Last real change to the data file that generates each page type. */
 export const REGISTRY_LASTMOD: Record<string, string> = {
-  money: "2026-08-12", // lib/data/money.ts
-  service: "2026-08-30", // lib/data/services.ts + _services_b.ts
-  industry: "2026-08-30", // lib/data/industries.ts + _industries_b.ts + _industries_c.ts
+  money: "2026-10-08", // lib/data/money.ts
+  service: "2026-10-08", // lib/data/services.ts + _services_b.ts
+  industry: "2026-10-08", // lib/data/industries.ts + _industries_b.ts + _industries_c.ts
   creators: "2026-08-30", // lib/data/creators.ts + _creators_b.ts
-  location: "2026-08-30", // lib/data/locations.ts
-  resource: "2026-08-30", // lib/data/resources.ts
-  howto: "2026-08-30", // lib/data/howto.ts
-  compare: "2026-08-30", // lib/data/compare.ts
-  usecase: "2026-08-30", // lib/data/useCases.ts
-  tool: "2026-08-12", // lib/data/freeTools.ts
+  location: "2026-10-08", // lib/data/locations.ts
+  resource: "2026-10-08", // lib/data/resources.ts
+  howto: "2026-10-08", // lib/data/howto.ts
+  compare: "2026-10-08", // lib/data/compare.ts
+  usecase: "2026-10-08", // lib/data/useCases.ts
+  tool: "2026-10-08", // lib/data/freeTools.ts
 };
 
 /** Last real change to each hand-routed page file. */
 export const STATIC_LASTMOD: Record<string, string> = {
-  "": "2026-09-18",
+  "": "2026-10-08", // StudioHome and homeFaqs, commit 680735a
   "/services": "2026-07-06",
   "/industries": "2026-07-06",
-  "/locations": "2026-07-06",
-  "/solutions": "2026-08-30",
+  "/locations": "2026-10-08",
+  "/solutions": "2026-10-08", // solutions data and FeaturedBuilds
   "/use-cases": "2026-08-30",
   "/resources": "2026-06-14",
   "/how-to": "2026-06-14",
   "/compare": "2026-06-14",
-  "/pricing": "2026-09-18",
-  "/shop": "2026-08-30",
+  "/pricing": "2026-10-08",
+  "/shop": "2026-10-08",
   "/tools": "2026-07-15",
-  "/faq": "2026-09-18",
+  "/faq": "2026-10-08", // faqs data
   "/about": "2026-09-18",
-  "/create": "2026-09-18",
+  "/create": "2026-10-08", // BuildRequestForm
   "/privacy": "2026-08-30",
   "/terms": "2026-08-30",
   "/creators": "2026-07-06",
@@ -113,7 +121,7 @@ export const STATIC_LASTMOD: Record<string, string> = {
   "/demo/lead": "2026-06-17",
   "/demo/nudge": "2026-06-17",
   "/demo/quote": "2026-06-17",
-  "/start": "2026-08-30",
+  "/start": "2026-10-08",
 };
 
 /** ISO date (YYYY-MM-DD) for a page type, or undefined — never a guess. */
@@ -212,7 +220,58 @@ function packageOffers(): Node[] {
       provider: { "@id": ORG_ID },
     },
   });
+  offers.push(phoneOffer());
   return offers;
+}
+
+/**
+ * The AI Phone Receptionist offer — a fixed setup plus a monthly fee with
+ * included minutes, all from `phonePlan`. `price` is the setup fee, because
+ * that is the first amount a buyer pays; the monthly and per-minute terms sit
+ * in `priceSpecification` and are stated in words in `description`, matching
+ * what /pricing renders.
+ */
+export function phoneOffer(): Node {
+  return {
+    "@type": "Offer",
+    "@id": offerId(phonePlan.id),
+    price: phonePlan.setup,
+    priceCurrency: site.currency,
+    description: PHONE_PRICE_SENTENCE,
+    url: `${site.url}/ai-receptionist`,
+    availability: "https://schema.org/InStock",
+    priceSpecification: [
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Setup (one-time)",
+        price: phonePlan.setup,
+        priceCurrency: site.currency,
+        valueAddedTaxIncluded: false,
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        name: `Monthly service, includes ${phonePlan.includedMinutes} AI-handled minutes`,
+        price: phonePlan.monthly,
+        priceCurrency: site.currency,
+        unitText: "MONTH",
+        valueAddedTaxIncluded: false,
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        name: "Each AI-handled minute beyond the included minutes",
+        price: phonePlan.overagePerMinute,
+        priceCurrency: site.currency,
+        unitCode: "MIN",
+        valueAddedTaxIncluded: false,
+      },
+    ],
+    itemOffered: {
+      "@type": "Service",
+      name: phonePlan.name,
+      description: PHONE_SCOPE_SENTENCE,
+      provider: { "@id": ORG_ID },
+    },
+  };
 }
 
 /* ==========================================================================
@@ -241,7 +300,9 @@ export function organizationSchema(): Node {
       `Handbuilt AI is a one-person AI studio in ${site.region} that installs done-for-you AI ` +
       `receptionists, quote follow-up and admin automation for contractors and local service ` +
       `businesses across Metro Vancouver and the Fraser Valley — inside the phone number and ` +
-      `accounts the business already owns. Fixed ${site.currency} pricing from $${nf.format(floor)}.`,
+      `accounts the business already owns. Custom builds from $${nf.format(floor)} ${site.currency}; ` +
+      `the AI phone receptionist is $${nf.format(phonePlan.setup)} setup + $${nf.format(phonePlan.monthly)}/month ` +
+      `${site.currency} launch pricing.`,
     // Still the personal Gmail, deliberately: aibuiltbyhand.com has no MX record,
     // so a branded address would black-hole enquiries. See lib/data/site.ts.
     email: site.email,
@@ -472,7 +533,7 @@ export function shopSchema(
   products: {
     name: string;
     outcome: string;
-    packageId: "starter" | "business" | "custom";
+    packageId: "starter" | "business" | "custom" | "phone";
     billing?: "one-time" | "managed" | "hybrid";
     priceLabel?: string;
     monthlyPrice?: number;
@@ -632,6 +693,7 @@ export function landingSchema(
       // Referenced, not restated: the priced Offer lives in the organization's
       // hasOfferCatalog, which is on every page via the root layout.
       ...(pkg && { offers: { "@id": offerId(pkg.id) } }),
+      ...(content.packageId === phonePlan.id && { offers: { "@id": offerId(phonePlan.id) } }),
     });
   } else if (content.schema === "HowTo") {
     out.push({

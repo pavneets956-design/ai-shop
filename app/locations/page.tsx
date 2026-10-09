@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import LandingHub from "@/components/LandingHub";
 import { locations } from "@/lib/data/locations";
+import { BUILD_AND_PHONE_PRICING } from "@/lib/data/packages";
 
 export const metadata: Metadata = {
   title: "AI Automation by Location",
   description:
-    "AI automation, receptionists and custom apps for small businesses in Surrey, Delta, Vancouver and across the Lower Mainland — built by hand, remote across Canada. From $1,500 CAD.",
+    `AI automation, receptionists and custom apps for small businesses in Surrey, Delta, Vancouver and across the Lower Mainland. CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
   alternates: { canonical: "/locations" },
 };
 

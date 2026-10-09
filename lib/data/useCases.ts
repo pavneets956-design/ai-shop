@@ -3,6 +3,7 @@
 // Add rows here to expand surface area — the page template handles the rest.
 
 import type { IndustryId, WorkerId } from "@/lib/data/showroom";
+import { packagePriceLabel, PHONE_PRICE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE } from "@/lib/data/packages";
 
 export interface UseCase {
   slug: string;
@@ -13,7 +14,8 @@ export interface UseCase {
   pain: string;
   steps: string[];
   gets: string[];
-  packageId: "starter" | "business" | "custom";
+  /** "phone" = the AI Phone Receptionist offer (`phonePlan`), not a build tier. */
+  packageId: "starter" | "business" | "custom" | "phone";
   relatedBuilds: string[];
   keywords: string[];
   faqs: { q: string; a: string }[];
@@ -59,23 +61,23 @@ export const useCases: UseCase[] = [
     slug: "ai-receptionist-for-dentists",
     solution: "AI Receptionist",
     industry: "Dental Practices",
-    question: "How can a dental practice use an AI receptionist to book patients and cut no-shows?",
+    question: "How can a dental practice use an AI receptionist to handle patient calls?",
     answer:
-      "An AI receptionist for dental practices answers patient calls and texts, books and reschedules cleanings and checkups, and sends automatic reminders that cut no-shows. Handbuilt trains it on your services, providers and hours, starting at $1,500 CAD, or as a connected system from $3,500 CAD.",
-    pain: "Dental front desks juggle ringing phones, walk-ins and recall calls — and every no-show is a wasted chair-hour that can't be sold back.",
+      `An AI receptionist for a dental practice answers patient calls from approved information about your services and hours, takes the caller's details, reason and callback request, emails your front desk a summary, and hands clinical or urgent calls to a person. ${PHONE_PRICE_SENTENCE} Booking, recall reminders and texting are a separate connected system (${packagePriceLabel("business")} CAD, scoped first).`,
+    pain: "Dental front desks juggle ringing phones, walk-ins and recall calls — and a call nobody answers can be a patient who books elsewhere.",
     steps: [
-      "We train it on your treatments, providers, hours and policies",
-      "It answers calls and texts and books or reschedules",
-      "It sends recall and appointment reminders automatically",
-      "Anything clinical routes straight to your team",
+      "We write approved answers about your treatments, providers, hours and policies",
+      "It answers calls and records the caller's details and callback request",
+      "Your front desk gets an emailed summary of each handled call",
+      "Anything clinical or urgent goes to the tested fallback to your team",
     ],
     gets: [
-      "24/7 patient call & text answering",
-      "Automated booking, recalls & reminders",
-      "Fewer no-shows and empty chairs",
-      "A calmer, less overloaded front desk",
+      "Patient calls answered from approved information",
+      "Caller details, reason and callback request captured",
+      "An emailed summary of each handled call",
+      "A configured and tested fallback to your team",
     ],
-    packageId: "business",
+    packageId: "phone",
     relatedBuilds: ["ai-receptionist", "ai-customer-support-bot"],
     keywords: [
       "ai receptionist for dentists",
@@ -86,7 +88,7 @@ export const useCases: UseCase[] = [
     faqs: [
       {
         q: "Can it handle recall reminders for cleanings?",
-        a: "Yes — it can automatically reach out when patients are due for cleanings or checkups and book them straight in.",
+        a: `Not as part of the receptionist. ${PHONE_EXCLUSIONS_SENTENCE} Recall reminders and booking can be scoped as a connected system.`,
       },
     ],
   },

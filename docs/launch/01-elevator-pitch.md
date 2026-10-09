@@ -2,6 +2,8 @@
 
 > **Draft. Not sent, not published.** Facts sourced from `research/transformation-2026-08-30/09-proof-founder-positioning.md`.
 
+> **⚠️ Price line superseded 2026-10-08.** The pitch leads with the phone, then quotes "Starter systems begin at $1,500". The AI Phone Receptionist is now a separate offer: $750 CAD setup + $179 CAD/month launch pricing (`phonePlan` in `lib/data/packages.ts`). Say both numbers apart before using this. See `00-README.md`.
+
 ## The paragraph
 
 I run a cedar-fence company in South Surrey, and I got tired of losing work because I was on a job site and couldn't answer the phone. So I built the system that answers it — trained on my services, my prices, my hours — and put it on my own line before I ever offered it to anyone else. That's what I do now: I build the AI office system for a trades business and hand it over. Your phone gets answered, your quotes get followed up, your invoices get chased. One fixed quote in Canadian dollars before any work starts, one person building it, and you own what's built. Starter systems begin at $1,500; a connected multi-worker system runs $3,500 to $7,500. I'm in Surrey, I've got no clients yet, and I'll tell you exactly what it won't do before you pay me anything.

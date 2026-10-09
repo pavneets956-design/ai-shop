@@ -2,6 +2,8 @@
 
 > **Draft. Not sent.** No email was sent to anyone. This file is a template for Pavneet to send himself, from his own mailbox, one at a time.
 
+> **⚠️ Price line superseded 2026-10-08.** This email pitches the phone receptionist but quotes "Starter systems begin at $1,500 CAD". The approved AI Phone Receptionist offer is now separate: **$750 CAD setup + $179 CAD/month launch pricing, 300 AI-handled minutes included, $0.25/extra minute, taxes extra, month-to-month** (source: `phonePlan` in `lib/data/packages.ts`). Replace that sentence from `PHONE_PRICE_SENTENCE` before sending. Booking, CRM, SMS and dashboards are not included. See `docs/launch/receptionist-pricing-implementation.md`.
+
 ---
 
 ## ⚖️ CASL — read this before sending a single message

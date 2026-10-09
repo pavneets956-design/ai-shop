@@ -1,4 +1,14 @@
 import type { LandingContent } from "./landing";
+import {
+  phonePlan,
+  packagePriceLabel,
+  PHONE_PRICE_LABEL,
+  PHONE_OVERAGE_PRICE,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_MONTHLY_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 
 export const servicesB: LandingContent[] = [
 
@@ -134,23 +144,24 @@ export const servicesB: LandingContent[] = [
     eyebrow: "AI Service",
     h1: "AI Voice Agent",
     title: "AI Voice Agent | Handbuilt",
-    description: "A phone agent that answers calls, qualifies leads, takes messages, and books appointments — 24/7, no hold music. From $3,500 CAD.",
-    answer: "Missed calls are missed revenue, and hiring a receptionist to cover after-hours isn't feasible for most small businesses. Handbuilt builds an AI voice agent that answers your business line, handles common caller questions, qualifies leads, and books appointments directly into your calendar — day or night. Typically $3,500 CAD as part of the Business AI System.",
-    pain: "A call that goes to voicemail at 7pm is a lead that calls your competitor at 7:01pm.",
-    scenario: "Say a Surrey HVAC company is missing roughly 8–10 calls a week outside business hours — mostly homeowners calling when the heat stops working and who will dial the next result in Google if they hit voicemail. An AI voice agent answering after hours, collecting the address and problem description, and slotting an emergency or next-day booking into the dispatch system could recover most of those calls. The dollar value depends on average job size, but for a shop doing furnace repairs and heat pump service, 8–10 recovered jobs a month adds up quickly.",
+    description: `An AI voice agent that answers your business line, takes caller details and a callback request, and emails you a summary. ${PHONE_PRICE_LABEL} CAD launch pricing.`,
+    answer: `Handbuilt's AI voice agent is the AI Phone Receptionist: it answers your business line with approved information, records the caller's details, reason and callback request, emails you a summary and hands off to a tested fallback when a caller needs a person. ${PHONE_PRICE_SENTENCE}`,
+    pain: "A call that goes to voicemail at 7pm can be a lead that calls your competitor at 7:01pm.",
+    scenario: "Say a Surrey HVAC company is missing several calls a week outside business hours — homeowners calling when the heat stops working. A voice agent answering after hours, collecting the address and problem description and recording a callback request means the owner starts the morning with the details in an email instead of a list of missed calls. How many of those become jobs depends on the business and how quickly it calls back.",
     steps: [
-      "We script the call flow based on your most common caller types and questions",
-      "We configure the voice agent on your existing business number (no new number needed)",
-      "It connects to your calendar or dispatch system to book in real time",
-      "We review call transcripts at day 14 and refine any weak spots"
+      "We write the call flow from your most common caller types and your approved answers",
+      "We configure the agent for one number, one routing flow and one language — usually by forwarding your existing line",
+      "We configure and test the fallback to a person or voicemail",
+      "Test calls before go-live, then a handover walkthrough"
     ],
-    gets: [
-      "AI voice agent on your existing business line",
-      "Live calendar or dispatch booking during the call",
-      "Call transcript and summary to your inbox after each call",
-      "Escalation to your mobile for urgent situations"
+    gets: phonePlan.setupIncludes,
+    sections: [
+      {
+        heading: "What's included and what isn't",
+        body: `${PHONE_SCOPE_SENTENCE}\n\n${PHONE_MONTHLY_SENTENCE}\n\n${PHONE_EXCLUSIONS_SENTENCE}`,
+      },
     ],
-    packageId: "business",
+    packageId: "phone",
     ctaLabel: "Get my calls answered",
     keywords: [
       "ai voice agent small business",
@@ -165,9 +176,10 @@ export const servicesB: LandingContent[] = [
       { label: "Pricing", href: "/pricing" }
     ],
     faqs: [
-      { q: "Does it use my existing phone number?", a: "Yes. We forward your line to the AI agent during off-hours (or all hours if you want) — callers dial the same number they always have." },
-      { q: "How natural does it sound?", a: "Modern AI voice is conversational enough that most callers don't realize they're talking to an agent — especially for structured tasks like booking and info collection. We test it thoroughly before go-live." },
-      { q: "What happens if the caller has a complex issue?", a: "The agent takes a message with all the relevant details and routes it to you immediately. It does not attempt to handle situations outside its defined scope." }
+      { q: "How much does the AI voice agent cost?", a: PHONE_PRICE_SENTENCE },
+      { q: "Does it use my existing phone number?", a: "Usually, by forwarding your line to the agent during the hours you choose. It depends on your phone provider, so we check the setup before promising a particular call flow." },
+      { q: "Can it book appointments during the call?", a: "Not in the standard setup. It records a callback request and emails you the details. Calendar or dispatch booking is quoted separately." },
+      { q: "What happens if the caller has a complex issue?", a: "The agent records the details and hands off to the agreed fallback. It does not attempt to handle situations outside its defined scope." }
     ],
     schema: "Service",
     icon: "PhoneCall",
@@ -476,24 +488,30 @@ export const servicesB: LandingContent[] = [
     "schema": "Service",
     "icon": "Headphones",
     "h1": "What is an AI Receptionist OS for a local business?",
-    "title": "AI Receptionist OS — Your Whole Front Desk on Autopilot | Handbuilt",
-    "description": "One hosted system that answers calls and texts, books jobs, sends quotes, chases reviews and follows up with every lead — on one dashboard. $1,500 onboarding, then from $349/mo, calls included.",
-    "answer": "AI Receptionist OS is Handbuilt's flagship: one hosted system that runs your front desk, so leads stop falling into the gaps between five separate tools. It answers calls and texts, books jobs into your calendar, sends quotes, chases reviews, and follows up with every lead automatically — all on one dashboard, with nothing for you to stitch together. It's meant to cover the kind of front-desk work you'd otherwise hand to a part-time receptionist or a patchwork of separate apps. Pricing is $1,500 onboarding, then from $349/mo, fully hosted with calls and AI usage included.",
-    "pain": "You've patched together a receptionist, a texting app, a booking link, a review tool and a follow-up reminder — and leads still slip through the cracks between them because nothing talks to anything else.",
-    "scenario": "Take a busy Surrey HVAC company fielding maybe 40–50 calls and a dozen website and text inquiries a week, with one person trying to answer the phone, send quotes and remember to follow up — usually while on a job. A few calls a week go to voicemail, a couple of quotes never get sent, and review requests almost never happen. Running it all through one Receptionist OS means the calls get answered and booked, the quote goes out the same day, every closed job triggers a review ask, and any lead that goes quiet gets a follow-up text — all visible on one screen instead of five apps. The exact lift depends on how many leads are currently falling through the gaps, but closing those gaps is usually where the recovered revenue sits.",
+    "title": "AI Receptionist OS — Start With the Phone, Add Only What You Need | Handbuilt",
+    "description": `An AI receptionist "front desk" starts with the AI Phone Receptionist at ${PHONE_PRICE_LABEL} CAD launch pricing. Texting, booking, CRM and dashboards are scoped separately.`,
+    "answer": `People searching for an "AI receptionist OS" usually want the whole front desk handled. At Handbuilt the core is the AI Phone Receptionist: it answers your line with approved information, records caller details and a callback request, emails you a summary and hands off to a tested fallback. ${PHONE_PRICE_SENTENCE} Texting, calendar booking, quotes, review requests, CRM updates and dashboards are not part of that price; if you want them connected, they are scoped and quoted separately as a custom system.`,
+    "pain": "You've patched together a phone line, a texting app, a booking link, a review tool and a follow-up reminder — and leads still slip through the cracks between them.",
+    "scenario": "Take a busy Surrey HVAC company where one person answers the phone, sends quotes and tries to remember follow-ups — usually while on a job. The sensible first step is the phone: an AI receptionist that takes the caller's details and emails a summary, so missed calls become recorded callback requests. Once that is running, the owner can decide whether quote follow-up or review requests are worth a separately scoped build, instead of buying all of it up front.",
     "steps": [
-      "We map your whole front desk — how calls, texts, quotes, bookings and follow-ups flow today — and where leads currently leak",
-      "We connect the pieces: Twilio for calls and SMS, Google Calendar for booking, your CRM, Stripe for deposits, and Google Business for reviews",
-      "We configure the AI to answer, qualify, book, quote and chase reviews in your voice, with rules you approve before go-live",
-      "We host and run it on one dashboard, watch the first 30 days of live conversations, and tune the flows that need it"
+      "We map how calls, texts, quotes, bookings and follow-ups flow today and where leads leak",
+      `We start with the AI Phone Receptionist: one number, one routing flow and one language, at ${PHONE_PRICE_LABEL} CAD`,
+      "We configure and test the fallback, run test calls and hand over",
+      "Anything beyond the receptionist — texting, booking, CRM, reviews, dashboards — is scoped and quoted separately before any work starts"
     ],
-    "gets": [
-      "A hosted system that answers calls and texts, books jobs, sends quotes and chases reviews",
-      "Automatic follow-up on every lead so none goes cold from neglect",
-      "One dashboard showing every call, message, booking and review in one place",
-      "Integrations with Twilio, Google Calendar, your CRM, Stripe and Google Business — calls and AI usage included in the monthly fee"
+    "gets": phonePlan.setupIncludes,
+    "sections": [
+      {
+        "heading": "What the receptionist price covers",
+        "body": `${PHONE_SCOPE_SENTENCE}\n\n${PHONE_MONTHLY_SENTENCE}`
+      },
+      {
+        "heading": "What a fuller front-desk system costs",
+        "body": `${PHONE_EXCLUSIONS_SENTENCE} A connected system that adds those pieces is a custom build — Business AI System pricing is ${packagePriceLabel("business")} CAD after scope is confirmed — and it is quoted on top of, not instead of, the receptionist's own terms.`
+      }
     ],
-    "ctaLabel": "Build my Receptionist OS",
+    "packageId": "phone",
+    "ctaLabel": "Request a receptionist review",
     "keywords": [
       "ai receptionist os",
       "all in one ai receptionist small business",
@@ -521,16 +539,16 @@ export const servicesB: LandingContent[] = [
     ],
     "faqs": [
       {
-        "q": "How is this different from the single AI Receptionist Setup?",
-        "a": "AI Receptionist Setup is the entry point — one AI that answers and books calls. Receptionist OS is the whole front desk: calls, texts, booking, quotes, reviews and lead follow-up running together on one dashboard, fully hosted and managed. If you just need calls answered, start with the setup; if you want the entire front desk on autopilot, this is it."
+        "q": "Is this a different product from the AI Phone Receptionist?",
+        "a": "No. The receptionist is the product. Anything added around it — texting, booking, reviews, follow-up, a dashboard — is a separately scoped custom build, not a bundled monthly tier."
       },
       {
-        "q": "What does the $349/mo actually cover?",
-        "a": "Hosting, the AI usage, and the call minutes for normal local-business volume are all included — no separate Twilio or AI bills to manage. Onboarding is a one-time $1,500 to map your flow and connect your tools. Very high call volume can move the monthly tier up; we tell you where you'd land before you commit."
+        "q": "What does the monthly fee cover?",
+        "a": `${PHONE_MONTHLY_SENTENCE} Beyond ${phonePlan.includedMinutes} minutes, each AI-handled minute is ${PHONE_OVERAGE_PRICE} CAD. Taxes extra.`
       },
       {
         "q": "Will it work with the tools I already use?",
-        "a": "Yes. It connects to Twilio for calls and texts, Google Calendar for booking, Stripe for deposits, Google Business for reviews, and most common CRMs like Jobber or HubSpot. We confirm compatibility during onboarding and set up the connections for you."
+        "a": "The standard receptionist emails you a summary and does not connect to other tools. If you want a calendar, CRM or messaging connection, we check the specific product and account access and quote it separately."
       }
     ],
   },

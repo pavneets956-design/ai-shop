@@ -47,7 +47,7 @@ export default function ShopPage() {
       {/* ---------- Two lines, stated plainly ----------
           The shop and the bespoke studio work are two different products at two
           different prices. Leaving that implicit invited the reading that a
-          $129/mo productized tool and a $1,500+ custom build were the same offer
+          monthly productized tool and a $1,500+ custom build were the same offer
           quoted inconsistently. They are not. */}
       <section className="relative pb-4 pt-6">
         <div className="mx-auto max-w-4xl px-4">
@@ -227,7 +227,7 @@ export default function ShopPage() {
                               separately" — false on 5 of 10 cards, because pages like
                               /services/ai-review-engine quote the identical figure. It also
                               interpolated p.priceLabel into a sentence, producing "The From
-                              $129/mo · we run it above is this fixed-scope shop version."
+                              $X/mo · we run it above is this fixed-scope shop version."
                               Describe what the link IS; assert nothing about its pricing. */}
                           <p className="mt-2 text-[11px] leading-relaxed text-ink-soft">
                             Longer write-up of how this works, including the custom-build version.

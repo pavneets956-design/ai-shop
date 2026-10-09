@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { featuredBuilds } from "@/lib/data/solutions";
 import { getIcon } from "@/lib/icons";
+import { phonePlan, PHONE_PRICE_LABEL } from "@/lib/data/packages";
 
 const accentStyles: Record<string, { bg: string; text: string }> = {
   electric: { bg: "from-ink/6 to-ink/2", text: "text-ink" },
@@ -34,7 +35,11 @@ export default function FeaturedBuilds() {
               </h3>
               <p className="mt-1 text-xs uppercase tracking-wide text-ink/35">{b.forWho}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{b.what}</p>
-              <p className="mt-4 text-sm font-medium text-ink/80">From ${nf.format(b.startsAt)} CAD</p>
+              <p className="mt-4 text-sm font-medium text-ink/80">
+                {b.packageId === phonePlan.id
+                  ? `${PHONE_PRICE_LABEL} CAD`
+                  : `From $${nf.format(b.startsAt)} CAD`}
+              </p>
             </Link>
           </Reveal>
         );

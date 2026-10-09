@@ -10,10 +10,18 @@ import JsonLd from "@/components/JsonLd";
 import { getIcon } from "@/lib/icons";
 import ReceptionistChat from "@/components/ReceptionistChat";
 import { useCases, getUseCase, getUseCaseDemo } from "@/lib/data/useCases";
-import { getPackage, formatPackagePrice } from "@/lib/data/packages";
+import {
+  getPackage,
+  formatPackagePrice,
+  phonePlan,
+  PHONE_SETUP_PRICE,
+  PHONE_MONTHLY_PRICE,
+  PHONE_USAGE_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "@/lib/data/packages";
 import { getBuild } from "@/lib/data/solutions";
 import { site } from "@/lib/data/site";
-import { faqSchema, breadcrumbSchema, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { faqSchema, breadcrumbSchema, DEFAULT_OG_IMAGE, offerId } from "@/lib/seo";
 
 export function generateStaticParams() {
   return useCases.map((u) => ({ slug: u.slug }));
@@ -46,7 +54,9 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
   const uc = getUseCase((await params).slug);
   if (!uc) notFound();
 
-  const pkg = getPackage(uc.packageId)!;
+  // The phone receptionist is not a build tier, so it has no ServicePackage.
+  const isPhone = uc.packageId === phonePlan.id;
+  const pkg = isPhone ? undefined : getPackage(uc.packageId);
   const builds = uc.relatedBuilds.map(getBuild).filter(Boolean);
   const demo = getUseCaseDemo(uc);
 
@@ -58,12 +68,15 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
     description: uc.answer,
     provider: { "@id": `${site.url}/#organization` },
     areaServed: "Worldwide",
-    offers: {
-      "@type": "Offer",
-      price: pkg.price,
-      priceCurrency: site.currency,
-      description: formatPackagePrice(pkg),
-    },
+    // The phone Offer lives once in the root identity graph; reference it.
+    offers: isPhone
+      ? { "@id": offerId(phonePlan.id) }
+      : pkg && {
+          "@type": "Offer",
+          price: pkg.price,
+          priceCurrency: site.currency,
+          description: formatPackagePrice(pkg),
+        },
   };
 
   const howToLd = {
@@ -200,21 +213,42 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="border-glow glass-card flex h-full flex-col">
-              <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">Recommended package</p>
-              <h3 className="mt-2 text-xl font-semibold text-ink">{pkg.name}</h3>
-              <div className="mt-3 flex items-baseline gap-1">
-                <span className="font-display text-4xl font-semibold text-gradient-brand">
-                  {formatPackagePrice(pkg)}
-                </span>
-                <span className="text-sm text-ink-soft">CAD</span>
+            {isPhone ? (
+              <div className="border-glow glass-card flex h-full flex-col" data-offer="phone">
+                <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">{phonePlan.pricingLabel}</p>
+                <h3 className="mt-2 text-xl font-semibold text-ink">{phonePlan.name}</h3>
+                <div className="mt-3 flex items-baseline gap-1">
+                  <span className="font-display text-4xl font-semibold text-gradient-brand">
+                    {PHONE_SETUP_PRICE}
+                  </span>
+                  <span className="text-sm text-ink-soft">CAD setup</span>
+                </div>
+                <p className="mt-1 text-sm text-ink">
+                  then {PHONE_MONTHLY_PRICE} CAD/month, {phonePlan.term}. Taxes extra.
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-ink-soft">{PHONE_USAGE_SENTENCE}</p>
+                <p className="mt-4 flex-1 text-xs leading-relaxed text-ink-soft">{PHONE_EXCLUSIONS_SENTENCE}</p>
+                <Link href={`/create?package=${uc.packageId}`} className="btn-primary mt-6 w-full">
+                  Request this build <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
-              <p className="mt-1 text-sm text-ink-soft">{pkg.timeline}</p>
-              <p className="mt-4 flex-1 text-sm text-ink-soft">{pkg.tagline}</p>
-              <Link href={`/create?package=${uc.packageId}`} className="btn-primary mt-6 w-full">
-                Request this build <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+            ) : pkg ? (
+              <div className="border-glow glass-card flex h-full flex-col">
+                <p className="text-xs uppercase tracking-[0.18em] text-ink-soft">Recommended package</p>
+                <h3 className="mt-2 text-xl font-semibold text-ink">{pkg.name}</h3>
+                <div className="mt-3 flex items-baseline gap-1">
+                  <span className="font-display text-4xl font-semibold text-gradient-brand">
+                    {formatPackagePrice(pkg)}
+                  </span>
+                  <span className="text-sm text-ink-soft">CAD</span>
+                </div>
+                <p className="mt-1 text-sm text-ink-soft">{pkg.timeline}</p>
+                <p className="mt-4 flex-1 text-sm text-ink-soft">{pkg.tagline}</p>
+                <Link href={`/create?package=${uc.packageId}`} className="btn-primary mt-6 w-full">
+                  Request this build <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            ) : null}
           </Reveal>
         </div>
       </section>

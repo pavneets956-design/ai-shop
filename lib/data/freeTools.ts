@@ -11,6 +11,7 @@
 // quote-stage only (never "invoice"/"overdue"/"payment reminder").
 import type { Metadata } from "next";
 import { site } from "./site";
+import { PHONE_PRICE_LABEL, PHONE_PRICE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE } from "./packages";
 import { faqSchema, breadcrumbSchema, DEFAULT_OG_IMAGE } from "../seo";
 
 export interface ToolFaq {
@@ -271,7 +272,7 @@ export const freeTools: ToolRegistryEntry[] = [
     slug: "missed-call-revenue-calculator",
     order: 3,
     name: "Missed-Call Revenue Calculator",
-    cardSummary: "See the revenue slipping out of missed calls — and what an AI receptionist would need to recover to pay for itself.",
+    cardSummary: "Estimate gross revenue at risk from missed calls and explore recovery scenarios.",
     problem: "You miss calls when you're on the tools, and you don't know what it's costing you.",
     icon: "PhoneCall",
     category: "Lead recovery & growth",
@@ -279,7 +280,7 @@ export const freeTools: ToolRegistryEntry[] = [
     h1: "Missed-Call Revenue & AI Receptionist ROI Calculator",
     title: "Missed-Call Revenue Calculator (AI Receptionist ROI) — Free",
     description:
-      "Free missed-call revenue calculator: estimate the jobs and revenue you lose to missed calls, plus the payback on an AI receptionist — with every assumption visible and editable.",
+      "Free missed-call revenue calculator: estimate jobs and gross revenue at risk, with editable recovery scenarios. Job costs and recurring service fees are not deducted.",
     keywords: [
       "missed call revenue calculator",
       "missed call cost calculator",
@@ -293,9 +294,9 @@ export const freeTools: ToolRegistryEntry[] = [
       "AI phone receptionist calculator",
     ],
     answer:
-      "Multiply your monthly calls by the share you miss, the share that are genuine prospects, your close rate and your average job value to estimate the revenue at risk. This free calculator does that, then shows conservative, likely and optimistic recovery scenarios and how quickly an AI receptionist would pay for itself — with every assumption editable.",
+      "Multiply monthly calls by the share you miss, the share that are genuine prospects, your close rate and average job value to estimate gross revenue at risk. Explore three recovery scenarios with editable assumptions. The optional setup comparison measures gross revenue, before job costs and recurring service fees; it is not net savings or a payback forecast.",
     whatItCalculates:
-      "It estimates how many calls you miss each month, how many were genuine leads, the jobs and revenue that likely slip away, and what you could recover. It then shows a break-even — how many recovered jobs cover an AI receptionist's setup cost — and an estimated payback period. Every number is an estimate you control, not a hidden industry stat.",
+      "It estimates missed calls, potential leads, jobs and gross revenue at risk. It compares hypothetical recovered revenue with an optional setup cost. Job costs, monthly service fees, extra usage and maintenance are not deducted, so this comparison does not calculate net savings or financial break-even.",
     methodology: {
       heading: "The formula (and your assumptions)",
       body:
@@ -303,14 +304,14 @@ export const freeTools: ToolRegistryEntry[] = [
       bullets: [
         "Every input is yours — we don't hide inflated defaults inside the math.",
         "Conservative / likely / optimistic scenarios flex the recovery rate you set.",
-        "Break-even = setup cost ÷ average job value (jobs needed to pay it back).",
+        "Setup revenue comparison = setup cost ÷ average job value; this excludes job costs and all recurring service fees.",
         "Results are estimates to guide a decision, not guaranteed outcomes.",
       ],
     },
     workedExample: {
       heading: "Worked example",
       body:
-        "A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are genuine prospects and they close 40% at an average job value of $1,200. That's roughly 43 missed calls a month, 30 qualified leads and 12 lost jobs — about $14,500 in revenue at risk every month. Recovering even a conservative share pays back a $1,500 AI receptionist setup in a matter of weeks.",
+        `A plumbing shop takes ~50 calls a week and misses 20% of them. About 70% are genuine prospects and they close 40% at an average job value of $1,200. That's roughly 43 missed calls a month, 30 qualified leads and 12 lost jobs — about $14,500 in revenue at risk every month. In this hypothetical, recovering even a conservative share would bring in more gross revenue than an AI phone receptionist at ${PHONE_PRICE_LABEL} CAD costs — before job costs, which the calculator does not deduct.`,
     },
     assumptions: [
       "These are planning estimates based on the numbers you enter — not a promise of recovered revenue.",
@@ -321,13 +322,13 @@ export const freeTools: ToolRegistryEntry[] = [
       "Enter your call volume and the percentage you miss.",
       "Set what share are genuine prospects, your close rate and average job value.",
       "Set how much of those calls you think could be recovered.",
-      "Optionally add an AI receptionist setup cost to see payback.",
+      "Optionally add a setup cost to compare against hypothetical gross revenue.",
       "Read your revenue at risk and conservative-to-optimistic recovery.",
     ],
     takeaways: [
       "Missed calls are usually a bigger leak than contractors think.",
       "The math is only as strong as your inputs — keep them honest.",
-      "Even conservative recovery often pays back call-answering fast.",
+      "Deduct job costs, monthly fees and extra usage before deciding whether the service pays for itself.",
     ],
     faqs: [
       {
@@ -340,7 +341,7 @@ export const freeTools: ToolRegistryEntry[] = [
       },
       {
         q: "Is an AI receptionist worth it for a contractor?",
-        a: "If you regularly miss calls while on a job, recovering even a few per month can cover the cost. The break-even and payback figures here help you decide with your own numbers.",
+        a: "Compare the profit from genuinely additional jobs with setup, monthly fees and extra usage. This tool estimates gross revenue only; it does not deduct those costs or prove that a receptionist will pay for itself.",
       },
       {
         q: "Does this store my numbers?",
@@ -348,9 +349,9 @@ export const freeTools: ToolRegistryEntry[] = [
       },
     ],
     ctaGoal: "Stop missing calls and losing jobs",
-    ctaHeading: "Never miss a job-winning call again",
+    ctaHeading: "Capture call details while you work",
     ctaBody:
-      "Our AI receptionist answers every call 24/7, texts back missed callers in seconds, and books or qualifies the job — so the revenue in this calculator stops leaking.",
+      `Our AI phone receptionist answers from approved information, captures callback requests and emails a summary. ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE}`,
     ctaLabel: "See how the AI receptionist works",
     relatedServiceHref: "/ai-receptionist",
     relatedServiceLabel: "AI receptionist for contractors",
