@@ -1,4 +1,9 @@
-import { carePlan, packagePriceLabel, phonePlan } from "./packages";
+import {
+  carePlan,
+  packagePriceLabel,
+  PHONE_PRICE_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 /** Shared visible answers and FAQ schema. */
 export const HOME_OBJECTIONS = [
   {
@@ -15,7 +20,7 @@ export const HOME_OBJECTIONS = [
   },
   {
     q: "How is phone reception priced?",
-    a: `Phone reception is scoped separately from a text-based AI worker. Setup is ${packagePriceLabel("starter").toLowerCase()} CAD, with service from $${phonePlan.monthly}/month CAD plus phone and AI provider usage. We agree call routing, integrations, usage limits and the fallback before launch. The demo on this site is text-based and simulates business actions.`,
+    a: `It is a separate offer from the AI builds. ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE} The demo on this site is text-based and simulates business actions.`,
   },
   {
     q: "Who owns the finished work?",

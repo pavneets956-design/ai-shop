@@ -15,6 +15,9 @@ import {
   formatPackagePrice,
   carePlan,
   phonePlan,
+  PHONE_SETUP_PRICE,
+  PHONE_MONTHLY_PRICE,
+  PHONE_OVERAGE_PRICE,
 } from "@/lib/data/packages";
 import { HOME_OBJECTIONS } from "@/lib/data/homeFaqs";
 import { site } from "@/lib/data/site";
@@ -195,10 +198,13 @@ export default function StudioHome() {
         <div className="studio-price-note">
           <p>
             Optional care from <strong>${carePlan.monthly}/month CAD</strong>.
-            Phone reception is separately scoped: setup{" "}
-            {formatPackagePrice(packages[0]).toLowerCase()} CAD, monthly service
-            from <strong>${phonePlan.monthly}/month CAD</strong>, plus provider
-            usage.
+            The AI phone receptionist is a separate offer —{" "}
+            {phonePlan.pricingLabel.toLowerCase()}:{" "}
+            <strong>
+              {PHONE_SETUP_PRICE} setup + {PHONE_MONTHLY_PRICE}/month CAD
+            </strong>
+            , {phonePlan.includedMinutes} AI-handled minutes included, then{" "}
+            {PHONE_OVERAGE_PRICE}/minute. Month-to-month, taxes extra.
           </p>
           <Link href="/pricing" className="studio-text-link">
             Full pricing & inclusions{" "}

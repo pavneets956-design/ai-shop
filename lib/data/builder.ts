@@ -9,7 +9,7 @@
 //
 // EDIT the templates here to change what each system shows. No component changes.
 
-import { packagePriceLabel } from "@/lib/data/packages";
+import { packagePriceLabel, PHONE_PRICE_SENTENCE, PHONE_EXCLUSIONS_SENTENCE } from "@/lib/data/packages";
 
 // Every price the AI Builder shows or speaks comes from the pricing registry.
 // It used to hand-type "$1,500-$2,500" and "$1,500-$3,000" here; neither band
@@ -70,19 +70,19 @@ type Template = (biz: BusinessType) => Omit<BuildPlan, "intent">;
 
 const TEMPLATES: Record<IntentKey, Template> = {
   calls: (biz) => ({
-    system: "AI Receptionist + Booking",
-    tagline: `Never miss a call at your ${biz.noun} again.`,
+    system: "AI Phone Receptionist",
+    tagline: `Answer calls and capture callback requests for your ${biz.noun}.`,
     steps: [
-      { label: "Incoming call or text", sub: `A customer contacts your ${biz.noun}` },
-      { label: "AI receptionist answers", sub: "24/7, on-brand, in your voice" },
-      { label: "Qualifies the job", sub: "Asks the right questions, flags urgent ones" },
-      { label: "Books into your calendar", sub: "Real-time availability, no double-booking" },
-      { label: "Texts you the lead", sub: "Full details, the moment it happens" },
+      { label: "Incoming phone call", sub: `A customer calls your ${biz.noun}` },
+      { label: "AI receptionist answers", sub: "Your approved greeting, services and FAQs" },
+      { label: "Captures the callback request", sub: "Name, contact details and reason for calling" },
+      { label: "Emails you a summary", sub: "Call details for your follow-up" },
+      { label: "Uses the agreed fallback", sub: "A person or voicemail, tested before go-live" },
     ],
-    priceRange: STARTER_PRICE,
-    timeline: "≈ 5 business days",
-    impact: "Every call answered, day or night",
-    connects: "Phone · SMS · Google Calendar · your CRM",
+    priceRange: PHONE_PRICE_SENTENCE,
+    timeline: "Launch after test calls and handover",
+    impact: "Call details ready for your follow-up",
+    connects: `Phone · email summaries. ${PHONE_EXCLUSIONS_SENTENCE}`,
     workingLabels: ["Mapping your call flow…", "Matching AI workers…", "Estimating scope…"],
   }),
   quotes: (biz) => ({

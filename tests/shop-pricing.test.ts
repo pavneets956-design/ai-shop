@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { shopProducts } from "@/lib/data/shopProducts";
-import { getPackage } from "@/lib/data/packages";
+import { getPackage, phonePlan } from "@/lib/data/packages";
 
 /**
  * Price floors, enforced.
@@ -41,6 +41,9 @@ const BUILD_BILLING = new Set(["one-time", "hybrid"]);
 describe("shop pricing never drops below its tier floor", () => {
   for (const product of shopProducts) {
     if (!BUILD_BILLING.has(product.billing)) continue;
+    // The phone receptionist is not a tier — it has no floor to clear, only an
+    // exact contract. It is checked for equality with phonePlan below.
+    if (product.packageId === phonePlan.id) continue;
 
     it(`${product.slug} (${product.packageId}) clears its floor`, () => {
       const floor = getPackage(product.packageId)?.price;
@@ -65,6 +68,35 @@ describe("shop pricing never drops below its tier floor", () => {
       ).toBe(true);
     });
   }
+
+  it("every phone SKU prices EXACTLY from phonePlan — setup, monthly and label", () => {
+    const phone = shopProducts.filter((p) => p.packageId === phonePlan.id);
+    expect(phone.length, "the shop must list the AI Phone Receptionist").toBe(1);
+    for (const p of phone) {
+      expect(p.billing, `${p.slug} charges setup + monthly, so it is hybrid`).toBe("hybrid");
+      expect(p.setupPrice).toBe(phonePlan.setup);
+      expect(p.monthlyPrice).toBe(phonePlan.monthly);
+      expect(p.priceLabel).toContain(`$${phonePlan.setup}`);
+      expect(p.priceLabel).toContain(`$${phonePlan.monthly}`);
+      // The card must disclose included usage and the per-minute rate.
+      expect(p.usageNote).toContain(String(phonePlan.includedMinutes));
+      expect(p.usageNote).toContain(phonePlan.overagePerMinute.toFixed(2));
+    }
+  });
+
+  it("no other SKU sells a receptionist at a contradictory price", () => {
+    // The $129/mo "calls included" card and the $1,500 + $349/mo "Receptionist
+    // OS" card were the same receptionist at two prices. Neither may return.
+    const receptionistLike = shopProducts.filter(
+      (p) => /receptionist|answer(s|ing)? (your |every )?(calls|line)/i.test(`${p.name} ${p.outcome}`),
+    );
+    for (const p of receptionistLike) {
+      expect(p.packageId, `${p.slug} describes a receptionist but is not priced from phonePlan`).toBe(
+        phonePlan.id,
+      );
+    }
+    expect(shopProducts.some((p) => p.monthlyPrice === 129 || p.monthlyPrice === 349)).toBe(false);
+  });
 
   it("the reactivation campaign is on the floor, not under it", () => {
     // Pinned by name because this SKU is the one that was under the floor with

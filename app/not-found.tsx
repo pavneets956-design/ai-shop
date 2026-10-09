@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const DESTINATIONS = [
-  { href: "/ai-receptionist", label: "AI receptionist", hint: "Every call answered, even on a job" },
+  { href: "/ai-receptionist", label: "AI receptionist", hint: "Calls answered while you're on a job" },
   { href: "/pricing", label: "Pricing", hint: "What it costs, in CAD, no quote form" },
   { href: "/tools", label: "Free tools", hint: "Five calculators, no signup" },
   { href: "/industries", label: "By trade", hint: "What this looks like for your business" },

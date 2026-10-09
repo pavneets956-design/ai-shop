@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Loader2, Send } from "lucide-react";
-import { packages, packagePriceLabel } from "@/lib/data/packages";
+import { packagePriceLabel, phonePlan, PHONE_PRICE_LABEL } from "@/lib/data/packages";
 import { shopProducts } from "@/lib/data/shopProducts";
 import { TRADES, tradeById, intakeToLabels } from "@/lib/data/intake";
 import { site } from "@/lib/data/site";
@@ -38,6 +38,7 @@ import OccupationIntake from "@/components/intake/OccupationIntake";
 // Budget bands are rendered from the pricing registry so they can never drift
 // from the published package prices (they did: ~$1,000 / $2,500–$5,000 / $7,500+).
 const budgets = [
+  { id: phonePlan.id, label: `${PHONE_PRICE_LABEL} (AI phone receptionist)` },
   { id: "starter", label: `${packagePriceLabel("starter")} (one tool)` },
   { id: "business", label: `${packagePriceLabel("business")} (a system)` },
   { id: "custom", label: `${packagePriceLabel("custom")} (custom app)` },
@@ -100,7 +101,10 @@ export default function BuildRequestForm() {
   const reduceMotion = useReducedMotion();
 
   const presetPackage = params.get("package") ?? "";
-  const presetBuild = shopProducts.find((p) => p.slug === params.get("build"));
+  // Preserve requests from the retired duplicate receptionist listing.
+  const buildSlug = params.get("build") === "ai-receptionist-os"
+    ? "ai-receptionist-setup" : params.get("build");
+  const presetBuild = shopProducts.find((p) => p.slug === buildSlug);
   // ?goal= lets the homepage hero builder / free tools carry the intent in as the goal.
   const presetGoal = params.get("goal") ?? "";
   // ?industry= (from the showroom "Get this installed" CTA) preselects the trade.
@@ -121,9 +125,11 @@ export default function BuildRequestForm() {
     name: "",
     contact: "",
     business: "",
-    goal: presetBuild ? `${presetBuild.name} — ${presetBuild.outcome}` : presetGoal,
+    goal: presetBuild
+      ? `${presetBuild.name} — ${presetBuild.outcome}`
+      : presetGoal || (presetPackage === phonePlan.id ? phonePlan.name : ""),
     industry: presetIndustry,
-    budget: packages.some((p) => p.id === presetPackage)
+    budget: budgets.some((b) => b.id === presetPackage && b.id !== "unsure")
       ? presetPackage
       : presetBuild?.packageId ?? "",
     timeline: "",

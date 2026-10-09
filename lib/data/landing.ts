@@ -63,8 +63,9 @@ export interface LandingContent {
   sections?: LandingSection[];
   /** Comparison table (compare pages only). */
   comparison?: { alternativeLabel: string; rows: ComparisonRow[] };
-  /** Recommended package — drives the price card + CTA target. */
-  packageId?: "starter" | "business" | "custom";
+  /** Recommended package — drives the price card + CTA target. "phone" is the
+   *  AI Phone Receptionist offer (`phonePlan`), not a build tier. */
+  packageId?: "starter" | "business" | "custom" | "phone";
   ctaLabel?: string;
   secondaryCta?: LandingLink;
   ctaHeading?: string;

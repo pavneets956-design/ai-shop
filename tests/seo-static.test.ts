@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { site } from "@/lib/data/site";
-import { packages, carePlan } from "@/lib/data/packages";
+import { packages, carePlan, phonePlan } from "@/lib/data/packages";
 import { landingGroups } from "@/lib/data/registry";
 import { useCases } from "@/lib/data/useCases";
 import { landingPath, type PageType } from "@/lib/data/landing";
@@ -211,7 +211,7 @@ describe("prices derive from packages.ts", () => {
   });
 
   it("every Offer price in the identity graph comes from packages.ts", () => {
-    const allowed = new Set<number>([...packages.map((p) => p.price), carePlan.monthly]);
+    const allowed = new Set<number>([...packages.map((p) => p.price), carePlan.monthly, phonePlan.setup]);
     const catalog = organizationSchema().hasOfferCatalog as {
       itemListElement: Record<string, unknown>[];
     };
@@ -219,7 +219,41 @@ describe("prices derive from packages.ts", () => {
       .map((o) => o.price as number)
       .filter((p) => !allowed.has(p));
     expect(bad).toEqual([]);
-    expect(catalog.itemListElement).toHaveLength(packages.length + 1);
+    // three build packages + the Care Plan + the AI Phone Receptionist
+    expect(catalog.itemListElement).toHaveLength(packages.length + 2);
+  });
+
+  it("the phone receptionist Offer carries setup, monthly and per-minute terms from phonePlan", () => {
+    const catalog = organizationSchema().hasOfferCatalog as {
+      itemListElement: Record<string, unknown>[];
+    };
+    const phone = catalog.itemListElement.find((o) => String(o["@id"]).endsWith("#phone"));
+    expect(phone, "no #phone Offer in the identity graph").toBeDefined();
+    expect(phone!.price).toBe(phonePlan.setup);
+    const specs = phone!.priceSpecification as Record<string, unknown>[];
+    expect(specs.map((s) => s.price)).toEqual([
+      phonePlan.setup,
+      phonePlan.monthly,
+      phonePlan.overagePerMinute,
+    ]);
+    expect(String(phone!.description)).toContain(`${phonePlan.includedMinutes}`);
+  });
+
+  it("receptionist landing pages reference the phone Offer, never a build tier", () => {
+    const receptionistSlugs = [
+      "ai-receptionist",
+      "ai-receptionist-for-contractors",
+      "ai-voice-agent",
+      "ai-receptionist-os",
+      "ai-phone-answering-service",
+    ];
+    for (const slug of receptionistSlugs) {
+      const row = landingRows.find((r) => r.content.slug === slug);
+      if (!row) continue; // slug may live only as a redirect
+      expect(row.content.packageId, `${row.path} must recommend the phone offer`).toBe("phone");
+      const service = landingSchema(row.type, row.content).find((n) => typesOf(n).includes("Service"));
+      expect((service?.offers as Record<string, unknown>)?.["@id"]).toBe(`${site.url}/pricing#phone`);
+    }
   });
 
   it("landing Service nodes reference a package Offer by @id rather than restating a price", () => {

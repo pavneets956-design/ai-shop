@@ -1,4 +1,11 @@
 import type { LandingContent } from "./landing";
+import {
+  BUILD_AND_PHONE_PRICING,
+  PHONE_PRICE_LABEL,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 
 // Local SEO / GEO pages. Handbuilt is built in Surrey/Delta BC and works with
 // businesses across the Lower Mainland in person and remotely across Canada.
@@ -13,13 +20,13 @@ updatedAt: "2026-09-27",
     h1: "AI Automation Agency in Surrey, BC",
     title: "AI Automation Agency in Surrey, BC | Handbuilt",
     description:
-      "Handbuilt builds AI receptionists, chatbots, and automations for Surrey small businesses. Local builder, fixed CAD pricing from $1,500. Remote across Canada too.",
+      `Handbuilt builds AI receptionists, chatbots, and automations for Surrey small businesses. Local builder, fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt is a one-person AI automation studio based in Surrey/Delta BC. Pavneet builds custom AI receptionists, quote agents, chatbots, and workflow automations for Surrey small businesses — trades, clinics, salons, real estate, and service companies. Fixed CAD pricing starts at $1,500. You talk to the builder, not a sales rep.",
+      `Handbuilt is a one-person AI automation studio based in Surrey/Delta BC. Pavneet builds custom AI receptionists, quote agents, chatbots, and workflow automations for Surrey small businesses — trades, clinics, salons, real estate, and service companies. Fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}. You talk to the builder, not a sales rep.`,
     pain:
       "Most Surrey small businesses don't need another AI subscription — they need someone local who'll actually build the thing around how their business runs, stand behind it, and be reachable when something needs a tweak. Big agencies hand you off; generic SaaS half-fits and leaves the setup to you.",
     scenario:
-      "Say a Surrey home-services company is fielding calls all day from job sites and losing the after-hours ones to voicemail. An AI receptionist could answer every call on the second ring, book the job, and text the customer a confirmation — while a follow-up agent chases quiet quotes until they turn into a yes or a no.\n\nThe exact payback depends on call volume and how many missed callers would have waited for a callback, but for a local trade the fastest wins are usually missed-call recovery and same-day quotes.",
+      "Say a Surrey home-services company is fielding calls all day from job sites and losing the after-hours ones to voicemail. An AI receptionist could answer when the crew can't, take the caller's details and callback request, and email the owner a summary — while a separately built follow-up agent chases quiet quotes until they turn into a yes or a no.\n\nThe exact payback depends on call volume and how many missed callers would have waited for a callback, but for a local trade the fastest wins are usually missed-call recovery and same-day quotes.",
     steps: [
       "Discovery call — 30 minutes to map where your time and leads leak, and which AI worker pays back fastest.",
       "Scoped proposal — a flat CAD price with exactly what gets built, what it connects to, and the outcome.",
@@ -89,7 +96,7 @@ updatedAt: "2026-09-27",
       },
       {
         q: "What does it cost to get started?",
-        a: "A single AI worker (receptionist, chatbot, quote intake, or review replies) starts at $1,500 CAD and is usually live in about 5 business days. Larger multi-worker systems run $3,500–$7,500.",
+        a: `A single AI worker (chatbot, quote intake, or review replies) starts at $1,500 CAD and is usually live in about 5 business days. Larger multi-worker systems run $3,500–$7,500. The AI phone receptionist is priced separately at ${PHONE_PRICE_LABEL} CAD launch pricing.`,
       },
       {
         q: "Which AI worker should a Surrey business start with?",
@@ -109,9 +116,9 @@ updatedAt: "2026-09-27",
     h1: "AI Automation in Delta, BC",
     title: "AI Automation for Delta, BC Businesses | Handbuilt",
     description:
-      "AI receptionists, chatbots, and automations for Delta, Ladner, and Tsawwassen small businesses. Local builder in Surrey/Delta, fixed CAD pricing from $1,500.",
+      `AI receptionists, chatbots, and automations for Delta, Ladner, and Tsawwassen small businesses. Local builder in Surrey/Delta, fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI workers for Delta businesses — including Ladner, Tsawwassen, and North Delta — from its Surrey/Delta base. AI receptionists, quote agents, chatbots, and follow-up automations, trained on your real business, with fixed CAD pricing starting at $1,500. One local builder, no agency handoff.",
+      `Handbuilt builds custom AI workers for Delta businesses — including Ladner, Tsawwassen, and North Delta — from its Surrey/Delta base. AI receptionists, quote agents, chatbots, and follow-up automations, trained on your real business, with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}. One local builder, no agency handoff.`,
     pain:
       "Delta's mix of trades, farms, marine, and local shops runs lean — often the owner is the receptionist, the salesperson, and the one chasing invoices at night. Off-the-shelf AI tools rarely fit that reality, and hiring more admin is expensive. A purpose-built AI worker fills the gaps without adding payroll.",
     scenario:
@@ -169,11 +176,11 @@ updatedAt: "2026-09-27",
       },
       {
         q: "I'm a seasonal business — is AI worth it year-round?",
-        a: "Often the biggest win is handling the seasonal rush without hiring temporary admin. An AI receptionist or quote agent can absorb the busy months and simply sit quiet in the off-season, since there's no per-seat subscription forcing ongoing cost.",
+        a: "Often the biggest win is handling the seasonal rush without hiring temporary admin. A quote agent is a one-time build that can sit quiet in the off-season. The AI phone receptionist has a monthly fee, but it is month-to-month rather than a long contract.",
       },
       {
         q: "What's the smallest thing you'll build?",
-        a: "A single focused AI worker for $1,500 CAD — for example, one that answers calls and books jobs, or one that turns website inquiries into same-day quotes. It's the usual starting point before expanding.",
+        a: `A single focused AI worker for $1,500 CAD — for example, one that turns website inquiries into same-day quotes. For calls, the AI phone receptionist is a separate offer at ${PHONE_PRICE_LABEL} CAD launch pricing.`,
       },
       {
         q: "Can you connect to the tools I already use?",
@@ -181,7 +188,7 @@ updatedAt: "2026-09-27",
       },
       {
         q: "Do I have to sign a monthly contract?",
-        a: "No. The build is a one-time cost that you own. The $99/mo Care Plan is optional and can be added or dropped anytime.",
+        a: "Not for a build — that is a one-time cost that you own, and the $99/mo Care Plan is optional. The AI phone receptionist is the exception: it has a monthly fee, month-to-month.",
       },
     ],
     schema: "Service",
@@ -193,13 +200,13 @@ updatedAt: "2026-09-27",
     h1: "AI Automation for Vancouver Businesses",
     title: "AI Chatbots & Answering Services for Vancouver Businesses | Handbuilt",
     description:
-      "Custom AI receptionists, chatbots, and automations for Vancouver small businesses. Lower Mainland builder, fixed CAD pricing from $1,500, remote or in person.",
+      `Custom AI receptionists, chatbots, and automations for Vancouver small businesses. Lower Mainland builder, fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI workers for Vancouver small businesses — receptionists, chatbots, quote agents, and workflow automations trained on your real business. Based in the Lower Mainland with fixed CAD pricing from $1,500, it's a one-builder alternative to agencies and generic SaaS: you own what's built, and you talk to the person building it.",
+      `Handbuilt builds custom AI workers for Vancouver small businesses — receptionists, chatbots, quote agents, and workflow automations trained on your real business. Based in the Lower Mainland with fixed CAD pricing (${BUILD_AND_PHONE_PRICING}), it's a one-builder alternative to agencies and generic SaaS: you own what's built, and you talk to the person building it.`,
     pain:
       "Vancouver businesses are pitched AI constantly, and most of it is either a generic subscription or an agency retainer that bills for a whole team. What's missing is someone who'll build one thing that fits your workflow, get it live quickly, and be straight about what AI can and can't do for you.",
     scenario:
-      "Say a Vancouver clinic or studio is losing new-client inquiries because the front desk can't answer every call and message during busy hours. An AI receptionist and booking assistant could answer common questions, offer open appointment slots, confirm, and send reminders — so fewer prospects drift to the next result on Google.\n\nThe real gain depends on how many inquiries currently go unanswered, but for appointment-based Vancouver businesses that's often the leak worth closing first.",
+      "Say a Vancouver clinic or studio is losing new-client inquiries because the front desk can't answer every call and message during busy hours. An AI phone receptionist could answer common questions and take callers' details, and a separately scoped booking assistant could offer open appointment slots and send reminders — so fewer prospects drift to the next result on Google.\n\nThe real gain depends on how many inquiries currently go unanswered, but for appointment-based Vancouver businesses that's often the leak worth closing first.",
     steps: [
       "Discovery call — pinpoint the workflow costing you the most time or leads.",
       "Scoped proposal — flat CAD price, clear scope, and expected outcome.",
@@ -277,13 +284,13 @@ updatedAt: "2026-09-27",
     h1: "AI Automation in Langley, BC",
     title: "AI Answering Service & Automation in Langley, BC | Handbuilt",
     description:
-      "AI receptionists, quote agents, and automations for Langley small businesses and trades. Local Lower Mainland builder, fixed CAD pricing from $1,500.",
+      `AI receptionists, quote agents, and automations for Langley small businesses and trades. Local Lower Mainland builder, fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI workers for Langley businesses — City and Township — from its Surrey/Delta base. AI receptionists, quote agents, chatbots, and follow-up automations, trained on your real business, with fixed CAD pricing from $1,500. One local builder handles the whole thing, and you own what's built.",
+      `Handbuilt builds custom AI workers for Langley businesses — City and Township — from its Surrey/Delta base. AI receptionists, quote agents, chatbots, and follow-up automations, trained on your real business, with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}. One local builder handles the whole thing.`,
     pain:
       "Langley's trades, home services, and growing local businesses often run on a phone that never stops and a quote list that never gets shorter. Adding admin staff is costly, and generic AI tools don't understand a contractor's schedule. A purpose-built AI worker handles the repetitive front-office load without new payroll.",
     scenario:
-      "Say a Langley contractor is on job sites all day and misses a handful of new-customer calls every week, plus a stack of quote requests that don't get answered until the weekend. An AI receptionist could answer and book those calls in real time, while a quote agent turns inquiries into same-day priced quotes.\n\nThe payback depends on how many of those missed calls and slow quotes would have become jobs — but for a busy Langley trade, that's usually the first leak worth plugging.",
+      "Say a Langley contractor is on job sites all day and misses a handful of new-customer calls every week, plus a stack of quote requests that don't get answered until the weekend. An AI receptionist could answer those calls and email the contractor each caller's details and callback request, while a separately built quote agent turns inquiries into same-day priced quotes.\n\nThe payback depends on how many of those missed calls and slow quotes would have become jobs — but for a busy Langley trade, that's usually the first leak worth plugging.",
     steps: [
       "Discovery call — find where calls, quotes, and follow-ups are slipping.",
       "Scoped proposal — a flat CAD price and a clear build scope.",
@@ -337,19 +344,19 @@ updatedAt: "2026-09-27",
       },
       {
         q: "I'm a contractor — will this actually fit how I work?",
-        a: "That's the point of building custom. The AI worker is set up around your services, pricing, and schedule, so it books and quotes the way you actually operate. There's a dedicated AI receptionist for contractors page with the specifics.",
+        a: "That's the point of building around your business. The AI worker is set up with your services, service area and approved answers. There's a dedicated AI receptionist for contractors page with the specifics, including what the phone receptionist does not do.",
       },
       {
         q: "How much does it cost to start?",
-        a: "One AI worker is $1,500 CAD and usually live in about 5 business days. A connected multi-worker system runs $3,500–$7,500.",
+        a: `One focused custom build starts at $1,500 CAD and is usually live in about 5 business days. A connected multi-worker system runs $3,500–$7,500. ${PHONE_PRICE_SENTENCE}`,
       },
       {
         q: "Can it text customers back automatically?",
-        a: "Yes — texting a caller a confirmation, a quote, or a follow-up is one of the most common setups. Exact channels are confirmed during scoping.",
+        a: "Not as part of the AI phone receptionist, which emails you a call summary. Text-message follow-up is a separate build, quoted on its own after the channel and consent rules are confirmed.",
       },
       {
         q: "Is there a lock-in?",
-        a: "No. You own the build. The $99/mo Care Plan for monitoring and tweaks is optional.",
+        a: "No. You own a build, and the $99/mo Care Plan is optional. The AI phone receptionist is month-to-month.",
       },
     ],
     schema: "Service",
@@ -361,13 +368,13 @@ updatedAt: "2026-09-27",
     h1: "AI Automation in Abbotsford",
     title: "AI Answering Service & Automation in Abbotsford, BC | Handbuilt",
     description:
-      "AI receptionists, quote agents, and automations for Abbotsford and Fraser Valley businesses. Fixed CAD pricing from $1,500, remote or in person.",
+      `AI receptionists, quote agents, and automations for Abbotsford and Fraser Valley businesses. Fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI workers for Abbotsford and Fraser Valley businesses — receptionists, quote agents, chatbots, and follow-up automations trained on your real business. Fixed CAD pricing starts at $1,500, delivered remotely or in person from the nearby Surrey/Delta base. You work with one builder and own what's built.",
+      `Handbuilt builds custom AI workers for Abbotsford and Fraser Valley businesses — receptionists, quote agents, chatbots, and follow-up automations trained on your real business. Fixed CAD pricing (${BUILD_AND_PHONE_PRICING}), delivered remotely or in person from the nearby Surrey/Delta base. You work with one builder.`,
     pain:
       "Abbotsford runs on agriculture, trades, and family-owned businesses where the owner wears every hat. There's rarely time to research and wire up AI tools, and a generic subscription doesn't understand a Fraser Valley operation. A built-for-you AI worker takes the repetitive calls, quotes, and follow-ups off your plate.",
     scenario:
-      "Say an Abbotsford trades or agricultural-services business gets seasonal surges of calls and quote requests that overwhelm whoever's near the phone. An AI receptionist could answer and triage every call, and a quote agent could send priced quotes the same day instead of the next week.\n\nWhether that's worth it depends on how many rushed-season leads currently go cold — but for a busy Fraser Valley business, catching those is usually the clearest win.",
+      "Say an Abbotsford trades or agricultural-services business gets seasonal surges of calls and quote requests that overwhelm whoever's near the phone. An AI receptionist could answer and triage calls, and a separately built quote agent could send priced quotes the same day instead of the next week.\n\nWhether that's worth it depends on how many rushed-season leads currently go cold — but for a busy Fraser Valley business, catching those is usually the clearest win.",
     steps: [
       "Discovery call — map the busiest, most repetitive parts of your day.",
       "Scoped proposal — flat CAD price and a clear scope.",
@@ -433,7 +440,7 @@ updatedAt: "2026-09-27",
       },
       {
         q: "Is a monthly plan required?",
-        a: "No. The build is yours to keep. The $99/mo Care Plan is optional support, not a requirement.",
+        a: "Not for a build — it is yours to keep, and the $99/mo Care Plan is optional. The AI phone receptionist does have a monthly fee, month-to-month.",
       },
     ],
     schema: "Service",
@@ -447,11 +454,12 @@ updatedAt: "2026-09-27",
     "ctaHeading": "Start with the enquiry you want to handle better",
     "ctaDescription": "Send your website, service area and an example of the request or task you want help with. Pavneet will review the fit and reply with a proposed next step.",
     "slug": "ai-receptionist-surrey-bc",
+    "packageId": "phone",
     "h1": "AI Receptionist in Surrey, BC",
     "title": "AI Receptionist in Surrey, BC",
     "searchTitle": "AI Receptionist Surrey BC | Call Handling & Setup",
-    "description": "AI receptionist setup for Surrey businesses: handle routine questions, capture requests and hand calls to a person. Request a scoped proposal from a Surrey builder.",
-    "answer": "Handbuilt AI builds AI receptionist workflows for Surrey businesses that need help handling incoming enquiries. Start with the calls you miss, the questions you repeat and the requests that need a person. Pavneet, a builder based in Surrey, scopes the phone or website setup, tests the handoff and quotes the agreed work before building.",
+    "description": `AI receptionist for Surrey businesses: handle routine calls, capture requests and hand callers to a person. ${PHONE_PRICE_LABEL} CAD launch pricing.`,
+    "answer": `Handbuilt AI sets up AI phone receptionists for Surrey businesses that need help with incoming calls. Start with the calls you miss, the questions you repeat and the requests that need a person. Pavneet, a builder based in Surrey, configures the call flow, tests the handoff and runs test calls before handover. ${PHONE_PRICE_SENTENCE}`,
     "pain": "When you are working on a job, answering every call may be difficult. A useful receptionist needs to do more than reply quickly: it must collect the right details, respect your service area and give callers a reliable route to a person.",
     "steps": [
       "Send your website, hours, service area and the calls you want help with.",
@@ -463,7 +471,7 @@ updatedAt: "2026-09-27",
       "A defined call or enquiry workflow",
       "Answers based on the business information you approve",
       "Request details and a tested human handoff",
-      "A scoped quote covering setup and ongoing provider costs"
+      `Fixed terms: ${PHONE_PRICE_LABEL} CAD, month-to-month`
     ],
     "sections": [
       {
@@ -481,7 +489,11 @@ updatedAt: "2026-09-27",
       },
       {
         "heading": "Check the actual phone setup before launch",
-        "body": "A website text demo can show a conversation, but it does not verify your business phone line. A phone project needs tests of call routing, unanswered calls, message delivery and the path back to a person. Provider charges, integrations and the launch date are confirmed in the proposal."
+        "body": "A website text demo can show a conversation, but it does not verify your business phone line. Your setup needs tests of call routing, unanswered calls, summary delivery and the path back to a person, and it goes live only after those test calls pass. The launch date is confirmed once your phone provider and forwarding are checked."
+      },
+      {
+        "heading": "What the price covers",
+        "body": `${PHONE_SCOPE_SENTENCE}\n\n${PHONE_EXCLUSIONS_SENTENCE}`
       },
       {
         "heading": "If the problem is getting found",
@@ -527,11 +539,11 @@ updatedAt: "2026-09-27",
       },
       {
         "q": "How much does an AI receptionist cost in Surrey?",
-        "a": "Request a scoped quote for your phone or website workflow. The proposal identifies the setup work, integrations and ongoing provider costs. Published packages are available on the pricing page, but a phone integration needs its own scope check."
+        "a": PHONE_PRICE_SENTENCE
       },
       {
         "q": "Can it book appointments?",
-        "a": "Only when your calendar integration, availability rules and confirmation process are included and tested. Otherwise it captures a request for your team to confirm."
+        "a": "Not in the standard receptionist — it captures a callback request for your team to confirm. A calendar integration is quoted separately after checking availability rules and what confirmation means."
       },
       {
         "q": "How do I get started?",
@@ -814,7 +826,7 @@ updatedAt: "2026-09-27",
     description:
       "AI receptionists, chatbots and automations for Richmond businesses — retail, restaurants, real estate and import/export. Multilingual-capable, fixed CAD pricing.",
     answer:
-      "Handbuilt builds custom AI receptionists, chatbots and automations for Richmond businesses — retail, restaurants, real estate, and import/export firms — and can handle customer conversations in multiple languages, which matters in Richmond's diverse market. Built from nearby Surrey/Delta with fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, chatbots and automations for Richmond businesses — retail, restaurants, real estate, and import/export firms. Multi-language conversations can be scoped for a chatbot or custom build; the standard AI phone receptionist covers one language. Built from nearby Surrey/Delta with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "Richmond businesses serve a busy, multilingual customer base — and a call or message answered slowly, or only in one language, is a customer who takes their business elsewhere.",
     scenario:
       "A Richmond real estate agent and a nearby restaurant both lose inquiries that come in while they're busy — some in English, some not. An AI assistant answers instantly, in the customer's language, captures the lead or booking, and routes anything complex to a person. In a market this competitive and diverse, speed and language coverage win.",
@@ -863,7 +875,7 @@ updatedAt: "2026-09-27",
     faqs: [
       { q: "Can the AI handle other languages?", a: "English is what it handles reliably today. It can take a booking in another language, but we do not promise the same quality — accents, code-switching and trade vocabulary are where it slips. If a large share of your Richmond customers call in Cantonese, Mandarin or Punjabi, tell us during scoping and we will test it against real calls before you commit rather than after." },
       { q: "Are you local to Richmond?", a: "Handbuilt is run from nearby Surrey/Delta. Most work is remote, and an in-person meeting is easy to arrange for Richmond businesses." },
-      { q: "What does it cost to start?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. One Richmond-specific thing worth raising before you buy: a large share of Richmond businesses serve customers who prefer Cantonese or Mandarin, and English is what this handles reliably. That is a real constraint, not a hedge — if a meaningful share of your calls are not in English, it needs testing against your actual calls during scoping rather than after handover; larger systems run $3,500–$7,500." },
+      { q: "What does it cost to start?", a: `A focused custom build starts at $1,500 CAD, usually live in about 5 business days. One Richmond-specific thing worth raising before you buy: a large share of Richmond businesses serve customers who prefer Cantonese or Mandarin, and English is what this handles reliably. That is a real constraint, not a hedge — if a meaningful share of your calls are not in English, it needs testing against your actual calls during scoping rather than after handover; larger systems run $3,500–$7,500. ${PHONE_PRICE_SENTENCE}` },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -877,7 +889,7 @@ updatedAt: "2026-09-27",
     description:
       "AI receptionists, chatbots and automations for New Westminster businesses — professional services, clinics, and the Uptown/Columbia small-business districts. Fixed CAD pricing.",
     answer:
-      "Handbuilt builds custom AI receptionists, chatbots and workflow automations for New Westminster businesses — professional services, clinics, and the small-business districts around Uptown and Columbia Street. Built from nearby Surrey/Delta with fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, chatbots and workflow automations for New Westminster businesses — professional services, clinics, and the small-business districts around Uptown and Columbia Street. Built from nearby Surrey/Delta with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "New West's small professional and service firms punch above their weight but run lean — so the same phone calls, intake and follow-ups eat the hours that should go to billable work.",
     scenario:
       "A New Westminster professional practice loses new-client inquiries to voicemail and spends staff time on repetitive intake questions. An AI assistant answers inquiries, screens and books, and gathers intake details before the first meeting — freeing the team for the work only they can do.",
@@ -929,7 +941,7 @@ updatedAt: "2026-09-27",
     faqs: [
       { q: "Are you based in New Westminster?", a: "Handbuilt is run from nearby Surrey/Delta — a short trip to New West. Most work is remote, with in-person meetings easy to arrange." },
       { q: "Do you work with professional practices?", a: "Yes — intake, screening, booking and client admin are among the highest-value automations for legal, accounting and consulting firms." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "What does it cost?", a: `A focused custom build starts at $1,500 CAD, usually live in about 5 business days. ${PHONE_PRICE_SENTENCE}` },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -942,7 +954,7 @@ updatedAt: "2026-09-27",
     description:
       "AI receptionists, chatbots and automations for White Rock and South Surrey — wellness, hospitality, real estate and local retail. Right next door, fixed CAD pricing.",
     answer:
-      "Handbuilt builds custom AI receptionists, chatbots and automations for White Rock and South Surrey businesses — wellness and clinics, hospitality, real estate, and waterfront retail. Home base is right next door in Surrey/Delta, so local support is genuinely local, with fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, chatbots and automations for White Rock and South Surrey businesses — wellness and clinics, hospitality, real estate, and waterfront retail. Home base is right next door in Surrey/Delta, so local support is genuinely local, with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "White Rock's wellness, hospitality and retail businesses live on bookings and walk-in inquiries — and the ones missed while staff are with customers, or after hours, are gone for good.",
     scenario:
       "A White Rock wellness clinic and a waterfront restaurant both lose bookings that come in while they're busy. An AI assistant answers and books instantly, sends reminders to cut no-shows, and captures after-hours inquiries. In an appointment- and reservation-driven town, that's steady revenue that used to slip away.",
@@ -991,7 +1003,7 @@ updatedAt: "2026-09-27",
     faqs: [
       { q: "Are you actually near White Rock?", a: "Yes — home base is right next door in Surrey/Delta, so in-person discovery and handoff are easy. This is as local as it gets." },
       { q: "Good fit for a wellness clinic or restaurant?", a: "Very — booking, reminders and after-hours inquiry capture are among the highest-payback automations for appointment- and reservation-driven businesses." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days. White Rock and South Surrey are the one part of Metro Vancouver where an in-person meeting is genuinely easy — this studio is run from Surrey/Delta and works in this catchment directly, so scoping does not have to happen over video." },
+      { q: "What does it cost?", a: `A focused custom build starts at $1,500 CAD, usually live in about 5 business days. White Rock and South Surrey are the one part of Metro Vancouver where an in-person meeting is genuinely easy — this studio is run from Surrey/Delta and works in this catchment directly, so scoping does not have to happen over video. ${PHONE_PRICE_SENTENCE}` },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -1002,12 +1014,12 @@ updatedAt: "2026-09-27",
     h1: "AI Automation in Maple Ridge, BC",
     title: "AI Automation in Maple Ridge, BC | Handbuilt",
     description:
-      "AI receptionists, quote agents and automations for Maple Ridge and Pitt Meadows — trades, contractors, landscaping and home services. Fixed CAD pricing from $1,500.",
+      `AI receptionists, quote agents and automations for Maple Ridge and Pitt Meadows trades and home services. Fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI receptionists, quote agents and automations for Maple Ridge and Pitt Meadows businesses — trades, contractors, landscaping and home services that run on phone calls and quotes. Built from Surrey/Delta with fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, quote agents and automations for Maple Ridge and Pitt Meadows businesses — trades, contractors, landscaping and home services that run on phone calls and quotes. Built from Surrey/Delta with fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "Maple Ridge's trades and home-service businesses are out on jobs and acreage all day — so calls go to voicemail and quotes go un-chased, and the job goes to whoever called the customer back first.",
     scenario:
-      "A Maple Ridge landscaping and a contracting business both lose calls while crews are on site, and forget to follow up on estimates. An AI receptionist answers every call and books the job; an estimate follow-up agent chases quiet quotes to a yes or no. For a trade running on volume, that's jobs recovered straight from the phone.",
+      "A Maple Ridge landscaping and a contracting business both lose calls while crews are on site, and forget to follow up on estimates. An AI receptionist answers when the crew can't and emails each caller's details and callback request; a separately built estimate follow-up agent chases quiet quotes to a yes or no.",
     steps: [
       "Discovery call — find where jobs and time leak, and the fastest-payback worker.",
       "Scoped proposal — flat CAD price, clear outcome.",
@@ -1053,7 +1065,7 @@ updatedAt: "2026-09-27",
     faqs: [
       { q: "Do you cover Pitt Meadows too?", a: "Yes — Maple Ridge and Pitt Meadows both. Handbuilt is run from Surrey/Delta, with in-person meetings arrangeable." },
       { q: "I run a trade and I'm never at a desk — how does this help?", a: "That's exactly who it's for: the AI answers and books while your crews work, and chases estimates you'd otherwise forget. You just show up to booked jobs." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "What does it cost?", a: `A focused custom build starts at $1,500 CAD, usually live in about 5 business days. ${PHONE_PRICE_SENTENCE}` },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -1066,10 +1078,10 @@ updatedAt: "2026-09-27",
     description:
       "AI receptionists, quote agents and automations for Chilliwack and the Fraser Valley — trades, agriculture-adjacent and local service businesses. Fixed CAD pricing.",
     answer:
-      "Handbuilt builds custom AI receptionists, quote agents and automations for Chilliwack and Fraser Valley businesses — trades, home services, agriculture-adjacent and local service companies. Delivered remotely (with the same hands-on build) from Surrey/Delta, fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, quote agents and automations for Chilliwack and Fraser Valley businesses — trades, home services, agriculture-adjacent and local service companies. Delivered remotely (with the same hands-on build) from Surrey/Delta, fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "Chilliwack businesses often can't get the same tech help as the metro core — so they either overpay a big-city agency that hands them off, or make do with generic tools that half-fit.",
     scenario:
-      "A Chilliwack trades business loses after-hours calls and never follows up on quotes. An AI receptionist answers every call and books the job; a follow-up agent chases estimates. It doesn't matter that the builder is an hour west — the system is built around this business and delivered remotely, start to finish.",
+      "A Chilliwack trades business loses after-hours calls and never follows up on quotes. An AI receptionist answers after hours and emails each caller's details and callback request; a separately built follow-up agent chases estimates. It doesn't matter that the builder is an hour west — the system is built around this business and delivered remotely, start to finish.",
     steps: [
       "Discovery call — over video; map where leads and time leak.",
       "Scoped proposal — flat CAD price, clear outcome.",
@@ -1115,7 +1127,7 @@ updatedAt: "2026-09-27",
     faqs: [
       { q: "You're not in Chilliwack — does that matter?", a: "Not for the work. Discovery is over video, the build is done around your real business, and support is a message away. Plenty of Valley businesses prefer this to a big-city agency." },
       { q: "Do you cover the wider Fraser Valley?", a: "Yes — Chilliwack, Abbotsford and the surrounding Valley, delivered remotely from Surrey/Delta." },
-      { q: "What does it cost?", a: "A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "What does it cost?", a: `A focused custom build starts at $1,500 CAD, usually live in about 5 business days. ${PHONE_PRICE_SENTENCE}` },
     ],
     schema: "Service",
     icon: "MapPin",
@@ -1127,12 +1139,12 @@ updatedAt: "2026-09-27",
     h1: "AI Automation in Edmonton, AB",
     title: "AI Automation in Edmonton, AB | Handbuilt",
     description:
-      "AI receptionists, chatbots and automations for Edmonton businesses — trades, service firms and SMBs. Delivered remotely from BC, fixed CAD pricing from $1,500.",
+      `AI receptionists, chatbots and automations for Edmonton businesses, delivered remotely from BC. Fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "Handbuilt builds custom AI receptionists, chatbots, quote agents and automations for Edmonton businesses — trades and home services, professional firms, and growing SMBs. Delivered remotely from British Columbia, with the same hands-on build and fixed CAD pricing from $1,500.",
+      `Handbuilt builds custom AI receptionists, chatbots, quote agents and automations for Edmonton businesses — trades and home services, professional firms, and growing SMBs. Delivered remotely from British Columbia, with the same hands-on build and fixed CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     pain: "Edmonton's service businesses run on responsiveness — through long winters and busy seasons alike, the calls and inquiries missed while the team is heads-down are revenue that quietly disappears.",
     scenario:
-      "An Edmonton trades business loses calls during jobs and lets quotes go cold. An AI receptionist answers and books every call; a follow-up agent chases estimates to a decision. Built from BC, run on Edmonton time, around this specific business.",
+      "An Edmonton trades business loses calls during jobs and lets quotes go cold. An AI receptionist answers and records callback requests; a separately built follow-up agent chases estimates to a decision. Built from BC, run on Edmonton time, around this specific business.",
     steps: [
       "Discovery call — over video; map the fastest-payback worker.",
       "Scoped proposal — flat CAD price, clear outcome.",
@@ -1176,7 +1188,7 @@ updatedAt: "2026-09-27",
     ],
     faqs: [
       { q: "Can a BC builder serve an Edmonton business?", a: "Yes — the build is remote by design and identical to a local one: discovery over video, built around your real business, support always reachable." },
-      { q: "Is everything in CAD?", a: "Yes — fixed CAD pricing. A single AI worker starts at $1,500 CAD, usually live in about 5 business days." },
+      { q: "Is everything in CAD?", a: `Yes — fixed CAD pricing. A focused custom build starts at $1,500 CAD, usually live in about 5 business days. ${PHONE_PRICE_SENTENCE}` },
       { q: "Where should I start?", a: "Usually with the automation tied to lost revenue — a receptionist or follow-up agent. The discovery call pinpoints it." },
     ],
     schema: "Service",

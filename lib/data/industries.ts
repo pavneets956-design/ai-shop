@@ -1,6 +1,10 @@
 import type { LandingContent } from "./landing";
 import { industriesB } from "./_industries_b";
 import { industriesC } from "./_industries_c";
+import { BUILD_AND_PHONE_PRICING, PHONE_PRICE_LABEL } from "./packages";
+
+/** One line used wherever an industry page prices the receptionist on its own. */
+const RECEPTIONIST_ALONE = `On its own, the AI phone receptionist is a separate offer at ${PHONE_PRICE_LABEL} CAD launch pricing; booking, quoting and follow-up connections are part of a scoped system.`;
 
 const industriesA: LandingContent[] = [
   {
@@ -10,9 +14,9 @@ updatedAt: "2026-09-27",
     h1: "AI Automation for Landscaping Businesses",
     title: "AI Automation for Landscaping Businesses | Handbuilt",
     description:
-      "Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients — starting at $1,500 CAD.",
+      `Stop losing landscape jobs to voicemail. Handbuilt builds AI systems that answer calls, send quotes, and book recurring clients. CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "AI automation for a landscaping business means every call gets answered while your crew is on-site, every seasonal quote goes out without you chasing it down, and recurring clients get reminded and rebooked automatically. Handbuilt builds a connected system — AI receptionist, quote follow-up, and recurring-schedule reminders — trained on your service zones and pricing. Most landscaping setups run as a Business AI System from $3,500 CAD, or a single tool like the AI receptionist from $1,500 CAD.",
+      `AI automation for a landscaping business means calls get answered while your crew is on-site, every seasonal quote goes out without you chasing it down, and recurring clients get reminded and rebooked automatically. Handbuilt builds a connected system — AI receptionist, quote follow-up, and recurring-schedule reminders — trained on your service zones and pricing. Most landscaping setups run as a Business AI System from $3,500 CAD. ${RECEPTIONIST_ALONE}`,
     pain: "Landscaping revenue is seasonal and front-loaded. Every unanswered call in April is a full-season contract handed to a competitor — and those calls rarely come back, because the caller just dials the next landscaper on the list while you're outside with the crew.",
     scenario:
       "Take a two-crew landscaping operation in Langley serving about 80 recurring residential accounts. They might be fielding calls manually and sending quotes by hand after each site visit, losing maybe 12–15 calls a week during peak spring when the crew is on-site. An AI receptionist and automated quote-follow-up could stop that leak — capturing inquiries that would otherwise go to voicemail and cutting quote turnaround from three days to same-day. The exact gain depends on call volume and how consistently quotes are currently followed up, but those are two of the most common places landscaping revenue quietly walks out.",
@@ -53,7 +57,7 @@ updatedAt: "2026-09-27",
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, quotes, and follows up runs $3,500–$7,500 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.",
+        body: `A single tool — say just quote follow-up — starts at $1,500 CAD as a Starter setup. ${RECEPTIONIST_ALONE} A connected system that answers, quotes, and follows up runs $3,500–$7,500 CAD as a Business AI System. Scope depends on how many services and zones you run. We build what actually moves revenue, not a general-purpose chatbot.`,
       },
     ],
     packageId: "business",
@@ -164,9 +168,9 @@ updatedAt: "2026-09-27",
     h1: "AI Automation for Plumbers",
     title: "AI Answering Service for Plumbers | Handbuilt",
     description:
-      "Every missed call is a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up — starting at $1,500 CAD.",
+      `Every missed call can be a job gone to another plumber. Handbuilt builds AI that answers, books, and follows up. CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
-      "AI automation for a plumbing business means every missed call gets answered, every job request gets booked, and every quote and follow-up goes out without you touching your phone. Handbuilt connects an AI receptionist, booking, and follow-up into one system trained on your rates and service area — most plumbing setups run as a Business AI System from $3,500 CAD, or a single Starter tool from $1,500 CAD.",
+      `AI automation for a plumbing business means missed calls get answered, job requests get recorded or booked, and quotes and follow-ups go out without you touching your phone. Handbuilt connects an AI receptionist, booking, and follow-up into one system trained on your rates and service area — most plumbing setups run as a Business AI System from $3,500 CAD. ${RECEPTIONIST_ALONE}`,
     pain: "Plumbers lose jobs mid-job: the phone rings while both hands are under a sink and the caller books someone else within the hour. After-hours emergency calls go to voicemail and the job goes to whoever picks up first.",
     scenario:
       "Consider a two-truck plumbing shop in Surrey fielding roughly 25 inbound calls per week — maybe 8 of them going to voicemail during active jobs. An AI receptionist and after-hours booking could capture most of those missed calls and slot after-hours emergency requests without a dispatcher in the loop. Whether a caller waits for a callback or moves on depends on urgency, but emergency plumbing callers in particular tend to book with whoever picks up first.",
@@ -199,7 +203,7 @@ updatedAt: "2026-09-27",
       },
       {
         heading: "What it costs",
-        body: "A single tool — say just the AI receptionist — starts at $1,500 CAD as a Starter setup. A connected system that answers, books, and follows up runs $3,500–$7,500 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.",
+        body: `A single tool — say just quote follow-up — starts at $1,500 CAD as a Starter setup. ${RECEPTIONIST_ALONE} A connected system that answers, books, and follows up runs $3,500–$7,500 CAD as a Business AI System. We scope it to what actually moves the needle for your shop.`,
       },
     ],
     packageId: "business",
@@ -310,7 +314,7 @@ updatedAt: "2026-09-27",
     h1: "AI Automation for HVAC Companies",
     title: "AI Answering Service for HVAC Companies | Handbuilt",
     description:
-      "HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures every call, books service, and manages maintenance agreements — from $1,500 CAD.",
+      `HVAC call volume spikes in heatwaves and cold snaps. Handbuilt builds AI that captures calls, books service, and manages maintenance agreements. CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
       "AI automation for an HVAC company means your phone coverage matches your busiest day, not your average day — every emergency call gets answered and triaged, maintenance agreement renewals go out on schedule, and seasonal tune-up slots fill without manual outreach. Handbuilt builds a system trained on your service tiers, equipment types, and maintenance schedule. Most HVAC setups run as a Business AI System from $3,500 CAD; a focused Starter tool from $1,500 CAD.",
     pain: "HVAC revenue is feast-or-famine. A heat dome or cold snap floods the phone with emergency calls exactly when your techs are fully booked and your office is overwhelmed — which means callers hang up and call your competitor.",
@@ -345,7 +349,7 @@ updatedAt: "2026-09-27",
       },
       {
         heading: "What it costs",
-        body: "A single tool — like AI overflow call capture — starts at $1,500 CAD. A full system covering emergency triage, scheduled booking, and maintenance renewals runs $3,500–$7,500 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.",
+        body: `A single build tool — like maintenance renewal reminders — starts at $1,500 CAD. ${RECEPTIONIST_ALONE} A full system covering emergency triage, scheduled booking, and maintenance renewals runs $3,500–$7,500 CAD as a Business AI System. For a four-tech shop, recovering even five peak-week calls per season typically covers the cost.`,
       },
     ],
     packageId: "business",
@@ -582,7 +586,7 @@ updatedAt: "2026-09-27",
     h1: "AI Automation for Pest Control Businesses",
     title: "AI Automation for Pest Control Businesses | Handbuilt",
     description:
-      "Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals — from $1,500 CAD.",
+      `Pest control clients want fast answers and recurring treatment reminders. Handbuilt builds AI that captures calls, books treatments, and handles renewals. CAD pricing: ${BUILD_AND_PHONE_PRICING}.`,
     answer:
       "AI automation for a pest control business handles first contact and recurring account management: answering service calls, booking initial assessments, sending treatment reminders for recurring clients, and following up on annual contract renewals. Handbuilt builds a system trained on your pest types, treatment schedule, and service zone. Most pest control setups run as a Business AI System from $3,500 CAD; a Starter tool like automated renewal reminders from $1,500 CAD.",
     pain: "Pest control clients call with urgency — a wasp nest or rodent sighting is not a problem they'll put on hold. If the call goes to voicemail, they dial the next number in Google. Speed of response is often the entire sale.",

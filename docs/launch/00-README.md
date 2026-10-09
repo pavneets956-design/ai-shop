@@ -28,6 +28,7 @@ Sourced entirely from `research/transformation-2026-08-30/09-proof-founder-posit
 - **No "unlock", "transform", "supercharge", "revolutionary", "seamless", "cutting-edge", "AI-powered" as a lead.**
 - **No absolute promises** — not "never miss another call", not a guaranteed outcome, not a number nobody measured.
 - **Prices come from `lib/data/packages.ts`:** Starter from $1,500 · Business $3,500–$7,500 · Custom from $10,000 CAD · Care Plan from $99/mo. If those change, they change there first.
+- **⚠️ Amended 2026-10-08 — the phone receptionist has its own price.** AI Phone Receptionist launch pricing: $750 CAD setup + $179 CAD/month, 300 AI-handled minutes included, $0.25/extra minute, taxes extra, month-to-month (`phonePlan` in `lib/data/packages.ts`). Drafts written before this date pitch the phone answering at "Starter from $1,500" — `01`, `05`, `07` and `08` are marked superseded on that line. Replace it before sending. See `receptionist-pricing-implementation.md`.
 - **No calendar language.** There is no booking product. "Request", never "Book a call".
 - **No `@aibuiltbyhand.com` address.** The domain has no MX record; it cannot receive mail. Contact is `pavneets956@gmail.com` until that is fixed (`12-external-checklist.md`).
 - **⟦Bracketed text⟧ marks a decision only the owner can make.** Do not publish a draft with brackets still in it.

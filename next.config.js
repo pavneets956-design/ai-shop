@@ -54,6 +54,11 @@ const nextConfig = {
   },
   async redirects() {
     const base = [
+      // Retired marketplace fixtures contained a fictional receptionist price.
+      // The studio has no cart or customer marketplace dashboard. Route old
+      // links to the real offers before the app router or public files run.
+      { source: '/cart', destination: '/shop', permanent: true },
+      { source: '/dashboard', destination: '/shop', permanent: true },
       // Obsolete demo URLs still reported as 404s in Search Console.
       { source: '/demo/follow-up', destination: '/demo/lead', permanent: true },
       { source: '/demo/ai-receptionist', destination: '/demo/assistant', permanent: true },

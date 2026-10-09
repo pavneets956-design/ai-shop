@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ConsultationCall from "@/components/ConsultationCall";
+import { PHONE_PRICE_LABEL } from "@/lib/data/packages";
 
 export const metadata: Metadata = {
   title: "The AI Builder — a one-minute guided plan for your business",
@@ -51,7 +52,10 @@ export default function StartPage() {
         </ul>
         <h2 className="mt-10 text-2xl font-semibold text-ink">What it can recommend</h2>
         <ul className="mt-4 space-y-2 text-ink-soft">
-          <li>AI receptionist that answers every call and books jobs, day or night.</li>
+          <li>
+            AI phone receptionist that answers your line, takes callback requests and emails you a
+            summary ({PHONE_PRICE_LABEL} CAD launch pricing).
+          </li>
           <li>Website chat agent that talks to visitors 24/7 and turns them into bookings.</li>
           <li>Lead follow-up that replies to a new enquiry before it goes cold.</li>
           <li>Quote agent and invoice reminders that run without you.</li>

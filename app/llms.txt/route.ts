@@ -1,5 +1,14 @@
 import { site } from "@/lib/data/site";
-import { packages, carePlan, formatPackagePrice } from "@/lib/data/packages";
+import {
+  packages,
+  carePlan,
+  formatPackagePrice,
+  BUILD_AND_PHONE_PRICING,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_MONTHLY_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "@/lib/data/packages";
 import { landingGroups } from "@/lib/data/registry";
 import { landingPath } from "@/lib/data/landing";
 import { freeToolsByOrder, toolPath } from "@/lib/data/freeTools";
@@ -33,7 +42,6 @@ export function GET() {
   };
 
   const places = site.serviceArea.filter((p) => p !== "British Columbia");
-  const floor = formatPackagePrice(packages[0]).replace(/^From /, "");
 
   lines.push(`# ${site.legalName} (${site.name})`);
   lines.push("");
@@ -45,7 +53,7 @@ export function GET() {
     `${site.name} is a one-person AI studio run by ${site.founder}, based in ${site.region}, Canada. ` +
       `Every build is designed around one business's real services, prices, hours and tools — built by hand, ` +
       `not assembled from a template — and installed inside the phone number and accounts the business already owns. ` +
-      `Pricing is fixed in ${site.currency}, from ${floor}.`
+      `Pricing is fixed in ${site.currency}: ${BUILD_AND_PHONE_PRICING}.`
   );
   lines.push("");
 
@@ -80,6 +88,16 @@ export function GET() {
   );
   lines.push("");
 
+  // The phone receptionist is its own offer — NOT the Starter build. Quoting
+  // the $1,500 build floor as the receptionist's price is the error to avoid.
+  lines.push(`## AI Phone Receptionist (${site.currency}, launch pricing — separate from the build packages)`);
+  lines.push(`- ${PHONE_PRICE_SENTENCE}`);
+  lines.push(`- ${PHONE_SCOPE_SENTENCE}`);
+  lines.push(`- ${PHONE_MONTHLY_SENTENCE}`);
+  lines.push(`- ${PHONE_EXCLUSIONS_SENTENCE}`);
+  lines.push("- Each setup goes live only after its own test calls; launch pricing is a price, not a claim that any line is live.");
+  lines.push("");
+
   lines.push("## Shop — productized tools (fixed scope, separate from custom builds)");
   for (const p of shopProducts) {
     // timeToLaunch already reads "Live in ~5 days" / "Add-on to your dashboard",
@@ -89,8 +107,8 @@ export function GET() {
   lines.push("");
 
   lines.push("## Key pages");
-  link("/ai-receptionist-for-contractors", "AI receptionist for contractors", "The main offer: an AI receptionist that answers every call and books the job.");
-  link("/pricing", "Pricing", "Full custom-build pricing and what each package includes.");
+  link("/ai-receptionist-for-contractors", "AI receptionist for contractors", "The main offer: an AI phone receptionist that answers your line, takes the caller's details and callback request, and emails you a summary.");
+  link("/pricing", "Pricing", "Full custom-build pricing, the AI phone receptionist's terms, and what each includes.");
   link("/shop", "Shop", "Productized, fixed-scope AI tools with their own prices.");
   link("/create", "Start a build", "Request a plan and fixed quote.");
   link("/about", "About", `Who builds it: ${site.founder}, ${site.region}.`);

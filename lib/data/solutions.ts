@@ -1,6 +1,8 @@
 // Solution categories (what Handbuilt builds) + featured builds.
 // `icon` is a lucide-react icon name, mapped to a component in lib/icons.ts.
 
+import { phonePlan } from "./packages";
+
 export interface SolutionCategory {
   slug: string;
   name: string;
@@ -28,7 +30,7 @@ export const solutionCategories: SolutionCategory[] = [
     slug: "customer-communication",
     name: "Customer Communication",
     icon: "PhoneCall",
-    blurb: "Answer every call, DM and message instantly — 24/7, in your voice.",
+    blurb: "Answer calls, DMs and messages from approved information — with a route back to a person.",
     examples: ["AI receptionist", "SMS/WhatsApp responder", "DM auto-reply", "After-hours line"],
   },
   {
@@ -82,8 +84,9 @@ export interface FeaturedBuild {
   what: string;
   icon: string;
   accent: "electric" | "violet" | "cyan" | "gold";
-  startsAt: number; // CAD, ties to a package floor
-  packageId: "starter" | "business" | "custom";
+  startsAt: number; // CAD, ties to a package floor (phone: the setup fee)
+  /** "phone" = the AI Phone Receptionist; render its price with PHONE_PRICE_LABEL. */
+  packageId: "starter" | "business" | "custom" | "phone";
 }
 
 export const featuredBuilds: FeaturedBuild[] = [
@@ -91,11 +94,11 @@ export const featuredBuilds: FeaturedBuild[] = [
     slug: "ai-receptionist",
     title: "AI Receptionist",
     forWho: "Service businesses that miss calls",
-    what: "Answers calls & messages 24/7, books appointments, and texts you the details.",
+    what: "Answers your line from approved information, takes caller details and a callback request, and emails you a summary.",
     icon: "PhoneCall",
     accent: "electric",
-    startsAt: 1500,
-    packageId: "starter",
+    startsAt: phonePlan.setup,
+    packageId: "phone",
   },
   {
     slug: "ai-lead-follow-up-agent",

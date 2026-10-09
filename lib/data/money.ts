@@ -1,5 +1,13 @@
 import type { LandingContent } from "./landing";
 import { webDesignService } from "./studioServices";
+import {
+  phonePlan,
+  PHONE_PRICE_LABEL,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_MONTHLY_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 
 export const moneyPages: LandingContent[] = [
   webDesignService,
@@ -104,7 +112,7 @@ export const moneyPages: LandingContent[] = [
       },
       {
         heading: "Who this is for",
-        body: "Business owners with a specific problem that existing software doesn't solve well, and founders with an AI product idea they want to validate without committing to a $100K+ build. Budget-wise, this is the right fit if you have $7,500–25,000 CAD to invest and want to own the outcome. If your need is simpler — a chatbot, an intake form, or a reception bot — the Starter or Business packages are a better starting point.",
+        body: `Business owners with a specific problem that existing software doesn't solve well, and founders with an AI product idea they want to validate without committing to a $100K+ build. Budget-wise, this is the right fit if you have $7,500–25,000 CAD to invest and want to own the outcome. If your need is simpler — a chatbot or an intake form — the Starter or Business packages are a better starting point; for calls, the AI Phone Receptionist is a separate ${PHONE_PRICE_LABEL} CAD offer.`,
       },
     ],
     packageId: "custom",
@@ -218,8 +226,8 @@ secondaryCta: {
     eyebrow: "AI Build",
     h1: "AI Receptionist for Small Businesses",
     title: "AI Receptionist for Small Businesses | Handbuilt AI",
-    description: "Plan an AI receptionist around your real enquiries, with approved answers, clear human handoff and tested notifications. Request a setup review.",
-    answer: "An AI receptionist can handle defined questions and collect enquiry details when your team is busy. Handbuilt scopes the channel, the information it may use and the handoff to a person before building. Website or text intake and live phone answering have different requirements; your proposal makes those boundaries clear.",
+    description: `AI phone receptionist for small businesses: ${PHONE_PRICE_LABEL} CAD launch pricing, ${phonePlan.includedMinutes} minutes included, tested human fallback. Request a setup review.`,
+    answer: `An AI phone receptionist answers your line with approved information, takes the caller's details and reason for calling, and emails you a summary — with a tested route back to a person. ${PHONE_PRICE_SENTENCE}`,
     pain: "A missed enquiry needs a reliable next step. A natural-sounding answer is not enough if the details never reach you or a caller cannot ask for a person.",
     scenario: "Illustrative example: a trades business wants after-hours enquiries recorded for review. The agreed workflow asks about the job and service area, records a callback request and notifies the owner. It does not confirm availability or a price that the owner has not authorised.",
     steps: [
@@ -228,16 +236,11 @@ secondaryCta: {
   "Build the agreed intake and notification flow with visible failure handling.",
   "Test ordinary requests, unclear answers, out-of-area work and requests for a person."
 ],
-    gets: [
-  "Business-specific intake questions and approved information",
-  "Defined human handoff and fallback requirements",
-  "An enquiry notification workflow scoped to your tools",
-  "Representative scenario testing and an agreed handover"
-],
+    gets: phonePlan.setupIncludes,
     sections: [
   {
-    "heading": "Choose the channel before comparing the price",
-    "body": "The recommended Starter package is for a scoped initial setup; it is not a promise that every phone, text and calendar integration is included. Phone answering requires a separate review of the number, forwarding, telephony, usage charges and fallback. Website intake has different requirements.\n\nCompare the complete proposal: setup, third-party services, ongoing support and what happens when a dependency is unavailable. Current package prices are shown in the package card and pricing page."
+    "heading": "What the price includes",
+    "body": `${PHONE_SCOPE_SENTENCE}\n\n${PHONE_MONTHLY_SENTENCE}\n\n${PHONE_EXCLUSIONS_SENTENCE} Website or text intake is a different build with its own price.`
   },
   {
     "heading": "Make the handoff part of the design",
@@ -252,7 +255,7 @@ secondaryCta: {
     "body": "If your main problem is a few web requests that need a callback, a clear form and reliable notification may be sufficient. If most calls require your personal judgement, consider human answering or a message-taking flow. Start with the actual missed work and your capacity to respond, rather than buying a system because it is called AI."
   }
 ],
-    packageId: "starter",
+    packageId: "phone",
     ctaLabel: "Request a receptionist review",
     keywords: ["AI receptionist local business Canada", "after hours answering service AI", "AI receptionist for contractors", "missed call AI chatbot", "automated receptionist small business BC", "ai answering service setup", "ai receptionist for small business", "ai phone answering service", "automated receptionist setup", "ai call answering business"],
     related: [
@@ -279,12 +282,12 @@ secondaryCta: {
 ],
     faqs: [
   {
-    "q": "Does the Starter package include live phone answering?",
-    "a": "Do not assume it does. Phone answering is scoped separately for your phone setup, integrations and fallback requirements. The proposal specifies the included channel and ongoing charges."
+    "q": "How much does the AI phone receptionist cost?",
+    "a": `${PHONE_PRICE_SENTENCE} It is a separate offer from the Starter build.`
   },
   {
     "q": "Can it book appointments?",
-    "a": "Only where the agreed implementation connects to an actual scheduling system and completes its availability and confirmation steps. Otherwise it can collect a request for a person to review."
+    "a": "Calendar booking is not part of the standard receptionist. It takes a callback request for you to confirm. Connecting a real scheduling system is quoted separately."
   },
   {
     "q": "Can I keep my current number?",
@@ -347,7 +350,7 @@ secondaryCta: {
     faqs: [
       {
         q: "What's the difference between this and the Starter package?",
-        a: "The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or receptionist. The Business AI System ($3,500–$7,500) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.",
+        a: `The Starter AI Setup ($1,500) is a single focused tool — usually a chatbot or quote intake. (A phone receptionist on its own is the separate ${PHONE_PRICE_LABEL} CAD AI Phone Receptionist.) The Business AI System ($3,500–$7,500) connects 2–4 tools into one end-to-end workflow. The Starter is great for solving one problem. The System is for businesses ready to automate a whole workflow.`,
       },
       {
         q: "Do I need to replace my current tools?",
@@ -403,7 +406,7 @@ secondaryCta: {
         heading: "What Actually Gets Automated",
         body: "Every engagement starts with which tasks eat the most time for the least value. Common automations Handbuilt installs:",
         bullets: [
-          "Phone answering and call routing — AI receptionist that picks up, qualifies, and books",
+          `Phone answering — an AI receptionist that takes caller details and emails you a summary (the separate ${PHONE_PRICE_LABEL} CAD AI Phone Receptionist)`,
           "Lead follow-up — SMS and email sequences that chase every inquiry until you get a yes or no",
           "Quote and estimate generation from intake forms",
           "Appointment scheduling and confirmation reminders",
@@ -475,54 +478,53 @@ secondaryCta: {
     eyebrow: "AI Build",
     h1: "AI Receptionist for Contractors",
     title: "AI Receptionist for Contractors in BC | Handbuilt",
-    description: "AI receptionist built for contractors — answers every call, books jobs, captures quotes. $1,500 CAD. Live in 5 business days. Surrey BC.",
-    answer: "An AI receptionist for contractors answers every call, books jobs, captures quote requests, and texts customers back — even while you’re on the job site. Installed and working in about 5 business days. $1,500 CAD, no monthly fee required. Built by Handbuilt in Surrey BC.",
+    description: `AI phone receptionist for contractors: answers your line, takes job details and a callback request, emails you a summary. ${PHONE_PRICE_LABEL} CAD launch pricing.`,
+    answer: `An AI receptionist for contractors answers your business line while you’re on the job site, takes the caller’s details and what the job is, records a callback request and emails you a summary — with a tested fallback to you or voicemail. ${PHONE_PRICE_SENTENCE} Built by Handbuilt in Surrey BC.`,
     pain: "You’re on a roof, under a sink, or inside a panel box when your phone rings. You can’t answer. The caller hangs up, Googles the next contractor, and books with them instead. Voicemail doesn’t help — most callers won’t leave one. Every missed call is a lost job, and you’re losing them every day you’re out doing the actual work.",
-    scenario: "Imagine a fencing contractor running a 4-person crew in the Fraser Valley. Between April and October, the phone rings 15–20 times a day. Half those calls come in while the crew is on site. The contractor’s wife handles calls when she can, but she has her own job. They’re losing an estimated 5–8 leads a week to missed calls and slow callbacks.\n\nIn this hypothetical scenario, Handbuilt would install an AI receptionist that picks up every call, asks what the caller needs, captures the job details, and books an estimate slot on the contractor’s calendar. The caller gets a confirmation text. The contractor gets a summary. No more napkin notes, no more voicemail tag.",
+    scenario: "Imagine a fencing contractor running a 4-person crew in the Fraser Valley. Between April and October, the phone rings 15–20 times a day. Half those calls come in while the crew is on site. The contractor’s wife handles calls when she can, but she has her own job. They’re losing an estimated 5–8 leads a week to missed calls and slow callbacks.\n\nIn this hypothetical scenario, Handbuilt would set up an AI receptionist on the contractor’s line that answers when the crew can’t, asks what the caller needs and where the job is, records a callback request and emails the contractor a summary. Anything it can’t handle goes to the agreed fallback. The contractor calls back with the details already in hand instead of playing voicemail tag.",
     steps: [
-      "Discovery call — Pavneet learns your trade, your services, your booking flow, and how calls come in today. 20 minutes, no pitch.",
-      "Scoped flat-price proposal — You get a fixed $1,500 CAD price, a list of exactly what the receptionist will handle, and a go-live date.",
-      "Build & test on your real calls — Pavneet builds the receptionist, trains it on your services and pricing, and tests it against the kinds of calls your business actually gets.",
-      "Handoff + optional Care Plan — The receptionist goes live on your phone line. You get a walkthrough. Optional $99/mo Care Plan if you want ongoing tuning as your services change."
+      "Setup review — Pavneet learns your trade, your services, your service area and how calls come in today.",
+      `Fixed setup — ${PHONE_PRICE_LABEL} CAD launch pricing, for one number, one routing flow and one language, with the approved answers written down before anything is built.`,
+      "Build & test — the receptionist is configured with your approved FAQs, services and greeting, and test calls cover normal requests, unclear callers and the fallback to a person.",
+      "Handover — it goes on your line only after the test calls pass. The monthly fee covers operation, maintenance, the included minutes and small changes."
     ],
     gets: [
-      "Every call answered — nights, weekends, while you’re on the job site",
-      "Job details captured and texted to you in real time",
-      "Estimate and service appointments booked directly on your calendar",
-      "Callers get an instant confirmation text so they stop shopping around",
-      "Trained on your specific services, service area, and pricing",
-      "No monthly contract required — one-time $1,500 CAD build"
+      "Your line answered when you can’t pick up, with your business name and greeting",
+      "Caller name, contact details, reason for calling and callback request captured",
+      "An emailed summary of each handled call",
+      "Approved answers about your services and service area",
+      "A configured and tested fallback to you or voicemail",
+      `Month-to-month: ${PHONE_PRICE_LABEL} CAD, ${phonePlan.includedMinutes} minutes included`
     ],
     sections: [
       {
         heading: "Why Contractors Lose Jobs to Missed Calls",
-        body: "Speed wins in trades. When a homeowner’s pipe bursts or their fence blows down, they call the first few contractors on Google. The one who picks up books the job. The others get a voicemail the homeowner never follows up on. Plenty of contractors describe losing work exactly this way. An AI receptionist answers every call instantly, so you’re always the one who picks up.",
+        body: "Speed matters in trades. When a homeowner’s pipe bursts or their fence blows down, they often call several contractors. If nobody picks up, many callers move on rather than leave a voicemail. An AI receptionist gives the caller a real answer and gets their details to you, so the callback starts from a recorded request instead of a missed call.",
         bullets: [
-          "Most callers won’t leave a voicemail — they’ll call the next contractor",
-          "Returning calls 2 hours later means the job is already booked",
-          "Hiring a full-time receptionist costs $35,000–$45,000/year plus benefits",
-          "A shared answering service doesn’t know your trade, your pricing, or your calendar"
+          "Many callers won’t leave a voicemail",
+          "A late callback with no notes means starting from scratch",
+          "A shared answering service doesn’t know your trade or your service area"
         ]
       },
       {
         heading: "What the AI Receptionist Actually Does",
-        body: "It’s not a phone tree. It’s not “press 1 for service.” The receptionist has a natural conversation with the caller, trained specifically on your business:",
+        body: "It’s not a phone tree. It’s not “press 1 for service.” The receptionist follows an agreed call flow using information you approve:",
         bullets: [
           "Answers calls with your business name and greeting",
           "Asks what the caller needs — new install, repair, quote, or emergency",
-          "Captures job details: address, scope, timeline, photos if texted",
-          "Books an estimate slot on your real calendar",
-          "Sends the caller a confirmation text immediately",
-          "Texts you a summary so you know what’s coming before you call back"
+          "Answers approved questions about your services and service area",
+          "Records the caller’s name, contact details, reason and callback request",
+          "Emails you a summary so you know what’s coming before you call back",
+          "Hands off to the tested fallback when a caller needs a person"
         ]
       },
       {
-        heading: "Built for Trades — Not a Generic Chatbot",
-        body: "Generic answering services don’t know the difference between a service call and a new install. They can’t quote a ballpark for a 50-foot cedar fence or tell a caller whether you do panel upgrades. This receptionist is trained on your trade, your service list, and your area. It speaks your customers’ language because it was built around your business, not a template."
+        heading: "What it does not do",
+        body: `It uses your approved information and does not quote unapproved prices. ${PHONE_EXCLUSIONS_SENTENCE}`
       }
     ],
-    packageId: "starter" as const,
-    ctaLabel: "Get your AI receptionist",
+    packageId: "phone" as const,
+    ctaLabel: "Request a receptionist review",
     keywords: [
       "ai receptionist for contractors",
       "ai answering service for trades",
@@ -541,31 +543,31 @@ secondaryCta: {
     faqs: [
       {
         q: "How much does an AI receptionist for contractors cost?",
-        a: "$1,500 CAD. That covers the build, training on your business, and go-live. No monthly fee is required, though a $99/mo Care Plan is available if you want ongoing adjustments."
+        a: `${PHONE_PRICE_SENTENCE} ${PHONE_MONTHLY_SENTENCE}`
       },
       {
         q: "Will my customers know they’re talking to AI?",
-        a: "The receptionist has a natural conversational flow trained on your business. Most callers care about getting an answer and a booking, not who’s answering. You can choose whether to disclose it’s AI — we recommend transparency."
+        a: "We recommend the greeting says so. The receptionist follows an agreed call flow and offers the caller a way to reach a person."
       },
       {
-        q: "Can it book jobs directly into my calendar?",
-        a: "Yes. It connects to Google Calendar, Outlook, Jobber, Housecall Pro, or whatever scheduling tool you use. The caller gets a confirmed time slot, and you get a notification with the job details."
+        q: "Can it put jobs straight into my calendar?",
+        a: "Not in the standard receptionist. It records a callback request and emails you the details so you can confirm the time. Calendar booking can be quoted separately."
       },
       {
         q: "What happens if a caller has a question it can’t answer?",
-        a: "It captures the question, tells the caller you’ll follow up, and texts you immediately with the details. It doesn’t make up answers or guess at pricing it hasn’t been trained on."
+        a: "It records the question, tells the caller you’ll follow up, and includes it in the emailed summary — or hands off to the agreed fallback. It only answers from the information you approved."
       },
       {
         q: "Does it work after hours and on weekends?",
-        a: "24/7. That’s the point. The calls you miss at 7 PM on a Tuesday or 9 AM on a Saturday are the ones your competitor picks up. The receptionist never clocks out."
+        a: "It can answer outside your business hours if that is the routing you choose. The fallback for calls it cannot handle is configured and tested before go-live."
       },
       {
         q: "How long does setup take?",
-        a: "About 5 business days from the discovery call to go-live. Pavneet builds it, trains it on your services and pricing, tests it, and connects it to your phone line."
+        a: "The timeline is confirmed in the setup review and depends on your phone provider and call forwarding. It goes live only after the test calls pass."
       },
       {
         q: "I already use an answering service. Why switch?",
-        a: "A human answering service takes messages. An AI receptionist trained on your trade can qualify the call, capture job details, book the estimate, and text the caller a confirmation — all in the same call. And it costs a fraction of what you’re paying monthly."
+        a: "You may not need to. A human service is better when most calls need judgement. The AI receptionist suits predictable calls: it answers from approved information, records the details and emails you a summary, at a fixed monthly price with included minutes."
       },
       {
         q: "Which trades does this work for?",
@@ -940,7 +942,7 @@ secondaryCta: {
     description:
       "Done-for-you AI automation for Canadian businesses — receptionists, chatbots, lead follow-up and custom systems. Fixed CAD pricing, delivered remotely nationwide.",
     answer:
-      "Handbuilt provides done-for-you AI automation for businesses across Canada — AI receptionists, chatbots, lead follow-up, quote and booking automation, and custom AI tools. Based in BC and delivered remotely nationwide, with fixed CAD pricing from $1,500 and one builder accountable start to finish.",
+      `Handbuilt provides done-for-you AI automation for businesses across Canada — AI receptionists, chatbots, lead follow-up, quote and booking automation, and custom AI tools. Based in BC and delivered remotely nationwide, with fixed CAD pricing — custom builds from $1,500, the AI phone receptionist at ${PHONE_PRICE_LABEL} — and one builder accountable start to finish.`,
     pain: "Canadian small businesses want practical AI that actually works in their operation — not a US-priced agency retainer or a generic SaaS tool that half-fits. Finding someone who'll build the real thing, in CAD, and stand behind it is the hard part.",
     scenario:
       "A business in Alberta, Ontario or the Maritimes wants AI to stop missed-call losses and slow lead follow-up. We scope it over video, build the system around their real services and tools, test it live, and hand it over — same process whether they're in Surrey or Halifax. Fixed CAD pricing, no surprise US-dollar invoices.",

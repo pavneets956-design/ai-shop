@@ -1,17 +1,31 @@
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
-import { packagePriceLabel, phonePlan } from "@/lib/data/packages";
+import {
+  phonePlan,
+  PHONE_SETUP_PRICE,
+  PHONE_MONTHLY_PRICE,
+  PHONE_OVERAGE_PRICE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "@/lib/data/packages";
+
+// Every figure here comes from `phonePlan`. The JSON-LD Offer (lib/seo.ts
+// phoneOffer) states the same terms, so this card is what makes it truthful.
 export default function PhoneReceptionistPlan() {
   const rows = [
-    { k: "Setup", v: packagePriceLabel("starter") + " CAD one-time" },
-    { k: "Monthly service", v: "From $" + phonePlan.monthly + " CAD / month" },
-    { k: "Provider usage", v: "Phone and AI usage charged separately" },
-    { k: "Limits & fallback", v: "Agreed and tested as part of your scope" },
+    { k: "Setup", v: `${PHONE_SETUP_PRICE} CAD one-time, fixed` },
+    { k: "Monthly service", v: `${PHONE_MONTHLY_PRICE} CAD / month, ${phonePlan.term}` },
+    { k: "Included minutes", v: `${phonePlan.includedMinutes} AI-handled minutes / month` },
+    { k: "Extra minutes", v: `${PHONE_OVERAGE_PRICE} CAD per minute` },
+    { k: "Small changes", v: `Up to ${phonePlan.includedChangeMinutes} min / month, no rollover` },
+    { k: "Taxes", v: "Extra" },
   ];
   return (
-    <article className="glass-card flex h-full flex-col p-7 sm:p-8">
+    <article className="glass-card flex h-full flex-col p-7 sm:p-8" id="phone">
       <Phone className="mb-4 h-7 w-7 text-electric" aria-hidden="true" />
-      <h3 className="text-2xl font-semibold text-ink">AI Phone Receptionist</h3>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
+        {phonePlan.pricingLabel}
+      </p>
+      <h3 className="mt-1 text-2xl font-semibold text-ink">{phonePlan.name}</h3>
       <p className="mt-2 text-sm text-ink-soft">
         A call flow built around your business, with a clear route back to a
         person.
@@ -29,13 +43,9 @@ export default function PhoneReceptionistPlan() {
           </div>
         ))}
       </dl>
-      <ul className="mt-6 space-y-3">
-        {[
-          "Capture caller details and the reason for their call",
-          "Answer agreed questions from your business information",
-          "Route enquiries and send summaries through supported integrations",
-          "Test normal calls, unclear requests and human handover",
-        ].map((x) => (
+      <p className="mt-6 text-sm font-semibold text-ink">Setup includes</p>
+      <ul className="mt-3 space-y-3">
+        {phonePlan.setupIncludes.map((x) => (
           <li className="flex gap-3 text-sm text-ink-soft" key={x}>
             <Check
               className="h-4 w-4 shrink-0 text-electric"
@@ -45,12 +55,21 @@ export default function PhoneReceptionistPlan() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-xs text-ink-soft">
-        {phonePlan.usage} Booking and text-message integrations depend on your
-        accounts and agreed scope.
-      </p>
+      <p className="mt-6 text-sm font-semibold text-ink">Monthly includes</p>
+      <ul className="mt-3 space-y-3">
+        {phonePlan.monthlyIncludes.map((x) => (
+          <li className="flex gap-3 text-sm text-ink-soft" key={x}>
+            <Check
+              className="h-4 w-4 shrink-0 text-electric"
+              aria-hidden="true"
+            />
+            {x}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 text-xs text-ink-soft">{PHONE_EXCLUSIONS_SENTENCE}</p>
       <Link
-        href="/create?goal=AI%20Phone%20Receptionist"
+        href="/create?package=phone&goal=AI%20Phone%20Receptionist"
         className="studio-button mt-6"
       >
         Discuss phone reception ↗

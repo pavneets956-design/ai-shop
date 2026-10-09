@@ -94,7 +94,7 @@ export default function MissedCallCalculator() {
     `Jobs lost/mo: ${formatNumber(r.jobsLostPerMonth)}`,
     `Revenue at risk: ${money(r.revenueAtRiskMonthly)}/mo (${money(r.revenueAtRiskAnnual)}/yr)`,
     likely ? `Likely recovery: ${money(likely.recoveredRevenueMonthly)}/mo` : "",
-    r.paybackMonths > 0 ? `Payback on setup: ~${r.paybackMonths} months` : "",
+    r.paybackMonths > 0 ? `Gross revenue to match setup: ~${r.paybackMonths} months (before job costs and recurring service fees)` : "",
   ].filter(Boolean).join("\n");
 
   const entry = getFreeTool(SLUG)!;
@@ -112,7 +112,7 @@ export default function MissedCallCalculator() {
             <CurrencyField label="Average job value" value={f.avgJobValue} onChange={set("avgJobValue")} />
             <PercentField label="% you could recover" value={f.recoverableRate} onChange={set("recoverableRate")} hint="With call answering" />
             <CurrencyField label="Current answering cost" value={f.currentAnsweringCost} onChange={set("currentAnsweringCost")} hint="Per month, optional" />
-            <CurrencyField label="AI receptionist setup" value={f.aiSetupCost} onChange={set("aiSetupCost")} hint="Optional — for payback" />
+            <CurrencyField label="AI receptionist setup" value={f.aiSetupCost} onChange={set("aiSetupCost")} hint="Optional — compare gross revenue" />
           </FieldGrid>
           <SelectField label="Currency" value={f.currency} onChange={set("currency")} options={[{ value: "CAD", label: "CAD ($)" }, { value: "USD", label: "USD ($)" }]} />
           <div className="flex flex-wrap gap-2 pt-1">
@@ -154,7 +154,7 @@ export default function MissedCallCalculator() {
 
             {r.paybackMonths > 0 && (
               <ResultBanner tone="good">
-                <span className="font-semibold">Break-even:</span> about {r.jobsToBreakEven} recovered job{r.jobsToBreakEven === 1 ? "" : "s"} covers the setup cost — an estimated payback of ~{r.paybackMonths} month{r.paybackMonths === 1 ? "" : "s"} at the likely scenario.
+                <span className="font-semibold">Setup revenue comparison:</span> about {r.jobsToBreakEven} recovered job{r.jobsToBreakEven === 1 ? "" : "s"} would generate gross revenue equal to the setup cost — about {r.paybackMonths} month{r.paybackMonths === 1 ? "" : "s"} at the likely scenario. This is not net payback: job costs, monthly service fees, extra usage and maintenance are not deducted.
               </ResultBanner>
             )}
           </div>

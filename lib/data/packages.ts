@@ -96,13 +96,102 @@ export const carePlan: CarePlan = {
   ],
 };
 
-/** Existing phone-service price, centralised from PhoneReceptionistPlan. */
+const nf = new Intl.NumberFormat("en-CA");
+
+/**
+ * AI Phone Receptionist — owner-approved LAUNCH PRICING (CAD). This is the
+ * only place the receptionist's commercial terms live. It is a separate,
+ * narrow offer: it is NOT the Starter build ($1,500) and NOT a Business system.
+ *
+ * "Launch pricing" names the price. It is not a claim that any particular
+ * phone line is live or has passed testing — each setup goes live only after
+ * its own test calls and handover.
+ *
+ * Must never be described as: unlimited calls or support, no monthly fee,
+ * provider usage charged on top of the included minutes, or including booking,
+ * CRM, SMS or a dashboard. No uptime, outcome or job-booking guarantees.
+ */
 export const phonePlan = {
-  monthly: 250,
-  usage: "Phone and AI provider usage is additional; estimates and limits are agreed before launch.",
+  id: "phone" as const,
+  name: "AI Phone Receptionist",
+  pricingLabel: "Launch pricing",
+  setup: 750, // one-time, fixed
+  monthly: 179, // month-to-month
+  includedMinutes: 300, // AI-handled minutes per month
+  overagePerMinute: 0.25, // per AI-handled minute beyond includedMinutes
+  includedChangeMinutes: 30, // small customer changes per month, no rollover
+  term: "month-to-month",
+  /** What the fixed setup fee covers. */
+  setupIncludes: [
+    "One business, one phone number, one routing flow and one language",
+    "Approved FAQs, services, service area and greeting",
+    "Captures caller name, contact details, reason for calling and callback request",
+    "An emailed summary of each handled call",
+    "A configured and tested fallback to a person or voicemail",
+    "Test calls before go-live, then a handover walkthrough",
+  ],
+  /** What the monthly fee covers. */
+  get monthlyIncludes(): string[] {
+    return [
+      "Ongoing operation and maintenance of the agreed call flow",
+      `${this.includedMinutes} AI-handled minutes a month; extra minutes $${this.overagePerMinute.toFixed(2)} each`,
+      `Up to ${this.includedChangeMinutes} minutes of small changes a month (does not roll over)`,
+      "Correction of faults in the agreed setup",
+    ];
+  },
+  /** Never implied as included. Quoted separately if wanted. */
+  notIncluded: [
+    "Calendar booking",
+    "CRM integration",
+    "Text messaging (SMS)",
+    "Dashboards",
+    "Extra numbers, locations, languages or routing flows",
+  ],
 };
 
-const nf = new Intl.NumberFormat("en-CA");
+const money = (n: number) =>
+  Number.isInteger(n) ? `$${nf.format(n)}` : `$${n.toFixed(2)}`;
+
+/** "$750" */
+export const PHONE_SETUP_PRICE = money(phonePlan.setup);
+/** "$179" */
+export const PHONE_MONTHLY_PRICE = money(phonePlan.monthly);
+/** "$0.25" */
+export const PHONE_OVERAGE_PRICE = money(phonePlan.overagePerMinute);
+/** "$750 setup + $179/month" — compact label for cards and table cells. */
+export const PHONE_PRICE_LABEL = `${PHONE_SETUP_PRICE} setup + ${PHONE_MONTHLY_PRICE}/month`;
+/** "$750 setup + $179/month CAD (launch pricing)" */
+export const PHONE_PRICE_SHORT = `${PHONE_PRICE_LABEL} CAD (launch pricing)`;
+/** One-sentence commercial terms. Use wherever a receptionist price is stated. */
+export const PHONE_PRICE_SENTENCE =
+  `AI Phone Receptionist launch pricing: ${PHONE_SETUP_PRICE} CAD fixed setup, then ` +
+  `${PHONE_MONTHLY_PRICE} CAD/month, month-to-month. Includes ${phonePlan.includedMinutes} ` +
+  `AI-handled minutes a month; extra minutes are ${PHONE_OVERAGE_PRICE} each. Taxes extra.`;
+/** What the narrow offer is. */
+export const PHONE_SCOPE_SENTENCE =
+  "Setup covers one business, one number, one routing flow and one language: approved FAQs, " +
+  "services, service area and greeting; caller name, contact details, reason and callback " +
+  "request; an emailed call summary; a configured and tested fallback; test calls and handover.";
+/** What the monthly fee is. */
+export const PHONE_MONTHLY_SENTENCE =
+  `The monthly fee covers operation and maintenance, ${phonePlan.includedMinutes} AI-handled ` +
+  `minutes and up to ${phonePlan.includedChangeMinutes} minutes of small changes a month ` +
+  "(no rollover). Faults in the agreed setup are corrected at no charge.";
+/** The boundary. Use beside any mention of booking, CRM, SMS or dashboards. */
+export const PHONE_EXCLUSIONS_SENTENCE =
+  "Calendar booking, CRM, text messaging, dashboards, extra numbers or languages and other " +
+  "features beyond this scope are not included and are quoted separately.";
+/**
+ * For sentences that name receptionists alongside other builds: keeps the
+ * $1,500 build floor from reading as the receptionist's price.
+ * "custom builds from $1,500, AI phone receptionist $750 setup + $179/month"
+ */
+export const BUILD_AND_PHONE_PRICING =
+  `custom builds from $${nf.format(packages[0].price)}, AI phone receptionist ${PHONE_PRICE_LABEL}`;
+/** Replaces the old "provider usage is additional" line. */
+export const PHONE_USAGE_SENTENCE =
+  `No separate phone or AI usage charge for the first ${phonePlan.includedMinutes} AI-handled ` +
+  `minutes each month; beyond that, ${PHONE_OVERAGE_PRICE} CAD per minute.`;
 
 export function formatPackagePrice(
   p: Pick<ServicePackage, "price" | "priceHigh" | "priceFormat">
@@ -114,6 +203,9 @@ export function formatPackagePrice(
     return p.priceHigh ? `${amount}–$${nf.format(p.priceHigh)}` : `From ${amount}`;
   return "Request quote";
 }
+
+/** A landing page recommends either a build package or the phone offer. */
+export type OfferRef = ServicePackage["id"] | typeof phonePlan.id;
 
 export function getPackage(id: string): ServicePackage | undefined {
   return packages.find((p) => p.id === id);

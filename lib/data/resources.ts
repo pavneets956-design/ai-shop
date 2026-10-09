@@ -1,5 +1,13 @@
 import type { LandingContent } from "./landing";
 import { discoveryResources } from "./discovery";
+import {
+  phonePlan,
+  PHONE_PRICE_LABEL,
+  PHONE_PRICE_SENTENCE,
+  PHONE_SCOPE_SENTENCE,
+  PHONE_MONTHLY_SENTENCE,
+  PHONE_EXCLUSIONS_SENTENCE,
+} from "./packages";
 
 export const resources: LandingContent[] = [
   ...discoveryResources,
@@ -16,7 +24,8 @@ export const resources: LandingContent[] = [
         body: "Most small business AI projects fall into three tiers. The tier is determined by how many systems need to connect, whether you need custom logic, and how much human oversight the workflow requires.",
         bullets: [
           "Starter ($1,500): One tool — AI intake form, chatbot on your website, or a single automated workflow. Works well for leads, FAQs, or basic scheduling.",
-          "Business ($3,500–$7,500): Multi-step system — e.g. AI receptionist + CRM sync + follow-up emails. Includes integrations with your existing tools.",
+          "Business ($3,500–$7,500): Multi-step system — e.g. lead intake + CRM sync + follow-up emails. Includes integrations with your existing tools.",
+          `AI Phone Receptionist (${PHONE_PRICE_LABEL}, launch pricing): one number answered from approved information, with ${phonePlan.includedMinutes} AI-handled minutes a month included. A separate offer, not a build tier.`,
           "Custom (from $10,000): Industry-specific builds, complex data pipelines, or tools that replace a staff function entirely.",
           "Care Plan ($99/month): Ongoing updates, prompt tuning, monitoring, and priority support after launch.",
         ],
@@ -182,8 +191,8 @@ scenario: "Illustrative comparison: one proposal handles website enquiries, whil
   eyebrow: "Resource",
   h1: "How Much Does an AI Receptionist Cost?",
   title: "AI Receptionist Cost: Setup, Usage and Support",
-  description: "Understand AI receptionist setup, channel differences, usage charges and support before comparing a subscription with a custom build.",
-  answer: "Compare an AI receptionist by its complete scope: setup, the channel it handles, phone or model usage, integrations and ongoing support. Handbuilt's current build package price is shown below and on the pricing page. A phone-answering implementation is scoped separately; the package figure is not a promise that every integration or running cost is included.",
+  description: `AI receptionist cost explained: setup, monthly fee, included minutes, overage and support. Handbuilt's AI phone receptionist: ${PHONE_PRICE_LABEL} CAD launch pricing.`,
+  answer: `Compare an AI receptionist by its complete scope: setup, the channel it handles, phone or model usage, integrations and ongoing support. ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE}`,
   pain: "A starting price is difficult to compare when one offer means web chat and another means live phone answering.",
   sections: [
   {
@@ -192,7 +201,11 @@ scenario: "Illustrative comparison: one proposal handles website enquiries, whil
   },
   {
     "heading": "Phone, text and website intake are different scopes",
-    "body": "Live phone answering requires reviewing the number, provider, forwarding, call routing and fallback. Website chat or a form-based intake does not automatically include those pieces. Calendar confirmation and CRM connections are also specific integrations.\n\nWrite down the channels you need before comparing offers. A package card describes its own scope; a written proposal should confirm what your implementation adds or excludes."
+    "body": "Live phone answering requires reviewing the number, provider, forwarding, call routing and fallback. Website chat or a form-based intake does not automatically include those pieces. Calendar confirmation and CRM connections are also specific integrations.\n\nWrite down the channels you need before comparing offers."
+  },
+  {
+    "heading": "What Handbuilt's receptionist price includes",
+    "body": `${PHONE_SCOPE_SENTENCE}\n\n${PHONE_MONTHLY_SENTENCE}\n\n${PHONE_EXCLUSIONS_SENTENCE}`
   },
   {
     "heading": "Include support and failure recovery in the comparison",
@@ -203,7 +216,7 @@ scenario: "Illustrative comparison: one proposal handles website enquiries, whil
     "body": "Use actual enquiry volume, time spent and the contribution margin of suitable jobs. Revenue alone is not the money available to recover setup costs. Separate a scenario from a forecast, and test assumptions before deciding to buy.\n\nFor a business with little routine intake, a simple form, a human callback process or an off-the-shelf service may be enough. Custom work makes sense when the requirements justify it."
   }
 ],
-  packageId: "starter",
+  packageId: "phone",
   ctaLabel: "Request a receptionist quote",
   keywords: ["ai receptionist cost", "ai receptionist price canada", "how much does an ai receptionist cost", "ai phone answering cost", "answering service cost canada", "ai answering service pricing"],
   related: [
@@ -226,12 +239,12 @@ scenario: "Illustrative comparison: one proposal handles website enquiries, whil
 ],
   faqs: [
   {
-    "q": "Is live phone answering included in the displayed Starter price?",
-    "a": "It is not automatically included. The phone setup, integrations, usage and fallback need a separate scope confirmed in the proposal."
+    "q": "Is the AI phone receptionist the same as the Starter build?",
+    "a": `No. The Starter build is a separate one-time package. The AI Phone Receptionist has its own terms: ${PHONE_PRICE_LABEL} CAD, month-to-month.`
   },
   {
     "q": "Are there ongoing costs?",
-    "a": "There may be hosting, communications, model usage and support costs depending on the implementation. Ask for these to be itemised before approving the work."
+    "a": `Yes. ${PHONE_MONTHLY_SENTENCE} Phone and AI usage for the first ${phonePlan.includedMinutes} minutes is included; beyond that, each minute is charged at the published rate.`
   },
   {
     "q": "Is there a free AI receptionist?",
@@ -275,10 +288,10 @@ scenario: "Illustrative decision: a business reviews its call log and finds seve
   },
   {
     "heading": "Use margin and complete costs",
-    "body": "For a hypothetical break-even calculation, compare setup and running costs with the contribution margin of genuinely additional work, not the entire selling price. Include ongoing support and the time needed to review enquiries.\n\nNo universal call-count threshold or payback period can decide this for you. Use your data, document assumptions and begin with a narrowly scoped test when the result is uncertain."
+    "body": `For a hypothetical break-even calculation, compare setup and running costs with the contribution margin of genuinely additional work, not the entire selling price. Include the time needed to review enquiries. For Handbuilt's receptionist those costs are fixed: ${PHONE_PRICE_SENTENCE}\n\nNo universal call-count threshold or payback period can decide this for you. Use your data, document assumptions and begin with a narrowly scoped test when the result is uncertain.`
   }
 ],
-  packageId: "starter",
+  packageId: "phone",
   ctaLabel: "Request a receptionist fit review",
   keywords: ["is ai receptionist worth it", "ai receptionist roi", "ai receptionist small business", "virtual receptionist worth it canada"],
   related: [
@@ -356,7 +369,7 @@ scenario: "Illustrative decision: a business reviews its call log and finds seve
     },
     {
       heading: "What it costs",
-      body: "Three shapes. Subscription answering products run roughly $49–299/mo, usually with per-minute overages and a setup fee. Platform-bundled options like Jobber's are $99/mo if you already pay for the platform. A custom build is one-time from $1,500 CAD for a single worker, then model usage of roughly $5–50/month at local-business volumes. The full comparison, including the fees that are easy to miss, is on the cost page."
+      body: `Three shapes. Self-serve subscription answering products charge a monthly fee, often with per-minute overages; platform-bundled options exist for some field-service software subscribers. Check each provider's current published terms. Handbuilt's done-for-you option: ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE} The full comparison is on the cost page.`
     },
     {
       heading: "Best For / Not Best For",
@@ -367,7 +380,7 @@ scenario: "Illustrative decision: a business reviews its call log and finds seve
       ]
     }
   ],
-  packageId: "starter",
+  packageId: "phone",
   ctaLabel: "See how it works",
   keywords: ["can ai answer phone calls", "ai answer business calls", "ai phone answering small business", "ai voice agent canada", "ai receptionist phone"],
   related: [
@@ -753,14 +766,15 @@ updatedAt: "2026-09-27",
     description:
       "What it really costs a small business to set up AI — from a single AI worker to a full system — with honest CAD price ranges and what pays back fastest.",
     answer:
-      "Setting up AI for a small business ranges from about $1,500 CAD for a single AI worker (like a receptionist or chatbot) to $3,500–$7,500 for a multi-worker system, and $10,000+ for a fully custom app. Most businesses start with the one automation tied to lost revenue and expand once it's paying for itself.",
+      `Setting up AI for a small business ranges from about $1,500 CAD for a single AI worker (like a chatbot or quote agent) to $3,500–$7,500 for a multi-worker system, and $10,000+ for a fully custom app. An AI phone receptionist is priced separately at ${PHONE_PRICE_LABEL} CAD launch pricing. Most businesses start with the one automation tied to lost revenue.`,
     sections: [
       {
         heading: "Typical setup costs by scope",
         body: "You don't need to buy everything at once — most start small.",
         bullets: [
-          "Single AI worker (receptionist, chatbot, quote agent): from $1,500 CAD",
-          "Multi-worker system (calls + follow-up + booking): $3,500–$7,500",
+          `AI phone receptionist: ${PHONE_PRICE_LABEL} CAD, ${phonePlan.includedMinutes} minutes a month included`,
+          "Single AI worker (chatbot, quote agent): from $1,500 CAD",
+          "Multi-worker system (intake + follow-up + booking): $3,500–$7,500",
           "Fully custom AI app or internal tool: $10,000+",
           "Optional ongoing Care Plan: $99/mo for monitoring and tweaks",
         ],
@@ -779,7 +793,7 @@ updatedAt: "2026-09-27",
     ],
     faqs: [
       { q: "Do I have to build the whole system at once?", a: "No — most businesses start with one AI worker tied to lost revenue, prove the payback, then expand. It keeps the upfront cost low and the return clear." },
-      { q: "Are there hidden monthly fees?", a: "You own what we build. There may be small AI-provider usage costs and an optional $99/mo Care Plan, but no mandatory per-seat subscriptions." },
+      { q: "Are there hidden monthly fees?", a: "Not hidden. You own what we build; there may be small AI-provider usage costs and an optional $99/mo Care Plan. The AI phone receptionist has a published monthly fee, month-to-month." },
     ],
     packageId: "starter",
     ctaLabel: "Get a setup quote",
@@ -877,7 +891,7 @@ updatedAt: "2026-09-27",
         heading: "Examples of AI workers",
         body: "Each one owns a single job you'd otherwise do by hand or hire for.",
         bullets: [
-          "An AI receptionist that answers and books every call",
+          "An AI receptionist that answers calls and takes the caller's details",
           "A lead follow-up agent that chases quotes and inquiries",
           "A booking agent that fills and manages your calendar",
           "A review agent that requests and responds to reviews",
@@ -929,7 +943,7 @@ updatedAt: "2026-09-27",
       {
         heading: "1. Answering the phone",
         body:
-          "This is where trades lose the most money, because the caller who reaches voicemail dials the next name on the list. Three shapes of product exist here and they cost very differently.\n\nJobber's AI Receptionist is a $99/mo add-on and comes bundled free on their Plus plan (roughly $499–599/mo at time of writing). Best for: shops already living inside Jobber. Not for: anyone who wants the receptionist to reach outside Jobber, because it cannot.\n\nStandalone AI answering services — Numa, Rosie, Goodcall, Smith.ai, and in Canada Benny (askbenny.ca, from about $99/mo), Mihron AI (about CA$299/mo) and VoiceFleet (about CA$149/mo) — generally run $49–249/mo plus per-minute overages, with setup fees anywhere from $75 to $1,500. Best for: getting something live this week. Not for: anyone whose call volume is spiky, because the overage line is where the bill surprises you. Read the per-minute rate before the headline price.\n\nA built and owned system is the third shape and it is what this studio sells, so weigh that accordingly: a one-time build instead of a subscription, from $1,500 CAD for a single worker. Best for: a shop that plans to still be trading in three years and would rather buy than rent. Not for: anyone who needs it live tomorrow, or whose call volume is under roughly 20 a month — at that volume a subscription you can cancel is the smarter buy, and this page would rather say so than sell you something.",
+          `This is where trades lose the most money, because the caller who reaches voicemail dials the next name on the list. Three shapes of product exist here and they cost very differently.\n\nJobber offers an AI receptionist to its own subscribers. Best for: shops already living inside Jobber. Not for: anyone who wants the receptionist to reach outside Jobber. Check Jobber's current pricing page for the add-on and plan terms.\n\nStandalone AI answering services — Numa, Rosie, Goodcall, Smith.ai, and in Canada Benny, Mihron AI and VoiceFleet — are self-serve subscriptions, usually with per-minute overages and sometimes a setup fee. Best for: getting something live quickly if you are happy to configure it yourself. Not for: anyone whose call volume is spiky without reading the overage terms first. Read the per-minute rate before the headline price.\n\nA done-for-you receptionist is the third shape and it is what this studio sells, so weigh that accordingly. ${PHONE_PRICE_SENTENCE} ${PHONE_EXCLUSIONS_SENTENCE} Best for: a shop that wants its line answered from approved information without setting up software itself. Not for: a shop with very few calls, where a cheaper self-serve plan or a callback habit is the smarter buy — and this page would rather say so than sell you something.`,
       },
       {
         heading: "2. Field-service management (the scheduling and dispatch core)",

@@ -5,11 +5,12 @@ import PhoneReceptionistPlan from "@/components/PhoneReceptionistPlan";
 import JsonLd from "@/components/JsonLd";
 import { pricingPageFaqs } from "@/lib/data/faqs";
 import { serviceSchema, carePlanOffer, faqSchema } from "@/lib/seo";
+import { PHONE_PRICE_LABEL } from "@/lib/data/packages";
 
 export const metadata: Metadata = {
   title: "Pricing — Websites, Apps & AI Builds",
   description:
-    "Fixed-scope AI builds from $1,500 CAD, business systems from $3,500 and custom apps from $10,000. Websites and 3D experiences quoted to your project.",
+    `Fixed-scope AI builds from $1,500 CAD, business systems from $3,500 and custom apps from $10,000. AI phone receptionist ${PHONE_PRICE_LABEL} CAD. Websites quoted to scope.`,
   alternates: { canonical: "/pricing" },
 };
 export default function PricingPage() {
@@ -68,9 +69,9 @@ export default function PricingPage() {
             <h2>Phone reception.</h2>
           </div>
           <p>
-            Voice has its own setup, monthly service and provider usage. We
-            scope the call flow, handover and limits before launch. The website
-            demo is text only.
+            Phone reception has its own fixed setup and monthly fee, with
+            AI-handled minutes included. It goes live on your line only after
+            test calls pass. The website demo is text only.
           </p>
         </div>
         <div className="mx-auto max-w-2xl">
